@@ -1,0 +1,646 @@
+body
+{
+background-image: url(../imagenes/fondo.png);
+font-family: "trebuchet MS";
+font-weight: bold;
+font-size: 15px;
+margin: auto;
+}
+#unidadaprendizaje
+{
+	width: 1200px;
+  	margin: auto;
+}
+fieldset #group_seriacion
+{
+	width: 750px;
+	float: left;
+	margin-top: -30px;
+	margin-left: 15px;
+}
+legend
+{
+    padding: 2px; 
+}
+figure
+{
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+h1
+{
+	color: white;
+	font-weight: normal;
+	text-shadow:2px 2px 0 black;
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 0px;
+	margin-left: 270px;
+}
+h3
+{
+	color: #D9D9EA;
+	font-size: 1.4em;
+	font-weight: normal;
+	text-align: center;
+	text-shadow:2px 2px 0 #000;
+	margin-top: 0px;
+	margin-left: 265px;
+}
+header
+{
+	background: #006600;
+	border-radius: 7px 7px 7px 7px;
+	height: 94px;
+	overflow: hidden;
+	width: 1366px;
+	margin: auto;
+	box-shadow: 2px 2px 2px #000;
+}
+section
+{   
+	background-color: rgba(104,160,26,0.3);
+	border: 2.2px solid black;
+	border-radius: 7px;
+	height: auto;
+	width: 1320px;
+	margin:auto;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	transition: 0.3s ease all;
+}
+section:hover
+{
+	background-color: white;
+	border: 2.2px solid orange;
+	box-shadow: 0px 0px 20px orange;
+}
+section #primerBloque
+{
+	
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	padding-bottom: 10px;
+	height: 40px;
+	width: 1010px;
+	margin: auto;
+}
+section #segundoBloque
+{
+	padding-top: 20px;
+	padding-left:20px;
+	height: 50px;
+	width: 1230px;
+	margin:auto;
+}
+section #tercerBloque
+{
+	padding-top: 30px;
+	height: 60px;
+	width: 1250px;
+	margin-left: 0px;
+	margin-top: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+}
+section #cuartoBloque
+{
+	padding-top: 20px;
+	height: 125px;
+	width: 1250px;
+	margin: auto;
+}
+footer
+{
+	background-image: url(../imagenes/footer.png);
+	border-radius: 7px 7px 7px 7px;
+	height: 42px;
+	width: 1366px;
+	margin: auto;
+	margin-top:15px;
+}
+#Consultas
+{
+	width: 100%;
+	height: 130px;
+	padding-top: 10px;
+}
+#consultaPlan
+{
+	height: 120px;
+	margin-top:0px;
+	margin-left:80px;
+	width: 1140px;
+}
+#consultax
+{
+	padding-top: 10px;
+}
+#consultay
+{
+	padding-top: 15px;
+}
+#consultaboton
+{
+	margin-left:1100px;
+	margin-top: -60px;
+	padding-right: 10px;
+	width: 110px;
+}
+.clsEliminarFila
+{
+	height:25px; 
+	width:28px; 
+	border-color:#468C00; 
+	border-radius:5px;
+	background-color:#004000;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+}
+.clsEliminarFila:hover
+{
+background: #EFCA0D;	
+}
+.con_estilo
+{
+	font-size: 13px;
+	width:120px;
+	height:30px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+}
+.coordina
+{
+	width: 135px;
+	border-radius: 5px;
+	height: 25px;
+	border-color: #DBDBEA;
+}
+.estilo_text
+{
+	width: 80px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #DBDBEA;
+}
+.estilo_numeric
+{
+	width: 80px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #DBDBEA;
+}
+.estilo_button
+{
+	border-color:#ECA22E; 
+	border-radius:5px;
+	background-color:#ECA22E; 
+	color:#004000; 
+	font-size:20px; 
+	text-align: center;
+	width:30px;
+	text-decoration:none;
+}
+.estilo_button2
+{
+	border-color:#468C00; 
+	border-radius:5px;
+	background-color:#004000; 
+	color:#fff; 
+	font-size:23px; 
+	text-align: center;
+	height: 50px;
+	width:100px;
+}
+.estilo_button2:hover
+{
+	background: #ECA22E;
+}
+#botones
+{
+	
+	margin-left: 1060px;
+	margin-top: -60px;
+	width: 130px;
+	float: left;
+}
+#cimarron
+{
+	float: right;
+}
+#GridPlanEstudio
+{
+	margin:auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	width: 1280px;
+}
+#logo  
+{
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 60px;
+	height: 80px;
+}
+#consultamateriaclavechecks
+{
+	margin-top: 15px;
+	background-color: red;
+	width: 100%;
+}
+.texto_body
+{
+	font-weight: bold;
+	font-size: 1.2em;
+	color:#003F00;
+	margin-left: 50px;
+}
+#titulo
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0;
+	width: 900px;
+}
+#usuariofecha
+{
+	display: inline-block;
+	font-size: 13px;
+	margin-left: 0px;
+}
+#ubicacion
+{
+	display: inline-block;
+	font-size: 17px;
+	margin-left: 100px;
+}
+#loginmanual
+{
+	display:inline-block;
+	float: right;
+	font-size: 13px;
+	padding-right: 45px;
+}
+#indicadores
+{
+	margin: 0 auto;
+	padding-top: 35px;
+	width:1320px;
+	padding-bottom: 10px;
+}
+#consultaetapas
+{
+	color:#004000;
+	font-size: 20px;
+	margin:auto;
+	margin-top: 20px;
+}
+#etapabasica
+{
+	display: inline-block;
+	margin-top:40px;
+	padding-left: 240px;
+}
+#etapadisciplinaria
+{
+	display: inline-block;
+	padding-left: 200px;
+}
+#etapaterminal
+{
+	display: inline-block;
+	padding-left: 200px;
+}
+#totalcreditos
+{
+	color:#004000;
+	font-size: 16px;
+	padding-left: 25px;
+	padding-bottom: 20px;
+	width: 150px;
+	margin-left:115px;
+}
+#actualizaimprime
+{
+	height: 70px;
+	margin-left:1015px;
+	margin-top: -70px;
+	padding-right: 20px;
+}
+#guardar
+{
+	float:right;
+}
+#carreraDiv 
+{
+	
+	margin: 1em 0em;
+	float:left;
+	width: 270px;
+	float: left;
+	margin-top:0px;
+	margin-left: 35px;
+	/*margin: 1em 0em;
+	width: 250px;
+	float: left;
+	padding-left: 15px;*/
+}
+	/*#ingresar
+{
+	width:140px;
+	 height:70px;
+}*/
+.tablaDatos 
+{
+	font-family:"Trebuchet MS";
+	font-size: 15px;
+	font-style: normal;
+	text-decoration: none;
+	margin:auto;
+	margin-bottom: 20px;
+	border-collapse: collapse; 
+	border: 1px solid #CCB; 
+	width: 100%;
+}
+.tablaDatos th
+{
+	color:green; 
+	height:30px;
+	text-align:center;
+	background: #E5E5E5; 
+}
+.tablaDatos tr
+{
+	text-align:left;
+}
+.tablaDatos tr:nth-child(2n+0)
+{
+	background:#EDF7ED;
+}
+/*Estilo para la ventana de consulta (controles de busqueda)*/
+#consul_noPlan
+{
+	margin-left:20px;
+}
+#consul_nivel
+{
+	margin-left:210px;
+	margin-top:-30px;	
+}
+#consul_carrera
+{
+	margin-left:410px;
+	margin-top:-30px;	
+}
+#consul_clave
+{
+	margin-left:625px;
+	margin-top:-30px;
+}
+#materiaCon
+{
+	text-transform:uppercase;
+	width:260px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #DBDBEA;
+}
+#consul_materia
+{
+	margin-left:790px;
+	margin-top:-30px;
+}
+#consul_etapa
+{
+	margin-left:35px;
+}
+#consul_tipo
+{
+	margin-left:215px;
+	margin-top:-30px;
+}
+#consul_serie
+{
+	margin-left:400px;
+	margin-top:-30px;
+}
+#coordinacion
+{
+	text-transform:uppercase;
+	width:265px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #DBDBEA;
+}
+#consul_coor
+{
+	margin-left:625px;
+	margin-top:-30px;
+}
+#elimImg
+{
+	float:right;
+	margin-right:3px;
+	margin-top:6px;
+	width:13px;
+	height:13px;
+}
+#noPlanDiv
+{
+	
+	width: 230px;
+	float: left;
+	padding-left: 5px;
+}
+#unidadAcademicaDiv
+{
+	width: 250px;
+	float: left;
+	padding-left: 20px;
+}
+#campusDiv
+{
+	width: 250px;
+	float: left;
+	padding-left: 0px;
+}
+#nivelDiv
+{
+	width: 230px;
+	float: left;
+	padding-left: 5px;
+}
+#claveDiv
+{
+	width: 178px;
+	float: left;
+}
+#materiaDiv
+{
+	width: 450px;
+	float: left;
+	padding-left: 20px;
+}
+#etapaDiv
+{
+	
+	width: 220px;
+	float: left;
+	padding-left:40px;
+}
+#tipoDiv
+{
+	
+	width: 210px;
+	float: left;
+	margin-left: 33px;
+}
+#semestreDiv
+{
+	width: 165px;
+	float: left;
+	padding-left:33px;
+}
+#claveSerDiv
+{
+	width: 140px;
+	float: left;
+	padding-left:5px;
+}
+#seriacionDivMateria
+{
+	width: 300px;
+	float: left;
+	padding-left:0px;
+}
+#seriacionDivTipo
+{
+	
+	width: 280px;
+	float: left;
+	padding-left: 25px;
+}
+#coordDiv
+{
+	
+	width: 220px;
+	float: left;
+	padding-left: 37px;
+	margin-top: -80px;
+}
+#hcDiv
+{
+	width: 120px;
+	float: left;
+	padding-left: 43px;
+}
+#hlDiv
+{
+	width: 150px;
+	float: left;
+	padding-left: 10px;
+}
+#htDiv
+{
+	width: 130px;
+	float: left;
+	padding-left: 0px;
+}
+#heDiv
+{
+	width: 120px;
+	float: left;
+	padding-left: 43px;
+}
+#hpcDiv
+{
+	width: 150px;
+	float: left;
+	padding-left: 0px;
+}
+#hclDiv
+{
+	width: 130px;
+	float: left;
+	padding-left: 0px;
+}
+#creditosDiv
+{
+	width: 200px;
+	float: left;
+	padding-left: 3px;
+
+}
+#observacionesDiv
+{
+	
+	width: 500px;
+	float: left;
+	margin-left: 270px;
+	margin-top: -80px;
+}
+
+#planTerminado
+{
+	
+	margin-left: 1000px;
+	margin-top: -15px;
+	margin-bottom: 10px;
+	width: 250px;
+
+}
+
+
+
+
+#acciones
+{
+
+	margin-top: 20px;
+	margin-left: 765px;
+	width: 530px;
+	height: 55px;
+}
+#periodo_Ca
+{
+	margin: 10px;
+	width: 270px;
+}
+#botones_Ca
+{
+	margin-left: 285px;
+	margin-top: -65px;
+	padding: 5px;
+	width: 230px;
+}
+.coordinacion_Ca
+{
+
+	float: left;
+	font-size: 22px;
+	font-weight: normal;
+	color:#004000;
+	text-align: center;
+	margin-top:20px;
+	padding-left: 22px;
+	width: 250px;
+}
+#listas_Contenedor
+{
+	background-color: blue;
+	width: 1320px;
+}
+#lista_PlanVigente
+{
+
+ border:2px solid #ccc; 
+ width:300px; 
+ height: 200px; 
+ overflow-y: scroll;
+
+}

@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+
+nav {
+   box-shadow: 3px 3px 3px #000000;
+   display: block;
+   margin: -10px auto;
+   border: 1px solid #F3B95F;
+   position: relative;
+   font: 14px Trebuchets Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+   font-weight:bold;
+   width: 1098px;
+   
+   
+          
+}
+nav ul{
+   padding: 0;
+   margin: 0;
+}
+
+nav ul:after {
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+}
+
+nav li {
+
+   position: relative;
+   float: left;
+   list-style-type: none;
+   text-align: center;
+   width: 183px;
+   transition: 0.3s ease all;
+
+   
+}
+
+nav li a {
+   display: block;
+   padding: 10px 0px;
+   border-left: 1px solid #004000;
+   border-right: 1px solid #004000;
+   color: #004000;
+   text-decoration: none;
+}
+
+nav li a:focus {
+   outline: none;
+   text-decoration: underline;
+
+}
+
+nav li:first-child a {
+   border-left: none;
+}
+nav li.ultimo a {
+   border-right: none;
+}
+
+nav li:hover ul {
+   display: block;
+}
+
+nav a span{
+    display: block;
+    float: right;
+    margin-left: 5px;
+}
+nav ul ul{
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background:#FFF;
+}
+nav ul ul li{
+    float: none;
+}
+nav ul ul a{
+    padding: 5px 10px;
+    border-left: none;
+    border-right: none;
+    font-size: 13px;
+
+}
+nav ul ul a:hover; {
+    background-color: #FFF;
+}
+
+
+nav {
+
+    box-shadow: 3px 3px 3px rgba(,0,0,0.75);
+    background-color: #FFFFFF;
+
+
+}
+
+nav li:hover {    
+
+	background-color:#ECA22E;
+  
+    
+}
+
+
+
+nav ul ul{
+   
+    box-shadow:3px 3px 3px rgba(0,0,0,.8);
+    background-color:#FFF;
+
+}
+nav ul ul li{
+    border-left:1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    text-align: left;
+}
+nav ul ul li.ultimo {
+    border-left:1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
+}
+nav ul ul a:hover {
+    background-color:#ECA22E;
+}
+

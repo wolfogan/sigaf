@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#cuadros 
+{ 
+	font-family:Trebuchet Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif; 
+	font-size:7pt; 
+	padding:0px;  
+	width:1050px; 
+	margin:10px auto;
+	
+
+}
+	
+ul 
+{
+	margin:0px; 
+	padding:0px; 
+	margin-left:20px;
+	
+}
+
+#list1, #list2, #list3 
+{ 
+	width:350px; 
+	list-style-type:none; 
+	margin:0px; 
+
+}
+	
+
+#list1 li, #list2 li, #list3 li 
+{ 
+	float:left; 
+	padding:5px; 
+	width:100px; 
+	height:50px; 
+
+	
+	
+}
+
+
+
+
+#list1 div, #list2 div, #list3 div 
+{ 
+	width:90px; 
+	height:50px; 
+	border-radius:5px; 
+	border: 2.5px solid #004000;
+	text-align:center; 
+	padding-top:0px; 
+
+
+
+}
+#list1 div
+{
+	background-color: #BFFFBF;
+}
+#list2 div
+{
+	background-color: #FFCC99;
+}
+#list3 div
+{
+	background-color: #FFFF99;
+}
+
+		
+#list1, #list2, #list3 
+{ 
+	float:right; 
+
+}
+
+	
+.placeHolder div 
+{ 
+	background-color:white !important; 
+	border:dashed 1px gray !important; 
+
+}
+
+#list1 li
+
+{ 
+
+	display:block!important;
+	-webkit-transition:-webkit-transform 1s ease-out;
+	-moz-transition:-moz-transform 1s ease-out;
+	-o-transition:-o-transform 1s ease-out;
+	-ms-transition:-ms-transform 1s ease-out;
+	transition:transform 1s ease-out;
+}
+#list1 li:hover
+{ 
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5)
+}
+#list2 li
+
+{ 
+	display:block!important;
+	-webkit-transition:-webkit-transform 1s ease-out;
+	-moz-transition:-moz-transform 1s ease-out;
+	-o-transition:-o-transform 1s ease-out;
+	-ms-transition:-ms-transform 1s ease-out;
+	transition:transform 1s ease-out;
+}
+#list2 li:hover
+{ 
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5)
+}
+#list3 li
+
+{ 
+	display:block!important;
+	-webkit-transition:-webkit-transform 1s ease-out;
+	-moz-transition:-moz-transform 1s ease-out;
+	-o-transition:-o-transform 1s ease-out;
+	-ms-transition:-ms-transform 1s ease-out;
+	transition:transform 1s ease-out;
+}
+#list3 li:hover
+{ 
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5)
+}
+
+.eliminarBloquecito
+{
+	width: 20px;
+	height: 20px;
+	bottom:0;
+	right:0;
+	position:absolute;	
+}
+
+
+
