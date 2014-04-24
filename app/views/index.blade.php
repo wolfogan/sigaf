@@ -2,24 +2,19 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8"/>
+
 		<!-- ///////////// Estilos CSS /////////////-->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="css/demo.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style_common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style10.css"/>
-
+		
 		<!-- ///////////// Script y jQuery /////////////-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script src="js/tiempoactual.js"></script>
-		<script>
-			$(function(){
-				// Inicializamos función y desplegamos en el div
-				startTime(); 
-				var fecha = day + myweekday+" de "+month+ " de " +myyear+","
-				$("#fecha").prepend(fecha);
-			});
-		</script>
+		<script>$(function(){startWatch();});</script> <!-- Script tiempo -->
+	
 	</head>
 	<body>
 		<header>

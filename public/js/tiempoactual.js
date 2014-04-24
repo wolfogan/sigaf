@@ -58,10 +58,20 @@ function startTime()
 	var s=today.getSeconds();
 	m=checkTime(m);
 	s=checkTime(s);
-	document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+	$('#reloj').html(h+":"+m+":"+s);
 	t=setTimeout('startTime()',500);
 }
 
+/**
+ * Coloca la fecha y tiempo en el div correspondiente.
+ * @return {false}
+ */
+function startWatch()
+{
+	startTime();
+	var fecha = day + myweekday+" de "+month+ " de " +myyear+",";
+	$("#fecha").prepend(fecha);
+}
 
 
 //window.onload=function(){startTime();};

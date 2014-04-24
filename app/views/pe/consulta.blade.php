@@ -26,66 +26,7 @@ ventimp.close();
 <div> 
 
 <!--SCRIPT PARA FECHA Y HORA-->
-<script language="javascript"> 
-        mydate = new Date(); 
-        myday = mydate.getDay(); 
-        mymonth = mydate.getMonth(); 
-        myweekday= mydate.getDate(); 
-        myyear=mydate.getFullYear();
-        weekday= myweekday; 
-        if(myday == 0) 
-        day = " Domingo " 
-        else if(myday == 1) 
-        day = " Lunes " 
-        else if(myday == 2) 
-        day = " Martes " 
-        else if(myday == 3) 
-        day = " Miércoles " 
-        else if(myday == 4) 
-        day = " Jueves " 
-        else if(myday == 5) 
-        day = " Viernes " 
-        else if(myday == 6) 
-        day = " Sábado " 
-        if(mymonth == 0) 
-        month = "Enero " 
-        else if(mymonth ==1) 
-        month = "Febrero " 
-        else if(mymonth ==2) 
-        month = "Marzo " 
-        else if(mymonth ==3) 
-        month = "Abril " 
-        else if(mymonth ==4) 
-        month = "Mayo " 
-        else if(mymonth ==5) 
-        month = "Junio " 
-        else if(mymonth ==6) 
-        month = "Julio " 
-        else if(mymonth ==7) 
-        month = "Agosto " 
-        else if(mymonth ==8) 
-        month = "Setiembre " 
-        else if(mymonth ==9) 
-        month = "Octubre " 
-        else if(mymonth ==10) 
-        month = "Noviembre " 
-        else if(mymonth ==11) 
-        month = "Diciembre " 
-    </script>
-<script>
-        function startTime(){
-        today=new Date();
-        h=today.getHours();
-        m=today.getMinutes();
-        s=today.getSeconds();
-        m=checkTime(m);
-        s=checkTime(s);
-        document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
-        t=setTimeout('startTime()',500);}
-        function checkTime(i)
-        {if (i<10) {i="0" + i;}return i;}
-        window.onload=function(){startTime();}
-    </script>
+
 <script type="text/javascript">
 		$(function(){
 			$('.eliminarBloquecito').on('click',function()
@@ -108,52 +49,7 @@ ventimp.close();
 </div>
 <figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 </header>
-<nav id="MenuNav" style="border-right:none">
-<ul>
-	<li><a href="#" titile="Menu 1">Plan de estudios</a>
-	<ul>
-		<li><a href="<?=URL::to('planestudio/registro')?>" title="SubMenu 1">Registrar UA</a></li>
-		<li><a href="<?=URL::to('planestudio/consulta')?>" titile="SubMenu 2">Consulta y modificación</a></li>
-		<li class="ultimo"><a href="index.html" title="SubMenu 3">Menu principal</a></li>
-	</ul>
-	</li>
-	<li><a href="#" titile="Menu 2">Carga académica</a>
-	<ul>
-		<li><a href="#"title="registro_ca">Registrar Carga A.</a></li>
-		<li><a href="#" titile="SubMenu 2">Consultar Carga A.</a></li>
-		<li class="ultimo"><a href="#" title="SubMenu 3">Modificar Carga A.</a></li>
-	</ul>
-	</li>
-	<li><a href="#" title="Menu 3">Disponibilidad docente</a>
-	<ul>
-		<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
-		<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-		<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
-	</ul>
-	</li>
-	<li><a href="#" title="Menu 4">Creación de horario<span></span></a>
-	<ul>
-		<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
-		<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-		<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
-	</ul>
-	</li>
-	<li><a href="#" title="Menu 5">Calendarización Exams.</a>
-	<ul>
-		<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
-		<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-		<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
-	</ul>
-	</li>
-	<li><a href="#" title="Menu 6" style="border-right:1px solid #FEA417;">Control de inasistencias</a>
-	<ul>
-		<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
-		<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-		<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
-	</ul>
-	</li>
-</ul>
-</nav>
+	@include('includes.menu')
 <div id="indicadores">
 	<div id="usuariofecha">
 		<div id="usuario" class="texto_body">
