@@ -10,8 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
-
-
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
@@ -23,7 +21,7 @@
 	</head>
 
 	<body>
-		<script>$('body').html(estructura('plan'));</script>
+		<script>$('body').html(crearCatalogos());</script>
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 			<div id="titulo">
@@ -68,19 +66,11 @@
 							<option value="2014-1">2014-1</option>
 						</select>
 						<!-- TABLA MODAL NRO. PLAN-->
-					
-						<!--             -->
 						<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
-						
+						<!--             -->
+
 					</div>
 					
-					<div style="display: none;">
-						<div id="noPlanE" style="width:526px;height:425px;overflow:auto;">
-							<div id="encab1">
-								<label>Número de Plan</label>
-							</div>
-						</div>
-					</div>
 					<!-- ----------------------------------------------------------------------------------- -->
 
 
@@ -92,19 +82,9 @@
 							<option value="FCQ">FCQ</option>
 							<option value="FMO">FMO</option>
 						</select>
-						<!-- TABLA MODAL NRO. PLAN-->
-					
+						<!-- TABLA MODAL UNIDAD-->
+						<input class="md-trigger" data-modal="unidad" type="button" value="+">
 						<!--             -->
-						<input class="md-trigger" data-modal="modal-11" type="button" value="+">
-						<div class="md-overlay"></div>
-					</div>
-
-					<div style="display: none;">
-						<div id="CatUniAca" style="width:526px;height:425px;overflow:auto;">
-							<div id="encab">
-								<label>Unidad Académica</label>
-							</div>
-						</div>
 					</div>
 					<!-- ----------------------------------------------------------------------------------- -->
 
@@ -115,7 +95,9 @@
 							<option value="TECATE">TECATE</option>
 							<option value="MEXICALI">MEXICALI</option>
 						</select>
-						<input class="estilo_button" type="button" value="+">
+						<!-- TABLA MODAL CAMPUS-->
+						<input class="md-trigger" data-modal="campus" type="button" value="+">
+						<!--             -->
 					</div>
 		
 					<div id="nivelDiv">
@@ -125,7 +107,9 @@
 							<option value="POSTGRADO">POSTGRADO</option>
 							<option value="TECNICO">TECNICO</option>
 						</select>
-						<input class="estilo_button" type="button" value="+">
+						<!-- TABLA MODAL NIVEL-->
+						<input class="md-trigger" data-modal="nivel" type="button" value="+">
+						<!--             -->
 					</div>
 					
 					<!-- ----------------------------------------------------------------------------------- -->
@@ -166,7 +150,9 @@
 									<option value="INFORMATICA">INFORMATICA</option>
 									<option value="NEGOCIOS">NEGOCIOS</option>
 								</select>
-								&nbsp;<input class="estilo_button" type="button" value="+">
+								<!-- TABLA MODAL CARRERA-->
+						<input class="md-trigger" data-modal="carrera" type="button" value="+">
+						<!--             -->
 						</div>
 
 						<div id="etapaDiv">
@@ -176,7 +162,9 @@
 								<option value="INTERMEDIA">DISCIPLINARIA</option>
 								<option value="TERMINAL">TERMINAL</option>
 							</select>
-							&nbsp;<input class="estilo_button" type="button" value="+">
+							<!-- TABLA MODAL ETAPA-->
+						<input class="md-trigger" data-modal="etapa" type="button" value="+">
+						<!--             -->
 						</div>
 					</div>
 
@@ -214,7 +202,9 @@
 									<option value="OBLIGADA">OBLIGATORIA</option>
 									<option value="SUGERIDA">SUGERIDA</option>
 								</select>
-								&nbsp;<input class="estilo_button" type="button" value="+">
+								<!-- TABLA MODAL NIVEL-->
+								<input class="md-trigger" data-modal="seriacion" type="button" value="+">
+								<!--             -->
 							</div>
 						</fieldset>
 
@@ -224,7 +214,9 @@
 								<option value="OBLIGATORIA">OBLIGATORIA</option>
 								<option value="OPTATIVA">OPTATIVA</option>
 							</select>
-							&nbsp;<input class="estilo_button" type="button" value="+">
+							<!-- TABLA MODAL NIVEL-->
+							<input class="md-trigger" data-modal="tipo" type="button" value="+">
+							<!--             -->
 						</div>
 					</div>
 		
