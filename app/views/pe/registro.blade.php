@@ -16,12 +16,11 @@
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script src="../js/ventanamodal.js"></script>
-		<script>$(function(){startWatch();});</script> <!-- Script tiempo -->
-		
+		<script>$(function(){startWatch(); return false;});</script> <!-- Script tiempo -->
 	</head>
 
 	<body>
-		<script>$('body').html(crearCatalogos());</script>
+		<script> $('body').html(crearCatalogos());</script>
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 			<div id="titulo">
@@ -341,7 +340,6 @@
 			
 		</section>
 		<footer></footer>
-
 		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 		<script src="../js/classie.js"></script>
 		<script src="../js/modalEffects.js"></script>
@@ -351,7 +349,6 @@
 <!--SCRIPT PARA VENTANA MODAL-->
 
 
-<script type="text/javascript" src="../js/manipulacion.js"></script>
 <script type="text/javascript" src="../js/manipulacionUA.js"></script>
 <script type="text/javascript" src="../js/jquery.multiSelect.js"></script>
 <script>
