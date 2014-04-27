@@ -3,7 +3,6 @@
 	
 	<head>
 		<meta charset="utf-8"/>
-
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">

@@ -25,7 +25,6 @@ $(function(){
 	});
 	
 	
-	
 	//cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
 	$(document).on('click','.clsEliminarFila',function(){
 		/*if(!confirm('¿Desea eliminar el registro?')){
