@@ -265,7 +265,10 @@
 								<option value="CIENCIAS COMPUTACIONALES">
 								<option value="SISTEMAS DE INFORMACION">
 								<option value="PROGRAMACION">
-							</datalist><input class="estilo_button" type="button" value="+">
+							</datalist>
+							<!-- TABLA MODAL COORDINACIÓN-->
+							<input class="md-trigger" data-modal="coordinación" type="button" value="+">
+							<!--             -->
 						</div>
 
 

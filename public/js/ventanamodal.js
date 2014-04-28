@@ -1,22 +1,47 @@
-// Construcción de la ventana modal para los catálogos
-var idCatalogos = ['plan','unidad','campus','nivel','carrera','etapa','tipo','seriacion','carrera'];
-var titulosCatalogos = ['Número de Plan','Unidad Acádemica','Campus','Nivel','Carrera','Etapa','Tipo','Seriación','Carrera'];
-
-//var titulos = ["Clave","Nombre","Fecha inicio", "Fecha fin","Eliminar"];
-
+// Variable JSON para las tablas de los catálogos
 var titulos = {
-	'plan' : ['Clave','Nombre','Fecha Inicio','Fecha Final','Eliminar'],
-	'unidad':['Código','Nombre','Administrador','Subdirector'],
-	'campus':['Código','Ciudad','Dirección'],
-	'nivel':['Código','Nombre'],
-	'carrera':['Código','Nombre','Coordinador'],
-	'etapa':['Código','Nombre'],
-	'tipo':['Código','Nombre'],
-	'seriacion':['Código','Nombre'],
-	'carrera':['Código','Nombre']
+	'plan' :{ 
+		'titulo':'Número de Plan',
+		'campos':['Clave','Nombre','Fecha Inicio','Fecha Final','Eliminar']
+	},
+	'unidad':{
+		'titulo':'Unidad Acádemica',
+		'campos':['Código','Nombre','Administrador','Subdirector']
+	},
+	'campus':{
+		'titulo':'Campus',
+		'campos':['Código','Ciudad','Dirección']
+	},
+	'nivel':{
+		'titulo':'Nivel',
+		'campos':['Código','Nombre']
+	},
+	'carrera':{
+		'titulo':'Carrera',
+		'campos':['Código','Nombre','Coordinador']
+	},
+	'etapa':{
+		'titulo':'Etapa',
+		'campos':['Código','Nombre']
+	},
+	'tipo':{
+		'titulo':'Tipo',
+		'campos':['Código','Nombre']
+	},
+	'seriacion':{
+		'titulo':'Seriación',
+		'campos':['Código','Nombre']
+	},
+	'carrera':{
+		'titulo':'Carrera',
+		'campos':['Código','Nombre']
+	},
+	'coordinación':{
+		'titulo':'Coordinación',
+		'campos':['Código','Nombre']
+	}
 };
 
-var ejemplo ='<table id="modal1" style="margin:0 auto;" width="100%"><thead><tr><th >Clave</th><th >Nombre</th><th >Fecha inicio</th><th >Fecha fin</th><th>Elim.</th></tr></thead><tbody><tr><td><input type="text" onkeypress="ValidaSoloNumeros()" maxlength="6" autofocus></td><td><input type="text"  maxlength="6" autofocus></td><td><input type="date" name="fecha" ></td><td><input type="date" name="fecha" ></td><td width="50" align="center"><input type="button" value="-" class="clsEliminarFila"/></td></tr></tbody></table>';
 
 function estructura(id,titulo,tabla)
 {
@@ -33,14 +58,15 @@ function estructura(id,titulo,tabla)
 
 function crearCatalogos()
 {
-	var tablaCatalogos='';
-	for(var i in idCatalogos)
+	var ventanaCatalogos='';
+
+	for(var idKey in titulos)
 	{
-		tablaCatalogos += estructura(idCatalogos[i],titulosCatalogos[i],crearTablas(titulos.unidad));
+		ventanaCatalogos += estructura(idKey,titulos[idKey].titulo,crearTablas(titulos[idKey].campos));
 	}
-	tablaCatalogos += '<div class="md-overlay"></div>';
+	ventanaCatalogos += '<div class="md-overlay"></div>';
 	
-	return tablaCatalogos;
+	return ventanaCatalogos;
 }
 
 
@@ -53,7 +79,7 @@ function crearTablas(encabezados)
 	{
 		table += "<th>" + encabezados[i] + "</th>";
 	}
-	table += '</tr></thead><tbody><tr><td><input type="text" style="width: 100%; height: 30px; border-radius:5px; font-size:20px;" class="clsAnchoTotal" onkeypress="ValidaSoloNumeros()" maxlength="6" autofocus></td></tr></tbody></table>';
+	table += '</tr></thead><tbody></tbody></table>';
 	return table;
 }
 
