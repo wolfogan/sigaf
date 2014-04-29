@@ -99,27 +99,15 @@ function crearCatalogos()
 }
 
 
-
+// AGREGAR ACCIONES AL BOTON AGRE
 $(function(){
 	$(document).on('click','.clsAgregarFilaNoPlan',function(){
-		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
-		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
-		/*var strNueva_Fila='<tr>'+
-			'<td><input type="text" style="width: 60px; height: 25px; border-radius:5px" class="clsAnchoTotal" onKeyPress="ValidaSoloNumeros()" maxlength="6" autofocus></td>'+
-			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
-			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
-			'<td align="center"><input type="button" value="-" class="clsEliminarFila"/></td>'+
-		'</tr>';
-
-
-
-		var objTabla=$(this).parents().get(0);
-		$(objTabla).find('table').find('tbody').append(strNueva_Fila);*/
-
+		
+		// Obtenermos la tabla del elemento anterior al boton Agregar
 		var tabla = $(this).prev().get();
-
+		// Copiamos la primer fila de la tabla del catálogo y la clonamos
 		var strNueva_Fila = $(tabla).find('tbody').find('tr:eq(0)').clone().get();
-
+		// Agregamos la nueva fila a la tabla
 		$(tabla).find('tbody').append(strNueva_Fila);
 
 
