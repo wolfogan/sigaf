@@ -7,11 +7,11 @@ function addFormulario(){
 	var clave1F=$("#clave1F").val();
 	var materia=$("#materia").val();
 	var nivel=$("#nivel").val();
-	var carrera=$("#carrera").val();
+	var carreras=$("#carreras").val();
 	var etapaF=$("#etapaF").val();
 	var tipoF=$("#tipoF").val();
 	var clave2F=$("#clave2F").val();
-	var seriacion=$("#seriacion").val();
+	var serie=$("#serie").val();
 	var materiaSeriada=$("#materiaSeriada").val();
 	var hc=$("#hc").val();
 	var hl=$("#hl").val();
@@ -23,13 +23,11 @@ function addFormulario(){
 	var coord=$("#coord").val();
 	var semestre=$("#semestre").val();
 	var observaciones=$("#observaciones").val();
-	var tablaDatos= $("#tblDatos");
-	
-	if(clave1F!="" || materia!=""|| nivel!=""|| carrera!=""|| etapaF!="" || tipoF!="" || clave2F!=""|| seriacion!=""|| hc!=""|| hl!=""|| ht!=""|| he!=""|| hpc!=""|| hcl!=""|| creditosF!=""|| coord!="")
-	{
-		tablaDatos.append("<tr style='text-transform:uppercase; font-size:12px;' ><td>"+clave1F+"</td><td>"+materia+"</td><td>"+nivel+"</td><td>"+carrera+"</td><td>"+etapaF+"</td><td>"+tipoF+"</td><td>"+clave2F+"</td><td>"+seriacion+"</td><td style='text-align:center'>"+hc+"</td><td style='text-align:center'>"+hl+"</td><td style='text-align:center'>"+ht+"</td><td style='text-align:center'>"+he+"</td><td style='text-align:center'>"+hpc+"</td><td style='text-align:center'>"+hcl+"</td><td style='text-align:center'>"+creditosF+"</td><td>"+coord+"</td><td style='text-align:center'><input type='button' value='-' class='clsEliminarFila'></td></tr>");
+	var tablaDatos= $("#tblUA");
+
+		tablaDatos.append("<tr style='text-transform:uppercase; font-size:12px;'><td>"+clave1F+"</td><td>"+materia+"</td><td>"+carreras+"</td><td>"+etapaF+"</td><td>"+serie+"</td><td>"+tipoF+"</td><td style='text-align:center'>"+coord+"</td><td style='text-align:center'>"+hc+"</td><td style='text-align:center'>"+hl+"</td><td style='text-align:center'>"+ht+"</td><td>"+creditosF+"</td><td style='text-align:center'><input type='button' value='-' class='clsEliminarFila'></td></tr>");
 		reset_campos();
-	}
+
 	
 	/*cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
 	$(document).on('click','.clsEliminarFila',function(){
