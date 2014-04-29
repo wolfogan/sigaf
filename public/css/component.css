@@ -166,8 +166,7 @@
 	
 }
 
-#modal1
-{
+#modal1{
 
 	font-family:"Trebuchet MS";
 	font-size:16px;
@@ -187,13 +186,13 @@
 	margin-right: auto;
 }
 
-.clsAnchoTotal{
-	
+.clsAnchoTotal
+{
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-size:16px;
 	margin:8px;
-	
 }
+
 .clsAgregarFila
 {
 	margin-left:120px;
