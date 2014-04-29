@@ -100,13 +100,11 @@ function crearCatalogos()
 
 
 
-
-
-/*$(function(){
+$(function(){
 	$(document).on('click','.clsAgregarFilaNoPlan',function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
 		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
-		var strNueva_Fila='<tr>'+
+		/*var strNueva_Fila='<tr>'+
 			'<td><input type="text" style="width: 60px; height: 25px; border-radius:5px" class="clsAnchoTotal" onKeyPress="ValidaSoloNumeros()" maxlength="6" autofocus></td>'+
 			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
 			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
@@ -114,19 +112,27 @@ function crearCatalogos()
 		'</tr>';
 
 
+
 		var objTabla=$(this).parents().get(0);
-		$(objTabla).find('table').find('tbody').append(strNueva_Fila);
+		$(objTabla).find('table').find('tbody').append(strNueva_Fila);*/
+
+		var tabla = $(this).prev().get();
+
+		var strNueva_Fila = $(tabla).find('tbody').find('tr:eq(0)').clone().get();
+
+		$(tabla).find('tbody').append(strNueva_Fila);
 
 
-});
+	});
 
 //cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
 	$(document).on('click','.clsEliminarFila',function(){
-		/*if(!confirm('¿Desea eliminar el registro?')){
+		if(!confirm('¿Desea eliminar el registro?'))
+		{
 					return;
-				}*/
+		}
 		/*obtener el cuerpo de la tabla; contamos cuantas filas (tr) tiene
-		si queda solamente una fila le preguntamos al usuario si desea eliminarla
+		si queda solamente una fila le preguntamos al usuario si desea eliminarla*/
 		var objCuerpo=$(this).parents().get(2);
 			if($(objCuerpo).find('tr').length==1){
 				if(!confirm('Esta es la única fila de la lista ¿Desea eliminarla?')){
@@ -142,11 +148,11 @@ function crearCatalogos()
 				
 			tr	--> padre del td que contiene el boton
 				td	--> hijo de tr y padre del boton
-					boton --> hijo directo de td (y nieto de tr? si!)
+					boton --> hijo directo de td (y nieto de tr? si!) */
 		
 		var objFila=$(this).parents().get(1);
 			/*eliminamos el tr que contiene los datos del contacto (se elimina todo el
-			contenido (en este caso los td, los text y logicamente, el boton 
+			contenido (en este caso los td, los text y logicamente, el boton */
 			$(objFila).remove();
 	});
-*/
+});

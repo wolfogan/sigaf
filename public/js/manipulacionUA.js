@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
 		//evento que se dispara al hacer clic en el boton para agregar una nueva fila para numero de plan
 	$(document).on('click','.clsAgregarFilaNoPlan',function(){
 		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
@@ -17,7 +17,7 @@ $(function(){
 					tr -> padre 1
 						td -> padre 0
 		nosotros queremos utilizar el padre 3 para agregarle en la etiqueta
-		tbody una nueva fila*/
+		tbody una nueva fila
 
 		var objTabla=$(this).parents().get(0);
 		$(objTabla).find('table').find('tbody').append(strNueva_Fila);
@@ -31,7 +31,7 @@ $(function(){
 					return;
 				}*/
 		/*obtener el cuerpo de la tabla; contamos cuantas filas (tr) tiene
-		si queda solamente una fila le preguntamos al usuario si desea eliminarla*/
+		si queda solamente una fila le preguntamos al usuario si desea eliminarla
 		var objCuerpo=$(this).parents().get(2);
 			if($(objCuerpo).find('tr').length==1){
 				if(!confirm('Esta es la única fila de la lista ¿Desea eliminarla?')){
@@ -48,10 +48,10 @@ $(function(){
 			tr	--> padre del td que contiene el boton
 				td	--> hijo de tr y padre del boton
 					boton --> hijo directo de td (y nieto de tr? si!)
-		*/
+		
 		var objFila=$(this).parents().get(1);
 			/*eliminamos el tr que contiene los datos del contacto (se elimina todo el
-			contenido (en este caso los td, los text y logicamente, el boton */
+			contenido (en este caso los td, los text y logicamente, el boton 
 			$(objFila).remove();
 	});
 	
@@ -72,4 +72,4 @@ $(function(){
 			$('#divContenedor').append($(objTabla).clone());
 	});
 			
-});
+});*/
