@@ -1,5 +1,6 @@
 $(function(){
 	$("#guardar").click(addFormulario);
+
 });
 
 function addFormulario(){
@@ -7,7 +8,6 @@ function addFormulario(){
 	var clave1F=$("#clave1F").val();
 	var materia=$("#materia").val();
 	var nivel=$("#nivel").val();
-	var carreras=$("#carreras").val();
 	var etapaF=$("#etapaF").val();
 	var tipoF=$("#tipoF").val();
 	var clave2F=$("#clave2F").val();
@@ -25,16 +25,13 @@ function addFormulario(){
 	var observaciones=$("#observaciones").val();
 	var tablaDatos= $("#tblUA");
 
-		tablaDatos.append("<tr style='text-transform:uppercase; font-size:12px;'><td>"+clave1F+"</td><td>"+materia+"</td><td>"+carreras+"</td><td>"+etapaF+"</td><td>"+serie+"</td><td>"+tipoF+"</td><td style='text-align:center'>"+coord+"</td><td style='text-align:center'>"+hc+"</td><td style='text-align:center'>"+hl+"</td><td style='text-align:center'>"+ht+"</td><td>"+creditosF+"</td><td style='text-align:center'><input type='button' value='-' class='clsEliminarFila'></td></tr>");
+	$('.multiSelectOptions label').each(function(indice,elemento){
+		if($(elemento).hasClass('checked') && indice != 0){
+			tablaDatos.append("<tr class='gradeC' style='text-transform:uppercase; font-size:12px;'><td>"+clave1F+"</td><td>"+materia+"</td><td>"+$(elemento).text()+"</td><td>"+etapaF+"</td><td>"+serie+"</td><td>"+tipoF+"</td><td style='text-align:center'>"+coord+"</td><td style='text-align:center'>"+hc+"</td><td style='text-align:center'>"+hl+"</td><td style='text-align:center'>"+ht+"</td><td>"+creditosF+"</td><td style='text-align:center'><input type='button' value='-' class='clsEliminarFila'></td></tr>");
 		reset_campos();
+		}
+	});
 
-	
-	/*cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
-	$(document).on('click','.clsEliminarFila',function(){
-		var objFila=$(this).parents().get(1);
-			$(objFila).remove();
-	});*/
-	
 	function reset_campos()
 	{
 		$("#noPlan").val("");
@@ -58,51 +55,5 @@ function addFormulario(){
 		$("#semestre").val("");
 		$("#observaciones").val("");
 	}
-	
-	function getDatos(){
-		var clave1F="";
-		var materia="";
-		var nivel="";
-		var carrera="";
-		var etapaF="";
-		var tipoF="";
-		var clave2F="";
-		var seriacion="";
-		var hc="";
-		var hl="";
-		var ht="";
-		var he="";
-		var hpc="";
-		var hcl="";
-		var creditosF="";
-		var coord="";
-		/*var noPlan="";
-		var semestre="";
-		var materiaSeriada="";
-		var observaciones="";*/
-		var filasStr = datos.split("|||");
-		for(i=0;i<filasStr.length;i++)
-		{
-			var fila= filasStr[i];
-			var datosFila=fila.split("&&&");
-			clave1F=datosFila[0];
-			materia=datosFila[1];
-			nivel=datosFila[2];
-			carrera=datosFila[3];
-			etapaF=datosFila[4];
-			tipoF=datosFila[5];
-			clave2F=datosFila[6];
-			seriacion=datosFila[7];
-			hc=datosFila[8];
-			hl=datosFila[9];
-			ht=datosFila[10];
-			he=datosFila[11];
-			hpc=datosFila[12];
-			hcl=datosFila[13];
-			creditosF=datosFila[14];
-			coord=datosFila[15];
 
-			tablaDatos.append("<tr><td>"+clave1F+"</td><td>"+materia+"</td><td>"+nivel+"</td><td>"+carrera+"</td><td>"+etapaF+"</td><td>"+tipoF+"</td><td>"+clave2F+"</td><td>"+seriacion+"</td><td>"+hc+"</td><td>"+hl+"</td><td>"+ht+"</td><td>"+he+"</td><td>"+hpc+"</td><td>"+hcl+"</td><td>"+creditosF+"</td><td>"+coord+"</td></tr>");
-		}
-	}
 }

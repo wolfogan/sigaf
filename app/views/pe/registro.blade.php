@@ -11,7 +11,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
         
         <!-- Estilos del dataTable-->
-        <link rel="stylesheet" type="text/css" href="../css/demo_page.css">
 		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
         <!--Aqui termina estilo del dataTable-->
         
@@ -24,7 +23,7 @@
 		<script>$(function(){startWatch(); return false;});</script> <!-- Script tiempo -->
         
        <!-- Script dataTable -->
-		<script type="text/javascript" language="javascript" src="../js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#tblUA').dataTable();
@@ -157,8 +156,8 @@
 							<label>Carrera:</label>
 								<select style="font-weight:normal; width: 143px" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
 									<option value="TRONCOCOMUN">TRONCO COMUN</option>
-									<option value="ADMON">ADMON.</option>
-									<option value="CONTAB">CONTAB.</option>
+									<option value="ADMON">ADMINISTRACION</option>
+									<option value="CONTAB">CONTABILIDAD</option>
 									<option value="INFORMATICA">INFORMATICA</option>
 									<option value="NEGOCIOS">NEGOCIOS</option>
 								</select>
@@ -515,15 +514,15 @@
 	</body>
 <!----------------------------------------------------------->
 <!--SCRIPT PARA VENTANA MODAL-->
-<script type="text/javascript" src="../js/manipulacionUA.js"></script>
-<script type="text/javascript" src="../js/insertarua.js"></script>
 <script type="text/javascript" src="../js/jquery.multiSelect.js"></script>
+<script type="text/javascript" src="../js/insertarua.js"></script>
 <script>
 			$(document).ready( function() {
 				// Default options
 				$("#control_3").multiSelect();	
 			});
 		</script>
+
 <!----------------------------------------------------------->
 
 </html>
