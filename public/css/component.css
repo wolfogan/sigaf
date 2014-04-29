@@ -47,7 +47,7 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	width: 550px;
+	width: 700px;
 	max-width: 630px;
 	min-width: 320px;
 	height: auto;
@@ -165,18 +165,15 @@
 	
 	
 }
-#modal1
-{
-	
+
+#modal1{
+
 	font-family:"Trebuchet MS";
 	font-size:16px;
 	background: #FFF;
 	border-radius: 5px;
 	color: #000000;
 	text-align:center;
-	
-	
-	
 }
 
 #tablita
@@ -189,13 +186,13 @@
 	margin-right: auto;
 }
 
-.clsAnchoTotal{
-	
+.clsAnchoTotal
+{
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-size:16px;
 	margin:8px;
-	
 }
+
 .clsAgregarFila
 {
 	margin-left:120px;

@@ -1,9 +1,54 @@
-// Construcción de la ventana modal para los catálogos
-var idCatalogos = ['plan','unidad','campus','nivel','carrera','etapa','tipo','seriacion','carrera'];
-var titulosCatalogos = ['Número de Plan','Unidad Acádemica','Campus','Nivel','Carrera','Etapa','Tipo','Seriación','Carrera'];
+// Variable JSON para las tablas de los catálogos
+var titulos = {
+	'plan' :{ 
+		'titulo':'Número de Plan',
+		'campos':['Clave','Nombre','Fecha Inicio','Fecha Final']
+	},
+	'unidad':{
+		'titulo':'Unidad Acádemica',
+		'campos':['Código','Nombre','Administrador','Subdirector']
+	},
+	'campus':{
+		'titulo':'Campus',
+		'campos':['Código','Ciudad','Dirección']
+	},
+	'nivel':{
+		'titulo':'Nivel',
+		'campos':['Código','Nombre']
+	},
+	'carrera':{
+		'titulo':'Carrera',
+		'campos':['Código','Nombre','Coordinador']
+	},
+	'etapa':{
+		'titulo':'Etapa',
+		'campos':['Código','Nombre']
+	},
+	'tipo':{
+		'titulo':'Tipo',
+		'campos':['Código','Nombre']
+	},
+	'seriacion':{
+		'titulo':'Seriación',
+		'campos':['Código','Nombre']
+	},
+	'carrera':{
+		'titulo':'Carrera',
+		'campos':['Código','Nombre']
+	},
+	'coordinación':{
+		'titulo':'Coordinación',
+		'campos':['Código','Nombre']
+	}
+};
 
-var ejemplo = '<div id="tablita"><div id="tablita2"><table id="modal1" width="461"><thead><tr><th width="82" height="28">Clave</th><th width="82" height="28">Nombre</th><th width="82">Fecha inicio</th><th width="82">Fecha fin</th><th>Elim.</th></tr></thead><tbody><tr><td><input type="text" style="width: 60px; height: 25px; border-radius:5px" class="clsAnchoTotal" onkeypress="ValidaSoloNumeros()" maxlength="6" autofocus></td><td><input type="text" style="width: 60px; height: 25px; border-radius:5px" class="clsAnchoTotal" maxlength="6" autofocus></td><td><input type="date" name="fecha" style="width: 80px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td><td><input type="date" name="fecha" style="width: 80px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td><td width="50" align="center"><input type="button" value="-" class="clsEliminarFila"/></td></tr></tbody></table></div></div>';
-
+/**
+ * Función que crea la estructura de las ventanas modales con el contenido que es una tabla.
+ * @param  {string} id     Indica el id que tendra la ventana modal en el catálogo.
+ * @param  {string} titulo Título que despliega la tabla modal.
+ * @param  {string} tabla  HTML de la tabla para embeberla.
+ * @return {string}        Retorna la ventana completa en formato HTML.
+ */
 function estructura(id,titulo,tabla)
 {
 	var ventana ='<div class="md-modal md-effect-11" id="'+ id +'"> ' +
@@ -17,16 +62,97 @@ function estructura(id,titulo,tabla)
 	return ventana;
 }
 
+
+function crearTabla(encabezados)
+{
+	var tabla = ' <table width="90%" id="modal1"><thead>';
+	var renglon = '';
+	tabla += "<tr>";
+	for(var i in encabezados)
+	{
+		tabla += "<th>" + encabezados[i] + "</th>";
+		renglon += '<td>';
+		renglon += '<input type="text" style:"width:5px;" />';
+		renglon += '</td>';
+	}
+	// Agregar la columna eliminar registro.
+	tabla+='<th>Eliminar</th>';
+
+	// Agregar al renglón de inicio en la columna eliminar un botón.
+	renglon+='<td width="50" align="center"><input type="button" value="-" class="clsEliminarFila"/></td>';
+	
+	tabla += '</tr></thead><tbody><tr>'+ renglon +'</tr></tbody></table>';
+	return tabla;
+}
+
 function crearCatalogos()
 {
-	var tablaCatalogos='';
-	for(var i in idCatalogos)
+	var ventanaCatalogos='';
+
+	for(var id in titulos)
 	{
-		tablaCatalogos += estructura(idCatalogos[i],titulosCatalogos[i],ejemplo);
+		ventanaCatalogos += estructura(id,titulos[id].titulo,crearTabla(titulos[id].campos));
 	}
-	tablaCatalogos += '<div class="md-overlay"></div>';
+	ventanaCatalogos += '<div class="md-overlay"></div>';
 	
-	return tablaCatalogos;
+	return ventanaCatalogos;
 }
 
 
+
+$(function(){
+	$(document).on('click','.clsAgregarFilaNoPlan',function(){
+		//almacenamos en una variable todo el contenido de la nueva fila que deseamos
+		//agregar. pueden incluirse id's, nombres y cualquier tag... sigue siendo html
+		/*var strNueva_Fila='<tr>'+
+			'<td><input type="text" style="width: 60px; height: 25px; border-radius:5px" class="clsAnchoTotal" onKeyPress="ValidaSoloNumeros()" maxlength="6" autofocus></td>'+
+			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
+			'<td><input type="date" name="fecha" style="width: 140px; height: 25px; border-radius:5px" class="clsAnchoTotal"></td>'+
+			'<td align="center"><input type="button" value="-" class="clsEliminarFila"/></td>'+
+		'</tr>';
+
+
+
+		var objTabla=$(this).parents().get(0);
+		$(objTabla).find('table').find('tbody').append(strNueva_Fila);*/
+
+		var tabla = $(this).prev().get();
+
+		var strNueva_Fila = $(tabla).find('tbody').find('tr:eq(0)').clone().get();
+
+		$(tabla).find('tbody').append(strNueva_Fila);
+
+
+	});
+
+//cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
+	$(document).on('click','.clsEliminarFila',function(){
+		if(!confirm('¿Desea eliminar el registro?'))
+		{
+					return;
+		}
+		/*obtener el cuerpo de la tabla; contamos cuantas filas (tr) tiene
+		si queda solamente una fila le preguntamos al usuario si desea eliminarla*/
+		var objCuerpo=$(this).parents().get(2);
+			if($(objCuerpo).find('tr').length==1){
+				if(!confirm('Esta es la única fila de la lista ¿Desea eliminarla?')){
+					return;
+				}
+			}
+					
+		/*obtenemos el padre (tr) del td que contiene a nuestro boton de eliminar
+		que quede claro: estamos obteniendo dos padres
+					
+		el asunto de los padres e hijos funciona exactamente como en la vida real
+		es una jergarquia. imagine un arbol genealogico y tendra todo claro ;)
+				
+			tr	--> padre del td que contiene el boton
+				td	--> hijo de tr y padre del boton
+					boton --> hijo directo de td (y nieto de tr? si!) */
+		
+		var objFila=$(this).parents().get(1);
+			/*eliminamos el tr que contiene los datos del contacto (se elimina todo el
+			contenido (en este caso los td, los text y logicamente, el boton */
+			$(objFila).remove();
+	});
+});

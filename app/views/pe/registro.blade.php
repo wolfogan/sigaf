@@ -3,7 +3,6 @@
 	
 	<head>
 		<meta charset="utf-8"/>
-
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
@@ -284,7 +283,10 @@
 								<option value="CIENCIAS COMPUTACIONALES">
 								<option value="SISTEMAS DE INFORMACION">
 								<option value="PROGRAMACION">
-							</datalist><input class="estilo_button" type="button" value="+">
+							</datalist>
+							<!-- TABLA MODAL COORDINACIÓN-->
+							<input class="md-trigger" data-modal="coordinación" type="button" value="+">
+							<!--             -->
 						</div>
 
 
