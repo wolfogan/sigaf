@@ -644,3 +644,12 @@ background: #EFCA0D;
  overflow-y: scroll;
 
 }
+#mensajesIcono
+{
+	
+	float:right;
+	height:50px;
+	margin-right:110px;
+	width:150px;
+		
+}
