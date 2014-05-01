@@ -55,6 +55,8 @@
    -o-transition: all 0.5s linear;
    -ms-transition: all 0.5s linear;
    transition: all 0.5s linear;
+   text-align:center;
+   width:200px;
 }
 .view-tenth a.info {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
