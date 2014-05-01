@@ -183,7 +183,8 @@ window.onload=function(){startTime();}
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 <footer></footer>
 </div>
 </body>

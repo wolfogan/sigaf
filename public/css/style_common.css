@@ -1,7 +1,7 @@
 .view {
-	width: 250px;
-	height: 200px;
-	margin: 10px;
+	width: 200px;
+	height: 150px;
+	margin: 15px;
 	float: left;
 	border: 7px solid #ECA22E;
 	border-radius:8px;	
@@ -15,8 +15,9 @@
 	background: #fff url(../imagenes/bgimg2.jpg) no-repeat center center;
 	
 }
+/*define el cuadrito verde del nombre y mascara*/
 .view .mask,.view .content {
-   width: 300px;
+   width: 250px;
    height: 200px;
    position: absolute;
    overflow: hidden;
@@ -33,11 +34,10 @@
    text-align: center;
    position: relative;
    font-size: 17px;
-   padding: 5px;
+   padding: 0px;
    background: rgba(204, 119, 34, 0.8);
    margin: 20px 0 0 0;
-   width:240px;
-   
+   width:200px;   
 }
 .view p {
    font-family: Georgia, serif;
@@ -51,7 +51,6 @@
 }
 .view p{
 	text-decoration:underline;
-
 }
 .view a.info {
    display: inline-block;
