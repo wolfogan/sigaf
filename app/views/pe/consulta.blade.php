@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="../css/component.css"/>
 
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.dragsort-0.5.1.min.js"></script>
 <!-- funcion de Impresion -->
 <script language="Javascript"> 
@@ -25,12 +25,11 @@ ventimp.close();
 </script> 
 <!-- Fin funcion de impresion-->
 
-
-<!--SCRIPT PARA FECHA Y HORA-->
 <!--AQUI VA HORA Y FECHA-->
-<script src="../js/tiempoactual.js"></script>
-<script>$(function(){startWatch(); return false;});</script>
-<!-- Script tiempo -->
+		<script src="../js/tiempoactual.js"></script>
+		<script>$(function(){startWatch(); return false;});</script>
+		<!-- Script tiempo -->
+
 
 <script type="text/javascript">
 		$(function(){
@@ -39,8 +38,8 @@ ventimp.close();
 				$(this).parent().parent().remove();	
 			});
 		});
-</script>
-
+	</script>
+<!---------------------------------------------------------------------------------------->
 <title>Plan de estudios</title>
 </head>
 <body>
@@ -62,7 +61,6 @@ ventimp.close();
 		</div>
 		<div id="fecha" class="texto_body">
 			Fecha Actualizada
-			<label id="reloj"></label>
 		</div>
 	</div>
 	<div id="ubicacion" class="texto_body">

@@ -69,7 +69,8 @@ function startTime()
 function startWatch()
 {
 	var fecha = day + myweekday+" de "+month+ " de " +myyear+",";
-	$("#fecha").prepend(fecha);
+	fecha += '<label id="reloj"></label>';
+	$("#fecha").html(fecha);
 	startTime();
 }
 

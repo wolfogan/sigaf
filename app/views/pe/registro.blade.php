@@ -51,7 +51,7 @@
 					Usuario: Iván Avila
 				</div>
 				<div id="fecha" class="texto_body">
-					<label id="reloj"></label>
+					Fecha Actualizada
 				</div>
 			</div>
 			<div id="ubicacion" class="texto_body">
