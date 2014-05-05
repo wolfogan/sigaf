@@ -19,9 +19,12 @@
 
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
+		<script>$(function(){startWatch(); return false;});</script>
+		<!-- Script tiempo -->
+		
+		<!-- Creación de Ventanas Modales -->
 		<script src="../js/ventanamodal.js"></script>
-		<script>$(function(){startWatch(); return false;});</script> <!-- Script tiempo -->
-        
+
        <!-- Script dataTable -->
 		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
 		<script type="text/javascript" charset="utf-8">

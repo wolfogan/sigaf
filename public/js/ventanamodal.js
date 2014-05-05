@@ -10,7 +10,7 @@ var titulos = {
 	},
 	'campus':{
 		'titulo':'Campus',
-		'campos':['Código', 'descripcion', 'Ciudad','Dirección']
+		'campos':['Código', 'Descripción', 'Ciudad','Dirección']
 	},
 	'nivel':{
 		'titulo':'Nivel',
