@@ -6,11 +6,11 @@ var titulos = {
 	},
 	'unidad':{
 		'titulo':'Unidad Acádemica',
-		'campos':['Código','Nombre','Administrador','Subdirector']
+		'campos':['Código','Descripcion corta','Descripcion larga']
 	},
 	'campus':{
 		'titulo':'Campus',
-		'campos':['Código','Ciudad','Dirección']
+		'campos':['Código', 'descripcion', 'Ciudad','Dirección']
 	},
 	'nivel':{
 		'titulo':'Nivel',
