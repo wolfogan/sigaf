@@ -100,7 +100,7 @@ window.onload=function(){startTime();}
 			<div class="mask">
 				<h2>Plan de estudios</h2>
 				<p>
-					<a href="registrope.html" style="color:#004000">Registrar, consultar, modificar y eliminar unidad de aprendizaje.</a>
+					<a href="<?=URL::to('planestudio/registro'); ?>" style="color:#004000">Registrar, consultar, modificar y eliminar unidad de aprendizaje.</a>
 				</p>
 				<p>
 					<a href="consultape.html" style="color:#004000"></a>

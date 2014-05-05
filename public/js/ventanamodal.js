@@ -43,7 +43,7 @@ var titulos = {
 };
 
 /**
- * Función que crea la estructura de las ventanas modales con el contenido que es una tabla.
+ * Descripción: Función que crea la estructura de las ventanas modales con el contenido que es una tabla.
  * @param  {string} id     Indica el id que tendra la ventana modal en el catálogo.
  * @param  {string} titulo Título que despliega la tabla modal.
  * @param  {string} tabla  HTML de la tabla para embeberla.
