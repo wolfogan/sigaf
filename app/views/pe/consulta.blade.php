@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
+<head>
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 <link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 <link rel="stylesheet" type="text/css" href="../css/estilodrag.css">
 <link rel="stylesheet" type="text/css" href="../css/component.css"/>
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.dragsort-0.5.1.min.js"></script>
 <!-- funcion de Impresion -->
@@ -26,7 +28,66 @@ ventimp.close();
 <div> 
 
 <!--SCRIPT PARA FECHA Y HORA-->
-
+<script language="javascript"> 
+        mydate = new Date(); 
+        myday = mydate.getDay(); 
+        mymonth = mydate.getMonth(); 
+        myweekday= mydate.getDate(); 
+        myyear=mydate.getFullYear();
+        weekday= myweekday; 
+        if(myday == 0) 
+        day = " Domingo " 
+        else if(myday == 1) 
+        day = " Lunes " 
+        else if(myday == 2) 
+        day = " Martes " 
+        else if(myday == 3) 
+        day = " Miércoles " 
+        else if(myday == 4) 
+        day = " Jueves " 
+        else if(myday == 5) 
+        day = " Viernes " 
+        else if(myday == 6) 
+        day = " Sábado " 
+        if(mymonth == 0) 
+        month = "Enero " 
+        else if(mymonth ==1) 
+        month = "Febrero " 
+        else if(mymonth ==2) 
+        month = "Marzo " 
+        else if(mymonth ==3) 
+        month = "Abril " 
+        else if(mymonth ==4) 
+        month = "Mayo " 
+        else if(mymonth ==5) 
+        month = "Junio " 
+        else if(mymonth ==6) 
+        month = "Julio " 
+        else if(mymonth ==7) 
+        month = "Agosto " 
+        else if(mymonth ==8) 
+        month = "Setiembre " 
+        else if(mymonth ==9) 
+        month = "Octubre " 
+        else if(mymonth ==10) 
+        month = "Noviembre " 
+        else if(mymonth ==11) 
+        month = "Diciembre " 
+    </script>
+<script>
+        function startTime(){
+        today=new Date();
+        h=today.getHours();
+        m=today.getMinutes();
+        s=today.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+        t=setTimeout('startTime()',500);}
+        function checkTime(i)
+        {if (i<10) {i="0" + i;}return i;}
+        window.onload=function(){startTime();}
+    </script>
 <script type="text/javascript">
 		$(function(){
 			$('.eliminarBloquecito').on('click',function()
@@ -49,7 +110,7 @@ ventimp.close();
 </div>
 <figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 </header>
-	@include('includes.menu')
+@include('includes.menu') 
 <div id="indicadores">
 	<div id="usuariofecha">
 		<div id="usuario" class="texto_body">
@@ -74,8 +135,8 @@ ventimp.close();
 </div>
 <section>
 
-	
-	
+	<div id="statusPlanEstudios"><label>Estatus del plan</label></div>
+	<div id="checkSubdirector"><input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label></div>
 <div id="Consultas">
 	<fieldset id="consultaPlan">
 		<legend>Consultar por:</legend>
@@ -92,6 +153,7 @@ ventimp.close();
 			<div id="consul_nivel">
 				<label>Nivel: </label>
 				<select class="con_estilo" name="nivel" size=1>
+					<option value="TC">TRONCO COMUN</option>
 					<option value="LIC">LIC.</option>
 					<option value="POSTGRADO">POSTGRADO</option>
 					<option value="TECNICO">TECNICO</option>
@@ -100,7 +162,6 @@ ventimp.close();
 			<div id="consul_carrera">
 				<label>Carrera: </label>
 				<select class="con_estilo" name="carrera" size=1>
-					<option value="TC">TRONCO COMUN</option>
 					<option value="ADMON">ADMON.</option>
 					<option value="CONTAB">CONTAB.</option>
 					<option value="INFORMATICA">INFORMATICA</option>
@@ -567,9 +628,7 @@ ventimp.close();
 	<div id="totalcreditos">
 		 Materias obligatorias: Materias optativas: Total de creditos:
 	</div>
-    <div id="imprimir">
-    
-    </div>
+    <div id="imprimir"></div>
 	<div id="actualizaimprime">
 		<input style="font-size:18px" class="estilo_button2" type="button" value="Actualizar">
 		&nbsp;&nbsp;<a href="javascript:imprSelec('imprimir')"  target="_parent"><input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir"></a></div>
@@ -588,5 +647,5 @@ ventimp.close();
 <script src="../js/classie.js"></script>
 <script src="../js/modalEffects.js"></script>
 <script src="../js/css-filters-polyfill.js"></script>
-<script type="text/javascript" src="../js/manipulacion.js"></script>
+
 </html>

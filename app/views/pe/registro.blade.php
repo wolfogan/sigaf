@@ -88,26 +88,19 @@
 					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
 					<div id="unidadAcademicaDiv">
 						<label>U.Acad:</label>
-						<select class="con_estilo" name="ua" id="ua" type="text" size=1>
-							<option value="FCA">FCA</option>
-							<option value="FCQ">FCQ</option>
-							<option value="FMO">FMO</option>
-						</select>
+						<label style="color:#ECA22E">FCA</label>
+							
 						<!-- TABLA MODAL UNIDAD-->
-						<input class="md-trigger" data-modal="unidad" type="button" value="+">
+						<!--<input class="md-trigger" data-modal="unidad" type="button" value="+">-->
 						<!--             -->
 					</div>
 					<!-- ----------------------------------------------------------------------------------- -->
 
 					<div id="campusDiv">
 						<label>Campus: </label>
-						<select class="con_estilo" name="campus" id="campus" size=1 type="text">
-							<option value="TIJUANA">TIJUANA</option>
-							<option value="TECATE">TECATE</option>
-							<option value="MEXICALI">MEXICALI</option>
-						</select>
+						<label style="color:#ECA22E">TIJUANA</label>
 						<!-- TABLA MODAL CAMPUS-->
-						<input class="md-trigger" data-modal="campus" type="button" value="+">
+						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
 						<!--             -->
 					</div>
 		
@@ -304,7 +297,7 @@
 				<th>MATERIA</th>
 				<th>CARRERA</th>
 				<th>ETAPA</th>
-				<th>SERIACIÓN</th>
+				<th>CLAVE_SERIACION</th>
 				<th>TIPO</th>
 				<th>COORDINACIÓN</th>
 				<th>HC</th>
@@ -320,7 +313,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Este materia esta seriada con esta otra">2130</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -334,7 +327,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">1249</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -348,7 +341,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">9309</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -362,7 +355,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">3900</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -376,7 +369,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">3907</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -390,7 +383,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">3909</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -404,7 +397,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">3009</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -418,7 +411,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">9023</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -434,7 +427,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">2934</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -448,7 +441,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">1209</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -462,7 +455,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">2939</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -476,7 +469,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center">Sugerida</td>
+				<td class="center" title="Esta materia esta seriada con esta otra">8390</td>
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>

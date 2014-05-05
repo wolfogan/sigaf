@@ -80,11 +80,10 @@ section #primerBloque
 {
 	
 	padding-top: 20px;
-	padding-right: 10px;
-	padding-left: 25px;
+	padding-right: 0px;
 	padding-bottom: 10px;
 	height: 40px;
-	width: 1010px;
+	width: 950px;
 	margin: auto;
 }
 section #segundoBloque
@@ -453,27 +452,38 @@ background: #EFCA0D;
 #noPlanDiv
 {
 	
-	width: 230px;
+	width: 250px;
 	float: left;
 	padding-left: 5px;
+	padding-right:15px;
 }
 #unidadAcademicaDiv
 {
-	width: 250px;
+	
+	width: 210px;
 	float: left;
-	padding-left: 20px;
+	margin-top:5px;
+	padding-left: 15px;
+	
+	
+	
 }
 #campusDiv
 {
-	width: 250px;
+
+	width: 210px;
 	float: left;
-	padding-left: 0px;
+	margin-top:5px;
+	padding-left: 15px;
+
+	
 }
 #nivelDiv
 {
+
 	width: 230px;
 	float: left;
-	padding-left: 5px;
+	padding-left: 0px;
 }
 #claveDiv
 {
@@ -589,9 +599,9 @@ background: #EFCA0D;
 {
 	
 	margin-left: 1000px;
-	margin-top: -15px;
+	margin-top: -10px;
 	margin-bottom: 10px;
-	width: 250px;
+	width: 300px;
 
 }
 
@@ -652,4 +662,25 @@ background: #EFCA0D;
 	margin-right:110px;
 	width:150px;
 		
+}
+
+#statusPlanEstudios
+{
+	
+	font-size: 18px;
+	float: right;
+	margin-right: 90px;
+	padding: 7px;
+	padding-top: 12px;
+	padding-bottom: 0px;
+	width: 150px;
+	
+}
+#checkSubdirector
+{
+	
+	float: right;
+	padding: 5px;
+	padding-top: 12px;
+	padding-right: 20px;
 }
