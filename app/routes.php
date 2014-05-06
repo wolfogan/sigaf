@@ -10,10 +10,19 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+// RUTA PRINCIPAL
 Route::get('/', function()
 {
-	return View::make('index');
+	return View::make('login');
 });
+
+Route::get('main',array('before'=>'auth',function()
+{
+	return View::make('main.index');
+}));
+
+// RUTAS DEL LOGIN
+Route::controller('login','UserLoginController');
+
 
 Route::controller('planestudio','PlanEstudioController');

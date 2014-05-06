@@ -2,6 +2,12 @@
 
 class PlanEstudioController extends BaseController
 {
+
+	public function __construct()
+	{
+		$this->beforeFilter('auth');
+	}
+
 	public function getIndex()
 	{
 
@@ -16,4 +22,11 @@ class PlanEstudioController extends BaseController
 	{
 		return View::make('pe.consulta');
 	}
+
+	public function postRegistrarnoplan()
+	{
+
+	}
+
+	
 }

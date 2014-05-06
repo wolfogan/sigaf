@@ -207,26 +207,40 @@
 	width:100px;
 }
 
-.clsAgregarFilaNoPlan
-{
-	margin-left:120px;
-	border-color:#468C00; 
-	border-radius:5px;
-	background-color:#004000; 
-	color:#fff; 
-	font-size:23px; 
-	text-align: center;
-	height: 50px;
-	width:100px;
-}
-
 .clsAgregarFila:hover
 {
 	background: #ECA22E;
 }
-.clsAgregarFilaNoPlan:hover
+
+.clsActualizarFila
 {
-	background: #ECA22E;
+	
+	border-color:#468C00; 
+	border-radius:5px;
+	background-color:#BDBDBD; 
+	color:#fff; 
+	font-size:23px; 
+	text-align: center;
+	height: 50px;
+	width:120px;
+}
+
+
+.clsEditarFila
+{
+	height:25px; 
+	width:28px; 
+	border-color:#468C00; 
+	border-radius:5px;
+	background-color:#004000;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+	
+}
+.clsEditarFila:hover
+{
+background: #ECA22E;	
 }
 .clsEliminarFila
 {
@@ -255,6 +269,8 @@ background: #ECA22E;
 	width:30px;
 	text-decoration:none;
 }
+
+
 
 .md-close
 {

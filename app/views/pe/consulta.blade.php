@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -57,7 +57,7 @@ ventimp.close();
 <div id="indicadores">
 	<div id="usuariofecha">
 		<div id="usuario" class="texto_body">
-			Usuario: Iván Avila
+			Usuario: {{Auth::user()->username}}
 		</div>
 		<div id="fecha" class="texto_body">
 			Fecha Actualizada

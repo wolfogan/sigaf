@@ -4,7 +4,8 @@
 		<ul>
 			<li><a href="<?=URL::to('planestudio/registro')?>" title="SubMenu 1">Registrar UA</a></li>
 			<li><a href="<?=URL::to('planestudio/consulta')?>" titile="SubMenu 2">Consulta y modificación</a></li>
-			<li class="ultimo"><a href="<?=URL::to('/');?>" title="SubMenu 3">Menu principal</a></li>
+			<li><a href="<?=URL::to('main');?>" title="SubMenu 3">Menu principal</a></li>
+			<li class="ultimo"><a href="<?=URL::to('login/logout');?>" title="SubMenu 4">Logout</a></li>
 		</ul>
 		</li>
 		<li><a href="#" titile="Menu 2">Carga académica</a>
