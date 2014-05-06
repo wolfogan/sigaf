@@ -28,5 +28,38 @@ class PlanEstudioController extends BaseController
 
 	}
 
-	
+	public function postRegistrarnivel()
+	{
+
+	}
+
+	public function postRegistrarcarrera()
+	{
+
+	}
+
+	public function postRegistraretapa()
+	{
+
+	}
+
+	public function postRegistrartipo()
+	{
+
+	}
+
+	public function postRegistrarSeriacion()
+	{
+
+	}
+
+	public function postRegistrarcarrera()
+	{
+
+	}
+
+	public function postRegistrarcoordinacion()
+	{
+		
+	}
 }
