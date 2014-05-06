@@ -684,3 +684,157 @@ background: #EFCA0D;
 	padding-top: 12px;
 	padding-right: 20px;
 }
+/* ---------------- USUARIOS --------------------*/
+#usuarioContrasena
+{
+
+ height: 300px;
+ width: 400px;
+ margin: auto;
+ padding-bottom: 100px;
+}
+#usuarios
+{
+	height: 300px;
+	width: 400px;
+	margin: auto;
+	margin-top: 100px;
+	
+}
+#usuarioLogin
+{
+	
+	margin: auto;
+	margin-top: 30px;
+	width: 300px;
+}
+#contrasenaLogin
+{
+	
+	margin: auto;
+	margin-top: 20px;
+	padding-bottom: 30px;
+	width: 300px;
+	
+	
+}
+#btnIniciarSesion
+{
+
+	margin: auto;
+	width: 200px;
+}
+#RegistrarseUsuarios
+{
+
+	font-size: 16px;
+	font-family: "Trebuchet Ms";
+	font-weight: bold;
+	color:#004000;
+	margin-right:0px;
+	margin-top: 30px;
+	width: 300px;
+}
+
+#formularioRegUsuarios
+{
+
+	
+	margin: auto;
+	margin-top: 70px;
+	padding-bottom: 50px;
+	width: 670px;
+}
+#nombreApellidos
+{
+	
+	margin-top: 30px;
+	margin: auto;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom:60px;
+	width: 630px;
+
+}
+#nombreRegUsuarios
+{
+	
+	float: left;
+	width: 300px;
+}
+#apellidosRegUsuarios
+{
+	
+	float: left;
+	padding-left: 30px;
+	width: 300px;
+}
+#correoContrasena
+{
+	margin:auto;
+	padding-left: 15px;
+	padding-bottom: 70px;
+	width: 630px;
+	
+}
+#correoE
+{
+	
+	float: left;	
+	width: 300px;
+}
+#contrasenaRegUsuarios
+{
+	
+	float: left;	
+	padding-left: 30px;
+	width: 300px;
+}
+
+#unidadCampusReg
+{
+
+	
+	margin:auto;
+	padding-left: 15px;
+	padding-bottom: 150px;
+	width: 670px;
+
+}
+#unidadAcadRegUsuarios
+{
+	
+	float: left;
+	padding-left: 20px;
+	width: 300px;
+}
+#campusRegUsuarios
+{
+	
+	float: left;
+	padding-left: 30px;
+	width: 320px;
+}
+#btnCampusReg
+{
+	
+	float: left;
+	padding-left: 7px;
+	width: 30px;
+}
+#btnRegistroUsuario
+{
+	
+	margin:auto;
+	width: 200px;
+}
+#btnUnidadAcadRegistro
+{
+	
+	float: left;
+	padding-left: 7px;
+	width: 30px;
+
+}
+
+/* ---------------- TERMINA USUARIOS --------------------*/
