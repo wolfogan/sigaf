@@ -23,43 +23,5 @@ class PlanEstudioController extends BaseController
 		return View::make('pe.consulta');
 	}
 
-	public function postRegistrarnoplan()
-	{
-
-	}
-
-	public function postRegistrarnivel()
-	{
-
-	}
-
-	public function postRegistrarcarrera()
-	{
-
-	}
-
-	public function postRegistraretapa()
-	{
-
-	}
-
-	public function postRegistrartipo()
-	{
-
-	}
-
-	public function postRegistrarSeriacion()
-	{
-
-	}
-
-	public function postRegistrarcarrera()
-	{
-
-	}
-
-	public function postRegistrarcoordinacion()
-	{
-		
-	}
+	
 }
