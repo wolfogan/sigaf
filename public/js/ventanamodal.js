@@ -2,43 +2,43 @@
 var titulos = {
 	'plan' :{ 
 		'titulo':'Número de Plan',
-		'campos':['Clave','Nombre','Fecha Inicio','Fecha Final']
-	},
-	'unidad':{
-		'titulo':'Unidad Acádemica',
-		'campos':['Código','Descripcion corta','Descripcion larga']
-	},
-	'campus':{
-		'titulo':'Campus',
-		'campos':['Código', 'Descripción', 'Ciudad','Dirección']
+		'campos':['Código','Descripción','Fecha Inicio','Fecha Final'],
+		'action':"registrarnoplan"
 	},
 	'nivel':{
 		'titulo':'Nivel',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registrarnivel"
 	},
 	'carrera':{
 		'titulo':'Carrera',
-		'campos':['Código','Nombre','Coordinador']
+		'campos':['Código','Nombre','Coordinador'],
+		'action':"registrarcarrera"
 	},
 	'etapa':{
 		'titulo':'Etapa',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registraretapa"
 	},
 	'tipo':{
 		'titulo':'Tipo',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registrartipo"
 	},
 	'seriacion':{
 		'titulo':'Seriación',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registrarseriacion"
 	},
 	'carrera':{
 		'titulo':'Carrera',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registrarcarrera"
 	},
 	'coordinación':{
 		'titulo':'Coordinación',
-		'campos':['Código','Nombre']
+		'campos':['Código','Nombre'],
+		'action':"registrarcoordinacion"
 	}
 };
 
@@ -49,20 +49,24 @@ var titulos = {
  * @param  {string} tabla  HTML de la tabla para embeberla.
  * @return {string}        Retorna la ventana completa en formato HTML.
  */
-function estructura(id,titulo,tabla)
+function estructura(id,titulo,tabla,action)
 {
 	var ventana ='<div class="md-modal md-effect-11" id="'+ id +'"> ' +
-			'<div class="md-content">'+
+			'<form  action="'+ action +'" class="md-content" method="post">'+
 				'<h3>'+ titulo +'</h3>'+ tabla +
-				'<input type="button" value="Agregar" class="clsAgregarFilaNoPlan" />'+
-				'<input type="button" value="Guardar" class="estilo_button2" />'+
+				'<input type="button" value="Agregar" class="clsAgregarFila" />'+
+				'<input type="submit" value="Guardar" class="clsActualizarFila" />'+
 				'<input type="button" value="Salir" class="md-close" />'+
-			'</div>'+
+			'</form>'+
 		'</div>';
 	return ventana;
 }
 
-
+/**
+ * Funcón para crear la tabla que contendra los datos del catalogo
+ * @param  {string} encabezados Envia los nombre de los campos del catalogo 
+ * @return {string}             Regresa la tabla del catalogo con una fila oculta.
+ */
 function crearTabla(encabezados)
 {
 	var tabla = ' <table width="90%" id="modal1"><thead>';
@@ -70,77 +74,93 @@ function crearTabla(encabezados)
 	tabla += "<tr>";
 	for(var i in encabezados)
 	{
+		// Agrega el encabezado a la columna
 		tabla += "<th>" + encabezados[i] + "</th>";
+
+		// Agrega los controles del renglon de inicio a la tabla, si es fecha , un control date.
 		renglon += '<td>';
-		renglon += '<input type="text" style:"width:5px;" />';
+		// Si el encabezado contiene fecha agregar control tipo fecha
+		if(encabezados[i].lastIndexOf("Fecha",0)!=0)
+			renglon += '<input  type="text" style:"width:5px;" />';
+		else
+			renglon+='<input  type="date" name="fecha" style="width: 200px; height: 25px; border-radius:5px" class="clsAnchoTotal" />';
 		renglon += '</td>';
 	}
-	// Agregar la columna eliminar registro.
+	// Agregar la columna editar y eliminar registro.
 	tabla+='<th>Eliminar</th>';
 
 	// Agregar al renglón de inicio en la columna eliminar un botón.
-	renglon+='<td width="50" align="center"><input type="button" value="-" class="clsEliminarFila"/></td>';
+	renglon+='<td width="50" align="center"><input type="button" value="-" class="clsEliminarFila" /></td>';
+
+
 	
-	tabla += '</tr></thead><tbody><tr>'+ renglon +'</tr></tbody></table>';
+	// Agrega el cuerpo a la tabla que esta compuesta por los inputs.
+	tabla += '</tr></thead><tbody><tr  style="display:none;">'+ renglon +'</tr></tbody></table>';
 	return tabla;
 }
 
+/**
+ * Función que agrega las ventanas modales a la estructura html que comprenden los catálogos para la inserción del plan de estudios.
+ * @return {string} Regresa las estructuras de las ventanas completas.
+ */
 function crearCatalogos()
 {
 	var ventanaCatalogos='';
-
+	// Por cada id en la variable titulos.
 	for(var id in titulos)
 	{
-		ventanaCatalogos += estructura(id,titulos[id].titulo,crearTabla(titulos[id].campos));
+		// Crear la estructura de la ventana modal (id,titulo,tabla) extraida del JSON
+		ventanaCatalogos += estructura(id,titulos[id].titulo,crearTabla(titulos[id].campos),titulos[id].action);
 	}
+	// Crear evento para disparar las ventanas
 	ventanaCatalogos += '<div class="md-overlay"></div>';
 	
 	return ventanaCatalogos;
 }
 
 
-// AGREGAR ACCIONES AL BOTON AGRE
+// AGREGAR ACCIONES AL BOTON GUARDAR
 $(function(){
-	$(document).on('click','.clsAgregarFilaNoPlan',function(){
+
+	//$(document).on('click','.clsAgregarFila',function(){
+	$('.clsAgregarFila').on('click',function(){
 		
+		//event.stopPropagation();
 		// Obtenermos la tabla del elemento anterior al boton Agregar
 		var tabla = $(this).prev().get();
 		// Copiamos la primer fila de la tabla del catálogo y la clonamos
-		var strNueva_Fila = $(tabla).find('tbody').find('tr:eq(0)').clone().get();
+		var strNueva_Fila = $(tabla).find('tbody').find('tr:eq(-1)').clone().get();
+		// Remover el estilo oculto para mostrar el row
+		$(strNueva_Fila).css('display','table-row');
 		// Agregamos la nueva fila a la tabla
-		$(tabla).find('tbody').append(strNueva_Fila);
+		$(tabla).find('tbody').prepend(strNueva_Fila);
 
-
+		// Deshabilitamos la acción hasta que guraden registro.
+		$(this).css('background', '#BDBDBD');
+		//$(this).off('click');
+		
 	});
 
-//cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento
+	
+	//Cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento.
+	//$(document).on('click','.clsEliminarFila',function(){
 	$(document).on('click','.clsEliminarFila',function(){
 		if(!confirm('¿Desea eliminar el registro?'))
 		{
-					return;
+			return;
 		}
-		/*obtener el cuerpo de la tabla; contamos cuantas filas (tr) tiene
-		si queda solamente una fila le preguntamos al usuario si desea eliminarla*/
-		var objCuerpo=$(this).parents().get(2);
-			if($(objCuerpo).find('tr').length==1){
-				if(!confirm('Esta es la única fila de la lista ¿Desea eliminarla?')){
-					return;
-				}
-			}
-					
-		/*obtenemos el padre (tr) del td que contiene a nuestro boton de eliminar
-		que quede claro: estamos obteniendo dos padres
-					
-		el asunto de los padres e hijos funciona exactamente como en la vida real
-		es una jergarquia. imagine un arbol genealogico y tendra todo claro ;)
-				
-			tr	--> padre del td que contiene el boton
-				td	--> hijo de tr y padre del boton
-					boton --> hijo directo de td (y nieto de tr? si!) */
 		
+
+		var objCuerpo=$(this).parents().get(2);
+		if($(objCuerpo).find('tr').length==2){
+			if(!confirm('Esta es la única fila de la lista ¿Desea eliminarla?')){
+				return;
+			}
+		}
+
 		var objFila=$(this).parents().get(1);
-			/*eliminamos el tr que contiene los datos del contacto (se elimina todo el
-			contenido (en este caso los td, los text y logicamente, el boton */
-			$(objFila).remove();
+		$(objFila).remove();
 	});
+
+
 });

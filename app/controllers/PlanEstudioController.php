@@ -2,6 +2,12 @@
 
 class PlanEstudioController extends BaseController
 {
+
+	public function __construct()
+	{
+		$this->beforeFilter('auth');
+	}
+
 	public function getIndex()
 	{
 
@@ -17,6 +23,7 @@ class PlanEstudioController extends BaseController
 		return View::make('pe.consulta');
 	}
 
+<<<<<<< HEAD
 	// esto no va a quedar asi no me hagas pull A ESTA LATOSA gracias zorrito :)
 	public function getUsuarios()
 	{
@@ -30,3 +37,12 @@ class PlanEstudioController extends BaseController
 }
 
  
+=======
+	public function postRegistrarnoplan()
+	{
+
+	}
+
+	
+}
+>>>>>>> 04ded8117a7fc8b22afd327f8a52591141f79028

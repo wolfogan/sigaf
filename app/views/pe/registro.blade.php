@@ -48,7 +48,7 @@
 		<div id="indicadores">
 			<div id="usuariofecha">
 				<div id="usuario" class="texto_body">
-					Usuario: Iván Avila
+					Usuario: {{Auth::user()->username}}
 				</div>
 				<div id="fecha" class="texto_body">
 					Fecha Actualizada
@@ -91,7 +91,7 @@
 					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
 					<div id="unidadAcademicaDiv">
 						<label>U.Acad:</label>
-						<label style="color:#ECA22E">FCA</label>
+						<label style="color:#ECA22E">{{Auth::user()->ua}}</label>
 							
 						<!-- TABLA MODAL UNIDAD-->
 						<!--<input class="md-trigger" data-modal="unidad" type="button" value="+">-->
@@ -101,7 +101,7 @@
 
 					<div id="campusDiv">
 						<label>Campus: </label>
-						<label style="color:#ECA22E">TIJUANA</label>
+						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
 						<!-- TABLA MODAL CAMPUS-->
 						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
 						<!--             -->
