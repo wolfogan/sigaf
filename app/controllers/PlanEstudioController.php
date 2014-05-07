@@ -24,6 +24,7 @@ class PlanEstudioController extends BaseController
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// esto no va a quedar asi no me hagas pull A ESTA LATOSA gracias zorrito :)
 	public function getUsuarios()
 	{
@@ -43,6 +44,8 @@ class PlanEstudioController extends BaseController
 
 	}
 
+=======
+>>>>>>> 8f7d8ddd99a1efcbe5bed67cd5494ca9503a9234
 	
 }
 >>>>>>> 04ded8117a7fc8b22afd327f8a52591141f79028
