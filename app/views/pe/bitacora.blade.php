@@ -143,6 +143,7 @@
 						<th>CAMPOS CAPTURADOS</th>
 						<th>HABILITO ALTA</th>
 						<th>MOVIMIENTOS</th>
+						<th>ELIMINAR</th>
 						
 
 					</tr>
@@ -157,6 +158,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -168,6 +170,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -179,6 +182,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -190,6 +194,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -201,6 +206,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -212,6 +218,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -223,6 +230,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -234,6 +242,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 
 					</tr>
 					
@@ -247,6 +256,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -258,6 +268,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -269,6 +280,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 						
 					</tr>
@@ -281,6 +293,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 
 					</tr>
 						

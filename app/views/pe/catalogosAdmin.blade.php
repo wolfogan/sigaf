@@ -67,7 +67,7 @@
 					<!-- ----------------------------------- MODULOS BITACORA  DIV ----------------------------------- -->
 					
 					<fieldset id="adminCatalogosFieldset"><legend>Buscar Catálogo</legend>
-						<div id="adminCatalogos">ADMINISTRAR CATALOGOS
+						<div id="adminCatalogos">
 
 							<div id="cmbBuscarCatalogo">
 								<label>Buscar por: </label>
@@ -103,6 +103,7 @@
 						<th>FECHA INICIO</th>
 						<th>FECHA FIN</th>
 						<th>CREDITOS PRACTICAS</th>
+						<th>ELIMINAR</th>
 					
 						
 
@@ -115,6 +116,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -123,6 +125,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -131,6 +134,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -139,6 +143,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -147,6 +152,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -155,6 +161,16 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
+
+					</tr>
+					<tr class="gradeA">
+						<td>000453</td>
+						<td>12/02/14</td>
+						<td>9:38 am</td>
+						<td class="center">12/02/14</td>
+						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeA">
@@ -163,14 +179,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
-						
-					</tr>
-					<tr class="gradeA">
-						<td>000453</td>
-						<td>12/02/14</td>
-						<td>9:38 am</td>
-						<td class="center">12/02/14</td>
-						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					
@@ -181,6 +190,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -189,6 +199,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeC">
@@ -197,7 +208,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
-						
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 					<tr class="gradeU">
@@ -206,6 +217,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
 						
