@@ -405,7 +405,7 @@
 						<label>Nivel: </label>
 						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
 						@foreach ($niveles as $nivel)
-							<option value="LIC">{{$nivel->NV_descripcion}}</option>
+							<option value="{{$nivel->NV_descripcion}}">{{$nivel->NV_descripcion}}</option>
 						@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
@@ -420,9 +420,9 @@
 					<div id="tipoProgrDiv">
 						<label>Programa: </label>
 						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
-							<option value="SEMESTRAL">SEMESTRAL</option>
-							<option value="TRIMESTRAL">TRIMESTRAL</option>
-							<option value="CUATRIMESTRAL">CUATRIMESTRAL</option>
+							@foreach ($tiposPrograma as $tipoPrograma)
+							<option value="{{ $tipoPrograma->TP_descripción }}">{{ $tipoPrograma->TP_descripcion }}</option>
+							@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
 						<input class="md-trigger" data-modal="tipoProgr" type="button" value="+">
@@ -528,9 +528,9 @@
 							<div id="seriacionDivTipo">
 								<label>Seriación: </label>
 								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
+									
 									<option value="SINSERIACION">SIN SERIACION</option>
-									<option value="OBLIGADA">OBLIGATORIA</option>
-									<option value="SUGERIDA">SUGERIDA</option>
+									
 								</select>
 								<!-- TABLA MODAL NIVEL-->
 								<input class="md-trigger" data-modal="seriacion" type="button" value="+">

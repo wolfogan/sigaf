@@ -13,7 +13,7 @@ class PlanEstudioController extends BaseController
 	{
 		//$planestudio = DB::table('planestudio')->distinct()->lists('PE_codigo');
 		$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
-		$pe = array();
+		$codigosPE = array();
 		
 		/**
 	 	* Función para integrar el guión en el código del plan de estudio 2009-2
@@ -31,12 +31,16 @@ class PlanEstudioController extends BaseController
 		}
 		
 		for ($i=0; $i < count($planestudio); $i++) { 
-		$pe[] = ["codigo" => $planestudio[$i]->PE_codigo,"formato" => str_insert("-",$planestudio[$i]->PE_codigo,4)];
+		$codigosPE[] = ["codigo" => $planestudio[$i]->PE_codigo,"formato" => str_insert("-",$planestudio[$i]->PE_codigo,4)];
 		}
 
-		$nivel = NivelPrograma::select('NV_descripcion')->orderBy('NV_codigo','desc')->get();
+		$niveles = NivelPrograma::select('NV_descripcion')->orderBy('NV_codigo','desc')->get();
 		
-		return View::make('pe.registro')->with(array('codigosPE'=>$pe,'niveles'=>$nivel));
+		$tiposPrograma = TipoPrograma::select('TP_descripcion')->get();
+
+		$seriaciones = Seriacion::select('RS_descripcion')->get();
+
+		return View::make('pe.registro')->with(compact('codigosPE','niveles','tiposPrograma','seriaciones'));
 	}
 
 	public function getConsulta()
