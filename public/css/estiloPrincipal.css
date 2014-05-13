@@ -276,19 +276,23 @@ background: #EFCA0D;
 }
 #ubicacion
 {
+
+	
 	display: inline-block;
 	font-size: 17px;
-	margin-left: 100px;
+	margin: auto;
+	margin-left: 120px;
 }
 #loginmanual
 {
 	display:inline-block;
 	float: right;
 	font-size: 13px;
-	padding-right: 45px;
+	padding-right: 65px;
 }
 #indicadores
 {
+	
 	margin: 0 auto;
 	padding-top: 35px;
 	width:1320px;
@@ -342,10 +346,9 @@ background: #EFCA0D;
 	
 	margin: 1em 0em;
 	float:left;
-	width: 220px;
-	float: left;
+	width: 270px;
 	margin-top:0px;
-	margin-left: 15px;
+	margin-left: 48px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -514,9 +517,10 @@ background: #EFCA0D;
 #etapaDiv
 {
 	
-	width: 270px;
+	width: 220px;
 	float: left;
-	padding-left:60px;
+	padding-left:45px;
+	
 }
 #tipoDiv
 {
@@ -931,7 +935,7 @@ background: #EFCA0D;
 	margin: auto;
 	height: 130px;
 	margin-top: 15px;
-	width: 1200px;
+	width: 850px;
 
 }
 #controlesBitacora
@@ -939,7 +943,7 @@ background: #EFCA0D;
 	
 	padding-top: 15px;
 	margin: auto;
-	width: 1250px;
+	width: 850px;
 	
 	
 }
@@ -954,7 +958,7 @@ background: #EFCA0D;
 	
 	float: left;
 	padding-left: 10px;
-	padding-right: 425px;
+	padding-right: 25px;
 }
 #fechaIniBit
 {
@@ -994,7 +998,7 @@ background: #EFCA0D;
 {
 	
 	float: left;
-	padding-right: 432px;
+	padding-right: 32px;
 }
 #cmbBuscarPorBit
 {
@@ -1004,7 +1008,7 @@ background: #EFCA0D;
 }
 #btnBuscarBit
 {
-	margin-left: 1115px;
+	margin-left: 685px;
 	margin-top: -20px;
 	width: 120px;
 }

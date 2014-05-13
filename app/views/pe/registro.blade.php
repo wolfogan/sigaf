@@ -9,6 +9,20 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css" />
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />Para combo multiple-->
+		
+		<!---------------------------------- Combo multiple --------------------------------
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.multiselect.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$("select").multiselect();
+		});
+		</script>-->
+
+
         
         <!-- Estilos del dataTable-->
 		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
@@ -149,7 +163,7 @@
 		<div class="md-modal md-effect-11" id="carrera"> 
 			<form  action="action" class="md-content" method="post">
 				<h3>Agregar Carrera</h3>
-				<div class="lblCatalogosDependencias">ETAPA: básico, disciplinaria, etc.</div>
+				<div class="lblCatalogosDependencias">NIVEL: Licenciatura, posgrado, etc...</div>
 
 				<div class="tblCatalogos">
 					<table class="tblCatPlan">
@@ -339,10 +353,10 @@
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;login y usuarios
+					<img src="../imagenes/login.png" alt="">&nbsp;Logout
 				</div>
 				<div id="manual" class="texto_body">
-					<img src="../imagenes/manual.png" alt="">&nbsp;manual y ayuda
+					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
 				</div>
 			</div>
 		</div>
@@ -457,20 +471,6 @@
 							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
 						
 						</div>
-
-						<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
-
-						<div id="etapaDiv">
-							<label>Etapa: </label>
-							<select class="con_estilo" style="width:143px;"name="etapaF" id="etapaF" size=1 type="text">
-								<option value="BASICA">BASICA</option>
-								<option value="INTERMEDIA">DISCIPLINARIA</option>
-								<option value="TERMINAL">TERMINAL</option>
-							</select>
-							<!-- TABLA MODAL ETAPA-->
-						<input class="md-trigger" data-modal="etapa" type="button" value="+">
-						<!--             -->
-						</div>
 					
 
 					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
@@ -478,7 +478,7 @@
 
 						<div id="carreraDiv">
 							<label>Carrera:</label>
-								<select style="font-weight:normal;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
+								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
 									<option value="TRONCOCOMUN">TRONCO COMUN</option>
 									<option value="ADMON">ADMINISTRACION</option>
 									<option value="CONTAB">CONTABILIDAD</option>
@@ -486,11 +486,39 @@
 									<option value="NEGOCIOS">NEGOCIOS</option>
 								</select>
 
-								<!-- TABLA MODAL CARRERA-->
-						<input class="md-trigger" data-modal="carrera" type="button" value="+">
-						<!--             -->
-						<div id="ckbTroncoComun"><label>Tronco común</label></div>
+								<!--<select name="example-optgroup" multiple="multiple" size="5">
+									<optgroup label="Group One">
+										<option value="option1">Option 1</option>
+										<option value="option2">Option 2</option>
+										<option value="option3">Option 3</option>
+									</optgroup>
+									<optgroup label="Group Two">
+										<option value="option4">Option 4</option>
+										<option value="option5">Option 5</option>
+										<option value="option6">Option 6</option>
+										<option value="option7">Option 7</option>
+									</optgroup>
+								</select>-->
 
+								<!-- TABLA MODAL CARRERA-->
+								<input class="md-trigger" data-modal="carrera" type="button" value="+">
+								<!--             -->
+								<div id="ckbTroncoComun"><label>Tronco común</label></div>
+						</div>
+					
+
+					<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
+
+						<div id="etapaDiv">
+							<label>Etapa: </label>
+							<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
+								<option value="BASICA">BASICA</option>
+								<option value="INTERMEDIA">DISCIPLINARIA</option>
+								<option value="TERMINAL">TERMINAL</option>
+							</select>
+							<!-- TABLA MODAL ETAPA-->
+							<input class="md-trigger" data-modal="etapa" type="button" value="+">
+							<!--             -->
 						</div>
 					</div>
 

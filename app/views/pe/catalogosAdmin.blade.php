@@ -51,13 +51,14 @@
 				</div>
 			</div>
 			<div id="ubicacion" class="texto_body">
+				Administración de catálogos
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;login y usuarios
+					<img src="../imagenes/login.png" alt="">&nbsp;Logout
 				</div>
 				<div id="manual" class="texto_body">
-					<img src="../imagenes/manual.png" alt="">&nbsp;manual y ayuda
+					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
 				</div>
 			</div>
 		</div>
