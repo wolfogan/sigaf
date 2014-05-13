@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
-		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css" />
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
-		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css" />
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
         
         <!-- Estilos del dataTable-->
@@ -354,10 +354,10 @@
 					<!-- ----------------------------------- NO PLAN DIV ----------------------------------- -->
 					<div id="noPlanDiv">
 						<label>No.Plan:</label>
-						<select class="con_estilo" type="text" name="noPlan" id="noPlan"> 
-							<option value="2013-2">2013-2</option>
-							<option value="2013-4">2013-4</option>
-							<option value="2014-1">2014-1</option>
+						<select class="con_estilo" type="text" name="noPlan" id="noPlan">
+						@foreach ($codigosPE as $codigo )
+						<option value="{{$codigo['codigo']}}">{{$codigo['formato']}}</option>
+						@endforeach
 						</select>
 						<!-- TABLA MODAL NRO. PLAN-->
 						<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
@@ -380,7 +380,7 @@
 
 					<div id="unidadDiv">
 						<label>Unidad: </label>
-						<label style="color:#ECA22E">Valle Dorado</label>
+						<label style="color:#ECA22E">{{Auth::user()->unidad}}</label>
 						<!-- TABLA MODAL CAMPUS-->
 						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
 						<!--             -->
@@ -404,9 +404,9 @@
 					<div id="nivelDiv">
 						<label>Nivel: </label>
 						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
-							<option value="LIC">LIC.</option>
-							<option value="POSTGRADO">POSTGRADO</option>
-							<option value="TECNICO">TECNICO</option>
+						@foreach ($niveles as $nivel)
+							<option value="LIC">{{$nivel->NV_descripcion}}</option>
+						@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
 						<input class="md-trigger" data-modal="nivel" type="button" value="+">

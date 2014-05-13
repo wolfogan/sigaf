@@ -29,7 +29,7 @@ Route::controller('planestudio','PlanEstudioController');
 
 Route::get('pruebas',function(){
 	// Obtener códigos de plan de estudio distintos. select distinct pe_codigo from planestudio
-	$planestudio = DB::table('planestudio')->distinct()->lists('PE_codigo');
+	$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
 
 	function str_insert($string_add,$string_target,$offset)
 	{
@@ -41,7 +41,7 @@ Route::get('pruebas',function(){
 
 	$pe = array();
 	for ($i=0; $i < count($planestudio); $i++) { 
-		$pe[] = ["codigo" => $planestudio[$i],"formato" => str_insert("-",$planestudio[$i],4)];
+		$pe[] = ["codigo" => $planestudio[$i]->PE_codigo,"formato" => str_insert("-",$planestudio[$i]->PE_codigo,4)];
 	}
 
 
