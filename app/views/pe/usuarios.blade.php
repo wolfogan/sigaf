@@ -30,37 +30,27 @@
 			</div>
 			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 		</header>
- 		@include('includes.menu')
+ 		
 		<div id="indicadores">
 			<div id="usuariofecha">
-				<div id="usuario" class="texto_body">
-					Usuario: Iván Avila
-				</div>
+				
 				<div id="fecha" class="texto_body">
 					Fecha Actualizada
 				</div>
 			</div>
-			<div id="ubicacion" class="texto_body">
-				Login y usuarios: Iniciar sesión
-			</div>
-			<div id="loginmanual">
-				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;login y usuarios
-				</div>
-				<div id="manual" class="texto_body">
-					<img src="../imagenes/manual.png" alt="">&nbsp;manual y ayuda
-				</div>
-			</div>
+			
+			
 		</div>
 
-		<section>
+		
 			<div id="usuarioContrasena">
 				<fieldset id="usuarios">
 
 					<div id="usuarioLogin">
+						<div id="introUsuarioContrasena">Introduzca usuario y contraseña para continuar</div>
 	
 							<label>Usuario: </label>
-							<input style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="usuario" id="usuario" size=1>
+							<input style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="usuario" name="usuario" id="usuario" size=1>
 					</div>
 
 					<div id="contrasenaLogin">
@@ -79,7 +69,7 @@
 
 			</div>
 				
-		</section>
+	
 		<footer></footer>
 		
 	</body>
