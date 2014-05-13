@@ -1019,21 +1019,27 @@ background: #EFCA0D;
 
 #adminCatalogosFieldset
 {
-	background: red;
-	width: 200px;
-	height: 200px;
+	
+	margin: auto;
+	margin-top: 20px;
+	width: 410px;
+	height: 80px;
 
 }
-#adminCatalogos
-{
 
-}
 #cmbBuscarCatalogo
 {
-
+	
+	float: left;
+	margin-left: 10px;
+	margin: auto;
+	margin-top:10px;
+	width: 290px;
 }
 #btnBuscarCatalogo
 {
+
+	float: left;
 
 }
 
