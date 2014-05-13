@@ -97,7 +97,7 @@
 		</div>
 		
 		<div class="md-modal md-effect-11" id="nivel"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarnivel');?>" class="md-content" method="POST">
 				<h3>Agregar Nivel</h3>
 
 				<div class="tblCatalogos">
@@ -114,7 +114,7 @@
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 name="nivel_descripcion" /></td>
 						</tr>
 
 					</table>
@@ -419,7 +419,7 @@
 						<label>Nivel: </label>
 						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
 						@foreach ($niveles as $nivel)
-							<option value="{{$nivel->NV_descripcion}}">{{$nivel->NV_descripcion}}</option>
+							<option value="{{$nivel->NV_codigo}}">{{$nivel->NV_descripcion}}</option>
 						@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
@@ -435,7 +435,7 @@
 						<label>Programa: </label>
 						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
 							@foreach ($tiposPrograma as $tipoPrograma)
-							<option value="{{ $tipoPrograma->TP_descripción }}">{{ $tipoPrograma->TP_descripcion }}</option>
+							<option value="{{ $tipoPrograma->TP_codigo }}">{{ $tipoPrograma->TP_descripcion }}</option>
 							@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
@@ -456,9 +456,9 @@
 							 &nbsp;<label>Clave: </label>
 							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
 							<datalist id="datalist_clave">
-								<option value="10450">
-								<option value="13230">
-								<option value="10384">
+								@foreach ($unidadesAprendizaje as $materia)
+								<option value="{{$materia->UA_clave}}">
+								@endforeach
 							</datalist>
 							<br>
 							<input type="checkbox" name="generarClave" value="Generar">Generar clave
@@ -512,9 +512,10 @@
 						<div id="etapaDiv">
 							<label>Etapa: </label>
 							<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
-								<option value="BASICA">BASICA</option>
-								<option value="INTERMEDIA">DISCIPLINARIA</option>
-								<option value="TERMINAL">TERMINAL</option>
+								@foreach ($etapas as $etapa)
+								<option value="{{$etapa->ET_codigo}}">{{$etapa->ET_descripcion}}</option>
+								@endforeach
+								
 							</select>
 							<!-- TABLA MODAL ETAPA-->
 							<input class="md-trigger" data-modal="etapa" type="button" value="+">
@@ -540,9 +541,9 @@
 								<label>Clave: </label>
 								<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size=1 onkeypress="ValidaSoloNumeros()">
 								<datalist id="datalist_clave2F">
-								<option value="123344">
-								<option value="235562">
-								<option value="235009">
+								@foreach ($unidadesAprendizaje as $materia)
+								<option value="{{$materia->UA_clave}}">
+								@endforeach
 								</datalist>
 							</div>
 					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
@@ -556,8 +557,9 @@
 							<div id="seriacionDivTipo">
 								<label>Seriación: </label>
 								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
-									
-									<option value="SINSERIACION">SIN SERIACION</option>
+									@foreach ($seriaciones as $seriacion)
+									<option value="{{$seriacion->RS_codigo}}">{{$seriacion->RS_descripcion}}</option>
+									@endforeach
 									
 								</select>
 								<!-- TABLA MODAL NIVEL-->
@@ -571,9 +573,9 @@
 						<div id="tipoDiv">
 							<label>Tipo: </label>
 							<select  class="con_estilo" name="tipoF" id="tipoF" size=1 type="text">
-								<option value="OBLIGATORIA">OBLIGATORIA</option>
-								<option value="OPTATIVA">OPTATIVA</option>
-							</select>
+								@foreach ($tiposCaracter as $caracter)
+								<option value="{{$caracter->CAR_codigo}}">{{$caracter->CAR_descripcion}}</option>
+								@endforeach
 							<!-- TABLA MODAL NIVEL-->
 							<input class="md-trigger" data-modal="tipo" type="button" value="+">
 							<!--             -->
@@ -630,11 +632,9 @@
 						<div id="coordDiv">
 							<label>Coord: </label><input style="width:120px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
 							<datalist id="datalist_coord">
-								<option value="INFORMATICA">
-								<option value="MATEMATICAS">
-								<option value="CIENCIAS COMPUTACIONALES">
-								<option value="SISTEMAS DE INFORMACION">
-								<option value="PROGRAMACION">
+								@foreach ($coordinaciones as $coordinacion)
+								<option value="{{$coordinacion->CO_descripcion}}" data="{{$coordinacion->CO_codigo}}">
+								@endforeach
 							</datalist>
 							<!-- TABLA MODAL COORDINACIÓN-->
 							<input class="md-trigger" data-modal="coordina" type="button" value="+">

@@ -28,7 +28,15 @@ Route::controller('login','UserLoginController');
 Route::controller('planestudio','PlanEstudioController');
 
 Route::get('pruebas',function(){
-	// Obtener códigos de plan de estudio distintos. select distinct pe_codigo from planestudio
+
+	$caracter = new Caracter;
+		$caracter->CAR_descripcion = "Uno";
+		
+		
+		// Guardamos
+		$caracter -> save();
+
+	/* Obtener códigos de plan de estudio distintos. select distinct pe_codigo from planestudio
 	$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
 
 	function str_insert($string_add,$string_target,$offset)
@@ -60,5 +68,5 @@ Route::get('pruebas',function(){
 
 	$tipoPrograma = TipoPrograma::lists('TP_descripcion');
 
-	return var_dump($pe)+var_dump($nivel)+var_dump($detalleNivPrograma)+var_dump($etapa)+var_dump($caracter)+var_dump($seriacion)+var_dump($coordinacion)+var_dump($tipoPrograma);
+	return var_dump($pe)+var_dump($nivel)+var_dump($detalleNivPrograma)+var_dump($etapa)+var_dump($caracter)+var_dump($seriacion)+var_dump($coordinacion)+var_dump($tipoPrograma);*/
 });

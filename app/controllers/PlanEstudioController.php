@@ -34,13 +34,21 @@ class PlanEstudioController extends BaseController
 		$codigosPE[] = ["codigo" => $planestudio[$i]->PE_codigo,"formato" => str_insert("-",$planestudio[$i]->PE_codigo,4)];
 		}
 
-		$niveles = NivelPrograma::select('NV_descripcion')->orderBy('NV_codigo','desc')->get();
+		$niveles = NivelPrograma::select('NV_codigo','NV_descripcion')->orderBy('NV_codigo','desc')->get();
 		
-		$tiposPrograma = TipoPrograma::select('TP_descripcion')->get();
+		$tiposPrograma = TipoPrograma::select('TP_codigo','TP_descripcion')->get();
 
-		$seriaciones = Seriacion::select('RS_descripcion')->get();
+		$etapas= Etapa::select('ET_codigo','ET_descripcion')->get();
 
-		return View::make('pe.registro')->with(compact('codigosPE','niveles','tiposPrograma','seriaciones'));
+		$seriaciones = Seriacion::select('RS_codigo','RS_descripcion')->orderBy('RS_codigo','desc')->get();
+
+		$tiposCaracter = Caracter::select('CAR_codigo','CAR_descripcion')->get();
+
+		$coordinaciones = Coordinacion::select('CO_codigo','CO_descripcion')->get();
+
+		$unidadesAprendizaje = UnidadAprendizaje::select('UA_clave','UA_descripcionmat')->orderBy('UA_clave','desc')->get();
+
+		return View::make('pe.registro')->with(compact('codigosPE','niveles','tiposPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje'));
 	}
 
 	public function getConsulta()
@@ -66,5 +74,8 @@ class PlanEstudioController extends BaseController
 	{
 		return View::make('pe.catalogosAdmin');
 	}
+
+	
+
 }
 
