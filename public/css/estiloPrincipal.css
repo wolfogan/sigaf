@@ -16,7 +16,7 @@ fieldset #group_seriacion
 	width: 750px;
 	float: left;
 	margin-top: -30px;
-	margin-left: 15px;
+	margin-left: 25px;
 }
 legend
 {
@@ -79,19 +79,21 @@ section:hover
 section #primerBloque
 {
 	
+	
 	padding-top: 20px;
 	padding-right: 0px;
 	padding-bottom: 10px;
 	height: 40px;
-	width: 950px;
+	width: 1250px;
 	margin: auto;
 }
 section #segundoBloque
 {
+	
 	padding-top: 20px;
 	padding-left:20px;
 	height: 50px;
-	width: 1230px;
+	width: 1250px;
 	margin:auto;
 }
 section #tercerBloque
@@ -340,10 +342,10 @@ background: #EFCA0D;
 	
 	margin: 1em 0em;
 	float:left;
-	width: 270px;
+	width: 220px;
 	float: left;
 	margin-top:0px;
-	margin-left: 35px;
+	margin-left: 15px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -454,36 +456,49 @@ background: #EFCA0D;
 	
 	width: 250px;
 	float: left;
-	padding-left: 5px;
-	padding-right:15px;
+	margin-left: 0px;
+	padding-right:7px;
 }
 #unidadAcademicaDiv
 {
 	
-	width: 210px;
+	width: 120px;
 	float: left;
 	margin-top:5px;
-	padding-left: 15px;
-	
-	
+	padding-left: 10px;	
 	
 }
 #campusDiv
 {
+	
 
-	width: 210px;
+	width: 150px;
 	float: left;
 	margin-top:5px;
-	padding-left: 15px;
-
+	padding-left: 7px;	
+}
+#unidadDiv
+{
 	
+	width: 160px;
+	float: left;
+	margin-top: 5px;
+	padding-left: 10px;
 }
 #nivelDiv
 {
 
 	width: 230px;
 	float: left;
-	padding-left: 0px;
+	padding-left: 7px;
+}
+#tipoProgrDiv
+{
+	
+	width: 250px;
+	float: left;
+	padding-left: 40px;
+	
 }
 #claveDiv
 {
@@ -499,16 +514,17 @@ background: #EFCA0D;
 #etapaDiv
 {
 	
-	width: 220px;
+	width: 270px;
 	float: left;
-	padding-left:40px;
+	padding-left:60px;
 }
 #tipoDiv
 {
 	
+	
 	width: 210px;
 	float: left;
-	margin-left: 33px;
+	margin-left: 40px;
 }
 #semestreDiv
 {
@@ -684,3 +700,342 @@ background: #EFCA0D;
 	padding-top: 12px;
 	padding-right: 20px;
 }
+#ckbTroncoComun
+{
+	
+	margin-left: 75px;
+	width: 150px;
+
+}
+/*----------------- CATALOGOS -------------------*/
+
+.tblCatalogos
+{
+	
+	margin-left: 30px;
+	height: 350px;
+	width: 550px;
+
+}
+.tblCatPlan
+{
+	background: white;
+	border-style: none;
+	border-collapse: separate;
+  	border-spacing:  10px;
+  	border-radius: 7px;   	
+  	color:black;
+  	font: "Trebuchet Ms";
+  	font-size: 18px; 	  	
+  	margin: auto;
+  	margin-top: 50px;
+  	padding:20px;
+	width: 500px;
+}
+.tblCatPlan td 
+{
+	text-align: left;
+	
+}
+.lblCatalogosDependencias
+{
+	
+	font-size: 20px;
+	font-weight: bold;
+	margin: auto;
+	width: 550px;
+}
+.CatBotones
+{
+
+	width: 250px;
+	
+}
+
+
+/*-----------------TERMINA CATALOGOS-------------*/
+
+/* ---------------- USUARIOS --------------------*/
+#usuarioContrasena
+{
+	
+	 height: 300px;
+	 width: 450px;
+	 margin: auto;
+	 padding-bottom: 150px;
+}
+#introUsuarioContrasena
+{
+	
+	color:#004000;
+	font-size: 17px;
+	margin-left:-36px;
+	padding-bottom: 20px;
+	width: 450px;
+
+}
+#usuarios
+{
+	background: white;
+	border-radius: 10px;
+	border: 3px solid orange;
+	height: 300px;
+	width: 400px;
+	margin: auto;
+	margin-top: 70px;
+	
+}
+#usuarioLogin
+{
+	
+	margin: auto;
+	margin-top: 10px;
+	width: 300px;
+}
+#contrasenaLogin
+{
+	
+	margin: auto;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	width: 300px;
+	
+	
+}
+#btnIniciarSesion
+{
+
+	margin: auto;
+	width: 200px;
+}
+#RegistrarseUsuarios
+{
+
+	font-size: 16px;
+	font-family: "Trebuchet Ms";
+	font-weight: bold;
+	color:#004000;
+	margin-right:0px;
+	margin-top: 15px;
+	width: 300px;
+}
+
+#formularioRegUsuarios
+{
+
+	
+	margin: auto;
+	margin-top: 70px;
+	padding-bottom: 50px;
+	width: 670px;
+}
+#nombreApellidos
+{
+	
+	margin-top: 30px;
+	margin: auto;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom:60px;
+	width: 630px;
+
+}
+#nombreRegUsuarios
+{
+	
+	float: left;
+	width: 300px;
+}
+#apellidosRegUsuarios
+{
+	
+	float: left;
+	padding-left: 30px;
+	width: 300px;
+}
+#correoContrasena
+{
+	margin:auto;
+	padding-left: 15px;
+	padding-bottom: 70px;
+	width: 630px;
+	
+}
+#correoE
+{
+	
+	float: left;	
+	width: 300px;
+}
+#contrasenaRegUsuarios
+{
+	
+	float: left;	
+	padding-left: 30px;
+	width: 300px;
+}
+
+#unidadCampusReg
+{
+
+	
+	margin:auto;
+	padding-left: 15px;
+	padding-bottom: 150px;
+	width: 670px;
+
+}
+#unidadAcadRegUsuarios
+{
+	
+	float: left;
+	padding-left: 20px;
+	width: 300px;
+}
+#campusRegUsuarios
+{
+	
+	float: left;
+	padding-left: 30px;
+	width: 320px;
+}
+#btnCampusReg
+{
+	
+	float: left;
+	padding-left: 7px;
+	width: 30px;
+}
+#btnRegistroUsuario
+{
+	
+	margin:auto;
+	width: 200px;
+}
+#btnUnidadAcadRegistro
+{
+	
+	float: left;
+	padding-left: 7px;
+	width: 30px;
+
+}
+
+/* ------------------------------------------------------*/
+
+
+/* ---------------- BITACORA --------------------*/
+#controlesBuscarBit
+{
+	
+	margin: auto;
+	height: 130px;
+	margin-top: 15px;
+	width: 1200px;
+
+}
+#controlesBitacora
+{
+	
+	padding-top: 15px;
+	margin: auto;
+	width: 1250px;
+	
+	
+}
+#modulosFechasBit
+{
+	
+	padding-bottom: 40px;
+	
+}
+#cmbModulosBit
+{
+	
+	float: left;
+	padding-left: 10px;
+	padding-right: 425px;
+}
+#fechaIniBit
+{
+	
+	float: left;
+	padding-left: 20px;
+}
+#lblFechaIniBit
+{
+	
+	float: left;
+	margin-top: 5px;
+	padding-right: 3px;
+}
+#fechaFinBit
+{
+	
+	float: left;
+	padding-left: 40px;
+}
+#lblFechaFinBit
+{
+	
+	float: left;
+	margin-top: 5px;
+	padding-right: 3px;
+}
+#seccionBuscarPorBit
+{
+	
+	margin: auto;
+	padding-left: 8px;
+	width: 1250px;
+	padding-bottom: 20px;
+}
+#cmbSeccionesBit
+{
+	
+	float: left;
+	padding-right: 432px;
+}
+#cmbBuscarPorBit
+{
+	
+	float: left;
+	padding-left: 43px;
+}
+#btnBuscarBit
+{
+	margin-left: 1115px;
+	margin-top: -20px;
+	width: 120px;
+}
+#btnImprimirBit
+{
+	margin-left: 1140px;
+	margin-top: 40px;
+	width: 120px;
+}
+
+/*--------------------------CATALOGOS ADMIN-------------------------*/
+
+#adminCatalogosFieldset
+{
+	background: red;
+	width: 200px;
+	height: 200px;
+
+}
+#adminCatalogos
+{
+
+}
+#cmbBuscarCatalogo
+{
+
+}
+#btnBuscarCatalogo
+{
+
+}
+
+
+/*------------------------------------------------------------------*/

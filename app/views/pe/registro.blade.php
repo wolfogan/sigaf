@@ -35,7 +35,287 @@
 	</head>
 
 	<body>
-		<script> $('body').html(crearCatalogos());</script>
+		
+
+		<div class="md-modal md-effect-11" id="plan"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Plan</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Fecha Inicio:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Fecha Final:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin"size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Créditos Prácticas:</td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract"size=1 /></td>
+						</tr>
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+		
+		<div class="md-modal md-effect-11" id="nivel"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Nivel</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoNivel" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
+						</tr>
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+
+		<div class="md-modal md-effect-11" id="tipoProgr"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Tipo Programa</h3>
+				<div class="lblCatalogosDependencias">NIVEL: Lic, posgrado, etc... </div>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoNivel" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
+						</tr>
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+
+
+		<div class="md-modal md-effect-11" id="carrera"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Carrera</h3>
+				<div class="lblCatalogosDependencias">ETAPA: básico, disciplinaria, etc.</div>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoCarrera" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Coordinador:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCoordinadorCarrera" size=1 /></td>
+						</tr>
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+
+		<div class="md-modal md-effect-11" id="etapa"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Etapa</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoEtapa" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionEtapa" size=1 /></td>
+						</tr>
+
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+
+		<div class="md-modal md-effect-11" id="seriacion"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Seriación</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoSeriacion" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionSeriacion" size=1 /></td>
+						</tr>
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+
+		<div class="md-modal md-effect-11" id="tipo"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Tipo</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoTipo" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionTipo" size=1 /></td>
+						</tr>
+
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+
+			</form>
+		</div>
+
+
+		<div class="md-modal md-effect-11" id="coordina"> 
+			<form  action="action" class="md-content" method="post">
+				<h3>Agregar Coordinación</h3>
+				<div class="lblCatalogosDependencias">Carrera: Aquí va carrera</div>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+							<td>Código:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoCoordinacion" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Descripción:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCoordinacion" size=1 /></td>
+						</tr>
+					</table>
+				</div>
+					<div class="CatBotones">
+						<input type="submit" class="estilo_button2" value="Guardar"/>
+						<input type="button" value="Salir" class="md-close" />
+					</div>
+
+			</form>
+		</div>
+		<div class="md-overlay"></div>
+
+
+
+
+
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 			<div id="titulo">
@@ -85,7 +365,27 @@
 
 					</div>
 					
-					<!-- ----------------------------------------------------------------------------------- -->
+
+					<!-- ----------------------------------- CAMPUS  DIV ----------------------------------- -->
+
+					<div id="campusDiv">
+						<label>Campus: </label>
+						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
+						<!-- TABLA MODAL CAMPUS-->
+						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
+						<!--             -->
+					</div>
+
+					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
+
+					<div id="unidadDiv">
+						<label>Unidad: </label>
+						<label style="color:#ECA22E">Valle Dorado</label>
+						<!-- TABLA MODAL CAMPUS-->
+						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
+						<!--             -->
+					</div>
+					
 
 
 					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
@@ -97,19 +397,13 @@
 						<!--<input class="md-trigger" data-modal="unidad" type="button" value="+">-->
 						<!--             -->
 					</div>
-					<!-- ----------------------------------------------------------------------------------- -->
+					<!-- ----------------------------------- NIVEL  DIV ----------------------------------- -->
 
-					<div id="campusDiv">
-						<label>Campus: </label>
-						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
-						<!-- TABLA MODAL CAMPUS-->
-						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
-						<!--             -->
-					</div>
+					
 		
 					<div id="nivelDiv">
 						<label>Nivel: </label>
-						<select class="con_estilo" name="nivel" id="nivel" size=1 type="text">
+						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
 							<option value="LIC">LIC.</option>
 							<option value="POSTGRADO">POSTGRADO</option>
 							<option value="TECNICO">TECNICO</option>
@@ -118,8 +412,26 @@
 						<input class="md-trigger" data-modal="nivel" type="button" value="+">
 						<!--             -->
 					</div>
+
+					<!-- ----------------------------------- TIPO PROGRAMA  DIV ----------------------------------- -->
+
 					
-					<!-- ----------------------------------------------------------------------------------- -->
+		
+					<div id="tipoProgrDiv">
+						<label>Programa: </label>
+						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
+							<option value="SEMESTRAL">SEMESTRAL</option>
+							<option value="TRIMESTRAL">TRIMESTRAL</option>
+							<option value="CUATRIMESTRAL">CUATRIMESTRAL</option>
+						</select>
+						<!-- TABLA MODAL NIVEL-->
+						<input class="md-trigger" data-modal="tipoProgr" type="button" value="+">
+						<!--             -->
+					</div>
+
+
+					
+					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
 				</div>
 				
 				<fieldset id="unidadaprendizaje">
@@ -137,34 +449,20 @@
 							<br>
 							<input type="checkbox" name="generarClave" value="Generar">Generar clave
 						</div>
+
+					<!-- ----------------------------------- MATERIA  DIV ----------------------------------- -->
 						
 						<div id="materiaDiv">
 							<label>Materia: </label>
-							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" list="datalist_materia" size=1>
-							<datalist id="datalist_materia">
-								<option value="PROGRAMACION ORIENTADA A OBJETOS">
-								<option value="PROGRAMACION AVANZADA">
-								<option value="INFORMATICA">
-							</datalist>
+							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
+						
 						</div>
 
-						<div id="carreraDiv">
-							<label>Carrera:</label>
-								<select style="font-weight:normal; width: 143px" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
-									<option value="TRONCOCOMUN">TRONCO COMUN</option>
-									<option value="ADMON">ADMINISTRACION</option>
-									<option value="CONTAB">CONTABILIDAD</option>
-									<option value="INFORMATICA">INFORMATICA</option>
-									<option value="NEGOCIOS">NEGOCIOS</option>
-								</select>
-								<!-- TABLA MODAL CARRERA-->
-						<input class="md-trigger" data-modal="carrera" type="button" value="+">
-						<!--             -->
-						</div>
+						<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
 
 						<div id="etapaDiv">
 							<label>Etapa: </label>
-							<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
+							<select class="con_estilo" style="width:143px;"name="etapaF" id="etapaF" size=1 type="text">
 								<option value="BASICA">BASICA</option>
 								<option value="INTERMEDIA">DISCIPLINARIA</option>
 								<option value="TERMINAL">TERMINAL</option>
@@ -173,13 +471,39 @@
 						<input class="md-trigger" data-modal="etapa" type="button" value="+">
 						<!--             -->
 						</div>
+					
+
+					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
+
+
+						<div id="carreraDiv">
+							<label>Carrera:</label>
+								<select style="font-weight:normal;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
+									<option value="TRONCOCOMUN">TRONCO COMUN</option>
+									<option value="ADMON">ADMINISTRACION</option>
+									<option value="CONTAB">CONTABILIDAD</option>
+									<option value="INFORMATICA">INFORMATICA</option>
+									<option value="NEGOCIOS">NEGOCIOS</option>
+								</select>
+
+								<!-- TABLA MODAL CARRERA-->
+						<input class="md-trigger" data-modal="carrera" type="button" value="+">
+						<!--             -->
+						<div id="ckbTroncoComun"><label>Tronco común</label></div>
+
+						</div>
 					</div>
+
+
+					<!-- ----------------------------------- SEMESTRE  DIV ----------------------------------- -->
 
 					<div id="tercerBloque">
 						<div id="semestreDiv">
 							<label>Sem:</label>
 							<input class="estilo_numeric" type="number" name="semestr" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()">
 						</div>
+
+					<!-- ----------------------------------- CLAVE SERIACION  DIV ----------------------------------- -->
 						
 						<fieldset id="group_seriacion">
 							<legend>Seriación</legend>
@@ -193,18 +517,17 @@
 								<option value="235009">
 								</datalist>
 							</div>
+					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
 
 							<div id="seriacionDivMateria">
-								<select class="con_estilo" style="width: 285px" type="text" name="materiaSeriada" id="materiaSeriada" size=1>
-									<option value="PROGRAMACION ORIENTADA A OBJETOS">PROGRAMACION ORIENTADA A OBJETOS</OPTION>
-									<option value="PROGRAMACION AVANZADA">PROGRAMACION AVANZADA</OPTION>
-									<option value="INFORMATICA">INFORMATICA</OPTION>
-								</select>
+								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size=1/>	
 							</div>
+
+					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
 
 							<div id="seriacionDivTipo">
 								<label>Seriación: </label>
-								<select style="width: 143px"class="con_estilo" name="serie" id="serie" size=1 type="text">
+								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
 									<option value="SINSERIACION">SIN SERIACION</option>
 									<option value="OBLIGADA">OBLIGATORIA</option>
 									<option value="SUGERIDA">SUGERIDA</option>
@@ -214,6 +537,8 @@
 								<!--             -->
 							</div>
 						</fieldset>
+
+					<!-- ----------------------------------- TIPO MATERIA  DIV ----------------------------------- -->
 
 						<div id="tipoDiv">
 							<label>Tipo: </label>
@@ -226,6 +551,8 @@
 							<!--             -->
 						</div>
 					</div>
+
+					<!-- ----------------------------------- HORAS  DIV ----------------------------------- -->
 		
 					<div id="cuartoBloque">
 						<div id="hcDiv">
@@ -256,15 +583,21 @@
 						</div>
 						<br>
 						<br>
+
+					<!-- ----------------------------------- CREDITOS  DIV ----------------------------------- -->
 						
 						<div id="creditosDiv">
 							<label>Créditos: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" onkeypress="ValidaSoloNumeros()">
 						</div>
+
+					<!-- ----------------------------------- OBSERVACIONES  DIV ----------------------------------- -->
 						
 						<div id="observacionesDiv">
 							<label>Observaciones:</label><br>
 							<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" placeholder="Observaciones"></textarea>
 						</div>
+
+					<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
 
 						<div id="coordDiv">
 							<label>Coord: </label><input style="width:120px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
@@ -276,9 +609,11 @@
 								<option value="PROGRAMACION">
 							</datalist>
 							<!-- TABLA MODAL COORDINACIÓN-->
-							<input class="md-trigger" data-modal="coordinación" type="button" value="+">
+							<input class="md-trigger" data-modal="coordina" type="button" value="+">
 							<!--             -->
 						</div>
+
+					<!---------------------------------------------------------------------------------------------------->
 
 
 						<div id="botones">
@@ -482,22 +817,6 @@
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
 			</tr>
 		</tbody>
-		<tfoot>
-			<tr>
-				<th>CLAVE</th>
-				<th>MATERIA</th>
-				<th>CARRERA</th>
-				<th>ETAPA</th>
-				<th>SERIACIÓN</th>
-				<th>TIPO</th>
-				<th>COORDINACIÓN</th>
-				<th>HC</th>
-				<th>HL</th>
-				<th>HT</th>
-				<th>ELIMINAR</th>
-				<th>CRÉDITOS</th>
-			</tr>
-		</tfoot>
 	</table>
 </div>
 </div>

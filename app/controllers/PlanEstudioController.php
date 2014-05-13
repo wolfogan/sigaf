@@ -8,11 +8,7 @@ class PlanEstudioController extends BaseController
 		$this->beforeFilter('auth');
 	}
 
-	public function getIndex()
-	{
-
-	}
-
+	
 	public function getRegistro()
 	{
 		return View::make('pe.registro');
@@ -23,5 +19,23 @@ class PlanEstudioController extends BaseController
 		return View::make('pe.consulta');
 	}
 
+	public function getUsuarios()
+	{
+		return View::make('pe.usuarios');
+	}
 	
+	public function getUsuariosRegistro()
+	{
+		return View::make('pe.usuariosRegistro');
+	}
+
+	public function getBitacora()
+	{
+		return View::make('pe.bitacora');
+	}
+	public function getCatalogosadmin()
+	{
+		return View::make('pe.catalogosAdmin');
+	}
 }
+
