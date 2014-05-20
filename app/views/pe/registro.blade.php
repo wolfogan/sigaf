@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
-		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
-		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css" />
+		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />Para combo multiple-->
 		
@@ -351,21 +351,6 @@
 			<div id="formularioPlanEstudio">
 			
 				<div id="primerBloque">
-					<!-- ----------------------------------- NO PLAN DIV ----------------------------------- -->
-					<div id="noPlanDiv">
-						<label>No.Plan:</label>
-						<select class="con_estilo" type="text" name="noPlan" id="noPlan">
-						@foreach ($codigosPE as $codigo )
-						<option value="{{$codigo['codigo']}}">{{$codigo['formato']}}</option>
-						@endforeach
-						</select>
-						<!-- TABLA MODAL NRO. PLAN-->
-						<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
-						<!--             -->
-
-					</div>
-					
-
 					<!-- ----------------------------------- CAMPUS  DIV ----------------------------------- -->
 					
 					<!--<div id="campusDiv">
@@ -378,12 +363,40 @@
 
 					<div id="unidadDiv">
 						<label>Unidad: </label>
-						<label style="color:#ECA22E">{{Auth::user()->unidad}}</label>
+						<label style="color:#ECA22E">Valle Dorado</label>
 						<!-- TABLA MODAL CAMPUS-->
 						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
 						<!--             -->
 					</div>
-					
+
+					<!-- ----------------------------------- TIPO MATERIA  DIV ----------------------------------- -->
+
+						<div id="tipoDiv">
+							<label>Tipo: </label>
+							<select  class="con_estilo" name="tipoF" id="tipoF" size=1 type="text">
+								<option value="OBLIGATORIA">OBLIGATORIA</option>
+								<option value="OPTATIVA">OPTATIVA</option>
+							</select>
+							<!-- TABLA MODAL NIVEL-->
+							<input class="md-trigger" data-modal="tipo" type="button" value="+">
+							<!--             -->
+						</div>
+
+						<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
+
+						<div id="coordDiv">
+							<label>Coord: </label><input style="width:120px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
+							<datalist id="datalist_coord">
+								<option value="INFORMATICA">
+								<option value="MATEMATICAS">
+								<option value="CIENCIAS COMPUTACIONALES">
+								<option value="SISTEMAS DE INFORMACION">
+								<option value="PROGRAMACION">
+							</datalist>
+							<!-- TABLA MODAL COORDINACIÓN-->
+							<input class="md-trigger" data-modal="coordina" type="button" value="+">
+							<!--             -->
+						</div>
 
 
 					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
@@ -396,26 +409,102 @@
 						<!--             -->
 					</div>
 
+<<<<<<< HEAD
+=======
+					<!-- ----------------------------------- TIPO PROGRAMA  DIV ----------------------------------- -->
+
+					<div id="tipoProgrDiv">
+						<label>Programa: </label>
+						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
+							<option value="SEMESTRAL">SEMESTRAL</option>
+							<option value="TRIMESTRAL">TRIMESTRAL</option>
+							<option value="CUATRIMESTRAL">CUATRIMESTRAL</option>
+						</select>
+						<!-- TABLA MODAL NIVEL-->
+						<input class="md-trigger" data-modal="tipoProgr" type="button" value="+">
+						<!--             -->
+					</div>
+
+				</div>
+				
+
+			<fieldset id="unidadaprendizaje">
+
+				<div id="segundoBloque">
+
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 					<!-- ----------------------------------- NIVEL  DIV ----------------------------------- -->
 
-					
-		
 					<div id="nivelDiv">
 						<label>Nivel: </label>
 						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
-						@foreach ($niveles as $nivel)
-							<option value="{{$nivel->NV_descripcion}}">{{$nivel->NV_descripcion}}</option>
-						@endforeach
+							<option value="LIC">LIC.</option>
+							<option value="POSTGRADO">POSTGRADO</option>
+							<option value="TECNICO">TECNICO</option>
 						</select>
 						<!-- TABLA MODAL NIVEL-->
 						<input class="md-trigger" data-modal="nivel" type="button" value="+">
 						<!--             -->
 					</div>
 
+<<<<<<< HEAD
 					
 					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
+=======
+					<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
+
+					<div id="etapaDiv">
+						<label>Etapa: </label>
+						<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
+							<option value="BASICA">BASICA</option>
+							<option value="INTERMEDIA">DISCIPLINARIA</option>
+							<option value="TERMINAL">TERMINAL</option>
+						</select>
+						<!-- TABLA MODAL ETAPA-->
+						<input class="md-trigger" data-modal="etapa" type="button" value="+">
+							<!--             -->
+					</div>
+
+						<!-- ----------------------------------- CLAVE SERIACION  DIV ----------------------------------- -->
+						
+					<fieldset id="group_seriacion">
+						<legend>Seriación</legend>
+							
+						<div id="claveSerDiv">
+							<label>Clave: </label>
+							<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size=1 onkeypress="ValidaSoloNumeros()">
+							<datalist id="datalist_clave2F">
+								<option value="123344">
+								<option value="235562">
+								<option value="235009">
+							</datalist>
+						</div>
+					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
+
+						<div id="seriacionDivMateria">
+							<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size=1/>	
+						</div>
+
+					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
+
+						<div id="seriacionDivTipo">
+							<label>Seriación: </label>
+							<select class="con_estilo" name="serie" id="serie" size=1 type="text">
+								<option value="SINSERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGATORIA</option>
+								<option value="SUGERIDA">SUGERIDA</option>
+							</select>
+								<!-- TABLA MODAL NIVEL-->
+							<input class="md-trigger" data-modal="seriacion" type="button" value="+">
+								<!--             -->
+						</div>
+					</fieldset>
+				</div>
 
 
+					<div id="tercerBloque">
+						<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
 						<div id="carreraDiv">
 							<label>Carrera:</label>
 								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
@@ -424,27 +513,14 @@
 									<option value="CONTAB">CONTABILIDAD</option>
 									<option value="INFORMATICA">INFORMATICA</option>
 									<option value="NEGOCIOS">NEGOCIOS</option>
-								</select>
-
-								<!--<select name="example-optgroup" multiple="multiple" size="5">
-									<optgroup label="Group One">
-										<option value="option1">Option 1</option>
-										<option value="option2">Option 2</option>
-										<option value="option3">Option 3</option>
-									</optgroup>
-									<optgroup label="Group Two">
-										<option value="option4">Option 4</option>
-										<option value="option5">Option 5</option>
-										<option value="option6">Option 6</option>
-										<option value="option7">Option 7</option>
-									</optgroup>
-								</select>-->
+								</select>			
 
 								<!-- TABLA MODAL CARRERA-->
 								<input class="md-trigger" data-modal="carrera" type="button" value="+">
 								<!--             -->
 								
 						</div>
+<<<<<<< HEAD
 					
 
 
@@ -486,10 +562,21 @@
 								<option value="BASICA">BASICA</option>
 								<option value="INTERMEDIA">DISCIPLINARIA</option>
 								<option value="TERMINAL">TERMINAL</option>
+=======
+
+					<!-- ----------------------------------- NO PLAN DIV ----------------------------------- -->
+						<div id="noPlanDiv">
+							<label>No.Plan:</label>
+							<select class="con_estilo" type="text" name="noPlan" id="noPlan"> 
+								<option value="2013-2">2013-2</option>
+								<option value="2013-4">2013-4</option>
+								<option value="2014-1">2014-1</option>
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 							</select>
-							<!-- TABLA MODAL ETAPA-->
-							<input class="md-trigger" data-modal="etapa" type="button" value="+">
+							<!-- TABLA MODAL NRO. PLAN-->
+							<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
 							<!--             -->
+<<<<<<< HEAD
 						</div>
 					
 
@@ -506,51 +593,43 @@
 							<!--             -->
 						</div>
 					</div>
+=======
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 
-
-					<!-- ----------------------------------- SEMESTRE  DIV ----------------------------------- -->
-
-					<div id="tercerBloque">
-						<div id="semestreDiv">
-							<label>Sem:</label>
-							<input class="estilo_numeric" type="number" name="semestr" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()">
 						</div>
 
-					<!-- ----------------------------------- CLAVE SERIACION  DIV ----------------------------------- -->
-						
-						<fieldset id="group_seriacion">
-							<legend>Seriación</legend>
-							
-							<div id="claveSerDiv">
-								<label>Clave: </label>
-								<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size=1 onkeypress="ValidaSoloNumeros()">
-								<datalist id="datalist_clave2F">
-								<option value="123344">
-								<option value="235562">
-								<option value="235009">
-								</datalist>
-							</div>
-					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
+						<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
+						<div id="claveDiv">
+							 &nbsp;<label>Clave: </label>
+							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
+							<datalist id="datalist_clave">
+								<option value="10450">
+								<option value="13230">
+								<option value="10384">
+							</datalist>
+							<br>
+							<input type="checkbox" name="generarClave" value="Generar">Generar clave
+						</div>
 
+
+<<<<<<< HEAD
 							<div id="seriacionDivMateria">
 								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" disabled size=1/>	
 							</div>
+=======
+					<!-- ----------------------------------- MATERIA  DIV ----------------------------------- -->
+						
+						<div id="materiaDiv">
+							<label>Materia: </label>
+							<input style="width: 430px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
+						
+						</div>
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 
-					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
+					</div>
 
-							<div id="seriacionDivTipo">
-								<label>Seriación: </label>
-								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
-									
-									<option value="SINSERIACION">SIN SERIACION</option>
-									
-								</select>
-								<!-- TABLA MODAL NIVEL-->
-								<input class="md-trigger" data-modal="seriacion" type="button" value="+">
-								<!--             -->
-							</div>
-						</fieldset>
 
+<<<<<<< HEAD
 							<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
 
 						<div id="coordDiv">
@@ -568,12 +647,17 @@
 						</div>
 
 					</div>
+=======
+					
+					<div id="cuartoBloque">
+
+						
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 
 					
 
 					<!-- ----------------------------------- HORAS  DIV ----------------------------------- -->
 		
-					<div id="cuartoBloque">
 						<div id="hcDiv">
 							<label>HC: </label>
 							<input class="estilo_numeric" type="number" name="hc" id="hc" min="1" max="20" onkeypress="ValidaSoloNumeros()">
@@ -603,7 +687,14 @@
 						<br>
 						<br>
 
-					<!-- ----------------------------------- CREDITOS  DIV ----------------------------------- -->
+						<!-- ----------------------------------- SEMESTRE  DIV ----------------------------------- -->
+
+						<div id="semestreDiv">
+							<label>Sem:</label>
+							<input class="estilo_numeric" type="number" name="semestr" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()">
+						</div>
+
+						<!-- ----------------------------------- CREDITOS  DIV ----------------------------------- -->
 						
 						<div id="creditosDiv">
 							<label>Créditos: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" onkeypress="ValidaSoloNumeros()">
@@ -615,7 +706,12 @@
 							<label>Observaciones:</label><br>
 							<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" placeholder="Observaciones"></textarea>
 						</div>
+					</div>
 
+<<<<<<< HEAD
+=======
+					
+>>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 					<!---------------------------------------------------------------------------------------------------->
 
 
