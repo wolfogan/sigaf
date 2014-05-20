@@ -55,7 +55,7 @@
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;Logout
+					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
 				</div>
 				<div id="manual" class="texto_body">
 					<img src="../imagenes/manual.png" alt="">&nbsp;Manual

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 	
 	<head>
@@ -63,13 +63,18 @@
 						</tr>
 
 						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 /></td>
+							<td>No. Plan:</td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" size=1 /></td>
 						</tr>
 
 						<tr>
 							<td>Descripción:</td>
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" size=1 /></td>
+						</tr>
+
+						<tr>
+							<td>Créditos Prácticas:</td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract"size=1 /></td>
 						</tr>
 
 						<tr>
@@ -82,10 +87,7 @@
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin"size=1 /></td>
 						</tr>
 
-						<tr>
-							<td>Créditos Prácticas:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract"size=1 /></td>
-						</tr>
+						
 					</table>
 				</div>
 					<div class="CatBotones">
@@ -106,46 +108,9 @@
 							<th></th>
 							<th></th>
 						</tr>
-
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoNivel" size=1 /></td>
-						</tr>
-
+							
 						<tr>
-							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
-						</tr>
-
-					</table>
-				</div>
-					<div class="CatBotones">
-						<input type="submit" class="estilo_button2" value="Guardar"/>
-						<input type="button" value="Salir" class="md-close" />
-					</div>
-
-			</form>
-		</div>
-
-		<div class="md-modal md-effect-11" id="tipoProgr"> 
-			<form  action="action" class="md-content" method="post">
-				<h3>Agregar Tipo Programa</h3>
-				<div class="lblCatalogosDependencias">NIVEL: Lic, posgrado, etc... </div>
-
-				<div class="tblCatalogos">
-					<table class="tblCatPlan">
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoNivel" size=1 /></td>
-						</tr>
-
-						<tr>
-							<td>Descripción:</td>
+							<td>Nombre:</td>
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
 						</tr>
 
@@ -163,7 +128,7 @@
 		<div class="md-modal md-effect-11" id="carrera"> 
 			<form  action="action" class="md-content" method="post">
 				<h3>Agregar Carrera</h3>
-				<div class="lblCatalogosDependencias">NIVEL: Licenciatura, posgrado, etc...</div>
+				<div class="lblCatalogosDependencias"></div>
 
 				<div class="tblCatalogos">
 					<table class="tblCatPlan">
@@ -173,14 +138,44 @@
 							<th></th>
 						</tr>
 
+						<tr>
+							<td>Nombre:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" size=1 /></td>
+						</tr>
+
 						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoCarrera" size=1 /></td>
+							<td>Status:</td>
+							<td><input style="width: 20px; height: 20px; border-radius: 5px; border-color: #DBDBEA;" type="checkbox" id="txtCatCodigoCarrera" size=1 />Activado</td>
 						</tr>
 
 						<tr>
-							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" size=1 /></td>
+							<td>Nivel:</td>
+							<td>
+							<select class="con_estilo" style="width: 200px;" name="txtCatNivel" type="text" id="txtCatNivel" size=1 />
+								<option value="LICENCIATURA">LICENCIATURA</option>
+							</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td>Especialidad:</td>
+							<td>
+							<select class="con_estilo" style="width: 200px;" name="txtCatEspecialidad" type="text" id="txtCatEspecialidad" size=1 />
+								<option value="MTIC">MTIC</option>
+							</select>
+							</td>
+							
+						</tr>
+
+						<tr>
+							<td>Tipo Programa:</td>
+							<td>
+							<select class="con_estilo" style="width: 200px;" name="txtCatTipoProgr" type="text" id="txtCatTipoProgr" size=1 />
+								<option value="SEMESTRAL">SEMESTRAL</option>
+							</select>
+							</td>
+
+							
 						</tr>
 
 						<tr>
@@ -209,13 +204,9 @@
 							<th></th>
 						</tr>
 
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoEtapa" size=1 /></td>
-						</tr>
 
 						<tr>
-							<td>Descripción:</td>
+							<td>Nombre:</td>
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionEtapa" size=1 /></td>
 						</tr>
 
@@ -241,13 +232,8 @@
 							<th></th>
 						</tr>
 
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoSeriacion" size=1 /></td>
-						</tr>
-
 						<tr>
-							<td>Descripción:</td>
+							<td>Nombre:</td>
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionSeriacion" size=1 /></td>
 						</tr>
 
@@ -272,13 +258,8 @@
 							<th></th>
 						</tr>
 
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoTipo" size=1 /></td>
-						</tr>
-
 						<tr>
-							<td>Descripción:</td>
+							<td>Nombre:</td>
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionTipo" size=1 /></td>
 						</tr>
 
@@ -297,7 +278,7 @@
 		<div class="md-modal md-effect-11" id="coordina"> 
 			<form  action="action" class="md-content" method="post">
 				<h3>Agregar Coordinación</h3>
-				<div class="lblCatalogosDependencias">Carrera: Aquí va carrera</div>
+				<div class="lblCatalogosDependencias"></div>
 
 				<div class="tblCatalogos">
 					<table class="tblCatPlan">
@@ -306,14 +287,19 @@
 							<th></th>
 						</tr>
 
-						<tr>		
-							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCodigoCoordinacion" size=1 /></td>
+						<tr>
+							<td>Nombre:</td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCoordinacion" size=1 /></td>
 						</tr>
 
 						<tr>
-							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCoordinacion" size=1 /></td>
+							<td>Programa Educativo:</td> 
+							<td>
+							<select class="con_estilo" style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion" size=1 />
+								<option value="CONTABILIDAD">LIC. EN CONTADURIA</option>
+							</select>
+							</td>
+							
 						</tr>
 					</table>
 				</div>
@@ -353,7 +339,7 @@
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;Logout
+					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
 				</div>
 				<div id="manual" class="texto_body">
 					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
@@ -381,14 +367,12 @@
 					
 
 					<!-- ----------------------------------- CAMPUS  DIV ----------------------------------- -->
-
-					<div id="campusDiv">
+					
+					<!--<div id="campusDiv">
 						<label>Campus: </label>
 						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
-						<!-- TABLA MODAL CAMPUS-->
-						<!--<input class="md-trigger" data-modal="campus" type="button" value="+">-->
-						<!--             -->
-					</div>
+					</div>-->
+
 
 					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
 
@@ -411,6 +395,7 @@
 						<!--<input class="md-trigger" data-modal="unidad" type="button" value="+">-->
 						<!--             -->
 					</div>
+
 					<!-- ----------------------------------- NIVEL  DIV ----------------------------------- -->
 
 					
@@ -427,52 +412,7 @@
 						<!--             -->
 					</div>
 
-					<!-- ----------------------------------- TIPO PROGRAMA  DIV ----------------------------------- -->
-
 					
-		
-					<div id="tipoProgrDiv">
-						<label>Programa: </label>
-						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
-							@foreach ($tiposPrograma as $tipoPrograma)
-							<option value="{{ $tipoPrograma->TP_descripción }}">{{ $tipoPrograma->TP_descripcion }}</option>
-							@endforeach
-						</select>
-						<!-- TABLA MODAL NIVEL-->
-						<input class="md-trigger" data-modal="tipoProgr" type="button" value="+">
-						<!--             -->
-					</div>
-
-
-					
-					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
-				</div>
-				
-				<fieldset id="unidadaprendizaje">
-					
-					<div id="segundoBloque">
-						
-						<div id="claveDiv">
-							 &nbsp;<label>Clave: </label>
-							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
-							<datalist id="datalist_clave">
-								<option value="10450">
-								<option value="13230">
-								<option value="10384">
-							</datalist>
-							<br>
-							<input type="checkbox" name="generarClave" value="Generar">Generar clave
-						</div>
-
-					<!-- ----------------------------------- MATERIA  DIV ----------------------------------- -->
-						
-						<div id="materiaDiv">
-							<label>Materia: </label>
-							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
-						
-						</div>
-					
-
 					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
 
 
@@ -503,21 +443,66 @@
 								<!-- TABLA MODAL CARRERA-->
 								<input class="md-trigger" data-modal="carrera" type="button" value="+">
 								<!--             -->
-								<div id="ckbTroncoComun"><label>Tronco común</label></div>
+								
 						</div>
 					
 
+
+
+					
+					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
+				</div>
+				
+				<fieldset id="unidadaprendizaje">
+					
+					<div id="segundoBloque">
+						
+						<div id="claveDiv">
+							 &nbsp;<label>Clave: </label>
+							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
+							<datalist id="datalist_clave">
+								<option value="10450">
+								<option value="13230">
+								<option value="10384">
+							</datalist>
+							<br>
+							<input type="checkbox" name="generarClave" value="Generar">Generar clave
+						</div>
+
+					<!-- ----------------------------------- MATERIA  DIV ----------------------------------- -->
+						
+						<div id="materiaDiv">
+							<label>Materia: </label>
+							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
+						
+						</div>
+
+					
 					<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
 
 						<div id="etapaDiv">
 							<label>Etapa: </label>
-							<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
+							<select class="con_estilo" style="width:143px;" name="etapaF" id="etapaF" size=1 type="text">
 								<option value="BASICA">BASICA</option>
 								<option value="INTERMEDIA">DISCIPLINARIA</option>
 								<option value="TERMINAL">TERMINAL</option>
 							</select>
 							<!-- TABLA MODAL ETAPA-->
 							<input class="md-trigger" data-modal="etapa" type="button" value="+">
+							<!--             -->
+						</div>
+					
+
+					<!-- ----------------------------------- TIPO MATERIA  DIV ----------------------------------- -->
+
+						<div id="tipoDiv">
+							<label>Tipo: </label>
+							<select style="width:143px;" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text">
+								<option value="OBLIGATORIA">OBLIGATORIA</option>
+								<option value="OPTATIVA">OPTATIVA</option>
+							</select>
+							<!-- TABLA MODAL NIVEL-->
+							<input class="md-trigger" data-modal="tipo" type="button" value="+">
 							<!--             -->
 						</div>
 					</div>
@@ -548,7 +533,7 @@
 					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
 
 							<div id="seriacionDivMateria">
-								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size=1/>	
+								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" disabled size=1/>	
 							</div>
 
 					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
@@ -566,19 +551,25 @@
 							</div>
 						</fieldset>
 
-					<!-- ----------------------------------- TIPO MATERIA  DIV ----------------------------------- -->
+							<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
 
-						<div id="tipoDiv">
-							<label>Tipo: </label>
-							<select  class="con_estilo" name="tipoF" id="tipoF" size=1 type="text">
-								<option value="OBLIGATORIA">OBLIGATORIA</option>
-								<option value="OPTATIVA">OPTATIVA</option>
-							</select>
-							<!-- TABLA MODAL NIVEL-->
-							<input class="md-trigger" data-modal="tipo" type="button" value="+">
+						<div id="coordDiv">
+							<label>Coord: </label><input style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
+							<datalist id="datalist_coord">
+								<option value="INFORMATICA">
+								<option value="MATEMATICAS">
+								<option value="CIENCIAS COMPUTACIONALES">
+								<option value="SISTEMAS DE INFORMACION">
+								<option value="PROGRAMACION">
+							</datalist>
+							<!-- TABLA MODAL COORDINACIÓN-->
+							<input class="md-trigger" data-modal="coordina" type="button" value="+">
 							<!--             -->
 						</div>
+
 					</div>
+
+					
 
 					<!-- ----------------------------------- HORAS  DIV ----------------------------------- -->
 		
@@ -625,22 +616,6 @@
 							<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" placeholder="Observaciones"></textarea>
 						</div>
 
-					<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
-
-						<div id="coordDiv">
-							<label>Coord: </label><input style="width:120px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
-							<datalist id="datalist_coord">
-								<option value="INFORMATICA">
-								<option value="MATEMATICAS">
-								<option value="CIENCIAS COMPUTACIONALES">
-								<option value="SISTEMAS DE INFORMACION">
-								<option value="PROGRAMACION">
-							</datalist>
-							<!-- TABLA MODAL COORDINACIÓN-->
-							<input class="md-trigger" data-modal="coordina" type="button" value="+">
-							<!--             -->
-						</div>
-
 					<!---------------------------------------------------------------------------------------------------->
 
 
@@ -679,7 +654,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Este materia esta seriada con esta otra">2130</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">2130</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -693,7 +668,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">1249</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">1249</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -707,7 +682,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">9309</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">9303</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -721,7 +696,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">3900</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">9309</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -735,7 +710,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">3907</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">3900</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -749,7 +724,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">3909</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">3907</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -763,7 +738,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">3009</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">3909</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -777,7 +752,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">9023</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">9023</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -793,7 +768,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">2934</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">3009</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -807,7 +782,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">1209</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">9023</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -821,7 +796,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">2939</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">2934</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
@@ -835,7 +810,7 @@
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="center" title="Esta materia esta seriada con esta otra">8390</td>
+				<td class="tooltip" title="Materia seriada: Programacion avanzada">8390</td> 
 				<td class="center">Optativa</td>
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>

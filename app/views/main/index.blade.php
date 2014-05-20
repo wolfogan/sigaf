@@ -26,6 +26,9 @@
 		</header>
 		<div id="indicadores">
 			<div id="usuariofecha">
+				<div id="usuario" class="texto_body">
+					Usuario: {{Auth::user()->username}}
+				</div>
 				<div id="fecha" class="texto_body">
 					<label id="reloj"></label>
 				</div>
