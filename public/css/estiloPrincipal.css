@@ -13,10 +13,10 @@ margin: auto;
 }
 fieldset #group_seriacion
 {
-	width: 720px;
+	width: 750px;
 	float: left;
-	margin-top: -15px;
-	margin-left: 20px;
+	margin-top: -30px;
+	margin-left: 25px;
 }
 legend
 {
@@ -98,7 +98,7 @@ section #segundoBloque
 }
 section #tercerBloque
 {
-	padding-top: 40px;
+	padding-top: 30px;
 	height: 60px;
 	width: 1250px;
 	margin-left: 0px;
@@ -223,12 +223,8 @@ background: #EFCA0D;
 #botones
 {
 	
-	margin-left: 1060px;
-<<<<<<< HEAD
+	margin-left: 1070px;
 	margin-top: -80px;
-=======
-	margin-top: -70px;
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 	width: 130px;
 	float: left;
 }
@@ -350,13 +346,9 @@ background: #EFCA0D;
 	
 	margin: 1em 0em;
 	float:left;
-	width: 250px;
+	width: 270px;
 	margin-top:0px;
-<<<<<<< HEAD
-	margin-left: 30px;
-=======
-	margin-left: 5px;
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
+	margin-left: 18px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -451,10 +443,8 @@ background: #EFCA0D;
 }
 #consul_coor
 {
-	
 	margin-left:625px;
 	margin-top:-30px;
-	width: 220px;
 }
 #elimImg
 {
@@ -467,7 +457,7 @@ background: #EFCA0D;
 #noPlanDiv
 {
 	
-	width: 250px;
+	width: 240px;
 	float: left;
 	margin-left: 0px;
 	padding-right:7px;
@@ -475,11 +465,11 @@ background: #EFCA0D;
 #unidadAcademicaDiv
 {
 	
-	width: 185px;
+	width: 150px;
 	float: left;
 	margin-top:5px;
-	padding-left: 20px;	
-
+	margin-left: -12px;	
+	padding-left: 20px;
 	
 }
 /*#campusDiv
@@ -489,77 +479,57 @@ background: #EFCA0D;
 	width: 150px;
 	float: left;
 	margin-top:5px;
-<<<<<<< HEAD
 	padding-left: 7px;	
 }*/
-=======
-	margin-left: 10px;
-	padding-right: 20px;	
-}
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
 #unidadDiv
 {
 	
 	width: 250px;
 	float: left;
 	margin-top: 5px;
-	padding-left: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 #nivelDiv
 {
 
 	width: 230px;
 	float: left;
-<<<<<<< HEAD
-	padding-left: 15px;
-=======
-	padding-top: 10px;
-	padding-left: 7px;
+	padding-left: 45px;
 }
-#tipoProgrDiv
+/*#tipoProgrDiv
 {
 	
 	width: 250px;
 	float: left;
+	padding-left: 40px;
 	
-	
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
-}
-
+}*/
 #claveDiv
 {
-	
-	margin-left: 20px;
-	width: 150px;
+	width: 178px;
 	float: left;
 }
 #materiaDiv
 {
-	
-	width: 500px;
+	width: 450px;
 	float: left;
-	padding-left: 10px;
+	padding-left: 20px;
 }
 #etapaDiv
 {
 	
 	width: 240px;
 	float: left;
-<<<<<<< HEAD
-	padding-left:65px;
-=======
-	padding-top: 10px;
-	padding-left:30px;
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
+	padding-left:60px;
 	
 }
 #tipoDiv
 {
 	
-	
 	width: 230px;
 	float: left;
-	margin-left: 47px;
+	margin-left: 65px;
 }
 #semestreDiv
 {
@@ -571,11 +541,10 @@ background: #EFCA0D;
 {
 	width: 140px;
 	float: left;
-	padding-left:20px;
+	padding-left:5px;
 }
 #seriacionDivMateria
 {
-
 	width: 300px;
 	float: left;
 	padding-left:0px;
@@ -583,26 +552,17 @@ background: #EFCA0D;
 #seriacionDivTipo
 {
 	
-	
-	width: 240px;
+	width: 280px;
 	float: left;
-	margin-left: 8px;
-	padding-left: 5px;
-	
+	padding-left: 25px;
 }
 #coordDiv
 {
 	
-	
-	width: 250px;
+	width: 245px;
 	float: left;
-<<<<<<< HEAD
-	margin-left: 1010px;
-	margin-top: -43px;
-=======
-	padding-left: 37px;
-	margin-top: 0px;
->>>>>>> aed0e468ac882c175266f19221823d9ebaade8d1
+	margin-left: 1020px;
+	margin-top: -40px;
 }
 #hcDiv
 {
@@ -644,7 +604,7 @@ background: #EFCA0D;
 {
 	width: 200px;
 	float: left;
-	padding-left: 83px;
+	padding-left: 3px;
 
 }
 #observacionesDiv
@@ -652,8 +612,8 @@ background: #EFCA0D;
 	
 	width: 500px;
 	float: left;
-	margin-left: 520px;
-	margin-top: -85px;
+	margin-left: 270px;
+	margin-top: -80px;
 }
 
 #planTerminado
@@ -665,9 +625,14 @@ background: #EFCA0D;
 	width: 300px;
 
 }
-
-
-
+#checkTroncoComun
+{
+	
+	width: 150px;
+	margin-left: 855px;
+	margin-top: -25px;
+	
+}
 
 #acciones
 {
@@ -744,16 +709,15 @@ background: #EFCA0D;
 	padding: 5px;
 	padding-top: 12px;
 	padding-right: 20px;
-	padding-left: 0px;
 }
-
-#checkTroncoComun
+/*#ckbTroncoComun
 {
-	padding: 5px;
-	margin-top: -30px;
-	margin-left: 850px;
+	
+	margin-left: 75px;
 	width: 150px;
-}
+
+}*/
+
 
 /*----------------- CATALOGOS -------------------*/
 
