@@ -167,8 +167,8 @@ ventimp.close();
 				</datalist>
 			</div>
 			<div id="checkTroncoComun">
-		<input style="width:18px; height:18px;" type="checkbox" name="checkTroncoComun" value="checkTroncoComun"><label style="font-size:18px;">Tronco común</label></div>
-
+				<input style="width:18px; height:18px;" type="checkbox" name="checkTroncoComun" value="checkTroncoComun"><label style="font-size:18px;">Tronco común</label>
+			</div>
 		</div>
 		
 	</fieldset>
