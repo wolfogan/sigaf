@@ -12,7 +12,8 @@ class PlanEstudioController extends BaseController
 	public function getRegistro()
 	{
 		//$planestudio = DB::table('planestudio')->distinct()->lists('PE_codigo');
-		$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
+		//$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
+		$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
 		$codigosPE = array();
 		
 		/**
@@ -31,24 +32,31 @@ class PlanEstudioController extends BaseController
 		}
 		
 		for ($i=0; $i < count($planestudio); $i++) { 
-		$codigosPE[] = ["codigo" => $planestudio[$i]->PE_codigo,"formato" => str_insert("-",$planestudio[$i]->PE_codigo,4)];
+		$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
 		}
+		// Licenciatura, Maestría
+		$niveles = NivelPrograma::select('nivel','descripcion')->orderBy('nivel','desc')->get();
+		// Cuatrimestral, Semestral
+		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
 
-		$niveles = NivelPrograma::select('NV_codigo','NV_descripcion')->orderBy('NV_codigo','desc')->get();
-		
-		$tiposPrograma = TipoPrograma::select('TP_codigo','TP_descripcion')->get();
+		// Básica, Disciplinaria, Terminal
+		$etapas= Etapa::select('etapa','descripcion')->get();
 
-		$etapas= Etapa::select('ET_codigo','ET_descripcion')->get();
+		// Obligatoria, Sugerida, Sin seriación.
+		$seriaciones = Seriacion::select('reqseriacion','descripcion')->orderBy('reqseriacion','desc')->get();
 
-		$seriaciones = Seriacion::select('RS_codigo','RS_descripcion')->orderBy('RS_codigo','desc')->get();
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
 
-		$tiposCaracter = Caracter::select('CAR_codigo','CAR_descripcion')->get();
+		// Coordinación de area
+		$coordinaciones = Coordinacion::select('coordinaciona','descripcion')->get();
 
-		$coordinaciones = Coordinacion::select('CO_codigo','CO_descripcion')->get();
+		// Materia: Matemáticas, español, etc.
+		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->orderBy('uaprendizaje','desc')->get();
 
-		$unidadesAprendizaje = UnidadAprendizaje::select('UA_clave','UA_descripcionmat')->orderBy('UA_clave','desc')->get();
+		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 
-		return View::make('pe.registro')->with(compact('codigosPE','niveles','tiposPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje'));
+		return View::make('pe.registro')->with(compact('codigosPE','niveles','periodosPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje','programasEducativos'));
 	}
 
 	public function getConsulta()
@@ -75,7 +83,104 @@ class PlanEstudioController extends BaseController
 		return View::make('pe.catalogosAdmin');
 	}
 
-	
+	// ALTAS DE CATALOGOS
+	// 
+	public function postRegistrarplan()
+	{
+		$plan = new PlanEstudio;
+		$plan -> plan = Input::get('planestudio_plan');
+		$plan -> descripcion = Input::get('planestudio_descripcion');
+		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
+		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
+		$plan -> credpracticas = Input::get('planestudio_credpracticas');
+		$plan -> save();
+		return Redirect::back();
+	}
+
+	public function postRegistrarnivel()
+	{
+		$nivel = new NivelPrograma;
+		$nivel -> descripcion = Input::get('nivel_descripcion');
+		$nivel -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistrarperiodoprograma()
+	{
+		$tipo = new PeriodoPrograma;
+		$tipo -> descripcion = Input::get('periodoprograma_descripcion');
+		$tipo -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistraretapa()
+	{
+		$etapa = new Etapa;
+		$etapa -> descripcion = Input::get('etapa_descripcion');
+		$etapa -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistrarseriacion()
+	{
+		$seriacion = new Seriacion;
+		$seriacion -> descripcion = Input::get('seriacion_descripcion');
+		$seriacion -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistrarcaracter()
+	{
+		$caracter = new Caracter;
+		$caracter -> descripcion = Input::get('caracter_descripcion');
+		$caracter -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistrarcoordinacion()
+	{
+		$coordinacion= new Coordinacion;
+		$coordinacion -> descripcion = Input::get('coordinacion_descripcion');
+		$coordinacion -> programaedu = 1;
+		$coordinacion -> save();
+
+		return Redirect::back();
+
+	}
+
+	public function postRegistrarprogramaeducativo()
+	{
+		$programaEducativo = new ProgramaEducativo;
+		$programaEducativo -> descripcion = "NEW CARRER";
+		$programaEducativo -> save();
+
+		return Redirect::back();
+	}
+
+	public function postRegistrarua()
+	{
+		$ua = new UnidadAprendizaje;
+		return "YUHUUU";
+	}
+
+	// Llamadas Asíncronas
+	public function postObtenermateria()
+	{
+		$ua_id = Input::get('uaprendizaje');
+		$uaprendizaje = UnidadAprendizaje::find($ua_id);
+		return $uaprendizaje->descripcionmat;
+	}
+
+	public function getObtenerclave()
+	{
+		$ua_id = UnidadAprendizaje::select('uaprendizaje')->orderBy('uaprendizaje','desc')->first();
+		return $ua_id->uaprendizaje+1;
+	}
 
 }
 

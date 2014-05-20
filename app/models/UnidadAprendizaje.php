@@ -3,5 +3,6 @@
 class UnidadAprendizaje extends Eloquent
 {
 	protected $table = 'uaprendizaje';
-	protected $primaryKey = 'UA_clave';
+	protected $primaryKey = 'uaprendizaje';
+	public $timestamps = false;
 }

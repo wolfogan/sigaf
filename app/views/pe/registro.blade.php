@@ -52,7 +52,7 @@
 		
 
 		<div class="md-modal md-effect-11" id="plan"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
 				<h3>Agregar Plan</h3>
 
 				<div class="tblCatalogos">
@@ -64,27 +64,27 @@
 
 						<tr>		
 							<td>Código:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" name="planestudio_plan" size=1 /></td>
 						</tr>
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" size=1 /></td>
 						</tr>
 
 						<tr>
 							<td>Fecha Inicio:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' size=1 /></td>
 						</tr>
 
 						<tr>
 							<td>Fecha Final:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin"size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
 						</tr>
 
 						<tr>
 							<td>Créditos Prácticas:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract"size=1 /></td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
 						</tr>
 					</table>
 				</div>
@@ -128,8 +128,8 @@
 		</div>
 
 		<div class="md-modal md-effect-11" id="tipoProgr"> 
-			<form  action="action" class="md-content" method="post">
-				<h3>Agregar Tipo Programa</h3>
+			<form  action="<?=URL::to('planestudio/registrarperiodoprograma'); ?>" class="md-content" method="post">
+				<h3>Agregar Periodo Programa</h3>
 				<div class="lblCatalogosDependencias">NIVEL: Lic, posgrado, etc... </div>
 
 				<div class="tblCatalogos">
@@ -146,7 +146,7 @@
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" name="periodoprograma_descripcion" size=1 /></td>
 						</tr>
 
 					</table>
@@ -161,7 +161,7 @@
 
 
 		<div class="md-modal md-effect-11" id="carrera"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
 				<h3>Agregar Carrera</h3>
 				<div class="lblCatalogosDependencias">NIVEL: Licenciatura, posgrado, etc...</div>
 
@@ -199,7 +199,7 @@
 		</div>
 
 		<div class="md-modal md-effect-11" id="etapa"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 				<h3>Agregar Etapa</h3>
 
 				<div class="tblCatalogos">
@@ -216,7 +216,7 @@
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionEtapa" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionEtapa" name="etapa_descripcion" size=1 /></td>
 						</tr>
 
 
@@ -231,7 +231,7 @@
 		</div>
 
 		<div class="md-modal md-effect-11" id="seriacion"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarseriacion'); ?>" class="md-content" method="post">
 				<h3>Agregar Seriación</h3>
 
 				<div class="tblCatalogos">
@@ -248,7 +248,7 @@
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionSeriacion" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionSeriacion" name="seriacion_descripcion"size=1 /></td>
 						</tr>
 
 					</table>
@@ -262,7 +262,7 @@
 		</div>
 
 		<div class="md-modal md-effect-11" id="tipo"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarcaracter'); ?>" class="md-content" method="post">
 				<h3>Agregar Tipo</h3>
 
 				<div class="tblCatalogos">
@@ -279,7 +279,7 @@
 
 						<tr>
 							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionTipo" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionTipo" name="caracter_descripcion" size=1 /></td>
 						</tr>
 
 					</table>
@@ -295,7 +295,7 @@
 
 
 		<div class="md-modal md-effect-11" id="coordina"> 
-			<form  action="action" class="md-content" method="post">
+			<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
 				<h3>Agregar Coordinación</h3>
 				<div class="lblCatalogosDependencias">Carrera: Aquí va carrera</div>
 
@@ -362,7 +362,7 @@
 		</div>
 
 		<section>
-			<div id="formularioPlanEstudio">
+			<form id="formularioPlanEstudio" method="post" action="<?=URL::to('planestudio/registrarua');  ?>">
 			
 				<div id="primerBloque">
 					<!-- ----------------------------------- NO PLAN DIV ----------------------------------- -->
@@ -419,7 +419,7 @@
 						<label>Nivel: </label>
 						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
 						@foreach ($niveles as $nivel)
-							<option value="{{$nivel->NV_codigo}}">{{$nivel->NV_descripcion}}</option>
+							<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
 						@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
@@ -434,8 +434,8 @@
 					<div id="tipoProgrDiv">
 						<label>Programa: </label>
 						<select class="con_estilo" name="tipoProgr" id="tipoProgr" size=1 type="text">
-							@foreach ($tiposPrograma as $tipoPrograma)
-							<option value="{{ $tipoPrograma->TP_codigo }}">{{ $tipoPrograma->TP_descripcion }}</option>
+							@foreach ($periodosPrograma as $periodoPrograma)
+							<option value="{{ $periodoPrograma->periodo_pedu }}">{{ $periodoPrograma->descripcion }}</option>
 							@endforeach
 						</select>
 						<!-- TABLA MODAL NIVEL-->
@@ -454,14 +454,14 @@
 						
 						<div id="claveDiv">
 							 &nbsp;<label>Clave: </label>
-							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
+							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size="1" >
 							<datalist id="datalist_clave">
 								@foreach ($unidadesAprendizaje as $materia)
-								<option value="{{$materia->UA_clave}}">
+								<option value="{{$materia->uaprendizaje}}">
 								@endforeach
 							</datalist>
 							<br>
-							<input type="checkbox" name="generarClave" value="Generar">Generar clave
+							<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
 						</div>
 
 					<!-- ----------------------------------- MATERIA  DIV ----------------------------------- -->
@@ -479,11 +479,9 @@
 						<div id="carreraDiv">
 							<label>Carrera:</label>
 								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
-									<option value="TRONCOCOMUN">TRONCO COMUN</option>
-									<option value="ADMON">ADMINISTRACION</option>
-									<option value="CONTAB">CONTABILIDAD</option>
-									<option value="INFORMATICA">INFORMATICA</option>
-									<option value="NEGOCIOS">NEGOCIOS</option>
+									@foreach ($programasEducativos as $carrera)
+									<option value="{{$carrera->programaedu}}">{{$carrera->descripcion}}</option>
+									@endforeach
 								</select>
 
 								<!--<select name="example-optgroup" multiple="multiple" size="5">
@@ -513,7 +511,7 @@
 							<label>Etapa: </label>
 							<select class="con_estilo" name="etapaF" id="etapaF" size=1 type="text">
 								@foreach ($etapas as $etapa)
-								<option value="{{$etapa->ET_codigo}}">{{$etapa->ET_descripcion}}</option>
+								<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
 								@endforeach
 								
 							</select>
@@ -542,7 +540,7 @@
 								<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size=1 onkeypress="ValidaSoloNumeros()">
 								<datalist id="datalist_clave2F">
 								@foreach ($unidadesAprendizaje as $materia)
-								<option value="{{$materia->UA_clave}}">
+								<option value="{{$materia->uaprendizaje}}">
 								@endforeach
 								</datalist>
 							</div>
@@ -558,7 +556,7 @@
 								<label>Seriación: </label>
 								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
 									@foreach ($seriaciones as $seriacion)
-									<option value="{{$seriacion->RS_codigo}}">{{$seriacion->RS_descripcion}}</option>
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 									@endforeach
 									
 								</select>
@@ -574,7 +572,7 @@
 							<label>Tipo: </label>
 							<select  class="con_estilo" name="tipoF" id="tipoF" size=1 type="text">
 								@foreach ($tiposCaracter as $caracter)
-								<option value="{{$caracter->CAR_codigo}}">{{$caracter->CAR_descripcion}}</option>
+								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 								@endforeach
 							<!-- TABLA MODAL NIVEL-->
 							<input class="md-trigger" data-modal="tipo" type="button" value="+">
@@ -633,7 +631,7 @@
 							<label>Coord: </label><input style="width:120px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
 							<datalist id="datalist_coord">
 								@foreach ($coordinaciones as $coordinacion)
-								<option value="{{$coordinacion->CO_descripcion}}" data="{{$coordinacion->CO_codigo}}">
+								<option value="{{$coordinacion->descripcion}}" data="{{$coordinacion->coordinaciona}}">
 								@endforeach
 							</datalist>
 							<!-- TABLA MODAL COORDINACIÓN-->
@@ -645,11 +643,11 @@
 
 
 						<div id="botones">
-							<input style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guarda" id="guardar">
+							<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guarda" id="guardar">
 						</div>
 					</div>
 				</fieldset>
-			</div>
+			</form>
 
 			<div id="GridPlanEstudio">
 				<div id="planTerminado"><input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label></div>
@@ -862,7 +860,34 @@
 <script>
 			$(document).ready( function() {
 				// Default options
-				$("#control_3").multiSelect();	
+				$("#control_3").multiSelect();
+
+				$("#clave1F").on("focusout",function(){
+					var idua = $(this).val();
+					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
+						{
+							$("#materia").val(materia);
+						});
+				});
+
+				$("#clave2F").on("focusout",function(){
+					var idua = $(this).val();
+					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
+						{
+							$("#materiaSeriada").val(materia);
+						});
+				});
+
+				$("#generarClave").on("change",function(){
+					if($(this).is(":checked"))
+					{
+						$.post("<?php echo URL::to('planestudio/obtenerclave'); ?>",{envio:true},function(clave)
+						{
+							alert(clave);
+						});
+					}
+				});
+
 			});
 		</script>
 
