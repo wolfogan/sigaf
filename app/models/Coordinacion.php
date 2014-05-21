@@ -2,6 +2,7 @@
 
 class Coordinacion extends Eloquent
 {
-	protected $table = "coordinacion";
-	protected $primaryKey = "CO_codigo";
+	protected $table = "coordinaciona";
+	protected $primaryKey = "coordinaciona";
+	public $timestamps = false;
 }
