@@ -525,7 +525,7 @@
 					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
 
 							<div id="seriacionDivMateria">
-								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size=1/>	
+								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size="1" disabled/>	
 							</div>
 
 					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
