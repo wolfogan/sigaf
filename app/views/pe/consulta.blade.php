@@ -68,7 +68,7 @@ ventimp.close();
 	</div>
 	<div id="loginmanual">
 		<div id="login" class="texto_body">
-			<img src="../imagenes/login.png" alt="">&nbsp;Logout
+			<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
 		</div>
 		<div id="manual" class="texto_body">
 			<img src="../imagenes/manual.png" alt="">&nbsp;Manual
@@ -78,7 +78,8 @@ ventimp.close();
 <section>
 
 	<div id="statusPlanEstudios"><label>Estatus del plan</label></div>
-	<div id="checkSubdirector"><input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label></div>
+	<div id="checkSubdirector">
+		<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label></div>
 <div id="Consultas">
 	<fieldset id="consultaPlan">
 		<legend>Consultar por:</legend>
@@ -95,7 +96,6 @@ ventimp.close();
 			<div id="consul_nivel">
 				<label>Nivel: </label>
 				<select class="con_estilo" name="nivel" size=1>
-					<option value="TC">TRONCO COMUN</option>
 					<option value="LIC">LIC.</option>
 					<option value="POSTGRADO">POSTGRADO</option>
 					<option value="TECNICO">TECNICO</option>
@@ -104,6 +104,7 @@ ventimp.close();
 			<div id="consul_carrera">
 				<label>Carrera: </label>
 				<select class="con_estilo" name="carrera" size=1>
+					<option value="TC">TRONCO COMUN</option>
 					<option value="ADMON">ADMON.</option>
 					<option value="CONTAB">CONTAB.</option>
 					<option value="INFORMATICA">INFORMATICA</option>
@@ -165,7 +166,9 @@ ventimp.close();
 				<option value="PROGRAMACION">
 				</datalist>
 			</div>
-
+			<div id="checkTroncoComun">
+				<input style="width:18px; height:18px;" type="checkbox" name="checkTroncoComun" value="checkTroncoComun"><label style="font-size:18px;">Tronco común</label>
+			</div>
 		</div>
 		
 	</fieldset>

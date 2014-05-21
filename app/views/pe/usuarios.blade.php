@@ -42,35 +42,49 @@
 			
 		</div>
 
+			<form id="loginform" action="login/validar" method="post" >
+    				<!-- Verifica si existe la variable de sesión -->
+                    @if(Session::has('login_errors'))
+                    <p style='color:#FB1D1D' >El nombre de usuario o la contraseña no son correctos.</p>
+                    @else
+                    <p>Introduzca usuario y contraseña para continuar.</p>
+                    @endif
+
 		
-			<div id="usuarioContrasena">
-				<fieldset id="usuarios">
+				<div id="usuarioContrasena">
+					<fieldset id="usuarios">
 
-					<div id="usuarioLogin">
-						<div id="introUsuarioContrasena">Introduzca usuario y contraseña para continuar</div>
-	
-							<label>Usuario: </label>
-							<input style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="usuario" name="usuario" id="usuario" size=1>
-					</div>
+						<div id="usuarioLogin">
+							
+							<div id="introUsuarioContrasena">Introduzca usuario y contraseña para continuar</div>
+		
+								<label>Usuario: </label>
+								<input class="form-control" style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="username" id="username" placeholder="Usuario" size=1>
+						</div>
 
-					<div id="contrasenaLogin">
+						<div id="contrasenaLogin">
 
-							<label>Contraseña: </label>
-							<input style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="password" name="contrasena" id="contrasena" size=1>
-					</div>
+								<label>Contraseña: </label>
+								<input class="form-control" style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="password" name="password" id="password" placeholder="Contraseña" size=1>
+						</div>
 
-					<div id="btnIniciarSesion">
-						<input style="width:200px"class="estilo_button2" type="button" value="Iniciar Sesión" name="iniciarSesion" id="iniciarSesion">
-					</div>
+						<div id="btnIniciarSesion">
+							<input style="width:200px"class="estilo_button2" type="button" value="Iniciar Sesión" name="iniciarSesion" id="iniciarSesion">
+						</div>
+			</form>
 
-					<div id="RegistrarseUsuarios">Registrarse!<br> Olvidó su contraseña?</div>
+						<div id="RegistrarseUsuarios">Registrarse!<br> Olvidó su contraseña?</div>
 
-				</fieldset>	
+					</fieldset>	
 
-			</div>
+				</div>
 				
 	
 		<footer></footer>
+
+		<?php echo HTML::script('js/jquery.js'); ?>
+        <?php echo HTML::script('js/jquery-ui.js'); ?>
+        <?php echo HTML::script('js/login.js'); ?>
 		
 	</body>
 <!----------------------------------------------------------->

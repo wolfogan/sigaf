@@ -55,7 +55,7 @@
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;Logout
+					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
 				</div>
 				<div id="manual" class="texto_body">
 					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
@@ -99,23 +99,27 @@
 								<div id="cmbSeccionesBit">
 									<label>Sección: </label>
 									<select class="con_estilo" style="width:150px;" name="seccionesBit" id="seccionesBit" size=1 type="text">
+										<option value="TODAS">TODAS</option>
 										<option value="ALTAS">ALTAS</option>
 										<option value="BAJAS">BAJAS</option>
-										<option value="CONSULTAS">CONSULTAS</option>
 										<option value="MODIFICACIONES">MODIFICACIONES</option>
 									</select>		
 								</div>
 
 								<div id="cmbBuscarPorBit">
 									<label>Usuario: </label>
-									<select class="con_estilo" style="width:170px;" name="buscarPorBit" id="buscarPorBit" size=1 type="text">
-										<option value="USUARIO1">IVAN AVILA</option>
-										<option value="USUARIO2">UNICE ESPINOZA</option>
-										<option value="USUARIO3">CYNTHIA DUARTE</option>
-									</select>		
+									<Input class="con_estilo" style="width:170px;" text-transform:"uppercase" name="buscarPorBit" id="buscarPorBit" list="datalist_buscarPorBit" size=1 type="text">
+										<datalist id="datalist_buscarPorBit">
+											<option value="TODOS">TODOS</option>
+											<option value="IVAN AVILA">IVAN AVILA</option>
+											<option value="UNICE ESPINOZA">UNICE ESPINOZA</option>
+											<option value="CYNTHIA DUARTE">CYNTHIA DUARTE</option>
+										</datalist>		
 								</div>
 							</div>
 
+
+				
 								<div id="btnBuscarBit">
 									<input style="width:120px"class="estilo_button2" type="button" value="Buscar" name="buscarBitacora" id="buscarBitacora">
 								</div>
@@ -143,8 +147,7 @@
 						<th>CAMPOS CAPTURADOS</th>
 						<th>HABILITO ALTA</th>
 						<th>MOVIMIENTOS</th>
-						<th>ELIMINAR</th>
-						
+												
 
 					</tr>
 				</thead>
@@ -158,7 +161,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeC">
@@ -170,7 +173,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -182,7 +185,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -194,7 +197,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -206,7 +209,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -218,7 +221,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -230,7 +233,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeA">
@@ -242,7 +245,8 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
+						
 
 					</tr>
 					
@@ -256,7 +260,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeC">
@@ -268,7 +272,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 					</tr>
 					<tr class="gradeC">
@@ -280,7 +284,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 						
 						
 					</tr>
@@ -293,7 +297,7 @@
 						<td class="center">PE 2014-2</td>
 						<td class="center">NO</td>
 						<td class="center">Alta plan 2014-2, Campus, Unidad academica, Nivel, Programa, Carrera, Seriacion, etc.</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						
 
 					</tr>
 						

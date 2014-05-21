@@ -223,8 +223,8 @@ background: #EFCA0D;
 #botones
 {
 	
-	margin-left: 1060px;
-	margin-top: -60px;
+	margin-left: 1070px;
+	margin-top: -80px;
 	width: 130px;
 	float: left;
 }
@@ -348,7 +348,7 @@ background: #EFCA0D;
 	float:left;
 	width: 270px;
 	margin-top:0px;
-	margin-left: 48px;
+	margin-left: 18px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -457,7 +457,7 @@ background: #EFCA0D;
 #noPlanDiv
 {
 	
-	width: 250px;
+	width: 240px;
 	float: left;
 	margin-left: 0px;
 	padding-right:7px;
@@ -465,13 +465,14 @@ background: #EFCA0D;
 #unidadAcademicaDiv
 {
 	
-	width: 120px;
+	width: 150px;
 	float: left;
 	margin-top:5px;
-	padding-left: 10px;	
+	margin-left: -12px;	
+	padding-left: 20px;
 	
 }
-#campusDiv
+/*#campusDiv
 {
 	
 
@@ -479,30 +480,31 @@ background: #EFCA0D;
 	float: left;
 	margin-top:5px;
 	padding-left: 7px;	
-}
+}*/
 #unidadDiv
 {
 	
-	width: 160px;
+	width: 250px;
 	float: left;
 	margin-top: 5px;
-	padding-left: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 #nivelDiv
 {
 
 	width: 230px;
 	float: left;
-	padding-left: 7px;
+	padding-left: 45px;
 }
-#tipoProgrDiv
+/*#tipoProgrDiv
 {
 	
 	width: 250px;
 	float: left;
 	padding-left: 40px;
 	
-}
+}*/
 #claveDiv
 {
 	width: 178px;
@@ -517,18 +519,17 @@ background: #EFCA0D;
 #etapaDiv
 {
 	
-	width: 220px;
+	width: 240px;
 	float: left;
-	padding-left:45px;
+	padding-left:60px;
 	
 }
 #tipoDiv
 {
 	
-	
-	width: 210px;
+	width: 230px;
 	float: left;
-	margin-left: 40px;
+	margin-left: 65px;
 }
 #semestreDiv
 {
@@ -558,10 +559,10 @@ background: #EFCA0D;
 #coordDiv
 {
 	
-	width: 220px;
+	width: 245px;
 	float: left;
-	padding-left: 37px;
-	margin-top: -80px;
+	margin-left: 1020px;
+	margin-top: -40px;
 }
 #hcDiv
 {
@@ -624,9 +625,14 @@ background: #EFCA0D;
 	width: 300px;
 
 }
-
-
-
+#checkTroncoComun
+{
+	
+	width: 150px;
+	margin-left: 855px;
+	margin-top: -25px;
+	
+}
 
 #acciones
 {
@@ -704,13 +710,15 @@ background: #EFCA0D;
 	padding-top: 12px;
 	padding-right: 20px;
 }
-#ckbTroncoComun
+/*#ckbTroncoComun
 {
 	
 	margin-left: 75px;
 	width: 150px;
 
-}
+}*/
+
+
 /*----------------- CATALOGOS -------------------*/
 
 .tblCatalogos
@@ -1048,4 +1056,34 @@ background: #EFCA0D;
 }
 
 
-/*------------------------------------------------------------------*/
+/*---------------------TOOLTIP TEXT PARA EL GRIDVIEW-------------------------*/
+
+ .tooltip{
+      display: inline;
+      position: relative;
+  }
+  .tooltip:hover:after{
+      background: #333;
+      background: rgba(0,0,0,.8);
+      border-radius: 5px;
+      bottom: 26px;
+      color: #fff;
+      content: attr(title);
+      left: 20%;
+      padding: 5px 15px;
+      position: absolute;
+      z-index: 98;
+      width: 220px;
+  }
+  .tooltip:hover:before{
+      border: solid;
+      border-color: #333 transparent;
+      border-width: 6px 6px 0 6px;
+      bottom: 20px;
+      content: "";
+      left: 50%;
+      position: absolute;
+      z-index: 99;
+  }
+
+  /*--------------------------------------------------------------------*/
