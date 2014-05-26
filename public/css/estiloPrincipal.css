@@ -343,12 +343,11 @@ background: #EFCA0D;
 }
 #carreraDiv 
 {
-	
 	margin: 1em 0em;
 	float:left;
-	width: 270px;
+	width: 250px;
 	margin-top:0px;
-	margin-left: 18px;
+	margin-left: 50px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -495,7 +494,7 @@ background: #EFCA0D;
 
 	width: 230px;
 	float: left;
-	padding-left: 45px;
+	padding-left: 35px;
 }
 /*#tipoProgrDiv
 {

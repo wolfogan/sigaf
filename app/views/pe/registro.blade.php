@@ -391,7 +391,7 @@
 					
 
 
-					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
+					<!-- ----------------------------------- UNIDAD ACADEMICA DIV ----------------------------------- -->
 					<div id="unidadAcademicaDiv">
 						<label>U.Acad:</label>
 						<label style="color:#ECA22E">{{Auth::user()->ua}}</label>
@@ -401,14 +401,21 @@
 						<!--             -->
 					</div>
 
-
+<!-- ----------------------------------- NIVEL ----------------------------------- -->
+					<div id="nivelDiv">
+						<label>Nivel: </label>
+						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
+						@foreach ($niveles as $nivel)
+							<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
+						@endforeach
+						</select>
+						<!-- TABLA MODAL NIVEL-->
+						<input class="md-trigger" data-modal="nivel" type="button" value="+">
+						<!--             -->
+					</div>
 					
 
-
 					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
-
-
-
 
 						<div id="carreraDiv">
 							<label>Carrera:</label>
@@ -426,18 +433,7 @@
 								<!--             -->
 						</div>
 
-<!-- ----------------------------------- NIVEL ----------------------------------- -->
-					<div id="nivelDiv">
-						<label>Nivel: </label>
-						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
-						@foreach ($niveles as $nivel)
-							<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
-						@endforeach
-						</select>
-						<!-- TABLA MODAL NIVEL-->
-						<input class="md-trigger" data-modal="nivel" type="button" value="+">
-						<!--             -->
-					</div>
+
 
 					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
 				</div>
