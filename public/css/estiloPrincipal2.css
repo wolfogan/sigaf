@@ -1,3 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
 body
 {
 background-image: url(../imagenes/fondo.png);
@@ -13,11 +16,10 @@ margin: auto;
 }
 fieldset #group_seriacion
 {
-	width: 750px;
+	width: 725px;
 	float: left;
 	margin-top: -30px;
-	margin-left: 20px;
-
+	margin-left: 15px;
 }
 legend
 {
@@ -79,28 +81,25 @@ section:hover
 }
 section #primerBloque
 {
-	
-	
 	padding-top: 20px;
-	padding-right: 0px;
+	padding-right: 10px;
+	padding-left: 25px;
 	padding-bottom: 10px;
 	height: 40px;
-	width: 1250px;
+	width: 1255px;
 	margin: auto;
 }
 section #segundoBloque
 {
-	
-	padding-top: 20px;
+	padding-top: 15px;
 	padding-left:20px;
 	height: 50px;
-	width: 1250px;
+	width: 1230px;
 	margin:auto;
 }
 section #tercerBloque
 {
-	
-	padding-top: 40px;
+	padding-top: 20px;
 	height: 60px;
 	width: 1250px;
 	margin-left: 0px;
@@ -110,8 +109,7 @@ section #tercerBloque
 }
 section #cuartoBloque
 {
-
-	padding-top: 20px;
+	padding-top: 0px;
 	height: 125px;
 	width: 1250px;
 	margin: auto;
@@ -225,10 +223,9 @@ background: #EFCA0D;
 }
 #botones
 {
-	
-	margin-left: 1070px;
-	margin-top: -80px;
-	width: 130px;
+	margin-left: 1000px;
+	margin-top: -60px;
+	width: 215px;
 	float: left;
 }
 #cimarron
@@ -279,23 +276,19 @@ background: #EFCA0D;
 }
 #ubicacion
 {
-
-	
 	display: inline-block;
 	font-size: 17px;
-	margin: auto;
-	margin-left: 120px;
+	margin-left: 100px;
 }
 #loginmanual
 {
 	display:inline-block;
 	float: right;
 	font-size: 13px;
-	padding-right: 65px;
+	padding-right: 45px;
 }
 #indicadores
 {
-	
 	margin: 0 auto;
 	padding-top: 35px;
 	width:1320px;
@@ -346,12 +339,12 @@ background: #EFCA0D;
 }
 #carreraDiv 
 {
-	
 	margin: 1em 0em;
 	float:left;
-	width: 250px;
+	width: 270px;
+	float: left;
 	margin-top:0px;
-	margin-left: 18px;
+	padding-left: 15px;
 	/*margin: 1em 0em;
 	width: 250px;
 	float: left;
@@ -459,56 +452,28 @@ background: #EFCA0D;
 }
 #noPlanDiv
 {
-	
-	width: 240px;
+	width: 190px;
 	float: left;
-	margin-left: 0px;
-	padding-right:7px;
+	padding-left: 5px;
 }
 #unidadAcademicaDiv
 {
-	
-	width: 150px;
-	float: left;
-	margin-top:5px;
-	margin-left: -12px;	
-	padding-left: 20px;
-	
-}
-/*#campusDiv
-{
-	
-
-	width: 150px;
-	float: left;
-	margin-top:5px;
-	padding-left: 7px;	
-}*/
-#unidadDiv
-{
-	
 	width: 250px;
 	float: left;
-	margin-top: 5px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 20px;
+}
+#campusDiv
+{
+	width: 250px;
+	float: left;
+	padding-left: 5px;
 }
 #nivelDiv
-{ 
-
+{
 	width: 230px;
 	float: left;
-	padding-left: 66px;
-	padding-top: 5px;
+	padding-left: 5px;
 }
-/*#tipoProgrDiv
-{
-	
-	width: 250px;
-	float: left;
-	padding-left: 40px;
-	
-}*/
 #claveDiv
 {
 	width: 178px;
@@ -522,18 +487,15 @@ background: #EFCA0D;
 }
 #etapaDiv
 {
-	
-	width: 240px;
+	width: 250px;
 	float: left;
-	padding-left:60px;
-	
+	padding-left:58px;
 }
 #tipoDiv
 {
-	
-	width: 230px;
+	width: 250px;
 	float: left;
-	margin-left: 65px;
+	padding-left:20px;
 }
 #semestreDiv
 {
@@ -549,31 +511,27 @@ background: #EFCA0D;
 }
 #seriacionDivMateria
 {
-	
-	width: 285px;
+	width: 300px;
 	float: left;
 	padding-left:0px;
 }
 #seriacionDivTipo
 {
-	
-	width: 300px;
+	width: 250px;
 	float: left;
-	padding-left: 10px;
+	padding-left: 30px;
 }
 #coordDiv
 {
-	
-	width: 245px;
+	width: 240px;
 	float: left;
-	margin-left: 1020px;
-	margin-top: -45px;
+	padding-left: 25px;
 }
 #hcDiv
 {
 	width: 120px;
 	float: left;
-	padding-left: 33px;
+	padding-left: 43px;
 }
 #hlDiv
 {
@@ -585,13 +543,13 @@ background: #EFCA0D;
 {
 	width: 130px;
 	float: left;
-	margin-left: -15px;
+	padding-left: 0px;
 }
 #heDiv
 {
 	width: 120px;
 	float: left;
-	padding-left: 34px;
+	padding-left: 43px;
 }
 #hpcDiv
 {
@@ -603,33 +561,38 @@ background: #EFCA0D;
 {
 	width: 130px;
 	float: left;
-	margin-left: -15px;
+	padding-left: 0px;
 }
 #creditosDiv
 {
-	
 	width: 200px;
 	float: left;
-	margin-left: -7px;
-
+	padding-left: 3px;
 }
 #observacionesDiv
 {
-	
 	width: 500px;
 	float: left;
 	margin-left: 270px;
-	margin-top: -80px;
+	margin-top: -65px;
 }
 
 #planTerminado
 {
 	
 	margin-left: 1000px;
-	margin-top: -10px;
+	margin-top: -15px;
 	margin-bottom: 10px;
-	width: 300px;
+	width: 250px;
 
+}
+#checkSubdirector
+{
+	
+	float: right;
+	padding: 5px;
+	padding-top: 12px;
+	padding-right: 20px;
 }
 #checkTroncoComun
 {
@@ -640,6 +603,18 @@ background: #EFCA0D;
 	
 }
 
+#statusPlanEstudios
+{
+	
+	font-size: 18px;
+	float: right;
+	margin-right: 90px;
+	padding: 7px;
+	padding-top: 12px;
+	padding-bottom: 0px;
+	width: 150px;
+	
+}
 #acciones
 {
 
@@ -696,412 +671,3 @@ background: #EFCA0D;
 		
 }
 
-#statusPlanEstudios
-{
-	
-	font-size: 18px;
-	float: right;
-	margin-right: 90px;
-	padding: 7px;
-	padding-top: 12px;
-	padding-bottom: 0px;
-	width: 150px;
-	
-}
-#checkSubdirector
-{
-	
-	float: right;
-	padding: 5px;
-	padding-top: 12px;
-	padding-right: 20px;
-}
-/*#ckbTroncoComun
-{
-	
-	margin-left: 75px;
-	width: 150px;
-
-}*/
-
-
-/*----------------- CATALOGOS -------------------*/
-
-.tblCatalogos
-{
-	
-	margin-left: 30px;
-	height: 350px;
-	width: 550px;
-
-}
-.tblCatPlan
-{
-	background: white;
-	border-style: none;
-	border-collapse: separate;
-  	border-spacing:  10px;
-  	border-radius: 7px;   	
-  	color:black;
-  	font: "Trebuchet Ms";
-  	font-size: 18px; 	  	
-  	margin: auto;
-  	margin-top: 50px;
-  	padding:20px;
-	width: 500px;
-}
-.tblCatPlan td 
-{
-	text-align: left;
-	
-}
-.lblCatalogosDependencias
-{
-	
-	font-size: 20px;
-	font-weight: bold;
-	margin: auto;
-	width: 550px;
-}
-.CatBotones
-{
-
-	width: 250px;
-	
-}
-
-
-/*-----------------TERMINA CATALOGOS-------------*/
-
-/* ---------------- USUARIOS --------------------*/
-#usuarioContrasena
-{
-	
-	 height: 300px;
-	 width: 450px;
-	 margin: auto;
-	 padding-bottom: 150px;
-}
-#introUsuarioContrasena
-{
-	
-	color:#004000;
-	font-size: 17px;
-	margin-left:-36px;
-	padding-bottom: 20px;
-	width: 450px;
-
-}
-#usuarios
-{
-	background: white;
-	border-radius: 10px;
-	border: 3px solid orange;
-	height: 300px;
-	width: 400px;
-	margin: auto;
-	margin-top: 70px;
-	
-}
-#usuarioLogin
-{
-	
-	margin: auto;
-	margin-top: 10px;
-	width: 300px;
-}
-#contrasenaLogin
-{
-	
-	margin: auto;
-	margin-top: 20px;
-	padding-bottom: 20px;
-	width: 300px;
-	
-	
-}
-#btnIniciarSesion
-{
-
-	margin: auto;
-	width: 200px;
-}
-#RegistrarseUsuarios
-{
-
-	font-size: 16px;
-	font-family: "Trebuchet Ms";
-	font-weight: bold;
-	color:#004000;
-	margin-right:0px;
-	margin-top: 15px;
-	width: 300px;
-}
-
-#formularioRegUsuarios
-{
-
-	
-	margin: auto;
-	margin-top: 70px;
-	padding-bottom: 50px;
-	width: 670px;
-}
-#nombreApellidos
-{
-	
-	margin-top: 30px;
-	margin: auto;
-	padding-left: 15px;
-	padding-top: 20px;
-	padding-bottom:60px;
-	width: 630px;
-
-}
-#nombreRegUsuarios
-{
-	
-	float: left;
-	width: 300px;
-}
-#apellidosRegUsuarios
-{
-	
-	float: left;
-	padding-left: 30px;
-	width: 300px;
-}
-#correoContrasena
-{
-	margin:auto;
-	padding-left: 15px;
-	padding-bottom: 70px;
-	width: 630px;
-	
-}
-#correoE
-{
-	
-	float: left;	
-	width: 300px;
-}
-#contrasenaRegUsuarios
-{
-	
-	float: left;	
-	padding-left: 30px;
-	width: 300px;
-}
-
-#unidadCampusReg
-{
-
-	
-	margin:auto;
-	padding-left: 15px;
-	padding-bottom: 150px;
-	width: 670px;
-
-}
-#unidadAcadRegUsuarios
-{
-	
-	float: left;
-	padding-left: 20px;
-	width: 300px;
-}
-#campusRegUsuarios
-{
-	
-	float: left;
-	padding-left: 30px;
-	width: 320px;
-}
-#btnCampusReg
-{
-	
-	float: left;
-	padding-left: 7px;
-	width: 30px;
-}
-#btnRegistroUsuario
-{
-	
-	margin:auto;
-	width: 200px;
-}
-#btnUnidadAcadRegistro
-{
-	
-	float: left;
-	padding-left: 7px;
-	width: 30px;
-
-}
-
-/* ------------------------------------------------------*/
-
-
-/* ---------------- BITACORA --------------------*/
-#controlesBuscarBit
-{
-	
-	margin: auto;
-	height: 130px;
-	margin-top: 15px;
-	width: 850px;
-
-}
-#controlesBitacora
-{
-	
-	padding-top: 15px;
-	margin: auto;
-	width: 850px;
-	
-	
-}
-#modulosFechasBit
-{
-	
-	padding-bottom: 40px;
-	
-}
-#cmbModulosBit
-{
-	
-	float: left;
-	padding-left: 10px;
-	padding-right: 25px;
-}
-#fechaIniBit
-{
-	
-	float: left;
-	padding-left: 20px;
-}
-#lblFechaIniBit
-{
-	
-	float: left;
-	margin-top: 5px;
-	padding-right: 3px;
-}
-#fechaFinBit
-{
-	
-	float: left;
-	padding-left: 40px;
-}
-#lblFechaFinBit
-{
-	
-	float: left;
-	margin-top: 5px;
-	padding-right: 3px;
-}
-#seccionBuscarPorBit
-{
-	
-	margin: auto;
-	padding-left: 8px;
-	width: 1250px;
-	padding-bottom: 20px;
-}
-#cmbSeccionesBit
-{
-	
-	float: left;
-	padding-right: 32px;
-}
-#cmbBuscarPorBit
-{
-	
-	float: left;
-	padding-left: 43px;
-}
-#btnBuscarBit
-{
-	margin-left: 685px;
-	margin-top: -20px;
-	width: 120px;
-}
-#btnImprimirBit
-{
-	margin-left: 1140px;
-	margin-top: 40px;
-	width: 120px;
-}
-
-/*--------------------------CATALOGOS ADMIN-------------------------*/
-
-#adminCatalogosFieldset
-{
-	
-	margin: auto;
-	margin-top: 20px;
-	width: 410px;
-	height: 80px;
-
-}
-
-#cmbBuscarCatalogo
-{
-	
-	float: left;
-	margin-left: 10px;
-	margin: auto;
-	margin-top:10px;
-	width: 290px;
-}
-#btnBuscarCatalogo
-{
-
-	float: left;
-
-}
-
-
-/*---------------------TOOLTIP TEXT PARA EL GRIDVIEW-------------------------*/
-
- .tooltip{
-      display: inline;
-      position: relative;
-  }
-  .tooltip:hover:after{
-      background: #333;
-      background: rgba(0,0,0,.8);
-      border-radius: 5px;
-      bottom: 26px;
-      color: #fff;
-      content: attr(title);
-      left: 20%;
-      padding: 5px 15px;
-      position: absolute;
-      z-index: 98;
-      width: 220px;
-  }
-  .tooltip:hover:before{
-      border: solid;
-      border-color: #333 transparent;
-      border-width: 6px 6px 0 6px;
-      bottom: 20px;
-      content: "";
-      left: 50%;
-      position: absolute;
-      z-index: 99;
-  }
-
-  /*-----------------------------PRUEBA CARRERA---------------------------------------*/
-#carreraPrueba
-{
-	background: yellow;
-
-	width:500px;
-	height: 200px;
-	margin: auto;
-
-}
-
-
-  /*----------------------------------------------------------------------------------*/

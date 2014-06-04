@@ -8,6 +8,15 @@
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+
+		<!---------------------------------- Para combobox multiple new ---------------------->
+		<link rel="stylesheet" href="../css/bootstrap-3.1.1.min.css" type="text/css">
+		<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css">
+		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
+
+		
+
+		<!---------------------------------------------------------------------------------------->
         
         <!-- Estilos del dataTable-->
 		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
@@ -20,6 +29,27 @@
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
+
+
+		<!---------------------------------- Para combo multiple scripts ---------------------------->
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="../js/prettify.js"></script>
+
+							<div class="containerMultiple">
+								<script type="text/javascript">
+							    	$(document).ready(function() {
+							        window.prettyPrint() && prettyPrint();
+
+				                    $('#example41').multiselect({
+							        	includeSelectAllOption: true
+							        });
+
+							    });
+								</script>
+			            	</div>
+		<!-------------------------------------------------------------------------------------------->
 
 	</head>
 
@@ -57,17 +87,6 @@
 		</div>
 
 
-<link rel="stylesheet" type="text/css" href="../css/jquery.multiselect.css" />
-<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../js/jquery.multiselect.js"></script>
-<script type="text/javascript">
-$(function(){
-	$("select").multiselect();
-});
-</script>
 		<section>
 							
 
@@ -75,30 +94,24 @@ $(function(){
 					
 				
 
-			<label>Buscar por: </label>
-			<div id="p">
-				<select name="example-optgroup" multiple="multiple" size="5">
-					<optgroup label="Group One">
-						<option value="option1">Option 1</option>
-						<option value="option2">Option 2</option>
-						<option value="option3">Option 3</option>
-					</optgroup>
-									
-					<optgroup label="Group Two">
-						<option value="option4">Option 4</option>
-						<option value="option5">Option 5</option>
-						<option value="option6">Option 6</option>
-						<option value="option7">Option 7</option>
-					</optgroup>
-				</select>
-			</div>
+						<div id="carreraPrueba">
+							<label>Carrera:</label>         
+					         <select name="example" multiple="multiple" id="example41">
+					                <option value="Contabilidad" selected>CONTABILIDAD</option>
+					                <option value="Administracion" selected>ADMINISTRACIÓN</option>
+					                <option value="Informatica" selected>INFORMÁTICA</option>
+					                <option value="Negocios Internacionales" selected>NEGOCIOS INT.</option>
+					                <option value="UnoMas" selected>UNO MAS</option>
+					                <option value="DosMas" selected>DOS MÁS</option>
 
+					         </select>
+					    </div>
 						
 
 							<div id="btnBuscarCatalogo">
 								<input style="width:120px"class="estilo_button2" type="button" value="Buscar" name="btnBuscarCatalogo" id="btnBuscarCatalogo">
 							</div>
-					</fieldset>
+				
 				
 				<!---------------------------------------------------------------------------------------------------->
 
@@ -110,6 +123,8 @@ $(function(){
 	</div>
 		</section>
 		<footer></footer>
+
+
 	</body>
 <!----------------------------------------------------------->
 
