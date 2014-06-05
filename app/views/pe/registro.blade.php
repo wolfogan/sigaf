@@ -1,7 +1,6 @@
 ﻿<!doctype html>
 <html lang="es">
-	
-	<head>
+<head>
 		<meta charset="utf-8"/>
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
@@ -11,19 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />Para combo multiple-->
 		
-		<!---------------------------------- Combo multiple --------------------------------
 		
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.multiselect.js"></script>
-		<script type="text/javascript">
-		$(function(){
-			$("select").multiselect();
-		});
-		</script>-->
-
-
-        
         <!-- Estilos del dataTable-->
 		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
         <!--Aqui termina estilo del dataTable-->
@@ -46,26 +33,20 @@
 				$('#tblUA').dataTable();
 			} );
 		</script><!-- Termina script dataTable -->
-	</head>
-
-	<body>
-		
-
-		<div class="md-modal md-effect-11" id="plan"> 
-			<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
-				<h3>Agregar Plan</h3>
-
-				<div class="tblCatalogos">
-					<table class="tblCatPlan">
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-
-						<tr>		
-
-							<td>No. Plan:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" size=1 /></td>
+</head>
+<body>
+	<div class="md-modal md-effect-11" id="plan"> 
+		<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+			<h3>Agregar Plan</h3>
+			<div class="tblCatalogos">
+			<table class="tblCatPlan">
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>		
+					<td>No. Plan:</td>
+					<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size="1" name="planestudio_anio"/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" name="planestudio_semestre" size="1" /></td>
 
 						</tr>
 
@@ -76,7 +57,7 @@
 
 						<tr>
 							<td>Créditos Prácticas:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract"size=1 /></td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
 						</tr>
 
 						<tr>
@@ -139,20 +120,22 @@
 					<table class="tblCatPlan">
 
 							<td>Nombre:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" name="proe_descripcion" size=1 /></td>
 						</tr>
 
 						<tr>		
 							<td>Status:</td>
-							<td><input style="width: 20px; height: 20px; border-radius: 5px; border-color: #DBDBEA;" type="checkbox" id="txtCatCodigoCarrera" size=1 />Activado</td>
+							<td><input style="width: 20px; height: 20px; border-radius: 5px; border-color: #DBDBEA;" type="checkbox" id="txtCatCodigoCarrera" name="proe_status" size=1 />Activado</td>
 						</tr>
 
 
 						<tr>
 							<td>Nivel:</td>
 							<td>
-							<select class="con_estilo" style="width: 200px;" name="txtCatNivel" type="text" id="txtCatNivel" size=1 />
-								<option value="LICENCIATURA">LICENCIATURA</option>
+							<select class="con_estilo" style="width: 200px;" name="proe_nivel" type="text" id="txtCatNivel" size=1 />
+								@foreach($niveles as $nivel)
+								<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
+								@endforeach
 							</select>
 							</td>
 						</tr>
@@ -160,8 +143,10 @@
 						<tr>
 							<td>Especialidad:</td>
 							<td>
-							<select class="con_estilo" style="width: 200px;" name="txtCatEspecialidad" type="text" id="txtCatEspecialidad" size=1 />
-								<option value="MTIC">MTIC</option>
+							<select class="con_estilo" style="width: 200px;" name="proe_especialidad" type="text" id="txtCatEspecialidad" size=1 />
+								@foreach($especialidades as $especialidad)
+								<option value="{{$especialidad->especialidad}}">{{$especialidad->descripcion}}</option>
+								@endforeach
 							</select>
 							</td>
 							
@@ -170,15 +155,17 @@
 						<tr>
 							<td>Tipo Programa:</td>
 							<td>
-							<select class="con_estilo" style="width: 200px;" name="txtCatTipoProgr" type="text" id="txtCatTipoProgr" size=1 />
-								<option value="SEMESTRAL">SEMESTRAL</option>
+							<select class="con_estilo" style="width: 200px;" name="proe_periodo" type="text" id="txtCatTipoProgr" size=1 />
+								@foreach($periodosPrograma as $periodo)
+								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
+								@endforeach
 							</select>
 							</td>	
 						</tr>
 
 						<tr>
 							<td>Coordinador:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatCoordinadorCarrera" size=1 /></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="proe_empleado" id="txtCatCoordinadorCarrera" size=1 /></td>
 						</tr>
 
 					</table>
@@ -412,7 +399,7 @@
 
 						<div id="carreraDiv">
 							<label>Carrera:</label>
-								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" name="carreras" multiple="carrera" size="5">
+								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" multiple="multiple" size="5">
 									@foreach ($programasEducativos as $carrera)
 									<option value="{{$carrera->programaedu}}">{{$carrera->descripcion}}</option>
 									@endforeach
@@ -448,12 +435,12 @@
 						
 						<div id="claveDiv">
 							 &nbsp;<label>Clave: </label>
-							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size="1" >
-							<datalist id="datalist_clave">
+							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size="1" autocomplete="off">
+							<!--<datalist id="datalist_clave">
 								@foreach ($unidadesAprendizaje as $materia)
 								<option value="{{$materia->uaprendizaje}}">
 								@endforeach
-							</datalist>
+							</datalist> -->
 							<br>
 							<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
 						</div>
@@ -462,7 +449,7 @@
 						
 						<div id="materiaDiv">
 							<label>Materia: </label>
-							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size=1/>
+							<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1"/>
 						
 						</div>
 
@@ -548,10 +535,10 @@
 
 
 							<div id="coordDiv">
-							<label>Coord: </label><input style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord">
-							<datalist id="datalist_coord">
+							<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" dus>
+							<datalist id="datalist_coord" name="c">
 								@foreach ($coordinaciones as $coordinacion)
-								<option value="{{$coordinacion->descripcion}}" data="{{$coordinacion->coordinaciona}}">
+								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
 								@endforeach
 							</datalist>
 							<!-- TABLA MODAL COORDINACIÓN-->
@@ -603,7 +590,7 @@
 						
 						<div id="observacionesDiv">
 							<label>Observaciones:</label><br>
-							<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" placeholder="Observaciones"></textarea>
+							<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
 						</div>
 
 
@@ -611,7 +598,7 @@
 
 
 						<div id="botones">
-							<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guarda" id="guardar">
+							<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar">
 						</div>
 					</div>
 				</fieldset>
@@ -687,120 +674,9 @@
 				<td class="center">50</td>
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
 			</tr>
-			<tr class="gradeA">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">9309</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeA">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">3900</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeA">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">3907</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeA">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">3909</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeA">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">9023</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
 			
 			
-			<tr class="gradeX">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">3009</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeC">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">9023</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
-			<tr class="gradeC">
-				<td>000453</td>
-				<td>Programación Orientada a Objetos</td>
-				<td>Informática</td>
-				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">2934</td> 
-				<td class="center">Optativa</td>
-				<td class="center">Ramon Bracho</td>
-				<td class="center">20</td>
-				<td class="center">50</td>
-				<td class="center">15</td>
-				<td class="center">50</td>
-				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
+			
 			<tr class="gradeU">
 				<td>000453</td>
 				<td>Programación Orientada a Objetos</td>
@@ -840,6 +716,9 @@
 					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
 						{
 							$("#materia").val(materia);
+						})
+						.fail(function(){
+							$("#materia").css("background","orange");
 						});
 				});
 
@@ -854,16 +733,24 @@
 				$("#generarClave").on("change",function(){
 					if($(this).is(":checked"))
 					{
-						$.post("<?php echo URL::to('planestudio/obtenerclave'); ?>",{envio:true},function(clave)
+						$.post("<?php echo URL::to('planestudio/obtenerclave');?>",function(data)
 						{
-							alert(clave);
+							$("#clave1F").val(data);
+							$("#materia").val("").focus();
+
 						});
 					}
+					else
+					{
+						$("#clave1F").val("");
+					}
 				});
+
+				$("#guardar").on('')
 
 			});
 		</script>
 
-<!----------------------------------------------------------->
+<!--------------------------------------------------------- -->
 
 </html>

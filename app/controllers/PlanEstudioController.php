@@ -56,7 +56,9 @@ class PlanEstudioController extends BaseController
 
 		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 
-		return View::make('pe.registro')->with(compact('codigosPE','niveles','periodosPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje','programasEducativos'));
+		$especialidades = Especialidad::select('especialidad','descripcion')->orderBy('descripcion','desc')->get();
+
+		return View::make('pe.registro')->with(compact('codigosPE','niveles','periodosPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje','programasEducativos','especialidades'));
 	}
 
 	public function getConsulta()
@@ -88,7 +90,7 @@ class PlanEstudioController extends BaseController
 	public function postRegistrarplan()
 	{
 		$plan = new PlanEstudio;
-		$plan -> plan = Input::get('planestudio_plan');
+		$plan -> plan = Input::get('planestudio_anio').Input::get('planestudio_semestre');
 		$plan -> descripcion = Input::get('planestudio_descripcion');
 		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
 		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
@@ -155,17 +157,74 @@ class PlanEstudioController extends BaseController
 
 	public function postRegistrarprogramaeducativo()
 	{
+		$status = Input::get('proe_status');
+		
+		if(isset($status))
+			$status = true;
+		else
+			$status = false;
+
 		$programaEducativo = new ProgramaEducativo;
-		$programaEducativo -> descripcion = "NEW CARRER";
+		$programaEducativo -> descripcion = Input::get('proe_descripcion');
+		$programaEducativo -> status = $status;
+		$programaEducativo -> empleado = Input::get('proe_empleado');
+		$programaEducativo -> uacademica = 1;
+		$programaEducativo -> especialidad = Input::get('proe_especialidad');
+		$programaEducativo -> nivel = Input::get('proe_nivel');
+		$programaEducativo -> periodo_pedu = Input::get('proe_periodo');
 		$programaEducativo -> save();
+		
 
 		return Redirect::back();
 	}
 
 	public function postRegistrarua()
 	{
-		$ua = new UnidadAprendizaje;
-		return "YUHUUU";
+
+		$noplan = Input::get('noPlan');
+		$clave = Input::get('clave1F');
+		$UA = UnidadAprendizaje::where('uaprendizaje',$clave) -> where('plan',$noplan) ->get();
+		
+		
+		// Si no existe la ua se crea
+		if(strlen($UA)==2)
+		{
+			$UA = new UnidadAprendizaje;
+			$UA -> uaprendizaje = $clave;
+			$UA -> plan = $noplan;
+			$UA -> descripcionmat = Input::get('materia');
+			$UA -> HC = Input::get('hc');
+			$UA -> HT = Input::get('ht');
+			$UA -> HPC = Input::get('hpc');
+			$UA -> HCL = Input::get('hcl');
+			$UA -> HE = Input::get('he');
+			$UA -> creditos = Input::get('creditosF');
+			$UA -> fec_aut = date('Y-m-d');
+			$UA -> observa = Input::get('observaciones');
+			$UA -> caracter = Input::get('tipoF');
+			$UA -> reqseriacion = Input::get('serie');
+			$UA -> claveD = Input::get('clave2F');
+			$UA -> etapa = Input::get('etapaF');
+			$UA -> coordinaciona = Input::get('coord');
+			
+			$UA -> save();
+
+			$carrera = Input::get('control_3');
+
+			DB::table('p_ua') -> insert (array('programaedu' => $carrera[0],'uaprendizaje'=>$clave));
+
+			$mensaje = "Registro Insertado";
+
+		}
+		else
+		{
+			$mensaje = "Ya existe la materia";
+		}
+
+
+		return $mensaje;
+
+
 	}
 
 	// Llamadas Asíncronas
@@ -176,10 +235,18 @@ class PlanEstudioController extends BaseController
 		return $uaprendizaje->descripcionmat;
 	}
 
-	public function getObtenerclave()
+	public function postObtenerclave()
 	{
 		$ua_id = UnidadAprendizaje::select('uaprendizaje')->orderBy('uaprendizaje','desc')->first();
 		return $ua_id->uaprendizaje+1;
+	}
+
+	public function getObteneruas()
+	{
+		$plan = Input::get('ua_noplan');
+		$unidadesAprendizaje = UnidadAprendizaje::where('plan',$plan)->get();
+		return Response::json($unidadesAprendizaje);
+
 	}
 
 }
