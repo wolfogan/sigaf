@@ -214,16 +214,18 @@ class PlanEstudioController extends BaseController
 			
 			$UA -> save();
 
-			$carrera = Input::get('control_3');
+			$programas = explode(",",Input::get('carreras'));
+			foreach ($programas as $carrera) {
 
-			DB::table('p_ua') -> insert (array('programaedu' => $carrera[0],'uaprendizaje'=>$clave));
+				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+			}
 
-			$mensaje = "Registro Insertado";
+			$mensaje = "Registros insertados";
 
 		}
 		else
 		{
-			$mensaje = "Ya existe la materia";
+			$mensaje = "Materia ya existe";
 		}
 
 
@@ -247,11 +249,21 @@ class PlanEstudioController extends BaseController
 	}
 
 
-	public function getObteneruas()
+	public function postObteneruas()
 	{
-		$plan = Input::get('ua_noplan');
-		$unidadesAprendizaje = UnidadAprendizaje::where('plan',$plan)->get();
-		return Response::json($unidadesAprendizaje);
+		$noplan = Input::get('noplan');
+		
+		$plan = PlanEstudio::find($noplan);
+		$uas = $plan->unidades;
+		$mensaje = "";
+		//$unidadesAprendizaje = UnidadAprendizaje::where('plan',$plan)->get();
+		//return Response::json($unidadesAprendizaje);
+		foreach ($uas as $ua) {
+			$mensaje.=$ua->descripcionmat;
+		}
+
+
+		return Response::json($uas);
 
 	}
 }

@@ -1,64 +1,65 @@
 ﻿<!doctype html>
 <html lang="es">
 <head>
-		<meta charset="utf-8"/>
-		<!-- -------------------------------- Estilos CSS -------------------------------- -->
-		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
-		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+	<meta charset="utf-8"/>
+	<!-- -------------------------------- Estilos CSS -------------------------------- -->
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
+	<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+	<!---------------------------------- Para combobox multiple new ---------------------->
+	<link rel="stylesheet" href="../css/bootstrap-3.1.1.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css">
+	<link rel="stylesheet" href="../css/prettify.css" type="text/css">
+	<!---------------------------------------------------------------------------------------->
+	<!-- ------------------------------ Scripts Generales -------------------------------->
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<!--AQUI VA HORA Y FECHA-->
+	<script src="../js/tiempoactual.js"></script>
+	<script>$(function(){startWatch(); return false;});</script>
+	<!-- Script tiempo -->
+	<!-- Creación de Ventanas Modales -->
+	<script src="../js/ventanamodal.js"></script>
+	<!---------------------------------- Para combo multiple scripts ---------------------------->
+	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+	
+	<div class="containerMultiple">
+		<script type="text/javascript">
+		$(document).ready(function() {
+		       
+                
+                $('#example41').multiselect({
+					includeSelectAllOption: true,
+					onChange: function(element, checked) {
+						var brands = $('#example41 option:selected');
+						var selected = [];
+						$(brands).each(function(index, brand){
+							selected.push([$(this).val()]);
+						});
 
-		<!---------------------------------- Para combobox multiple new ---------------------->
-		<link rel="stylesheet" href="../css/bootstrap-3.1.1.min.css" type="text/css">
-		<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css">
-		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
+						$("#carreras").val(selected);
+						//$("#carreras").prop('name','carreras[]');
 
-		<!---------------------------------------------------------------------------------------->
-
-        <!-- Estilos del dataTable
-		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
-        Aqui termina estilo del dataTable-->
-        
-		<!-- ------------------------------ Scripts Generales -------------------------------->
-		<script type="text/javascript" src="../js/jquery.js"></script>
-
-		<!--AQUI VA HORA Y FECHA-->
-		<script src="../js/tiempoactual.js"></script>
-		<script>$(function(){startWatch(); return false;});</script>
-		<!-- Script tiempo -->
-
-		
-		<!-- Creación de Ventanas Modales -->
-		<script src="../js/ventanamodal.js"></script>
-
-       <!-- Script dataTable
-		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$("#tblUA").dataTable();
-			} );
-		</script>Termina script dataTable -->
-
-
-		<!---------------------------------- Para combo multiple scripts ---------------------------->
-		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
-		<script type="text/javascript" src="../js/prettify.js"></script>
-
-							<div class="containerMultiple">
-								<script type="text/javascript">
-							    	$(document).ready(function() {
-							        window.prettyPrint() && prettyPrint();
-
-				                    $('#example41').multiselect({
-							        	includeSelectAllOption: true
-							        });
-
-							    });
-								</script>
-			            	</div>
+    				}
+				});
+            });
+		</script>
+	</div>
 		<!-------------------------------------------------------------------------------------------->
+	
+
+		<!-- ------------------------------ DATATABLES --------------------------------------->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+		<!-- JS -->
+		<script src="../js/jquery.dataTables.js"></script>
+
+		<!-- ---------------------------------------------------------------------------------->
+
+
 </head>
 <body>
 		
@@ -424,16 +425,13 @@
 							<label>Carrera:</label>
 
 							<select name="example" multiple="multiple" id="example41">
-					                <option value="Contabilidad" selected>CONTABILIDAD</option>
-					                <option value="Administracion" selected>ADMINISTRACIÓN</option>
-					                <option value="Informatica" selected>INFORMÁTICA</option>
-					                <option value="Negocios Internacionales" selected>NEGOCIOS INT.</option>
-					                <option value="UnoMas" selected>UNO MAS</option>
-					                <option value="DosMas" selected>DOS MÁS</option>
-
+								@foreach ($programasEducativos as $carrera)
+									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
+								@endforeach
 					         </select>
 							
-
+							<!-- Campo oculto para id´s de carreras -->
+							<input type="hidden" name="carreras" id="carreras"/>
 
 								<!-- TABLA MODAL CARRERA-->
 								<input class="md-trigger" data-modal="carrera" type="button" value="+">
@@ -615,7 +613,7 @@
 						</div>
 
 
-					<!---------------------------------------------------------------------------------------------------->
+					<!----------------------------------- BOTON INSERTAR UA --------------------------------------------------------------- -->
 
 
 						<div id="botones">
@@ -630,20 +628,24 @@
 
 
 			<div id="GridPlanEstudio">
-				<div id="planTerminado"><input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label>
-			</div>		
-				<br>
+				<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;">XXX</label>
+				<div id="planTerminado">
+					
+					
+					<input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label>
+				</div>		
+			<br>
 
-<div id="demo">
-	<!-- <table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
 		<thead>
 			<tr>
 				<th>CLAVE</th>
 				<th>MATERIA</th>
 				<th>CARRERA</th>
 				<th>ETAPA</th>
-				<th>CLAVE_SERIACION</th>
 				<th>TIPO</th>
+				<th>CLAVE_SERIACION</th>
 				<th>COORDINACIÓN</th>
 				<th>HC</th>
 				<th>HL</th>
@@ -652,14 +654,31 @@
 				<th>ELIMINAR</th>
 			</tr>
 		</thead>
+		<tfoot>
+			<tr>
+				<th>CLAVE</th>
+				<th>MATERIA</th>
+				<th>CARRERA</th>
+				<th>ETAPA</th>
+				<th>TIPO</th>
+				<th>CLAVE_SERIACION</th>
+				<th>COORDINACIÓN</th>
+				<th>HC</th>
+				<th>HL</th>
+				<th>HT</th>
+				<th>CRÉDITOS</th>
+				<th>ELIMINAR</th>
+			</tr>
+		</tfoot>
 		<tbody>
-			<tr class="gradeX">
+			<!--
+			<tr>
 				<td>000453</td>
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">2130</td> 
 				<td class="center">Optativa</td>
+				<td title="Materia seriada: Programacion avanzada">2130</td> 
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
 				<td class="center">50</td>
@@ -667,13 +686,13 @@
 				<td class="center">50</td>
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
 			</tr>
-			<tr class="gradeC">
+			<tr>
 				<td>000453</td>
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">1249</td> 
 				<td class="center">Optativa</td>
+				<td  title="Materia seriada: Programacion avanzada">1249</td> 
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
 				<td class="center">50</td>
@@ -681,13 +700,13 @@
 				<td class="center">50</td>
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
 			</tr>
-			<tr class="gradeA">
+			<tr>
 				<td>000453</td>
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">9303</td> 
 				<td class="center">Optativa</td>
+				<td  title="Materia seriada: Programacion avanzada">9303</td> 
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
 				<td class="center">50</td>
@@ -698,23 +717,24 @@
 			
 			
 			
-			<tr class="gradeU">
+			<tr>
 				<td>000453</td>
 				<td>Programación Orientada a Objetos</td>
 				<td>Informática</td>
 				<td class="center">Básica</td>
-				<td class="tooltip" title="Materia seriada: Programacion avanzada">8390</td> 
 				<td class="center">Optativa</td>
+				<td  title="Materia seriada: Programacion avanzada">8390</td> 
 				<td class="center">Ramon Bracho</td>
 				<td class="center">20</td>
 				<td class="center">50</td>
 				<td class="center">15</td>
 				<td class="center">50</td>
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
-			</tr>
+			</tr> -->
 		</tbody>
-	</table> -->
-</div>
+	</table> 
+
+	
 </div>
 		</section>
 		<footer></footer>
@@ -730,15 +750,27 @@
 <script>
 			$(document).ready( function() {
 				
+			var t = $('#tblUA').DataTable();
+
+	$('#tblUA tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            t.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
 
 				$("#clave1F").on("focusout",function(){
 					var idua = $(this).val();
 					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
 						{
 							$("#materia").val(materia);
+							$("#materia").css("background","pink");
 						})
 						.fail(function(){
-							$("#materia").css("background","orange");
+							$("#materia").css("background","#9FF781");
 						});
 				});
 
@@ -766,11 +798,78 @@
 					}
 				});
 
-				$("#guardar").on("click",function(){
+					$("#guardar").on("click",function()
+					{
+						var dataUA = $("#formularioPlanEstudio").serialize();
+						$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data)
+						{
+						
+							
+							var noPlan=$("#noPlan").val();
+							var clave1F=$("#clave1F").val();
+							var materia=$("#materia").val();
+							//var carrera = "INFORMATICA";
+							var etapaF=$("#etapaF option:selected").html();
+							var tipoF=$("#tipoF option:selected").html();
+							var clave2F=$("#clave2F").val();
+							//var materiaSeriada=$("#materiaSeriada").val();
+							var hc=$("#hc").val();
+							var hl=$("#hl").val();
+							var ht=$("#ht").val();
+							var coord=$("#coord").val();
+							var creditosF=$("#creditosF").val();
+							var tablaDatos= $("#tblUA");
 
-					alert("Hola");
-				});
+							$('.multiselect-container li').each(function(indice,elemento)
+							{
+								if($(elemento).hasClass('active') && indice != 0)
+								{
+									t.row.add([
+										clave1F,
+										materia,
+										$(elemento).text(),
+										etapaF,
+										tipoF,
+										clave2F,
+										coord,
+										hc,
+										hl,
+										ht,
+										creditosF,
+										"<input type='button' value='-' class='clsEliminarFila'>"]).draw();
+								}
+							});
+						})
+						.fail(function(){
+							alert("fallo");
+						});
 
+					});
+
+					$("#noPlan").on("change",function(){
+						var plan = $(this).val();
+						$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
+							$('#tblUA').dataTable().fnClearTable();
+							for (var i = 0; i < uas.length; i++) 
+							{
+								t.row.add([
+									uas[i].uaprendizaje,
+										uas[i].descripcionmat,
+										"INFORMATICA",
+										uas[i].etapa,
+										uas[i].caracter,
+										uas[i].claveD,
+										uas[i].coordinaciona,
+										uas[i].HC,
+										uas[i].HL,
+										uas[i].HT,
+										uas[i].creditos,
+										"<input type='button' value='-' class='clsEliminarFila'>"]).draw();
+							}
+						
+
+						});
+					});
 			});
 		</script>
 
