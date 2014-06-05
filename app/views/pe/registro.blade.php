@@ -6,14 +6,18 @@
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
-		<link rel="stylesheet" type="text/css" href="../css/jquery.multiSelect.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
-		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />Para combo multiple-->
-		
-		
-        <!-- Estilos del dataTable-->
+
+		<!---------------------------------- Para combobox multiple new ---------------------->
+		<link rel="stylesheet" href="../css/bootstrap-3.1.1.min.css" type="text/css">
+		<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css">
+		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
+
+		<!---------------------------------------------------------------------------------------->
+
+        <!-- Estilos del dataTable
 		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
-        <!--Aqui termina estilo del dataTable-->
+        Aqui termina estilo del dataTable-->
         
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
@@ -22,31 +26,58 @@
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
+
 		
 		<!-- Creación de Ventanas Modales -->
 		<script src="../js/ventanamodal.js"></script>
 
-       <!-- Script dataTable -->
+       <!-- Script dataTable
 		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
-				$('#tblUA').dataTable();
+				$("#tblUA").dataTable();
 			} );
-		</script><!-- Termina script dataTable -->
+		</script>Termina script dataTable -->
+
+
+		<!---------------------------------- Para combo multiple scripts ---------------------------->
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="../js/prettify.js"></script>
+
+							<div class="containerMultiple">
+								<script type="text/javascript">
+							    	$(document).ready(function() {
+							        window.prettyPrint() && prettyPrint();
+
+				                    $('#example41').multiselect({
+							        	includeSelectAllOption: true
+							        });
+
+							    });
+								</script>
+			            	</div>
+		<!-------------------------------------------------------------------------------------------->
 </head>
 <body>
-	<div class="md-modal md-effect-11" id="plan"> 
-		<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
-			<h3>Agregar Plan</h3>
-			<div class="tblCatalogos">
-			<table class="tblCatPlan">
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-				<tr>		
-					<td>No. Plan:</td>
-					<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size="1" name="planestudio_anio"/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" name="planestudio_semestre" size="1" /></td>
+		
+
+		<div class="md-modal md-effect-11" id="plan"> 
+			<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+				<h3>Agregar Plan</h3>
+
+				<div class="tblCatalogos">
+					<table class="tblCatPlan">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+
+						<tr>		
+
+							<td>No. Plan:</td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" size=1 /></td>
 
 						</tr>
 
@@ -70,6 +101,26 @@
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
 						</tr>
 
+						<tr>
+							<td>Carreras:</td>
+							<td>
+
+								<select class="con_estilo" style="width: 200px;" name="txtCatCarreraPlan" type="text" id="txtCatCarreraPlan" size=1 />
+									<option value="INFORMATICA">INFORMATICA</option>
+								</select>
+
+								<!--<select name="example" multiple="multiple" id="example41">
+					                <option value="Contabilidad" selected>CONTABILIDAD</option>
+					                <option value="Administracion" selected>ADMINISTRACIÓN</option>
+					                <option value="Informatica" selected>INFORMÁTICA</option>
+					                <option value="Negocios Internacionales" selected>NEGOCIOS INT.</option>
+					                <option value="UnoMas" selected>UNO MAS</option>
+					                <option value="DosMas" selected>DOS MÁS</option>
+
+					         </select>-->
+							</td>
+						</tr>
+
 
 					</table>
 				</div>
@@ -81,34 +132,6 @@
 			</form>
 		</div>
 		
-		<div class="md-modal md-effect-11" id="nivel"> 
-			<form  action="<?=URL::to('planestudio/registrarnivel');?>" class="md-content" method="POST">
-				<h3>Agregar Nivel</h3>
-
-				<div class="tblCatalogos">
-					<table class="tblCatPlan">
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-							
-						<tr>
-
-							<td>Nombre:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionNivel" size=1 /></td>
-
-						</tr>
-
-					</table>
-				</div>
-					<div class="CatBotones">
-						<input type="submit" class="estilo_button2" value="Guardar"/>
-						<input type="button" value="Salir" class="md-close" />
-					</div>
-
-			</form>
-		</div>
-
 
 
 		<div class="md-modal md-effect-11" id="carrera"> 
@@ -165,7 +188,12 @@
 
 						<tr>
 							<td>Coordinador:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="proe_empleado" id="txtCatCoordinadorCarrera" size=1 /></td>
+
+							<td><select class="con_estilo" style="width: 200px;" name="txtCatCoordinadorCarrera" type="text" id="txtCatCoordinadorCarrera" size=1 />
+									<option value="COORDINADOR INFORMATICA">COORDINADOR INFORMATICA</option>
+								</select>
+							</td>
+
 						</tr>
 
 					</table>
@@ -378,7 +406,7 @@
 					
 
 
-					<!-- ----------------------------------- UNIDAD  DIV ----------------------------------- -->
+					<!-- ----------------------------------- UNIDAD ACADEMICA DIV ----------------------------------- -->
 					<div id="unidadAcademicaDiv">
 						<label>U.Acad:</label>
 						<label style="color:#ECA22E">{{Auth::user()->ua}}</label>
@@ -388,43 +416,38 @@
 						<!--             -->
 					</div>
 
-
 					
-
 
 					<!-- ----------------------------------- CARRERA  DIV ----------------------------------- -->
 
-
-
-
 						<div id="carreraDiv">
 							<label>Carrera:</label>
-								<select style="font-weight:normal; width:143px;" class="con_estilo" id="control_3" multiple="multiple" size="5">
-									@foreach ($programasEducativos as $carrera)
-									<option value="{{$carrera->programaedu}}">{{$carrera->descripcion}}</option>
-									@endforeach
-								</select>
 
+							<select name="example" multiple="multiple" id="example41">
+					                <option value="Contabilidad" selected>CONTABILIDAD</option>
+					                <option value="Administracion" selected>ADMINISTRACIÓN</option>
+					                <option value="Informatica" selected>INFORMÁTICA</option>
+					                <option value="Negocios Internacionales" selected>NEGOCIOS INT.</option>
+					                <option value="UnoMas" selected>UNO MAS</option>
+					                <option value="DosMas" selected>DOS MÁS</option>
 
-								
+					         </select>
+							
+
 
 								<!-- TABLA MODAL CARRERA-->
 								<input class="md-trigger" data-modal="carrera" type="button" value="+">
 								<!--             -->
 						</div>
 
-<!-- ----------------------------------- NIVEL ----------------------------------- -->
+						
+					<!-- ----------------------------------- NIVEL ----------------------------------- -->
 					<div id="nivelDiv">
 						<label>Nivel: </label>
-						<select class="con_estilo" style="width:143px;" name="nivel" id="nivel" size=1 type="text">
-						@foreach ($niveles as $nivel)
-							<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
-						@endforeach
-						</select>
-						<!-- TABLA MODAL NIVEL-->
-						<input class="md-trigger" data-modal="nivel" type="button" value="+">
-						<!--             -->
+						<label style="color:#ECA22E; padding-left:5px;">LICENCIATURA</label>
+						
 					</div>
+
 
 					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
 				</div>
@@ -435,12 +458,9 @@
 						
 						<div id="claveDiv">
 							 &nbsp;<label>Clave: </label>
-							<input class="estilo_text" type="text" name="clave1F" id="clave1F" list="datalist_clave" size="1" autocomplete="off">
-							<!--<datalist id="datalist_clave">
-								@foreach ($unidadesAprendizaje as $materia)
-								<option value="{{$materia->uaprendizaje}}">
-								@endforeach
-							</datalist> -->
+
+							<input class="estilo_text" type="text" name="clave1F" id="clave1F" size="1" autocomplete="off">
+
 							<br>
 							<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
 						</div>
@@ -453,9 +473,7 @@
 						
 						</div>
 
-
-
-					
+			
 					<!-- ----------------------------------- ETAPA  DIV ----------------------------------- -->
 
 						<div id="etapaDiv">
@@ -495,11 +513,27 @@
 							<input class="estilo_numeric" type="number" name="semestr" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()">
 						</div>
 
-					<!-- ----------------------------------- CLAVE SERIACION  DIV ----------------------------------- -->
-						
+
 						<fieldset id="group_seriacion">
 							<legend>Seriación</legend>
-							
+
+					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
+
+							<div id="seriacionDivTipo">
+								<label>Tipo Seriación: </label>
+									<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
+										@foreach ($seriaciones as $seriacion)
+										<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+										@endforeach
+											
+									</select>
+									<!-- TABLA MODAL NIVEL-->
+									<input class="md-trigger" data-modal="seriacion" type="button" value="+">
+									<!--             -->
+							</div>	
+
+					<!-- ----------------------------------- CLAVE SERIACION  DIV ----------------------------------- -->
+											
 							<div id="claveSerDiv">
 								<label>Clave: </label>
 								<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size=1 onkeypress="ValidaSoloNumeros()">
@@ -512,23 +546,10 @@
 					<!-- ----------------------------------- MATERIA SERIACION  DIV ----------------------------------- -->
 
 							<div id="seriacionDivMateria">
-								<input class="con_estilo" style="height: 25px; width: 285px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size="1" disabled/>	
+								<input class="con_estilo" style="height: 25px; width: 280px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size="1" disabled/>	
 							</div>
 
-					<!-- ----------------------------------- TIPO SERIACION  DIV ----------------------------------- -->
-
-							<div id="seriacionDivTipo">
-								<label>Seriación: </label>
-								<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text">
-									@foreach ($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-									@endforeach
-									
-								</select>
-								<!-- TABLA MODAL NIVEL-->
-								<input class="md-trigger" data-modal="seriacion" type="button" value="+">
-								<!--             -->
-							</div>
+					
 						</fieldset>
 
 					<!-- ----------------------------------- COORDINACION  DIV ----------------------------------- -->
@@ -598,7 +619,7 @@
 
 
 						<div id="botones">
-							<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar">
+							<input type="button" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar">
 						</div>
 					</div>
 				</fieldset>
@@ -614,7 +635,7 @@
 				<br>
 
 <div id="demo">
-	<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+	<!-- <table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
 		<thead>
 			<tr>
 				<th>CLAVE</th>
@@ -692,7 +713,7 @@
 				<td><input type="button" value="-" class="clsEliminarFila"></td>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
 </div>
 		</section>
@@ -704,12 +725,11 @@
 	</body>
 <!----------------------------------------------------------->
 <!--SCRIPT PARA VENTANA MODAL-->
-<script type="text/javascript" src="../js/jquery.multiSelect.js"></script>
+
 <script type="text/javascript" src="../js/insertarua.js"></script>
 <script>
 			$(document).ready( function() {
-				// Default options
-				$("#control_3").multiSelect();
+				
 
 				$("#clave1F").on("focusout",function(){
 					var idua = $(this).val();
@@ -746,11 +766,16 @@
 					}
 				});
 
-				$("#guardar").on('')
+				$("#guardar").on("click",function(){
+
+					alert("Hola");
+				});
 
 			});
 		</script>
 
-<!--------------------------------------------------------- -->
+<!------------------------------------------------------------>
+
+
 
 </html>

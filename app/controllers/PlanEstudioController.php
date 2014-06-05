@@ -84,6 +84,11 @@ class PlanEstudioController extends BaseController
 	{
 		return View::make('pe.catalogosAdmin');
 	}
+	public function getPrueba()
+	{
+		return View::make('pe.prueba');
+	}
+
 
 	// ALTAS DE CATALOGOS
 	// 
@@ -241,6 +246,7 @@ class PlanEstudioController extends BaseController
 		return $ua_id->uaprendizaje+1;
 	}
 
+
 	public function getObteneruas()
 	{
 		$plan = Input::get('ua_noplan');
@@ -248,6 +254,5 @@ class PlanEstudioController extends BaseController
 		return Response::json($unidadesAprendizaje);
 
 	}
-
 }
 
