@@ -26,117 +26,102 @@
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 	
-	<div class="containerMultiple">
-		<script type="text/javascript">
-		$(document).ready(function() {   
-                $('.example41').multiselect({
-					includeSelectAllOption: true,
-					onChange: function(element, checked) {
-						var brands = $('.example41 option:selected');
-						var selected = [];
-						$(brands).each(function(index, brand){
-							selected.push([$(this).val()]);
-						});
-
-						$("#carreras").val(selected);
-						//$("#carreras").prop('name','carreras[]');
-
-    				}
-				});
-            });
-		</script>
-	</div>
-
-
 	
-		<!-------------------------------------------------------------------------------------------->
-	
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('.example41').multiselect({
+				includeSelectAllOption: true,
+				onChange: function(element, checked){
+					var brands = $('.example41 option:selected');
+					var selected = [];
+					$(brands).each(function(index, brand){
+						selected.push([$(this).val()]);
+					});
+					// Asignar arreglos para guardar los números de las carreras
+					$("#carreras").val(selected);
+					}
+			});
 
-		<!-- ------------------------------ DATATABLES --------------------------------------->
+			$('.plancarreras').multiselect({
+				includeSelectAllOption: true,
+				onChange: function(element, checked){
+					var brands = $('.plancarreras option:selected');
+					var selected = [];
+					$(brands).each(function(index, brand){
+						selected.push([$(this).val()]);
+					});
+					// Asignar arreglos para guardar los números de las carreras
+					$("#alta_plan_carreras").val(selected);
+					}
+			});
+		});
+	</script>
+	<!------------------------------------------------------------------------------------->
+	
+	<!---------------------------------- DATATABLES --------------------------------------->
 		
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
 		<!-- JS -->
 		<script src="../js/jquery.dataTables.js"></script>
 
-		<!-- ---------------------------------------------------------------------------------->
-
-
+		<!-------------------------------------------------------------------------------->
 </head>
 <body>
-		
+<!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
 
-		<div class="md-modal md-effect-11" id="plan"> 
-			<form  action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
-				<h3>Agregar Plan</h3>
-
-				<div class="tblCatalogos">
-					<table class="tblCatPlan">
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-
-						<tr>		
-
-							<td>No. Plan:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan" size=1 />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatPlan2" size=1 /></td>
-
-						</tr>
-
-						<tr>
-							<td>Descripción:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" size=1 /></td>
-						</tr>
-
-						<tr>
-							<td>Carreras:</td>
-							<td>
-
-								<!--<select class="con_estilo" style="width: 200px;" name="txtCatCarreraPlan" type="text" id="txtCatCarreraPlan" size=1 />
-									<option value="INFORMATICA">INFORMATICA</option>
-								</select>-->
-								<select name="example" multiple="multiple" class="example41">
+	<!---------------------------------------- PLAN DE ESTUDIO ---------------------------------------->
+	<div class="md-modal md-effect-11" id="plan"> 
+		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+			<h3>Agregar Plan</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>		
+						<td>No. Plan:</td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="planestudio_anio" type="text" id="txtCatPlan" size="1" />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="planestudio_semestre" type="text" id="txtCatPlan2" size="1" /></td>
+					</tr>
+					<tr>
+						<td>Descripción:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" size=1 /></td>
+					</tr>
+					<tr>
+						<td>Carreras:</td>
+						<td>
+							<select name="example" multiple="multiple" class="plancarreras">
 								@foreach ($programasEducativos as $carrera)
 									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
 								@endforeach
-					         </select>
-							
+							</select>
 							<!-- Campo oculto para id´s de carreras -->
-							<input type="hidden" name="carreras" id="carreras"/>
-
-								
-							</td>
-						</tr>
-
-						<tr>
-							<td>Créditos Prácticas:</td>
-							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
-						</tr>
-
-						<tr>
-							<td>Fecha Inicio:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' size=1 /></td>
-						</tr>
-
-						<tr>
-							<td>Fecha Final:</td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
-						</tr>
-
-						
-
-
-					</table>
-				</div>
-					<div class="CatBotones">
-						<input type="submit" class="estilo_button2" value="Guardar"/>
-						<input type="button" value="Salir" class="md-close" />
-					</div>
-
-			</form>
-		</div>
-		
+							<input type="hidden" name="alta_plan_carreras" id="alta_plan_carreras"/>
+						</td>
+					</tr>
+					<tr>
+						<td>Créditos Prácticas:</td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
+					</tr>
+					<tr>
+						<td>Fecha Inicio:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' size=1 /></td>
+					</tr>
+					<tr>
+						<td>Fecha Final:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+	<!---------------------------------------- PLAN DE ESTUDIO ---------------------------------------->
 
 
 		<div class="md-modal md-effect-11" id="carrera"> 
@@ -335,18 +320,16 @@
 			</form>
 		</div>
 		<div class="md-overlay"></div>
-
-
-
-		<header>
-			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
+	<!------------------------------------ VENTANAS MODALES CATÁLOGOS ------------------------------------>
+	<header>
+		<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 			<div id="titulo">
 				<h1>SISTEMA DE GESTIÓN ACADÉMICA (SIGAF)</h1>
 				<h3>Facultad de Contaduría y Administración</h3>
 			</div>
-			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
-		</header>
- 		@include('includes.menu')
+		<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
+	</header>
+ 	@include('includes.menu')
 		<div id="indicadores">
 			<div id="usuariofecha">
 				<div id="usuario" class="texto_body">
@@ -428,10 +411,7 @@
 						<div id="carreraDiv">
 							<label>Carrera:</label>
 
-							<select name="example" multiple="multiple" class="example41">
-								@foreach ($programasEducativos as $carrera)
-									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
-								@endforeach
+							<select id="select_carreras" name="example" multiple="multiple" class="example41">
 					         </select>
 							
 							<!-- Campo oculto para id´s de carreras -->
@@ -443,12 +423,12 @@
 						</div>
 
 						
-					<!-- ----------------------------------- NIVEL ----------------------------------- -->
+					<!-- ----------------------------------- NIVEL ----------------------------------- 
 					<div id="nivelDiv">
 						<label>Nivel: </label>
 						<label style="color:#ECA22E; padding-left:5px;">LICENCIATURA</label>
 						
-					</div>
+					</div> -->
 
 
 					<!-- ----------------------------------- CLAVE  DIV ----------------------------------- -->
@@ -632,7 +612,7 @@
 
 
 			<div id="GridPlanEstudio">
-				<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;">XXX</label>
+				<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;" id="grid_plan">XXX</label>
 				<div id="planTerminado">
 					
 					
@@ -752,22 +732,82 @@
 
 <script type="text/javascript" src="../js/insertarua.js"></script>
 <script>
-			$(document).ready( function() {
-				
-			var t = $('#tblUA').DataTable();
+	$(document).ready( function() {
+		var t = $('#tblUA').DataTable();
 
-	$('#tblUA tbody').on( 'click', 'tr', function () {
-        if ( $(this).hasClass('selected') ) {
-            $(this).removeClass('selected');
-        }
-        else {
-            t.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-        }
-    } );
+		// Funciones
+		function ActualizarUAS(plan)
+		{
+			$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
+								$('#tblUA').dataTable().fnClearTable();
+								for (var i = 0; i < uas.length; i++) 
+								{
+									t.row.add([
+										uas[i].uaprendizaje,
+											uas[i].descripcionmat,
+											uas[i].descripcion,
+											uas[i].etapa,
+											uas[i].caracter,
+											uas[i].claveD,
+											uas[i].coordinaciona,
+											uas[i].HC,
+											uas[i].HL,
+											uas[i].HT,
+											uas[i].creditos,
+											"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
+								}
+			});
+		}
+		// Para seleccioar renglón
+		$('#tblUA tbody').on( 'click', 'tr', function () 
+		{
+			if ( $(this).hasClass('selected') ) 
+			{
+				$(this).removeClass('selected');
+			}
+			else
+			{
+				t.$('tr.selected').removeClass('selected');
+				$(this).addClass('selected');
+
+				var materia = $(this).find('td:first').html();
+				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia}, function(json)
+				{
+			      if (json.success)
+			      {
+			        $('#clave1F').val(json.uaprendizaje);
+			        $('#materia').val(json.descripcionmat);
+			        $('#etapaF').val(json.etapa);
+			        $('#tipoF').val(json.caracter);
+			        $('#serie').val(json.reqseriacion);
+			        $('#clave2F').val(json.claveD);
+			        $('#coord').val(json.coordinaciona);
+			        $('#hc').val(json.hc);
+			        $('#hl').val(json.hl);
+			        $('#ht').val(json.ht);
+			        $('#hpc').val(json.hpc);
+			        $('#hcl').val(json.hcl);
+			        $('#he').val(json.he);
+			        $('#creditosF').val(json.creditos);
+			        $('#observaciones').val(json.observa);
+
+			        $("#guardar").val("Actualizar");
+			      }
+			      else
+			      {
+			        //$('#errorMessage').html(json.message);
+			        //$('#errorMessage').show();
+			        alert("Hubo error");
+			      }
+			    })
+			    .fail(function(){alert("fallo");});
+				
+			}
+		});
 
 				$("#clave1F").on("focusout",function(){
 					var idua = $(this).val();
+					
 					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
 						{
 							$("#materia").val(materia);
@@ -777,7 +817,7 @@
 							$("#materia").css("background","#9FF781");
 						});
 				});
-
+				// Mostrar clave de seriación
 				$("#clave2F").on("focusout",function(){
 					var idua = $(this).val();
 					$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia)
@@ -785,7 +825,7 @@
 							$("#materiaSeriada").val(materia);
 						});
 				});
-
+				// Generar clave automática
 				$("#generarClave").on("change",function(){
 					if($(this).is(":checked"))
 					{
@@ -801,79 +841,117 @@
 						$("#clave1F").val("");
 					}
 				});
-
+					// Insertar p_ua y unidad de aprendizaje
 					$("#guardar").on("click",function()
 					{
-						var dataUA = $("#formularioPlanEstudio").serialize();
-						$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data)
+						var opcion = $(this).val();
+						// Si es guardar
+						if(opcion == "Guardar")
 						{
-						
+							var dataUA = $("#formularioPlanEstudio").serialize();
+							$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data)
+							{
 							
-							var noPlan=$("#noPlan").val();
-							var clave1F=$("#clave1F").val();
-							var materia=$("#materia").val();
-							//var carrera = "INFORMATICA";
-							var etapaF=$("#etapaF option:selected").html();
-							var tipoF=$("#tipoF option:selected").html();
-							var clave2F=$("#clave2F").val();
-							//var materiaSeriada=$("#materiaSeriada").val();
-							var hc=$("#hc").val();
-							var hl=$("#hl").val();
-							var ht=$("#ht").val();
-							var coord=$("#coord").val();
-							var creditosF=$("#creditosF").val();
-							var tablaDatos= $("#tblUA");
+								
+								var noPlan=$("#noPlan").val();
+								var clave1F=$("#clave1F").val();
+								var materia=$("#materia").val();
+								//var carrera = "INFORMATICA";
+								var etapaF=$("#etapaF option:selected").html();
+								var tipoF=$("#tipoF option:selected").html();
+								var clave2F=$("#clave2F").val();
+								//var materiaSeriada=$("#materiaSeriada").val();
+								var hc=$("#hc").val();
+								var hl=$("#hl").val();
+								var ht=$("#ht").val();
+								var coord=$("#coord").val();
+								var creditosF=$("#creditosF").val();
+								var tablaDatos= $("#tblUA");
 
-							$('.multiselect-container li').each(function(indice,elemento)
-							{
-								if($(elemento).hasClass('active') && indice != 0)
+								$('.multiselect-container li').each(function(indice,elemento)
 								{
-									t.row.add([
-										clave1F,
-										materia,
-										$(elemento).text(),
-										etapaF,
-										tipoF,
-										clave2F,
-										coord,
-										hc,
-										hl,
-										ht,
-										creditosF,
-										"<input type='button' value='-' class='clsEliminarFila'>"]).draw();
-								}
+
+									if($(elemento).hasClass('active') && indice != 0)
+									{
+										var input = $(elemento).find('input').val();
+										t.row.add([
+											clave1F,
+											materia,
+											$(elemento).text(),
+											etapaF,
+											tipoF,
+											clave2F,
+											coord,
+											hc,
+											hl,
+											ht,
+											creditosF,
+											"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
+									}
+								});
+							})
+							.fail(function(){
+								alert("fallo");
 							});
-						})
-						.fail(function(){
-							alert("fallo");
-						});
+						}else // Si es actualizar
+						{	
+							var materia=$("#clave1F").val();
+							var plan = 20092;
+							var dataUA = $("#formularioPlanEstudio").serialize();
+							$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(){
+								
+								$("#guardar").val("Guardar");
+								$('#tblUA').dataTable().fnClearTable();
+								ActualizarUAS(plan);
 
+							});
+
+
+							//alert("Datos actualizados");
+						}
 					});
-
+					// Al cambiar el Plan de Estudio actualizar unidades de aprendizaje y programas educativos
 					$("#noPlan").on("change",function(){
-						var plan = $(this).val();
-						$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
-							$('#tblUA').dataTable().fnClearTable();
-							for (var i = 0; i < uas.length; i++) 
-							{
-								t.row.add([
-									uas[i].uaprendizaje,
-										uas[i].descripcionmat,
-										uas[i].descripcion,
-										uas[i].etapa,
-										uas[i].caracter,
-										uas[i].claveD,
-										uas[i].coordinaciona,
-										uas[i].HC,
-										uas[i].HL,
-										uas[i].HT,
-										uas[i].creditos,
-										"<input type='button' value='-' class='clsEliminarFila'>"]).draw();
-							}
 						
+						$("#grid_plan").html($(this).val());
+						var plan = $(this).val();
 
-						});
+						$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas)
+							{	
+								var options = "";
+								for(var i = 0; i < programas.length; i++)
+								{
+									options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
+								}
+
+								$('#select_carreras').html(options);
+
+								$('.example41').multiselect('rebuild');
+							});
+
+						ActualizarUAS(plan);
 					});
+				
+				// Botón eliminar uaprendizaje plan estudios.
+				$('#tblUA tbody').on('click','.clsEliminarFila',function(){
+					if (confirm("¿ Está seguro de que desea eliminar ?"))
+					{
+						var materia = $(this).attr ("title");
+						var carrera = $(this).attr("data");
+						//document.location.href='users/delete/'+id;
+						$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
+							.done(function(data){
+								alert("Unidad de aprendizaje: X eliminada de la carrera: X");
+							});
+						// Eliminar renglón
+						t
+						.row($(this).parents('tr'))
+						.remove()
+						.draw();
+					}
+					
+				});
+
 			});
 		</script>
 

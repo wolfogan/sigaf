@@ -36,9 +36,10 @@ class PlanEstudioController extends BaseController
 		}
 		// Licenciatura, Maestría
 		$niveles = NivelPrograma::select('nivel','descripcion')->orderBy('nivel','desc')->get();
+		
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
-
+		
 		// Básica, Disciplinaria, Terminal
 		$etapas= Etapa::select('etapa','descripcion')->get();
 
@@ -95,12 +96,21 @@ class PlanEstudioController extends BaseController
 	public function postRegistrarplan()
 	{
 		$plan = new PlanEstudio;
-		$plan -> plan = Input::get('planestudio_anio').Input::get('planestudio_semestre');
+		$noplan = Input::get('planestudio_anio').Input::get('planestudio_semestre');
+		$plan -> plan = $noplan;
 		$plan -> descripcion = Input::get('planestudio_descripcion');
 		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
 		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
 		$plan -> credpracticas = Input::get('planestudio_credpracticas');
 		$plan -> save();
+		
+		
+		$carreras = explode(',',Input::get('alta_plan_carreras'));
+		foreach($carreras as $carrera)
+		{
+			DB::table('planestudio') -> insert (array('plan' => $noplan,'programaedu'=>$carrera));
+		}
+		
 		return Redirect::back();
 	}
 
@@ -228,6 +238,7 @@ class PlanEstudioController extends BaseController
 			$mensaje = "Materia ya existe";
 		}
 
+		//$mensaje = "hola";
 
 		return $mensaje;
 
@@ -248,6 +259,16 @@ class PlanEstudioController extends BaseController
 		return $ua_id->uaprendizaje+1;
 	}
 
+	public function postObtenerprogramas()
+	{
+		$noplan = Input::get('noplan');
+		$programas = DB::table('planestudio')
+						->join('programaedu','planestudio.programaedu','=','programaedu.programaedu')
+						->select('programaedu.programaedu','programaedu.descripcion')
+						->where('planestudio.plan','=',$noplan)
+						->get();
+		return Response::json($programas);
+	}
 
 	public function postObteneruas()
 	{
@@ -263,11 +284,72 @@ class PlanEstudioController extends BaseController
 				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
 				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
-				->select('programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 				->where('uaprendizaje.plan','=',$noplan)
 				->get();
 
 		return Response::json($UAS);
+
+	}
+
+	public function postEliminarpua()
+	{
+		$programaedu = Input::get('programaedu');
+		$uaprendizaje= Input::get('uaprendizaje');
+
+		DB::table('p_ua')->where('programaedu','=',$programaedu)->where('uaprendizaje','=',$uaprendizaje)->delete();
+	}
+
+	public function postObtenerdataua()
+	{
+		$uaid = Input::get('uaprendizaje');
+
+		$ua = UnidadAprendizaje::find($uaid);
+
+		$data= array(
+			'success' => true,
+			'uaprendizaje' => $ua->uaprendizaje,
+			'descripcionmat' => $ua->descripcionmat,
+			'etapa'=>$ua->etapa,
+			'caracter'=>$ua->caracter,
+			'reqseriacion'=>$ua->reqseriacion,
+			'claveD'=>$ua->claveD,
+			'coordinaciona'=>$ua->coordinaciona,
+			'observa'=>$ua->observa,
+			'hc'=>$ua->HC,
+			'hl'=>$ua->HL,
+			'ht'=>$ua->HT,
+			'hpc'=>$ua->HPC,
+			'hcl'=>$ua->HCL,
+			'he'=>$ua->HE,
+			'creditos'=>$ua->creditos
+		);
+
+		return Response::json($data);
+	}
+
+	public function postActualizarua()
+	{
+		$clave = Input::get("clave1F");
+		$UA = UnidadAprendizaje::find($clave);
+		//$UA -> plan = $noplan;
+		$UA -> descripcionmat = Input::get('materia');
+		$UA -> HC = Input::get('hc');
+		$UA -> HL = Input::get('hl');
+		$UA -> HT = Input::get('ht');
+		$UA -> HPC = Input::get('hpc');
+		$UA -> HCL = Input::get('hcl');
+		$UA -> HE = Input::get('he');
+		$UA -> creditos = Input::get('creditosF');
+		//$UA -> fec_aut = date('Y-m-d');
+		$UA -> observa = Input::get('observaciones');
+		$UA -> caracter = Input::get('tipoF');
+		$UA -> reqseriacion = Input::get('serie');
+		$UA -> claveD = Input::get('clave2F');
+		$UA -> etapa = Input::get('etapaF');
+		$UA -> coordinaciona = Input::get('coord');
+			
+		$UA -> save();
 
 	}
 }
