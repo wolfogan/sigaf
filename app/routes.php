@@ -29,28 +29,20 @@ Route::controller('planestudio','PlanEstudioController');
 
 Route::get('pruebas',function(){
 
+	$UAS = DB::table('p_ua')
+				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->select('programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.HPC','uaprendizaje.HCL','uaprendizaje.HE','uaprendizaje.creditos','uaprendizaje.fec_aut','uaprendizaje.observa','caracter.descripcion as caracter','reqseriacion.descripcion as reqseriacion','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+				->where('uaprendizaje.plan','=','20102')
+				->get();
+	$queries = DB::getQueryLog();
+	$last_query = end($queries);
 
-	$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
-		$codigosPE = array();
-		
-		/**
-	 	* Función para integrar el guión en el código del plan de estudio 2009-2
-		 * @param  string $string_add    La cadena a agregar
-		 * @param  string $string_target La cadena donde se va a agregar el string
-		 * @param  int $offset        Puntero donde corta la caden
-		 * @return string                Regresa la cadena concatenada
-		 */
-		function str_insert($string_add,$string_target,$offset)
-		{
-			$part1 = substr($string_target,0, $offset);
-			$part2 = substr($string_target, $offset);
+	//$u->lastQuery = $last_query;
 
-			return $part1.$string_add.$part2;
-		}
-		
-		for ($i=0; $i < count($planestudio); $i++) { 
-		$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
-		}
-
-	return var_dump($codigosPE);
+	return $UAS;
 });

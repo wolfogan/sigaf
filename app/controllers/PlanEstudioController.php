@@ -253,17 +253,21 @@ class PlanEstudioController extends BaseController
 	{
 		$noplan = Input::get('noplan');
 		
-		$plan = PlanEstudio::find($noplan);
-		$uas = $plan->unidades;
-		$mensaje = "";
-		//$unidadesAprendizaje = UnidadAprendizaje::where('plan',$plan)->get();
-		//return Response::json($unidadesAprendizaje);
-		foreach ($uas as $ua) {
-			$mensaje.=$ua->descripcionmat;
-		}
+		//$plan = PlanEstudio::find($noplan);
+		//$uas = $plan->unidades;
 
+		$UAS = DB::table('p_ua')
+				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->select('programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+				->where('uaprendizaje.plan','=',$noplan)
+				->get();
 
-		return Response::json($uas);
+		return Response::json($UAS);
 
 	}
 }

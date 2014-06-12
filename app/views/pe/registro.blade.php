@@ -855,7 +855,7 @@
 								t.row.add([
 									uas[i].uaprendizaje,
 										uas[i].descripcionmat,
-										"INFORMATICA",
+										uas[i].descripcion,
 										uas[i].etapa,
 										uas[i].caracter,
 										uas[i].claveD,

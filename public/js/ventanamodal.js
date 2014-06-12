@@ -145,6 +145,8 @@ $(function(){
 	//Cuando se haga clic en cualquier clase .clsEliminarFila se dispara el evento.
 	//$(document).on('click','.clsEliminarFila',function(){
 	$(document).on('click','.clsEliminarFila',function(){
+		var t = $('tblUA').DataTable;
+		
 		if(!confirm('¿Desea eliminar el registro?'))
 		{
 			return;
@@ -159,7 +161,7 @@ $(function(){
 		}
 
 		var objFila=$(this).parents().get(1);
-		$(objFila).remove();
+		t.row(objFila).remove().draw(false);
 	});
 
 
