@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css">
 	<link rel="stylesheet" href="../css/prettify.css" type="text/css">
 	<!---------------------------------------------------------------------------------------->
+
 	<!-- ------------------------------ Scripts Generales -------------------------------->
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<!--AQUI VA HORA Y FECHA-->
@@ -27,13 +28,11 @@
 	
 	<div class="containerMultiple">
 		<script type="text/javascript">
-		$(document).ready(function() {
-		       
-                
-                $('#example41').multiselect({
+		$(document).ready(function() {   
+                $('.example41').multiselect({
 					includeSelectAllOption: true,
 					onChange: function(element, checked) {
-						var brands = $('#example41 option:selected');
+						var brands = $('.example41 option:selected');
 						var selected = [];
 						$(brands).each(function(index, brand){
 							selected.push([$(this).val()]);
@@ -47,6 +46,9 @@
             });
 		</script>
 	</div>
+
+
+	
 		<!-------------------------------------------------------------------------------------------->
 	
 
@@ -88,6 +90,26 @@
 						</tr>
 
 						<tr>
+							<td>Carreras:</td>
+							<td>
+
+								<!--<select class="con_estilo" style="width: 200px;" name="txtCatCarreraPlan" type="text" id="txtCatCarreraPlan" size=1 />
+									<option value="INFORMATICA">INFORMATICA</option>
+								</select>-->
+								<select name="example" multiple="multiple" class="example41">
+								@foreach ($programasEducativos as $carrera)
+									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
+								@endforeach
+					         </select>
+							
+							<!-- Campo oculto para id´s de carreras -->
+							<input type="hidden" name="carreras" id="carreras"/>
+
+								
+							</td>
+						</tr>
+
+						<tr>
 							<td>Créditos Prácticas:</td>
 							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
 						</tr>
@@ -102,25 +124,7 @@
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
 						</tr>
 
-						<tr>
-							<td>Carreras:</td>
-							<td>
-
-								<select class="con_estilo" style="width: 200px;" name="txtCatCarreraPlan" type="text" id="txtCatCarreraPlan" size=1 />
-									<option value="INFORMATICA">INFORMATICA</option>
-								</select>
-
-								<!--<select name="example" multiple="multiple" id="example41">
-					                <option value="Contabilidad" selected>CONTABILIDAD</option>
-					                <option value="Administracion" selected>ADMINISTRACIÓN</option>
-					                <option value="Informatica" selected>INFORMÁTICA</option>
-					                <option value="Negocios Internacionales" selected>NEGOCIOS INT.</option>
-					                <option value="UnoMas" selected>UNO MAS</option>
-					                <option value="DosMas" selected>DOS MÁS</option>
-
-					         </select>-->
-							</td>
-						</tr>
+						
 
 
 					</table>
@@ -424,7 +428,7 @@
 						<div id="carreraDiv">
 							<label>Carrera:</label>
 
-							<select name="example" multiple="multiple" id="example41">
+							<select name="example" multiple="multiple" class="example41">
 								@foreach ($programasEducativos as $carrera)
 									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
 								@endforeach
