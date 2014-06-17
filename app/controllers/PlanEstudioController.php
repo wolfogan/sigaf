@@ -44,7 +44,7 @@ class PlanEstudioController extends BaseController
 		$etapas= Etapa::select('etapa','descripcion')->get();
 
 		// Obligatoria, Sugerida, Sin seriación.
-		$seriaciones = Seriacion::select('reqseriacion','descripcion')->orderBy('reqseriacion','desc')->get();
+		$seriaciones = Seriacion::select('reqseriacion','descripcion')->orderBy('reqseriacion','asc')->get();
 
 		// Oblitatoria, optativa
 		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
@@ -209,11 +209,13 @@ class PlanEstudioController extends BaseController
 			$UA -> plan = $noplan;
 			$UA -> descripcionmat = Input::get('materia');
 			$UA -> HC = Input::get('hc');
+			$UA -> HL = Input::get('hl');
 			$UA -> HT = Input::get('ht');
 			$UA -> HPC = Input::get('hpc');
 			$UA -> HCL = Input::get('hcl');
 			$UA -> HE = Input::get('he');
 			$UA -> creditos = Input::get('creditosF');
+			$UA -> semestre = Input::get('semestre');
 			$UA -> fec_aut = date('Y-m-d');
 			$UA -> observa = Input::get('observaciones');
 			$UA -> caracter = Input::get('tipoF');
@@ -303,9 +305,11 @@ class PlanEstudioController extends BaseController
 	public function postObtenerdataua()
 	{
 		$uaid = Input::get('uaprendizaje');
-
+		$uaserieid = Input::get('claveD');
 		$ua = UnidadAprendizaje::find($uaid);
+		$uaserie = UnidadAprendizaje::find($uaserieid);
 
+		$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
 		$data= array(
 			'success' => true,
 			'uaprendizaje' => $ua->uaprendizaje,
@@ -314,6 +318,7 @@ class PlanEstudioController extends BaseController
 			'caracter'=>$ua->caracter,
 			'reqseriacion'=>$ua->reqseriacion,
 			'claveD'=>$ua->claveD,
+			'materiaseriada'=>$uaserie->descripcionmat,
 			'coordinaciona'=>$ua->coordinaciona,
 			'observa'=>$ua->observa,
 			'hc'=>$ua->HC,
@@ -322,7 +327,8 @@ class PlanEstudioController extends BaseController
 			'hpc'=>$ua->HPC,
 			'hcl'=>$ua->HCL,
 			'he'=>$ua->HE,
-			'creditos'=>$ua->creditos
+			'creditos'=>$ua->creditos,
+			'programas'=>$programas
 		);
 
 		return Response::json($data);
