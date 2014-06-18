@@ -305,9 +305,9 @@ class PlanEstudioController extends BaseController
 	public function postObtenerdataua()
 	{
 		$uaid = Input::get('uaprendizaje');
-		$uaserieid = Input::get('claveD');
+		//$uaserieid = Input::get('claveD');
 		$ua = UnidadAprendizaje::find($uaid);
-		$uaserie = UnidadAprendizaje::find($uaserieid);
+		//$uaserie = UnidadAprendizaje::find($uaserieid);
 
 		$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
 		$data= array(
@@ -318,7 +318,6 @@ class PlanEstudioController extends BaseController
 			'caracter'=>$ua->caracter,
 			'reqseriacion'=>$ua->reqseriacion,
 			'claveD'=>$ua->claveD,
-			'materiaseriada'=>$uaserie->descripcionmat,
 			'coordinaciona'=>$ua->coordinaciona,
 			'observa'=>$ua->observa,
 			'hc'=>$ua->HC,

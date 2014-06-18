@@ -676,33 +676,32 @@
 
 <script type="text/javascript" src="../js/insertarua.js"></script>
 <script>
-$(document).ready( function() {
-	
+$(document).ready(function(){
+	// Crear instancia Datatables para manipulación de renglones durante la ejecución
 	var t = $('#tblUA').DataTable();
 	// Funciones
 	function ActualizarUAS(plan)
 	{
 		$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
-							$('#tblUA').dataTable().fnClearTable();
-							for (var i = 0; i < uas.length; i++) 
-							{
-								t.row.add([
-									uas[i].uaprendizaje,
-										uas[i].descripcionmat,
-										uas[i].descripcion,
-										uas[i].etapa,
-										uas[i].caracter,
-										uas[i].claveD,
-										uas[i].coordinaciona,
-										uas[i].HC,
-										uas[i].HL,
-										uas[i].HT,
-										uas[i].creditos,
-										"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
-							}
+			$('#tblUA').dataTable().fnClearTable();
+			for (var i = 0; i < uas.length; i++) 
+			{
+				t.row.add([
+							uas[i].uaprendizaje,
+							uas[i].descripcionmat,
+							uas[i].descripcion,
+							uas[i].etapa,
+							uas[i].caracter,
+							uas[i].claveD,
+							uas[i].coordinaciona,
+							uas[i].HC,
+							uas[i].HL,
+							uas[i].HT,
+							uas[i].creditos,
+							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
+			}
 		});
 	}
-	
 	// Casos de la seriación
 	$('#serie').on('change click',function(){
 		var opcionSerie = $(this).val();
@@ -717,10 +716,8 @@ $(document).ready( function() {
 			$("#materiaSeriada").val("");
 		}
 	});
-	
 	// Para seleccioar renglón
-	$('#tblUA tbody').on( 'click', 'tr', function () 
-	{
+	$('#tblUA tbody').on('click','tr',function(){
 		if ( $(this).hasClass('selected') ) 
 		{
 			$(this).removeClass('selected');
@@ -742,7 +739,7 @@ $(document).ready( function() {
 					$('#tipoF').val(json.caracter);
 					$('#serie').val(json.reqseriacion);
 					$('#clave2F').val(json.claveD);
-					$('#materiaSeriada').val(json.materiaseriada);
+					//$('#materiaSeriada').val(json.materiaseriada);
 					$('#coord').val(json.coordinaciona);
 					$('#hc').val(json.hc);
 					$('#hl').val(json.hl);
@@ -770,15 +767,14 @@ $(document).ready( function() {
 			.fail(function(){alert("fallo");});
 		}
 	});
-	
 	// Cuando pierde el foco la clave de la unidad de aprendizaje
 	$("#clave1F").on("focusout",function(){
-	if($(this).val()!="")
-	{
-		var idua = $(this).val();
+		if($(this).val()!="")
+		{
+			var idua = $(this).val();
 		
-		$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
-			$("#materia").val(materia);
+			$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+				$("#materia").val(materia);
 				$("#materia").css("background","pink");
 			})
 			.fail(function(){
@@ -786,7 +782,6 @@ $(document).ready( function() {
 			});
 		}
 	});
-	
 	// Mostrar clave de seriación
 	$("#clave2F").on("focusout",function(){
 		if($(this).val()!="")
@@ -797,7 +792,6 @@ $(document).ready( function() {
 			});
 		}
 	});
-
 	// Generar clave automática
 	$("#generarClave").on("change",function(){
 		if($(this).is(":checked"))
@@ -812,110 +806,108 @@ $(document).ready( function() {
 			$("#clave1F").val("");
 		}
 	});
-		// Insertar p_ua y unidad de aprendizaje
-				$("#guardar").on("click",function()
-				{
-					var opcion = $(this).val();
-					// Si es guardar
-					if(opcion == "Guardar")
+	// Insertar p_ua y unidad de aprendizaje
+	$("#guardar").on("click",function(){
+		var opcion = $(this).val();
+		// Validar si no eligieron carreras.
+		var nCarreras = $("#select_carreras").val();
+		if(nCarreras==null)
+		{
+			alert("No has seleccionado ninguna carrera");
+			return;
+		}
+		// Si es guardar
+		if(opcion == "Guardar")
+		{
+			var dataUA = $("#formularioPlanEstudio").serialize();
+			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
+				var noPlan=$("#noPlan").val();
+				var clave1F=$("#clave1F").val();
+				var materia=$("#materia").val();
+				//var carrera = "INFORMATICA";
+				var etapaF=$("#etapaF option:selected").html();
+				var tipoF=$("#tipoF option:selected").html();
+				var clave2F=$("#clave2F").val();
+				//var materiaSeriada=$("#materiaSeriada").val();
+				var hc=$("#hc").val();
+				var hl=$("#hl").val();
+				var ht=$("#ht").val();
+				var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
+				var creditosF=$("#creditosF").val();
+				var tablaDatos= $("#tblUA");
+				$('.multiselect-container li').each(function(indice,elemento){
+					if($(elemento).hasClass('active') && indice != 0)
 					{
-						var dataUA = $("#formularioPlanEstudio").serialize();
-						$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data)
-						{
-						
-							
-							var noPlan=$("#noPlan").val();
-							var clave1F=$("#clave1F").val();
-							var materia=$("#materia").val();
-							//var carrera = "INFORMATICA";
-							var etapaF=$("#etapaF option:selected").html();
-							var tipoF=$("#tipoF option:selected").html();
-							var clave2F=$("#clave2F").val();
-							//var materiaSeriada=$("#materiaSeriada").val();
-							var hc=$("#hc").val();
-							var hl=$("#hl").val();
-							var ht=$("#ht").val();
-							var coord=$("#coord").val().prop("label");
-							var creditosF=$("#creditosF").val();
-							var tablaDatos= $("#tblUA");
-								$('.multiselect-container li').each(function(indice,elemento)
-							{
-									if($(elemento).hasClass('active') && indice != 0)
-								{
-									var input = $(elemento).find('input').val();
-									t.row.add([
-										clave1F,
-										materia,
-										$(elemento).text(),
-										etapaF,
-										tipoF,
-										clave2F,
-										coord,
-										hc,
-										hl,
-										ht,
-										creditosF,
-										"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
-								}
-							});
-						})
-						.fail(function(){
-							alert("fallo");
-						});
-					}else // Si es actualizar
-					{	
-							var materia=$("#clave1F").val();
-						var plan = $("#noPlan").val();
-						var dataUA = $("#formularioPlanEstudio").serialize();
-						$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(){
-							
-							$("#guardar").val("Guardar");
-							$('#tblUA').dataTable().fnClearTable();
-							ActualizarUAS(plan);
-							});
-
-						//alert("Datos actualizados");
+						var input = $(elemento).find('input').val();
+						t.row.add([
+									clave1F,
+									materia,
+									$(elemento).text(),
+									etapaF,
+									tipoF,
+									clave2F,
+									coord,
+									hc,
+									hl,
+									ht,
+									creditosF,
+									"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
 					}
 				});
-				// Al cambiar el Plan de Estudio actualizar unidades de aprendizaje y programas educativos
-				$("#noPlan").on("change click",function(){
-					
-					$("#grid_plan").html($(this).val());
-					var plan = $(this).val();
-						$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas)
-						{	
-							var options = "";
-							for(var i = 0; i < programas.length; i++)
-							{
-								options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
-							}
-								$('#select_carreras').html(options);
-								$('.example41').multiselect('rebuild');
-						});
-						ActualizarUAS(plan);
-				});
-			
-			// Botón eliminar uaprendizaje plan estudios.
-			$('#tblUA tbody').on('click','.clsEliminarFila',function(){
-				if (confirm("¿ Está seguro de que desea eliminar ?"))
-				{
-					var materia = $(this).attr ("title");
-					var carrera = $(this).attr("data");
-					//document.location.href='users/delete/'+id;
-					$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
-						.done(function(data){
-							alert("Unidad de aprendizaje: X eliminada de la carrera: X");
-						});
-					// Eliminar renglón
-					t
-					.row($(this).parents('tr'))
-					.remove()
-					.draw();
-				}
-				
+				alert(data);
+			})
+			.fail(function(){
+				alert("fallo");
 			});
+		}
+		else// Si es actualizar
+		{	
+			var materia=$("#clave1F").val();
+			var plan = $("#noPlan").val();
+			var dataUA = $("#formularioPlanEstudio").serialize();
+			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(){
+				$("#guardar").val("Guardar");
+				$('#tblUA').dataTable().fnClearTable();
+				ActualizarUAS(plan);
 			});
-	</script>
+			//alert("Datos actualizados");
+		}
+	});
+	// Al cambiar el Plan de Estudio actualizar unidades de aprendizaje y programas educativos
+	$("#noPlan").on("change click",function(){
+		$("#grid_plan").html($(this).val());
+		var plan = $(this).val();
+		$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
+			var options = "";
+			for(var i = 0; i < programas.length; i++)
+			{
+				options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
+			}
+			$('#select_carreras').html(options);
+			$('.example41').multiselect('rebuild');
+		});
+		ActualizarUAS(plan);
+	});
+	// Botón eliminar uaprendizaje plan estudios.
+	$('#tblUA tbody').on('click','.clsEliminarFila',function(){
+		if (confirm("¿ Está seguro de que desea eliminar ?"))
+		{
+			var materia = $(this).attr ("title");
+			var carrera = $(this).attr("data");
+			//document.location.href='users/delete/'+id;
+			$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
+			.done(function(data){
+				alert("Unidad de aprendizaje: X eliminada de la carrera: X");
+			});
+			// Eliminar renglón
+			t
+			.row($(this).parents('tr'))
+			.remove()
+			.draw();
+		}
+	});
+});
+</script>
 
 <!------------------------------------------------------------>
 
