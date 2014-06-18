@@ -3,21 +3,24 @@
 	
 	<head>
 		<meta charset="utf-8"/>
-		<!-- -------------------------------- Estilos CSS -------------------------------- -->
+		
+        @include('includes.styles')
+		<!-- -------------------------------- Estilos CSS -------------------->
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
-		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
-        
-               
-		<!-- ------------------------------ Scripts Generales -------------------------------->
+		<link rel="stylesheet" type="text/css" href="../css/login.css">
+	
+		
+            
+		<!-- ------------------------------ Scripts Generales ---------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
-		
-		
+
+					
 	</head>
 
 	<body>
@@ -28,7 +31,9 @@
 				<h1>SISTEMA DE GESTIÓN ACADÉMICA (SIGAF)</h1>
 				<h3>Facultad de Contaduría y Administración</h3>
 			</div>
-			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
+
+			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt="">
+			</figure>
 		</header>
  		
 		<div id="indicadores">
@@ -38,53 +43,51 @@
 					Fecha Actualizada
 				</div>
 			</div>
-			
-			
-		</div>
-
-			<form id="loginform" action="login/validar" method="post" >
-    				<!-- Verifica si existe la variable de sesión -->
-                    @if(Session::has('login_errors'))
-                    <p style='color:#FB1D1D' >El nombre de usuario o la contraseña no son correctos.</p>
-                    @else
-                    <p>Introduzca usuario y contraseña para continuar.</p>
-                    @endif
-
+		</div>	
 		
-				<div id="usuarioContrasena">
-					<fieldset id="usuarios">
+		<div id="containerLogin">
+			<div id="loginbox" class="wrapper">  
 
-						<div id="usuarioLogin">
-							
-							<div id="introUsuarioContrasena">Introduzca usuario y contraseña para continuar</div>
-		
-								<label>Usuario: </label>
-								<input class="form-control" style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="username" id="username" placeholder="Usuario" size=1>
-						</div>
 
-						<div id="contrasenaLogin">
+		        <form id="loginform" action="login/validar" method="post" >
+		    		<!-- Verifica si existe la variable de sesión -->
+		            @if(Session::has('login_errors'))
+		            <p style='color:#FB1D1D' >El nombre de usuario o la contraseña no son correctos.</p>
+		            @else
+		            <p>Introduzca usuario y contraseña para continuar.</p>
+		            @endif
+		                               
+		            <div class="input-group input-sm">
+		              	<span class="input-group-addon"><i class="fa fa-user"></i></i></span><input class="form-control" id="username" placeholder="Usuario" type="text" name="username">
+		            </div>
+		            
+		            <div class="input-group">
+		                <span class="input-group-addon"><i class="fa fa-lock"></i></span><input class="form-control" id="password" placeholder="Contraseña" type="password" name="password">
+		            </div>
+		                    
+		            <div class="form-actions clearfix">                      
+		 				<input class="btn btn-block btn-primary btn-success" value="Acceder" type="submit">
+		            </div>
+		                    
+		            <div class="footer-login">
+		                <div class="pull-left text">
+		                   	<div id="loading"><img src="{{ asset('imagenes/loading-icons/loader.gif')}}">
+		                   	</div>
+		                </div>
+		    
+                    </div>
 
-								<label>Contraseña: </label>
-								<input class="form-control" style="width: 300px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="password" name="password" id="password" placeholder="Contraseña" size=1>
-						</div>
+                </form>
+            </div>
+                
+        </div>
 
-						<div id="btnIniciarSesion">
-							<input style="width:200px"class="estilo_button2" type="button" value="Iniciar Sesión" name="iniciarSesion" id="iniciarSesion">
-						</div>
-			</form>
-
-						<div id="RegistrarseUsuarios">Registrarse!<br> Olvidó su contraseña?</div>
-
-					</fieldset>	
-
-				</div>
 				
-	
 		<footer></footer>
 
-		<?php echo HTML::script('js/jquery.js'); ?>
-        <?php echo HTML::script('js/jquery-ui.js'); ?>
-        <?php echo HTML::script('js/login.js'); ?>
+		<?php echo HTML::script('../js/jquery.js'); ?>
+        <?php echo HTML::script('../js/jquery-ui.js'); ?>
+        <?php echo HTML::script('../js/login.js'); ?>
 		
 	</body>
 <!----------------------------------------------------------->

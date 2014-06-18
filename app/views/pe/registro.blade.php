@@ -124,9 +124,6 @@
 							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
 						</tr>
 
-						
-
-
 					</table>
 				</div>
 					<div class="CatBotones">
