@@ -35,7 +35,7 @@ ventimp.close();
 		$(function(){
 			$('.eliminarBloquecito').on('click',function()
 			{
-				$(this).parent().parent().remove();	
+				$(this).parent().parent().remove();
 			});
 		});
 	</script>
