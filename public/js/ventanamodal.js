@@ -119,7 +119,7 @@ function crearCatalogos()
 }
 
 
-// AGREGAR ACCIONES AL BOTON GUARDAR
+/* AGREGAR ACCIONES AL BOTON GUARDAR
 $(function(){
 
 	//$(document).on('click','.clsAgregarFila',function(){
@@ -165,4 +165,4 @@ $(function(){
 	});
 
 
-});
+});*/
