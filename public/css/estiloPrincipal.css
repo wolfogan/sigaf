@@ -21,7 +21,7 @@ fieldset #group_seriacion
 }
 legend
 {
-    padding: 2px; 
+	padding: 2px; 
 }
 figure
 {
@@ -218,6 +218,7 @@ background: #EFCA0D;
 	text-align: center;
 	height: 50px;
 	width:100px;
+	margin-left: 20px;
 }
 .estilo_button2:hover
 {
@@ -225,10 +226,8 @@ background: #EFCA0D;
 }
 #botones
 {
-	
-	margin-left: 1070px;
-	margin-top: -80px;
-	width: 130px;
+	margin-top: -50px;
+	width: 280px;
 	float: left;
 }
 #cimarron
@@ -342,7 +341,7 @@ background: #EFCA0D;
 }
 #guardar
 {
-	float:right;
+	float:left;
 }
 #carreraDiv 
 {
@@ -616,7 +615,7 @@ background: #EFCA0D;
 #observacionesDiv
 {
 	
-	width: 500px;
+	width: 480px;
 	float: left;
 	margin-left: 270px;
 	margin-top: -80px;

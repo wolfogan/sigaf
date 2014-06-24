@@ -52,14 +52,14 @@ class PlanEstudioController extends BaseController
 		// Coordinación de area
 		$coordinaciones = Coordinacion::select('coordinaciona','descripcion')->get();
 
-		// Materia: Matemáticas, español, etc.
-		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->orderBy('uaprendizaje','desc')->get();
+		/* Materia: Matemáticas, español, etc.
+		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->orderBy('uaprendizaje','desc')->get();*/
 
 		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 
 		$especialidades = Especialidad::select('especialidad','descripcion')->orderBy('descripcion','desc')->get();
 
-		return View::make('pe.registro')->with(compact('codigosPE','niveles','periodosPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','unidadesAprendizaje','programasEducativos','especialidades'));
+		return View::make('pe.registro')->with(compact('codigosPE','niveles','periodosPrograma','etapas','seriaciones','tiposCaracter','coordinaciones','programasEducativos','especialidades'));
 	}
 
 	public function getConsulta()
@@ -261,6 +261,14 @@ class PlanEstudioController extends BaseController
 		return $ua_id->uaprendizaje+1;
 	}
 
+	public function postObtenerclaveseries()
+	{
+		$noplan = Input::get('noplan');
+		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->where('plan','=',$noplan)->orderBy('uaprendizaje','desc')->get();
+
+		return $unidadesAprendizaje;
+	}
+
 	public function postObtenerprogramas()
 	{
 		$noplan = Input::get('noplan');
@@ -294,6 +302,15 @@ class PlanEstudioController extends BaseController
 
 	}
 
+	public function postEliminarua()
+	{
+		$uaid = Input::get("uaprendizaje");
+		$UA = UnidadAprendizaje::find($uaid);
+		$UA -> delete();
+
+		return "Unidad de Aprendizaje Eliminada Exitosamente!";
+	}
+
 	public function postEliminarpua()
 	{
 		$programaedu = Input::get('programaedu');
@@ -305,9 +322,17 @@ class PlanEstudioController extends BaseController
 	public function postObtenerdataua()
 	{
 		$uaid = Input::get('uaprendizaje');
-		//$uaserieid = Input::get('claveD');
+		$uaserieid = Input::get('claveD');
 		$ua = UnidadAprendizaje::find($uaid);
-		//$uaserie = UnidadAprendizaje::find($uaserieid);
+		if(empty($uaserieid))
+		{
+			$uaserie = "";
+		}
+		else
+		{
+			$data = UnidadAprendizaje::find($uaserieid);
+			$uaserie = $data->descripcionmat;
+		}
 
 		$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
 		$data= array(
@@ -320,12 +345,14 @@ class PlanEstudioController extends BaseController
 			'claveD'=>$ua->claveD,
 			'coordinaciona'=>$ua->coordinaciona,
 			'observa'=>$ua->observa,
+			'materiaseriada' => $uaserie,
 			'hc'=>$ua->HC,
 			'hl'=>$ua->HL,
 			'ht'=>$ua->HT,
 			'hpc'=>$ua->HPC,
 			'hcl'=>$ua->HCL,
 			'he'=>$ua->HE,
+			'semestre'=>$ua->semestre,
 			'creditos'=>$ua->creditos,
 			'programas'=>$programas
 		);
@@ -355,7 +382,16 @@ class PlanEstudioController extends BaseController
 		$UA -> coordinaciona = Input::get('coord');
 			
 		$UA -> save();
-
+		
+		$add =Input::get('add_carreras');
+		if(!empty($add))
+		{
+			$programas = explode(",",Input::get('add_carreras'));
+			foreach ($programas as $carrera)
+			{
+				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+			}
+		}
 	}
 }
 
