@@ -1039,24 +1039,22 @@ background: #EFCA0D;
 	
 	margin: auto;
 	margin-top: 20px;
-	width: 410px;
+	width: 420px;
 	height: 80px;
 
 }
 
 #cmbBuscarCatalogo
 {
-	
 	float: left;
 	margin-left: 10px;
 	margin: auto;
 	margin-top:10px;
-	width: 290px;
+	width: 270px;
 }
 #btnBuscarCatalogo
 {
-
-	float: left;
+	float:left;
 
 }
 

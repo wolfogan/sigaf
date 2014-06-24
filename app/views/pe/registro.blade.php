@@ -97,16 +97,7 @@
 			</div>
 		</form>
 	</div>
-<<<<<<< HEAD
-	<!---------------------------------------- CARRERA ---------------------------------------->
 
-		<div class="md-modal md-effect-11" id="carrera"> 
-			<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
-				<h3>Agregar Carrera</h3>
-				
-=======
-	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
->>>>>>> 3eadc40cc7f28e54862d67ccdf9e0ba0fe7e9ac5
 
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
 	<div class="md-modal md-effect-11" id="carrera"> 
