@@ -73,6 +73,7 @@
 								@endforeach
 							</select>
 							<!-- Campo oculto para id´s de carreras -->
+
 							<input type="hidden" name="alta_plan_carreras" id="alta_plan_carreras"/>
 						</td>
 					</tr>
@@ -96,6 +97,7 @@
 			</div>
 		</form>
 	</div>
+
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->

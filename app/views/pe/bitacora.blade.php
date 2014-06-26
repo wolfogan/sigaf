@@ -9,10 +9,16 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
         
-        <!-- Estilos del dataTable-->
-		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
-        <!--Aqui termina estilo del dataTable-->
-        
+        <!-- ------------------------------ DATATABLES --------------------------------------->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+		<!-- JS -->
+		<script src="../js/jquery.dataTables.js"></script>
+
+		<!-- ---------------------------------------------------------------------------------->
+
+               
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 

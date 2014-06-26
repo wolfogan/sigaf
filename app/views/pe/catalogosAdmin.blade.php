@@ -9,9 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
         
-        <!-- Estilos del dataTable-->
-		<link rel="stylesheet" type="text/css" href="../css/demo_table.css">
-        <!--Aqui termina estilo del dataTable-->
         
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
@@ -21,13 +18,22 @@
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
 
-       <!-- Script dataTable -->
+       <!-- ------------------------------ DATATABLES --------------------------------------->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+		<!-- JS -->
+		<script src="../js/jquery.dataTables.js"></script>
+
+		<!-- ---------------------------------------------------------------------------------->
+		<!-- Script dataTable -->
 		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#tblUA').dataTable();
 			} );
 		</script><!-- Termina script dataTable -->
+		
 	</head>
 
 	<body>
@@ -95,7 +101,7 @@
 
 	<div id="GridPlanEstudio">
 	<br>
-		<div id="demo">
+		
 			<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
 				<thead>
 					<tr>
@@ -111,6 +117,8 @@
 					</tr>
 				</thead>
 				<tbody>
+
+
 					<tr class="gradeX">
 						<td>000453</td>
 						<td>12/02/14</td>
@@ -228,7 +236,7 @@
 				<div id="btnImprimirBit">
 					<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
 				</div>
-		</div>
+		
 	</div>
 		</section>
 		<footer></footer>
