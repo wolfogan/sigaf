@@ -564,6 +564,7 @@
 		$("#clave2F").val("");
 		$("#materiaSeriada").val("");
 		$("#eliminar").hide();
+		disabled_campos();
 		// FUNCIONES GENERALES DE LA APLICACION
 		/**
 		 * Obtiene las Unidades de Aprendizaje de las carreras asignadas al Plan de Estudios Vigente.
@@ -592,12 +593,19 @@
 			});
 		}
 
+		function disabled_campos()
+		{
+			$("#clave1F").attr("disabled","disabled");
+			$("#materia").attr("disabled","disabled");
+			$("#etapaF").attr("disabled","disabled"));
+		}
+
 		function reset_campos()
 		{
 			//$("#noPlan").val("");
 			$("#clave1F").val("");
 			$("#materia").val("");
-			$("#nivel").val("");
+			//$("#nivel").val("");
 			$("#carrera").val("");
 			$("#etapaF").val("1");
 			$("#tipoF").val("1");
@@ -621,6 +629,7 @@
 		$("#noPlan").on("change",function(){
 			$("#grid_plan").html($(this).val());
 			var plan = $(this).val();
+			// Obtener las carreras asociadas al plan de estudios.
 			$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
 				var options = "";
 				for(var i = 0; i < programas.length; i++)
@@ -631,7 +640,7 @@
 				$('#select_carreras').html(options);
 				$('.example41').multiselect('rebuild');
 			});
-
+			// Obtener las claves para la seriación de las ua registradas en el plan.
 			$.post("<?php echo URL::to('planestudio/obtenerclaveseries'); ?>",{noplan:plan},function(claves){
 				var options = "";
 				for(var i=0;i<claves.length;i++)
@@ -640,7 +649,7 @@
 				}
 				$("#datalist_clave2F").html(options);
 			});
-
+			// Actualizar grid para mostrar las ua por carrera.
 			ActualizarUAS(plan);
 
 		});
@@ -719,6 +728,30 @@
 			{
 				$("#clave2F").removeAttr('disabled').val("");
 				$("#materiaSeriada").val("");
+			}
+		});
+		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE CUANDO PIERDE EL FOCO LA CLAVE DE LA UA.
+		// VALIDA QUE NO ESTE REGISTRADA ESA UA EN EL PLAN SELECCIONADO
+		$("#clave1F").on("focusout",function(){
+			if($(this).val()!="")
+			{
+				var idua = $(this).val();
+			
+				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+					$("#materia").val(materia);
+					$("#materia").css("background","pink");
+					$("#clave1F").css("background","pink");
+					if($("#guardar").val()=="Guardar")
+					{
+						alert("Esta unidad de aprendizaje ya esta registrada indique otro número de clave por favor");
+						$("#clave1F").val("").focus();
+						$("#materia").val("").css("background","");
+						$("#clave1F").css("background","");
+					}
+				})
+				.fail(function(){
+					$("#materia").css({"background":"#173C00","color":"white","font-size":"130%"}).focus();
+				});
 			}
 		});
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
@@ -800,27 +833,6 @@
 						.fail(function(){alert("fallo");});
 					}
 				}
-			}
-		});
-		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE CUANDO PIERDE EL FOCO LA CLAVE.
-		$("#clave1F").on("focusout",function(){
-			if($(this).val()!="")
-			{
-				var idua = $(this).val();
-			
-				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
-					$("#materia").val(materia);
-					$("#materia").css("background","pink");
-					if($("#guardar").val()=="Guardar")
-					{
-						alert("Esta unidad de aprendizaje ya esta registrada indique otro número de clave por favor");
-						$("#clave1F").val("").focus();
-						$("#materia").val("").css("background","");
-					}
-				})
-				.fail(function(){
-					$("#materia").css("background","#9FF781");
-				});
 			}
 		});
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE DE LA SERIACIÓN CUANDO PIERDE EL FOCO.
