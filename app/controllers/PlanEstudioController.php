@@ -374,6 +374,7 @@ class PlanEstudioController extends BaseController
 		$UA -> HE = Input::get('he');
 		$UA -> creditos = Input::get('creditosF');
 		//$UA -> fec_aut = date('Y-m-d');
+		$UA -> semestre = Input::get('semestre');
 		$UA -> observa = Input::get('observaciones');
 		$UA -> caracter = Input::get('tipoF');
 		$UA -> reqseriacion = Input::get('serie');
