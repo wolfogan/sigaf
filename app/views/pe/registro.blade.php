@@ -643,6 +643,7 @@
 			$("#coord").val("");
 			$("#semestre").val(1);
 			$("#observaciones").val("");
+			$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 		}
 
 		function desmarcar_carreras()
@@ -656,6 +657,7 @@
 		
 		// AL CAMBIO COMBOBOX NO DE PLAN CARGA LAS UNIDADES DE APRENDIZAJES ASIGNADAS A LAS CARRERAS Y LAS UA SERIADAS.
 		$("#noPlan").on("change",function(){
+			reset_campos();
 			$("#grid_plan").html($(this).val());
 			disabled_campos(false);
 			var plan = $(this).val();
@@ -886,7 +888,7 @@
 						}
 					});
 					alert(data);
-					$("#materia").css({"background-color":"white","color":"black","font-size":"70%"});
+					$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 					reset_campos();
 				})
 				.fail(function(){
@@ -1041,10 +1043,6 @@
 					$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
 					.done(function(data){
 						// Eliminar renglón
-						t
-						.row($(this).parents('tr'))
-						.remove()
-						.draw();
 						alert("Unidad de aprendizaje: X eliminada de la carrera: X");
 					});
 
@@ -1052,8 +1050,10 @@
 					$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
 					$(".example41").multiselect('refresh');
 
-
-					return;
+					t
+					.row($(this).parents('tr'))
+					.remove()
+					.draw();
 				}
 				else
 				{
