@@ -347,10 +347,10 @@
 					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
 				</div>
 				<!------------------------------------ NIVEL ------------------------------------>
-				<!--<div id="nivelDiv">
+				<div id="nivelDiv">
 					<label>Nivel: </label>
 					<label style="color:#ECA22E; padding-left:5px;">LICENCIATURA</label>
-				</div>-->
+				</div>
 				<!------------------------------------------------------------------------------>
 			</div>
 			<!-- TERMINA PRIMER SECCIÓN -->
@@ -804,7 +804,7 @@
 			}
 		});
 		// CASOS DE LA PARA ASIGNAR LA SERIACIÓN
-		$('#serie').on('change',function(){
+		$("#serie").on("change",function(){
 			var opcionSerie = $(this).val();
 			if(opcionSerie==1)
 			{
@@ -813,9 +813,19 @@
 			}
 			else
 			{
-				$("#clave2F").removeAttr('disabled').val("");
+				$("#clave2F").removeAttr('disabled').val("").focus();
 				$("#materiaSeriada").val("");
 			}
+		});
+		// VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
+		$("#clave2F").on("focusout",function(){
+			if($("#serie").val()!=1){
+				if($(this).val().length<1)
+					$(this).css("background-color","pink");
+				else
+					$(this).css("background-color","");
+			}
+				
 		});
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE DE LA SERIACIÓN CUANDO PIERDE EL FOCO.
 		$("#clave2F").on("focusout",function(){
@@ -846,6 +856,12 @@
 			if(nCarreras==null)
 			{
 				alert("No has seleccionado ninguna carrera");
+				return;
+			}
+			// Validar seriacion
+			if($("#serie").val()!=1 && $("#clave2F").val().length<1)
+			{
+				alert("Debes escribir una materia seriada");
 				return;
 			}
 			// INSERTAR UNIDAD DE APRENDIZAJE
@@ -1038,6 +1054,7 @@
 				var materia = $(this).attr ("title");
 				var carrera = $(this).attr("data");
 				//document.location.href='users/delete/'+id;
+				
 				if($('#tblUA').dataTable().fnGetData().length!=1)
 				{
 					$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
