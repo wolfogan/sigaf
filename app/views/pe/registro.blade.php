@@ -60,7 +60,9 @@
 						<td>Nivel:</td>
 						<td>
 							<select name="nivel" id="nivel">
-
+								@foreach ($niveles as $nivel)
+									<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
+								@endforeach
 							</select>
 						</td>
 					</tr>
@@ -349,7 +351,7 @@
 				<!------------------------------------ NIVEL ------------------------------------>
 				<div id="nivelDiv">
 					<label>Nivel: </label>
-					<label style="color:#ECA22E; padding-left:5px;">LICENCIATURA</label>
+					<label id="plan_nivel" style="color:#ECA22E; padding-left:5px;"></label>
 				</div>
 				<!------------------------------------------------------------------------------>
 			</div>
@@ -643,7 +645,7 @@
 			$("#coord").val("");
 			$("#semestre").val(1);
 			$("#observaciones").val("");
-			$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
+
 		}
 
 		function desmarcar_carreras()
@@ -661,6 +663,12 @@
 			$("#grid_plan").html($(this).val());
 			disabled_campos(false);
 			var plan = $(this).val();
+			// Obtener el nivel al que pertenece el plan seleccionado
+			$.post("<?php echo URL::to('planestudio/obtenernivelplan'); ?>",{noplan:plan},function(nivel){
+				$("#plan_nivel").html(nivel);
+			}).fail(function(){
+				alert("Fallo obtener nivel del plan");
+			});
 			// Obtener las carreras asociadas al plan de estudios.
 			$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
 				var options = "";
@@ -800,6 +808,10 @@
 					reset_campos();
 					$("#eliminar").hide();
 					$("#noPlan").removeAttr("disabled").css("background-color","");
+					desmarcar_carreras();
+					// Habilitar Carreras
+					$("#select_carreras option").removeAttr('disabled');
+					$(".example41").multiselect('refresh');
 				});
 			}
 		});
@@ -848,7 +860,7 @@
 			var creditos = hc + hl + ht + hcl + hpc + he;
 			$("#creditosF").val(creditos);
 		});
-		// INSERTAR Y ACTUALIZAR UNIDAD DE APRENDIZAJE
+		// GUARDAR Y ACTUALIZAR UNIDAD DE APRENDIZAJE
 		$("#guardar").on("click",function(){
 			var opcion = $(this).val();
 			// Validar si no eligieron carreras.
@@ -906,6 +918,7 @@
 					alert(data);
 					$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 					reset_campos();
+					desmarcar_carreras();
 				})
 				.fail(function(){
 					alert("Fallo el registro de la Unidad de Aprendizaje");
@@ -953,8 +966,9 @@
 				reset_campos();
 				$("#noPlan").removeAttr('disabled').css("background-color","");
 				$("#eliminar").hide();
+				// Deseleccionar Carreras
 				desmarcar_carreras();
-				// Limpiar Control
+				// habilitar Carreras
 				$("#select_carreras option").removeAttr('disabled');
 				$(".example41").multiselect('refresh');
 				$("#guardar").val("Guardar");
@@ -1051,39 +1065,43 @@
 			if (confirm("¿ Está seguro de que desea eliminar ?"))
 			{
 
-				var materia = $(this).attr ("title");
-				var carrera = $(this).attr("data");
+				var materia = $(this).attr ("title"); // tittle esta el id de la unidad de aprendizaje
+				var carrera = $(this).attr("data"); // data es la carrera / programa educativo
 				//document.location.href='users/delete/'+id;
-				
-				if($('#tblUA').dataTable().fnGetData().length!=1)
-				{
-					$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
-					.done(function(data){
-						// Eliminar renglón
-						alert("Unidad de aprendizaje: X eliminada de la carrera: X");
-					});
-
-					$(".example41").multiselect('deselect', carrera);
-					$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
-					$(".example41").multiselect('refresh');
-
-					t
-					.row($(this).parents('tr'))
-					.remove()
-					.draw();
-				}
-				else
-				{
-					if(confirm("Se eliminara la unidad de aprendizaje en su totalidad si la eliminas del programa educativo ¿Deseas Continuar?"))
+				$.post("<?php echo URL::to('planestudio/contaruas'); ?>",{uaprendizaje:materia})
+				.done(function(data){
+					//alert(data);
+					// if($('#tblUA').dataTable().fnGetData().length!=1)
+					if(data!=1)
 					{
 						$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
 						.done(function(data){
-							$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia},function(){$('#tblUA').dataTable().fnClearTable();});
-						});
-						reset_campos();
-						//alert("Si la elimino totalmente");
+						// Eliminar renglón
+						alert("Unidad de aprendizaje: X eliminada de la carrera: X");
+						 });
+
+						$(".example41").multiselect('deselect', carrera);
+						$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
+						$(".example41").multiselect('refresh');
+	
+						t
+						.row($(this).parents('tr'))
+						.remove()
+						.draw();
 					}
-				}
+					else
+					{
+						if(confirm("Se eliminara la unidad de aprendizaje en su totalidad si la eliminas del programa educativo ¿Deseas Continuar?"))
+						{
+							$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
+							.done(function(data){
+								$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia},function(){$('#tblUA').dataTable().fnClearTable();});
+							});
+							reset_campos();
+							//alert("Si la elimino totalmente");
+						}
+					}
+				});
 
 			}
 		});

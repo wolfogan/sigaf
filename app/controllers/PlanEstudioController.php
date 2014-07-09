@@ -35,7 +35,7 @@ class PlanEstudioController extends BaseController
 		$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
 		}
 		// Licenciatura, Maestría
-		$niveles = NivelPrograma::select('nivel','descripcion')->orderBy('nivel','desc')->get();
+		$niveles = NivelPrograma::select('nivel','descripcion')->orderBy('nivel','asc')->get();
 		
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
@@ -247,7 +247,13 @@ class PlanEstudioController extends BaseController
 
 	}
 
-	// Llamadas Asíncronas
+	// LLAMADAS ASINCRONAS
+	public function postObtenernivelplan()
+	{
+		$noplan = Input::get('noplan');
+		$nivel = PlanEstudio::find($noplan)->nivelD;
+		return $nivel->descripcion;
+	}
 	public function postObtenermateria()
 	{
 		$ua_id = Input::get('uaprendizaje');
@@ -302,6 +308,12 @@ class PlanEstudioController extends BaseController
 
 	}
 
+	public function postContaruas()
+	{
+		$uaid = Input::get('uaprendizaje');
+		$numUAS = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->count();
+		return $numUAS;
+	}
 	public function postEliminarua()
 	{
 		$uaid = Input::get("uaprendizaje");
