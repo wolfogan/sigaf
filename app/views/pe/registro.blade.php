@@ -1061,12 +1061,14 @@
 		// ELIMINAR LA UNIDAD DE APRENDIZAJE ASOCIADA A LA CARRERA "p_ua".
 		$('#tblUA tbody').on('click','.clsEliminarFila',function(event){
 			// Evitar que se propagen los eventos
-			event.stopPropagation();
+			//event.stopPropagation();
+			
 			if (confirm("¿ Está seguro de que desea eliminar ?"))
 			{
 
 				var materia = $(this).attr ("title"); // tittle esta el id de la unidad de aprendizaje
 				var carrera = $(this).attr("data"); // data es la carrera / programa educativo
+				var btnDelete = $(this);
 				//document.location.href='users/delete/'+id;
 				$.post("<?php echo URL::to('planestudio/contaruas'); ?>",{uaprendizaje:materia})
 				.done(function(data){
@@ -1077,32 +1079,36 @@
 						$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
 						.done(function(data){
 						// Eliminar renglón
-						alert("Unidad de aprendizaje: X eliminada de la carrera: X");
-						 });
+							t
+							.row($(btnDelete).parents('tr'))
+							.remove()
+							.draw();
+							alert("Unidad de aprendizaje: X eliminada de la carrera: X");
+						});
 
 						$(".example41").multiselect('deselect', carrera);
 						$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
 						$(".example41").multiselect('refresh');
-	
-						t
-						.row($(this).parents('tr'))
-						.remove()
-						.draw();
 					}
 					else
 					{
 						if(confirm("Se eliminara la unidad de aprendizaje en su totalidad si la eliminas del programa educativo ¿Deseas Continuar?"))
 						{
-							$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
-							.done(function(data){
-								$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia},function(){$('#tblUA').dataTable().fnClearTable();});
+							$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia},function(){
+								//$('#tblUA').dataTable().fnClearTable();
+								t
+								.row($(btnDelete).parents('tr'))
+								.remove()
+								.draw();
+								alert("Unidad Eliminada Correctamente");
 							});
 							reset_campos();
 							//alert("Si la elimino totalmente");
 						}
 					}
-				});
 
+					
+				});
 			}
 		});
 	});
