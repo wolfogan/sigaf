@@ -10,4 +10,9 @@ class PlanEstudio extends Eloquent
 	{
 		return $this->hasMany('UnidadAprendizaje','plan');
 	}
+
+	public function nivelD()
+	{
+		return $this->belongsTo('NivelPrograma','nivel','nivel');
+	}
 }

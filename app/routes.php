@@ -29,12 +29,13 @@ Route::controller('planestudio','PlanEstudioController');
 
 Route::get('pruebas',function(){
 
-	$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
+	//$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
 
+	$plan = PlanEstudio::find('20101')->nivelD;
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $uaprendizaje->descripcionmat;
+	return $plan->descripcion;
 });

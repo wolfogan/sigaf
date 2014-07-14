@@ -148,10 +148,14 @@ footer
 }
 #consultaboton
 {
-	margin-left:1100px;
-	margin-top: -60px;
+	margin-left:1080px;
+	margin-top: -115px;
 	padding-right: 10px;
 	width: 110px;
+}
+#consultaboton_limpiar
+{
+	padding-top: 5px;
 }
 .clsEliminarFila
 {
@@ -388,24 +392,22 @@ background: #EFCA0D;
 {
 	background:#EDF7ED;
 }
+
+
 /*Estilo para la ventana de consulta (controles de busqueda)*/
 #consul_noPlan
 {
 	margin-left:20px;
 }
-#consul_nivel
+
+#consul_carrera
 {
 	margin-left:210px;
 	margin-top:-30px;	
 }
-#consul_carrera
-{
-	margin-left:410px;
-	margin-top:-30px;	
-}
 #consul_clave
 {
-	margin-left:625px;
+	margin-left:440px;
 	margin-top:-30px;
 }
 #materiaCon
@@ -418,7 +420,7 @@ background: #EFCA0D;
 }
 #consul_materia
 {
-	margin-left:790px;
+	margin-left:630px;
 	margin-top:-30px;
 }
 #consul_etapa
@@ -427,12 +429,12 @@ background: #EFCA0D;
 }
 #consul_tipo
 {
-	margin-left:215px;
+	margin-left:233px;
 	margin-top:-30px;
 }
 #consul_serie
 {
-	margin-left:400px;
+	margin-left:415px;
 	margin-top:-30px;
 }
 #coordinacion
@@ -445,7 +447,7 @@ background: #EFCA0D;
 }
 #consul_coor
 {
-	margin-left:625px;
+	margin-left:640px;
 	margin-top:-30px;
 }
 #elimImg
@@ -722,13 +724,11 @@ background: #EFCA0D;
 }
 .tblCatPlan
 {
-	background: white;
+	background:#ECECFB;
 	border-style: none;
 	border-collapse: separate;
-  	border-spacing:  10px;
+  	border-spacing: 10px 5px;
   	border-radius: 7px;   	
-  	color:black;
-  	font: "Trebuchet Ms";
   	font-size: 18px; 	  	
   	margin: auto;
   	margin-top: 50px;
@@ -737,6 +737,7 @@ background: #EFCA0D;
 }
 .tblCatPlan td 
 {
+	color:#004000;
 	text-align: left;
 	
 }
