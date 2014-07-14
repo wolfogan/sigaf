@@ -308,7 +308,7 @@
 				<div id="noPlanDiv">
 					<label>No.Plan:</label>
 					<select class="con_estilo" type="text" name="noPlan" id="noPlan" >
-						@foreach ($codigosPE as $codigo )
+						@foreach ($codigosPE as $codigo)
 							<option value="{{$codigo['codigo']}}">{{$codigo['formato']}}</option>
 						@endforeach
 					</select>
@@ -508,7 +508,7 @@
 
 		<!------------------------ GRID PARA MOSTRAR UNIDADES DE APRENDIZAJE POR PLAN ------------------------>
 		<div id="GridPlanEstudio">
-			<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;" id="grid_plan">000</label>
+			<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;" id="grid_plan">0000</label>
 			<div id="planTerminado">
 				<input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label>
 			</div>
@@ -933,7 +933,7 @@
 					//alert(data);
 					$("#guardar").val("Guardar");
 					$("#limpiar").val("Limpiar");
-					$('#tblUA').dataTable().fnClearTable();
+					$("#tblUA").dataTable().fnClearTable();
 					ActualizarUAS(plan);
 					alert("Datos actualizados");
 					// Limpiar Control

@@ -11,20 +11,7 @@
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.dragsort-0.5.1.min.js"></script>
-	<!-- Funcion de Impresion -->
-	<script language="Javascript"> 
-		function imprSelec(nombre) 
-		{ 
-		var articulo = document.getElementById(nombre); 
-		var ventimp = window.open(' ','cuadros','no','no','50','no','no','no','no','no','no','no','no','500'); 
-		ventimp.document.write(articulo.innerHTML ); 
-		ventimp.document.close(); 
-		ventimp.print( ); 
-		ventimp.close(); 
-		}
-	</script> 
-	<!-- Fin funcion de impresion-->
-
+	
 	<!--AQUI VA HORA Y FECHA-->
 	<script src="../js/tiempoactual.js"></script>
 	<script>$(function(){startWatch(); return false;});</script>
@@ -83,42 +70,34 @@
 				<fieldset id="consultaPlan">
 					<legend>Consultar por:</legend>
 					<div id="consultax">
+						<!------------------------ PLAN DE ESTUDIO ------------------------>
 						<div id="consul_noPlan">
 							<label>No.Plan: </label>
 							<input class="estilo_text" type="text" name="noPlan" id="noPlan" list="datalist_noPlan" size=1 onkeypress="ValidaSoloNumeros()"/>
 							<datalist id="datalist_noPlan">
-								<option value="2013-2">
-								<option value="2013-4">
-								<option value="2014-1">
+								@foreach ($codigosPE as $codigo)
+									<option value="{{$codigo['formato']}}" plan="{{$codigo['codigo']}}">
+								@endforeach
 							</datalist>
 						</div>
-						<div id="consul_nivel">
-							<label>Nivel: </label>
-							<select class="con_estilo" name="nivel" size=1>
-								<option value="LIC">LIC.</option>
-								<option value="POSTGRADO">POSTGRADO</option>
-								<option value="TECNICO">TECNICO</option>
-							</select>
-						</div>
+						<!------------------------ PROGRAMAS EDUCATIVOS ------------------------>
 						<div id="consul_carrera">
 							<label>Carrera: </label>
-							<select class="con_estilo" name="carrera" size=1>
-								<option value="TC">TRONCO COMUN</option>
-								<option value="ADMON">ADMON.</option>
-								<option value="CONTAB">CONTAB.</option>
-								<option value="INFORMATICA">INFORMATICA</option>
-								<option value="NEGOCIOS">NEGOCIOS</option>
+							<select class="con_estilo" name="carrera" size="1">
+								@foreach ($programasEducativos as $carrera)
+									<option value="{{$carrera->programaedu}}">{{$carrera->descripcion}}</option>
+								@endforeach
 							</select>
 						</div>
+						<!------------------------ CLAVES DE UNIDADES DE APRENDIZAJE ------------------------>
 						<div id="consul_clave">
 							<label>Clave: </label>
 							<input class="estilo_text" type="text" name="clave" id="clave" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
 							<datalist id="datalist_clave">
-								<option value="10450">
-								<option value="13230">
-								<option value="10384">
+								<!-- AQUI VAN LAS CLAVES -->
 							</datalist>
 						</div>
+						<!------------------------ DESCRIPCION DE UNIDADES DE APRENDIZAJE ------------------------>
 						<div id="consul_materia">
 							<label>Materia: </label>
 							<input type="text" name="materia" id="materiaCon" list="datalist_materia" size="1"/>
@@ -130,38 +109,44 @@
 						</div>
 					</div>
 					<div id="consultay">
+						<!------------------------ ETAPAS ------------------------>
 						<div id="consul_etapa">
 							<label>Etapa:</label>
 							<select class="con_estilo" name="etapa" size=1>
-								<option value="BASICA">BASICA</option>
-								<option value="INTERMEDIA">DISCIPLINARIA</option>
-								<option value="TERMINAL">TERMINAL</option>
+								<option value="0">TODAS</option>
+								@foreach ($etapas as $etapa)
+									<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+								@endforeach
 							</select>
 						</div>
+						<!------------------------ CARACTERES ------------------------>
 						<div id="consul_tipo">
 							<label>Tipo: </label>
-							<select class="con_estilo" name="tipo" size=1>
-								<option value="OBLIGATORIA">OBLIGATORIA</option>
-								<option value="OPTATIVA">OPTATIVA</option>
+							<select class="con_estilo" name="tipo" size="1">
+								<option value="0">TODAS</option>
+								@foreach ($tiposCaracter as $tipo)
+									<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
+								@endforeach
 							</select>
 						</div>
+						<!------------------------ TIPOS DE SERIACION ------------------------>
 						<div id="consul_serie">
 							<label>Seriación: </label>
 							<select class="con_estilo" name="seriacion" size=1>
-								<option value="SINSERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGATORIA</option>
-								<option value="SUGERIDA">SUGERIDA</option>
+								<option value="0">TODAS</option>
+								@foreach ($seriaciones as $seriacion)
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
 							</select>
 						</div>
+						<!------------------------ COORDINACIONES ------------------------>
 						<div id="consul_coor">
 							<label>Coord: </label>
 							<input type="text" id="coordinacion" style="width:150px" size=1 list="datalist_coord">
 							<datalist id="datalist_coord">
-								<option value="INFORMATICA">
-								<option value="MATEMATICAS">
-								<option value="CIENCIAS COMPUTACIONALES">
-								<option value="SISTEMAS DE INFORMACION">
-								<option value="PROGRAMACION">
+								@foreach ($coordinaciones as $coordinacion)
+									<option value="{{$coordinacion->descripcion}}" codigo="{{$coordinacion->coordinaciona}}">
+								@endforeach
 							</datalist>
 						</div>
 						<div id="checkTroncoComun">
@@ -487,7 +472,7 @@
 			</ul>
 		</div>
 		<div style="clear:both;"></div>
-		<br>
+		<br />
 		<div id="totalcreditos">
 			Materias obligatorias: Materias optativas: Total de creditos:
 		</div>
@@ -495,9 +480,8 @@
 		<div id="actualizaimprime">
 			<input style="font-size:18px" class="estilo_button2" type="button" value="Actualizar">
 			&nbsp;&nbsp;
-			<a href="javascript:imprSelec('imprimir')"  target="_parent">
-				<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
-			</a>
+			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
+			
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 		<div class="md-modal md-effect-11" id="modal-11">
@@ -567,24 +551,22 @@
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 	</section>
 	<footer></footer>
+
 	<script type="text/javascript">
 		$("ul:first").dragsort();
-	</script>
-	<script type="text/javascript">
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
+		
 		function saveOrder() {
 			var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
 			$("input[name=list1SortOrder]").val(data.join("|"));
 		};
+		// this is important for IEs
+		var polyfilter_scriptpath = '/js/';
 	</script>
+	<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
+	<script src="../js/css-filters-polyfill.js"></script>
+	<!--SCRIPT PARA VENTANA MODAL-->
 </body>
-<!--SCRIPT PARA VENTANA MODAL-->
-<script type="text/javascript">
-			// this is important for IEs
-			var polyfilter_scriptpath = '/js/';
-		</script>
-<script src="../js/classie.js"></script>
-<script src="../js/modalEffects.js"></script>
-<script src="../js/css-filters-polyfill.js"></script>
-
 </html>

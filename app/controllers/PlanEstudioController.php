@@ -11,6 +11,7 @@ class PlanEstudioController extends BaseController
 
 	public function getRegistro()
 	{
+		// Obtener planes de estudio: 2010-1, 2010-2, 2010-3
 		//$planestudio = DB::table('planestudio')->distinct()->lists('PE_codigo');
 		//$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
 		$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
@@ -30,7 +31,7 @@ class PlanEstudioController extends BaseController
 
 			return $part1.$string_add.$part2;
 		}
-		
+
 		for ($i=0; $i < count($planestudio); $i++) { 
 		$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
 		}
@@ -54,7 +55,6 @@ class PlanEstudioController extends BaseController
 
 		/* Materia: Matemáticas, español, etc.
 		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->orderBy('uaprendizaje','desc')->get();*/
-
 		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 
 		$especialidades = Especialidad::select('especialidad','descripcion')->orderBy('descripcion','desc')->get();
@@ -64,7 +64,44 @@ class PlanEstudioController extends BaseController
 
 	public function getConsulta()
 	{
-		return View::make('pe.consulta');
+		// Obtener planes de estudio.
+		$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
+		$codigosPE = array();
+		
+		/**
+	 	* Función para integrar el guión en el código del plan de estudio 2009-2
+		 * @param  string $string_add    La cadena a agregar
+		 * @param  string $string_target La cadena donde se va a agregar el string
+		 * @param  int $offset        Puntero donde corta la caden
+		 * @return string                Regresa la cadena concatenada
+		 */
+		function str_insert($string_add,$string_target,$offset)
+		{
+			$part1 = substr($string_target,0, $offset);
+			$part2 = substr($string_target, $offset);
+
+			return $part1.$string_add.$part2;
+		}
+		
+		for ($i=0; $i < count($planestudio); $i++) { 
+			$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
+		}
+		// Carrera: Tronco Comun
+		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
+		
+		// Básica, Disciplinaria, Terminal
+		$etapas= Etapa::select('etapa','descripcion')->get();
+
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
+
+		// Obligatoria, Sugerida, Sin seriación.
+		$seriaciones = Seriacion::select('reqseriacion','descripcion')->orderBy('reqseriacion','asc')->get();
+
+		// Coordinación de area
+		$coordinaciones = Coordinacion::select('coordinaciona','descripcion')->get();
+		
+		return View::make('pe.consulta')->with(compact('codigosPE','programasEducativos','etapas','tiposCaracter','seriaciones','coordinaciones'));
 	}
 
 	public function getUsuarios()
