@@ -676,15 +676,7 @@ background: #EFCA0D;
 	background-color: blue;
 	width: 1320px;
 }
-#lista_PlanVigente
-{
 
- border:2px solid #ccc; 
- width:300px; 
- height: 200px; 
- overflow-y: scroll;
-
-}
 #mensajesIcono
 {
 	
@@ -715,13 +707,7 @@ background: #EFCA0D;
 	padding-top: 12px;
 	padding-right: 20px;
 }
-/*#ckbTroncoComun
-{
-	
-	margin-left: 75px;
-	width: 150px;
 
-}*/
 
 
 /*----------------- CATALOGOS -------------------*/
@@ -1099,6 +1085,274 @@ background: #EFCA0D;
 	margin: auto;
 
 }
+/*----------------------------------------------------------------------------------*/
 
 
-  /*----------------------------------------------------------------------------------*/
+/*-------------------------------CARGA ACADEMICA--------------------------------------*/
+.contenedorCa
+{
+	height: 1500px;
+	width: 1320px;
+}
+.nombre_coordinacion
+{
+	
+	font-size: 24px;
+	color: green;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 40px;
+	width: 500px;
+
+}
+#planVigente
+ {
+ 	
+ 	float: left;
+ 	height: 700px;
+ 	width: 500px;
+ 	margin-top: 10px;
+ 	margin-left: 40px;
+ }
+#btnPlanA
+{
+	
+	height: 50px;
+	width: 215px;
+	float: left;
+	margin-top: 350px;
+	padding-right: 25px;
+
+}
+
+ #planAnterior
+ {
+ 	
+ 	float: left;
+ 	height: 700px;
+ 	width: 500px;
+ 	margin-top: 10px;
+ 		
+ }
+#periodoCa
+{
+	
+	height: 80px;
+	margin-top: -50px;
+	margin-left: 770px;
+	width: 530px;
+}
+.controlesListasCa
+{
+	
+	float: left;
+	height: 50px;
+	text-align: center;
+	margin: auto;
+	width: 470px;
+}
+#btnNuevaCaDiv
+{
+	
+
+	float: left;
+	height: 50px;
+	margin: 10px;
+	width: 230px;
+}
+#divPeriodo
+{
+	
+	float: left;
+	font-size: 20px;
+	height: 50px;
+	margin: 20px;
+	margin-left: 0px;
+	width: 250px;
+}
+.listasCa
+{
+	
+	height: 550px;
+	margin:auto;
+	width: 470px;
+}
+.nombrePlan
+{
+
+	font-size: 24px;
+	text-align: center;
+	margin: auto;
+	height: 50px;
+	width: 200px;
+}
+
+/*---------------------------- CARGA 2 -----------------------------------*/
+.carga_listas
+{
+	
+	background: white;
+	border: 2px solid gray;
+	border-radius: 10px;
+	float: left;
+	margin-bottom: 30px;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-top: 20px;
+	height: 350px;
+	width: 410px;	
+}
+.controlesListasCa_2
+{
+	
+	width: 380px;
+	height: 50px;
+	margin: auto;
+	margin-top: -260px;
+
+}
+.nombre_semestre
+{
+	
+	float: left;
+	font-size: 16px;
+	height: 50px;
+	text-align: center;
+	width: 200px;
+	
+	margin-top: 10px;
+}
+.nombre_plan
+{
+	
+	float: left;
+	font-size: 16px;
+	height: 50px;
+	text-align: center;
+	margin-top: 10px;
+	width: 200px;
+}
+.nombre_escuela
+{
+	margin-left: 800px;
+}
+
+/*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
+
+#consul_periodo_ca
+{
+
+	float: left;
+	margin-left: 20px;
+	padding-right: 45px;
+}
+#consul_semestre_ca
+{
+	float: left;
+	padding-right: 40px;
+}
+#consul_carrera_ca
+{
+	float: left;
+	padding-right: 40px;
+}
+#consul_grupo_ca
+{
+	float: left;
+	
+	
+}
+#consul_turno_ca
+{
+	float: left;
+	padding-right: 40px;
+	
+}
+#consul_seriacion_ca
+{
+	float: left;
+	margin-left: 10px;
+	padding-right: 70px;
+}
+#consul_habilitados_ca
+{
+	float: left;
+	padding-right: 70px;
+}
+#consul_deshabilitados_ca
+{
+	float: left;
+	padding-right: 70px;
+}
+#consul_periodotras_ca
+{
+	float: left;
+	padding-right: 70px;	
+}
+.consultax_ca
+{
+	
+	font-size: 16px;
+	height: 50px;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+	padding-left: 10px;
+	
+	width: 1150px;
+}
+.consultay_ca
+{
+	
+	font-size: 16px;
+	height: 50px;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 850px;
+}
+#consultaboton_ca
+{
+	
+	height: 50px;
+	margin-top: -60px;
+	margin-left: 955px;
+	width: 150px;	
+}
+.tabla_ca
+{
+	font-size: 12px;
+	margin-bottom: 30px;
+	margin-left: 30px;
+	margin-right: 20px;
+	
+	float: left;
+	
+}
+.semestre_plan
+{
+	font-size: 13px;
+
+	
+}
+#encabezado_tabla
+{
+	font-size: 14px;
+	color: green;
+	border: 1px solid #000;
+}
+.tabla_ca_estilo
+{
+	
+	border: 1px solid #000;
+
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+

@@ -89,6 +89,23 @@ class PlanEstudioController extends BaseController
 	{
 		return View::make('pe.prueba');
 	}
+	public function getPlantilla()
+	{
+		return View::make('pe.plantilla');
+	}
+	public function getRegistroca()
+	{
+		return View::make('ca.registroca');
+	}
+	public function getConsultaca()
+	{
+		return View::make('ca.consultaca');
+	}
+	public function getRegistroca2()
+	{
+		return View::make('ca.registroca2');
+	}
+
 
 
 	// ALTAS DE CATALOGOS
