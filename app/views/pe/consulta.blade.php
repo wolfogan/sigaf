@@ -73,7 +73,7 @@
 						<!------------------------ PLAN DE ESTUDIO ------------------------>
 						<div id="consul_noPlan">
 							<label>No.Plan: </label>
-							<input class="estilo_text" type="text" name="noPlan" id="noPlan" list="datalist_noPlan" size=1 onkeypress="ValidaSoloNumeros()"/>
+							<input class="estilo_text" style="width:115px" type="text" name="noPlan" id="noPlan" list="datalist_noPlan" size=1 onkeypress="ValidaSoloNumeros()"/>
 							<datalist id="datalist_noPlan">
 								@foreach ($codigosPE as $codigo)
 									<option value="{{$codigo['formato']}}" plan="{{$codigo['codigo']}}">
@@ -92,7 +92,7 @@
 						<!------------------------ CLAVES DE UNIDADES DE APRENDIZAJE ------------------------>
 						<div id="consul_clave">
 							<label>Clave: </label>
-							<input class="estilo_text" type="text" name="clave" id="clave" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
+							<input class="estilo_text" style="width:120px" type="text" name="clave" id="clave" list="datalist_clave" size=1 onkeypress="ValidaSoloNumeros()">
 							<datalist id="datalist_clave">
 								<!-- AQUI VAN LAS CLAVES -->
 							</datalist>
@@ -100,7 +100,7 @@
 						<!------------------------ DESCRIPCION DE UNIDADES DE APRENDIZAJE ------------------------>
 						<div id="consul_materia">
 							<label>Materia: </label>
-							<input type="text" name="materia" id="materiaCon" list="datalist_materia" size="1"/>
+							<input type="text" style="width:300px;" name="materia" id="materiaCon" list="datalist_materia" size="1"/>
 							<datalist id="datalist_materia">
 								<option value="PROGRAMACION ORIENTADA A OBJETOS">
 								<option value="PROGRAMACION AVANZADA">
@@ -156,6 +156,7 @@
 				</fieldset>
 				<div id="consultaboton">
 						<input class="estilo_button2" type="button" value="Buscar">
+						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Limpiar"></div>
 				</div>
 			</div>
 			<div id="consultaetapas">
@@ -481,65 +482,131 @@
 			<input style="font-size:18px" class="estilo_button2" type="button" value="Actualizar">
 			&nbsp;&nbsp;
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
-			
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 		<div class="md-modal md-effect-11" id="modal-11">
 			<div class="md-content">
 				<h3>Modificar unidad de aprendizaje</h3>
 				<div id="tablita2contenedor">
-					<table cellpadding="4" id="tablita2">
-					<tr>
-						<td width="95">Clave:</td>
-						<td width="301"><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
-					</tr>
-					<tr>
-						<td>Materia:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
-					</tr>
-					<tr>
-						<td>Nivel:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
-					</tr>
+					<table cellpadding="5" id="tablita2">
+					
 					<tr>
 						<td>Carrera:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>
+							<select class="con_estilo" name="carrera" size=1>
+								<option value="TC">TRONCO COMUN</option>
+								<option value="ADMON">ADMON.</option>
+								<option value="CONTAB">CONTAB.</option>
+								<option value="INFORMATICA">INFORMATICA</option>
+								<option value="NEGOCIOS">NEGOCIOS</option>
+							</select>
+						</td>
 					</tr>
+					<tr>
+						<td width="95">Clave:</td>
+						<td width="301"><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+						<td>Materia:</td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+					</tr>
+					
 					<tr>
 						<td>Etapa:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>
+							<select class="con_estilo" name="etapa" size=1>
+								<option value="TODOS">TODOS</option>
+								<option value="BASICA">BASICA</option>
+								<option value="INTERMEDIA">DISCIPLINARIA</option>
+								<option value="TERMINAL">TERMINAL</option>
+							</select>
+
+						</td>
+
 					</tr>
+
 					<tr>
+
 						<td>Tipo:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>
+							<select class="con_estilo" name="tipo" size=1>
+								<option value="TODOS">TODOS</option>
+								<option value="OBLIGATORIA">OBLIGATORIA</option>
+								<option value="OPTATIVA">OPTATIVA</option>
+							</select>
+						</td>
 					</tr>
+					
+
 					<tr>
-						<td>Serie:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>Semestre:</td>
+						<td>
+							<input class="estilo_numeric" type="number" name="semestre" id="semestre_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+						</td>
 					</tr>
+
 					<tr>
 						<td>TipoSer.:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>
+							<select class="con_estilo" name="seriacion" size=1>
+								<option value="SINSERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGATORIA</option>
+								<option value="SUGERIDA">SUGERIDA</option>
+							</select>
+
+						</td>
 					</tr>
+
 					<tr>
-						<td>Coord.:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="25"></td>
+						<td>Clave:</td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+
+						<td>Materia:</td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
 					</tr>
+
 					<tr>
 						<td size="10">HC:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;"></td>
-					</tr>
-					<tr>
+						<td><input class="estilo_numeric" type="number" name="hc_consulta" id="hc_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+
 						<td size="10">HL:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;"></td>
+						<td><input class="estilo_numeric" type="number" name="hl_consulta" id="hl_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
+					
 					<tr>
 						<td size="10">HT:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;"></td>
+						<td><input class="estilo_numeric" type="number" name="ht_consulta" id="ht_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+
+						<td size="10">HE:</td>
+						<td><input class="estilo_numeric" type="number" name="he_consulta" id="he_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
+
+					
+					<tr>
+						<td size="10">HPC:</td>
+						<td><input class="estilo_numeric" type="number" name="hcp_consulta" id="hcp_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+
+						<td size="10">HCL:</td>
+						<td><input class="estilo_numeric" type="number" name="hcl_consulta" id="hcl_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+					</tr>
+
 					<tr>
 						<td>Cred.:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase;" size="5"></tr>
+						<td><input class="estilo_numeric" type="number" name="cred_consulta" id="cred_consulta" onkeypress="ValidaSoloNumeros()" >
+					</tr>
+					
+					<tr>					
+						<td>Coord.:</td>
+						<td>
+							<input type="text" id="coordinacion" style="width:120px" size=1 list="datalist_coord">
+							<datalist id="datalist_coord">
+								<option value="INFORMATICA">
+								<option value="MATEMATICAS">
+								<option value="CIENCIAS COMPUTACIONALES">
+								<option value="SISTEMAS DE INFORMACION">
+								<option value="PROGRAMACION">
+							</datalist>
+						</td>
+					</tr>
+
 						</table>
 				</div>
 				<input type="button" style="font-size:21px" value="Actualizar" class="estilo_button2">
@@ -568,5 +635,11 @@
 	<script src="../js/modalEffects.js"></script>
 	<script src="../js/css-filters-polyfill.js"></script>
 	<!--SCRIPT PARA VENTANA MODAL-->
+	<script type="text/javascript">
+	$(function(){
+		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
+		
+	});
+	</script>
 </body>
 </html>

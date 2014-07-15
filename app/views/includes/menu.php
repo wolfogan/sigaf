@@ -14,8 +14,9 @@
 		<li>
 			<a href="#" titile="Carga académica">Carga académica</a>
 			<ul>
-				<li><a href="#"title="Registrar CA">Registrar Carga A.</a></li>
-				<li><a href="#" titile="Consultar CA">Consultar Carga A.</a></li>
+				<li><a href="<?=URL::to('planestudio/registroca');?>" title="Registrar CA">Registrar Carga A.</a></li>
+				<li><a href="<?=URL::to('planestudio/registroca2');?>" title="Registrar CA2">Registrar Carga A 2.</a></li>
+				<li><a href="<?=URL::to('planestudio/consultaca');?>" title="Consultar CA">Consultar Carga A.</a></li>
 				<li class="ultimo"><a href="#" title="Modificar CA">Modificar Carga A.</a></li>
 			</ul>
 		</li>

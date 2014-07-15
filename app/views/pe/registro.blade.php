@@ -102,6 +102,7 @@
 
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 
+
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
 	<div class="md-modal md-effect-11" id="carrera"> 
 		<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
@@ -118,7 +119,7 @@
 					<tr>
 						<td>Nivel:</td>
 						<td>
-						<select class="con_estilo" style="width: 200px;" name="proe_nivel" type="text" id="txtCatNivel" size=1 />
+						<select style="width: 200px;" name="proe_nivel" type="text" id="txtCatNivel" size=1 />
 							@foreach($niveles as $nivel)
 								<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
 							@endforeach
@@ -128,7 +129,7 @@
 					<tr>
 						<td>Especialidad:</td>
 						<td>
-						<select class="con_estilo" style="width: 200px;" name="proe_especialidad" type="text" id="txtCatEspecialidad" size=1 />
+						<select style="width: 200px;" name="proe_especialidad" type="text" id="txtCatEspecialidad" size=1 />
 							@foreach($especialidades as $especialidad)
 								<option value="{{$especialidad->especialidad}}">{{$especialidad->descripcion}}</option>
 							@endforeach
@@ -138,7 +139,7 @@
 					<tr>
 						<td>Tipo Programa:</td>
 						<td>
-						<select class="con_estilo" style="width: 200px;" name="proe_periodo" type="text" id="txtCatTipoProgr" size=1 />
+						<select style="width: 200px;" name="proe_periodo" type="text" id="txtCatTipoProgr" size=1 />
 							@foreach($periodosPrograma as $periodo)
 								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
 							@endforeach
@@ -147,7 +148,7 @@
 					</tr>
 					<tr>
 						<td>Coordinador:</td>
-						<td><select class="con_estilo" style="width: 200px;" name="txtCatCoordinadorCarrera" type="text" id="txtCatCoordinadorCarrera" size=1 />
+						<td><select style="width: 200px;" name="txtCatCoordinadorCarrera" type="text" id="txtCatCoordinadorCarrera" size=1 />
 								<option value="COORDINADOR INFORMATICA">COORDINADOR INFORMATICA</option>
 							</select>
 						</td>
@@ -252,7 +253,7 @@
 					<tr>
 						<td>Programa Educativo:</td> 
 						<td>
-							<select class="con_estilo" style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion" size=1 />
+							<select style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion" size=1 />
 								<option value="CONTABILIDAD">LIC. EN CONTADURIA</option>
 							</select>
 						</td>
@@ -376,7 +377,7 @@
 					<!-------------------------------------- ETAPA -------------------------------------->
 					<div id="etapaDiv">
 						<label>Etapa: </label>
-						<select style="width:143px;" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" >
+						<select style="width:143px; height:30px" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" >
 							@foreach ($etapas as $etapa)
 								<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
 							@endforeach
@@ -388,7 +389,7 @@
 					<!---------------------------------- TIPO CARACTER ---------------------------------->
 					<div id="tipoDiv">
 						<label>Tipo: </label>
-						<select style="width:143px;" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" >
+						<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" >
 							@foreach ($tiposCaracter as $caracter)
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
@@ -413,7 +414,7 @@
 						<!---------------------------------- TIPO SERIACION ---------------------------------->
 						<div id="seriacionDivTipo">
 							<label>Tipo Seriación: </label>
-							<select style="width: 143px" class="con_estilo" name="serie" id="serie" size=1 type="text" >
+							<select style="width: 143px; height:30px" class="con_estilo" name="serie" id="serie" size=1 type="text" >
 								@foreach ($seriaciones as $seriacion)
 									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 								@endforeach

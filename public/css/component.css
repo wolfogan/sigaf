@@ -289,12 +289,25 @@ background: #ECA22E;
 }
 #tablita2
 {
-	background:#fff;
+	background:#ECECFB;
+	border-collapse: separate;
+	border-spacing: 10px 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left:  20px;
+	padding-right: 20px;
 	color:#000;
 	margin:auto;
 	border-radius:7px 7px 7px;
+	width: 300px;
+}
+#tablita2 td
+{
+	color:#004000;
+	text-align: left;
 }
 #tablita2contenedor
 {
 	width:auto;
 }
+
