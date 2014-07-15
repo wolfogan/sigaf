@@ -59,7 +59,7 @@
 					<tr>
 						<td>Nivel:</td>
 						<td>
-							<select name="nivel" id="nivel">
+							<select name="planestudio_nivel" id="planestudio_nivel">
 								@foreach ($niveles as $nivel)
 									<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
 								@endforeach

@@ -102,9 +102,6 @@
 							<label>Materia: </label>
 							<input type="text" style="width:300px;" name="materia" id="materiaCon" list="datalist_materia" size="1"/>
 							<datalist id="datalist_materia">
-								<option value="PROGRAMACION ORIENTADA A OBJETOS">
-								<option value="PROGRAMACION AVANZADA">
-								<option value="INFORMATICA">
 							</datalist>
 						</div>
 					</div>
@@ -155,8 +152,8 @@
 					</div>
 				</fieldset>
 				<div id="consultaboton">
-						<input class="estilo_button2" type="button" value="Buscar">
-						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Limpiar"></div>
+						<input class="estilo_button2" type="button" value="Limpiar">
+						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Buscar"></div>
 				</div>
 			</div>
 			<div id="consultaetapas">
@@ -638,7 +635,23 @@
 	<script type="text/javascript">
 	$(function(){
 		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
-		
+		$("#noPlan").on("focusout",function(){
+			// Obtener las claves para la seriación de las ua registradas en el plan.
+			var plan = $("#datalist_noPlan option[value="+$(this).val()+"]").attr('plan');
+			alert(plan);
+			$.post("<?php echo URL::to('planestudio/obtenerclaveseries'); ?>",{noplan:plan},function(claves){
+				var optionsClave,optionsDescripcion = "";
+				for(var i=0;i<claves.length;i++)
+				{
+					optionsClave += "<option value="+claves[i].uaprendizaje+" />";
+					optionsDescripcion += "<option value="+claves[i].descripcionmat+" />";
+				}
+				$("#datalist_clave").html(optionsClave);
+				$("#datalist_materia").html(optionsDescripcion);
+				//$("#datalist_materia").html(options);
+				alert("Funciono");
+			}).fail(function(){alert("Fail");});
+		});
 	});
 	</script>
 </body>

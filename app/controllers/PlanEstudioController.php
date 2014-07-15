@@ -153,6 +153,7 @@ class PlanEstudioController extends BaseController
 		$noplan = Input::get('planestudio_anio').Input::get('planestudio_semestre');
 		$plan -> plan = $noplan;
 		$plan -> descripcion = Input::get('planestudio_descripcion');
+		$plan -> nivel = Input::get('planestudio_nivel');
 		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
 		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
 		$plan -> credpracticas = Input::get('planestudio_credpracticas');
