@@ -83,10 +83,7 @@
 						<!------------------------ PROGRAMAS EDUCATIVOS ------------------------>
 						<div id="consul_carrera">
 							<label>Carrera: </label>
-							<select class="con_estilo" name="carrera" size="1">
-								@foreach ($programasEducativos as $carrera)
-									<option value="{{$carrera->programaedu}}">{{$carrera->descripcion}}</option>
-								@endforeach
+							<select class="con_estilo" name="carrera" size="1" id="carrera">
 							</select>
 						</div>
 						<!------------------------ CLAVES DE UNIDADES DE APRENDIZAJE ------------------------>
@@ -146,16 +143,18 @@
 								@endforeach
 							</datalist>
 						</div>
+						<!---------------------- CHECK DE TRONCO COMUN ---------------------->
 						<div id="checkTroncoComun">
-							<input style="width:18px; height:18px;" type="checkbox" name="checkTroncoComun" value="checkTroncoComun"><label style="font-size:18px;">Tronco común</label>
+							<input style="width:18px; height:18px;" type="checkbox" name="troncoComun" ><label style="font-size:18px;">Tronco común</label>
 						</div>
 					</div>
 				</fieldset>
 				<div id="consultaboton">
 						<input class="estilo_button2" type="button" value="Limpiar">
-						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Buscar"></div>
+						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Buscar" id="Buscar"></div>
 				</div>
 			</div>
+			<!---------------------------- ENCABEZADOS DE LAS ETAPAS ---------------------------->
 			<div id="consultaetapas">
 				<div id="etapabasica">
 					Etapa básica
@@ -169,304 +168,16 @@
 			</div>
 		</div>
 		<div id="cuadros">
+			<!------------------------------ ETAPA TERMINAL ------------------------------>
 			<ul id="list3">
-				<li>
-					<div style="font-size:9px; position:relative;">
-						POL. Y LEG. EN INFORMATICA C3 CR6
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						MERCADOTECNIA C2 T2 CR6
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						INGENIERIA DE SOFTWARE C3 L2 CR8
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						ADMON. DE FUNCION INFO. II C2 T1 CR5
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						AUDITORIA INFORMATICA I C2 T2 CR6
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						DESARROLLO DE EMPRENDEDORES C1 T3 CR5
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px; position:relative;">
-						OPTATIVA
-						<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg">
-					</div>
-				</li>
+				<!--<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg"> -->
 			</ul>
+			<!------------------------------ ETAPA DISCIPLINARIA ------------------------------>
 			<ul id="list2">
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						RECURSOS HUMANOS C4 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ESTRUCTURA DE DATOS II C3 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						SISTEMAS OPERATIVOS C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						MATEMATICAS FINANCIERAS C2 T2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						METODOS CUANTITATIVOS I C2 T2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						OPTATIVA
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						OPTATIVA
-						/div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						BASE DATOS I C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						PROGRAMACION ORIENTADA A OBJ. C2 L2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ANALISIS DE SISTEMAS C3 T1 CR7
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ANALISIS FINANCIERO C3 T2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						REDES I C4 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						OPTATIVA
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						BASE DE DATOS II C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ADMINISTRACION DE PROYECTOS C2 T1 CR5
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						DISENO DE SISTEMAS C3 T1 CR7
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ADMON. DE LA FUNCION INFO. I C2 T1 CR5
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						REDES II C1 L4 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						OPTATIVA
-					</div>
-				</li>
 			</ul>
 			<!-- <input style="margin-left:40px; margin-top:5px" class="eliminarBloquecito" type="button" value="-">-->
+			<!------------------------------ ETAPA BASICA ------------------------------>
 			<ul id="list1">
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						LENGUAJES ALGORITMICOS C2 T2 CR6 
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						INTRODUCCION A LA INFORMATICA, C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						DESARROLLO DE HAB. DEL PENS. C1 T2 CR4
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						INTRODUCCION A LOS NEGOCIOS C3 T1 CR7
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						MATEMATICAS DISCRETAS C3 T2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						PROGRAMACION I C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						PROGRAMACION II C3 L2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ARQUITECTURA DE COMPUTADORAS I C2 T2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						PROBABILIDAD Y ESTADISTICA C3 T2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						CONTABILIDAD I C3 T3 CR9
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						PROCESO ADMINISTRATIVO C3 T1 CR7
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px;" class="md-trigger" data-modal="modal-11">
-						OPTATIVA
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						MARCOS LEGALES C4 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ESTRUCTURA DE DATOS C2 L2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						SISTEMAS DE INFORMACION C4 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						CONTABILIDAD II C2 T2 CR6
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						METODOLOGIA DE LA INVESTIGACION C2 T1 CR5
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						CALCULO DIF. E INTEGRAL C3 T2 CR8
-					</div>
-				</li>
-				<li>
-					<div style="font-size:9px" class="md-trigger" data-modal="modal-11">
-						ECONOMIA C3 T2 CR8
-					</div>
-				</li>
 			</ul>
 		</div>
 		<div style="clear:both;"></div>
@@ -617,6 +328,114 @@
 	<footer></footer>
 
 	<script type="text/javascript">
+	$(function(){
+		// VALORES INICIALES
+		//$("#checkTroncoComun").hide();
+		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
+		var plan = 0;
+		var carrera = 0;
+		var etapa = 0;
+		$("#noPlan").on("input",function(){
+			if($(this).val().length>5)
+			{
+				//alert("se activo");
+				// Obtener el código del plan de estudios
+				plan = $("#datalist_noPlan option[value="+$(this).val()+"]").attr('plan');
+				//alert(plan);
+				//
+				// Obtener las carreras que son parte del Plan de Estudios elegido
+				$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
+					var options = "";
+					for(var i = 0; i < programas.length; i++)
+					{
+						options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
+					}
+					$("#carrera").html(options);
+				}).fail(function(){alert("Fallo en obtener los programas educativos");});
+				// Obtener las claves para la seriación de las ua registradas en el plan.
+				// 
+				$.post("<?php echo URL::to('planestudio/obtenerclaveseries'); ?>",{noplan:plan},function(claves){
+					var optionsClave="",optionsDescripcion="";
+					for(var i=0;i<claves.length;i++)
+					{
+						optionsClave += "<option value="+claves[i].uaprendizaje+" />";
+						optionsDescripcion += "<option value="+claves[i].descripcionmat+" />";
+					}
+					$("#datalist_clave").html(optionsClave);
+					$("#datalist_materia").html(optionsDescripcion);
+					//$("#datalist_materia").html(options);
+					//alert("Funciono");
+				}).fail(function(){alert("Fallo en obtener las unidades de aprendizaje");});
+			}
+		});
+		// ACCIONES PARA EL COMBOBOX DE PROGRAMAS EDUCATIVOS
+		$("#carrera").on("change",function(){
+			carrera = $(this).val();
+			if($(this).val()!=1)
+			{
+				$("#checkTroncoComun").show();
+			}
+			else
+			{
+				$("#checkTroncoComun").hide();
+			}
+		});
+
+		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
+		$("#Buscar").on("click",function(){
+			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1},function(uas){
+				var bloque ="";
+				var descripcionUA = "";
+				for (var i = 0; i < uas.length; i++) 
+				{
+					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+					bloque = $('<li>' +
+									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
+										descripcionUA +
+									'</div>'+
+								'</li>').hide().fadeIn("slow");
+					$("#list1").append(bloque);
+					bloque = "";
+				}
+				activarModal();
+			});
+			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2},function(uas){
+				var bloque ="";
+				var descripcionUA = "";
+				for (var i = 0; i < uas.length; i++) 
+				{
+					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+					bloque = $('<li>' +
+									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
+										descripcionUA +
+									'</div>'+
+								'</li>').hide().fadeIn("slow");
+					$("#list2").append(bloque);
+					bloque = "";
+				}
+				activarModal();
+			});
+			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3},function(uas){
+				var bloque ="";
+				var descripcionUA = "";
+				for (var i = 0; i < uas.length; i++) 
+				{
+					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+					bloque = $('<li>' +
+									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
+										descripcionUA +
+									'</div>'+
+								'</li>').hide().fadeIn("slow");
+					$("#list3").append(bloque);
+					bloque = "";
+				}
+				activarModal();
+			});
+		});
+	});
+	</script>
+
+	<script type="text/javascript">
 		$("ul:first").dragsort();
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		
@@ -626,33 +445,51 @@
 		};
 		// this is important for IEs
 		var polyfilter_scriptpath = '/js/';
+
+		function activarModal()
+		{
+			var overlay = document.querySelector( '.md-overlay' );
+
+			[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
+
+				var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+					close = modal.querySelector( '.md-close' );
+
+				function removeModal( hasPerspective ) {
+					classie.remove( modal, 'md-show' );
+
+					if( hasPerspective ) {
+						classie.remove( document.documentElement, 'md-perspective' );
+					}
+				}
+
+				function removeModalHandler() {
+					removeModal( classie.has( el, 'md-setperspective' ) ); 
+				}
+
+				el.addEventListener( 'click', function( ev ) {
+					classie.add( modal, 'md-show' );
+					overlay.removeEventListener( 'click', removeModalHandler );
+					overlay.addEventListener( 'click', removeModalHandler );
+
+					if( classie.has( el, 'md-setperspective' ) ) {
+						setTimeout( function() {
+							classie.add( document.documentElement, 'md-perspective' );
+						}, 25 );
+					}
+				});
+
+				close.addEventListener( 'click', function( ev ) {
+					ev.stopPropagation();
+					removeModalHandler();
+				});
+
+			});
+		}
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
-	<script src="../js/modalEffects.js"></script>
 	<script src="../js/css-filters-polyfill.js"></script>
 	<!--SCRIPT PARA VENTANA MODAL-->
-	<script type="text/javascript">
-	$(function(){
-		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
-		$("#noPlan").on("focusout",function(){
-			// Obtener las claves para la seriación de las ua registradas en el plan.
-			var plan = $("#datalist_noPlan option[value="+$(this).val()+"]").attr('plan');
-			alert(plan);
-			$.post("<?php echo URL::to('planestudio/obtenerclaveseries'); ?>",{noplan:plan},function(claves){
-				var optionsClave,optionsDescripcion = "";
-				for(var i=0;i<claves.length;i++)
-				{
-					optionsClave += "<option value="+claves[i].uaprendizaje+" />";
-					optionsDescripcion += "<option value="+claves[i].descripcionmat+" />";
-				}
-				$("#datalist_clave").html(optionsClave);
-				$("#datalist_materia").html(optionsDescripcion);
-				//$("#datalist_materia").html(options);
-				alert("Funciono");
-			}).fail(function(){alert("Fail");});
-		});
-	});
-	</script>
 </body>
 </html>

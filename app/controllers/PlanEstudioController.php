@@ -87,7 +87,7 @@ class PlanEstudioController extends BaseController
 			$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
 		}
 		// Carrera: Tronco Comun
-		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
+		//$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 		
 		// Básica, Disciplinaria, Terminal
 		$etapas= Etapa::select('etapa','descripcion')->get();
@@ -357,6 +357,31 @@ class PlanEstudioController extends BaseController
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
 				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 				->where('uaprendizaje.plan','=',$noplan)
+				->get();
+
+		return Response::json($UAS);
+
+	}
+
+	public function postObteneruascarrera()
+	{
+		$noplan = Input::get('noplan');
+		$programaedu = Input::get('programaedu');
+		$etapa = Input::get('etapa');
+		//$plan = PlanEstudio::find($noplan);
+		//$uas = $plan->unidades;
+
+		$UAS = DB::table('p_ua')
+				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+				->where('uaprendizaje.plan','=',$noplan)
+				->where('uaprendizaje.etapa','=',$etapa)
+				->where('p_ua.programaedu','=',$programaedu)
 				->get();
 
 		return Response::json($UAS);
