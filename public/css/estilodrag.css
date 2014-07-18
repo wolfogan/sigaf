@@ -58,15 +58,15 @@ ul
 }
 #list1 div
 {
-	background-color: #BFFFBF;
+	background-color: #C4EEC6;
 }
 #list2 div
 {
-	background-color: #FFCC99;
+	background-color: #FFC58A;
 }
 #list3 div
 {
-	background-color: #FFFF99;
+	background-color: #FDCF66;
 }
 
 		
@@ -84,11 +84,10 @@ ul
 
 }
 
+
 #list1 li
-
 { 
-
-	display:block!important;
+	display:block;/*!important*/
 	-webkit-transition:-webkit-transform 1s ease-out;
 	-moz-transition:-moz-transform 1s ease-out;
 	-o-transition:-o-transform 1s ease-out;
@@ -103,10 +102,11 @@ ul
 	-ms-transform: scale(1.5);
 	transform: scale(1.5)
 }
+
 #list2 li
 
 { 
-	display:block!important;
+	display:block;
 	-webkit-transition:-webkit-transform 1s ease-out;
 	-moz-transition:-moz-transform 1s ease-out;
 	-o-transition:-o-transform 1s ease-out;
@@ -124,7 +124,7 @@ ul
 #list3 li
 
 { 
-	display:block!important;
+	display:block;
 	-webkit-transition:-webkit-transform 1s ease-out;
 	-moz-transition:-moz-transform 1s ease-out;
 	-o-transition:-o-transform 1s ease-out;

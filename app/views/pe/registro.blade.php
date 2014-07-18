@@ -1062,7 +1062,7 @@
 		// ELIMINAR LA UNIDAD DE APRENDIZAJE ASOCIADA A LA CARRERA "p_ua".
 		$('#tblUA tbody').on('click','.clsEliminarFila',function(event){
 			// Evitar que se propagen los eventos
-			//event.stopPropagation();
+			event.stopPropagation();
 			
 			if (confirm("¿ Está seguro de que desea eliminar ?"))
 			{

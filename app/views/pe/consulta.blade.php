@@ -167,18 +167,24 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$("ul:first").dragsort();
+		</script>
 		<div id="cuadros">
 			<!------------------------------ ETAPA TERMINAL ------------------------------>
 			<ul id="list3">
+				<li style="width:0%; padding:0; background-color:red;"></li>
 				<!--<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg"> -->
 			</ul>
 			<!------------------------------ ETAPA DISCIPLINARIA ------------------------------>
 			<ul id="list2">
+				<li style="width:0%; padding:0; background-color:red;"></li>
 			</ul>
-			<!-- <input style="margin-left:40px; margin-top:5px" class="eliminarBloquecito" type="button" value="-">-->
 			<!------------------------------ ETAPA BASICA ------------------------------>
 			<ul id="list1">
+				<li style="width:0%; padding:0; background-color:red;"></li>
 			</ul>
+			<!-- <input style="margin-left:40px; margin-top:5px" class="eliminarBloquecito" type="button" value="-">-->
 		</div>
 		<div style="clear:both;"></div>
 		<br />
@@ -329,6 +335,7 @@
 
 	<script type="text/javascript">
 	$(function(){
+		
 		// VALORES INICIALES
 		//$("#checkTroncoComun").hide();
 		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
@@ -346,6 +353,7 @@
 				// Obtener las carreras que son parte del Plan de Estudios elegido
 				$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
 					var options = "";
+					carrera = programas[0].programaedu;
 					for(var i = 0; i < programas.length; i++)
 					{
 						options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
@@ -371,7 +379,7 @@
 		// ACCIONES PARA EL COMBOBOX DE PROGRAMAS EDUCATIVOS
 		$("#carrera").on("change",function(){
 			carrera = $(this).val();
-			if($(this).val()!=1)
+			if($(this).val()!=6)
 			{
 				$("#checkTroncoComun").show();
 			}
@@ -390,62 +398,70 @@
 				{
 					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
+									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 										descripcionUA +
 									'</div>'+
 								'</li>').hide().fadeIn("slow");
 					$("#list1").append(bloque);
 					bloque = "";
 				}
-				activarModal();
-			});
-			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2},function(uas){
-				var bloque ="";
-				var descripcionUA = "";
-				for (var i = 0; i < uas.length; i++) 
-				{
-					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
-					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
-										descripcionUA +
-									'</div>'+
-								'</li>').hide().fadeIn("slow");
-					$("#list2").append(bloque);
-					bloque = "";
-				}
-				activarModal();
-			});
-			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3},function(uas){
-				var bloque ="";
-				var descripcionUA = "";
-				for (var i = 0; i < uas.length; i++) 
-				{
-					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
-					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger" data-modal="modal-11">' +
-										descripcionUA +
-									'</div>'+
-								'</li>').hide().fadeIn("slow");
-					$("#list3").append(bloque);
-					bloque = "";
-				}
-				activarModal();
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2},function(uas){
+					var bloque ="";
+					var descripcionUA = "";
+					for (var i = 0; i < uas.length; i++) 
+					{
+						descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						bloque = $('<li>' +
+										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
+											descripcionUA +
+										'</div>'+
+									'</li>').hide().fadeIn("slow");
+						$("#list2").append(bloque);
+						bloque = "";
+					}
+					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3},function(uas){
+						var bloque ="";
+						var descripcionUA = "";
+						for (var i = 0; i < uas.length; i++) 
+						{
+							descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+							bloque = $('<li>' +
+											'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
+												descripcionUA +
+											'</div>'+
+										'</li>').hide().fadeIn("slow");
+							$("#list3").append(bloque);
+							bloque = "";
+						}
+						activarModal();
+						asignarEventoDatos();
+					});
+				});
 			});
 		});
 	});
 	</script>
 
 	<script type="text/javascript">
-		$("ul:first").dragsort();
+	
+		
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		
 		function saveOrder() {
 			var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
 			$("input[name=list1SortOrder]").val(data.join("|"));
 		};
+
 		// this is important for IEs
 		var polyfilter_scriptpath = '/js/';
-
+		function asignarEventoDatos()
+		{
+			$("ul li div").on("click",function(){
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{uaprendizaje:uaid},function(){
+					
+				});
+			});
+		}
 		function activarModal()
 		{
 			var overlay = document.querySelector( '.md-overlay' );
@@ -468,6 +484,7 @@
 				}
 
 				el.addEventListener( 'click', function( ev ) {
+
 					classie.add( modal, 'md-show' );
 					overlay.removeEventListener( 'click', removeModalHandler );
 					overlay.addEventListener( 'click', removeModalHandler );
@@ -477,6 +494,7 @@
 							classie.add( document.documentElement, 'md-perspective' );
 						}, 25 );
 					}
+					
 				});
 
 				close.addEventListener( 'click', function( ev ) {
@@ -486,6 +504,8 @@
 
 			});
 		}
+		
+
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
