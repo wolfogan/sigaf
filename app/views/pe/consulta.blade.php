@@ -145,7 +145,7 @@
 						</div>
 						<!---------------------- CHECK DE TRONCO COMUN ---------------------->
 						<div id="checkTroncoComun">
-							<input style="width:18px; height:18px;" type="checkbox" name="troncoComun" ><label style="font-size:18px;">Tronco común</label>
+							<input style="width:18px; height:18px;" type="checkbox" name="troncoComun" id="troncoComun"><label style="font-size:18px;">Tronco común</label>
 						</div>
 					</div>
 				</fieldset>
@@ -367,7 +367,7 @@
 					for(var i=0;i<claves.length;i++)
 					{
 						optionsClave += "<option value="+claves[i].uaprendizaje+" />";
-						optionsDescripcion += "<option value="+claves[i].descripcionmat+" />";
+						optionsDescripcion += '<option value="'+claves[i].descripcionmat+'" />';
 					}
 					$("#datalist_clave").html(optionsClave);
 					$("#datalist_materia").html(optionsDescripcion);
@@ -391,7 +391,8 @@
 
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
 		$("#Buscar").on("click",function(){
-			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1},function(uas){
+			var troncoComun = $("#troncoComun").prop("checked"); // Checar true o false del check de Tronco Común
+			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,troncocomun:troncoComun},function(uas){
 				var bloque ="";
 				var descripcionUA = "";
 				for (var i = 0; i < uas.length; i++) 
@@ -405,7 +406,7 @@
 					$("#list1").append(bloque);
 					bloque = "";
 				}
-				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2},function(uas){
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2,troncocomun:false},function(uas){
 					var bloque ="";
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
@@ -419,7 +420,7 @@
 						$("#list2").append(bloque);
 						bloque = "";
 					}
-					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3},function(uas){
+					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3,troncocomun:false},function(uas){
 						var bloque ="";
 						var descripcionUA = "";
 						for (var i = 0; i < uas.length; i++) 
@@ -448,8 +449,9 @@
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		
 		function saveOrder() {
-			var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
-			$("input[name=list1SortOrder]").val(data.join("|"));
+			//var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
+			//$("input[name=list1SortOrder]").val(data.join("|"));
+			alert("A ver que tal");
 		};
 
 		// this is important for IEs

@@ -370,21 +370,43 @@ class PlanEstudioController extends BaseController
 		$etapa = Input::get('etapa');
 		//$plan = PlanEstudio::find($noplan);
 		//$uas = $plan->unidades;
+		$tronco = Input::get('troncocomun');
+		
+		if($tronco == "true")
+		{
+			$UAS = DB::table('p_ua')
+					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('uaprendizaje.etapa','=',$etapa)
+					->whereIn('p_ua.programaedu',array($programaedu,6))
+					->orderBy('uaprendizaje.uaprendizaje','asc')
+					->get();
+			
+		}
+		else
+		{
+			$UAS = DB::table('p_ua')
+					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('uaprendizaje.etapa','=',$etapa)
+					->where('p_ua.programaedu','=',$programaedu)
+					->get();
+			
+		}
 
-		$UAS = DB::table('p_ua')
-				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
-				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
-				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
-				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
-				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
-				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
-				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
-				->where('uaprendizaje.plan','=',$noplan)
-				->where('uaprendizaje.etapa','=',$etapa)
-				->where('p_ua.programaedu','=',$programaedu)
-				->get();
-
-		return Response::json($UAS);
+		return $UAS;
 
 	}
 
