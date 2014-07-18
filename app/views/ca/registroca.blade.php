@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
 		<!---------------------------------------------------------------------------------------->
 
+		
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
 		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
@@ -118,7 +119,23 @@
 
 
 		<!-------------------------------------------------------------------------------------------->
-       
+      	
+
+      	<!-- ------------------------------ DATATABLES --------------------------------------->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+		<!-- JS -->
+		<script src="../js/jquery.dataTables.js"></script>
+
+		<!-- ---------------------------------------------------------------------------------->
+		<!-- Script dataTable -->
+		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$('#tblUA').dataTable();
+			} );
+		</script><!-- Termina script dataTable -->
 
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
@@ -182,6 +199,8 @@
 		</form>
 	</div>
 
+	<div class="md-overlay"></div>
+
 	<!------------------------------------------------------------------------------>
 
 	</head>
@@ -221,7 +240,7 @@
 
 		<section>
 
-			<div class="contenedorCa">
+			<div class="contenedor_Ca">
 				<div class="nombre_coordinacion">Lic. en Informática</div>
 
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
@@ -240,11 +259,33 @@
 					<fieldset id="planV"><legend>Plan vigente</legend>
 						<div class="nombrePlan">Plan 2014-1</div>
 
+						<div class="filtroMaterias_ca">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
+
+
 							<div class="listasCa">
 								
 					            <div class="listbox"></div>
 				           
 				        	</div>
+
+				        	<label>Semestre: </label>
+							<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+							</select>
 							
 						<div class="controlesListasCa">
 							Grupos:
@@ -261,7 +302,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" style="width:180px" value="Guardar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 
 					</fieldset>	
@@ -270,7 +311,7 @@
 			<!----------------------- BOTON PLAN ANTERIOR ------------------------>
 
 				<div id="btnPlanA">
-					<input type="button" style="width:200px;" class="estilo_button2" value="PlanAnterior" name="planAntCa" id="planAntCa" />
+					<input type="button" style="width:200px;" class="estilo_button2" value="Plan Anterior" name="planAntCa" id="planAntCa" />
 
 				</div>
 
@@ -280,9 +321,29 @@
 				<div id="planAnterior"		>
 					<fieldset id="planA"><legend>Plan anterior </legend>
 						<div class="nombrePlan">Plan 2009-2</div>
+						<div class="filtroMaterias_ca">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 						<div class="listasCa">
 							 <div class="listbox"></div>           
 						</div>
+
+						<label>Semestre: </label>
+							<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+							</select>
 
 						<div class="controlesListasCa">
 							Grupos:
@@ -299,15 +360,149 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" style="width:180px" value="Guardar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 
 					</fieldset>
 
+
+				</div>
+
+				<div id="contenedorRegistroca_mostrar">
+					<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+						<thead class="semestre_plan">
+							<tr>
+								<th>SEMESTRE: 6</th>
+								<th>PLAN: 2014-1</th>
+							
+							</tr>
+						</thead>
+						<thead class="encabezado_tabla">
+							<tr>
+								<th>CLAVE</th>
+								<th>MATERIA</th>
+								<th>NO. CREDITOS</th>
+								<th>HC</th>
+								<th>ETAPA</th>
+								<th>REQ. SERIACION</th>
+								<th>ELIMINAR</th>
+							
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td>000453</td>
+								<td>DESARROLLO SUSTENTABLE</td>
+								<td>20</td>
+								<td>21</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+							</tr>
+							<tr>
+								<td>000454</td>
+								<td>ARQ. DE LA INFO.</td>
+								<td>15</td>
+								<td>14</td>
+								<td>BASICA</td>
+								<td>none</td>	
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							<tr>
+								<td>000455</td>
+								<td>PRINCIPIOS DE PROGRAMACION</td>
+								<td>9</td>
+								<td>12</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							<tr>
+								<td>000456</td>
+								<td>MATEMATICAS I</td>
+								<td>2</td>
+								<td>20</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+							</tr>
+							<tr>
+								<td>000457</td>
+								<td>FISICA I</td>
+								<td>4</td>
+								<td>30</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							<tr>
+								<td>000458</td>
+								<td>ORIENTACION VOCACIONAL</td>
+								<td>10</td>
+								<td>20</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							<tr>
+								<td>000459</td>
+								<td>QUIMICA I</td>
+								<td>9</td>
+								<td>20</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+							</tr>
+							<tr>
+								<td>000460</td>
+								<td>ESTRUCTURA DE DATOS</td>
+								<td>2</td>
+								<td>4</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							
+						<thead class="encabezado_tabla">
+							<tr>
+								<th>OPTATIVAS</th>
+							</tr>
+						</thead>
+						<tr>
+								<td>000459</td>
+								<td>QUIMICA I 231, 233, 234</td>
+								<td>9</td>
+								<td>20</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+							</tr>
+							<tr>
+								<td>000460</td>
+								<td>ESTRUCTURA DE DATOS 235, 236</td>
+								<td>2</td>
+								<td>4</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
+							</tr>
+							<thead class="encabezado_tabla">
+								<td>GRUPOS Y TURNOS: </td>
+							</thead>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+
+						</tbody>	
+					</table>
+					<div id="btnGuardarCa_registro">
+						<input type="button" style="width:180px" value="Guardar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+					</div>
 				</div>
 
 
 			</div>
+
+
 				
 		</section>
 		<script type="text/javascript" src="../js/jqxcore.js"></script>
@@ -315,6 +510,7 @@
 	    <script type="text/javascript" src="../js/jqxscrollbar.js"></script>
 	    <script type="text/javascript" src="../js/jqxlistbox.js"></script>
 	    <script type="text/javascript" src="../js/jqxcheckbox.js"></script>
+
 
 
 		<footer></footer>
