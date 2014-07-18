@@ -607,7 +607,7 @@
 
 						</table>
 				</div>
-				<input type="button" style="font-size:21px" value="Actualizar" class="estilo_button2">
+				<input type="button" style="font-size:21px" value="Guardar carga" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</div>
 		</div>

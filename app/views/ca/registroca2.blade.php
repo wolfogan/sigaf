@@ -249,6 +249,14 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 1</div>
 						<div class="nombre_plan">2014-1</div>
+
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -266,6 +274,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -277,6 +286,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 2</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -294,6 +310,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -304,6 +321,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 3</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -321,6 +345,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -331,6 +356,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 4</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -348,6 +380,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -358,6 +391,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 5</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -375,6 +415,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -385,6 +426,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 6</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -402,6 +450,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -412,6 +461,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 7</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -429,6 +485,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -439,6 +496,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 8</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -456,6 +520,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	
@@ -466,6 +531,13 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 9</div>
 						<div class="nombre_plan">2014-1</div>
+						<div class="filtroMaterias_ca2">Materias: 							
+							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+								<option value="OPTATIVAS">OPTATIVAS</option>
+								
+							</select>
+						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
 				        	</div>
@@ -483,6 +555,7 @@
 					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
 				</div>	

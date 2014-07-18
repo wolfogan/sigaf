@@ -1188,6 +1188,39 @@ background: #EFCA0D;
 	width: 200px;
 }
 
+#contenedorRegistroca_mostrar
+{
+	
+	margin: auto;
+	margin-top: 830px;
+	width: 1300px;
+
+}
+#btnGuardarCa_registro
+{
+	
+	height: 50px;
+	margin-top: 30px;
+	margin-left: 1040px;
+	width: 200px;
+}
+.filtroMaterias_ca
+{
+	
+	height: 50px;
+	width: 250px;
+}
+.filtroMaterias_ca2
+{
+	height: 50px;
+	margin-left: 20px;
+	margin-top: 30px;
+	margin-bottom: 5px;
+
+	width: 250px;
+
+}
+
 /*---------------------------- CARGA 2 -----------------------------------*/
 .carga_listas
 {
@@ -1205,19 +1238,18 @@ background: #EFCA0D;
 }
 .controlesListasCa_2
 {
-	
-	width: 380px;
+
+	width: 405px;
 	height: 50px;
 	margin: auto;
-	margin-top: -260px;
+	margin-top: -340px;
 
 }
 .nombre_semestre
 {
-	
 	float: left;
 	font-size: 16px;
-	height: 50px;
+	height: 30px;
 	text-align: center;
 	width: 200px;
 	
@@ -1228,7 +1260,7 @@ background: #EFCA0D;
 	
 	float: left;
 	font-size: 16px;
-	height: 50px;
+	height: 30px;
 	text-align: center;
 	margin-top: 10px;
 	width: 200px;
@@ -1332,11 +1364,12 @@ background: #EFCA0D;
 }
 .semestre_plan
 {
-	font-size: 13px;
+	font-size: 15px;
+	font-weight: bold;
 
 	
 }
-#encabezado_tabla
+.encabezado_tabla
 {
 	font-size: 14px;
 	color: green;
