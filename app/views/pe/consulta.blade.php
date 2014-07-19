@@ -391,6 +391,8 @@
 
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
 		$("#Buscar").on("click",function(){
+			//Limpiar busquedas anteriores
+			$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 			var troncoComun = $("#troncoComun").prop("checked"); // Checar true o false del check de Tronco Común
 			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,troncocomun:troncoComun},function(uas){
 				var bloque ="";

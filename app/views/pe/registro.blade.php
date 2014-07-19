@@ -510,6 +510,10 @@
 		<!------------------------ GRID PARA MOSTRAR UNIDADES DE APRENDIZAJE POR PLAN ------------------------>
 		<div id="GridPlanEstudio">
 			<label style="font-size:1.2em;">No. Plan: </label><label style="font-size:1.2em; color:orange;" id="grid_plan">0000</label>
+			<figure id="ajaxLoad">
+				<img src="../imagenes/ajax_loader.gif" alt="Cargando...." />
+				<img src="../imagenes/cargando.gif" alt="Cargando2...." style="margin-top:6%; width:70px; height:12px;"/>
+			</figure>
 			<div id="planTerminado">
 				<input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label>
 			</div>
@@ -577,6 +581,7 @@
 		 */
 		function ActualizarUAS(plan)
 		{
+			$("#ajaxLoad").css("display","block");
 			$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
 				$('#tblUA').dataTable().fnClearTable();
 				for (var i = 0; i < uas.length; i++) 
@@ -595,6 +600,7 @@
 								uas[i].creditos,
 								"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 				}
+				$("#ajaxLoad").css("display","none");
 			});
 		}
 
@@ -877,6 +883,8 @@
 				alert("Debes escribir una materia seriada");
 				return;
 			}
+			// MOSTRAR AJAXLOADER
+			$("#ajaxLoad").css("display","block");
 			// INSERTAR UNIDAD DE APRENDIZAJE
 			if(opcion == "Guardar")
 			{
@@ -923,6 +931,10 @@
 				})
 				.fail(function(){
 					alert("Fallo el registro de la Unidad de Aprendizaje");
+				})
+				.always(function(){
+					// OCULTAR AJAXLOADER
+					$("#ajaxLoad").css("display","none");
 				});
 			}
 			else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
@@ -954,6 +966,10 @@
 				})
 				.fail(function(){
 					alert("Fallo la actualización");
+				})
+				.always(function(){
+					// OCULTAR AJAXLOADER
+					$("#ajaxLoad").css("display","none");
 				});
 				
 			}
@@ -1010,6 +1026,9 @@
 						//var renglonUA = $(this).parent();
 						var materia = $(this).parent().find('td:first').html();
 						var serie = $(this).parent().find('td').eq(5).html();
+						
+						// MOSTRAR AJAXLOADER
+						$("#ajaxLoad").css("display","block");
 						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,claveD:serie}, function(json)
 						{
 							if(json.success)
@@ -1054,7 +1073,11 @@
 								alert("Hubo error");
 							}
 						})
-						.fail(function(){alert("fallo");});
+						.fail(function(){alert("fallo");})
+						.always(function(){
+							// OCULTAR AJAXLOADER
+							$("#ajaxLoad").css("display","none");
+						});
 					}
 				}
 			}
