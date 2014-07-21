@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : SIGAF
+Source Server         : LOCAL
 Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : sigaf
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-07-08 22:06:09
+Date: 2014-07-21 06:02:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1248,7 +1248,9 @@ INSERT INTO `planestudio` VALUES ('20101', '3');
 INSERT INTO `planestudio` VALUES ('20092', '4');
 INSERT INTO `planestudio` VALUES ('20092', '5');
 INSERT INTO `planestudio` VALUES ('20092', '6');
+INSERT INTO `planestudio` VALUES ('20101', '6');
 INSERT INTO `planestudio` VALUES ('20092', '7');
+INSERT INTO `planestudio` VALUES ('20101', '8');
 
 -- ----------------------------
 -- Table structure for planestudiodesc
@@ -1298,18 +1300,19 @@ CREATE TABLE `programaedu` (
   CONSTRAINT `fk_programaedu_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`) ON UPDATE CASCADE,
   CONSTRAINT `fk_programaedu_periodo_prog_edu1` FOREIGN KEY (`periodo_pedu`) REFERENCES `periodo_prog_edu` (`periodo_pedu`) ON UPDATE CASCADE,
   CONSTRAINT `fk_programaedu_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
 -- Records of programaedu
 -- ----------------------------
-INSERT INTO `programaedu` VALUES ('1', 'MEDICINA', '1', '1', '1', null, '1', '1');
+INSERT INTO `programaedu` VALUES ('1', 'ARTES', '1', '1', '1', null, '1', '1');
 INSERT INTO `programaedu` VALUES ('2', 'CONTADURIA', '1', '2', '1', null, '1', '1');
 INSERT INTO `programaedu` VALUES ('3', 'ADMON. DE EMPRESAS', '1', '3', '1', null, '1', '1');
 INSERT INTO `programaedu` VALUES ('4', 'INFORMATICA', '1', '4', '1', null, '1', '1');
 INSERT INTO `programaedu` VALUES ('5', 'NEGOCIOS INTERNACIONALES', '1', '5', '1', null, '1', '1');
-INSERT INTO `programaedu` VALUES ('6', 'ARTES', '1', '1', '1', '2', '2', '2');
+INSERT INTO `programaedu` VALUES ('6', 'TRONCO COMUN', '1', '1', '1', '2', '2', '2');
 INSERT INTO `programaedu` VALUES ('7', 'CIENCIAS COMPUTACIONALES', '1', '1', '1', '2', '2', '3');
+INSERT INTO `programaedu` VALUES ('8', 'MEDICINA', '1', '1', '1', null, '1', '1');
 
 -- ----------------------------
 -- Table structure for p_ua
@@ -1330,7 +1333,44 @@ CREATE TABLE `p_ua` (
 -- ----------------------------
 INSERT INTO `p_ua` VALUES ('1', '11236');
 INSERT INTO `p_ua` VALUES ('1', '11237');
+INSERT INTO `p_ua` VALUES ('1', '11238');
+INSERT INTO `p_ua` VALUES ('1', '11239');
+INSERT INTO `p_ua` VALUES ('1', '11240');
+INSERT INTO `p_ua` VALUES ('1', '11249');
+INSERT INTO `p_ua` VALUES ('1', '11250');
+INSERT INTO `p_ua` VALUES ('1', '11251');
+INSERT INTO `p_ua` VALUES ('1', '11252');
 INSERT INTO `p_ua` VALUES ('2', '11236');
+INSERT INTO `p_ua` VALUES ('2', '11237');
+INSERT INTO `p_ua` VALUES ('2', '11238');
+INSERT INTO `p_ua` VALUES ('2', '11239');
+INSERT INTO `p_ua` VALUES ('2', '11240');
+INSERT INTO `p_ua` VALUES ('2', '11249');
+INSERT INTO `p_ua` VALUES ('2', '11250');
+INSERT INTO `p_ua` VALUES ('2', '11251');
+INSERT INTO `p_ua` VALUES ('3', '11236');
+INSERT INTO `p_ua` VALUES ('3', '11237');
+INSERT INTO `p_ua` VALUES ('3', '11238');
+INSERT INTO `p_ua` VALUES ('3', '11239');
+INSERT INTO `p_ua` VALUES ('3', '11240');
+INSERT INTO `p_ua` VALUES ('3', '11249');
+INSERT INTO `p_ua` VALUES ('3', '11250');
+INSERT INTO `p_ua` VALUES ('3', '11251');
+INSERT INTO `p_ua` VALUES ('3', '11252');
+INSERT INTO `p_ua` VALUES ('6', '11235');
+INSERT INTO `p_ua` VALUES ('6', '11257');
+INSERT INTO `p_ua` VALUES ('6', '11258');
+INSERT INTO `p_ua` VALUES ('6', '11259');
+INSERT INTO `p_ua` VALUES ('6', '11260');
+INSERT INTO `p_ua` VALUES ('8', '11236');
+INSERT INTO `p_ua` VALUES ('8', '11237');
+INSERT INTO `p_ua` VALUES ('8', '11238');
+INSERT INTO `p_ua` VALUES ('8', '11239');
+INSERT INTO `p_ua` VALUES ('8', '11240');
+INSERT INTO `p_ua` VALUES ('8', '11249');
+INSERT INTO `p_ua` VALUES ('8', '11250');
+INSERT INTO `p_ua` VALUES ('8', '11251');
+INSERT INTO `p_ua` VALUES ('8', '11252');
 
 -- ----------------------------
 -- Table structure for reqseriacion
@@ -1418,8 +1458,20 @@ CREATE TABLE `uaprendizaje` (
 -- ----------------------------
 -- Records of uaprendizaje
 -- ----------------------------
+INSERT INTO `uaprendizaje` VALUES ('11235', '20101', 'TRONCO COMUN 0', '4', '4', '4', '4', '4', '4', '24', '1', '2014-07-18', 'vamos a ver', '1', '1', null, '1', '6');
 INSERT INTO `uaprendizaje` VALUES ('11236', '20101', 'MATEMATICAS I', '1', '2', '3', '5', '7', '4', '22', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '1', '1', null, '1', '1');
-INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'MATEMATICAS II', '0', '0', '0', '0', '0', '0', '0', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '1', '2', '11236', '1', '5');
+INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'ESPAÑOL', '7', '0', '0', '0', '0', '0', '7', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '2', '1', null, '1', '5');
+INSERT INTO `uaprendizaje` VALUES ('11238', '20101', 'CIVISMO', '5', '5', '5', '5', '5', '5', '30', '1', '2014-07-16', 'VAMOS A VER', '1', '1', null, '2', '3');
+INSERT INTO `uaprendizaje` VALUES ('11239', '20101', 'EDUCACION FISICA', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-16', 'VAMOS A VER QUE TAL', '1', '1', null, '3', '6');
+INSERT INTO `uaprendizaje` VALUES ('11240', '20101', 'ESGRIMA', '2', '2', '2', '2', '2', '2', '12', '1', '2014-07-16', 'vamioddd', '1', '1', null, '3', '7');
+INSERT INTO `uaprendizaje` VALUES ('11249', '20101', 'GASTRONOMIA', '7', '7', '7', '7', '7', '7', '42', '1', '2014-07-16', 'vamos a ver', '1', '1', null, '2', '10');
+INSERT INTO `uaprendizaje` VALUES ('11250', '20101', 'INGLES DE VERDAD', '5', '5', '5', '5', '5', '5', '30', '1', '2014-07-16', 'VAMOS A VER QUE TAL', '1', '1', null, '1', '8');
+INSERT INTO `uaprendizaje` VALUES ('11251', '20101', 'MATERIA 81', '5', '5', '5', '5', '5', '5', '30', '1', '2014-07-16', 'GATO ENCERRADO', '1', '1', null, '2', '8');
+INSERT INTO `uaprendizaje` VALUES ('11252', '20101', 'MATEBRUTICAS', '1', '1', '1', '1', '1', '1', '6', '1', '2014-07-16', 'PRESENTE', '1', '1', null, '2', '4');
+INSERT INTO `uaprendizaje` VALUES ('11257', '20101', 'TRONCO COMUN I', '1', '1', '1', '1', '1', '1', '6', '1', '2014-07-18', 'VAMOS A VER QUE TEAL', '1', '1', null, '1', '5');
+INSERT INTO `uaprendizaje` VALUES ('11258', '20101', 'TRONCO COMUN II', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-18', 'TODAS', '1', '1', null, '1', '6');
+INSERT INTO `uaprendizaje` VALUES ('11259', '20101', 'TRONCO COMUN III', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-18', 'DOS DE TRES', '1', '1', null, '1', '5');
+INSERT INTO `uaprendizaje` VALUES ('11260', '20101', 'TRONCO COMUN IV', '0', '0', '0', '0', '0', '0', '0', '1', '2014-07-18', 'TODAS', '1', '1', null, '1', '1');
 
 -- ----------------------------
 -- Table structure for uaprendizaje_copy
@@ -1489,7 +1541,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('8', 'Ivan', 'Duarte', 'wolfogan@gmail.com', 'Real de Calacoaya 7810-3B', '6450706', 'TIJUANA', 'ENSENADA', 'FCA', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9StZEMuLWOCmjfK1hO', '0', '2014-04-19 12:30:58', '2014-04-19 12:30:58', '');
-INSERT INTO `users` VALUES ('9', 'Cynthia', 'Duarte', 'zyntya@hotmail.com', 'Col. Nueva Tijuana', '6233987', 'TIJUANA', 'VALLE DE LA TRINIDAD', 'FD', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 12:30:58', '2014-07-02 20:08:31', 'g1RLHU6OU8m6AQBiZeP3SyHcYKYaJZl3unFTdGCvj2saH6vex0oLMzrZx7if');
+INSERT INTO `users` VALUES ('9', 'Cynthia', 'Duarte', 'zyntya@hotmail.com', 'Col. Nueva Tijuana', '6233987', 'TIJUANA', 'VALLE DE LA TRINIDAD', 'FD', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 12:30:58', '2014-07-18 10:39:59', 'NVoIfffFK4wyEGXKWkvK4KTEPJMkAvkhpEq7hAisugLK4KwYAnCwap6LpmuW');
 INSERT INTO `users` VALUES ('10', 'Raúl', 'Contreras', 'Raulito21@gmail.com', 'Calle 9 de julio #244', '52224799', 'TIJUANA', 'VALLE DE LAS PALMAS', 'FCA', 'ra21', '$2y$10$BCYlojviBdFVCG4jfpdcluYJWLW/2/gGIjDsgxPcKWRx09DpE1Oce', '0', '2014-04-19 12:31:10', '2014-04-19 12:31:10', '');
 INSERT INTO `users` VALUES ('11', 'Juanelon', 'Rosado de la colina', 'paquito@gmail.com', 'Real de patito 50', '6457896', 'TIJUANA', 'HISTORICO', 'FHD', 'paquito', '$2y$10$NFJnp7SweU./sBw/YqBuM.Fg1mHuVjngo2e55Z/p9w.JxpliC6QlC', '0', '2014-04-21 08:08:27', '2014-04-21 10:03:15', '');
 INSERT INTO `users` VALUES ('17', 'unice', 'unice', 'unice@gmail.com', 'nose donde vive', '2147483647', 'TIJUANA', 'HISTORICO', 'FD', 'uni', '$2y$10$T3ztXBdUMPxZGvOSyNk8wuSKCiX2gYu7WSLZ9ANkm5XVBda2Rm2Ye', '1', '2014-04-25 02:42:07', '2014-04-25 02:42:07', '');

@@ -627,7 +627,7 @@ background: #EFCA0D;
 {
 	
 	margin-left: 1000px;
-	margin-top: -10px;
+	margin-top: -20px;
 	margin-bottom: 10px;
 	width: 300px;
 
@@ -1381,6 +1381,24 @@ background: #EFCA0D;
 	color: green;
 }
 
+#ajaxLoad
+{
+	display: none;
+	width: 50%;
+	/*border: 1px solid orange;*/
+	position: relative;
+	margin-left: 20%;
+}
+
+#ajaxLoad img
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 64px;
+	height: 64px;
+	margin: -32px 0 0 -32px;
+}
 
 /*----------------------------------------------------------------------------*/
 

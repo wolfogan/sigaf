@@ -11,6 +11,7 @@ class PlanEstudioController extends BaseController
 
 	public function getRegistro()
 	{
+		// Obtener planes de estudio: 2010-1, 2010-2, 2010-3
 		//$planestudio = DB::table('planestudio')->distinct()->lists('PE_codigo');
 		//$planestudio = DB::table('planestudio')->distinct()->select('PE_codigo')->orderBy('PE_codigo','desc')->get();
 		$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
@@ -30,7 +31,7 @@ class PlanEstudioController extends BaseController
 
 			return $part1.$string_add.$part2;
 		}
-		
+
 		for ($i=0; $i < count($planestudio); $i++) { 
 		$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
 		}
@@ -54,7 +55,6 @@ class PlanEstudioController extends BaseController
 
 		/* Materia: Matemáticas, español, etc.
 		$unidadesAprendizaje = UnidadAprendizaje::select('uaprendizaje','descripcionmat')->orderBy('uaprendizaje','desc')->get();*/
-
 		$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
 
 		$especialidades = Especialidad::select('especialidad','descripcion')->orderBy('descripcion','desc')->get();
@@ -64,7 +64,44 @@ class PlanEstudioController extends BaseController
 
 	public function getConsulta()
 	{
-		return View::make('pe.consulta');
+		// Obtener planes de estudio.
+		$planestudio = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
+		$codigosPE = array();
+		
+		/**
+	 	* Función para integrar el guión en el código del plan de estudio 2009-2
+		 * @param  string $string_add    La cadena a agregar
+		 * @param  string $string_target La cadena donde se va a agregar el string
+		 * @param  int $offset        Puntero donde corta la caden
+		 * @return string                Regresa la cadena concatenada
+		 */
+		function str_insert($string_add,$string_target,$offset)
+		{
+			$part1 = substr($string_target,0, $offset);
+			$part2 = substr($string_target, $offset);
+
+			return $part1.$string_add.$part2;
+		}
+		
+		for ($i=0; $i < count($planestudio); $i++) { 
+			$codigosPE[] = ["codigo" => $planestudio[$i]->plan,"formato" => str_insert("-",$planestudio[$i]->plan,4)];
+		}
+		// Carrera: Tronco Comun
+		//$programasEducativos = ProgramaEducativo::select('programaedu','descripcion')->orderBy('programaedu','asc')->get();
+		
+		// Básica, Disciplinaria, Terminal
+		$etapas= Etapa::select('etapa','descripcion')->get();
+
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
+
+		// Obligatoria, Sugerida, Sin seriación.
+		$seriaciones = Seriacion::select('reqseriacion','descripcion')->orderBy('reqseriacion','asc')->get();
+
+		// Coordinación de area
+		$coordinaciones = Coordinacion::select('coordinaciona','descripcion')->get();
+		
+		return View::make('pe.consulta')->with(compact('codigosPE','programasEducativos','etapas','tiposCaracter','seriaciones','coordinaciones'));
 	}
 
 	public function getUsuarios()
@@ -116,6 +153,7 @@ class PlanEstudioController extends BaseController
 		$noplan = Input::get('planestudio_anio').Input::get('planestudio_semestre');
 		$plan -> plan = $noplan;
 		$plan -> descripcion = Input::get('planestudio_descripcion');
+		$plan -> nivel = Input::get('planestudio_nivel');
 		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
 		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
 		$plan -> credpracticas = Input::get('planestudio_credpracticas');
@@ -325,6 +363,61 @@ class PlanEstudioController extends BaseController
 
 	}
 
+	public function postObteneruascarrera()
+	{
+		$noplan = Input::get('noplan');
+		$programaedu = Input::get('programaedu');
+		$etapa = Input::get('etapa');
+		$caracter = Input::get('caracter');
+		$reqseriacion = Input::get('reqseriacion');
+		$coordinacion = Input::get('coordinacion');
+		//$plan = PlanEstudio::find($noplan);
+		//$uas = $plan->unidades;
+		$tronco = Input::get('troncocomun');
+		// Si selecciono tronco comun
+		if($tronco == "true")
+		{
+			$UAS = DB::table('p_ua')
+					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('uaprendizaje.etapa','=',$etapa)
+					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
+					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
+					->whereIn('p_ua.programaedu',array($programaedu,6)) // Carrera + Tronco Común
+					->orderBy('uaprendizaje.uaprendizaje','asc')
+					->get();
+			
+		}
+		else
+		{
+			$UAS = DB::table('p_ua')
+					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('uaprendizaje.etapa','=',$etapa)
+					->where('uaprendizaje.caracter','LIKE',"%$caracter%")
+					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
+					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
+					->where('p_ua.programaedu','=',$programaedu)
+					->get();
+			
+		}
+
+		return $UAS;
+
+	}
+
 	public function postContaruas()
 	{
 		$uaid = Input::get('uaprendizaje');
@@ -410,7 +503,6 @@ class PlanEstudioController extends BaseController
 		$UA -> claveD = Input::get('clave2F');
 		$UA -> etapa = Input::get('etapaF');
 		$UA -> coordinaciona = Input::get('coord');
-			
 		$UA -> save();
 		
 		$add =Input::get('add_carreras');
@@ -422,6 +514,17 @@ class PlanEstudioController extends BaseController
 				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
 			}
 		}
+	}
+
+	public function postActualizaretapa()
+	{
+		$uaid = Input::get("uaprendizaje");
+		$etapa = Input::get("etapa");
+		$UA = UnidadAprendizaje::find($uaid);
+		$UA->etapa = $etapa;
+		$UA->save();
+
+		return "Etapa actualizada";
 	}
 }
 

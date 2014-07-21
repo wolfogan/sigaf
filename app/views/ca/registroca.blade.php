@@ -512,6 +512,10 @@
 
 
 		<footer></footer>
+		<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/css-filters-polyfill.js"></script>
+	<!--SCRIPT PARA VENTANA MODAL-->
 	</body>
 
 
