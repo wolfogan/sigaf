@@ -1354,19 +1354,19 @@ background: #EFCA0D;
 }
 .tabla_ca
 {
-	font-size: 12px;
-	margin-bottom: 30px;
-	margin-left: 30px;
-	margin-right: 20px;
+
 	
 	float: left;
-	
+	font-size: 12px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+		
 }
 .semestre_plan
 {
 	font-size: 15px;
 	font-weight: bold;
-
 	
 }
 .encabezado_tabla
@@ -1375,15 +1375,11 @@ background: #EFCA0D;
 	color: green;
 	border: 1px solid #000;
 }
-.tabla_ca_estilo
+.encabezado_optativas
 {
-	
-	border: 1px solid #000;
-
+	font-size: 14px;
+	color: green;
 }
-
-
-
 
 
 /*----------------------------------------------------------------------------*/

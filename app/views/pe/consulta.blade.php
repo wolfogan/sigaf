@@ -486,15 +486,7 @@
 					<tr>
 						<td>Carrera:</td>
 						<td>
-							<select class="con_estilo" name="carrera" size=1>
-								<option value="TC">TRONCO COMUN</option>
-								<option value="ADMON">ADMON.</option>
-								<option value="CONTAB">CONTAB.</option>
-								<option value="INFORMATICA">INFORMATICA</option>
-								<option value="NEGOCIOS">NEGOCIOS</option>
-							</select>
-
-
+							<label>Informática</label>
 						</td>
 
 					</tr>
@@ -607,7 +599,7 @@
 
 						</table>
 				</div>
-				<input type="button" style="font-size:21px" value="Guardar carga" class="estilo_button2">
+				<input type="button" style="font-size:21px" value="Guardar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</div>
 		</div>
