@@ -139,8 +139,7 @@
 
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+		<h3>Agregar Etapa</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -170,8 +169,7 @@
 
 	<!-------------------------------------- MODAL CATALOGO GRUPOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoGrupo"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+		<h3>Agregar Etapa</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -514,6 +512,10 @@
 
 
 		<footer></footer>
+		<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/css-filters-polyfill.js"></script>
+	<!--SCRIPT PARA VENTANA MODAL-->
 	</body>
 
 

@@ -158,7 +158,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -166,13 +166,9 @@
 						<th>HC</th>
 						<th>ETAPA</th>
 						<th>REQ. SERIACION</th>
-					
 					</tr>
 				</thead>
-				
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -180,8 +176,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -189,9 +183,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -199,9 +191,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -210,8 +200,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -219,9 +207,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -230,8 +216,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -239,9 +223,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -251,12 +233,47 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
+
+				<thead class="encabezado_optativas">
 					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
+						<th>OPTATIVAS</th>
 					</tr>
 				</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+				<thead class="semestre_plan">
+					<tr>
+						<th>GRUPOS Y TURNOS:</th>
+					</tr>
+				</thead>
+				<tr>
+						<td>206 TM, 207 TI, 208 TN</td>
+						
+					</tr>
 							
 						
 				</tbody>	
@@ -270,7 +287,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -382,7 +399,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -491,7 +508,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -602,7 +619,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -713,7 +730,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -825,7 +842,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -938,7 +955,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
@@ -1050,7 +1067,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead id="encabezado_tabla">
+				<thead class="encabezado_tabla">
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>

@@ -207,8 +207,7 @@
 					<tr>
 						<td>Carrera:</td>
 						<td>
-							<select class="con_estilo" name="carrera_update" id="carrera_update" size="1">
-							</select>
+							<label>Informática</label>
 						</td>
 					</tr>
 					<tr>
@@ -296,7 +295,11 @@
 					</tr>
 						</table>
 				</div>
+
+				<input type="button" style="font-size:21px" value="Guardar" class="estilo_button2">
+
 				<input type="submit" style="font-size:21px" value="Actualizar" class="estilo_button2">
+
 				<input type="button" class="md-close" value="Salir">
 			</form>
 		</div>
