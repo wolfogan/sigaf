@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50612
+Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : sigaf
 
 Target Server Type    : MYSQL
-Target Server Version : 50612
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-07-18 18:33:02
+Date: 2014-07-21 06:02:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1348,7 +1348,6 @@ INSERT INTO `p_ua` VALUES ('2', '11240');
 INSERT INTO `p_ua` VALUES ('2', '11249');
 INSERT INTO `p_ua` VALUES ('2', '11250');
 INSERT INTO `p_ua` VALUES ('2', '11251');
-INSERT INTO `p_ua` VALUES ('2', '11252');
 INSERT INTO `p_ua` VALUES ('3', '11236');
 INSERT INTO `p_ua` VALUES ('3', '11237');
 INSERT INTO `p_ua` VALUES ('3', '11238');
@@ -1459,9 +1458,9 @@ CREATE TABLE `uaprendizaje` (
 -- ----------------------------
 -- Records of uaprendizaje
 -- ----------------------------
-INSERT INTO `uaprendizaje` VALUES ('11235', '20101', 'TRONCO COMUN 0', '4', '4', '4', '4', '4', '4', '24', '1', '2014-07-18', 'vamos a ver que tal LA ACTUALIZACION', '1', '1', null, '1', '6');
-INSERT INTO `uaprendizaje` VALUES ('11236', '20101', 'MATEMATICAS I', '1', '2', '3', '5', '7', '4', '22', '1', '2014-07-09', 'VAMOS A VER QUE TAL SI FUNCIONA', '1', '1', null, '1', '1');
-INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'ESPAÑOL', '7', '0', '0', '0', '0', '0', '7', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '1', '1', null, '1', '5');
+INSERT INTO `uaprendizaje` VALUES ('11235', '20101', 'TRONCO COMUN 0', '4', '4', '4', '4', '4', '4', '24', '1', '2014-07-18', 'vamos a ver', '1', '1', null, '1', '6');
+INSERT INTO `uaprendizaje` VALUES ('11236', '20101', 'MATEMATICAS I', '1', '2', '3', '5', '7', '4', '22', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '1', '1', null, '1', '1');
+INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'ESPAÑOL', '7', '0', '0', '0', '0', '0', '7', '1', '2014-07-09', 'VAMOS A VER QUE TAL', '2', '1', null, '1', '5');
 INSERT INTO `uaprendizaje` VALUES ('11238', '20101', 'CIVISMO', '5', '5', '5', '5', '5', '5', '30', '1', '2014-07-16', 'VAMOS A VER', '1', '1', null, '2', '3');
 INSERT INTO `uaprendizaje` VALUES ('11239', '20101', 'EDUCACION FISICA', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-16', 'VAMOS A VER QUE TAL', '1', '1', null, '3', '6');
 INSERT INTO `uaprendizaje` VALUES ('11240', '20101', 'ESGRIMA', '2', '2', '2', '2', '2', '2', '12', '1', '2014-07-16', 'vamioddd', '1', '1', null, '3', '7');

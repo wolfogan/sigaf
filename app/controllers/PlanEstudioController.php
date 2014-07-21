@@ -368,10 +368,13 @@ class PlanEstudioController extends BaseController
 		$noplan = Input::get('noplan');
 		$programaedu = Input::get('programaedu');
 		$etapa = Input::get('etapa');
+		$caracter = Input::get('caracter');
+		$reqseriacion = Input::get('reqseriacion');
+		$coordinacion = Input::get('coordinacion');
 		//$plan = PlanEstudio::find($noplan);
 		//$uas = $plan->unidades;
 		$tronco = Input::get('troncocomun');
-		
+		// Si selecciono tronco comun
 		if($tronco == "true")
 		{
 			$UAS = DB::table('p_ua')
@@ -384,7 +387,9 @@ class PlanEstudioController extends BaseController
 					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 					->where('uaprendizaje.plan','=',$noplan)
 					->where('uaprendizaje.etapa','=',$etapa)
-					->whereIn('p_ua.programaedu',array($programaedu,6))
+					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
+					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
+					->whereIn('p_ua.programaedu',array($programaedu,6)) // Carrera + Tronco Común
 					->orderBy('uaprendizaje.uaprendizaje','asc')
 					->get();
 			
@@ -401,6 +406,9 @@ class PlanEstudioController extends BaseController
 					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 					->where('uaprendizaje.plan','=',$noplan)
 					->where('uaprendizaje.etapa','=',$etapa)
+					->where('uaprendizaje.caracter','LIKE',"%$caracter%")
+					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
+					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
 					->where('p_ua.programaedu','=',$programaedu)
 					->get();
 			

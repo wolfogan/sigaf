@@ -106,7 +106,7 @@
 						<!------------------------ ETAPAS ------------------------>
 						<div id="consul_etapa">
 							<label>Etapa:</label>
-							<select class="con_estilo" name="etapa" size=1>
+							<select class="con_estilo" name="etapa" id="etapa" size=1>
 								<option value="0">TODAS</option>
 								@foreach ($etapas as $etapa)
 									<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
@@ -116,7 +116,7 @@
 						<!------------------------ CARACTERES ------------------------>
 						<div id="consul_tipo">
 							<label>Tipo: </label>
-							<select class="con_estilo" name="tipo" size="1">
+							<select class="con_estilo" name="tipo" id="tipo" size="1">
 								<option value="0">TODAS</option>
 								@foreach ($tiposCaracter as $tipo)
 									<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
@@ -126,7 +126,7 @@
 						<!------------------------ TIPOS DE SERIACION ------------------------>
 						<div id="consul_serie">
 							<label>Seriación: </label>
-							<select class="con_estilo" name="seriacion" size=1>
+							<select class="con_estilo" name="seriacion" id="seriacion" size="1">
 								<option value="0">TODAS</option>
 								@foreach ($seriaciones as $seriacion)
 									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
@@ -207,44 +207,34 @@
 					<tr>
 						<td>Carrera:</td>
 						<td>
-							<select class="con_estilo" name="carrera" size=1>
-								<option value="TC">TRONCO COMUN</option>
-								<option value="ADMON">ADMON.</option>
-								<option value="CONTAB">CONTAB.</option>
-								<option value="INFORMATICA">INFORMATICA</option>
-								<option value="NEGOCIOS">NEGOCIOS</option>
+							<select class="con_estilo" name="carrera_update" id="carrera_update" size="1">
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td width="95">Clave:</td>
-						<td width="301"><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+						<td width="301"><input type="text" name="clave_update" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
 						<td>Materia:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+						<td><input type="text" name="descripcion_update" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
 					</tr>
 					
 					<tr>
 						<td>Etapa:</td>
 						<td>
-							<select class="con_estilo" name="etapa" size=1>
-								<option value="TODOS">TODOS</option>
-								<option value="BASICA">BASICA</option>
-								<option value="INTERMEDIA">DISCIPLINARIA</option>
-								<option value="TERMINAL">TERMINAL</option>
+							<select class="con_estilo" name="etapa_update" id="etapa_update" size=1>
+								@foreach ($etapas as $etapa)
+									<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+								@endforeach
 							</select>
-
 						</td>
-
 					</tr>
-
 					<tr>
-
 						<td>Tipo:</td>
 						<td>
-							<select class="con_estilo" name="tipo" size=1>
-								<option value="TODOS">TODOS</option>
-								<option value="OBLIGATORIA">OBLIGATORIA</option>
-								<option value="OPTATIVA">OPTATIVA</option>
+							<select class="con_estilo" name="tipo_update" id="tipo_update" size=1>
+								@foreach ($tiposCaracter as $tipo)
+									<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
+								@endforeach
 							</select>
 						</td>
 					</tr>
@@ -253,17 +243,17 @@
 					<tr>
 						<td>Semestre:</td>
 						<td>
-							<input class="estilo_numeric" type="number" name="semestre" id="semestre_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+							<input class="estilo_numeric" type="number" name="semestre_update" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 						</td>
 					</tr>
 
 					<tr>
 						<td>TipoSer.:</td>
 						<td>
-							<select class="con_estilo" name="seriacion" size=1>
-								<option value="SINSERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGATORIA</option>
-								<option value="SUGERIDA">SUGERIDA</option>
+							<select class="con_estilo" name="seriacion_update" id="seriacion_update" size=1>
+								@foreach ($seriaciones as $seriacion)
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
 							</select>
 
 						</td>
@@ -271,59 +261,54 @@
 
 					<tr>
 						<td>Clave:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="claveSeriacion_update" id="claveSeriacion_update" size="25"></td>
 
 						<td>Materia:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25"></td>
 					</tr>
 
 					<tr>
 						<td size="10">HC:</td>
-						<td><input class="estilo_numeric" type="number" name="hc_consulta" id="hc_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hc_update" id="hc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 
 						<td size="10">HL:</td>
-						<td><input class="estilo_numeric" type="number" name="hl_consulta" id="hl_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hl_update" id="hl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 					
 					<tr>
 						<td size="10">HT:</td>
-						<td><input class="estilo_numeric" type="number" name="ht_consulta" id="ht_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="ht_update" id="ht_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 
 						<td size="10">HE:</td>
-						<td><input class="estilo_numeric" type="number" name="he_consulta" id="he_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="he_update" id="he_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 
 					
 					<tr>
 						<td size="10">HPC:</td>
-						<td><input class="estilo_numeric" type="number" name="hcp_consulta" id="hcp_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hpc_update" id="hpc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 
 						<td size="10">HCL:</td>
-						<td><input class="estilo_numeric" type="number" name="hcl_consulta" id="hcl_consulta" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hcl_update" id="hcl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 
 					<tr>
 						<td>Cred.:</td>
-						<td><input class="estilo_numeric" type="number" name="cred_consulta" id="cred_consulta" onkeypress="ValidaSoloNumeros()" >
+						<td><input class="estilo_numeric" type="number" name="creditos_update" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
 					</tr>
 					
 					<tr>					
 						<td>Coord.:</td>
 						<td>
-							<input type="text" id="coordinacion" style="width:120px" size=1 list="datalist_coord">
+							<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord">
 							<datalist id="datalist_coord">
-								<option value="INFORMATICA">
-								<option value="MATEMATICAS">
-								<option value="CIENCIAS COMPUTACIONALES">
-								<option value="SISTEMAS DE INFORMACION">
-								<option value="PROGRAMACION">
 							</datalist>
 						</td>
 					</tr>
 
 						</table>
 				</div>
-				<input type="button" style="font-size:21px" value="Guardar carga" class="estilo_button2">
+				<input type="button" style="font-size:21px" value="Guardar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</div>
 		</div>
@@ -341,15 +326,20 @@
 		// CARGAR UA'S Y MATERIAS DESPUES DE SELECCIONAR EL PLAN DE ESTUDIO
 		var plan = 0;
 		var carrera = 0;
-		var etapa = 0;
+		var etapa = "";
+		var reqseriacion = "";
+		var coordinacion = "";
+		var caracter = "";
 		$("#noPlan").on("input",function(){
 			if($(this).val().length>5)
 			{
+				//Limpiar busquedas anteriores
+				$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 				//alert("se activo");
 				// Obtener el código del plan de estudios
 				plan = $("#datalist_noPlan option[value="+$(this).val()+"]").attr('plan');
 				//alert(plan);
-				//
+				
 				// Obtener las carreras que son parte del Plan de Estudios elegido
 				$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
 					var options = "";
@@ -358,7 +348,16 @@
 					{
 						options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
 					}
-					$("#carrera").html(options);
+					$("#carrera,#carrera_update").html(options);
+					// Habilitar opciones de consulta
+					$("#checkTroncoComun").show();
+					$("#etapa").val("0").prop("disabled",false);
+					$("#tipo").val("0").prop("disabled",false);
+					$("#seriacion").val("0");
+					etapa = "";
+					reqseriacion = "";
+					coordinacion = "";
+					caracter = "";
 				}).fail(function(){alert("Fallo en obtener los programas educativos");});
 				// Obtener las claves para la seriación de las ua registradas en el plan.
 				// 
@@ -382,47 +381,73 @@
 			if($(this).val()!=6)
 			{
 				$("#checkTroncoComun").show();
+				$("#etapa").val("0").prop("disabled",false);
+				$("#tipo").val("0").prop("disabled",false);
 			}
 			else
 			{
+				$("#troncoComun").prop("checked",false);
 				$("#checkTroncoComun").hide();
+				$("#etapa").val("1").prop("disabled",true);
+				$("#tipo").val("1").prop("disabled",true);
+				etapa = 1;
+				tipo = "";
 			}
 		});
-
+		// ELECCION DE VARIABLES CONSULTA, CARACTER,REQSERIACION,COORDINACION
+		$("#etapa").on("change",function(){
+			if($(this).val()==0)
+				etapa = "";
+			else
+				etapa = $(this).val();
+			//alert(etapa);
+		});
+		$("#tipo").on("change",function(){
+			if($(this).val()==0)
+				caracter = "";
+			else
+				caracter = $(this).val();
+			//alert(caracter);
+		});
+		$("#seriacion").on("change",function(){
+			if($(this).val()==0)
+				reqseriacion = "";
+			else
+				reqseriacion = $(this).val();
+			//alert(seriacion);
+		});
+		$("#coordinacion").on("input",function(){
+			if($(this).val()=="")
+				coordinacion = "";
+			else
+				coordinacion = $("#datalist_coord option[value='"+$(this).val()+"']").attr("codigo");
+			//alert(coordinacion);
+		});
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
 		$("#Buscar").on("click",function(){
 			//Limpiar busquedas anteriores
 			$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 			var troncoComun = $("#troncoComun").prop("checked"); // Checar true o false del check de Tronco Común
-			$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,troncocomun:troncoComun},function(uas){
-				var bloque ="";
-				var descripcionUA = "";
-				for (var i = 0; i < uas.length; i++) 
-				{
-					descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
-					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
-										descripcionUA +
-									'</div>'+
-								'</li>').hide().fadeIn("slow");
-					$("#list1").append(bloque);
-					bloque = "";
-				}
-				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2,troncocomun:false},function(uas){
+			// Verificar datos depuración:
+			alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
+			//	SI EL FILTRO CONTEMPLA TODAS LAS ETAPAS
+			if(etapa=="")
+			{
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
 					var bloque ="";
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
 					{
-						descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 						bloque = $('<li>' +
 										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 											descripcionUA +
 										'</div>'+
 									'</li>').hide().fadeIn("slow");
-						$("#list2").append(bloque);
+						$("#list1").append(bloque);
 						bloque = "";
 					}
-					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3,troncocomun:false},function(uas){
+					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:false},function(uas){
 						var bloque ="";
 						var descripcionUA = "";
 						for (var i = 0; i < uas.length; i++) 
@@ -433,14 +458,50 @@
 												descripcionUA +
 											'</div>'+
 										'</li>').hide().fadeIn("slow");
-							$("#list3").append(bloque);
+							$("#list2").append(bloque);
 							bloque = "";
 						}
-						activarModal();
-						asignarEventoDatos();
+						$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:false},function(uas){
+							var bloque ="";
+							var descripcionUA = "";
+							for (var i = 0; i < uas.length; i++) 
+							{
+								descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+								bloque = $('<li>' +
+												'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
+													descripcionUA +
+												'</div>'+
+											'</li>').hide().fadeIn("slow");
+								$("#list3").append(bloque);
+								bloque = "";
+							}
+							activarModal();
+							asignarEventoDatos();
+						});
 					});
 				});
-			});
+			}
+			else // Si solo es una etapa
+			{
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:etapa,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
+					var bloque ="";
+					var descripcionUA = "";
+					for (var i = 0; i < uas.length; i++) 
+					{
+						descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						bloque = $('<li>' +
+										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
+											descripcionUA +
+										'</div>'+
+									'</li>').hide().fadeIn("slow");
+						$("#list"+etapa).append(bloque); "ESTO ES IMPORTANTE NO PUEDEN MODIFICAR EL VAL DE LAS ETAPAS SI NO MARCARA ERROR"
+						bloque = "";
+					}
+					activarModal();
+					asignarEventoDatos();
+				});
+
+			}
 		});
 	});
 	</script>
@@ -458,12 +519,36 @@
 
 		// this is important for IEs
 		var polyfilter_scriptpath = '/js/';
+		
 		function asignarEventoDatos()
 		{
 			$("ul li div").on("click",function(){
-				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{uaprendizaje:uaid},function(){
-					
-				});
+				//alert("Aqui paso algo");
+				var uaid = $(this).find("span").text();
+				//alert(uaid);
+				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:uaid},function(ua){
+					alert("consulto");
+					$("#carrera_update").val($("#carrera").val());
+					$("#clave_update").val(uaid);
+					$("#descripcion_update").val(ua.descripcionmat);
+					$("#etapa_update").val(ua.etapa);
+					$("#tipo_update").val(ua.tipo);
+					$("#semestre_update").val(ua.semestre);
+					$("#seriacion_update").val(ua.reqseriacion);
+					$("#claveSeriacion_update").val(ua.claveD);
+					// FALTA DESCRIPCION DE LA SERIADA
+					$("#hc_update").val(ua.hc);
+					$("#hl_update").val(ua.hl);
+					$("#ht_update").val(ua.ht);
+					$("#he_update").val(ua.he);
+					$("#hpc_update").val(ua.hpc);
+					$("#hcl_update").val(ua.hcl);
+					$("#creditos_update").val(ua.creditos);
+					$("#coordinacion_update").val(ua.coordinaciona);
+
+
+				})
+				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
 			});
 		}
 		function activarModal()
