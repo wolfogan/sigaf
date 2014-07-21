@@ -172,16 +172,16 @@
 		</script>
 		<div id="cuadros">
 			<!------------------------------ ETAPA TERMINAL ------------------------------>
-			<ul id="list3">
+			<ul id="list3" etapa="3">
 				<li style="width:0%; padding:0; background-color:red;"></li>
 				<!--<input type="image" class="eliminarBloquecito" src="../imagenes/deleteTachita.png" id="elimImg"> -->
 			</ul>
 			<!------------------------------ ETAPA DISCIPLINARIA ------------------------------>
-			<ul id="list2">
+			<ul id="list2" etapa="2">
 				<li style="width:0%; padding:0; background-color:red;"></li>
 			</ul>
 			<!------------------------------ ETAPA BASICA ------------------------------>
-			<ul id="list1">
+			<ul id="list1" etapa="1">
 				<li style="width:0%; padding:0; background-color:red;"></li>
 			</ul>
 			<!-- <input style="margin-left:40px; margin-top:5px" class="eliminarBloquecito" type="button" value="-">-->
@@ -199,8 +199,8 @@
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 		<div class="md-modal md-effect-11" id="modal-11">
-			<div class="md-content">
-				<h3>Modificar unidad de aprendizaje</h3>
+			<form id="formUpdate" action="javascript:actualizarUA()" class="md-content">
+				<h3 id="titulo_update">Modificar unidad de aprendizaje</h3>
 				<div id="tablita2contenedor">
 					<table cellpadding="5" id="tablita2">
 					
@@ -213,15 +213,15 @@
 					</tr>
 					<tr>
 						<td width="95">Clave:</td>
-						<td width="301"><input type="text" name="clave_update" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+						<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
 						<td>Materia:</td>
-						<td><input type="text" name="descripcion_update" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+						<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
 					</tr>
 					
 					<tr>
 						<td>Etapa:</td>
 						<td>
-							<select class="con_estilo" name="etapa_update" id="etapa_update" size=1>
+							<select class="con_estilo" name="etapaF" id="etapa_update" size=1>
 								@foreach ($etapas as $etapa)
 									<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
 								@endforeach
@@ -231,7 +231,7 @@
 					<tr>
 						<td>Tipo:</td>
 						<td>
-							<select class="con_estilo" name="tipo_update" id="tipo_update" size=1>
+							<select class="con_estilo" name="tipoF" id="tipo_update" size=1>
 								@foreach ($tiposCaracter as $tipo)
 									<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
 								@endforeach
@@ -239,78 +239,66 @@
 						</td>
 					</tr>
 					
-
 					<tr>
 						<td>Semestre:</td>
 						<td>
-							<input class="estilo_numeric" type="number" name="semestre_update" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+							<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 						</td>
 					</tr>
-
 					<tr>
 						<td>TipoSer.:</td>
 						<td>
-							<select class="con_estilo" name="seriacion_update" id="seriacion_update" size=1>
+							<select class="con_estilo" name="serie" id="seriacion_update" size=1>
 								@foreach ($seriaciones as $seriacion)
 									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 								@endforeach
 							</select>
-
 						</td>
 					</tr>
-
 					<tr>
 						<td>Clave:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="claveSeriacion_update" id="claveSeriacion_update" size="25"></td>
-
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="clave2F" id="claveSeriacion_update" size="25"></td>
 						<td>Materia:</td>
 						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25"></td>
 					</tr>
-
 					<tr>
 						<td size="10">HC:</td>
-						<td><input class="estilo_numeric" type="number" name="hc_update" id="hc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-
+						<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HL:</td>
-						<td><input class="estilo_numeric" type="number" name="hl_update" id="hl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 					
 					<tr>
 						<td size="10">HT:</td>
-						<td><input class="estilo_numeric" type="number" name="ht_update" id="ht_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-
+						<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HE:</td>
-						<td><input class="estilo_numeric" type="number" name="he_update" id="he_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
-
 					
 					<tr>
 						<td size="10">HPC:</td>
-						<td><input class="estilo_numeric" type="number" name="hpc_update" id="hpc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-
+						<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HCL:</td>
-						<td><input class="estilo_numeric" type="number" name="hcl_update" id="hcl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
-
 					<tr>
 						<td>Cred.:</td>
-						<td><input class="estilo_numeric" type="number" name="creditos_update" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
+						<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
 					</tr>
 					
 					<tr>					
 						<td>Coord.:</td>
 						<td>
-							<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord">
+							<input type="text" id="coordinacion_update" name="coord" style="width:120px" size="1" list="datalist_coord">
 							<datalist id="datalist_coord">
 							</datalist>
 						</td>
 					</tr>
-
 						</table>
 				</div>
-				<input type="button" style="font-size:21px" value="Guardar" class="estilo_button2">
+				<input type="submit" style="font-size:21px" value="Actualizar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
-			</div>
+			</form>
 		</div>
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
 		<div class="md-overlay">
@@ -452,7 +440,7 @@
 						var descripcionUA = "";
 						for (var i = 0; i < uas.length; i++) 
 						{
-							descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+							descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 							bloque = $('<li>' +
 											'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 												descripcionUA +
@@ -466,7 +454,7 @@
 							var descripcionUA = "";
 							for (var i = 0; i < uas.length; i++) 
 							{
-								descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+								descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 								bloque = $('<li>' +
 												'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 													descripcionUA +
@@ -488,7 +476,7 @@
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
 					{
-						descripcionUA = uas[i].uaprendizaje + '<br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 						bloque = $('<li>' +
 										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 											descripcionUA +
@@ -507,19 +495,30 @@
 	</script>
 
 	<script type="text/javascript">
-	
 		
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		
 		function saveOrder() {
 			//var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
 			//$("input[name=list1SortOrder]").val(data.join("|"));
-			alert("A ver que tal");
-		};
+			//alert("Vamos a actualizar la etapa");
+			var uaid=$(this).find("span").text();
+			var etapa = $(this).parents("ul").attr("etapa");
+			//alert("UAID: "+uaid +"Etapa: "+etapa);
+			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{uaprendizaje:uaid,etapa:etapa},function(ua){
+				alert(ua);
+			});
+		}
 
-		// this is important for IEs
-		var polyfilter_scriptpath = '/js/';
-		
+		function actualizarUA()
+		{
+			dataUA = $("#formUpdate").serialize();
+			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
+				alert("Actualizacion Completada");
+			})
+			.fail(function(){alert("Fallo la actualizacion");});
+		}
+
 		function asignarEventoDatos()
 		{
 			$("ul li div").on("click",function(){
@@ -527,7 +526,8 @@
 				var uaid = $(this).find("span").text();
 				//alert(uaid);
 				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:uaid},function(ua){
-					alert("consulto");
+					//alert("consulto");
+					$("#titulo_update").html(ua.descripcionmat);
 					$("#carrera_update").val($("#carrera").val());
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
@@ -589,11 +589,18 @@
 				close.addEventListener( 'click', function( ev ) {
 					ev.stopPropagation();
 					removeModalHandler();
+					$("#formUpdate :text").val("");
+					$("#formUpdate :checkbox").val("");
+					$("#formUpdate input[type=number]").val(0);
+					$("#titulo_update").text("Unidad de Aprendizaje");
+					//$("#formUpdate ").val("");
 				});
 
 			});
 		}
 		
+		// this is important for IEs
+		var polyfilter_scriptpath = '/js/';
 
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->

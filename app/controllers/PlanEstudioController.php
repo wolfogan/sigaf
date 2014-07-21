@@ -503,7 +503,6 @@ class PlanEstudioController extends BaseController
 		$UA -> claveD = Input::get('clave2F');
 		$UA -> etapa = Input::get('etapaF');
 		$UA -> coordinaciona = Input::get('coord');
-			
 		$UA -> save();
 		
 		$add =Input::get('add_carreras');
@@ -515,6 +514,17 @@ class PlanEstudioController extends BaseController
 				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
 			}
 		}
+	}
+
+	public function postActualizaretapa()
+	{
+		$uaid = Input::get("uaprendizaje");
+		$etapa = Input::get("etapa");
+		$UA = UnidadAprendizaje::find($uaid);
+		$UA->etapa = $etapa;
+		$UA->save();
+
+		return "Etapa actualizada";
 	}
 }
 
