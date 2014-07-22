@@ -189,7 +189,9 @@
 		<div style="clear:both;"></div>
 		<br />
 		<div id="totalcreditos">
-			Materias obligatorias: Materias optativas: Total de creditos:
+			<label> Materias obligatorias:</label>
+			<label> Materias optativas:</label><br>
+			<label> Total de creditos: </label>
 		</div>
 		<div id="imprimir"></div>
 		<div id="actualizaimprime">
