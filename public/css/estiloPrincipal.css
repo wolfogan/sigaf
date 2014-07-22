@@ -1292,6 +1292,7 @@ background: #EFCA0D;
 }
 #consul_grupo_ca
 {
+	
 	float: left;
 	
 	
@@ -1325,7 +1326,7 @@ background: #EFCA0D;
 }
 .consultax_ca
 {
-	
+		
 	font-size: 16px;
 	height: 50px;
 	margin: auto;
@@ -1333,7 +1334,7 @@ background: #EFCA0D;
 	text-align: center;
 	padding-left: 10px;
 	
-	width: 1150px;
+	width: 1200px;
 }
 .consultay_ca
 {

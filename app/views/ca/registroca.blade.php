@@ -15,6 +15,8 @@
 		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
 		<!---------------------------------------------------------------------------------------->
 
+		<!-- Creación de Ventanas Modales -->
+		<script src="../js/ventanamodal.js"></script>
 		
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
@@ -139,6 +141,7 @@
 
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
+		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
 		<h3>Agregar Periodo</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -169,7 +172,8 @@
 
 	<!-------------------------------------- MODAL CATALOGO GRUPOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoGrupo"> 
-		<h3>Agregar Etapa</h3>
+		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+		<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -288,14 +292,13 @@
 						<div class="controlesListasCa">
 							Grupos:
 							
-					            
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -348,12 +351,12 @@
 							
 					            
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -514,10 +517,6 @@
 		<footer></footer>
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
-	<script src="../js/css-filters-polyfill.js"></script>
-	<!--SCRIPT PARA VENTANA MODAL-->
-	</body>
-
-
-
+	<script src="../js/modalEffects.js"></script>
+	
 </html>

@@ -15,6 +15,10 @@
 		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
 		<!---------------------------------------------------------------------------------------->
 
+		<!-- Creación de Ventanas Modales -->
+		<script src="../js/ventanamodal.js"></script>
+		
+
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
 		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
@@ -87,7 +91,68 @@
 						            });
 						        </script>	
 
-					    
+					    <script type="text/javascript">
+						            $(document).ready(function () {
+						                var source = [
+						                    "Affogato",
+						                    "Americano",
+						                    "Bicerin",
+						                    "Breve",
+						                    "Café Bombón",
+						                    "Café au lait",
+						                    "Caffé Corretto",
+						                    "Café Crema",
+						                    "Caffé Latte",
+						                    "Caffé macchiato",
+						                    "Café mélange",
+						                    "Coffee milk",
+						                    "Cafe mocha",
+						                    "Cappuccino",
+						                    "Carajillo",
+						                    "Cortado",
+						                    "Cuban espresso",
+						                    "Espresso",
+						                    "Eiskaffee",
+						                    "The Flat White",
+						                    "Frappuccino",
+						                    "Galao",
+						                    "Greek frappé coffee",
+						                    "Iced Coffee﻿",
+						                    "Indian filter coffee",
+						                    "Instant coffee",
+						                    "Irish coffee",
+						                    "Liqueur coffee"
+								        ];
+
+						                // Create a jqxListBox
+						                $(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
+						                // Check several items.
+						                $(".listbox1").jqxListBox('checkIndex', 0);
+						                $(".listbox1").jqxListBox('checkIndex', 1);
+						                $(".listbox1").jqxListBox('checkIndex', 2);
+						                $(".listbox1").jqxListBox('checkIndex', 5);
+
+						                $(".listbox1").on('checkChange', function (event) {
+						                    var args = event.args;
+						                    if (args.checked) {
+						                        $("#Events").text("Checked: " + args.label);
+						                    }
+						                    else {
+						                        $("#Events").text("Unchecked: " + args.label);
+						                    }
+
+						                    var items = $(".listbox1").jqxListBox('getCheckedItems');
+						                    var checkedItems = "";
+						                    $.each(items, function (index) {
+						                        if (index < items.length - 1) {
+						                            checkedItems += this.label + ", ";
+						                        }
+						                        else checkedItems += this.label;
+						                    });
+						                    $("#CheckedItems").text(checkedItems);
+						                });
+						            });
+						        </script>
 		<!------------------------------------------------------------------------------------->
 	        
 
@@ -132,7 +197,7 @@
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+			<h3>Agregar Periodos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -163,7 +228,7 @@
 	<!-------------------------------------- MODAL CATALOGO GRUPOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoGrupo"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -190,6 +255,25 @@
 			</div>
 		</form>
 	</div>
+
+	<!-------------------------------------- MODAL PLAN DE ESTUDIOS -------------------------------------->
+	<div class="md-modal md-effect-11" id="btnAgregarUa"> 
+		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+			<h3>Unidades de aprendizaje</h3>
+			<div class="tblCatalogos">
+				
+					        <div class="listasCa">	
+					            <div class="listbox1" style="margin:auto;"></div>
+				        	</div>
+				        	 
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Agregar"/>
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+	<div class="md-overlay"></div>
 
 	<!------------------------------------------------------------------------------>
 
@@ -264,12 +348,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -300,12 +384,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -335,12 +419,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -370,12 +454,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -405,12 +489,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -440,12 +524,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -475,14 +559,13 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
-					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
@@ -510,12 +593,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -545,12 +628,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -586,6 +669,9 @@
 
 
 		<footer></footer>
+		<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
 	</body>
 
 
