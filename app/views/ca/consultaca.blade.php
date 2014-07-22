@@ -57,6 +57,10 @@
 </div>
 
 <section>
+	<div id="statusPlanEstudios"><label>Estatus de la carga</label></div>
+			<div id="checkSubdirector">
+				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label>
+			</div>
 
 	<div id="Consultas">
 		<fieldset id="consultaPlan" style="margin:auto;">
@@ -147,7 +151,7 @@
 
 	</div>
 
-		<div id="GridPlanEstudio" style="height:1500px;">
+		<div id="GridPlanEstudio" style="height:1500px; margin-top:80px">
 	<br>
 		
 			<table class="tabla_ca">

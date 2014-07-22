@@ -129,13 +129,15 @@ footer
 {
 	width: 100%;
 	height: 130px;
-	padding-top: 10px;
+
+	
 }
 #consultaPlan
 {
 	height: 120px;
 	margin-top:0px;
 	margin-left:80px;
+	margin-bottom:100px; 
 	width: 1140px;
 }
 #consultax
@@ -148,10 +150,15 @@ footer
 }
 #consultaboton
 {
-	margin-left:1080px;
-	margin-top: -115px;
-	padding-right: 10px;
-	width: 110px;
+
+	
+	margin-left: 1100px;
+	margin-top: -210px;
+	height: 130px;
+	width: 115px;
+
+
+
 }
 #consultaboton_limpiar
 {
@@ -699,7 +706,7 @@ background: #EFCA0D;
 	padding: 7px;
 	padding-top: 12px;
 	padding-bottom: 0px;
-	width: 150px;
+	width: 170px;
 	
 }
 #checkSubdirector
@@ -1138,8 +1145,8 @@ background: #EFCA0D;
  }
 #periodoCa
 {
-	
-	height: 80px;
+
+	height: 100px;
 	margin-top: -50px;
 	margin-left: 770px;
 	width: 530px;
@@ -1147,6 +1154,7 @@ background: #EFCA0D;
 .controlesListasCa
 {
 	
+
 	float: left;
 	height: 50px;
 	text-align: center;
@@ -1222,6 +1230,7 @@ background: #EFCA0D;
 
 }
 
+
 /*---------------------------- CARGA 2 -----------------------------------*/
 .carga_listas
 {
@@ -1239,6 +1248,7 @@ background: #EFCA0D;
 }
 .controlesListasCa_2
 {
+
 
 	width: 405px;
 	height: 50px;
