@@ -66,6 +66,7 @@
 			<div id="checkSubdirector">
 				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label>
 			</div>
+
 			<div id="Consultas">
 				<fieldset id="consultaPlan">
 					<legend>Consultar por:</legend>
@@ -149,6 +150,7 @@
 						</div>
 					</div>
 				</fieldset>
+				
 				<div id="consultaboton">
 						<input class="estilo_button2" type="button" value="Limpiar">
 						<div id="consultaboton_limpiar"><input class="estilo_button2" type="button" value="Buscar" id="Buscar"></div>

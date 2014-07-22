@@ -15,6 +15,10 @@
 		<link rel="stylesheet" href="../css/prettify.css" type="text/css">
 		<!---------------------------------------------------------------------------------------->
 
+		<!-- Creación de Ventanas Modales -->
+		<script src="../js/ventanamodal.js"></script>
+		
+
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
 		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
@@ -27,34 +31,34 @@
 								<script type="text/javascript">
 						            $(document).ready(function () {
 						                var source = [
-						                    "Affogato",
-						                    "Americano",
-						                    "Bicerin",
-						                    "Breve",
-						                    "Café Bombón",
-						                    "Café au lait",
-						                    "Caffé Corretto",
-						                    "Café Crema",
-						                    "Caffé Latte",
-						                    "Caffé macchiato",
-						                    "Café mélange",
-						                    "Coffee milk",
-						                    "Cafe mocha",
-						                    "Cappuccino",
-						                    "Carajillo",
-						                    "Cortado",
-						                    "Cuban espresso",
-						                    "Espresso",
-						                    "Eiskaffee",
-						                    "The Flat White",
-						                    "Frappuccino",
-						                    "Galao",
-						                    "Greek frappé coffee",
-						                    "Iced Coffee﻿",
-						                    "Indian filter coffee",
-						                    "Instant coffee",
-						                    "Irish coffee",
-						                    "Liqueur coffee"
+						                    "1234 DESARROLLO SUSTENTABLE",
+						                    "1898 INNOVACION TECNOLOGICA",
+						                    "1290 PRINCIPIOS DE PROGRAMACION",
+						                    "3290 BASE DE DATOS I",
+						                    "1298 MATEMATICAS I",
+						                    "3442 FISICA I",
+						                    "1456 DESARROLLO HUMANO",
+						                    "1238 OPTATIVA I",
+						                    "2983 OPTATIVA II",
+						                    "2903 FISICA II",
+						                    "2898 MATEMATICAS II",
+						                    "3813 QUIMICA II",
+						                    "3221 OPTATIVA III",
+						                    "1242 ARQUITECTURA DE LA INFORMACION",
+						                    "1903 COMUNICACION Y DATOS",
+						                    "1837 ESTRUCTURA DE DATOS",
+						                    "1283 BASE DE DATOS II",
+						                    "1238 BASE DE DATOS III",
+						                    "1879 MATEMATICAS III",
+						                    "1283 FISICA III",
+						                    "2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
+						                    "1937 PROGRAMACION ORIENTADA A OBJETOS",
+						                    "1986 COMPILADORES I",
+						                    "2387 COMPILADORES II",
+						                    "2977 SIMULACION",
+						                    "2890 REDES I",
+						                    "1245 REDES II",
+						                    "9837 OPTATIVA IV"
 								        ];
 
 						                // Create a jqxListBox
@@ -87,7 +91,68 @@
 						            });
 						        </script>	
 
-					    
+					    <script type="text/javascript">
+						            $(document).ready(function () {
+						                var source = [
+						                    "1234 DESARROLLO SUSTENTABLE",
+						                    "1898 INNOVACION TECNOLOGICA",
+						                    "1290 PRINCIPIOS DE PROGRAMACION",
+						                    "3290 BASE DE DATOS I",
+						                    "1298 MATEMATICAS I",
+						                    "3442 FISICA I",
+						                    "1456 DESARROLLO HUMANO",
+						                    "1238 OPTATIVA I",
+						                    "2983 OPTATIVA II",
+						                    "2903 FISICA II",
+						                    "2898 MATEMATICAS II",
+						                    "3813 QUIMICA II",
+						                    "3221 OPTATIVA III",
+						                    "1242 ARQUITECTURA DE LA INFORMACION",
+						                    "1903 COMUNICACION Y DATOS",
+						                    "1837 ESTRUCTURA DE DATOS",
+						                    "1283 BASE DE DATOS II",
+						                    "1238 BASE DE DATOS III",
+						                    "1879 MATEMATICAS III",
+						                    "1283 FISICA III",
+						                    "2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
+						                    "1937 PROGRAMACION ORIENTADA A OBJETOS",
+						                    "1986 COMPILADORES I",
+						                    "2387 COMPILADORES II",
+						                    "2977 SIMULACION",
+						                    "2890 REDES I",
+						                    "1245 REDES II",
+						                    "9837 OPTATIVA IV"
+								        ];
+
+						                // Create a jqxListBox
+						                $(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
+						                // Check several items.
+						                $(".listbox1").jqxListBox('checkIndex', 0);
+						                $(".listbox1").jqxListBox('checkIndex', 1);
+						                $(".listbox1").jqxListBox('checkIndex', 2);
+						                $(".listbox1").jqxListBox('checkIndex', 5);
+
+						                $(".listbox1").on('checkChange', function (event) {
+						                    var args = event.args;
+						                    if (args.checked) {
+						                        $("#Events").text("Checked: " + args.label);
+						                    }
+						                    else {
+						                        $("#Events").text("Unchecked: " + args.label);
+						                    }
+
+						                    var items = $(".listbox1").jqxListBox('getCheckedItems');
+						                    var checkedItems = "";
+						                    $.each(items, function (index) {
+						                        if (index < items.length - 1) {
+						                            checkedItems += this.label + ", ";
+						                        }
+						                        else checkedItems += this.label;
+						                    });
+						                    $("#CheckedItems").text(checkedItems);
+						                });
+						            });
+						        </script>
 		<!------------------------------------------------------------------------------------->
 	        
 
@@ -132,7 +197,7 @@
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+			<h3>Agregar Períodos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -151,6 +216,10 @@
 						<td>Fecha fin:</td>
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtFechaFinPeriodo" name='txtFechaFinPeriodo' size=1 /></td>
 					</tr>
+					<tr>
+						<td>Descripción:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtDescripcionPeriodo" size=1 /></td>
+					</tr>
 				</table>
 			</div>
 			<div class="CatBotones">
@@ -163,7 +232,7 @@
 	<!-------------------------------------- MODAL CATALOGO GRUPOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoGrupo"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
+			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -176,12 +245,17 @@
 					</tr>
 					<tr>
 						<td>Semestre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtSemestreGpo" name='txtSemestreGpo' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtSemestreGpo" name='txtSemestreGpo' size=1 /></td>
 					</tr>
 					<tr>
 						<td>Turno:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtTurnoGpo" name='txtTurnoGpo' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTurnoGpo" name='txtTurnoGpo' size=1 /></td>
 					</tr>
+					<tr>
+						<td>Período:</td>
+						<td><label><div class="periodo_nombre">Periodo tal</div></label></td>
+					</tr>
+
 				</table>
 			</div>
 			<div class="CatBotones">
@@ -190,6 +264,25 @@
 			</div>
 		</form>
 	</div>
+
+	<!-------------------------------------- MODAL PLAN DE ESTUDIOS -------------------------------------->
+	<div class="md-modal md-effect-11" id="btnAgregarUa"> 
+		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+			<h3>Unidades de aprendizaje</h3>
+			<div class="tblCatalogos">
+				
+					        <div class="listasCa">	
+					            <div class="listbox1" style="margin:auto;"></div>
+				        	</div>
+				        	 
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Agregar"/>
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+	<div class="md-overlay"></div>
 
 	<!------------------------------------------------------------------------------>
 
@@ -241,6 +334,8 @@
 					<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
 
+					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga completada</label>
+
 				</div>
 
 			<!----------------------- LISTA PRIMER SEMESTRE ------------------------>
@@ -264,12 +359,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -300,12 +395,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -335,12 +430,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -370,12 +465,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -405,12 +500,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -440,12 +535,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -475,14 +570,13 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
-					             
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
@@ -510,12 +604,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -545,12 +639,12 @@
 						<div class="controlesListasCa_2">
 							Grupos:
 					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="cheese" selected>Cheese</option>
-						                <option value="tomatoes" selected>Tomatoes</option>
-						                <option value="mozarella" selected>Mozzarella</option>
-						                <option value="mushrooms" selected>Mushrooms</option>
-						                <option value="pepperoni" selected>Pepperoni</option>
-						                <option value="onions" selected>Onions</option>
+						                <option value="231" selected>231</option>
+						                <option value="232" selected>232</option>
+						                <option value="241" selected>241</option>
+						                <option value="242" selected>242</option>
+						                <option value="251" selected>251</option>
+						                <option value="252" selected>252</option>
 					                </select>
 					             
 
@@ -586,6 +680,9 @@
 
 
 		<footer></footer>
+		<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
 	</body>
 
 
