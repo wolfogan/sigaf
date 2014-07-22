@@ -387,6 +387,7 @@ class PlanEstudioController extends BaseController
 					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 					->where('uaprendizaje.plan','=',$noplan)
 					->where('uaprendizaje.etapa','=',$etapa)
+					->where('uaprendizaje.caracter','LIKE',"%$caracter%")
 					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
 					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
 					->whereIn('p_ua.programaedu',array($programaedu,6)) // Carrera + Tronco Común

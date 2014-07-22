@@ -1,0 +1,13 @@
+Pendientes:
+
+- Arreglar coordinacion
+- Mensajito de cambio de la etapa
+- Gif de carga
+- Busqueda individual de unidad de aprendizaje
+- Actualizacion arreglar las claves seriadas
+- Arreglar Actualizacion de creditos. Cuando cierren ventana
+
+REGISTRO PLAN DE ESTUDIO:
+
+- VALIDACION DE coordinacion
+
