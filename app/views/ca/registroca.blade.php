@@ -139,7 +139,7 @@
 
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
-		<h3>Agregar Etapa</h3>
+		<h3>Agregar Periodo</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
