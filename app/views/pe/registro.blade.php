@@ -858,7 +858,7 @@
 		});
 		// SUMAR CREDITOS DE HORAS CLASE
 		$("#hc,#hl,#ht,#hcl,#he,#hpc").on("focusout",function(){
-			var hc = parseInt($("#hc").val());
+			var hc = parseInt($("#hc").val())*2;
 			var hl = parseInt($("#hl").val());
 			var ht = parseInt($("#ht").val());
 			var hcl = parseInt($("#hcl").val());

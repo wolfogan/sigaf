@@ -193,8 +193,6 @@
 		</div>
 		<div id="imprimir"></div>
 		<div id="actualizaimprime">
-			<input style="font-size:18px" class="estilo_button2" type="button" value="Actualizar">
-			&nbsp;&nbsp;
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
@@ -207,7 +205,7 @@
 					<tr>
 						<td>Carrera:</td>
 						<td>
-							<label>Informática</label>
+							<label id="carrera_update">Informática</label>
 						</td>
 					</tr>
 					<tr>
@@ -284,8 +282,7 @@
 						<td>Cred.:</td>
 						<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
 					</tr>
-					
-					<tr>					
+					<tr>
 						<td>Coord.:</td>
 						<td>
 							<input type="text" id="coordinacion_update" name="coord" style="width:120px" size="1" list="datalist_coord">
@@ -296,10 +293,7 @@
 						</table>
 				</div>
 
-				<input type="button" style="font-size:21px" value="Guardar" class="estilo_button2">
-
-				<input type="submit" style="font-size:21px" value="Actualizar" class="estilo_button2">
-
+				<input type="submit" style="font-size:21px" value="Guardar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</form>
 		</div>
@@ -339,7 +333,7 @@
 					{
 						options += "<option value="+programas[i].programaedu+" >"+programas[i].descripcion+"</option>";
 					}
-					$("#carrera,#carrera_update").html(options);
+					$("#carrera").html(options);
 					// Habilitar opciones de consulta
 					$("#checkTroncoComun").show();
 					$("#etapa").val("0").prop("disabled",false);
@@ -374,6 +368,8 @@
 				$("#checkTroncoComun").show();
 				$("#etapa").val("0").prop("disabled",false);
 				$("#tipo").val("0").prop("disabled",false);
+				etapa = "";
+				tipo = "";
 			}
 			else
 			{
@@ -420,7 +416,7 @@
 			$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 			var troncoComun = $("#troncoComun").prop("checked"); // Checar true o false del check de Tronco Común
 			// Verificar datos depuración:
-			alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
+			// alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
 			//	SI EL FILTRO CONTEMPLA TODAS LAS ETAPAS
 			if(etapa=="")
 			{
@@ -429,7 +425,7 @@
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
 					{
-						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><strong>' + uas[i].descripcionmat + '</strong><br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 						bloque = $('<li>' +
 										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 											descripcionUA +
@@ -443,7 +439,7 @@
 						var descripcionUA = "";
 						for (var i = 0; i < uas.length; i++) 
 						{
-							descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+							descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><strong>' + uas[i].descripcionmat + '</strong><br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 							bloque = $('<li>' +
 											'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 												descripcionUA +
@@ -457,7 +453,7 @@
 							var descripcionUA = "";
 							for (var i = 0; i < uas.length; i++) 
 							{
-								descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+								descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><strong>' + uas[i].descripcionmat + '</strong><br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 								bloque = $('<li>' +
 												'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 													descripcionUA +
@@ -479,7 +475,7 @@
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
 					{
-						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br />' + uas[i].descripcionmat + '<br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
+						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><strong>' + uas[i].descripcionmat + '</strong><br />' +'C' + uas[i].HC + ' ' + 'L' + uas[i].HL + ' ' + 'CR' + uas[i].creditos;
 						bloque = $('<li>' +
 										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
 											descripcionUA +
@@ -498,7 +494,7 @@
 	</script>
 
 	<script type="text/javascript">
-		
+		var divUA;
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		
 		function saveOrder() {
@@ -509,14 +505,16 @@
 			var etapa = $(this).parents("ul").attr("etapa");
 			//alert("UAID: "+uaid +"Etapa: "+etapa);
 			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{uaprendizaje:uaid,etapa:etapa},function(ua){
-				alert(ua);
+				//alert(ua);
 			});
 		}
 
 		function actualizarUA()
 		{
+			
 			dataUA = $("#formUpdate").serialize();
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
+				$(divUA).find("strong").text($("#descripcion_update").val());
 				alert("Actualizacion Completada");
 			})
 			.fail(function(){alert("Fallo la actualizacion");});
@@ -526,12 +524,13 @@
 		{
 			$("ul li div").on("click",function(){
 				//alert("Aqui paso algo");
+				divUA = $(this);
 				var uaid = $(this).find("span").text();
 				//alert(uaid);
 				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:uaid},function(ua){
 					//alert("consulto");
 					$("#titulo_update").html(ua.descripcionmat);
-					$("#carrera_update").val($("#carrera").val());
+					$("#carrera_update").text($("#carrera option:selected").html());
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(ua.etapa);
