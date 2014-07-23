@@ -1,11 +1,12 @@
 Pendientes:
 
-- Arreglar coordinacion
+- BUG de coordinacion (Si no se cambia guarda 0 por defecto)
 - Mensajito de cambio de la etapa
 - Gif de carga
 - Busqueda individual de unidad de aprendizaje
-- Actualizacion arreglar las claves seriadas
+- Modal Actualizacion arreglar las claves seriadas
 - Arreglar Actualizacion de creditos. Cuando cierren ventana
+- Verificar coordinacion de la ventana modal (validacion)
 
 REGISTRO PLAN DE ESTUDIO:
 

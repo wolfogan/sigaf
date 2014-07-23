@@ -260,7 +260,7 @@
 						<td>Clave:</td>
 						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="clave2F" id="claveSeriacion_update" size="25"></td>
 						<td>Materia:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25"></td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25" disabled="disabled"></td>
 					</tr>
 					<tr>
 						<td size="10">HC:</td>
@@ -596,7 +596,7 @@
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(ua.etapa);
-					$("#tipo_update").val(ua.tipo);
+					$("#tipo_update").val(ua.caracter);
 					$("#semestre_update").val(ua.semestre);
 					$("#seriacion_update").val(ua.reqseriacion);
 					$("#claveSeriacion_update").val(ua.claveD);
@@ -609,6 +609,8 @@
 					$("#hcl_update").val(ua.hcl);
 					$("#creditos_update").val(ua.creditos);
 					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
+					$("#coord").val(ua.coordinaciona);
+
 				})
 				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
 			});
