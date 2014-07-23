@@ -289,9 +289,8 @@
 					<tr>
 						<td>Coord.:</td>
 						<td>
-							<input type="text" id="coordinacion_update" name="coord" style="width:120px" size="1" list="datalist_coord">
-							<datalist id="datalist_coord">
-							</datalist>
+							<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord" />
+							<input type="hidden" name="coord" id="coord" />
 						</td>
 					</tr>
 						</table>
@@ -412,6 +411,13 @@
 				coordinacion = "";
 			else
 				coordinacion = $("#datalist_coord option[value='"+$(this).val()+"']").attr("codigo");
+			//alert(coordinacion);
+		});
+		$("#coordinacion_update").on("input",function(){
+			if($(this).val()==""||$(this).val().length < 6)
+				$("#coord").val(22);
+			else
+				$("#coord").val($("#datalist_coord option[value='"+$(this).val()+"']").attr("codigo"));
 			//alert(coordinacion);
 		});
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
@@ -571,6 +577,7 @@
 				$(divUA).find("span").eq(3).text("L" + $("#hl_update").val());
 				$(divUA).find("span").eq(4).text("CR" + $("#creditos_update").val());
 				alert("Actualizacion Completada");
+				$(".md-close").click();
 			})
 			.fail(function(){alert("Fallo la actualizacion");});
 		}
@@ -601,7 +608,7 @@
 					$("#hpc_update").val(ua.hpc);
 					$("#hcl_update").val(ua.hcl);
 					$("#creditos_update").val(ua.creditos);
-					$("#coordinacion_update").val(ua.coordinaciona);
+					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
 				})
 				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
 			});
