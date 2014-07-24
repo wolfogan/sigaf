@@ -6,9 +6,9 @@ PENDIENTES POR ARREGLAR CONSULTA:
 - Gif de carga
 - Busqueda individual de unidad de aprendizaje
 - Modal Actualizacion arreglar las claves seriadas
-- Arreglar Actualizacion de creditos. Cuando cierren ventana
 - Verificar coordinacion de la ventana modal (validacion)
 - Cuando actulizen el tipo si esta activado el filtro desaparecerlos
+- Quitar de etapa cuando hagan una actualizacion en ventana modal
 
 PENDIENTES POR ARREGLAR EN REGISTRO:
 
@@ -27,3 +27,4 @@ PENDIENTES ARREGLADOS:
 - BUG de coordinacion (Si no se cambia guarda 0 por defecto).
 - Ya muestra a que tipo de caracter pertenece la ua.
 - Suma de creditos cuando actualiza la ventana modal.
+- Arreglar Actualizacion de creditos. Cuando cierren ventana
