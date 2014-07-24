@@ -423,9 +423,9 @@
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
 		$("#Buscar").on("click",function(){
 			// Variables total de los creditos
-			var creditosObligatorias = 0;
-			var creditosOptativas = 0;
-			var totalCreditos = 0;
+			creditosObligatorias = 0;
+			creditosOptativas = 0;
+			totalCreditos = 0;
 			// Limpiar etiquetas de creditos
 			$("#creditos_obligatorias").text(creditosObligatorias);
 			$("#creditos_optativas").text(creditosOptativas);
@@ -499,6 +499,7 @@
 							$("#creditos_obligatorias").text(creditosObligatorias);
 							$("#creditos_optativas").text(creditosOptativas);
 							$("#creditos_total").text(totalCreditos);
+							
 						});
 					});
 				});
@@ -549,7 +550,10 @@
 	<script type="text/javascript">
 		var divUA;
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
-		
+		// Variables total de los creditos
+		var creditosObligatorias = 0;
+		var creditosOptativas = 0;
+		var totalCreditos = 0;
 		function saveOrder() {
 			//var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
 			//$("input[name=list1SortOrder]").val(data.join("|"));
@@ -561,7 +565,22 @@
 				//alert(ua);
 			});
 		}
-
+		function sumarCreditos()
+		{
+			// Sumar creditos para mostrar en la actualización
+			if($("#tipo_update").val()==1)
+			{
+				creditosObligatorias += parseInt($("#creditos_update").val());
+				$("#creditos_obligatorias").text(creditosObligatorias);
+			}
+			if($("#tipo_update").val()==2)
+			{
+				creditosOptativas += parseInt($("#creditos_update").val());
+				$("#creditos_optativas").text(creditosOptativas);
+			}
+			totalCreditos = creditosObligatorias + creditosOptativas;
+			$("#creditos_total").text(totalCreditos);
+		}
 		function actualizarUA()
 		{
 			// Orden de los span:
@@ -610,7 +629,16 @@
 					$("#creditos_update").val(ua.creditos);
 					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
 					$("#coord").val(ua.coordinaciona);
-
+					// Disminuir creditos para mostrar cuando actualicen
+					if(ua.caracter==1)
+						creditosObligatorias -= ua.creditos;
+					if(ua.caracter==2)
+						creditosOptativas -= ua.creditos;
+					totalCreditos = creditosObligatorias + creditosOptativas;
+					// Mostrar informacion de los creditos
+					$("#creditos_obligatorias").text(creditosObligatorias);
+					$("#creditos_optativas").text(creditosOptativas);
+					$("#creditos_total").text(totalCreditos);
 				})
 				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
 			});
@@ -625,15 +653,17 @@
 					close = modal.querySelector( '.md-close' );
 
 				function removeModal( hasPerspective ) {
-					classie.remove( modal, 'md-show' );
 
+					classie.remove( modal, 'md-show' );
 					if( hasPerspective ) {
 						classie.remove( document.documentElement, 'md-perspective' );
 					}
 				}
 
 				function removeModalHandler() {
-					removeModal( classie.has( el, 'md-setperspective' ) ); 
+					removeModal( classie.has( el, 'md-setperspective' ) );
+					// Reestablecer los creditos
+					sumarCreditos(); 
 				}
 
 				el.addEventListener( 'click', function( ev ) {

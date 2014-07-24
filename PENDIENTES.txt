@@ -1,6 +1,7 @@
-Pendientes:
+PENDIENTES POR ARREGLAR CONSULTA:
 
-- BUG de coordinacion (Si no se cambia guarda 0 por defecto)
+
+
 - Mensajito de cambio de la etapa
 - Gif de carga
 - Busqueda individual de unidad de aprendizaje
@@ -8,7 +9,20 @@ Pendientes:
 - Arreglar Actualizacion de creditos. Cuando cierren ventana
 - Verificar coordinacion de la ventana modal (validacion)
 
-REGISTRO PLAN DE ESTUDIO:
+PENDIENTES POR ARREGLAR EN REGISTRO:
 
 - VALIDACION DE coordinacion
 
+
+
+
+
+
+
+
+PENDIENTES ARREGLADOS:
+
+- Arreglar Coordinacion de la ventana modal.
+- BUG de coordinacion (Si no se cambia guarda 0 por defecto).
+- Ya muestra a que tipo de caracter pertenece la ua.
+- Suma de creditos cuando actualiza la ventana modal.
