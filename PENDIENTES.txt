@@ -9,7 +9,8 @@ PENDIENTES POR ARREGLAR CONSULTA:
 - Verificar coordinacion de la ventana modal (validacion)
 - Cuando actulizen el tipo si esta activado el filtro desaparecerlos
 - Quitar de etapa cuando hagan una actualizacion en ventana modal
-- Si es tronco comun no pueden actualizar etapa
+- Si es tronco comun no pueden actualizar etapa segun sea el caso
+- Poner nombre en la ventana modal de la carrera y tronco comun
 
 PENDIENTES POR ARREGLAR EN REGISTRO:
 
