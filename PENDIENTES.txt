@@ -8,6 +8,7 @@ PENDIENTES POR ARREGLAR CONSULTA:
 - Modal Actualizacion arreglar las claves seriadas
 - Arreglar Actualizacion de creditos. Cuando cierren ventana
 - Verificar coordinacion de la ventana modal (validacion)
+- Cuando actulizen el tipo si esta activado el filtro desaparecerlos
 
 PENDIENTES POR ARREGLAR EN REGISTRO:
 

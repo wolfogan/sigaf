@@ -436,62 +436,34 @@
 			// Verificar datos depuración:
 			// alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
 			//	SI EL FILTRO CONTEMPLA TODAS LAS ETAPAS
-			if(etapa=="")
+			function creacionBloques(uas,lista)
 			{
-				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
-					var bloque ="";
+				var bloque ="";
 					var descripcionUA = "";
 					for (var i = 0; i < uas.length; i++) 
 					{
-						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br /><span>' +'C' + uas[i].HC + '</span> <span>' + 'L' + uas[i].HL + '</span> <span>' + 'CR' + uas[i].creditos + '</span>';
+						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> L<span>' + uas[i].HL + '</span> CR<span>' + uas[i].creditos + '</span>';
 						bloque = $('<li>' +
-										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
+										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
 											descripcionUA +
 										'</div>'+
 									'</li>').hide().fadeIn("slow");
-						$("#list1").append(bloque);
+						$(lista).append(bloque);
 						bloque = "";
 						if(uas[i].caracter=="OBLIGATORIA")
 							creditosObligatorias += uas[i].creditos;
 						if(uas[i].caracter=="OPTATIVA")
 							creditosOptativas += uas[i].creditos;
 					}
+			}
+			if(etapa=="")
+			{
+				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
+					creacionBloques(uas,$("#list1"));
 					$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:2,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:false},function(uas){
-						var bloque ="";
-						var descripcionUA = "";
-						for (var i = 0; i < uas.length; i++) 
-						{
-							descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br /><span>' +'C' + uas[i].HC + '</span> <span>' + 'L' + uas[i].HL + '</span> <span>' + 'CR' + uas[i].creditos + '</span>';
-							bloque = $('<li>' +
-											'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
-												descripcionUA +
-											'</div>'+
-										'</li>').hide().fadeIn("slow");
-							$("#list2").append(bloque);
-							bloque = "";
-							if(uas[i].caracter=="OBLIGATORIA")
-								creditosObligatorias += uas[i].creditos;
-							if(uas[i].caracter=="OPTATIVA")
-								creditosOptativas += uas[i].creditos;
-						}
+						creacionBloques(uas,$("#list2"));
 						$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:3,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:false},function(uas){
-							var bloque ="";
-							var descripcionUA = "";
-							for (var i = 0; i < uas.length; i++) 
-							{
-								descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br /><span>' +'C' + uas[i].HC + '</span> <span>' + 'L' + uas[i].HL + '</span> <span>' + 'CR' + uas[i].creditos + '</span>';
-								bloque = $('<li>' +
-												'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
-													descripcionUA +
-												'</div>'+
-											'</li>').hide().fadeIn("slow");
-								$("#list3").append(bloque);
-								bloque = "";
-								if(uas[i].caracter=="OBLIGATORIA")
-									creditosObligatorias += uas[i].creditos;
-								if(uas[i].caracter=="OPTATIVA")
-									creditosOptativas += uas[i].creditos;
-							}
+							creacionBloques(uas,$("#list3"));
 							activarModal();
 							asignarEventoDatos();
 							totalCreditos = creditosObligatorias + creditosOptativas;
@@ -507,23 +479,7 @@
 			else // Si solo es una etapa
 			{
 				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:etapa,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
-					var bloque ="";
-					var descripcionUA = "";
-					for (var i = 0; i < uas.length; i++) 
-					{
-						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br /><span>' +'C' + uas[i].HC + '</span> <span>' + 'L' + uas[i].HL + '</span> <span>' + 'CR' + uas[i].creditos + '</span>';
-						bloque = $('<li>' +
-										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11">' +
-											descripcionUA +
-										'</div>'+
-									'</li>').hide().fadeIn("slow");
-						$("#list"+etapa).append(bloque); "ESTO ES IMPORTANTE NO PUEDEN MODIFICAR EL VAL DE LAS ETAPAS SI NO MARCARA ERROR"
-						bloque = "";
-						if(uas[i].caracter=="OBLIGATORIA")
-							creditosObligatorias += uas[i].creditos;
-						if(uas[i].caracter=="OPTATIVA")
-							creditosOptativas += uas[i].creditos;
-					}
+					creacionBloques(uas,$("#list"+etapa))
 					activarModal();
 					asignarEventoDatos();
 					// Mostrar informacion de los creditos
@@ -565,20 +521,23 @@
 				//alert(ua);
 			});
 		}
-		function sumarCreditos()
+		function actualizarCreditos()
 		{
-			// Sumar creditos para mostrar en la actualización
-			if($("#tipo_update").val()==1)
-			{
-				creditosObligatorias += parseInt($("#creditos_update").val());
-				$("#creditos_obligatorias").text(creditosObligatorias);
-			}
-			if($("#tipo_update").val()==2)
-			{
-				creditosOptativas += parseInt($("#creditos_update").val());
-				$("#creditos_optativas").text(creditosOptativas);
-			}
+			creditosObligatorias = 0;
+			creditosOptativas = 0;
+			totalCreditos = 0;
+			$("ul li:not(:first) div").each(function(index,element){
+					if($(this).attr("tipo")=="OBLIGATORIA")
+						creditosObligatorias += parseInt($(this).find("span").eq(4).text());
+					if($(this).attr("tipo")=="OPTATIVA")
+						creditosOptativas += parseInt($(this).find("span").eq(4).text());
+			});
 			totalCreditos = creditosObligatorias + creditosOptativas;
+			// alert(creditosObligatorias);
+			// alert(creditosOptativas);
+			// Mostrar informacion de los creditos
+			$("#creditos_obligatorias").text(creditosObligatorias);
+			$("#creditos_optativas").text(creditosOptativas);
 			$("#creditos_total").text(totalCreditos);
 		}
 		function actualizarUA()
@@ -592,10 +551,18 @@
 			dataUA = $("#formUpdate").serialize();
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
 				$(divUA).find("span").eq(1).text($("#descripcion_update").val());
-				$(divUA).find("span").eq(2).text("C" + $("#hc_update").val());
-				$(divUA).find("span").eq(3).text("L" + $("#hl_update").val());
-				$(divUA).find("span").eq(4).text("CR" + $("#creditos_update").val());
+				$(divUA).find("span").eq(2).text($("#hc_update").val());
+				$(divUA).find("span").eq(3).text($("#hl_update").val());
+				$(divUA).find("span").eq(4).text($("#creditos_update").val());
+				// Cambiar el tipo en el DIV internamente como atributo
+				if($("#tipo_update").val()==1)
+					$(divUA).attr("tipo","OBLIGATORIA");
+				if($("#tipo_update").val()==2)
+					$(divUA).attr("tipo","OPTATIVA");
+				// Actualizar creditos;
+				actualizarCreditos();
 				alert("Actualizacion Completada");
+
 				$(".md-close").click();
 			})
 			.fail(function(){alert("Fallo la actualizacion");});
@@ -629,16 +596,7 @@
 					$("#creditos_update").val(ua.creditos);
 					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
 					$("#coord").val(ua.coordinaciona);
-					// Disminuir creditos para mostrar cuando actualicen
-					if(ua.caracter==1)
-						creditosObligatorias -= ua.creditos;
-					if(ua.caracter==2)
-						creditosOptativas -= ua.creditos;
-					totalCreditos = creditosObligatorias + creditosOptativas;
-					// Mostrar informacion de los creditos
-					$("#creditos_obligatorias").text(creditosObligatorias);
-					$("#creditos_optativas").text(creditosOptativas);
-					$("#creditos_total").text(totalCreditos);
+					
 				})
 				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
 			});
@@ -653,17 +611,15 @@
 					close = modal.querySelector( '.md-close' );
 
 				function removeModal( hasPerspective ) {
-
 					classie.remove( modal, 'md-show' );
 					if( hasPerspective ) {
 						classie.remove( document.documentElement, 'md-perspective' );
 					}
+					
 				}
-
 				function removeModalHandler() {
 					removeModal( classie.has( el, 'md-setperspective' ) );
-					// Reestablecer los creditos
-					sumarCreditos(); 
+					
 				}
 
 				el.addEventListener( 'click', function( ev ) {
@@ -683,6 +639,7 @@
 				close.addEventListener( 'click', function( ev ) {
 					ev.stopPropagation();
 					removeModalHandler();
+					
 					$("#formUpdate :text").val("");
 					$("#formUpdate :checkbox").val("");
 					$("#formUpdate input[type=number]").val(0);
