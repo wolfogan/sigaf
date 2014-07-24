@@ -2,7 +2,7 @@
 
 class PlanEstudio extends Eloquent
 {
-	protected $table = "planestudiodesc";
+	protected $table = "planestudio";
 	protected $primaryKey = "plan";
 	public $timestamps = false;
 

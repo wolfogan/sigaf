@@ -26,6 +26,7 @@ Route::controller('login','UserLoginController');
 
 
 Route::controller('planestudio','PlanEstudioController');
+Route::controller('cargaacademica','CargaAcademicaController');
 
 Route::get('pruebas',function(){
 

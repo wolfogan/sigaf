@@ -53,10 +53,10 @@
 			<div class="mask">
 				<h2>Carga academica</h2>
 				<p>
-					<a href="<?=URL::to('planestudio/registroca');?>" style="color:#004000">Registrar carga académica</a>
+					<a href="<?=URL::to('cargaacademica/registro');?>" style="color:#004000">Registrar carga académica</a>
 				</p>
 				<p>
-					 <a href="<?=URL::to('planestudio/consultaca');?>" style="color:#004000">consultar, eliminar carga academica</a>
+					 <a href="<?=URL::to('cargaacademica/consulta');?>" style="color:#004000">consultar, eliminar carga academica</a>
 				</p>
 				<a href="#"></a>
 			</div>

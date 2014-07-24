@@ -9,11 +9,13 @@ PENDIENTES POR ARREGLAR CONSULTA:
 - Verificar coordinacion de la ventana modal (validacion)
 - Cuando actulizen el tipo si esta activado el filtro desaparecerlos
 - Quitar de etapa cuando hagan una actualizacion en ventana modal
+- Si es tronco comun no pueden actualizar etapa
 
 PENDIENTES POR ARREGLAR EN REGISTRO:
 
 - VALIDACION DE coordinacion
-
+- ARREGLAR QUE AÑADA A CLAVE SERIACION LA MATERIA QUE DIERON DE ALTA SIN RECARGAR PAGINA
+OBLIGATORIA - 270 QUE DIO DE ALTA EN ESE INSTANTE.
 
 
 

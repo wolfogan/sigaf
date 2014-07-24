@@ -130,18 +130,7 @@ class PlanEstudioController extends BaseController
 	{
 		return View::make('pe.plantilla');
 	}
-	public function getRegistroca()
-	{
-		return View::make('ca.registroca');
-	}
-	public function getConsultaca()
-	{
-		return View::make('ca.consultaca');
-	}
-	public function getRegistroca2()
-	{
-		return View::make('ca.registroca2');
-	}
+	
 
 
 
@@ -163,7 +152,7 @@ class PlanEstudioController extends BaseController
 		$carreras = explode(',',Input::get('alta_plan_carreras'));
 		foreach($carreras as $carrera)
 		{
-			DB::table('planestudio') -> insert (array('plan' => $noplan,'programaedu'=>$carrera));
+			DB::table('plan_programa') -> insert (array('plan' => $noplan,'programaedu'=>$carrera));
 		}
 		
 		return Redirect::back();
@@ -333,10 +322,10 @@ class PlanEstudioController extends BaseController
 	public function postObtenerprogramas()
 	{
 		$noplan = Input::get('noplan');
-		$programas = DB::table('planestudio')
-						->join('programaedu','planestudio.programaedu','=','programaedu.programaedu')
+		$programas = DB::table('plan_programa')
+						->join('programaedu','plan_programa.programaedu','=','programaedu.programaedu')
 						->select('programaedu.programaedu','programaedu.descripcion')
-						->where('planestudio.plan','=',$noplan)
+						->where('plan_programa.plan','=',$noplan)
 						->get();
 		return Response::json($programas);
 	}

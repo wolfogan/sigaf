@@ -434,7 +434,7 @@
 			$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 			var troncoComun = $("#troncoComun").prop("checked"); // Checar true o false del check de Tronco Común
 			// Verificar datos depuración:
-			// alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
+			alert("Etapa: "+etapa+"\nCaracter: "+caracter+"\nReqseriacion: "+reqseriacion+"\nCoordinacion: "+coordinacion+"\nTronco Comun: "+troncoComun);
 			//	SI EL FILTRO CONTEMPLA TODAS LAS ETAPAS
 			function creacionBloques(uas,lista)
 			{
