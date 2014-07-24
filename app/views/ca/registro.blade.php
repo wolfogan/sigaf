@@ -284,6 +284,7 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 						</div>
 
 
@@ -336,7 +337,7 @@
 
 			<!----------------------- LISTA PLAN ANTERIOR ------------------------>
 
-				<div id="planAnterior"		>
+				<div id="planAnterior">
 					<fieldset id="planA"><legend>Plan anterior </legend>
 						<div class="nombrePlan">Plan 2009-2</div>
 						<div class="filtroMaterias_ca">Materias: 							
@@ -345,6 +346,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+							
+							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 						<div class="listasCa">
 							 <div class="listbox"></div>           

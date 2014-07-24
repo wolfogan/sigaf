@@ -1215,12 +1215,12 @@ background: #EFCA0D;
 }
 .filtroMaterias_ca
 {
-	
 	height: 50px;
-	width: 250px;
+	width: 350px;
 }
 .filtroMaterias_ca2
 {
+	
 	height: 50px;
 	margin-left: 20px;
 	margin-top: 30px;
@@ -1282,7 +1282,18 @@ background: #EFCA0D;
 }
 
 /*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
+.estilo_button_lupa
+{
+	border-color:#ECA22E; 
+	border-radius:5px;
+	background-color:#ECA22E; 
+	color:#004000; 
+	height: 35px;
+	text-align:center;
+	width:35px;
 
+	
+}
 #consul_periodo_ca
 {
 
