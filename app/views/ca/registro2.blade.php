@@ -351,6 +351,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -387,6 +390,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>	
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -422,6 +428,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -457,6 +466,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -492,6 +504,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -527,6 +542,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -562,6 +580,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -596,6 +617,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
@@ -631,6 +655,9 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
+
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						
 						</div>
 							<div class="listasCa">	
 					            <div class="listbox"></div>
