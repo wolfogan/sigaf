@@ -9,7 +9,10 @@ class CargaAcademicaController extends BaseController
 
 	public function getRegistro()
 	{
-		return View::make("ca.registro");
+		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->get();
+
+		return $plan;
+		//return View::make("ca.registro");
 	}
 
 	public function getRegistro2()

@@ -22,139 +22,139 @@
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
 		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
-   		<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
+		<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
 
-   		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
-        
+		
 		
 								<script type="text/javascript">
-						            $(document).ready(function () {
-						                var source = [
-						                    "1234 DESARROLLO SUSTENTABLE",
-						                    "1898 INNOVACION TECNOLOGICA",
-						                    "1290 PRINCIPIOS DE PROGRAMACION",
-						                    "3290 BASE DE DATOS I",
-						                    "1298 MATEMATICAS I",
-						                    "3442 FISICA I",
-						                    "1456 DESARROLLO HUMANO",
-						                    "1238 OPTATIVA I",
-						                    "2983 OPTATIVA II",
-						                    "2903 FISICA II",
-						                    "2898 MATEMATICAS II",
-						                    "3813 QUIMICA II",
-						                    "3221 OPTATIVA III",
-						                    "1242 ARQUITECTURA DE LA INFORMACION",
-						                    "1903 COMUNICACION Y DATOS",
-						                    "1837 ESTRUCTURA DE DATOS",
-						                    "1283 BASE DE DATOS II",
-						                    "1238 BASE DE DATOS III",
-						                    "1879 MATEMATICAS III",
-						                    "1283 FISICA III",
-						                    "2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
-						                    "1937 PROGRAMACION ORIENTADA A OBJETOS",
-						                    "1986 COMPILADORES I",
-						                    "2387 COMPILADORES II",
-						                    "2977 SIMULACION",
-						                    "2890 REDES I",
-						                    "1245 REDES II",
-						                    "9837 OPTATIVA IV"
-								        ];
+									$(document).ready(function () {
+										var source = [
+											"1234 DESARROLLO SUSTENTABLE",
+											"1898 INNOVACION TECNOLOGICA",
+											"1290 PRINCIPIOS DE PROGRAMACION",
+											"3290 BASE DE DATOS I",
+											"1298 MATEMATICAS I",
+											"3442 FISICA I",
+											"1456 DESARROLLO HUMANO",
+											"1238 OPTATIVA I",
+											"2983 OPTATIVA II",
+											"2903 FISICA II",
+											"2898 MATEMATICAS II",
+											"3813 QUIMICA II",
+											"3221 OPTATIVA III",
+											"1242 ARQUITECTURA DE LA INFORMACION",
+											"1903 COMUNICACION Y DATOS",
+											"1837 ESTRUCTURA DE DATOS",
+											"1283 BASE DE DATOS II",
+											"1238 BASE DE DATOS III",
+											"1879 MATEMATICAS III",
+											"1283 FISICA III",
+											"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
+											"1937 PROGRAMACION ORIENTADA A OBJETOS",
+											"1986 COMPILADORES I",
+											"2387 COMPILADORES II",
+											"2977 SIMULACION",
+											"2890 REDES I",
+											"1245 REDES II",
+											"9837 OPTATIVA IV"
+										];
 
-						                // Create a jqxListBox
-						                $(".listbox").jqxListBox({width: 408, source: source, checkboxes: true, height: 200, theme: 'orange'});
-						                // Check several items.
-						                $(".listbox").jqxListBox('checkIndex', 0);
-						                $(".listbox").jqxListBox('checkIndex', 1);
-						                $(".listbox").jqxListBox('checkIndex', 2);
-						                $(".listbox").jqxListBox('checkIndex', 5);
+										// Create a jqxListBox
+										$(".listbox").jqxListBox({width: 408, source: source, checkboxes: true, height: 200, theme: 'orange'});
+										// Check several items.
+										$(".listbox").jqxListBox('checkIndex', 0);
+										$(".listbox").jqxListBox('checkIndex', 1);
+										$(".listbox").jqxListBox('checkIndex', 2);
+										$(".listbox").jqxListBox('checkIndex', 5);
 
-						                $(".listbox").on('checkChange', function (event) {
-						                    var args = event.args;
-						                    if (args.checked) {
-						                        $("#Events").text("Checked: " + args.label);
-						                    }
-						                    else {
-						                        $("#Events").text("Unchecked: " + args.label);
-						                    }
+										$(".listbox").on('checkChange', function (event) {
+											var args = event.args;
+											if (args.checked) {
+												$("#Events").text("Checked: " + args.label);
+											}
+											else {
+												$("#Events").text("Unchecked: " + args.label);
+											}
 
-						                    var items = $(".listbox").jqxListBox('getCheckedItems');
-						                    var checkedItems = "";
-						                    $.each(items, function (index) {
-						                        if (index < items.length - 1) {
-						                            checkedItems += this.label + ", ";
-						                        }
-						                        else checkedItems += this.label;
-						                    });
-						                    $("#CheckedItems").text(checkedItems);
-						                });
-						            });
-						        </script>	
+											var items = $(".listbox").jqxListBox('getCheckedItems');
+											var checkedItems = "";
+											$.each(items, function (index) {
+												if (index < items.length - 1) {
+													checkedItems += this.label + ", ";
+												}
+												else checkedItems += this.label;
+											});
+											$("#CheckedItems").text(checkedItems);
+										});
+									});
+								</script>   
 
-					    <script type="text/javascript">
-						            $(document).ready(function () {
-						                var source = [
-						                    "1234 DESARROLLO SUSTENTABLE",
-						                    "1898 INNOVACION TECNOLOGICA",
-						                    "1290 PRINCIPIOS DE PROGRAMACION",
-						                    "3290 BASE DE DATOS I",
-						                    "1298 MATEMATICAS I",
-						                    "3442 FISICA I",
-						                    "1456 DESARROLLO HUMANO",
-						                    "1238 OPTATIVA I",
-						                    "2983 OPTATIVA II",
-						                    "2903 FISICA II",
-						                    "2898 MATEMATICAS II",
-						                    "3813 QUIMICA II",
-						                    "3221 OPTATIVA III",
-						                    "1242 ARQUITECTURA DE LA INFORMACION",
-						                    "1903 COMUNICACION Y DATOS",
-						                    "1837 ESTRUCTURA DE DATOS",
-						                    "1283 BASE DE DATOS II",
-						                    "1238 BASE DE DATOS III",
-						                    "1879 MATEMATICAS III",
-						                    "1283 FISICA III",
-						                    "2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
-						                    "1937 PROGRAMACION ORIENTADA A OBJETOS",
-						                    "1986 COMPILADORES I",
-						                    "2387 COMPILADORES II",
-						                    "2977 SIMULACION",
-						                    "2890 REDES I",
-						                    "1245 REDES II",
-						                    "9837 OPTATIVA IV"
-								        ];
+						<script type="text/javascript">
+									$(document).ready(function () {
+										var source = [
+											"1234 DESARROLLO SUSTENTABLE",
+											"1898 INNOVACION TECNOLOGICA",
+											"1290 PRINCIPIOS DE PROGRAMACION",
+											"3290 BASE DE DATOS I",
+											"1298 MATEMATICAS I",
+											"3442 FISICA I",
+											"1456 DESARROLLO HUMANO",
+											"1238 OPTATIVA I",
+											"2983 OPTATIVA II",
+											"2903 FISICA II",
+											"2898 MATEMATICAS II",
+											"3813 QUIMICA II",
+											"3221 OPTATIVA III",
+											"1242 ARQUITECTURA DE LA INFORMACION",
+											"1903 COMUNICACION Y DATOS",
+											"1837 ESTRUCTURA DE DATOS",
+											"1283 BASE DE DATOS II",
+											"1238 BASE DE DATOS III",
+											"1879 MATEMATICAS III",
+											"1283 FISICA III",
+											"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
+											"1937 PROGRAMACION ORIENTADA A OBJETOS",
+											"1986 COMPILADORES I",
+											"2387 COMPILADORES II",
+											"2977 SIMULACION",
+											"2890 REDES I",
+											"1245 REDES II",
+											"9837 OPTATIVA IV"
+										];
 
-						                // Create a jqxListBox
-						                $(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
-						                // Check several items.
-						                $(".listbox1").jqxListBox('checkIndex', 0);
-						                $(".listbox1").jqxListBox('checkIndex', 1);
-						                $(".listbox1").jqxListBox('checkIndex', 2);
-						                $(".listbox1").jqxListBox('checkIndex', 5);
+										// Create a jqxListBox
+										$(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
+										// Check several items.
+										$(".listbox1").jqxListBox('checkIndex', 0);
+										$(".listbox1").jqxListBox('checkIndex', 1);
+										$(".listbox1").jqxListBox('checkIndex', 2);
+										$(".listbox1").jqxListBox('checkIndex', 5);
 
-						                $(".listbox1").on('checkChange', function (event) {
-						                    var args = event.args;
-						                    if (args.checked) {
-						                        $("#Events").text("Checked: " + args.label);
-						                    }
-						                    else {
-						                        $("#Events").text("Unchecked: " + args.label);
-						                    }
+										$(".listbox1").on('checkChange', function (event) {
+											var args = event.args;
+											if (args.checked) {
+												$("#Events").text("Checked: " + args.label);
+											}
+											else {
+												$("#Events").text("Unchecked: " + args.label);
+											}
 
-						                    var items = $(".listbox1").jqxListBox('getCheckedItems');
-						                    var checkedItems = "";
-						                    $.each(items, function (index) {
-						                        if (index < items.length - 1) {
-						                            checkedItems += this.label + ", ";
-						                        }
-						                        else checkedItems += this.label;
-						                    });
-						                    $("#CheckedItems").text(checkedItems);
-						                });
-						            });
-						        </script>
+											var items = $(".listbox1").jqxListBox('getCheckedItems');
+											var checkedItems = "";
+											$.each(items, function (index) {
+												if (index < items.length - 1) {
+													checkedItems += this.label + ", ";
+												}
+												else checkedItems += this.label;
+											});
+											$("#CheckedItems").text(checkedItems);
+										});
+									});
+								</script>
 		<!------------------------------------------------------------------------------------->
-	        
+			
 
 
 		<!--AQUI VA HORA Y FECHA-->
@@ -170,20 +170,20 @@
 
 							<div class="containerMultiple">
 								<script type="text/javascript">
-							    	$(document).ready(function() {
-							        window.prettyPrint() && prettyPrint();
+									$(document).ready(function() {
+									window.prettyPrint() && prettyPrint();
 
-				                    $('.example41').multiselect({
-							        	includeSelectAllOption: true
-							        });
+									$('.example41').multiselect({
+										includeSelectAllOption: true
+									});
 
-							    });
+								});
 								</script>
-			            	</div>
+							</div>
 
 
 		<!-------------------------------------------------------------------------------------------->
-       
+	   
 
 		<!-- ---------------------------------------------------------------------------------->
 		<!-- Script dataTable -->
@@ -271,10 +271,10 @@
 			<h3>Unidades de aprendizaje</h3>
 			<div class="tblCatalogos">
 				
-					        <div class="listasCa">	
-					            <div class="listbox1" style="margin:auto;"></div>
-				        	</div>
-				        	 
+							<div class="listasCa">  
+								<div class="listbox1" style="margin:auto;"></div>
+							</div>
+							 
 			</div>
 			<div class="CatBotones">
 				<input type="submit" class="estilo_button2" value="Agregar"/>
@@ -298,7 +298,7 @@
 			</div>
 			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 		</header>
- 		@include('includes.menu')
+		@include('includes.menu')
 		<div id="indicadores">
 			<div id="usuariofecha">
 				<div id="usuario" class="texto_body">
@@ -345,7 +345,7 @@
 						<div class="nombre_semestre">SEMESTRE: 1</div>
 						<div class="nombre_plan">2014-1</div>
 
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -355,27 +355,27 @@
 							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 
 				<!----------------------- LISTA SEGUNDO SEMESTRE ------------------------>
@@ -384,37 +384,37 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 2</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>	
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>   
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA TERCER SEMESTRE ------------------------>
 
@@ -422,7 +422,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 3</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -432,27 +432,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA CUARTO SEMESTRE ------------------------>
 
@@ -460,7 +460,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 4</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -470,27 +470,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA QUINTO SEMESTRE ------------------------>
 
@@ -498,7 +498,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 5</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -508,27 +508,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA SEXTO SEMESTRE ------------------------>
 
@@ -536,7 +536,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 6</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -546,27 +546,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA SEPTIMO SEMESTRE ------------------------>
 
@@ -574,7 +574,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 7</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -584,26 +584,26 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA OCTAVO SEMESTRE ------------------------>
 
@@ -611,7 +611,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 8</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -621,27 +621,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				<!----------------------- LISTA NOVENO SEMESTRE ------------------------>
 
@@ -649,7 +649,7 @@
 					
 						<div class="nombre_semestre">SEMESTRE: 9</div>
 						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias: 							
+						<div class="filtroMaterias_ca2">Materias:                           
 							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
 								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
 								<option value="OPTATIVAS">OPTATIVAS</option>
@@ -659,27 +659,27 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 						
 						</div>
-							<div class="listasCa">	
-					            <div class="listbox"></div>
-				        	</div>
+							<div class="listasCa">  
+								<div class="listbox"></div>
+							</div>
 						
 						<div class="controlesListasCa_2">
 							Grupos:
-					              	<select name="example" multiple="multiple" class="example41">
-						                <option value="231" selected>231</option>
-						                <option value="232" selected>232</option>
-						                <option value="241" selected>241</option>
-						                <option value="242" selected>242</option>
-						                <option value="251" selected>251</option>
-						                <option value="252" selected>252</option>
-					                </select>
-					             
+									<select name="example" multiple="multiple" class="example41">
+										<option value="231" selected>231</option>
+										<option value="232" selected>232</option>
+										<option value="241" selected>241</option>
+										<option value="242" selected>242</option>
+										<option value="251" selected>251</option>
+										<option value="252" selected>252</option>
+									</select>
+								 
 
 							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
 							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 						</div>
-				</div>	
+				</div>  
 
 				
 					<div class="nombre_escuela">UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA</div>
@@ -700,10 +700,10 @@
 				
 		</section>
 		<script type="text/javascript" src="../js/jqxcore.js"></script>
-	    <script type="text/javascript" src="../js/jqxbuttons.js"></script>
-	    <script type="text/javascript" src="../js/jqxscrollbar.js"></script>
-	    <script type="text/javascript" src="../js/jqxlistbox.js"></script>
-	    <script type="text/javascript" src="../js/jqxcheckbox.js"></script>
+		<script type="text/javascript" src="../js/jqxbuttons.js"></script>
+		<script type="text/javascript" src="../js/jqxscrollbar.js"></script>
+		<script type="text/javascript" src="../js/jqxlistbox.js"></script>
+		<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
 
 
 		<footer></footer>
