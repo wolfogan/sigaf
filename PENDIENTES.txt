@@ -32,3 +32,8 @@ PENDIENTES ARREGLADOS:
 - Ya muestra a que tipo de caracter pertenece la ua.
 - Suma de creditos cuando actualiza la ventana modal.
 - Arreglar Actualizacion de creditos. Cuando cierren ventana
+
+
+PENDIENTES EN CARGA ACADEMICA
+
+- Validar que solo sean 2 planes de estudio los iniciales

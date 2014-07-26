@@ -23,46 +23,20 @@
 
 	<script type="text/javascript">
 	$(document).ready(function () {
-		var source = [
-						"1234 DESARROLLO SUSTENTABLE",
-						"1898 INNOVACION TECNOLOGICA",
-						"1290 PRINCIPIOS DE PROGRAMACION",
-						"3290 BASE DE DATOS I",
-						"1298 MATEMATICAS I",
-						"3442 FISICA I",
-						"1456 DESARROLLO HUMANO",
-						"1238 OPTATIVA I",
-						"2983 OPTATIVA II",
-						"2903 FISICA II",
-						"2898 MATEMATICAS II",
-						"3813 QUIMICA II",
-						"3221 OPTATIVA III",
-						"1242 ARQUITECTURA DE LA INFORMACION",
-						"1903 COMUNICACION Y DATOS",
-						"1837 ESTRUCTURA DE DATOS",
-						"1283 BASE DE DATOS II",
-						"1238 BASE DE DATOS III",
-						"1879 MATEMATICAS III",
-						"1283 FISICA III",
-						"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
-						"1937 PROGRAMACION ORIENTADA A OBJETOS",
-						"1986 COMPILADORES I",
-						"2387 COMPILADORES II",
-						"2977 SIMULACION",
-						"2890 REDES I",
-						"1245 REDES II",
-						"9837 OPTATIVA IV"
-		];
 
+		var sourcePlanVigente = [@for ($i = 0;$i<count($prueba[0]);$i++){{"'".$prueba[0][$i]->uaprendizaje." - ".$prueba[0][$i]->descripcionmat."'"}} @if ($i<count($prueba[0])-1){{","}} @endif @endfor];
+		var sourcePlanAnterior = [ @for ($i = 0;$i<count($prueba[1]);$i++){{"'".$prueba[1][$i]->uaprendizaje." - ".$prueba[1][$i]->descripcionmat."'"}} @if ($i<count($prueba[1])-1){{","}} @endif @endfor];
+		//alert(source[0].plan);
 		// Create a jqxListBox
-		$(".listbox").jqxListBox({width: 450, source: source, checkboxes: true, height: 530, theme: 'orange'});
+		$(".listboxPlanVigente").jqxListBox({width: 450, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
+		$(".listboxPlanAnterior").jqxListBox({width: 450, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
 		// Check several items.
-		$(".listbox").jqxListBox('checkIndex', 0);
-		$(".listbox").jqxListBox('checkIndex', 1);
-		$(".listbox").jqxListBox('checkIndex', 2);
-		$(".listbox").jqxListBox('checkIndex', 5);
+		// $(".listbox").jqxListBox('checkIndex', 0);
+		// $(".listbox").jqxListBox('checkIndex', 1);
+		// $(".listbox").jqxListBox('checkIndex', 2);
+		// $(".listbox").jqxListBox('checkIndex', 5);
 
-		$(".listbox").on('checkChange', function (event) {
+		$(".listboxPlanAnterior,.listboxPlanVigente").on('checkChange', function (event) {
 			var args = event.args;
 			if (args.checked) {
 				$("#Events").text("Checked: " + args.label);
@@ -251,7 +225,7 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 					</div>
 					<div class="listasCa">
-						<div class="listbox"></div>
+						<div class="listboxPlanVigente"></div>
 					</div>
 					<label>Semestre:</label>
 					<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
@@ -298,7 +272,7 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
 					</div>
 					<div class="listasCa">
-						 <div class="listbox"></div>           
+						 <div class="listboxPlanAnterior"></div>           
 					</div>
 					<label>Semestre: </label>
 					<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
