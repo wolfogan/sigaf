@@ -50,7 +50,7 @@
 					</tr>
 					<tr>		
 						<td>No. Plan:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="planestudio_anio" type="text" id="txtCatPlan" size="1" />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="planestudio_semestre" type="text" id="txtCatPlan2" size="1" /></td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" size="1" />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" size="1" /></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>

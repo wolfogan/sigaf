@@ -23,9 +23,30 @@
 
 	<script type="text/javascript">
 	$(document).ready(function () {
+		function insertStr(stringTarget,stringAdd,stringIndex)
+		{
+			var string1 = stringTarget.substring(0,stringIndex);
+			var string2 = stringTarget.substring(stringIndex);
 
-		var sourcePlanVigente = [@for ($i = 0;$i<count($prueba[0]);$i++){{"'".$prueba[0][$i]->uaprendizaje." - ".$prueba[0][$i]->descripcionmat."'"}} @if ($i<count($prueba[0])-1){{","}} @endif @endfor];
-		var sourcePlanAnterior = [ @for ($i = 0;$i<count($prueba[1]);$i++){{"'".$prueba[1][$i]->uaprendizaje." - ".$prueba[1][$i]->descripcionmat."'"}} @if ($i<count($prueba[1])-1){{","}} @endif @endfor];
+			return string1+stringAdd+string2;
+
+		}
+		Date.prototype.now = function(){
+			var dd = this.getDate();
+			var mm = this.getMonth()+1;
+			var yyyy = this.getFullYear();
+			if(dd<10) dd='0'+dd;
+			if(mm<10) mm='0'+mm;
+			return String(yyyy+"-"+mm+"-"+dd);
+		}
+		// Inicializar fech periodo
+		var date = new Date();
+		$("#fechaIniPeriodo").val(date.now());
+		$("#fechaIniPeriodo").prop('min',date.now());
+		$("#fechaIniPeriodo").prop('max','2015-08-08');
+
+		var sourcePlanVigente = [@for ($i = 0;$i<count($unidades[0]);$i++){{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} @if ($i<count($unidades[0])-1){{","}} @endif @endfor];
+		var sourcePlanAnterior = [ @for ($i = 0;$i<count($unidades[1]);$i++){{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}} @if ($i<count($unidades[1])-1){{","}} @endif @endfor];
 		//alert(source[0].plan);
 		// Create a jqxListBox
 		$(".listboxPlanVigente").jqxListBox({width: 450, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
@@ -36,6 +57,10 @@
 		// $(".listbox").jqxListBox('checkIndex', 2);
 		// $(".listbox").jqxListBox('checkIndex', 5);
 
+		// Asingar nombres de planes
+		$("#nombreVigente").text("Plan "+insertStr({{'"'.$planes[0].'"'}},"-",4));
+		$("#nombreAnterior").text("Plan "+insertStr({{'"'.$planes[1].'"'}},"-",4));
+		
 		$(".listboxPlanAnterior,.listboxPlanVigente").on('checkChange', function (event) {
 			var args = event.args;
 			if (args.checked) {
@@ -72,7 +97,7 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('.example41').multiselect({
+		$('.grupos').multiselect({
 			includeSelectAllOption: true
 		});
 	});
@@ -97,7 +122,7 @@
 <body>
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
-		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+		<form id="formPeriodo" action="<?=URL::to('cargaacademica/registrarperiodo'); ?>" class="md-content" method="post">
 			<h3>Agregar Período</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -107,19 +132,27 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtNombrePeriodo" size=1 /></td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodo_anio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodo_semestre" type="text" id="perdiodoSemestre" maxlength="1" placeholder="1" required/></td>
+					</tr>
+					<tr>
+						<td>Tipo Programa:</td>
+						<td><select style="width:200px;" name="tipoPrograma" id="TipoPrograma">
+							@foreach ($periodosPrograma as $periodo)
+								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
+							@endforeach
+						</select></td>
 					</tr>
 					<tr>
 						<td>Fecha inicio:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtFechaIniPeriodo" name='txtFechaIniPeriodo' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="fechaIniPeriodo" name='fechaIniPeriodo' required/></td>
 					</tr>
 					<tr>
 						<td>Fecha fin:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtFechaFinPeriodo" name='txtFechaFinPeriodo' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtFechaFinPeriodo" name='txtFechaFinPeriodo'/></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtDescripcionPeriodo" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtDescripcionPeriodo" placeholder="Descripción del período" required/></td>
 					</tr>
 				</table>
 			</div>
@@ -215,7 +248,7 @@
 			
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
-					<div class="nombrePlan">Plan 2014-1</div>
+					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
@@ -241,7 +274,7 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example" multiple="multiple" class="example41">
+						<select name="example" multiple="multiple" class="grupos">
 							<option value="231" selected>231</option>
 							<option value="232" selected>232</option>
 							<option value="241" selected>241</option>
@@ -262,7 +295,7 @@
 			<!----------------------- LISTA PLAN ANTERIOR ------------------------>
 			<div id="planAnterior">
 				<fieldset id="planA"><legend>Plan anterior </legend>
-					<div class="nombrePlan">Plan 2009-2</div>
+					<div class="nombrePlan" id="nombreAnterior">Plan 2009-2</div>
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
@@ -288,7 +321,7 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example" multiple="multiple" class="example41">
+						<select name="example" multiple="multiple" class="grupos">
 							<option value="231" selected>231</option>
 							<option value="232" selected>232</option>
 							<option value="241" selected>241</option>
