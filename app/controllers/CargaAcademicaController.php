@@ -44,4 +44,27 @@ class CargaAcademicaController extends BaseController
 	{
 		return View::make("ca.consulta");
 	}
+
+	// Altas a tablas principales
+	public function postRegistrarperiodo()
+	{
+		// Status:
+		// 1 = Abierto
+		// 2 = Cerrado
+		$periodo = new Periodo;
+		$periodo -> periodo = Input::get('periodoAnio').Input::get('periodoLapso');
+		$periodo -> periodo_pedu = Input::get('periodoTipo');
+		$periodo -> year = Input::get('periodoAnio');
+		$periodo -> mes = Input::get('periodoLapso');
+		$periodo -> descripcion = Input::get('periodoDescripcion');
+		$periodo -> inicio = Input::get('periodoFechaInicio');
+		$periodo -> fin = Input::get('periodoFechaFin');
+		$periodo -> status = 1;
+
+		$periodo -> save();
+
+		return '"Período dado de alta exitosamente"';
+
+
+	}
 }

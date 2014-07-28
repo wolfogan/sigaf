@@ -22,7 +22,8 @@
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 	<script type="text/javascript">
-	$(document).ready(function () {
+	$(function (){
+		
 		function insertStr(stringTarget,stringAdd,stringIndex)
 		{
 			var string1 = stringTarget.substring(0,stringIndex);
@@ -41,9 +42,10 @@
 		}
 		// Inicializar fech periodo
 		var date = new Date();
-		$("#fechaIniPeriodo").val(date.now());
-		$("#fechaIniPeriodo").prop('min',date.now());
-		$("#fechaIniPeriodo").prop('max','2015-08-08');
+		$("#periodoFechaInicio").val(date.now());
+		$("#periodoFechaFin").val(date.now());
+		//$("#periodoFechaInicio").prop('min',date.now());
+		//$("#periodoFechaInicio").prop('max','2015-08-08');
 
 		var sourcePlanVigente = [@for ($i = 0;$i<count($unidades[0]);$i++){{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} @if ($i<count($unidades[0])-1){{","}} @endif @endfor];
 		var sourcePlanAnterior = [ @for ($i = 0;$i<count($unidades[1]);$i++){{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}} @if ($i<count($unidades[1])-1){{","}} @endif @endfor];
@@ -111,18 +113,14 @@
 	<!-- JS -->
 	<script src="../js/jquery.dataTables.js"></script>
 	<!-- Script dataTable -->
-	<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
-	<script type="text/javascript" charset="utf-8">
-	$(document).ready(function() {
-		$('#tblUA').dataTable();
-	});
-	</script><!-- Termina script dataTable -->
+	
+	
 	<!-------------------------------------------------------------------------------------------->
 </head>
 <body>
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
-		<form id="formPeriodo" action="<?=URL::to('cargaacademica/registrarperiodo'); ?>" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
 			<h3>Agregar Período</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -132,11 +130,11 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodo_anio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodo_semestre" type="text" id="perdiodoSemestre" maxlength="1" placeholder="1" required/></td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoSemestre" maxlength="1" placeholder="1" required/></td>
 					</tr>
 					<tr>
 						<td>Tipo Programa:</td>
-						<td><select style="width:200px;" name="tipoPrograma" id="TipoPrograma">
+						<td><select style="width:200px;" name="periodoTipo" id="periodoTipo" />
 							@foreach ($periodosPrograma as $periodo)
 								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
 							@endforeach
@@ -144,15 +142,15 @@
 					</tr>
 					<tr>
 						<td>Fecha inicio:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="fechaIniPeriodo" name='fechaIniPeriodo' required/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaInicio" name='periodoFechaInicio' required/></td>
 					</tr>
 					<tr>
 						<td>Fecha fin:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtFechaFinPeriodo" name='txtFechaFinPeriodo'/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaFin" name='periodoFechaFin' required/></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtDescripcionPeriodo" placeholder="Descripción del período" required/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="periodoDescripcion" id="periodoDescripcion" placeholder="Descripción del período" required/></td>
 					</tr>
 				</table>
 			</div>
@@ -473,5 +471,22 @@
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
+	
+	<script type="text/javascript">
+	function registrarPeriodo()
+	{
+		var dataPeriodo = $("#formPeriodo").serialize();
+		$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
+			alert(result);
+		})
+		.fail(function(){
+			alert("Fallo al registrar el periodo.");
+		});
+	}
+	$(function(){
+		// Crear instancia Datatables para manipulación de renglones durante la ejecución
+		var t = $('#tblUA').DataTable();
+	});
+	</script>
 </body>
 </html>
