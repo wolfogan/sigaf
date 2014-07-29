@@ -5,6 +5,7 @@ class PlanEstudio extends Eloquent
 	protected $table = "planestudio";
 	protected $primaryKey = "plan";
 	public $timestamps = false;
+	public $incrementing = false;
 
 	public function unidades()
 	{

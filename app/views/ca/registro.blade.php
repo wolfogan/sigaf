@@ -22,16 +22,15 @@
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 	<script type="text/javascript">
+	function insertStr(stringTarget,stringAdd,stringIndex)
+	{
+		var string1 = stringTarget.substring(0,stringIndex);
+		var string2 = stringTarget.substring(stringIndex);
+
+		return string1+stringAdd+string2;
+	}
 	$(function (){
 		
-		function insertStr(stringTarget,stringAdd,stringIndex)
-		{
-			var string1 = stringTarget.substring(0,stringIndex);
-			var string2 = stringTarget.substring(stringIndex);
-
-			return string1+stringAdd+string2;
-
-		}
 		Date.prototype.now = function(){
 			var dd = this.getDate();
 			var mm = this.getMonth()+1;
@@ -130,7 +129,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoSemestre" maxlength="1" placeholder="1" required/></td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoLapso" maxlength="1" placeholder="1" required/></td>
 					</tr>
 					<tr>
 						<td>Tipo Programa:</td>
@@ -156,7 +155,7 @@
 			</div>
 			<div class="CatBotones">
 				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
+				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
 			</div>
 		</form>
 	</div>
@@ -236,7 +235,14 @@
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 			<div id="periodoCa">
 				<div id="btnNuevaCaDiv"><input type="button" style="width:200px;" class="estilo_button2" value="Nueva CA" name="btnNuevaCa" id="btnNuevaCa" /></div>
-				<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
+				<div id="divPeriodo">
+					Periódo: 
+					<input type="text" class="con_estilo" name="periodo" id="periodo" list="datalistPeriodo"/>
+					<datalist id="datalistPeriodo">
+						@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
+						@endforeach
+					</datalist>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
 				<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar">
@@ -477,15 +483,23 @@
 	{
 		var dataPeriodo = $("#formPeriodo").serialize();
 		$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
-			alert(result);
+			var option = "<option value='"+insertStr(result['periodo'],"-",4)+"' codigo='"+result['periodo']+"' />";
+			$("#datalistPeriodo").append(option);
+			$("#periodo").val(insertStr(result['periodo'],"-",4));
+
+
+			alert("Periodo dado de alta exitosamente!!!");
+			$("#salirPeriodo").click();
+			
 		})
-		.fail(function(){
-			alert("Fallo al registrar el periodo.");
+		.fail(function(errorText,textError,errorThrow){
+			alert(errorText.responseText);
 		});
 	}
 	$(function(){
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
-		var t = $('#tblUA').DataTable();
+		//var t = $('#tblUA').DataTable();
+		
 	});
 	</script>
 </body>

@@ -9,6 +9,20 @@ class CargaAcademicaController extends BaseController
 
 	public function getRegistro()
 	{
+		/**
+	 	* Función para integrar el guión en el código del plan de estudio 2009-2
+		 * @param  string $string_add    La cadena a agregar
+		 * @param  string $string_target La cadena donde se va a agregar el string
+		 * @param  int $offset        Puntero donde corta la caden
+		 * @return string                Regresa la cadena concatenada
+		 */
+		function str_insert($string_add,$string_target,$offset)
+		{
+			$part1 = substr($string_target,0, $offset);
+			$part2 = substr($string_target, $offset);
+
+			return $part1.$string_add.$part2;
+		}
 
 		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
 		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
@@ -31,8 +45,15 @@ class CargaAcademicaController extends BaseController
 
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
+
+		// Cargar periodos 2010-1, 2010-2
+		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		$codigosPeriodo = array();
+		for ($i=0; $i < count($periodos); $i++) { 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
+		}
 		
-		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma'));
+		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo'));
 	}
 
 	public function getRegistro2()
@@ -51,19 +72,20 @@ class CargaAcademicaController extends BaseController
 		// Status:
 		// 1 = Abierto
 		// 2 = Cerrado
-		$periodo = new Periodo;
-		$periodo -> periodo = Input::get('periodoAnio').Input::get('periodoLapso');
-		$periodo -> periodo_pedu = Input::get('periodoTipo');
-		$periodo -> year = Input::get('periodoAnio');
-		$periodo -> mes = Input::get('periodoLapso');
-		$periodo -> descripcion = Input::get('periodoDescripcion');
-		$periodo -> inicio = Input::get('periodoFechaInicio');
-		$periodo -> fin = Input::get('periodoFechaFin');
-		$periodo -> status = 1;
+		$lapso = new Periodo;
+		$p = Input::get('periodoAnio').Input::get('periodoLapso');
+		$lapso -> periodo = $p;
+		$lapso -> periodo_pedu = Input::get('periodoTipo');
+		$lapso -> year = Input::get('periodoAnio');
+		$lapso -> mes = Input::get('periodoLapso');
+		$lapso -> descripcion = Input::get('periodoDescripcion');
+		$lapso -> inicio = Input::get('periodoFechaInicio');
+		$lapso -> fin = Input::get('periodoFechaFin');
+		
 
-		$periodo -> save();
+		$lapso -> save();
 
-		return '"Período dado de alta exitosamente"';
+		return $lapso;
 
 
 	}

@@ -38,3 +38,4 @@ PENDIENTES EN CARGA ACADEMICA
 
 - Validar que solo sean 2 planes de estudio los iniciales.
 - Validar periodos que correspondan a las fechas.
+- Validar si hay una carga en un periodo mostrar.
