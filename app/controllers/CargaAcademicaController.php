@@ -66,7 +66,148 @@ class CargaAcademicaController extends BaseController
 
 	public function getRegistro2()
 	{
-		return View::make("ca.registro2");
+		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(1)->get();
+		$UAS = UnidadAprendizaje::select('uaprendizaje','descripcionmat')
+				->where('plan','=',$plan[0]->plan)
+				->orderBy('uaprendizaje','asc')
+				->get();
+		$uasPlanVigente = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasPlanVigente, $formato);
+		}
+		$uasPV = implode(",", $uasPlanVigente);
+
+		$periodoColumn = DB::table('carga')->select('periodo')->orderBy('periodo','desc')->first();
+		$periodo = $periodoColumn -> periodo;
+		// PRIMER SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_1_")
+					->get();
+		$uasSemestre1 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre1, $formato);
+		}
+		$uasS1 = implode(",", $uasSemestre1);
+		// SEGUNDO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_2_")
+					->get();
+		$uasSemestre2 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre2, $formato);
+		}
+		$uasS2 = implode(",", $uasSemestre2);
+		// TERCER SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_3_")
+					->get();
+		$uasSemestre3 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre3, $formato);
+		}
+		$uasS3 = implode(",", $uasSemestre3);
+		// CUARTO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_4_")
+					->get();
+		$uasSemestre4 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre4, $formato);
+		}
+		$uasS4 = implode(",", $uasSemestre4);
+		// QUINTO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_5_")
+					->get();
+		$uasSemestre5 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre5, $formato);
+		}
+		$uasS5 = implode(",", $uasSemestre5);
+		// SEXTO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_6_")
+					->get();
+		$uasSemestre6 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre6, $formato);
+		}
+		$uasS6 = implode(",", $uasSemestre6);
+		// SEPTIMO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_7_")
+					->get();
+		$uasSemestre7 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre7, $formato);
+		}
+		$uasS7 = implode(",", $uasSemestre7);
+		// OCTAVO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_8_")
+					->get();
+		$uasSemestre8 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre8, $formato);
+		}
+		$uasS8 = implode(",", $uasSemestre8);
+		// NOVENO SEMESTRE
+		$UAS = DB::table('carga')
+					->select('carga.uaprendizaje','uaprendizaje.descripcionmat')
+					->distinct()
+					->join('uaprendizaje','carga.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('carga.periodo','=',$periodo)
+					->where('carga.grupo','LIKE',"_9_")
+					->get();
+		$uasSemestre9 = [];
+		foreach ($UAS as $ua) {
+			$formato = '"'.$ua->uaprendizaje." - ".$ua->descripcionmat.'"';
+			array_push($uasSemestre9, $formato);
+		}
+		$uasS9 = implode(",", $uasSemestre9);
+		
+		return View::make("ca.registro2")->with(compact('uasPV','uasS1','uasS2','uasS3','uasS4','uasS5','uasS6','uasS7','uasS8','uasS9'));
 	}
 
 	public function getConsulta()
@@ -132,5 +273,21 @@ class CargaAcademicaController extends BaseController
 			array_push($uaformateadas, $formato);
 		}
 		return $uaformateadas;
+	}
+
+	public function postPrueba()
+	{
+		$grupos = Input::get('grupos');
+		$uas = Input::get('uas');
+		$periodo = Input::get('periodo');
+		foreach ($grupos as $grupo) {
+			foreach ($uas as $ua) {
+				DB::table('carga')->insert(
+					array('grupo' => $grupo,'periodo'=>$periodo,'uaprendizaje'=>$ua,'status'=>3)
+					);
+			}
+		}
+
+		return "Carga de semestre actualizada";
 	}
 }

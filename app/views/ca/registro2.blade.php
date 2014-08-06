@@ -28,131 +28,110 @@
 		<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 		
 		
-								<script type="text/javascript">
-									$(document).ready(function () {
-										var source = [
-											"1234 DESARROLLO SUSTENTABLE",
-											"1898 INNOVACION TECNOLOGICA",
-											"1290 PRINCIPIOS DE PROGRAMACION",
-											"3290 BASE DE DATOS I",
-											"1298 MATEMATICAS I",
-											"3442 FISICA I",
-											"1456 DESARROLLO HUMANO",
-											"1238 OPTATIVA I",
-											"2983 OPTATIVA II",
-											"2903 FISICA II",
-											"2898 MATEMATICAS II",
-											"3813 QUIMICA II",
-											"3221 OPTATIVA III",
-											"1242 ARQUITECTURA DE LA INFORMACION",
-											"1903 COMUNICACION Y DATOS",
-											"1837 ESTRUCTURA DE DATOS",
-											"1283 BASE DE DATOS II",
-											"1238 BASE DE DATOS III",
-											"1879 MATEMATICAS III",
-											"1283 FISICA III",
-											"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
-											"1937 PROGRAMACION ORIENTADA A OBJETOS",
-											"1986 COMPILADORES I",
-											"2387 COMPILADORES II",
-											"2977 SIMULACION",
-											"2890 REDES I",
-											"1245 REDES II",
-											"9837 OPTATIVA IV"
-										];
+		<script type="text/javascript">
+			$(function(){
 
-										// Create a jqxListBox
-										$(".listbox").jqxListBox({width: 408, source: source, checkboxes: true, height: 200, theme: 'orange'});
-										// Check several items.
-										$(".listbox").jqxListBox('checkIndex', 0);
-										$(".listbox").jqxListBox('checkIndex', 1);
-										$(".listbox").jqxListBox('checkIndex', 2);
-										$(".listbox").jqxListBox('checkIndex', 5);
+				var sourcePlanVigente = [{{$uasPV}}];
+				var sourceSemestre1 = [{{$uasS1}}];
+				var sourceSemestre2 = [{{$uasS2}}];
+				var sourceSemestre3 = [{{$uasS3}}];
+				var sourceSemestre4 = [{{$uasS4}}];
+				var sourceSemestre5 = [{{$uasS5}}];
+				var sourceSemestre6 = [{{$uasS6}}];
+				var sourceSemestre7 = [{{$uasS7}}];
+				var sourceSemestre8 = [{{$uasS8}}];
+				var sourceSemestre9 = [{{$uasS9}}];
 
-										$(".listbox").on('checkChange', function (event) {
-											var args = event.args;
-											if (args.checked) {
-												$("#Events").text("Checked: " + args.label);
-											}
-											else {
-												$("#Events").text("Unchecked: " + args.label);
-											}
+				// Create a jqxListBox
+				$("#listaPlanVigente").jqxListBox({width: 408, source: sourcePlanVigente, checkboxes: true, height: 350, theme: 'orange'});
+				$("#listaPrimerSemestre").jqxListBox({width: 365, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSegundoSemestre").jqxListBox({width: 365, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaTercerSemestre").jqxListBox({width: 365, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaCuartoSemestre").jqxListBox({width: 365, source: sourceSemestre4, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaQuintoSemestre").jqxListBox({width: 365, source: sourceSemestre5, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSextoSemestre").jqxListBox({width: 365, source: sourceSemestre6, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSeptimoSemestre").jqxListBox({width: 365, source: sourceSemestre7, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaOctavoSemestre").jqxListBox({width: 365, source: sourceSemestre8, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaNovenoSemestre").jqxListBox({width: 365, source: sourceSemestre9, checkboxes: true, height: 200, theme: 'orange'});
+				
+				
+				$("#listaPlanVigente").on('checkChange', function (event) {
+					
+					var items = $(".listbox").jqxListBox('getCheckedItems');
+					var checkedItems = "";
+					$.each(items, function (index) {
+						if (index < items.length - 1) {
+							checkedItems += this.label + ", ";
+						}
+						else checkedItems += this.label;
+					});
+					//alert(checkedItems);
+				});
+			});
+		</script>
 
-											var items = $(".listbox").jqxListBox('getCheckedItems');
-											var checkedItems = "";
-											$.each(items, function (index) {
-												if (index < items.length - 1) {
-													checkedItems += this.label + ", ";
-												}
-												else checkedItems += this.label;
-											});
-											$("#CheckedItems").text(checkedItems);
-										});
-									});
-								</script>   
+		<script type="text/javascript">
+			$(function(){
+				var source = [
+					"1234 DESARROLLO SUSTENTABLE",
+					"1898 INNOVACION TECNOLOGICA",
+					"1290 PRINCIPIOS DE PROGRAMACION",
+					"3290 BASE DE DATOS I",
+					"1298 MATEMATICAS I",
+					"3442 FISICA I",
+					"1456 DESARROLLO HUMANO",
+					"1238 OPTATIVA I",
+					"2983 OPTATIVA II",
+					"2903 FISICA II",
+					"2898 MATEMATICAS II",
+					"3813 QUIMICA II",
+					"3221 OPTATIVA III",
+					"1242 ARQUITECTURA DE LA INFORMACION",
+					"1903 COMUNICACION Y DATOS",
+					"1837 ESTRUCTURA DE DATOS",
+					"1283 BASE DE DATOS II",
+					"1238 BASE DE DATOS III",
+					"1879 MATEMATICAS III",
+					"1283 FISICA III",
+					"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
+					"1937 PROGRAMACION ORIENTADA A OBJETOS",
+					"1986 COMPILADORES I",
+					"2387 COMPILADORES II",
+					"2977 SIMULACION",
+					"2890 REDES I",
+					"1245 REDES II",
+					"9837 OPTATIVA IV"
+				];
 
-						<script type="text/javascript">
-									$(document).ready(function () {
-										var source = [
-											"1234 DESARROLLO SUSTENTABLE",
-											"1898 INNOVACION TECNOLOGICA",
-											"1290 PRINCIPIOS DE PROGRAMACION",
-											"3290 BASE DE DATOS I",
-											"1298 MATEMATICAS I",
-											"3442 FISICA I",
-											"1456 DESARROLLO HUMANO",
-											"1238 OPTATIVA I",
-											"2983 OPTATIVA II",
-											"2903 FISICA II",
-											"2898 MATEMATICAS II",
-											"3813 QUIMICA II",
-											"3221 OPTATIVA III",
-											"1242 ARQUITECTURA DE LA INFORMACION",
-											"1903 COMUNICACION Y DATOS",
-											"1837 ESTRUCTURA DE DATOS",
-											"1283 BASE DE DATOS II",
-											"1238 BASE DE DATOS III",
-											"1879 MATEMATICAS III",
-											"1283 FISICA III",
-											"2981 CIRCUITOS ELECTRICOS Y ELECTRONICOS",
-											"1937 PROGRAMACION ORIENTADA A OBJETOS",
-											"1986 COMPILADORES I",
-											"2387 COMPILADORES II",
-											"2977 SIMULACION",
-											"2890 REDES I",
-											"1245 REDES II",
-											"9837 OPTATIVA IV"
-										];
+				// Create a jqxListBox
+				$(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
+				// Check several items.
+				$(".listbox1").jqxListBox('checkIndex', 0);
+				$(".listbox1").jqxListBox('checkIndex', 1);
+				$(".listbox1").jqxListBox('checkIndex', 2);
+				$(".listbox1").jqxListBox('checkIndex', 5);
 
-										// Create a jqxListBox
-										$(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
-										// Check several items.
-										$(".listbox1").jqxListBox('checkIndex', 0);
-										$(".listbox1").jqxListBox('checkIndex', 1);
-										$(".listbox1").jqxListBox('checkIndex', 2);
-										$(".listbox1").jqxListBox('checkIndex', 5);
+				$(".listbox1").on('checkChange', function (event) {
+					var args = event.args;
+					if (args.checked) {
+						$("#Events").text("Checked: " + args.label);
+					}
+					else {
+						$("#Events").text("Unchecked: " + args.label);
+					}
 
-										$(".listbox1").on('checkChange', function (event) {
-											var args = event.args;
-											if (args.checked) {
-												$("#Events").text("Checked: " + args.label);
-											}
-											else {
-												$("#Events").text("Unchecked: " + args.label);
-											}
-
-											var items = $(".listbox1").jqxListBox('getCheckedItems');
-											var checkedItems = "";
-											$.each(items, function (index) {
-												if (index < items.length - 1) {
-													checkedItems += this.label + ", ";
-												}
-												else checkedItems += this.label;
-											});
-											$("#CheckedItems").text(checkedItems);
-										});
-									});
-								</script>
+					var items = $(".listbox1").jqxListBox('getCheckedItems');
+					var checkedItems = "";
+					$.each(items, function (index) {
+						if (index < items.length - 1) {
+							checkedItems += this.label + ", ";
+						}
+						else checkedItems += this.label;
+					});
+					$("#CheckedItems").text(checkedItems);
+				});
+			});
+		</script>
 		<!------------------------------------------------------------------------------------->
 			
 
@@ -272,7 +251,7 @@
 			<div class="tblCatalogos">
 				
 							<div class="listasCa">  
-								<div class="listbox1" style="margin:auto;"></div>
+								<div id="listaPlanVigente" style="margin:auto;"></div>
 							</div>
 							 
 			</div>
@@ -352,11 +331,11 @@
 								
 							</select>
 
-							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaPrimerSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -391,11 +370,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>   
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>   
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaSegundoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -429,11 +408,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaTercerSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -467,11 +446,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaCuartoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -505,11 +484,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaQuintoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -543,11 +522,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaSextoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -581,11 +560,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaSeptimoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -618,11 +597,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaOctavoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -656,11 +635,11 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 						
 						</div>
 							<div class="listasCa">  
-								<div class="listbox"></div>
+								<div id="listaNovenoSemestre" style="margin:0 4%;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">

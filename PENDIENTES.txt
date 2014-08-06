@@ -1,7 +1,5 @@
 PENDIENTES POR ARREGLAR CONSULTA:
 
-
-
 - Mensajito de cambio de la etapa
 - Gif de carga
 - Busqueda individual de unidad de aprendizaje
@@ -18,11 +16,6 @@ PENDIENTES POR ARREGLAR EN REGISTRO:
 - ARREGLAR QUE AÑADA A CLAVE SERIACION LA MATERIA QUE DIERON DE ALTA SIN RECARGAR PAGINA
 OBLIGATORIA - 270 QUE DIO DE ALTA EN ESE INSTANTE.
 - Validación de que ya existe plan de estudio en ventana modal.
-
-
-
-
-
 
 
 
@@ -46,4 +39,4 @@ PENDIENTES EN CARGA ACADEMICA
 - Validacion en la alta de grupo que el semestre corresponda al seleccionado, si selecciono 1er. semestre no puede insertar 2"2"1,este si 211 
 - Validar que seleccionen un periodo
 - Que se añadan grupos si se da de alta en los grupos ya existentes.
-- Validar siempre que sea obligatorio la primer carga en caracter
+- Validar siempre que sea obligatorio la primer carga en caracter y la carrera.

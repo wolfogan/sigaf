@@ -39,10 +39,15 @@ Route::get('pruebas',function(){
 					->where('grupo','LIKE',"_".$semestre."_")
 					->get();
 
+	$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(1)->get();
+		$UAS = UnidadAprendizaje::select('uaprendizaje','descripcionmat')
+				->where('plan','=',$plan[0]->plan)
+				->orderBy('uaprendizaje','asc')
+				->get();
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $grupos;
+	return $last_query;
 });

@@ -357,7 +357,7 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example[]" id="select_grupos" multiple="multiple" class="grupos">
+						<select name="gruposV[]" id="select_grupos" multiple="multiple" class="grupos">
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
@@ -629,10 +629,16 @@
 				alert(errorText.responseText);
 			});
 		});
-
+		// PARA ALMACENAR LAS CARGAS
 		$("#btnGuardarCa").on("click",function(){
-			//var grupos = $("")
-			//$.post("<?php echo URL::to(cargaacademica/prueba); ?>",{grupos:})
+			var grupos = $("#select_grupos").val();
+			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			$.post("<?php echo URL::to('cargaacademica/prueba'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente},function(data){
+				alert(data);
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
 		});
 	});
 	</script>
