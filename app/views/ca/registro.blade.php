@@ -123,21 +123,10 @@
 		<!-------------------------------------------------------------------------------------------->
       	
 
-      	<!-- ------------------------------ DATATABLES --------------------------------------->
-		
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
-		<!-- JS -->
-		<script src="../js/jquery.dataTables.js"></script>
+      	
 
 		<!-- ---------------------------------------------------------------------------------->
-		<!-- Script dataTable -->
-		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$('#tblUA').dataTable();
-			} );
-		</script><!-- Termina script dataTable -->
+		
 
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
@@ -284,7 +273,7 @@
 								<option value="OPTATIVAS">OPTATIVAS</option>
 								
 							</select>
-							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 						</div>
 
 
@@ -391,7 +380,7 @@
 				</div>
 
 				<div id="contenedorRegistroca_mostrar">
-					<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+					<table class="tabla_cargaUA">
 						<thead class="semestre_plan">
 							<tr>
 								<th>SEMESTRE: 6</th>
