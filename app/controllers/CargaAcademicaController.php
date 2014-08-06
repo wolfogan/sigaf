@@ -26,7 +26,10 @@ class CargaAcademicaController extends BaseController
 
 		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
 		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
-		$uas = UnidadAprendizaje::select('plan','uaprendizaje','descripcionmat')->whereIn('plan',array($plan[0]->plan,$plan[1]->plan))->orderBy('plan','desc')->orderBy('uaprendizaje','asc')->get();
+		$uas = UnidadAprendizaje::select('plan','uaprendizaje','descripcionmat')
+				->where('caracter','=',1)
+				->whereIn('plan',array($plan[0]->plan,$plan[1]->plan))->orderBy('plan','desc')
+				->orderBy('uaprendizaje','asc')->get();
 		
 		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
 		$uas->planes = $planes = array($plan[0]->plan,$plan[1]->plan);;
@@ -52,8 +55,13 @@ class CargaAcademicaController extends BaseController
 		for ($i=0; $i < count($periodos); $i++) { 
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
 		}
+
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
 		
-		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo'));
+		// Matutino, Vespertino, Interturno
+		$turnos = Turno::all();
+		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo','tiposCaracter','turnos'));
 	}
 
 	public function getRegistro2()
@@ -69,9 +77,6 @@ class CargaAcademicaController extends BaseController
 	// Altas a tablas principales
 	public function postRegistrarperiodo()
 	{
-		// Status:
-		// 1 = Abierto
-		// 2 = Cerrado
 		$lapso = new Periodo;
 		$p = Input::get('periodoAnio').Input::get('periodoLapso');
 		$lapso -> periodo = $p;
@@ -86,7 +91,46 @@ class CargaAcademicaController extends BaseController
 		$lapso -> save();
 
 		return $lapso;
+	}
 
+	public function postRegistrargrupo()
+	{
+		$grupo = Input::get('grupo_nombre');
+		$periodo = Input::get('grupo_periodo');
+		$plan = Input::get('grupo_plan');
+		$programa = Input::get('grupo_programa');
+		$turno = Input::get('grupo_turno');
+		DB::table('grupos')->insert(
+			array("grupo"=>$grupo,"periodo"=>$periodo,"plan"=>$plan,"programaedu"=>$programa,"turno"=>$turno)
+		);
 
+		return "Si se hizo";
+	}
+
+	// CONSULTAS A CARGA ACADEMICA
+	public function postObtenergrupos()
+	{
+		$semestre = Input::get('nosemestre');
+		$grupos = DB::table('grupos')
+					->where('grupo','LIKE',"_".$semestre."_")
+					->get();
+		return Response::json($grupos);
+	}
+
+	public function postObteneruas()
+	{
+		$plan = Input::get('noplan');
+		$caracter = Input::get('caracter');
+		$UAS = UnidadAprendizaje::select('uaprendizaje','descripcionmat')
+				->where('plan','=',$plan)
+				->where('caracter','=',$caracter)
+				->orderBy('uaprendizaje','asc')
+				->get();
+		$uaformateadas = [];
+		foreach ($UAS as $ua) {
+			$formato = $ua->uaprendizaje." - ".$ua->descripcionmat;
+			array_push($uaformateadas, $formato);
+		}
+		return $uaformateadas;
 	}
 }

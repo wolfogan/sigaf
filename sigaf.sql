@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-07-26 22:08:59
+Date: 2014-08-06 06:14:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL COMMENT 'Registro Borrado / Anterior',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=777 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=786 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -810,6 +810,15 @@ INSERT INTO `bitacora` VALUES ('773', 'carga', 'tempo', 'I', '2014-07-24 00:00:0
 INSERT INTO `bitacora` VALUES ('774', 'carga', 'tempo', 'I', '2014-07-24 00:00:00', '636|20141|11247|3', null);
 INSERT INTO `bitacora` VALUES ('775', 'carga', 'tempo', 'I', '2014-07-24 00:00:00', '636|20141|11248|3', null);
 INSERT INTO `bitacora` VALUES ('776', 'carga', 'tempo', 'I', '2014-07-24 00:00:00', '636|20141|11249|3', null);
+INSERT INTO `bitacora` VALUES ('777', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('778', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('779', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '243|20142|20092|4|1', null);
+INSERT INTO `bitacora` VALUES ('780', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '233|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('781', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '111|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('782', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '211|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('783', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '311|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('784', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '411|20142|20101|4|1', null);
+INSERT INTO `bitacora` VALUES ('785', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '511|20142|20101|4|1', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -1767,6 +1776,15 @@ CREATE TABLE `grupos` (
 -- ----------------------------
 -- Records of grupos
 -- ----------------------------
+INSERT INTO `grupos` VALUES ('111', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('211', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('231', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('232', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('233', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('243', '20142', '20092', '4', '1');
+INSERT INTO `grupos` VALUES ('311', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('411', '20142', '20101', '4', '1');
+INSERT INTO `grupos` VALUES ('511', '20142', '20101', '4', '1');
 
 -- ----------------------------
 -- Table structure for nvprograma
@@ -2041,7 +2059,6 @@ CREATE TABLE `periodos` (
   `descripcion` varchar(40) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL COMMENT 'Descripción',
   `inicio` date NOT NULL COMMENT 'Fecha inicio periodo',
   `fin` date DEFAULT NULL COMMENT 'Fecha fin periodo ',
-  `status` int(11) NOT NULL DEFAULT '1' COMMENT 'Status 1,2 (1=Abierto, 2=Cerrado) ',
   PRIMARY KEY (`periodo`),
   UNIQUE KEY `PR_periodo_UNIQUE` (`periodo`),
   KEY `fk_periodos_periodo_prog_edu1` (`periodo_pedu`),
@@ -2051,8 +2068,9 @@ CREATE TABLE `periodos` (
 -- ----------------------------
 -- Records of periodos
 -- ----------------------------
-INSERT INTO `periodos` VALUES ('20141', '1', '2014', '1', 'PERIODO ENERO-JUNIO 2014', '2014-01-01', '2014-06-30', '3');
-INSERT INTO `periodos` VALUES ('20142', '1', '2014', '2', 'PERIODO SEPTIEMBRE-DICIEMBRE 2014', '2014-09-01', '2014-12-31', '2');
+INSERT INTO `periodos` VALUES ('20141', '1', '2014', '1', 'PERIODO ENERO-JUNIO 2014', '2014-01-01', '2014-06-30');
+INSERT INTO `periodos` VALUES ('20142', '1', '2014', '2', 'PERIODO SEPTIEMBRE-DICIEMBRE 2014', '2014-09-01', '2014-12-31');
+INSERT INTO `periodos` VALUES ('20151', '1', '2015', '1', 'Periodo  Julio - Diciembre ', '2014-08-06', '2014-12-31');
 
 -- ----------------------------
 -- Table structure for periodo_prog_edu

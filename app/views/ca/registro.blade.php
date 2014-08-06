@@ -22,6 +22,10 @@
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 	<script type="text/javascript">
+	var planVigente = 0;
+	var planAnterior = 0;
+	var uasVigente = [];
+	var uasAnterior = [];
 	function insertStr(stringTarget,stringAdd,stringIndex)
 	{
 		var string1 = stringTarget.substring(0,stringIndex);
@@ -46,12 +50,28 @@
 		//$("#periodoFechaInicio").prop('min',date.now());
 		//$("#periodoFechaInicio").prop('max','2015-08-08');
 
-		var sourcePlanVigente = [@for ($i = 0;$i<count($unidades[0]);$i++){{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} @if ($i<count($unidades[0])-1){{","}} @endif @endfor];
-		var sourcePlanAnterior = [ @for ($i = 0;$i<count($unidades[1]);$i++){{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}} @if ($i<count($unidades[1])-1){{","}} @endif @endfor];
+		var sourcePlanVigente = [
+									@for ($i = 0;$i<count($unidades[0]);$i++)
+										{{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} 
+											@if ($i<count($unidades[0])-1)
+												{{","}}
+											@endif 
+									@endfor
+								];
+		var sourcePlanAnterior =[ 
+									@for ($i = 0;$i<count($unidades[1]);$i++)
+										{{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}}
+										@if($i<count($unidades[1])-1)
+											{{","}}
+										@endif
+									@endfor
+								];
+		planVigente = {{$planes[0]}};
+		planAnterior = {{$planes[1]}};
 		//alert(source[0].plan);
 		// Create a jqxListBox
-		$(".listboxPlanVigente").jqxListBox({width: 450, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
-		$(".listboxPlanAnterior").jqxListBox({width: 450, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanVigente").jqxListBox({width: 450, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanAnterior").jqxListBox({width: 450, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
 		// Check several items.
 		// $(".listbox").jqxListBox('checkIndex', 0);
 		// $(".listbox").jqxListBox('checkIndex', 1);
@@ -61,25 +81,35 @@
 		// Asingar nombres de planes
 		$("#nombreVigente").text("Plan "+insertStr({{'"'.$planes[0].'"'}},"-",4));
 		$("#nombreAnterior").text("Plan "+insertStr({{'"'.$planes[1].'"'}},"-",4));
+		$("#grupoPlanVigente").text(insertStr({{'"'.$planes[0].'"'}},"-",4));
+		$("#grupoPlanAnterior").text(insertStr({{'"'.$planes[1].'"'}},"-",4));
+		$("#grupoVigentePlan").val({{$planes[0]}});
+		$("#grupoAnteriorPlan").val({{$planes[1]}});
+
+		// Agregar el programaeducativo estatico POR LO PRONTO
+		$(".grupoPrograma").val(4);
 		
-		$(".listboxPlanAnterior,.listboxPlanVigente").on('checkChange', function (event) {
-			var args = event.args;
+		$("#listboxPlanVigente").on('checkChange', function (event) {
+			/*var args = event.args;
 			if (args.checked) {
 				$("#Events").text("Checked: " + args.label);
 			}
 			else {
 				$("#Events").text("Unchecked: " + args.label);
-			}
+			}*/
 
-			var items = $(".listbox").jqxListBox('getCheckedItems');
-			var checkedItems = "";
+			var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
+			//var checkedItems = "";
+			uasVigente = [];
 			$.each(items, function (index) {
-				if (index < items.length - 1) {
+				/*if (index < items.length - 1) {
 					checkedItems += this.label + ", ";
 				}
-				else checkedItems += this.label;
+				else checkedItems += this.label;*/
+				uasVigente.push(this.label.substring(0,5));
 			});
-			$("#CheckedItems").text(checkedItems);
+			//alert(uasVigente);
+			//$("#CheckedItems").text(checkedItems);
 		});
 	});
 	</script>
@@ -98,7 +128,7 @@
 	<script type="text/javascript" src="../js/prettify.js"></script>
 
 	<script type="text/javascript">
-	$(document).ready(function() {
+	$(function() {
 		$('.grupos').multiselect({
 			includeSelectAllOption: true
 		});
@@ -107,15 +137,6 @@
 
 	<!-------------------------------------------------------------------------------------------->
 
-	<!----------------------------------------- DATATABLES --------------------------------------->
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
-	<!-- JS -->
-	<script src="../js/jquery.dataTables.js"></script>
-	<!-- Script dataTable -->
-	
-	
-	<!-------------------------------------------------------------------------------------------->
 </head>
 <body>
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
@@ -126,20 +147,18 @@
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-					<tr>
 						<td>Nombre:</td>
 						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoLapso" maxlength="1" placeholder="1" required/></td>
 					</tr>
 					<tr>
 						<td>Tipo Programa:</td>
-						<td><select style="width:200px;" name="periodoTipo" id="periodoTipo" />
-							@foreach ($periodosPrograma as $periodo)
-								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
-							@endforeach
-						</select></td>
+						<td>
+							<select style="width:200px;" name="periodoTipo" id="periodoTipo" />
+								@foreach ($periodosPrograma as $periodo)
+									<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
+								@endforeach
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td>Fecha inicio:</td>
@@ -162,10 +181,55 @@
 		</form>
 	</div>
 
-	<!-------------------------------------- MODAL CATALOGO GRUPOS -------------------------------------->
+	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN VIGENTE -------------------------------------->
 	
-	<div class="md-modal md-effect-11" id="btnCatalogoGrupo"> 
-		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+	<div class="md-modal md-effect-11" id="modalGruposVigente"> 
+		<form id="formGV" action="javascript:registrarGrupo(true);" class="md-content" method="post">
+			<h3>Agregar Grupos</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+					<tr>
+						<td>Nombre:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" maxlength="3" name="grupo_nombre" id="grupoNombre"/></td>
+					</tr>
+					<tr>
+						<td>Turno:</td>
+						<td>
+							<select style="width:200px;" name="grupo_turno" id="grupoTurno" />
+								@foreach ($turnos as $turno)
+									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Plan:</td>
+						<td><label><div id="grupoPlanVigente">Plan XXXX-X</div></label></td>
+					</tr>
+					<tr>
+						<td>Período:</td>
+						<td><label><div class="grupoPer">XXXX-X</div></label></td>
+					</tr>
+					<tr>
+						<td>Programa Educativo:</td>
+						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
+					</tr>
+					<input type="hidden" name="grupo_plan" id="grupoVigentePlan"/>
+					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
+					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close salirGrupo"/>
+			</div>
+		</form>
+	</div>
+
+	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN ANTERIOR -------------------------------------->
+
+	<div class="md-modal md-effect-11" id="modalGruposAnterior"> 
+		<form id="formGA" action="javascript:registrarGrupo(false);" class="md-content" method="post">
 			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -175,29 +239,42 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtNombreGpo" size=1 /></td>
-					</tr>
-					<tr>
-						<td>Semestre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtSemestreGpo" name='txtSemestreGpo' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" maxlength="3" name="grupo_nombre" id="grupoNombre" /></td>
 					</tr>
 					<tr>
 						<td>Turno:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTurnoGpo" name='txtTurnoGpo' size=1 /></td>
+						<td>
+							<select style="width:200px;" name="grupo_turno" id="grupoTurno" />
+								@foreach ($turnos as $turno)
+									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Plan:</td>
+						<td><label><div id="grupoPlanAnterior">Plan XXXX-X</div></label></td>
 					</tr>
 					<tr>
 						<td>Período:</td>
-						<td><label><div class="periodo_nombre">Periodo tal</div></label></td>
+						<td><label><div class="grupoPer">XXXX-X</div></label></td>
 					</tr>
-
+					<tr>
+						<td>Programa Educativo:</td>
+						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
+					</tr>
+					<input type="hidden" name="grupo_plan" id="grupoAnteriorPlan"/>
+					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
+					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
 				</table>
 			</div>
 			<div class="CatBotones">
 				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
+				<input type="button" value="Salir" class="md-close salirGrupo" />
 			</div>
 		</form>
 	</div>
+
 	<div class="md-overlay"></div>
 
 	<!------------------------------------------------------------------------------>
@@ -250,23 +327,24 @@
 				<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar">
 				<label style="font-size:18px;">Carga completada</label>
 			</div>
-			<!----------------------- LISTA PLAN VIGENTE ------------------------>
+			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
 					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
 					<div class="filtroMaterias_ca">
 						Materias:
-						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
-							<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-							<option value="OPTATIVAS">OPTATIVAS</option>
+						<select class="con_estilo" style="width:135px; height:30px" id="selectCaracterVigente">
+							@foreach($tiposCaracter as $caracter)
+								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
+							@endforeach
 						</select>
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 					</div>
 					<div class="listasCa">
-						<div class="listboxPlanVigente"></div>
+						<div id="listboxPlanVigente"></div>
 					</div>
 					<label>Semestre:</label>
-					<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+					<select class="con_estilo" style="width:135px; height:30px" id="semestresVigente">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -279,15 +357,10 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example" multiple="multiple" class="grupos">
-							<option value="231" selected>231</option>
-							<option value="232" selected>232</option>
-							<option value="241" selected>241</option>
-							<option value="242" selected>242</option>
-							<option value="251" selected>251</option>
-							<option value="252" selected>252</option>
+						<select name="example[]" id="select_grupos" multiple="multiple" class="grupos">
+							<!--<option value="231" selected>231</option>-->
 						</select>
-						<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
 						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 					</div>
 				</fieldset>
@@ -303,16 +376,17 @@
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
-							<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-							<option value="OPTATIVAS">OPTATIVAS</option>
+							@foreach($tiposCaracter as $caracter)
+								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
+							@endforeach
 						</select>
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/search.png"> </button>
+						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 					</div>
 					<div class="listasCa">
-						 <div class="listboxPlanAnterior"></div>           
+						 <div id="listboxPlanAnterior"></div>
 					</div>
 					<label>Semestre: </label>
-					<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+					<select class="con_estilo" style="width:135px; height:30px" id="semestresAnterior">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -326,21 +400,16 @@
 					<div class="controlesListasCa">
 						Grupos:
 						<select name="example" multiple="multiple" class="grupos">
-							<option value="231" selected>231</option>
-							<option value="232" selected>232</option>
-							<option value="241" selected>241</option>
-							<option value="242" selected>242</option>
-							<option value="251" selected>251</option>
-							<option value="252" selected>252</option>
+							<!--<option value="231" selected>231</option>-->
 						</select>
-						<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+						<input type="button" class="md-trigger" value="+" data-modal="modalGruposAnterior" id="modalGruposAnterior" />
 						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 					</div>
 				</fieldset>
 			</div>
 			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
 			<div id="contenedorRegistroca_mostrar">
-				<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+				<table class="tabla_cargaUA">
 					<thead class="semestre_plan">
 						<tr>
 							<th>SEMESTRE: 6</th>
@@ -496,10 +565,75 @@
 			alert(errorText.responseText);
 		});
 	}
+
+	function registrarGrupo(vigente)
+	{
+		var dataGrupo;
+		if(vigente==true)
+		{
+			dataGrupo = $("#formGV").serialize();
+		}
+		else
+		{
+			dataGrupo = $("#formGA").serialize();
+		}
+
+		$.post("<?php echo URL::to('cargaacademica/registrargrupo'); ?>",dataGrupo,function(result){
+			alert("Grupo dado de alta");
+			$(".salirGrupo").click();
+		})
+		.fail(function(errorText,textError,errorThrow){
+			alert(errorText.responseText);
+		});
+	}
+
+
 	$(function(){
+		$("#semestresVigente").val("");
+		$("#semestresAnterior").val("");
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		//var t = $('#tblUA').DataTable();
 		
+		// CUANDO CAMBIEN EL CARACTER OBLIGATORIO DE LAS MATERIAS Y LOS MUESTRE EN LAS LISTAS
+		$("#selectCaracterVigente").on("change",function(){
+			var caracter = $(this).val();
+			$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,caracter:caracter},function(uas){
+				$("#listboxPlanVigente").jqxListBox({source:uas});
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+
+		});
+
+		$("#periodo").on("input",function(){
+			$(".grupoPer").text($(this).val());
+			$(".grupoPeriodo").val($("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo"));
+
+		});
+
+		$("#semestresVigente").on("change",function(){
+			// Obtener los grupos asociados al semestre seleccionado.
+			var semestre = $(this).val();
+			$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre},function(grupos){
+				var options = "";
+				for(var i = 0; i < grupos.length; i++)
+				{
+					options += "<option value="+grupos[i].grupo+" >"+grupos[i].grupo+"</option>";
+				}
+				// Llenar las carreras que pertenecen al plan seleccionado
+				$('#select_grupos').html(options);
+				$('.grupos').multiselect('rebuild');
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		});
+
+		$("#btnGuardarCa").on("click",function(){
+			//var grupos = $("")
+			//$.post("<?php echo URL::to(cargaacademica/prueba); ?>",{grupos:})
+		});
 	});
 	</script>
 </body>

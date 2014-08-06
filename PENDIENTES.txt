@@ -25,6 +25,7 @@ OBLIGATORIA - 270 QUE DIO DE ALTA EN ESE INSTANTE.
 
 
 
+
 PENDIENTES ARREGLADOS:
 
 - Arreglar Coordinacion de la ventana modal.
@@ -38,5 +39,11 @@ PENDIENTES EN CARGA ACADEMICA
 
 - Validar que solo sean 2 planes de estudio los iniciales.
 - Validar periodos que correspondan a las fechas.
-- Validar si hay una carga en un periodo mostrar.
+- Validar si hay una carga en un periodo mostrar sino no mostrar el periodo.
 - Las optativas empiezan desde un semestre en particular?
+- Validar que el input hidden de programa educativo se cargue con el usuario asi como la label de la ventana modal de agregar grupo.
+- Limpiar controles cuando se registra un grupo.
+- Validacion en la alta de grupo que el semestre corresponda al seleccionado, si selecciono 1er. semestre no puede insertar 2"2"1,este si 211 
+- Validar que seleccionen un periodo
+- Que se añadan grupos si se da de alta en los grupos ya existentes.
+- Validar siempre que sea obligatorio la primer carga en caracter

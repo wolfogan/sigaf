@@ -33,11 +33,16 @@ Route::get('pruebas',function(){
 	//$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
 
 	//$plan = PlanEstudio::find('20101')->nivelD;
-	$periodosPrograma = Periodo::select('periodo','periodo_pedu','descripcion')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+	//$periodosPrograma = Periodo::select('periodo','periodo_pedu','descripcion')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+	$semestre = 3;
+	$grupos = DB::table('grupos')
+					->where('grupo','LIKE',"_".$semestre."_")
+					->get();
+
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $periodosPrograma;
+	return $grupos;
 });
