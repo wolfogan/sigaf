@@ -87,8 +87,9 @@
 	<!------------------------------------------------------------------------------------->
 	
 	<!-------------------------------- AQUI VA HORA Y FECHA-------------------------------->
-		<script src="../js/tiempoactual.js"></script>
-		<script>$(function(){startWatch(); return false;});</script>
+	<script src="../js/tiempoactual.js"></script>
+	<script>$(function(){startWatch(); return false;});</script>
+
 	<!-------------------------------- AQUI VA HORA Y FECHA-------------------------------->
 
 	<!---------------------------------- Para combo multiple scripts ---------------------------->
@@ -118,6 +119,7 @@
 </head>
 <body>
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
+
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
 			<h3>Agregar Período</h3>
@@ -249,7 +251,6 @@
 				<label style="font-size:18px;">Carga completada</label>
 			</div>
 			<!----------------------- LISTA PLAN VIGENTE ------------------------>
-			
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
 					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
@@ -291,7 +292,6 @@
 					</div>
 				</fieldset>
 			</div>
-			
 			<!----------------------- BOTON PLAN ANTERIOR ------------------------>
 			<div id="btnPlanA">
 				<input type="button" style="width:200px;" class="estilo_button2" value="Plan Anterior" name="planAntCa" id="planAntCa" />
@@ -338,7 +338,7 @@
 					</div>
 				</fieldset>
 			</div>
-			<!---------------------------------- REGISTROS DE CARGA ACADEMICA <!----------------------------------> 
+			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
 			<div id="contenedorRegistroca_mostrar">
 				<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
 					<thead class="semestre_plan">
