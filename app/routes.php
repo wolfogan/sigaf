@@ -27,27 +27,17 @@ Route::controller('login','UserLoginController');
 
 Route::controller('planestudio','PlanEstudioController');
 Route::controller('cargaacademica','CargaAcademicaController');
+Route::controller('disponibilidaddocente','DisponibilidadDocenteController');
 
 Route::get('pruebas',function(){
 
 	//$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
 
-	//$plan = PlanEstudio::find('20101')->nivelD;
-	//$periodosPrograma = Periodo::select('periodo','periodo_pedu','descripcion')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-	$semestre = 3;
-	$grupos = DB::table('grupos')
-					->where('grupo','LIKE',"_".$semestre."_")
-					->get();
-
-	$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(1)->get();
-		$UAS = UnidadAprendizaje::select('uaprendizaje','descripcionmat')
-				->where('plan','=',$plan[0]->plan)
-				->orderBy('uaprendizaje','asc')
-				->get();
+	$plan = PlanEstudio::find('20101')->nivelD;
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $last_query;
+	return $plan->descripcion;
 });

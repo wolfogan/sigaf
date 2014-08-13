@@ -23,9 +23,10 @@
 		<li>
 			<a href="#" title="Disponibilidad docente">Disponibilidad docente</a>
 			<ul>
-				<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
-				<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
+				<li><a href="<?=URL::to('disponibilidaddocente/registro');?>" title="Registrar DD">Registrar Disp. Doc.</a></li>
+				<li><a href="<?=URL::to('disponibilidaddocente/estudios');?>" title="Registrar estudios">Registrar estudios</a></li>
+				<li><a href="<?=URL::to('disponibilidaddocente/disponibilidad');?>" title="Registrar disponibilidad">Registrar disponibilidad</a></li>
+				<li class="ultimo"><a href="#" title="Eliminar DD">Eliminar DD</a></li>
 			</ul>
 		</li>
 		<li>

@@ -66,7 +66,7 @@
 			<div class="mask">
 				<h2>Disponibilidad docente</h2>
 				<p>
-					Registro, consulta, modificación, eliminación
+					<a href="<?=URL::to('disponibilidaddocente/registro');?>" style="color:#004000">Registrar disponibilidad docente</a>
 				</p>
 				<a href="#"></a>
 			</div>

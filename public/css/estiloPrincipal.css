@@ -1120,7 +1120,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 10px;
+ 	margin-top: 30px;
  	margin-left: 40px;
  }
 #btnPlanA
@@ -1140,20 +1140,20 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 10px;
+ 	margin-top: 30px;
  		
  }
 #periodoCa
 {
 
-	height: 100px;
+	height: 80px;
 	margin-top: -50px;
 	margin-left: 770px;
 	width: 530px;
 }
 .controlesListasCa
 {
-	
+
 
 	float: left;
 	height: 50px;
@@ -1185,6 +1185,7 @@ background: #EFCA0D;
 	
 	height: 550px;
 	margin:auto;
+	margin-top: 45px;
 	width: 470px;
 }
 .nombrePlan
@@ -1201,7 +1202,7 @@ background: #EFCA0D;
 {
 	
 	margin: auto;
-	margin-top: 830px;
+	margin-top: 900px;
 	width: 1300px;
 
 }
@@ -1220,10 +1221,10 @@ background: #EFCA0D;
 }
 .filtroMaterias_ca2
 {
-	
-	height: 50px;
-	margin-left: 20px;
-	margin-top: 30px;
+
+	height: 40px;
+	margin-left: 15px;
+	margin-top: 50px;
 	margin-bottom: 5px;
 
 	width: 250px;
@@ -1233,8 +1234,17 @@ background: #EFCA0D;
 {
 	
 	margin: auto;
-	
 	width: 1200px;
+}
+
+.cmbGrupos_superior
+{ 
+	
+	float: left;
+	margin-left: 10px;
+	margin-top: 0px;
+	width: 230px;
+
 }
 
 
@@ -1242,16 +1252,16 @@ background: #EFCA0D;
 .carga_listas
 {
 	
-	background: white;
+	background:white;
 	border: 2px solid gray;
 	border-radius: 10px;
 	float: left;
 	margin-bottom: 30px;
-	margin-left: 15px;
-	margin-right: 10px;
+	margin-left: 10px;
+	margin-right: 5px;
 	margin-top: 20px;
-	height: 350px;
-	width: 410px;	
+	height: 400px;
+	width: 420px;	
 }
 .controlesListasCa_2
 {
@@ -1271,7 +1281,7 @@ background: #EFCA0D;
 	text-align: center;
 	width: 200px;
 	
-	margin-top: 10px;
+	margin-top: 15px;
 }
 .nombre_plan
 {
@@ -1280,14 +1290,21 @@ background: #EFCA0D;
 	font-size: 16px;
 	height: 30px;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 15px;
 	width: 200px;
 }
 .nombre_escuela
 {
 	margin-left: 800px;
 }
-
+#consultar_admin
+{
+	
+	width: 300px;
+	margin-left: 15px;
+	margin-top: 0px;
+	height: 40px;
+}
 /*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
 .estilo_button_lupa
 {
@@ -1430,7 +1447,324 @@ background: #EFCA0D;
 	margin: -32px 0 0 -32px;
 }
 
-/*----------------------------------------------------------------------------*/
+/*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.dd_datosPersonales
+{
+	margin: auto;
+	width: 1200px;
+	margin-top: 30px;
+}
 
+
+.leyendas_fieldset
+{
+	font-size:18px;
+	font-weight:normal;
+}
+
+/*Apartir de aqui estan los id de los elementos ordenados en forma alfabetica*/
+/*Estilo para la seccion de datos personales*/
+#apaterno
+{
+	margin-top:15px;
+	margin-left:30px;
+}
+
+#amaterno
+{
+	margin-top:-30px;
+	margin-left:325px;	
+}
+
+#antiguedad
+{
+	margin-left:425px;
+	margin-top:-30px;
+}
+#calle
+{
+	margin-left:330px;
+	margin-top:-30px;
+}
+
+#celular
+{
+	margin-left:630px;
+	margin-top:-30px;
+}
+
+#cimarron
+{
+	float: right;
+}
+
+#colonia
+{
+	margin-top:15px;
+	margin-left:30px;
+}
+
+#cp
+{
+	margin-left:1050px;
+	margin-top:-30px;
+}
+
+#email
+{
+	margin-left:900px;
+	margin-top:-30px;
+}
+
+#emailalterno
+{
+	margin-top:20px;
+	margin-left:795px;
+}
+
+#fechaingresouabc
+{
+	margin-left:930px;
+	margin-top:-30px;
+}
+
+#foto
+{
+	margin-left:85px;	
+	margin-top:15px;
+}
+
+#logo  
+{
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 60px;
+	height: 80px;
+}
+
+#noempleado
+{
+	margin-left:680px;
+}
+
+#nombres
+{
+	margin-top:-30px;
+	margin-left:630px;
+}
+
+#noexterior
+{
+	margin-left:835px;
+	margin-top:-30px;
+}
+
+#nointerior
+{
+	margin-left:630px;
+	margin-top:-30px;
+}
+
+#puesto
+{
+	margin-left:53px;
+	margin-top:20px;
+}
+#rfc
+{
+	margin-top:30px;
+	margin-left:80px;	
+}
+
+#sexo
+{
+	margin-left:1025px;	
+	margin-top:-30px;
+}
+
+#telparticular
+{
+	margin-left:300px;
+	margin-top:-30px;
+}
+
+#teloficina
+{
+	margin-top:15px;
+}
+.telefonos
+{
+	width:120px;
+}
+#titulo
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0;
+	width: 900px;
+}
+
+#otrotrabajo
+{
+	margin-left:320px;
+	margin-top:-30px;
+}
+
+#txtantiguedad
+{
+	width:90px;
+}
+#txtcalle
+{
+	width:180px;
+}
+
+#txtotrotrabajo
+{
+	width:640px;
+}
+
+#txtpuesto
+{
+	width:180px;
+}
+#txtcp
+{
+	width:60px;
+}
+
+
+.txtemail
+{
+	width:200px;	
+}
+
+#txtfoto
+{
+	width:450px;
+	height:50px;
+}
+
+#txtnoexterior
+{
+	width:60px;
+}
+#txtnointerior
+{
+	width:60px;
+}
+
+#txtnoempleado
+{
+	width:90px;
+	margin-top:30px;
+}
+
+#txtnombres
+{
+	width:250px;
+}
+
+#txtrfc
+{
+	width:120px;
+}
+/*Estilo para la seccion de grado de estudios*/
+
+#txtlicenciatura
+{
+	width:180px;
+}
+
+#uniegresolic
+{
+	margin-left:345px;
+	margin-top:-30px;
+}
+#fechatitulacion
+{
+	margin-left:665px;
+	margin-top:-30px;
+}
+#cedulalic
+{
+	margin-left:1050px;
+	margin-top:-30px;
+}
+.cedulas
+{
+	width:75px;
+}
+
+#chkespecialid, #chknoespecialid, #chkmaestria, #chknomaestria, #chkdoctorado, #chknodoctorado
+{
+	width:25px;
+	height:25px;
+	text-align:center;
+}
+#nombreesp, #nombremaes, #nombredoc
+{
+	margin-left:220px;
+	margin-top:-30px;
+}
+
+#especialidad
+{
+	margin-top:15px;
+}
+#uniegresoesp, #uniegresomaes, #uniegresodoc
+{
+	margin-left:575px;
+	margin-top:-30px;
+}
+#cedulaesp, #cedulamaes, #ceduladoc
+{
+	margin-left:1050px;
+	margin-top:-30px;
+}
+#maestria
+{
+	margin-left:35px;
+	margin-top:15px;
+}
+#doctorado
+{
+	margin-left:16px;
+	margin-top:15px;
+}
+
+.nombestudios
+{
+	width:300px;
+}
+.univegresos
+{
+	width:300px;
+}
+/*estilo de los cursos y/o congresos*/
+
+#curso
+#txtnomcurtomado, #txtcursoactual
+{
+	width:200px;
+}
+
+#fechatomado, #fechaactual
+{
+	margin-left:500px;
+	margin-top:-30px;
+}
+#valorcurritomado, #valorcurractual
+{
+	margin-left:800px;
+	margin-top:-30px;
+}
+.valorcurricular
+{
+	width:90px;
+}
+/*----------------------------------------------------------------------------------------------*/
 
 

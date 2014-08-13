@@ -44,15 +44,15 @@
 
 				// Create a jqxListBox
 				$("#listaPlanVigente").jqxListBox({width: 408, source: sourcePlanVigente, checkboxes: true, height: 350, theme: 'orange'});
-				$("#listaPrimerSemestre").jqxListBox({width: 365, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSegundoSemestre").jqxListBox({width: 365, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaTercerSemestre").jqxListBox({width: 365, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaCuartoSemestre").jqxListBox({width: 365, source: sourceSemestre4, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaQuintoSemestre").jqxListBox({width: 365, source: sourceSemestre5, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSextoSemestre").jqxListBox({width: 365, source: sourceSemestre6, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSeptimoSemestre").jqxListBox({width: 365, source: sourceSemestre7, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaOctavoSemestre").jqxListBox({width: 365, source: sourceSemestre8, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaNovenoSemestre").jqxListBox({width: 365, source: sourceSemestre9, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaPrimerSemestre").jqxListBox({width: 380, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSegundoSemestre").jqxListBox({width: 380, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaTercerSemestre").jqxListBox({width: 380, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaCuartoSemestre").jqxListBox({width: 380, source: sourceSemestre4, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaQuintoSemestre").jqxListBox({width: 380, source: sourceSemestre5, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSextoSemestre").jqxListBox({width: 380, source: sourceSemestre6, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSeptimoSemestre").jqxListBox({width: 380, source: sourceSemestre7, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaOctavoSemestre").jqxListBox({width: 380, source: sourceSemestre8, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaNovenoSemestre").jqxListBox({width: 380, source: sourceSemestre9, checkboxes: true, height: 200, theme: 'orange'});
 				
 				
 				$("#listaPlanVigente").on('checkChange', function (event) {
@@ -302,7 +302,7 @@
 
 		<section>
 
-			<div class="contenedorCa">
+			<div class="contenedor_Ca">
 				<div class="nombre_coordinacion">Lic. en Informática</div>
 
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
@@ -314,6 +314,17 @@
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
 
 					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga completada</label>
+
+				</div>
+
+				<div id="consultar_admin">Carreras:
+					<select class="con_estilo" style="width:145px" name="consultar_admin" size=1>
+						<option value="INFORMATICA">INFORMATICA</option>
+						<option value="NEGOCIOS">NEGOCIOS</option>
+						<option value="ADMINISTRACION">ADMINISTRACION</option>
+						<option value="CONTADURIA">CONTADURIA</option>
+								
+					</select>
 
 				</div>
 
@@ -334,6 +345,15 @@
 							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaPrimerSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -373,6 +393,15 @@
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>   
 
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaSegundoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -410,7 +439,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
+
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaTercerSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -448,7 +488,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
 						</div>
+
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaCuartoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -486,7 +537,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
+
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaQuintoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -524,7 +586,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
+
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaSextoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -562,7 +635,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
+
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaSeptimoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -599,7 +683,18 @@
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
 
+							
+
 						</div>
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaOctavoSemestre" style="margin:0 4%;"></div>
 							</div>
@@ -636,8 +731,20 @@
 							</select>
 
 						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+
+							
 						
 						</div>
+
+
+						<div class="cmbGrupos_superior">Consultar:
+								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+									<option value="321">321</option>
+									<option value="322">322</option>
+									
+								</select>
+						</div>
+
 							<div class="listasCa">  
 								<div id="listaNovenoSemestre" style="margin:0 4%;"></div>
 							</div>
