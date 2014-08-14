@@ -364,7 +364,7 @@
 					<!------------------------------------ CLAVE UA ------------------------------------>
 					<div id="claveDiv">
 						 &nbsp;<label>Clave: </label>
-						<input class="estilo_text" type="text" name="clave1F" id="clave1F" size="1" autocomplete="off" >
+						<input class="estilo_text" type="text" name="clave1F" id="clave1F" autocomplete="off" />
 						<input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/>
 						<br />
 						<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
@@ -563,7 +563,7 @@
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
 	<script>
-	$(document).ready(function(){
+	$(function(){
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $('#tblUA').DataTable();
 		// Para añadir unidades de aprendizaje a las carreras con el update
@@ -772,13 +772,13 @@
 			
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
 					$("#materia").val(materia);
-					$("#materia").css("background","pink");
+					$("#materia").css({"background":"pink","color":"black"});
 					$("#clave1F").css("background","pink");
 					if($("#guardar").val()=="Guardar")
 					{
 						alert("Esta unidad de aprendizaje ya esta registrada indique otro número de clave por favor");
 						$("#clave1F").val("").focus();
-						$("#materia").val("").css("background","");
+						$("#materia").val("").css({"background":"","color":"black"});
 						$("#clave1F").css("background","");
 					}
 				})
@@ -786,6 +786,11 @@
 					$("#materia").css({"background":"#173C00","color":"white","font-size":"130%"}).focus();
 				});
 			}
+		});
+		// VALIDAR CHECKBOX PARA CLAVE1F
+		$("#clave1F").on("input",function(){
+			if($(this).val().length!=5)
+				$("#generarClave").attr("checked",false);
 		});
 		// GENERAR CLAVE PROVISIONAL
 		$("#generarClave").on("change",function(){
@@ -856,6 +861,13 @@
 				});
 			}
 		});
+		// VALIDAR COORDINACION
+		$("#coord").on("focusout",function(e){
+			var flag = $("#datalist_coord option[value='"+$(this).val()+"']").attr("label");
+			if(flag == undefined)
+				alert("No existe esa coordinación");
+		});
+
 		// SUMAR CREDITOS DE HORAS CLASE
 		$("#hc,#hl,#ht,#hcl,#he,#hpc").on("focusout",function(){
 			var hc = parseInt($("#hc").val())*2;

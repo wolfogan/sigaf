@@ -2,3 +2,4 @@ PREGUNTAS CARGA ACADEMICA:
 - Solo el coordinador de la carrera puede dar de alta de su coordinacion? por lo tanto sus grupos?
 - Si el plan de estudios no esta asociado a la carrera tengo que validad?
 - Nomeclatura de grupos?
+- EN PLAN DE ESTUDIOS SIEMPRE SON 5 DIGITOS O PUEDE HABER MAS

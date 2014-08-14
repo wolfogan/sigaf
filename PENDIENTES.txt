@@ -16,6 +16,7 @@ PENDIENTES POR ARREGLAR EN REGISTRO:
 - ARREGLAR QUE AÑADA A CLAVE SERIACION LA MATERIA QUE DIERON DE ALTA SIN RECARGAR PAGINA
 OBLIGATORIA - 270 QUE DIO DE ALTA EN ESE INSTANTE.
 - Validación de que ya existe plan de estudio en ventana modal.
+- Validar mayusculas en todos los campos.
 
 
 
@@ -26,6 +27,7 @@ PENDIENTES ARREGLADOS:
 - Ya muestra a que tipo de caracter pertenece la ua.
 - Suma de creditos cuando actualiza la ventana modal.
 - Arreglar Actualizacion de creditos. Cuando cierren ventana
+- Si cambian de foco en la materia con caja en verde desactivar estilo.
 
 
 PENDIENTES EN CARGA ACADEMICA
