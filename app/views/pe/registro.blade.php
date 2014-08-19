@@ -974,10 +974,12 @@
 					$("#materia").css("background-color","");
 					$("#noPlan").removeAttr('disabled').css("background-color","");
 					$("#eliminar").hide();
+					// Limpiar variable de carreras
+					$("#add_carreras").val("");
 					reset_campos();
 				})
-				.fail(function(){
-					alert("Fallo la actualización");
+				.fail(function(errorText,textError,errorThrow){
+					alert("FALLO EN LA ACTUALIZACION: " + errorText.responseText);
 				})
 				.always(function(){
 					// OCULTAR AJAXLOADER

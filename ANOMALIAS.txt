@@ -1,0 +1,1 @@
+Debe haber en p_ua tanto la carrera como la ua para que la interfaz funcione correctamente, de lo contrario deja el gif de carga en la actualizacion corriendo y no desaparece.
