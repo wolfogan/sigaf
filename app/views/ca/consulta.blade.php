@@ -57,9 +57,9 @@
 </div>
 
 <section>
-	<div id="statusPlanEstudios"><label>Estatus de la carga</label></div>
+	<div id="statusPlanEstudios"><label>Estatus: En proceso</label></div>
 			<div id="checkSubdirector">
-				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label>
+				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Completado</label>
 			</div>
 
 	<div id="Consultas">
@@ -120,7 +120,6 @@
 			</div>
 
 			<div class="consultay_ca">
-
 				<div id="consul_seriacion_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="seriacion_ca" value="seriacion_ca"><label>Seriadas</label>
 				</div>
@@ -132,11 +131,6 @@
 				<div id="consul_deshabilitados_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="deshabilitados_ca" value="deshabilitados_ca"><label>Deshabilitadas</label>
 				</div>
-
-				<div id="consul_periodotras_ca">
-					<input style="width:18px; height:18px;" type="checkbox" name="periodotras_ca" value="periodotras_ca"><label>Comparativo de periódos</label>
-				</div>
-
 			</div>
 
 				<div id="consultaboton_ca">

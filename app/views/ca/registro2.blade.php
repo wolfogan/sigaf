@@ -43,16 +43,16 @@
 				var sourceSemestre9 = [{{$uasS9}}];
 
 				// Create a jqxListBox
-				$("#listaPlanVigente").jqxListBox({width: 408, source: sourcePlanVigente, checkboxes: true, height: 350, theme: 'orange'});
-				$("#listaPrimerSemestre").jqxListBox({width: 380, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSegundoSemestre").jqxListBox({width: 380, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaTercerSemestre").jqxListBox({width: 380, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaCuartoSemestre").jqxListBox({width: 380, source: sourceSemestre4, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaQuintoSemestre").jqxListBox({width: 380, source: sourceSemestre5, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSextoSemestre").jqxListBox({width: 380, source: sourceSemestre6, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaSeptimoSemestre").jqxListBox({width: 380, source: sourceSemestre7, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaOctavoSemestre").jqxListBox({width: 380, source: sourceSemestre8, checkboxes: true, height: 200, theme: 'orange'});
-				$("#listaNovenoSemestre").jqxListBox({width: 380, source: sourceSemestre9, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaPlanVigente").jqxListBox({width: 419, source: sourcePlanVigente, checkboxes: true, height: 350, theme: 'orange'});
+				$("#listaPrimerSemestre").jqxListBox({width: 419, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSegundoSemestre").jqxListBox({width: 419, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaTercerSemestre").jqxListBox({width: 419, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaCuartoSemestre").jqxListBox({width: 419, source: sourceSemestre4, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaQuintoSemestre").jqxListBox({width: 419, source: sourceSemestre5, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSextoSemestre").jqxListBox({width: 419, source: sourceSemestre6, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaSeptimoSemestre").jqxListBox({width: 419, source: sourceSemestre7, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaOctavoSemestre").jqxListBox({width: 419, source: sourceSemestre8, checkboxes: true, height: 200, theme: 'orange'});
+				$("#listaNovenoSemestre").jqxListBox({width: 419, source: sourceSemestre9, checkboxes: true, height: 200, theme: 'orange'});
 				
 				
 				$("#listaPlanVigente").on('checkChange', function (event) {
@@ -104,7 +104,7 @@
 				];
 
 				// Create a jqxListBox
-				$(".listbox1").jqxListBox({width: 408, source: source, checkboxes: true, height: 350, theme: 'orange'});
+				$(".listbox1").jqxListBox({width: 419, source: source, checkboxes: true, height: 350, theme: 'orange'});
 				// Check several items.
 				$(".listbox1").jqxListBox('checkIndex', 0);
 				$(".listbox1").jqxListBox('checkIndex', 1);
@@ -250,7 +250,7 @@
 			<h3>Unidades de aprendizaje</h3>
 			<div class="tblCatalogos">
 				
-							<div class="listasCa">  
+							<div class="listasCa">
 								<div id="listaPlanVigente" style="margin:auto;"></div>
 							</div>
 							 
@@ -313,11 +313,11 @@
 					<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
 
-					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga completada</label>
+					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga capturada</label>
 
 				</div>
 
-				<div id="consultar_admin">Carreras:
+				<div class="consultar_admin">Carreras:
 					<select class="con_estilo" style="width:145px" name="consultar_admin" size=1>
 						<option value="INFORMATICA">INFORMATICA</option>
 						<option value="NEGOCIOS">NEGOCIOS</option>
@@ -355,7 +355,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaPrimerSemestre" style="margin:0 4%;"></div>
+								<div id="listaPrimerSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -403,7 +403,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaSegundoSemestre" style="margin:0 4%;"></div>
+								<div id="listaSegundoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -452,7 +452,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaTercerSemestre" style="margin:0 4%;"></div>
+								<div id="listaTercerSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -501,7 +501,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaCuartoSemestre" style="margin:0 4%;"></div>
+								<div id="listaCuartoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -550,7 +550,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaQuintoSemestre" style="margin:0 4%;"></div>
+								<div id="listaQuintoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -599,7 +599,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaSextoSemestre" style="margin:0 4%;"></div>
+								<div id="listaSextoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -648,7 +648,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaSeptimoSemestre" style="margin:0 4%;"></div>
+								<div id="listaSeptimoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -696,7 +696,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaOctavoSemestre" style="margin:0 4%;"></div>
+								<div id="listaOctavoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">
@@ -746,7 +746,7 @@
 						</div>
 
 							<div class="listasCa">  
-								<div id="listaNovenoSemestre" style="margin:0 4%;"></div>
+								<div id="listaNovenoSemestre" style="margin:0;"></div>
 							</div>
 						
 						<div class="controlesListasCa_2">

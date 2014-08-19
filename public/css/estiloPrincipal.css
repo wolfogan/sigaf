@@ -132,6 +132,14 @@ footer
 
 	
 }
+#pe_consultaActualizada
+{
+	float: left;
+	font-size: 20px;
+	color:#004000;
+	margin: auto;
+	width: 240px;
+}
 #consultaPlan
 {
 	height: 120px;
@@ -322,21 +330,116 @@ background: #EFCA0D;
 {
 	display: inline-block;
 	margin-top:40px;
-	padding-left: 240px;
+	padding-left: 205px;
 }
 #etapadisciplinaria
 {
 	display: inline-block;
-	padding-left: 200px;
+	padding-left: 247px;
 }
 #etapaterminal
 {
 	display: inline-block;
-	padding-left: 200px;
+	padding-left: 243px;
+}
+#basica_semestres
+{
+
+	float: left;
+	margin-top: 15px;
+	width: 450px;
+}
+#semestre_uno
+{
+	float: left;
+	font-size: 20px;
+	margin-left: 130px;
+	padding-right: 70px;
+
+	width: 50px;
+}
+
+#semestre_dos
+{
+	float: left;
+	font-size: 20px;
+	padding-right: 70px;
+	width: 50px;
+}
+
+#semestre_tres
+{
+	float: left;
+	font-size: 20px;
+	width: 50px;
+}
+#disciplinaria_semestres
+{
+	float: left;
+	margin-top: 15px;
+	width: 440px;
+}
+#semestre_cuatro
+{
+	
+	float: left;
+	font-size: 20px;
+	margin-left: 75px;
+	padding-right: 75px;
+	width: 50px;
+}
+#semestre_cinco
+{
+	
+	float: left;
+	font-size: 20px;
+	padding-right: 80px;
+	width: 50px;
+}
+#semestre_seis
+{
+
+	float: left;
+	font-size: 20px;
+	padding-right: 60px;
+	width: 50px;
+}
+
+#terminal_semestres
+{
+	float: left;
+	margin-top: 15px;
+	width: 400px;
+}
+
+#semestre_siete
+{
+	
+	float: left;
+	font-size: 20px;
+	margin-left: 40px;
+	padding-right: 75px;
+	width: 50px;
+}
+#semestre_ocho
+{
+	
+	float: left;
+	font-size: 20px;
+	padding-right: 75px;
+	width: 50px;
+}
+#semestre_nueve
+{
+	
+	float: left;
+	font-size: 20px;
+	padding-right: 60px;
+	width: 50px;
 }
 #totalcreditos
 {
-	
+	background: blue;
 	color:#004000;
 	font-size: 16px;
 	padding-left: 25px;
@@ -347,7 +450,7 @@ background: #EFCA0D;
 #actualizaimprime
 {
 	height: 70px;
-	margin-left:1015px;
+	margin-left:1110px;
 	margin-top: -70px;
 	padding-right: 20px;
 }
@@ -1120,7 +1223,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 30px;
+ 	margin-top: 10px;
  	margin-left: 40px;
  }
 #btnPlanA
@@ -1140,7 +1243,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 30px;
+ 	margin-top: 12px;
  		
  }
 #periodoCa
@@ -1182,11 +1285,8 @@ background: #EFCA0D;
 }
 .listasCa
 {
-	
 	height: 550px;
-	margin:auto;
 	margin-top: 45px;
-	width: 470px;
 }
 .nombrePlan
 {
@@ -1297,7 +1397,7 @@ background: #EFCA0D;
 {
 	margin-left: 800px;
 }
-#consultar_admin
+.consultar_admin
 {
 	
 	width: 300px;
@@ -1364,11 +1464,7 @@ background: #EFCA0D;
 	float: left;
 	padding-right: 70px;
 }
-#consul_periodotras_ca
-{
-	float: left;
-	padding-right: 70px;	
-}
+
 .consultax_ca
 {
 		

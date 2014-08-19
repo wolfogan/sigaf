@@ -5,8 +5,8 @@
 			<ul>
 				<li><a href="<?=URL::to('catalogos');?>" title="Catalogos">Catálogos</a></li>
 				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Administrar catálogos">Admón. Catálogos</a></li>
-				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registrar UA">Registrar UA</a></li>
-				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta, modificar y eliminar">Consultar, modificar, eliminar</a></li>
+				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
+				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/bitacora')?>" titile="Bitacora">Bitácora</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 			</ul>
@@ -14,8 +14,8 @@
 		<li>
 			<a href="#" titile="Carga académica">Carga académica</a>
 			<ul>
-				<li><a href="<?=URL::to('cargaacademica/registro');?>" title="Registrar CA">Registrar Carga A.</a></li>
-				<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registrar Carga A 2.</a></li>
+				<li><a href="<?=URL::to('cargaacademica/registro');?>" title="Registrar CA">Registro Inicial CA</a></li>
+				<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registro subsecuente CA</a></li>
 				<li><a href="<?=URL::to('cargaacademica/consulta');?>" title="Consultar CA">Consultar Carga A.</a></li>
 				<li class="ultimo"><a href="#" title="Modificar CA">Modificar Carga A.</a></li>
 			</ul>

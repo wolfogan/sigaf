@@ -325,7 +325,15 @@
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
 				<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar">
-				<label style="font-size:18px;">Carga completada</label>
+				<label style="font-size:18px;">Carga capturada</label>
+			</div>
+			<div class="consultar_admin" style="margin-left:50px;">Carreras:
+					<select class="con_estilo" style="width:145px" name="consultar_admin" size=1>
+						<option value="INFORMATICA">INFORMATICA</option>
+						<option value="NEGOCIOS">NEGOCIOS</option>
+						<option value="ADMINISTRACION">ADMINISTRACION</option>
+						<option value="CONTADURIA">CONTADURIA</option>
+					</select>
 			</div>
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">

@@ -463,25 +463,25 @@
 					</div>
 					<div id="hlDiv">
 						<label>HL: </label>
-						<input class="estilo_numeric" type="number" name="hl" id="hl" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="hl" id="hl" min="0" max="20" >
 					</div>
 					<div id="htDiv">
 						<label>HT: </label>
-						<input class="estilo_numeric" type="number" name="ht" id="ht" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="ht" id="ht" min="0" max="20" >
 					</div>
 					<br />
 					<br />
 					<div id="heDiv">
 						<label>HE: </label>
-						<input class="estilo_numeric" type="number" name="he" id="he" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="he" id="he" min="0" max="20" >
 					</div>
 					<div id="hpcDiv">
 						<label>HPC: </label>
-						<input class="estilo_numeric" type="number" name="hpc" id="hpc" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="hpc" id="hpc" min="0" max="20" >
 					</div>
 					<div id="hclDiv">
 						<label>HCL: </label>
-						<input class="estilo_numeric" type="number" name="hcl" id="hcl" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="hcl" id="hcl" min="0" max="20" >
 					</div>
 					<br />
 					<br />
@@ -515,7 +515,7 @@
 				<img src="../imagenes/cargando.gif" alt="Cargando2...." style="margin-top:6%; width:70px; height:12px;"/>
 			</figure>
 			<div id="planTerminado">
-				<input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios terminado</label>
+				<input style="width:20px; height:20px;" type="checkbox" name="planTerminado" value="Generar"><label style="font-size:18px;">Plan de estudios capturado</label>
 			</div>
 			<br />
 			<!-- INICIA TABLA DATATABLES PARA LAS UA -->
@@ -766,6 +766,8 @@
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE CUANDO PIERDE EL FOCO LA CLAVE DE LA UA.
 		// VALIDA QUE NO ESTE REGISTRADA ESA UA EN EL PLAN SELECCIONADO
 		$("#clave1F").on("focusout",function(){
+			if($("#guardar").val()=="Actualizar")
+				return;
 			if($(this).val()!="")
 			{
 				var idua = $(this).val();

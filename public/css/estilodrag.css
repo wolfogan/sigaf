@@ -7,8 +7,9 @@
 	font-family:Trebuchet Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif; 
 	font-size:7pt; 
 	padding:0px;  
-	width:1050px; 
-	margin:10px auto;
+	width:1250px;
+	margin-left: 26px; 
+	/*margin:10px auto;*/
 	
 
 }
@@ -23,7 +24,7 @@ ul
 
 #list1, #list2, #list3 
 { 
-	width:350px; 
+	width:400px; 
 	list-style-type:none; 
 	margin:0px; 
 
@@ -34,8 +35,9 @@ ul
 { 
 	float:left; 
 	padding:5px; 
-	width:100px; 
-	height:50px; 
+	width:112px; 
+	height:72px;
+	margin-bottom: 0px; 
 
 	
 	
@@ -46,10 +48,10 @@ ul
 
 #list1 div, #list2 div, #list3 div 
 { 
-	width:90px; 
-	height:50px; 
+	width:112px; 
+	height:72px; 
 	border-radius:5px; 
-	border: 2.5px solid #004000;
+	border: 2.5px solid #FF1400;
 	text-align:center; 
 	padding-top:0px; 
 

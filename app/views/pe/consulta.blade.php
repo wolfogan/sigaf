@@ -50,7 +50,7 @@
 			</div>
 		</div>
 		<div id="ubicacion" class="texto_body">
-			Plan de estudios: Consulta, modificación y eliminación
+			Plan de estudios: Consulta y modificación
 		</div>
 		<div id="loginmanual">
 			<div id="login" class="texto_body">
@@ -62,9 +62,9 @@
 		</div>
 	</div>
 	<section>
-		<div id="statusPlanEstudios"><label>Estatus del plan</label></div>
+		<div id="statusPlanEstudios"><label>Estatus: En proceso</label></div>
 			<div id="checkSubdirector">
-				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Aceptado</label>
+				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Completado</label>
 			</div>
 
 			<div id="Consultas">
@@ -168,6 +168,21 @@
 					Etapa terminal
 				</div>
 			</div>
+			<div id="basica_semestres">
+				<div id="semestre_uno">1</div>
+				<div id="semestre_dos">2</div>
+				<div id="semestre_tres">3</div>
+			</div>
+			<div id="disciplinaria_semestres">
+				<div id="semestre_cuatro">4</div>
+				<div id="semestre_cinco">5</div>
+				<div id="semestre_seis">6</div>
+			</div>
+			<div id="terminal_semestres">
+				<div id="semestre_siete">7</div>
+				<div id="semestre_ocho">8</div>
+				<div id="semestre_nueve">9</div>
+			</div>
 		</div>
 		<script type="text/javascript">
 			$("ul:first").dragsort();
@@ -195,7 +210,8 @@
 			<label> Materias optativas:</label><label id="creditos_optativas">0</label><br>
 			<label> Total de creditos: </label><label id="creditos_total">0</label>
 		</div>
-		<div id="imprimir"></div>
+		<div id="pe_consultaActualizada">REGISTRO ACTUALIZADO</div>
+
 		<div id="actualizaimprime">
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
 		</div>
@@ -296,7 +312,7 @@
 						</table>
 				</div>
 
-				<input type="submit" style="font-size:21px" value="Guardar" class="estilo_button2">
+				<input type="submit" value="Guardar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</form>
 		</div>
