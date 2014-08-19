@@ -264,23 +264,23 @@
 					</tr>
 					<tr>
 						<td size="10">HC:</td>
-						<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HL:</td>
-						<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 					
 					<tr>
 						<td size="10">HT:</td>
-						<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HE:</td>
-						<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 					
 					<tr>
 						<td size="10">HPC:</td>
-						<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						<td size="10">HCL:</td>
-						<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 					</tr>
 					<tr>
 						<td>Cred.:</td>
@@ -500,6 +500,17 @@
 			var creditos = hc + hl + ht + hcl + hpc + he;
 			$("#creditos_update").val(creditos);
 		});
+		// EVENTOS EN LA VENTANA MODAL DE CONSULTA DE UNIDAD DE APRENDIZAJE
+		// Si se quita el foco de la clave seriada mostrar nombre
+		$("#claveSeriacion_update").on("focusout",function(){
+			if($(this).val()!="")
+			{
+				var idua = $(this).val();
+				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+					$("#descripcionSeriacion_update").val(materia);
+				});
+			}
+		});
 	});
 	</script>
 
@@ -564,6 +575,10 @@
 				alert("Actualizacion Completada");
 
 				$(".md-close").click();
+
+				// Colocar en la nueva etapa si se cambio
+				var lista = "#list" + $("#etapa_update").val();
+				$(lista).append($(divUA).parent());
 			})
 			.fail(function(){alert("Fallo la actualizacion");});
 		}
