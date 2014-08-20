@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'sigaf',
+			'database'  => 'sigaf_i',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
