@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50612
+Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : sigaf
 
 Target Server Type    : MYSQL
-Target Server Version : 50612
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-08-06 16:07:52
+Date: 2014-08-20 11:56:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL COMMENT 'Registro Borrado / Anterior',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=833 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=786 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -819,53 +819,6 @@ INSERT INTO `bitacora` VALUES ('782', 'grupos', 'tempo', 'I', '2014-08-06 00:00:
 INSERT INTO `bitacora` VALUES ('783', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '311|20142|20101|4|1', null);
 INSERT INTO `bitacora` VALUES ('784', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '411|20142|20101|4|1', null);
 INSERT INTO `bitacora` VALUES ('785', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '511|20142|20101|4|1', null);
-INSERT INTO `bitacora` VALUES ('786', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '111|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('787', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '111|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('788', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '111|20142|11252|3', null);
-INSERT INTO `bitacora` VALUES ('789', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '211|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('790', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '211|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('791', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '211|20142|11252|3', null);
-INSERT INTO `bitacora` VALUES ('792', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '311|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('793', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '311|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('794', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '311|20142|11252|3', null);
-INSERT INTO `bitacora` VALUES ('795', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('796', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|11257|3', null);
-INSERT INTO `bitacora` VALUES ('797', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|11258|3', null);
-INSERT INTO `bitacora` VALUES ('798', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|11259|3', null);
-INSERT INTO `bitacora` VALUES ('799', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '231|20142|11260|3', null);
-INSERT INTO `bitacora` VALUES ('800', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('801', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|11257|3', null);
-INSERT INTO `bitacora` VALUES ('802', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|11258|3', null);
-INSERT INTO `bitacora` VALUES ('803', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|11259|3', null);
-INSERT INTO `bitacora` VALUES ('804', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '232|20142|11260|3', null);
-INSERT INTO `bitacora` VALUES ('805', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|20101|4|1', null);
-INSERT INTO `bitacora` VALUES ('806', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|20101|4|1', null);
-INSERT INTO `bitacora` VALUES ('807', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|20101|4|1', null);
-INSERT INTO `bitacora` VALUES ('808', 'grupos', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|20101|4|1', null);
-INSERT INTO `bitacora` VALUES ('809', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('810', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11237|3', null);
-INSERT INTO `bitacora` VALUES ('811', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11238|3', null);
-INSERT INTO `bitacora` VALUES ('812', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11240|3', null);
-INSERT INTO `bitacora` VALUES ('813', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('814', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '121|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('815', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('816', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11237|3', null);
-INSERT INTO `bitacora` VALUES ('817', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11238|3', null);
-INSERT INTO `bitacora` VALUES ('818', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11240|3', null);
-INSERT INTO `bitacora` VALUES ('819', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('820', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '222|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('821', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('822', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11237|3', null);
-INSERT INTO `bitacora` VALUES ('823', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11238|3', null);
-INSERT INTO `bitacora` VALUES ('824', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11240|3', null);
-INSERT INTO `bitacora` VALUES ('825', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('826', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '321|20142|11251|3', null);
-INSERT INTO `bitacora` VALUES ('827', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11235|3', null);
-INSERT INTO `bitacora` VALUES ('828', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11237|3', null);
-INSERT INTO `bitacora` VALUES ('829', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11238|3', null);
-INSERT INTO `bitacora` VALUES ('830', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11240|3', null);
-INSERT INTO `bitacora` VALUES ('831', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11249|3', null);
-INSERT INTO `bitacora` VALUES ('832', 'carga', 'tempo', 'I', '2014-08-06 00:00:00', '421|20142|11251|3', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -929,49 +882,6 @@ CREATE TABLE `carga` (
 -- ----------------------------
 -- Records of carga
 -- ----------------------------
-INSERT INTO `carga` VALUES ('111', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('111', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('111', '20142', '11252', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11237', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11238', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11240', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('121', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('211', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('211', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('211', '20142', '11252', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11237', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11238', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11240', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('222', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('231', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('231', '20142', '11257', '3');
-INSERT INTO `carga` VALUES ('231', '20142', '11258', '3');
-INSERT INTO `carga` VALUES ('231', '20142', '11259', '3');
-INSERT INTO `carga` VALUES ('231', '20142', '11260', '3');
-INSERT INTO `carga` VALUES ('232', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('232', '20142', '11257', '3');
-INSERT INTO `carga` VALUES ('232', '20142', '11258', '3');
-INSERT INTO `carga` VALUES ('232', '20142', '11259', '3');
-INSERT INTO `carga` VALUES ('232', '20142', '11260', '3');
-INSERT INTO `carga` VALUES ('311', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('311', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('311', '20142', '11252', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11237', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11238', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11240', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('321', '20142', '11251', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11235', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11237', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11238', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11240', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11249', '3');
-INSERT INTO `carga` VALUES ('421', '20142', '11251', '3');
 
 -- ----------------------------
 -- Table structure for ciudad
@@ -1857,28 +1767,15 @@ CREATE TABLE `grupos` (
   KEY `fk_grupos_turnos1` (`turno`),
   KEY `fk_grupos_planestudio1` (`plan`),
   KEY `fk_grupos_planestudio2` (`programaedu`),
-  CONSTRAINT `fk_grupos_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`),
-  CONSTRAINT `fk_grupos_planestudio1` FOREIGN KEY (`plan`) REFERENCES `plan_programa` (`plan`),
-  CONSTRAINT `fk_grupos_planestudio2` FOREIGN KEY (`programaedu`) REFERENCES `plan_programa` (`programaedu`),
+  CONSTRAINT `fk_grupos_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_grupos_planestudio1` FOREIGN KEY (`plan`) REFERENCES `plan_programa` (`plan`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_grupos_planestudio2` FOREIGN KEY (`programaedu`) REFERENCES `plan_programa` (`programaedu`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_grupos_turnos1` FOREIGN KEY (`turno`) REFERENCES `turnos` (`turno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of grupos
 -- ----------------------------
-INSERT INTO `grupos` VALUES ('111', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('121', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('211', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('222', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('231', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('232', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('233', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('243', '20142', '20092', '4', '1');
-INSERT INTO `grupos` VALUES ('311', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('321', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('411', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('421', '20142', '20101', '4', '1');
-INSERT INTO `grupos` VALUES ('511', '20142', '20101', '4', '1');
 
 -- ----------------------------
 -- Table structure for nvprograma
@@ -2205,7 +2102,6 @@ CREATE TABLE `planestudio` (
 -- ----------------------------
 -- Records of planestudio
 -- ----------------------------
-INSERT INTO `planestudio` VALUES ('20091', 'Plan 2009-1', '400', '2014-07-01', '2014-07-31', '1');
 INSERT INTO `planestudio` VALUES ('20092', 'Plan 2009 2', '200', '2014-06-19', '2015-02-10', '1');
 INSERT INTO `planestudio` VALUES ('20101', 'Otro plan', '200', '2014-06-19', '2014-06-30', '2');
 
@@ -2225,26 +2121,19 @@ CREATE TABLE `plan_programa` (
 -- ----------------------------
 -- Records of plan_programa
 -- ----------------------------
-INSERT INTO `plan_programa` VALUES ('20091', '1');
 INSERT INTO `plan_programa` VALUES ('20092', '1');
 INSERT INTO `plan_programa` VALUES ('20101', '1');
-INSERT INTO `plan_programa` VALUES ('20091', '2');
 INSERT INTO `plan_programa` VALUES ('20092', '2');
 INSERT INTO `plan_programa` VALUES ('20101', '2');
-INSERT INTO `plan_programa` VALUES ('20091', '3');
 INSERT INTO `plan_programa` VALUES ('20092', '3');
 INSERT INTO `plan_programa` VALUES ('20101', '3');
-INSERT INTO `plan_programa` VALUES ('20091', '4');
 INSERT INTO `plan_programa` VALUES ('20092', '4');
-INSERT INTO `plan_programa` VALUES ('20091', '5');
+INSERT INTO `plan_programa` VALUES ('20101', '4');
 INSERT INTO `plan_programa` VALUES ('20092', '5');
-INSERT INTO `plan_programa` VALUES ('20091', '6');
+INSERT INTO `plan_programa` VALUES ('20101', '5');
 INSERT INTO `plan_programa` VALUES ('20092', '6');
 INSERT INTO `plan_programa` VALUES ('20101', '6');
-INSERT INTO `plan_programa` VALUES ('20091', '7');
 INSERT INTO `plan_programa` VALUES ('20092', '7');
-INSERT INTO `plan_programa` VALUES ('20091', '8');
-INSERT INTO `plan_programa` VALUES ('20101', '8');
 
 -- ----------------------------
 -- Table structure for programaedu
@@ -2311,7 +2200,6 @@ INSERT INTO `p_ua` VALUES ('1', '11249');
 INSERT INTO `p_ua` VALUES ('1', '11250');
 INSERT INTO `p_ua` VALUES ('1', '11251');
 INSERT INTO `p_ua` VALUES ('1', '11252');
-INSERT INTO `p_ua` VALUES ('1', '11290');
 INSERT INTO `p_ua` VALUES ('1', '11291');
 INSERT INTO `p_ua` VALUES ('2', '11236');
 INSERT INTO `p_ua` VALUES ('2', '11237');
@@ -2321,7 +2209,6 @@ INSERT INTO `p_ua` VALUES ('2', '11240');
 INSERT INTO `p_ua` VALUES ('2', '11249');
 INSERT INTO `p_ua` VALUES ('2', '11250');
 INSERT INTO `p_ua` VALUES ('2', '11251');
-INSERT INTO `p_ua` VALUES ('2', '11290');
 INSERT INTO `p_ua` VALUES ('2', '11291');
 INSERT INTO `p_ua` VALUES ('3', '11236');
 INSERT INTO `p_ua` VALUES ('3', '11237');
