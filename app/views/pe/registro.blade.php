@@ -302,13 +302,13 @@
 	</div>
 	<section>
 		<!---------------------------- FORMULARIO PRINCIPAL DE UNIDAD DE APRENDIZAJE ---------------------------->
-		<form id="formularioPlanEstudio" method="post" action="<?=URL::to('planestudio/registrarua');  ?>">
+		<form id="formularioPlanEstudio" method="POST" action="javascript:registrarUnidadAprendizaje();">
 			<!-- INICIA PRIMER SECCIÓN -->
 			<div id="primerBloque">
 				<!------------------------------------ NO. PLAN -------------------------------------->
 				<div id="noPlanDiv">
 					<label>No.Plan:</label>
-					<select class="con_estilo" type="text" name="noPlan" id="noPlan" >
+					<select class="con_estilo" type="text" name="noPlan" id="noPlan" required>
 						@foreach ($codigosPE as $codigo)
 							<option value="{{$codigo['codigo']}}">{{$codigo['formato']}}</option>
 						@endforeach
@@ -364,7 +364,7 @@
 					<!------------------------------------ CLAVE UA ------------------------------------>
 					<div id="claveDiv">
 						 &nbsp;<label>Clave: </label>
-						<input class="estilo_text" type="text" name="clave1F" id="clave1F" autocomplete="off" />
+						<input class="estilo_text" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
 						<input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/>
 						<br />
 						<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
@@ -372,12 +372,12 @@
 					<!---------------------------------- DESCRIPCIÓN UA ---------------------------------->
 					<div id="materiaDiv">
 						<label>Materia: </label>
-						<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1" />
+						<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1" title="Es necesario una descripción de la unidad de aprendizaje" required/>
 					</div>
 					<!-------------------------------------- ETAPA -------------------------------------->
 					<div id="etapaDiv">
 						<label>Etapa: </label>
-						<select style="width:143px; height:30px" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" >
+						<select style="width:143px; height:30px" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" required>
 							@foreach ($etapas as $etapa)
 								<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
 							@endforeach
@@ -389,7 +389,7 @@
 					<!---------------------------------- TIPO CARACTER ---------------------------------->
 					<div id="tipoDiv">
 						<label>Tipo: </label>
-						<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" >
+						<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
 							@foreach ($tiposCaracter as $caracter)
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
@@ -414,7 +414,7 @@
 						<!---------------------------------- TIPO SERIACION ---------------------------------->
 						<div id="seriacionDivTipo">
 							<label>Tipo Seriación: </label>
-							<select style="width: 143px; height:30px" class="con_estilo" name="serie" id="serie" size=1 type="text" >
+							<select style="width: 143px; height:30px" class="con_estilo" name="serie" id="serie" size=1 type="text" required>
 								@foreach ($seriaciones as $seriacion)
 									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 								@endforeach
@@ -441,7 +441,7 @@
 					</fieldset>
 					<!---------------------------------- COORDINACION ---------------------------------->
 					<div id="coordDiv">
-						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord"  />
+						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
 						<datalist id="datalist_coord" name="c">
 							@foreach ($coordinaciones as $coordinacion)
 								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
@@ -459,7 +459,7 @@
 				<div id="cuartoBloque">
 					<div id="hcDiv">
 						<label>HC: </label>
-						<input class="estilo_numeric" type="number" name="hc" id="hc" min="1" max="20" >
+						<input class="estilo_numeric" type="number" name="hc" id="hc" min="1" max="20" title="Es necesario tener horas clase en la unidad de aprendizaje">
 					</div>
 					<div id="hlDiv">
 						<label>HL: </label>
@@ -496,7 +496,7 @@
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
-						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
+						<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
 						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
@@ -566,8 +566,223 @@
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
-	<script>
+	<script type="text/javascript">
+	// FUNCION registrarUnidadAprendizaje
+	/**
+	 * Función principal que permite el registro de la Unidad de Aprendizaje en un Plan de Estudio
+	 * @return {null} Si las validaciones fallan no permite la ejecución de la función
+	 */
+	function registrarUnidadAprendizaje()
+	{
+		// Crear instancia Datatables para manipulación de renglones durante la ejecución
+		var t = $("#tblUA").DataTable();
+		var opcion = $("#guardar").val();
+		// Validar si no eligieron carreras.
+		var nCarreras = $("#select_carreras").val();
+		if(nCarreras==null)
+		{
+			alert("No has seleccionado ninguna carrera");
+			return;
+		}
+		// Validar seriacion
+		if($("#serie").val()!=1 && $("#clave2F").val().length<1)
+		{
+			alert("Debes escribir una materia seriada");
+			return;
+		}
+
+		// Mostrar AjaxLoader
+		$("#ajaxLoad").css("display","block");
+		// INSERTAR UNIDAD DE APRENDIZAJE
+		if(opcion == "Guardar")
+		{
+			var dataUA = $("#formularioPlanEstudio").serialize();
+			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
+				var noPlan=$("#noPlan").val();
+				var clave1F=$("#clave1F").val();
+				var materia=$("#materia").val();
+				//var carrera = "INFORMATICA";
+				var etapaF=$("#etapaF option:selected").html();
+				var tipoF=$("#tipoF option:selected").html();
+				var clave2F=$("#clave2F").val();
+				//var materiaSeriada=$("#materiaSeriada").val();
+				var hc=$("#hc").val();
+				var hl=$("#hl").val();
+				var ht=$("#ht").val();
+				var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
+				var creditosF=$("#creditosF").val();
+				var tablaDatos= $("#tblUA");
+				// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
+				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
+					if($(elemento).hasClass('active') && indice != 0)
+					{
+						var input = $(elemento).find('input').val();
+						t.row.add([
+									clave1F,
+									materia,
+									$(elemento).text(),
+									etapaF,
+									tipoF,
+									clave2F,
+									coord,
+									hc,
+									hl,
+									ht,
+									creditosF,
+									"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
+					}
+				});
+				alert(data);
+				$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
+				reset_campos();
+				desmarcar_carreras();
+			})
+			.fail(function(){
+				alert("Fallo el registro de la Unidad de Aprendizaje");
+			})
+			.always(function(){
+				// OCULTAR AJAXLOADER
+				$("#ajaxLoad").css("display","none");
+			});
+		}
+		else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
+		{
+
+			var materia=$("#clave1F").val();
+			var plan = $("#noPlan").val();
+			var dataUA = $("#formularioPlanEstudio").serialize();
+			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(data){
+				//alert(data);
+				$("#guardar").val("Guardar");
+				$("#limpiar").val("Limpiar");
+				$("#tblUA").dataTable().fnClearTable();
+				ActualizarUAS(plan);
+				alert("Datos actualizados");
+				// Limpiar Control
+				$('option',$(".example41")).each(function(element) {
+					$(".example41").multiselect('deselect', $(this).val());
+				});
+				$(".example41").multiselect("refresh");
+				//$(".example41").multiselect('deselect', "multiselect-all");
+				// Limpiar Control
+				$("#select_carreras option").removeAttr('disabled');
+				$(".example41").multiselect('refresh');
+
+				$("#materia").css("background-color","");
+				$("#noPlan").removeAttr('disabled').css("background-color","");
+				$("#eliminar").hide();
+				// Limpiar variable de carreras
+				$("#add_carreras").val("");
+				reset_campos();
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert("FALLO EN LA ACTUALIZACION: " + errorText.responseText);
+			})
+			.always(function(){
+				// OCULTAR AJAXLOADER
+				$("#ajaxLoad").css("display","none");
+			});
+			
+		}
+	}
+
+	// FUNCION ActualizarUAS
+	/**
+	 * Obtiene las Unidades de Aprendizaje de las carreras asignadas al Plan de Estudios Vigente.
+	 * @param {string} plan Nro. de plan seleccionado por el usuario.
+	 */
+	function ActualizarUAS(plan)
+	{
+		// Crear instancia Datatables para manipulación de renglones durante la ejecución
+		var t = $('#tblUA').DataTable();
+		$("#ajaxLoad").css("display","block");
+		$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
+			$('#tblUA').dataTable().fnClearTable();
+			for (var i = 0; i < uas.length; i++) 
+			{
+				t.row.add([
+							uas[i].uaprendizaje,
+							uas[i].descripcionmat,
+							uas[i].descripcion,
+							uas[i].etapa,
+							uas[i].caracter,
+							uas[i].claveD,
+							uas[i].coordinaciona,
+							uas[i].HC,
+							uas[i].HL,
+							uas[i].HT,
+							uas[i].creditos,
+							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
+			}
+			$("#ajaxLoad").css("display","none");
+		});
+	}
+
+
+	function disabled_campos(deshabilitar)
+	{
+		$("#clave1F").attr("disabled",deshabilitar);
+		$("#materia").attr("disabled",deshabilitar);
+		$("#etapaF").attr("disabled",deshabilitar);
+		$("#tipoF").attr("disabled",deshabilitar);
+		$("#semestre").attr("disabled",deshabilitar);
+		$("#serie").attr("disabled",deshabilitar);
+		$("#coord").attr("disabled",deshabilitar);
+		$("#hc").attr("disabled",deshabilitar);
+		$("#hl").attr("disabled",deshabilitar);
+		$("#ht").attr("disabled",deshabilitar);
+		$("#he").attr("disabled",deshabilitar);
+		$("#hcl").attr("disabled",deshabilitar);
+		$("#hpc").attr("disabled",deshabilitar);
+		$("#observaciones").attr("disabled",deshabilitar);
+		$("#creditosF").attr("disabled",deshabilitar);
+		if(deshabilitar==true)
+			$("#select_carreras").multiselect("disable");
+		else
+			$("#select_carreras").multiselect("enable");
+		
+		
+	}
+
+	function reset_campos()
+	{
+		//$("#noPlan").val("");
+		$("#clave1F").val("");
+		$("#materia").val("");
+		//$("#nivel").val("");
+		$("#carrera").val("");
+		$("#etapaF").val("1");
+		$("#tipoF").val("1");
+		$("#clave2F").val("");
+		$("#materiaSeriada").val("");
+		$("#serie").val("1");
+		$("#seriacion").val("");
+		$("#hc").val(0);
+		$("#hl").val(0);
+		$("#ht").val(0);
+		$("#he").val(0);
+		$("#hpc").val(0);
+		$("#hcl").val(0);
+		$("#creditosF").val(0);
+		$("#coord").val("");
+		$("#semestre").val(1);
+		$("#observaciones").val("");
+
+	}
+
+	function desmarcar_carreras()
+	{
+		// Limpiar Control
+		$('option',$(".example41")).each(function(element) {
+			$(".example41").multiselect('deselect', $(this).val());
+		});
+		$(".example41").multiselect("refresh");
+	}
+	</script>
+
+|	<script type="text/javascript">
 	$(function(){
+		
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $('#tblUA').DataTable();
 		// Para añadir unidades de aprendizaje a las carreras con el update
@@ -578,95 +793,7 @@
 		$("#materiaSeriada").val("");
 		$("#eliminar").hide();
 		reset_campos();
-		// FUNCIONES GENERALES DE LA APLICACION
-		/**
-		 * Obtiene las Unidades de Aprendizaje de las carreras asignadas al Plan de Estudios Vigente.
-		 * @param {string} plan Nro. de plan seleccionado por el usuario.
-		 */
-		function ActualizarUAS(plan)
-		{
-			$("#ajaxLoad").css("display","block");
-			$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
-				$('#tblUA').dataTable().fnClearTable();
-				for (var i = 0; i < uas.length; i++) 
-				{
-					t.row.add([
-								uas[i].uaprendizaje,
-								uas[i].descripcionmat,
-								uas[i].descripcion,
-								uas[i].etapa,
-								uas[i].caracter,
-								uas[i].claveD,
-								uas[i].coordinaciona,
-								uas[i].HC,
-								uas[i].HL,
-								uas[i].HT,
-								uas[i].creditos,
-								"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
-				}
-				$("#ajaxLoad").css("display","none");
-			});
-		}
-
-		function disabled_campos(deshabilitar)
-		{
-			$("#clave1F").attr("disabled",deshabilitar);
-			$("#materia").attr("disabled",deshabilitar);
-			$("#etapaF").attr("disabled",deshabilitar);
-			$("#tipoF").attr("disabled",deshabilitar);
-			$("#semestre").attr("disabled",deshabilitar);
-			$("#serie").attr("disabled",deshabilitar);
-			$("#coord").attr("disabled",deshabilitar);
-			$("#hc").attr("disabled",deshabilitar);
-			$("#hl").attr("disabled",deshabilitar);
-			$("#ht").attr("disabled",deshabilitar);
-			$("#he").attr("disabled",deshabilitar);
-			$("#hcl").attr("disabled",deshabilitar);
-			$("#hpc").attr("disabled",deshabilitar);
-			$("#observaciones").attr("disabled",deshabilitar);
-			$("#creditosF").attr("disabled",deshabilitar);
-			if(deshabilitar==true)
-				$("#select_carreras").multiselect("disable");
-			else
-				$("#select_carreras").multiselect("enable");
-			
-			
-		}
-
-		function reset_campos()
-		{
-			//$("#noPlan").val("");
-			$("#clave1F").val("");
-			$("#materia").val("");
-			//$("#nivel").val("");
-			$("#carrera").val("");
-			$("#etapaF").val("1");
-			$("#tipoF").val("1");
-			$("#clave2F").val("");
-			$("#materiaSeriada").val("");
-			$("#serie").val("1");
-			$("#seriacion").val("");
-			$("#hc").val(0);
-			$("#hl").val(0);
-			$("#ht").val(0);
-			$("#he").val(0);
-			$("#hpc").val(0);
-			$("#hcl").val(0);
-			$("#creditosF").val(0);
-			$("#coord").val("");
-			$("#semestre").val(1);
-			$("#observaciones").val("");
-
-		}
-
-		function desmarcar_carreras()
-		{
-			// Limpiar Control
-			$('option',$(".example41")).each(function(element) {
-				$(".example41").multiselect('deselect', $(this).val());
-			});
-			$(".example41").multiselect("refresh");
-		}
+		
 		
 		// AL CAMBIO COMBOBOX NO DE PLAN CARGA LAS UNIDADES DE APRENDIZAJES ASIGNADAS A LAS CARRERAS Y LAS UA SERIADAS.
 		$("#noPlan").on("change",function(){
@@ -871,7 +998,11 @@
 		$("#coord").on("focusout",function(e){
 			var flag = $("#datalist_coord option[value='"+$(this).val()+"']").attr("label");
 			if(flag == undefined)
-				alert("No existe esa coordinación");
+			{
+				alert("No existe la coordinación tecleada");
+				$(this).focus();
+			}
+
 		});
 
 		// SUMAR CREDITOS DE HORAS CLASE
@@ -885,115 +1016,7 @@
 			var creditos = hc + hl + ht + hcl + hpc + he;
 			$("#creditosF").val(creditos);
 		});
-		// GUARDAR Y ACTUALIZAR UNIDAD DE APRENDIZAJE
-		$("#guardar").on("click",function(){
-			var opcion = $(this).val();
-			// Validar si no eligieron carreras.
-			var nCarreras = $("#select_carreras").val();
-			if(nCarreras==null)
-			{
-				alert("No has seleccionado ninguna carrera");
-				return;
-			}
-			// Validar seriacion
-			if($("#serie").val()!=1 && $("#clave2F").val().length<1)
-			{
-				alert("Debes escribir una materia seriada");
-				return;
-			}
-			// MOSTRAR AJAXLOADER
-			$("#ajaxLoad").css("display","block");
-			// INSERTAR UNIDAD DE APRENDIZAJE
-			if(opcion == "Guardar")
-			{
-				var dataUA = $("#formularioPlanEstudio").serialize();
-				$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
-					var noPlan=$("#noPlan").val();
-					var clave1F=$("#clave1F").val();
-					var materia=$("#materia").val();
-					//var carrera = "INFORMATICA";
-					var etapaF=$("#etapaF option:selected").html();
-					var tipoF=$("#tipoF option:selected").html();
-					var clave2F=$("#clave2F").val();
-					//var materiaSeriada=$("#materiaSeriada").val();
-					var hc=$("#hc").val();
-					var hl=$("#hl").val();
-					var ht=$("#ht").val();
-					var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
-					var creditosF=$("#creditosF").val();
-					var tablaDatos= $("#tblUA");
-					// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
-					$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
-						if($(elemento).hasClass('active') && indice != 0)
-						{
-							var input = $(elemento).find('input').val();
-							t.row.add([
-										clave1F,
-										materia,
-										$(elemento).text(),
-										etapaF,
-										tipoF,
-										clave2F,
-										coord,
-										hc,
-										hl,
-										ht,
-										creditosF,
-										"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
-						}
-					});
-					alert(data);
-					$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
-					reset_campos();
-					desmarcar_carreras();
-				})
-				.fail(function(){
-					alert("Fallo el registro de la Unidad de Aprendizaje");
-				})
-				.always(function(){
-					// OCULTAR AJAXLOADER
-					$("#ajaxLoad").css("display","none");
-				});
-			}
-			else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
-			{
-				var materia=$("#clave1F").val();
-				var plan = $("#noPlan").val();
-				var dataUA = $("#formularioPlanEstudio").serialize();
-				$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(data){
-					//alert(data);
-					$("#guardar").val("Guardar");
-					$("#limpiar").val("Limpiar");
-					$("#tblUA").dataTable().fnClearTable();
-					ActualizarUAS(plan);
-					alert("Datos actualizados");
-					// Limpiar Control
-					$('option',$(".example41")).each(function(element) {
-						$(".example41").multiselect('deselect', $(this).val());
-					});
-					$(".example41").multiselect("refresh");
-					//$(".example41").multiselect('deselect', "multiselect-all");
-					// Limpiar Control
-					$("#select_carreras option").removeAttr('disabled');
-					$(".example41").multiselect('refresh');
-
-					$("#materia").css("background-color","");
-					$("#noPlan").removeAttr('disabled').css("background-color","");
-					$("#eliminar").hide();
-					// Limpiar variable de carreras
-					$("#add_carreras").val("");
-					reset_campos();
-				})
-				.fail(function(errorText,textError,errorThrow){
-					alert("FALLO EN LA ACTUALIZACION: " + errorText.responseText);
-				})
-				.always(function(){
-					// OCULTAR AJAXLOADER
-					$("#ajaxLoad").css("display","none");
-				});
-				
-			}
-		});
+		
 		// EVENTOS PARA EL BOTÓN LIMPIAR - GUARDAR Y CANCELAR - ACTUALIZAR
 		$("#limpiar").on('click',function(){
 			var opcion = $(this).val();
@@ -1020,6 +1043,7 @@
 		});
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
 		$('#tblUA tbody').on('click','td',function(event){
+			
 			if(t.cell(this).index().column!=11)
 			{
 				// Habilitar todas las carreras
@@ -1046,7 +1070,7 @@
 						//var renglonUA = $(this).parent();
 						var materia = $(this).parent().find('td:first').html();
 						var serie = $(this).parent().find('td').eq(5).html();
-						
+
 						// MOSTRAR AJAXLOADER
 						$("#ajaxLoad").css("display","block");
 						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,claveD:serie}, function(json)

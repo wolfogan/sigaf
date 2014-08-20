@@ -51,9 +51,9 @@ ul
 	width:112px; 
 	height:72px; 
 	border-radius:5px; 
-	border: 2.5px solid #FF1400;
 	text-align:center; 
-	padding-top:0px; 
+	padding-top:0px;
+	border:2.5px solid #000000; 
 
 
 

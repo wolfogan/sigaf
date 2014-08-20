@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-08-20 11:56:26
+Date: 2014-08-20 14:07:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2134,6 +2134,8 @@ INSERT INTO `plan_programa` VALUES ('20101', '5');
 INSERT INTO `plan_programa` VALUES ('20092', '6');
 INSERT INTO `plan_programa` VALUES ('20101', '6');
 INSERT INTO `plan_programa` VALUES ('20092', '7');
+INSERT INTO `plan_programa` VALUES ('20101', '7');
+INSERT INTO `plan_programa` VALUES ('20101', '8');
 
 -- ----------------------------
 -- Table structure for programaedu
@@ -2221,6 +2223,7 @@ INSERT INTO `p_ua` VALUES ('3', '11251');
 INSERT INTO `p_ua` VALUES ('3', '11252');
 INSERT INTO `p_ua` VALUES ('3', '11290');
 INSERT INTO `p_ua` VALUES ('3', '11291');
+INSERT INTO `p_ua` VALUES ('4', '11236');
 INSERT INTO `p_ua` VALUES ('4', '11290');
 INSERT INTO `p_ua` VALUES ('4', '11291');
 INSERT INTO `p_ua` VALUES ('5', '11290');
@@ -2366,15 +2369,15 @@ CREATE TABLE `uaprendizaje` (
 -- Records of uaprendizaje
 -- ----------------------------
 INSERT INTO `uaprendizaje` VALUES ('11235', '20101', 'TRONCO COMUN 0', '4', '4', '4', '4', '4', '4', '24', '1', '2014-07-18', 'vamos a ver', '1', '1', null, '1', '6');
-INSERT INTO `uaprendizaje` VALUES ('11236', '20101', 'MATEMATICAS 15', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-09', null, '2', '1', '0', '1', '1');
-INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'ESPAÑOL', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-09', null, '1', '1', '0', '1', '22');
-INSERT INTO `uaprendizaje` VALUES ('11238', '20101', 'CIVISMO', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', '0', '2', '1');
-INSERT INTO `uaprendizaje` VALUES ('11239', '20101', 'EDUCACION FISICA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '2', '1', '0', '3', '6');
-INSERT INTO `uaprendizaje` VALUES ('11240', '20101', 'ESGRIMA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', '0', '3', '7');
-INSERT INTO `uaprendizaje` VALUES ('11249', '20101', 'GASTRONOMIA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', '0', '2', '10');
-INSERT INTO `uaprendizaje` VALUES ('11250', '20101', 'INGLES DE VERDAD', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '2', '1', '0', '1', '1');
-INSERT INTO `uaprendizaje` VALUES ('11251', '20101', 'MATERIA 81', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', '0', '2', '10');
-INSERT INTO `uaprendizaje` VALUES ('11252', '20101', 'MATEBRUTICAS', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', '0', '3', '4');
+INSERT INTO `uaprendizaje` VALUES ('11236', '20101', 'MATEMATICAS 15', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-09', '', '2', '1', null, '1', '1');
+INSERT INTO `uaprendizaje` VALUES ('11237', '20101', 'ESPAÑOL', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-09', '', '1', '1', null, '1', '22');
+INSERT INTO `uaprendizaje` VALUES ('11238', '20101', 'CIVISMO', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', null, '2', '1');
+INSERT INTO `uaprendizaje` VALUES ('11239', '20101', 'EDUCACION FISICA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '2', '1', null, '3', '6');
+INSERT INTO `uaprendizaje` VALUES ('11240', '20101', 'ESGRIMA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', null, '3', '7');
+INSERT INTO `uaprendizaje` VALUES ('11249', '20101', 'GASTRONOMIA', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', null, '2', '10');
+INSERT INTO `uaprendizaje` VALUES ('11250', '20101', 'INGLES DE VERDAD', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '2', '1', null, '1', '1');
+INSERT INTO `uaprendizaje` VALUES ('11251', '20101', 'MATERIA 81', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', null, '2', '10');
+INSERT INTO `uaprendizaje` VALUES ('11252', '20101', 'MATEBRUTICAS', '1', '1', '1', '1', '1', '1', '7', '1', '2014-07-16', null, '1', '1', null, '3', '4');
 INSERT INTO `uaprendizaje` VALUES ('11257', '20101', 'TRONCO COMUN I', '1', '1', '1', '1', '1', '1', '6', '1', '2014-07-18', 'VAMOS A VER QUE TEAL', '1', '1', null, '1', '5');
 INSERT INTO `uaprendizaje` VALUES ('11258', '20101', 'TRONCO COMUN II', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-18', 'TODAS', '1', '1', null, '1', '6');
 INSERT INTO `uaprendizaje` VALUES ('11259', '20101', 'TRONCO COMUN III', '3', '3', '3', '3', '3', '3', '18', '1', '2014-07-18', 'DOS DE TRES', '1', '1', null, '1', '5');
