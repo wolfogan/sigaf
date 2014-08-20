@@ -6,6 +6,19 @@ font-weight: bold;
 font-size: 15px;
 margin: auto;
 }
+
+#pie_correo
+{
+	color: white;
+	font-size: 13px;
+	margin-left: 1100px;
+}
+#pie_tel
+{
+	color: white;
+	font-size: 13px;
+	margin-left: 1188px;
+}
 #unidadaprendizaje
 {
 	width: 1200px;
@@ -134,10 +147,10 @@ footer
 }
 #pe_consultaActualizada
 {
-	float: left;
+	
 	font-size: 20px;
 	color:#004000;
-	margin: auto;
+	margin: -50px auto;
 	width: 240px;
 }
 #consultaPlan
@@ -439,19 +452,20 @@ background: #EFCA0D;
 }
 #totalcreditos
 {
-	background: blue;
+	
 	color:#004000;
-	font-size: 16px;
+	font-size: 18px;
 	padding-left: 25px;
 	padding-bottom: 20px;
-	width: 200px;
+	width: 220px;
 	margin-left:115px;
+
 }
 #actualizaimprime
 {
 	height: 70px;
 	margin-left:1110px;
-	margin-top: -70px;
+	margin-top: 10px;
 	padding-right: 20px;
 }
 #guardar
@@ -1217,6 +1231,7 @@ background: #EFCA0D;
 	width: 500px;
 
 }
+
 #planVigente
  {
  	
@@ -1286,7 +1301,7 @@ background: #EFCA0D;
 .listasCa
 {
 	height: 550px;
-	margin-top: 45px;
+	margin-top: 5px;
 }
 .nombrePlan
 {
@@ -1333,7 +1348,7 @@ background: #EFCA0D;
 .tabla_cargaUA
 {
 	
-	margin: auto;
+	margin: -60px auto;
 	width: 1200px;
 }
 
@@ -1341,6 +1356,7 @@ background: #EFCA0D;
 { 
 	
 	float: left;
+	margin-bottom: 10px;
 	margin-left: 10px;
 	margin-top: 0px;
 	width: 230px;
@@ -1370,7 +1386,7 @@ background: #EFCA0D;
 	width: 405px;
 	height: 50px;
 	margin: auto;
-	margin-top: -340px;
+	margin-top: -300px;
 
 }
 .nombre_semestre

@@ -558,7 +558,11 @@
 		</div>
 		<!------------------------ GRID PARA MOSTRAR UNIDADES DE APRENDIZAJE POR PLAN ------------------------>
 	</section>
-	<footer></footer>
+	<footer>
+			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+			<div id="pie_tel">Teléfono: 664 188 9221</div>
+
+	</footer>
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
