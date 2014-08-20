@@ -70,8 +70,8 @@
 		planAnterior = {{$planes[1]}};
 		//alert(source[0].plan);
 		// Create a jqxListBox
-		$("#listboxPlanVigente").jqxListBox({width: 450, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
-		$("#listboxPlanAnterior").jqxListBox({width: 450, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanVigente").jqxListBox({width: 480, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanAnterior").jqxListBox({width: 480, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
 		// Check several items.
 		// $(".listbox").jqxListBox('checkIndex', 0);
 		// $(".listbox").jqxListBox('checkIndex', 1);
@@ -550,7 +550,11 @@
 	<script type="text/javascript" src="../js/jqxscrollbar.js"></script>
 	<script type="text/javascript" src="../js/jqxlistbox.js"></script>
 	<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
-	<footer></footer>
+	<footer>
+			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+			<div id="pie_tel">Teléfono: 664 188 9221</div>
+
+	</footer>
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>

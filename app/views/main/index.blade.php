@@ -41,7 +41,7 @@
 	<div class="main">
 		<div class="view view-tenth">
 			<img src="imagenes/plan1.png"/>
-			<div class="mask">
+			<a href="planestudio/registro"><div class="mask"></a>
 				<h2>Plan de estudios</h2>
 				<p>
 					<a href="<?=URL::to('planestudio/registro'); ?>" style="color:#004000">Registrar, consultar, modificar y eliminar unidad de aprendizaje.</a>
@@ -122,7 +122,11 @@
 		</div>
 	</div>
 </div>
-<footer></footer>
+<footer>
+<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+<div id="pie_tel">Teléfono: 664 188 9221</div>
+
+</footer>
 </div>
 </body>
 </html>

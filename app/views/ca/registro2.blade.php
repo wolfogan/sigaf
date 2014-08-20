@@ -43,7 +43,7 @@
 				var sourceSemestre9 = [{{$uasS9}}];
 
 				// Create a jqxListBox
-				$("#listaPlanVigente").jqxListBox({width: 419, source: sourcePlanVigente, checkboxes: true, height: 350, theme: 'orange'});
+				$("#listaPlanVigente").jqxListBox({width: 419, source: sourcePlanVigente, checkboxes: true, height: 380, theme: 'orange'});
 				$("#listaPrimerSemestre").jqxListBox({width: 419, source: sourceSemestre1, checkboxes: true, height: 200, theme: 'orange'});
 				$("#listaSegundoSemestre").jqxListBox({width: 419, source: sourceSemestre2, checkboxes: true, height: 200, theme: 'orange'});
 				$("#listaTercerSemestre").jqxListBox({width: 419, source: sourceSemestre3, checkboxes: true, height: 200, theme: 'orange'});
@@ -104,7 +104,7 @@
 				];
 
 				// Create a jqxListBox
-				$(".listbox1").jqxListBox({width: 419, source: source, checkboxes: true, height: 350, theme: 'orange'});
+				$(".listbox1").jqxListBox({width: 419, source: source, checkboxes: true, height: 380, theme: 'orange'});
 				// Check several items.
 				$(".listbox1").jqxListBox('checkIndex', 0);
 				$(".listbox1").jqxListBox('checkIndex', 1);
@@ -176,7 +176,7 @@
 		<!-------------------------------------- MODAL CATALOGO PERIODOS -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Períodos</h3>
+			<h3>Agregar Periódos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
@@ -255,7 +255,7 @@
 							</div>
 							 
 			</div>
-			<div class="CatBotones">
+			<div class="CatBotones" style="margin-top:60px">
 				<input type="submit" class="estilo_button2" value="Agregar"/>
 				<input type="button" value="Salir" class="md-close" />
 			</div>
@@ -792,7 +792,11 @@
 		<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
 
 
-		<footer></footer>
+		<footer>
+			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+			<div id="pie_tel">Teléfono: 664 188 9221</div>
+
+		</footer>
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
