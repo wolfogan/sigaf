@@ -328,11 +328,11 @@
 
 			</div>
 
-			<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
+			<!--<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
 			<label>Carga capturada</label></div>
 
 
-			<!--	<div id="periodoCa">
+				<div id="periodoCa">
 					<div id="btnNuevaCaDiv"><input type="button" style="width:200px;" class="estilo_button2" value="Nueva CA" name="btnNuevaCa" id="btnNuevaCa" /></div>
 
 					<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>

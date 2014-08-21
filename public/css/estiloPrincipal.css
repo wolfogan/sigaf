@@ -1239,7 +1239,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 40px;
+ 	margin-top: 10px;
  	margin-left: 40px;
  }
 #btnPlanA
@@ -1259,7 +1259,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 42px;
+ 	margin-top: 12px;
  		
  }
 #periodoCa
@@ -1368,7 +1368,7 @@ background: #EFCA0D;
 .carga_listas
 {
 	
-	background:blue;
+	
 	border: 2px solid gray;
 	border-radius: 10px;
 	float: left;
@@ -1421,6 +1421,7 @@ background: #EFCA0D;
 	height: 40px;
 	margin-left: 50px;
 	margin-top: 5px;
+	margin-bottom: 20px;
 	width: 230px;
 }
 .ca_checkstatus
