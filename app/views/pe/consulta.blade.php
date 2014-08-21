@@ -493,7 +493,7 @@
 						{
 							var color = color_aleatorio();
 							$(bloque).children().css("border","4px dashed "+ color);
-							$("ul li div span:contains('"+uas[i].claveD+"')").parent().css("border","4px dashed " + color);
+							$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dashed " + color);
 						}
 						
 						
