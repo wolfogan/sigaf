@@ -310,21 +310,24 @@
 
 				<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
-
-					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga capturada</label>
-
 				</div>
 			</div>
 
 			</div>
 
-			<div class="consultar_admin">Carreras:
+			<div class="consultar_admin">Carrera:
 					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
 						<option value="INFORMATICA">INFORMATICA</option>
 						<option value="NEGOCIOS">NEGOCIOS</option>
 						<option value="ADMINISTRACION">ADMINISTRACION</option>
 						<option value="CONTADURIA">CONTADURIA</option>
 					</select>
+
+					<div class="ca_checkstatus">
+						<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+						<label>Carga capturada</label>
+					</div>
+
 
 			</div>
 
@@ -367,7 +370,7 @@
 								
 							</select>
 
-							<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+							
 
 						</div>
 
@@ -415,7 +418,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>   
+						
 
 						</div>
 
@@ -462,7 +465,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 
@@ -511,7 +514,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 						</div>
@@ -560,7 +563,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 
@@ -609,7 +612,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 
@@ -658,7 +661,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 
@@ -706,7 +709,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 
@@ -755,7 +758,7 @@
 								
 							</select>
 
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 
 							
 						
