@@ -175,7 +175,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionEtapa" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="etapa_descripcion" id="txtCatDescripcionEtapa" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -199,7 +199,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionSeriacion" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  type="text" name="seriacion_descripcion" id="txtCatDescripcionSeriacion" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -223,7 +223,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionTipo" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="caracter_descripcion" id="txtCatDescripcionTipo" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -237,7 +237,7 @@
 
 	<!-------------------------------------- MODAL COORDINACIÓN -------------------------------------->
 	<div class="md-modal md-effect-11" id="coordina"> 
-		<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
+		<form  action="<?=URL::to('planestudio/registrarcoordinacion'); ?>" class="md-content" method="post">
 			<h3>Agregar Coordinación</h3>
 			<div class="lblCatalogosDependencias"></div>
 			<div class="tblCatalogos">
@@ -248,13 +248,13 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCoordinacion" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="coordinacion_descripcion" id="txtCatDescripcionCoordinacion"/></td>
 					</tr>
 					<tr>
 						<td>Programa Educativo:</td> 
 						<td>
-							<select style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion" size=1 />
-								<option value="CONTABILIDAD">LIC. EN CONTADURIA</option>
+							<select style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion"/>
+								<option value="1">LIC. EN INFORMATICA</option>
 							</select>
 						</td>
 					</tr>

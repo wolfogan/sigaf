@@ -149,9 +149,10 @@ footer
 {
 	
 	font-size: 20px;
-	color:#004000;
+	color:#FF9900;
 	margin: -50px auto;
 	width: 240px;
+	visibility: hidden;
 }
 #consultaPlan
 {

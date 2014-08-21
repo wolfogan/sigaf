@@ -211,7 +211,7 @@
 			<label> Materias optativas:</label><label id="creditos_optativas">0</label><br>
 			<label> Total de creditos: </label><label id="creditos_total">0</label>
 		</div>
-		<div id="pe_consultaActualizada">REGISTRO ACTUALIZADO</div>
+		<div id="pe_consultaActualizada">!ETAPA ACTUALIZADA!</div>
 
 		<div id="actualizaimprime">
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
@@ -571,6 +571,7 @@
 		var creditosObligatorias = 0;
 		var creditosOptativas = 0;
 		var totalCreditos = 0;
+		// ACTUALIZAR ETAPA CUANDO LA ARRASTRAN EN LA GRILLA CORRESPONDIENTE
 		function saveOrder() {
 			//var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
 			//$("input[name=list1SortOrder]").val(data.join("|"));
@@ -580,6 +581,7 @@
 			//alert("UAID: "+uaid +"Etapa: "+etapa);
 			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{uaprendizaje:uaid,etapa:etapa},function(ua){
 				//alert(ua);
+				$("#pe_consultaActualizada").css("visibility","visible").fadeIn(300).fadeOut(1000);
 			});
 		}
 		function actualizarCreditos()
