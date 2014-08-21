@@ -229,6 +229,7 @@ class PlanEstudioController extends BaseController
 		$programaEducativo -> empleado = Input::get('proe_empleado');
 		$programaEducativo -> uacademica = 1;
 		$programaEducativo -> especialidad = Input::get('proe_especialidad');
+		$programaEducativo -> empleado = 1;
 		$programaEducativo -> nivel = Input::get('proe_nivel');
 		$programaEducativo -> periodo_pedu = Input::get('proe_periodo');
 		$programaEducativo -> save();
