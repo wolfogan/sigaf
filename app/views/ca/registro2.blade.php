@@ -306,6 +306,31 @@
 				<div class="nombre_coordinacion">Lic. en Informática</div>
 
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
+			<div id="periodoCa">
+
+				<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
+					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
+
+					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga capturada</label>
+
+				</div>
+			</div>
+
+			</div>
+
+			<div class="consultar_admin">Carreras:
+					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
+						<option value="INFORMATICA">INFORMATICA</option>
+						<option value="NEGOCIOS">NEGOCIOS</option>
+						<option value="ADMINISTRACION">ADMINISTRACION</option>
+						<option value="CONTADURIA">CONTADURIA</option>
+					</select>
+
+			</div>
+
+			<!--<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
+			<label>Carga capturada</label></div>
+
 
 				<div id="periodoCa">
 					<div id="btnNuevaCaDiv"><input type="button" style="width:200px;" class="estilo_button2" value="Nueva CA" name="btnNuevaCa" id="btnNuevaCa" /></div>
@@ -326,7 +351,7 @@
 								
 					</select>
 
-				</div>
+				</div>-->
 
 			<!----------------------- LISTA PRIMER SEMESTRE ------------------------>
 
