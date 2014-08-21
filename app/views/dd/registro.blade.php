@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/estilo_tabs.css" />
 
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
@@ -56,49 +57,125 @@
 	</div>
 </div>
 
-<section>
-	<div id="noempleado"><label>No. empleado:</label><input id="txtnoempleado" type="text"/></div>
-    <div id="fechaingresouabc"><label>Fecha ingreso a UABC:</label><input type="date" medida="Y/M/D"></div>
+		<section>
+			<div class="nombre_coordinacion">Lic. en Informática</div>
+			<div class="tabs">
+	    
+			    <input id="tab-1"  type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+				<label for="tab-1" class="tab-label-1">Datos personales</label>
+				
+			    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+				<label for="tab-2" class="tab-label-2">Estudios y cursos</label>
+				
+			    <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
+				<label for="tab-3" class="tab-label-3">Disponibilidad</label>
+		                
+		        <input id="tab-4" type="radio" name="radio-set" class="tab-selector-4" />
+				<label for="tab-4" class="tab-label-4">Otro</label>
+					 
+				<div class="clear-shadow"></div>
+					
+				    <div class="content">
+					        
+		                <div class="content-1">
+							<h2>Datos personales</h2>
+		                        
+								<div id="dd_noEmpleado">No. empleado:<label>12345</label></div>
+								<div id="dd_fechaIngreso">Fecha ingreso a UABC:<input type="date" medida="Y/M/D"></div>
+								<div id="dd_aPaterno">A. paterno:<input type="text"/></div>
+								<div id="dd_aMaterno">A. materno:<input type="text"/></div>
+								<div id="dd_nombres">Nombre(s):<input id="txtnombres" type="text"/></div>
+								<div id="dd_sexo">
+									Sexo:
+									<select>
+										 <option value="FEMENINO">FEMENINO</option>
+										 <option value="MASCULINO">MASCULINO</option>
+									</select>
+								</div>
+								<div id="dd_foto">Foto:<input id="txtfoto" type="text"></div>
 
-    <fieldset class="dd_datosPersonales">
-        <legend class="leyendas_fieldset">Datos personales</legend>
-	        <div id="apaterno"><label>A. paterno:</label><input type="text"/></div>
-	        <div id="amaterno"><label>A. materno:</label><input type="text"/></div>
-	        <div id="nombres"><label>Nombre(s):</label><input id="txtnombres" type="text"/></div>
-	        <div id="sexo"><label>Sexo:</label>
-	            <select>
-	              <option value="FEMENINO">FEMENINO</option>
-	              <option value="MASCULINO">MASCULINO</option>
-	            </select></div>
-        <div id="foto"><label>Foto:</label><input id="txtfoto" type="text"></div>
-        
-        <fieldset class="dd_datosPersonales">
-        <legend class="leyendas_fieldset">Dirección</legend>
-	        <div id="colonia"><label>Colonia:</label><input id="txtcolonia"type="text"/></div>
-	        <div id="calle"><label>Calle:</label><input id="txtcalle" type="text"/></div>
-	        <div id="nointerior"><label>No. int.:</label><input id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-	        <div id="noexterior"><label>No. ext.:</label><input id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-	        <div id="cp"><label>C.P.:</label><input  id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-        </fieldset>
-        
-        <fieldset class="dd_datosPersonales">
-        <legend class="leyendas_fieldset">Teléfono y correo electrónico</legend>
-	        <div id="teloficina"><label>Tel. oficina:</label><input class="telefonos" type="text"/></div>
-	        <div id="telparticular"><label>Tel. particular:</label><input class="telefonos" type="text"/></div>
-	        <div id="celular"><label>Celular:</label><input class="telefonos" type="text"/></div>
-	        <div id="email"><label>email:</label><input class="txtemail" type="text"/></div>
-	        <div id="emailalterno"><label>email alternativo:</label><input class="txtemail" type="text"/></div>
-        </fieldset>
-        
-        <div id="rfc"><label>RFC:</label><input id="txtrfc" type="text"/></div>
-        <div id="otrotrabajo"><label>Trabajo fuera de UABC:</label><input id="txtotrotrabajo" type="text"/></div>
-        <div id="puesto"><label>Puesto:</label><input id="txtpuesto" type="text"/></div>
-        <div id="antiguedad"><label>Antigüedad:</label><input id="txtantiguedad" type="text"/></div>
-        
-    </fieldset>
 
-	
-</section>
+							<h2>Dirección</h2>
+		                        
+								Colonia:<input id="txtcolonia"type="text"/>
+								Calle:<input id="txtcalle" type="text"/>
+								No. int.:<input id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/>
+								No. ext.:<input id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()"/>
+								C.P.:<input  id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/>
+				  
+		                    <h2>Teléfonos</h2>
+
+								Tel. oficina:<input class="telefonos" type="text"/>
+								Tel. particular:<input class="telefonos" type="text"/>
+								Celular:<input class="telefonos" type="text"/>
+								email:<input class="txtemail" type="text"/>
+								email alternativo:<input class="txtemail" type="text"/>                       
+		                        
+		                       	
+						</div>
+		                    
+					    <div class="content-2">
+		                    
+		                   	<h2>Trabajo fuera de UABC</h2>
+
+								RFC:<input id="txtrfc" type="text"/>
+								Trabajo fuera de UABC:<input id="txtotrotrabajo" type="text"/>
+								Puesto:<input id="txtpuesto" type="text"/>
+								Antigüedad:<input id="txtantiguedad" type="text"/>                   
+		                       
+							<h2>Grado de estudios</h2>
+
+								Licenciatura:<input id="txtlicenciatura" type="text"/>
+								Univ. egreso:<input type="text"/>
+								Fecha de titulación:<input id="fechatitul" type="date" medida="Y/M/D">
+								Cédula:<input class="cedulas" type="text"/>  
+
+								<input type="checkbox" id="chkespecialid" value="1" onchange="javascript:showContent()"> 
+								Si
+								Univ. egreso:<input class="univegresos" type="text"/>
+								Cédula:<input class="cedulas" type="text"/>   
+
+								<input type="checkbox" id="chkespecialid" value="1" onchange="javascript:showContent()"> 
+								Si
+								Univ. egreso:<input class="univegresos" type="text"/>
+								Cédula:<input class="cedulas" type="text"/>
+
+								<input type="checkbox" id="chkdoctorado" value="1" onchange="javascript:showContent()"> 
+								Si
+								Univ. egreso:<input class="univegresos" type="text"/>
+								Cédula:<input class="cedulas" type="text"/>                                     
+		                        
+		                        
+							<h2>Cursos</h2>
+								
+						</div>
+		                    
+		                    
+					    <div class="content-3">
+							
+							<h2>Materias a impartir</h2>
+		                        
+		                        hola cynthia
+		                        
+							<h2>Disponibilidad</h2>
+								
+						</div>
+		                    
+		                                    
+		                <div class="content-4">
+								
+							<h2>X</h2>
+		                        
+		                        hola cynthia DOS
+		                        
+							<h2>Y</h2>
+								
+						</div>
+					    
+				</div>
+			</div>
+			
+		</section>
 
 	<footer>
 			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>

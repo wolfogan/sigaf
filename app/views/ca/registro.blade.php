@@ -316,7 +316,7 @@
 				
 				<div id="divPeriodo">
 					Periódo: 
-					<input type="text" class="con_estilo" name="periodo" id="periodo" list="datalistPeriodo"/>
+					<input type="text" class="con_estilo"  name="periodo" id="periodo" list="datalistPeriodo"/>
 					<datalist id="datalistPeriodo">
 						@foreach ($codigosPeriodo as $periodo)
 							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
@@ -328,7 +328,7 @@
 				
 			</div>
 
-			<div class="consultar_admin">Carreras:
+			<div class="consultar_admin">Carrera:
 					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
 						<option value="INFORMATICA">INFORMATICA</option>
 						<option value="NEGOCIOS">NEGOCIOS</option>
@@ -336,10 +336,15 @@
 						<option value="CONTADURIA">CONTADURIA</option>
 					</select>
 
+					<div class="ca_checkstatus">
+						<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+						<label>Carga capturada</label>
+					</div>
+
 			</div>
 
-			<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
-			<label>Carga capturada</label></div>
+
+			
 			
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
@@ -352,7 +357,7 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 					</div>
 					<div class="listasCa">
 						<div id="listboxPlanVigente"></div>
@@ -394,7 +399,7 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-						<button class="estilo_button_lupa" name="btnfiltro_ca" type="submit"><img src="../imagenes/searchg.png"> </button>
+						
 					</div>
 					<div class="listasCa">
 						 <div id="listboxPlanAnterior"></div>
