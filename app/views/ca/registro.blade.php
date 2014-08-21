@@ -313,7 +313,7 @@
 			<div class="nombre_coordinacion">Lic. en Informática</div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 			<div id="periodoCa">
-				<div id="btnNuevaCaDiv"><input type="button" style="width:200px;" class="estilo_button2" value="Nueva CA" name="btnNuevaCa" id="btnNuevaCa" /></div>
+				
 				<div id="divPeriodo">
 					Periódo: 
 					<input type="text" class="con_estilo" name="periodo" id="periodo" list="datalistPeriodo"/>
@@ -324,17 +324,23 @@
 					</datalist>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
-				<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar">
-				<label style="font-size:18px;">Carga capturada</label>
+
+				
 			</div>
-			<div class="consultar_admin" style="margin-left:50px;">Carreras:
-					<select class="con_estilo" style="width:145px" name="consultar_admin" size=1>
+
+			<div class="consultar_admin">Carreras:
+					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
 						<option value="INFORMATICA">INFORMATICA</option>
 						<option value="NEGOCIOS">NEGOCIOS</option>
 						<option value="ADMINISTRACION">ADMINISTRACION</option>
 						<option value="CONTADURIA">CONTADURIA</option>
 					</select>
+
 			</div>
+
+			<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
+			<label>Carga capturada</label></div>
+			
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
@@ -539,9 +545,9 @@
 					</tr>
 				</tbody>
 			</table>
-			<div id="btnGuardarCa_registro">
+			<!--<div id="btnGuardarCa_registro">
 				<input type="button" style="width:180px" value="Guardar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-			</div>
+			</div>-->
 		</div>
 	</section>
 

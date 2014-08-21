@@ -104,7 +104,7 @@
 
 
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
-	<div class="md-modal md-effect-11" id="carrera"> 
+	<!--<div class="md-modal md-effect-11" id="carrera"> 
 		<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
 			<h3>Agregar Carrera</h3>
 			<div class="tblCatalogos">
@@ -160,7 +160,7 @@
 				<input type="button" value="Salir" class="md-close" />
 			</div>
 		</form>
-	</div>
+	</div>-->
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
 
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
@@ -346,7 +346,7 @@
 					<input type="hidden" name="carreras" id="carreras"/>
 					<input type="hidden" name="add_carreras" id="add_carreras" />
 					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
-					<input class="md-trigger" data-modal="carrera" type="button" value="+">
+					<!--<input class="md-trigger" data-modal="carrera" type="button" value="+">-->
 					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
 				</div>
 				<!------------------------------------ NIVEL ------------------------------------>

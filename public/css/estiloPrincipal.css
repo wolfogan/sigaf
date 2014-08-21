@@ -1227,7 +1227,8 @@ background: #EFCA0D;
 	color: green;
 	height: 50px;
 	margin-top: 20px;
-	margin-left: 40px;
+	margin-left: 800px;
+	text-align: center;
 	width: 500px;
 
 }
@@ -1238,7 +1239,7 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 10px;
+ 	margin-top: 40px;
  	margin-left: 40px;
  }
 #btnPlanA
@@ -1258,16 +1259,16 @@ background: #EFCA0D;
  	float: left;
  	height: 700px;
  	width: 500px;
- 	margin-top: 12px;
+ 	margin-top: 42px;
  		
  }
 #periodoCa
 {
 
-	height: 80px;
-	margin-top: -50px;
-	margin-left: 770px;
-	width: 530px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: 60px;
+	width: 300px;
 }
 .controlesListasCa
 {
@@ -1290,12 +1291,10 @@ background: #EFCA0D;
 }
 #divPeriodo
 {
-	
 	float: left;
 	font-size: 20px;
-	height: 50px;
-	margin: 20px;
-	margin-left: 0px;
+	height: 40px;
+	margin: 0px 20px 0px 0px;
 	width: 250px;
 }
 .listasCa
@@ -1321,14 +1320,14 @@ background: #EFCA0D;
 	width: 1300px;
 
 }
-#btnGuardarCa_registro
+/*#btnGuardarCa_registro
 {
 	
 	height: 50px;
 	margin-top: 30px;
 	margin-left: 1040px;
 	width: 200px;
-}
+}*/
 .filtroMaterias_ca
 {
 	height: 50px;
@@ -1349,6 +1348,7 @@ background: #EFCA0D;
 {
 	
 	margin: -60px auto;
+	margin-bottom: 30px;
 	width: 1200px;
 }
 
@@ -1368,7 +1368,7 @@ background: #EFCA0D;
 .carga_listas
 {
 	
-	background:white;
+	background:blue;
 	border: 2px solid gray;
 	border-radius: 10px;
 	float: left;
@@ -1406,7 +1406,8 @@ background: #EFCA0D;
 	font-size: 16px;
 	height: 30px;
 	text-align: center;
-	margin-top: 15px;
+	margin-top: 
+	15px;
 	width: 200px;
 }
 .nombre_escuela
@@ -1416,10 +1417,19 @@ background: #EFCA0D;
 .consultar_admin
 {
 	
-	width: 300px;
-	margin-left: 15px;
-	margin-top: 0px;
+	font-size: 20px;
 	height: 40px;
+	margin-left: 50px;
+	margin-top: 5px;
+	width: 230px;
+}
+.ca_checkstatus
+{
+	
+	margin: -30px 300px;
+	height: 30px;
+	width: 200px;
+
 }
 /*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
 .estilo_button_lupa
