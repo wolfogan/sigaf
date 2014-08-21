@@ -325,7 +325,28 @@
 			<div id="pie_tel">Teléfono: 664 188 9221</div>
 
 	</footer>
+	<script type="text/javascript">
+		function aleatorio(inferior,superior)
+		{
+			posibilidades = superior - inferior;
+			num = Math.random() * posibilidades;
+			num = Math.floor(num);
+			return parseInt(inferior)+num;
+		}
+		
+		function color_aleatorio()
+		{
+			var hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+			var colorAleatorio = "#";
+			for (var i = 0; i < 6; i++) {
+				posArray = aleatorio(0,hexadecimal.length);
+				colorAleatorio += hexadecimal[posArray];
+			}
+			return colorAleatorio;
+		}
 
+		
+	</script>
 	<script type="text/javascript">
 	$(function(){
 		
@@ -468,6 +489,14 @@
 											descripcionUA +
 										'</div>'+
 									'</li>').hide().fadeIn("slow");
+						if(uas[i].reqseriacion != "1")
+						{
+							var color = color_aleatorio();
+							$(bloque).children().css("border","4px dashed "+ color);
+							$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dashed " + color);
+						}
+						
+						
 						$(lista).append(bloque);
 						bloque = "";
 						if(uas[i].caracter=="OBLIGATORIA")
