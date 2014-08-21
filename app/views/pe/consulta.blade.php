@@ -492,8 +492,8 @@
 						if(uas[i].reqseriacion != "1")
 						{
 							var color = color_aleatorio();
-							$(bloque).children().css("border","4px dashed "+ color);
-							$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dashed " + color);
+							$(bloque).children().css("border","4px dotted "+ color);
+							$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dotted " + color);
 						}
 						
 						
@@ -720,7 +720,7 @@
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
-	<script src="../js/css-filters-polyfill.js"></script>
+	<!--<script src="../js/css-filters-polyfill.js"></script>-->
 	<!--SCRIPT PARA VENTANA MODAL-->
 </body>
 </html>
