@@ -462,60 +462,6 @@
 							<td>none</td>	
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
 						</tr>
-						<tr>
-							<td>000455</td>
-							<td>PRINCIPIOS DE PROGRAMACION</td>
-							<td>9</td>
-							<td>12</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-						</tr>
-						<tr>
-							<td>000456</td>
-							<td>MATEMATICAS I</td>
-							<td>2</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
-						<tr>
-							<td>000457</td>
-							<td>FISICA I</td>
-							<td>4</td>
-							<td>30</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-						</tr>
-						<tr>
-							<td>000458</td>
-							<td>ORIENTACION VOCACIONAL</td>
-							<td>10</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-						</tr>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
-						<tr>
-							<td>000460</td>
-							<td>ESTRUCTURA DE DATOS</td>
-							<td>2</td>
-							<td>4</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-						</tr>
 					<thead class="encabezado_tabla">
 						<tr>
 							<th>OPTATIVAS</th>
