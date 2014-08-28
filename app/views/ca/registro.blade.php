@@ -43,7 +43,7 @@
 			if(mm<10) mm='0'+mm;
 			return String(yyyy+"-"+mm+"-"+dd);
 		}
-		// Inicializar fech periodo
+		// Inicializar fecha periodo
 		var date = new Date();
 		$("#periodoFechaInicio").val(date.now());
 		$("#periodoFechaFin").val(date.now());
@@ -70,8 +70,8 @@
 		planAnterior = {{$planes[1]}};
 		//alert(source[0].plan);
 		// Create a jqxListBox
-		$("#listboxPlanVigente").jqxListBox({width: 480, source: sourcePlanVigente, checkboxes: true, height: 530, theme: 'orange'});
-		$("#listboxPlanAnterior").jqxListBox({width: 480, source: sourcePlanAnterior, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 530, theme: 'orange'});
 		// Check several items.
 		// $(".listbox").jqxListBox('checkIndex', 0);
 		// $(".listbox").jqxListBox('checkIndex', 1);
@@ -87,7 +87,7 @@
 		$("#grupoAnteriorPlan").val({{$planes[1]}});
 
 		// Agregar el programaeducativo estatico POR LO PRONTO
-		$(".grupoPrograma").val(4);
+		$(".grupoPrograma").val({{Auth::user()->programaedu}});
 		
 		$("#listboxPlanVigente").on('checkChange', function (event) {
 			/*var args = event.args;
@@ -310,7 +310,7 @@
 	</div>
 	<section>
 		<div class="contenedor_Ca">
-			<div class="nombre_coordinacion">Lic. en Informática</div>
+			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 			<div id="periodoCa">
 				
@@ -324,16 +324,13 @@
 					</datalist>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
-
-				
 			</div>
 
-			<div class="consultar_admin">Carrera:
-					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
-						<option value="INFORMATICA">INFORMATICA</option>
-						<option value="NEGOCIOS">NEGOCIOS</option>
-						<option value="ADMINISTRACION">ADMINISTRACION</option>
-						<option value="CONTADURIA">CONTADURIA</option>
+			<div id="consultarAdmin" class="consultar_admin"><span id="labelCarrera">Carrera:</span>
+					<select class="con_estilo" style="height:30px;" name="carrera_admin" id="carreraAdmin">
+						@foreach ($programas as $program)
+							<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
+						@endforeach
 					</select>
 
 					<div class="ca_checkstatus">
@@ -376,7 +373,7 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="gruposV[]" id="select_grupos" multiple="multiple" class="grupos">
+						<select name="gruposV[]" id="selectGruposVigente" multiple="multiple" class="grupos">
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
@@ -394,7 +391,7 @@
 					<div class="nombrePlan" id="nombreAnterior">Plan 2009-2</div>
 					<div class="filtroMaterias_ca">
 						Materias:
-						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" size=1>
+						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" id="selectCaracterAnterior">
 							@foreach($tiposCaracter as $caracter)
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
@@ -418,7 +415,7 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example" multiple="multiple" class="grupos">
+						<select name="example" multiple="multiple" class="grupos" id="selectGruposAnterior">
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposAnterior" id="modalGruposAnterior" />
@@ -571,99 +568,219 @@
 	<script src="../js/modalEffects.js"></script>
 	
 	<script type="text/javascript">
-	function registrarPeriodo()
-	{
-		var dataPeriodo = $("#formPeriodo").serialize();
-		$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
-			var option = "<option value='"+insertStr(result['periodo'],"-",4)+"' codigo='"+result['periodo']+"' />";
-			$("#datalistPeriodo").append(option);
-			$("#periodo").val(insertStr(result['periodo'],"-",4));
-
-
-			alert("Periodo dado de alta exitosamente!!!");
-			$("#salirPeriodo").click();
-			
-		})
-		.fail(function(errorText,textError,errorThrow){
-			alert(errorText.responseText);
-		});
-	}
-
-	function registrarGrupo(vigente)
-	{
-		var dataGrupo;
-		if(vigente==true)
+		function registrarPeriodo()
 		{
-			dataGrupo = $("#formGV").serialize();
-		}
-		else
-		{
-			dataGrupo = $("#formGA").serialize();
-		}
-
-		$.post("<?php echo URL::to('cargaacademica/registrargrupo'); ?>",dataGrupo,function(result){
-			alert("Grupo dado de alta");
-			$(".salirGrupo").click();
-		})
-		.fail(function(errorText,textError,errorThrow){
-			alert(errorText.responseText);
-		});
-	}
+			var dataPeriodo = $("#formPeriodo").serialize();
+			$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
+				var option = "<option value='"+insertStr(result['periodo'],"-",4)+"' codigo='"+result['periodo']+"' />";
+				$("#datalistPeriodo").append(option);
+				$("#periodo").val(insertStr(result['periodo'],"-",4));
 
 
-	$(function(){
-		$("#semestresVigente").val("");
-		$("#semestresAnterior").val("");
-		// Crear instancia Datatables para manipulación de renglones durante la ejecución
-		//var t = $('#tblUA').DataTable();
-		
-		// CUANDO CAMBIEN EL CARACTER OBLIGATORIO DE LAS MATERIAS Y LOS MUESTRE EN LAS LISTAS
-		$("#selectCaracterVigente").on("change",function(){
-			var caracter = $(this).val();
-			$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,caracter:caracter},function(uas){
-				$("#listboxPlanVigente").jqxListBox({source:uas});
+				alert("Periodo dado de alta exitosamente!!!");
+				$("#salirPeriodo").click();
+				
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
 			});
+		}
 
-		});
+		function registrarGrupo(vigente)
+		{
+			var dataGrupo;
+			if(vigente==true)
+			{
+				dataGrupo = $("#formGV").serialize();
+			}
+			else
+			{
+				dataGrupo = $("#formGA").serialize();
+			}
 
-		$("#periodo").on("input",function(){
-			$(".grupoPer").text($(this).val());
-			$(".grupoPeriodo").val($("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo"));
-
-		});
-
-		$("#semestresVigente").on("change",function(){
-			// Obtener los grupos asociados al semestre seleccionado.
-			var semestre = $(this).val();
-			$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre},function(grupos){
-				var options = "";
-				for(var i = 0; i < grupos.length; i++)
+			$.post("<?php echo URL::to('cargaacademica/registrargrupo'); ?>",dataGrupo,function(result){
+				if(vigente == true)
 				{
-					options += "<option value="+grupos[i].grupo+" >"+grupos[i].grupo+"</option>";
+					$("#selectGruposVigente").append("<option value="+result+" >"+result+"</option>");
+					$('.grupos').multiselect('rebuild');
+
 				}
-				// Llenar las carreras que pertenecen al plan seleccionado
-				$('#select_grupos').html(options);
-				$('.grupos').multiselect('rebuild');
+				else
+				{
+					$("#selectGruposAnterior").append("<option value="+result+" >"+result+"</option>");
+					$('.grupos').multiselect('rebuild');
+				}
+				alert("Grupo dado de alta");
+				$(".salirGrupo").click();
+
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
 			});
-		});
-		// PARA ALMACENAR LAS CARGAS
-		$("#btnGuardarCa").on("click",function(){
-			var grupos = $("#select_grupos").val();
-			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-			$.post("<?php echo URL::to('cargaacademica/prueba'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente},function(data){
-				alert(data);
-			})
-			.fail(function(errorText,textError,errorThrow){
-				alert(errorText.responseText);
+		}
+
+		function verificarUsuario()
+		{
+			var numPrograma = {{Auth::user()->programaedu}};
+			if(numPrograma!=0)
+			{
+				$("#carreraAdmin, #labelCarrera").hide();
+				var nombre = String({{"'".$nombrePrograma."'"}});
+				$("#nombrePrograma").text("Lic. en " + nombre);
+				// Treaer materias
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:numPrograma,caracter:1},function(uas){
+					$("#listboxPlanVigente").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:numPrograma,caracter:1},function(uas){
+					$("#listboxPlanAnterior").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			}
+			return numPrograma;
+		}
+
+		$(function(){
+			
+			var numPrograma = verificarUsuario();
+			$("#carreraAdmin").val("");
+			$("#semestresVigente").val("");
+			$("#semestresAnterior").val("");
+			// Crear instancia Datatables para manipulación de renglones durante la ejecución
+			//var t = $('#tblUA').DataTable();
+			
+			
+
+
+			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
+			$("#carreraAdmin").on("change",function(){
+				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
+				$(".grupoPrograma").val($(this).val());
+				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
+				var programa = $("#carreraAdmin").val();
+
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:1},function(uas){
+					$("#listboxPlanVigente").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:programa,caracter:1},function(uas){
+					$("#listboxPlanAnterior").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			});
+
+			// CUANDO CAMBIEN EL CARACTER OBLIGATORIO DE LAS MATERIAS PLAN VIGENTE
+			$("#selectCaracterVigente").on("change",function(){
+				
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
+				var caracter = $(this).val();
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:caracter},function(uas){
+					$("#listboxPlanVigente").jqxListBox({source: uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+			});
+
+			// CUANDO CAMBIEN EL CARACTER OBLIGATORIO DE LAS MATERIAS PLAN ANTERIOR
+			$("#selectCaracterAnterior").on("change",function(){
+				
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
+				var caracter = $(this).val();
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:programa,caracter:caracter},function(uas){
+					$("#listboxPlanAnterior").jqxListBox({source: uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+			});
+
+
+			$("#periodo").on("input",function(){
+				$(".grupoPer").text($(this).val());
+				$(".grupoPeriodo").val($("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo"));
+
+			});
+
+			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
+			$("#semestresVigente").on("change",function(){
+				// Obtener los grupos asociados al semestre seleccionado.
+				var semestre = $(this).val();
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				// Obtener grupos de ese plan, periodo y semestre
+				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planVigente,noperiodo:periodo},function(grupos){
+					var options = "";
+					for(var i = 0; i < grupos.length; i++)
+					{
+						options += "<option value="+grupos[i].grupo+" >"+grupos[i].grupo+"</option>";
+					}
+					// Llenar las carreras que pertenecen al plan seleccionado
+					$('#selectGruposVigente').html(options);
+					$('.grupos').multiselect('rebuild');
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			});
+
+			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN ANTERIOR
+			$("#semestresVigente").on("change",function(){
+				// Obtener los grupos asociados al semestre seleccionado.
+				var semestre = $(this).val();
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				// Obtener grupos de ese plan, periodo y semestre
+				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planAnterior,noperiodo:periodo},function(grupos){
+					var options = "";
+					for(var i = 0; i < grupos.length; i++)
+					{
+						options += "<option value="+grupos[i].grupo+" >"+grupos[i].grupo+"</option>";
+					}
+					// Llenar las carreras que pertenecen al plan seleccionado
+					$('#selectGruposAnterior').html(options);
+					$('.grupos').multiselect('rebuild');
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			});
+			// PARA ALMACENAR LAS CARGAS
+			$("#btnGuardarCa").on("click",function(){
+				var grupos = $("#selectGruposVigente").val();
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				$.post("<?php echo URL::to('cargaacademica/prueba'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente},function(data){
+					alert(data);
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
 			});
 		});
-	});
 	</script>
 </body>
 </html>
