@@ -190,12 +190,17 @@
 				<table class="tblCatPlan">
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" maxlength="3" name="grupo_nombre" id="grupoNombre"/></td>
+						<td>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarrera" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestre" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificador" maxlength="1" placeholder="1" required/>
+							
+						</td>
 					</tr>
 					<tr>
 						<td>Turno:</td>
 						<td>
-							<select style="width:200px;" name="grupo_turno" id="grupoTurno" />
+							<select style="width:145px;" name="grupo_turno" id="grupoTurno" />
 								@foreach ($turnos as $turno)
 									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
 								@endforeach
@@ -556,6 +561,7 @@
 					$("#selectGruposAnterior").append("<option value="+result+" >"+result+"</option>");
 					$('.grupos').multiselect('rebuild');
 				}
+				alert(result);
 				alert("Grupo dado de alta");
 				$(".salirGrupo").click();
 
@@ -570,6 +576,7 @@
 			var numPrograma = {{Auth::user()->programaedu}};
 			if(numPrograma!=0)
 			{
+				$("#grupoCarrera").val(numPrograma);
 				$("#carreraAdmin, #labelCarrera").hide();
 				var nombre = String({{"'".$nombrePrograma."'"}});
 				$("#nombrePrograma").text("Lic. en " + nombre);
@@ -605,6 +612,7 @@
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
 			$("#carreraAdmin").on("change",function(){
+				$("#grupoCarrera").val($(this).val());
 				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
 				$(".grupoPrograma").val($(this).val());
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
@@ -676,6 +684,8 @@
 
 			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
 			$("#semestresVigente").on("change",function(){
+				// Asignar valor a la ventana modal grupoSemestre
+				$("#grupoSemestre").val($(this).val());
 				// Obtener los grupos asociados al semestre seleccionado.
 				var semestre = $(this).val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");

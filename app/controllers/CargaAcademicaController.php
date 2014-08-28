@@ -257,7 +257,7 @@ class CargaAcademicaController extends BaseController
 
 	public function postRegistrargrupo()
 	{
-		$grupo = Input::get('grupo_nombre');
+		$grupo = Input::get('grupo_carrera').Input::get('grupo_semestre').Input::get('grupo_identificador');
 		$periodo = Input::get('grupo_periodo');
 		$plan = Input::get('grupo_plan');
 		$programa = Input::get('grupo_programa');
