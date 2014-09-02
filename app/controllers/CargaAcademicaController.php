@@ -260,6 +260,7 @@ class CargaAcademicaController extends BaseController
 		$grupo = Input::get('grupo_carrera').Input::get('grupo_semestre').Input::get('grupo_identificador');
 		$periodo = Input::get('grupo_periodo');
 		$plan = Input::get('grupo_plan');
+
 		$programa = Input::get('grupo_programa');
 		$turno = Input::get('grupo_turno');
 		DB::table('grupos')->insert(
@@ -275,11 +276,13 @@ class CargaAcademicaController extends BaseController
 		$semestre = Input::get('nosemestre');
 		$plan = Input::get('noplan');
 		$periodo = Input::get('noperiodo');
+		$programa = Input::get('noprograma');
 
 		$grupos = DB::table('grupos')
 					->where('grupo','LIKE',"_".$semestre."_")
 					->where('plan','=',$plan)
 					->where('periodo','=',$periodo)
+					->where('programaedu','=',$programa)
 					->get();
 		return Response::json($grupos);
 	}
@@ -307,11 +310,12 @@ class CargaAcademicaController extends BaseController
 		return $uaformateadas;
 	}
 
-	public function postPrueba()
+	public function postRegistrarcarga()
 	{
 		$grupos = Input::get('grupos');
 		$uas = Input::get('uas');
 		$periodo = Input::get('periodo');
+		$programa = Input::get('programa');
 		foreach ($grupos as $grupo) {
 			foreach ($uas as $ua) {
 				DB::table('carga')->insert(
@@ -320,6 +324,8 @@ class CargaAcademicaController extends BaseController
 			}
 		}
 
-		return "Carga de semestre actualizada";
+		$detalleUAS = DB::select('SELECT carga.grupo,carga.periodo,SUBSTR(carga.grupo FROM 2 FOR 1) as semestre,carga.uaprendizaje,uaprendizaje.descripcionmat,uaprendizaje.creditos,uaprendizaje.HC,etapas.descripcion as etapa,uaprendizaje.claveD,uaprendizaje.plan FROM carga INNER JOIN uaprendizaje ON carga.uaprendizaje = uaprendizaje.uaprendizaje INNER JOIN etapas ON uaprendizaje.etapa = etapas.etapa WHERE SUBSTR(carga.grupo FROM 1 FOR 1) = ? ORDER BY semestre ASC',array($programa));
+
+		return Response::json($detalleUAS);
 	}
 }

@@ -111,6 +111,29 @@
 			//alert(uasVigente);
 			//$("#CheckedItems").text(checkedItems);
 		});
+
+		$("#listboxPlanAnterior").on('checkChange', function (event) {
+			/*var args = event.args;
+			if (args.checked) {
+				$("#Events").text("Checked: " + args.label);
+			}
+			else {
+				$("#Events").text("Unchecked: " + args.label);
+			}*/
+
+			var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
+			//var checkedItems = "";
+			uasAnterior = [];
+			$.each(items, function (index) {
+				/*if (index < items.length - 1) {
+					checkedItems += this.label + ", ";
+				}
+				else checkedItems += this.label;*/
+				uasAnterior.push(this.label.substring(0,5));
+			});
+			//alert(uasVigente);
+			//$("#CheckedItems").text(checkedItems);
+		});
 	});
 	</script>
 
@@ -191,9 +214,9 @@
 					<tr>
 						<td>Nombre:</td>
 						<td>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarrera" maxlength="1"  readonly required/>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestre" maxlength="1"  readonly required/>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificador" maxlength="1" placeholder="1" required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarreraV" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestreV" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificadorV" maxlength="1" placeholder="1" required/>
 							
 						</td>
 					</tr>
@@ -244,7 +267,11 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" maxlength="3" name="grupo_nombre" id="grupoNombre" /></td>
+						<td>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarreraA" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestreA" maxlength="1"  readonly required/>
+							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificadorA" maxlength="1" placeholder="1" required/>
+						</td>
 					</tr>
 					<tr>
 						<td>Turno:</td>
@@ -382,7 +409,7 @@
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
-						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
 					</div>
 				</fieldset>
 			</div>
@@ -420,20 +447,21 @@
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
-						<select name="example" multiple="multiple" class="grupos" id="selectGruposAnterior">
+						<select name="gruposA[]" id="selectGruposAnterior" multiple="multiple" class="grupos" >
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposAnterior" id="modalGruposAnterior" />
-						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaA" />
 					</div>
 				</fieldset>
 			</div>
 			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
 			<div id="contenedorRegistroca_mostrar">
-				<table class="tabla_cargaUA">
+				<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre1">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 6</th>
+							<th>SEMESTRE: 1</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -449,55 +477,441 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000453</td>
-							<td>DESARROLLO SUSTENTABLE</td>
-							<td>20</td>
-							<td>21</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
-						<tr>
-							<td>000454</td>
-							<td>ARQ. DE LA INFO.</td>
-							<td>15</td>
-							<td>14</td>
-							<td>BASICA</td>
-							<td>none</td>	
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-						</tr>
+					</tbody>
 					<thead class="encabezado_tabla">
 						<tr>
 							<th>OPTATIVAS</th>
 						</tr>
 					</thead>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 231, 233, 234</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 235, 236</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>
-					</tr>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
-					<tr>
-						<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-					</tr>
-				</tbody>
-			</table>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre2">
+						<thead class="semestre_plan">
+							<tr>
+								<th>SEMESTRE: 1</th>
+								<th>PLAN: 2014-1</th>
+							</tr>
+						</thead>
+						<thead class="encabezado_tabla">
+							<tr>
+								<th>CLAVE</th>
+								<th>MATERIA</th>
+								<th>NO. CREDITOS</th>
+								<th>HC</th>
+								<th>ETAPA</th>
+								<th>REQ. SERIACION</th>
+								<th>ELIMINAR</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+						<thead class="encabezado_tabla">
+							<tr>
+								<th>OPTATIVAS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>000459</td>
+								<td>QUIMICA I 231, 233, 234</td>
+								<td>9</td>
+								<td>20</td>
+								<td>BASICA</td>
+								<td>none</td>
+								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+							</tr>
+						</tbody>
+						<thead class="encabezado_tabla">
+							<td>GRUPOS Y TURNOS: </td>
+						</thead>
+						<tbody>
+							<tr>
+								<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre3">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre4">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre5">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre6">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre7">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre8">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
+				<br>
+				<br>
+				<br>
+				<br>
+			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
+				<table class="tabla_cargaUA" id="semestre9">
+					<thead class="semestre_plan">
+						<tr>
+							<th>SEMESTRE: 1</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>CLAVE</th>
+							<th>MATERIA</th>
+							<th>NO. CREDITOS</th>
+							<th>HC</th>
+							<th>ETAPA</th>
+							<th>REQ. SERIACION</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<tr>
+							<th>OPTATIVAS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="encabezado_tabla">
+						<td>GRUPOS Y TURNOS: </td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
 			<!--<div id="btnGuardarCa_registro">
 				<input type="button" style="width:180px" value="Guardar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
 			</div>-->
@@ -561,7 +975,7 @@
 					$("#selectGruposAnterior").append("<option value="+result+" >"+result+"</option>");
 					$('.grupos').multiselect('rebuild');
 				}
-				alert(result);
+				//alert(result); Verificar el grupo registrado
 				alert("Grupo dado de alta");
 				$(".salirGrupo").click();
 
@@ -576,7 +990,7 @@
 			var numPrograma = {{Auth::user()->programaedu}};
 			if(numPrograma!=0)
 			{
-				$("#grupoCarrera").val(numPrograma);
+				$("#grupoCarreraV,#grupoCarreraA").val(numPrograma); // Establecer el numero de carrera para grupo
 				$("#carreraAdmin, #labelCarrera").hide();
 				var nombre = String({{"'".$nombrePrograma."'"}});
 				$("#nombrePrograma").text("Lic. en " + nombre);
@@ -612,7 +1026,7 @@
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
 			$("#carreraAdmin").on("change",function(){
-				$("#grupoCarrera").val($(this).val());
+				$("#grupoCarreraV,#grupoCarreraA").val($(this).val()); // Asignar carrera - Administrador para grupo
 				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
 				$(".grupoPrograma").val($(this).val());
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
@@ -675,7 +1089,7 @@
 
 			});
 
-
+			// CUANDO CAMBIEN EL PERIODO
 			$("#periodo").on("input",function(){
 				$(".grupoPer").text($(this).val());
 				$(".grupoPeriodo").val($("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo"));
@@ -685,12 +1099,20 @@
 			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
 			$("#semestresVigente").on("change",function(){
 				// Asignar valor a la ventana modal grupoSemestre
-				$("#grupoSemestre").val($(this).val());
+				$("#grupoSemestreV").val($(this).val());
 				// Obtener los grupos asociados al semestre seleccionado.
 				var semestre = $(this).val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
 				// Obtener grupos de ese plan, periodo y semestre
-				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planVigente,noperiodo:periodo},function(grupos){
+				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planVigente,noperiodo:periodo,noprograma:programa},function(grupos){
 					var options = "";
 					for(var i = 0; i < grupos.length; i++)
 					{
@@ -706,12 +1128,22 @@
 			});
 
 			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN ANTERIOR
-			$("#semestresVigente").on("change",function(){
+			$("#semestresAnterior").on("change",function(){
+				// Asignar valor a la ventana modal grupoSemestre
+				$("#grupoSemestreA").val($(this).val());
 				// Obtener los grupos asociados al semestre seleccionado.
 				var semestre = $(this).val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
 				// Obtener grupos de ese plan, periodo y semestre
-				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planAnterior,noperiodo:periodo},function(grupos){
+				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planAnterior,noperiodo:periodo,noprograma:programa},function(grupos){
 					var options = "";
 					for(var i = 0; i < grupos.length; i++)
 					{
@@ -726,16 +1158,51 @@
 				});
 			});
 			// PARA ALMACENAR LAS CARGAS
-			$("#btnGuardarCa").on("click",function(){
+			
+			$("#btnGuardarCargaV").on("click",function(){
 				var grupos = $("#selectGruposVigente").val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-				$.post("<?php echo URL::to('cargaacademica/prueba'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente},function(data){
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
+				// Mostrar unidades de aprendizaje en las tablas
+				$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente,programa:programa},function(uas){
+					$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+					for (var i = 0; i < uas.length; i++) {
+						var renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
+					};
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			});
+
+			$("#btnGuardarCargaA").on("click",function(){
+				var grupos = $("#selectGruposAnterior").val();
+				alert(grupos);
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				if(numPrograma == 0)
+				{
+					var programa = $("#carreraAdmin").val();
+				}
+				else
+				{
+					var programa = numPrograma;
+				}
+				$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasAnterior,programa:programa},function(data){
 					alert(data);
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
 			});
+
 		});
 	</script>
 </body>
