@@ -26,12 +26,13 @@ class CargaAcademicaController extends BaseController
 
 		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
 		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
+		
+		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
 		$uas = UnidadAprendizaje::select('plan','uaprendizaje','descripcionmat')
 				->where('caracter','=',1)
 				->whereIn('plan',array($plan[0]->plan,$plan[1]->plan))->orderBy('plan','desc')
 				->orderBy('uaprendizaje','asc')->get();
 		
-		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
 		$uas->planes = $planes = array($plan[0]->plan,$plan[1]->plan);;
 		$unidades  = [[],[]];
 		foreach ($uas as $ua) 
@@ -61,7 +62,27 @@ class CargaAcademicaController extends BaseController
 		
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
-		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo','tiposCaracter','turnos'));
+
+		// Carreras de los planes de estudio
+		$programas = DB::table("plan_programa")
+				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
+				->select("plan_programa.programaedu","programaedu.descripcion")
+				->whereIn("plan_programa.plan",$planes)
+				->distinct()
+				->get();
+		$numPrograma = Auth::user()->programaedu;
+		$nombrePrograma = "";
+		
+		if ($numPrograma!=0) {
+			$nombrePrograma = ProgramaEducativo::find($numPrograma);
+			$nombrePrograma = $nombrePrograma -> descripcion;
+		}
+		
+		$var_nombre = array("nombrePrograma");
+
+		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo','tiposCaracter','turnos','programas',$var_nombre));
+		
+		//return $nombrePrograma;
 	}
 
 	public function getRegistro2()
@@ -236,24 +257,32 @@ class CargaAcademicaController extends BaseController
 
 	public function postRegistrargrupo()
 	{
-		$grupo = Input::get('grupo_nombre');
+		$grupo = Input::get('grupo_carrera').Input::get('grupo_semestre').Input::get('grupo_identificador');
 		$periodo = Input::get('grupo_periodo');
 		$plan = Input::get('grupo_plan');
+
 		$programa = Input::get('grupo_programa');
 		$turno = Input::get('grupo_turno');
 		DB::table('grupos')->insert(
 			array("grupo"=>$grupo,"periodo"=>$periodo,"plan"=>$plan,"programaedu"=>$programa,"turno"=>$turno)
 		);
 
-		return "Si se hizo";
+		return $grupo;
 	}
 
 	// CONSULTAS A CARGA ACADEMICA
 	public function postObtenergrupos()
 	{
 		$semestre = Input::get('nosemestre');
+		$plan = Input::get('noplan');
+		$periodo = Input::get('noperiodo');
+		$programa = Input::get('noprograma');
+
 		$grupos = DB::table('grupos')
 					->where('grupo','LIKE',"_".$semestre."_")
+					->where('plan','=',$plan)
+					->where('periodo','=',$periodo)
+					->where('programaedu','=',$programa)
 					->get();
 		return Response::json($grupos);
 	}
@@ -261,13 +290,19 @@ class CargaAcademicaController extends BaseController
 	public function postObteneruas()
 	{
 		$plan = Input::get('noplan');
+		$programa = Input::get('programa');
 		$caracter = Input::get('caracter');
-		$UAS = UnidadAprendizaje::select('uaprendizaje','descripcionmat')
-				->where('plan','=',$plan)
-				->where('caracter','=',$caracter)
-				->orderBy('uaprendizaje','asc')
+		$UAS = DB::table('p_ua')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->select('p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+				->where('p_ua.programaedu','=',$programa)
+				->where('uaprendizaje.plan','=',$plan)
+				->where('uaprendizaje.caracter','=',$caracter)
+				->orderBy('p_ua.uaprendizaje','asc')
 				->get();
+		
 		$uaformateadas = [];
+		
 		foreach ($UAS as $ua) {
 			$formato = $ua->uaprendizaje." - ".$ua->descripcionmat;
 			array_push($uaformateadas, $formato);
@@ -275,11 +310,12 @@ class CargaAcademicaController extends BaseController
 		return $uaformateadas;
 	}
 
-	public function postPrueba()
+	public function postRegistrarcarga()
 	{
 		$grupos = Input::get('grupos');
 		$uas = Input::get('uas');
 		$periodo = Input::get('periodo');
+		$programa = Input::get('programa');
 		foreach ($grupos as $grupo) {
 			foreach ($uas as $ua) {
 				DB::table('carga')->insert(
@@ -288,6 +324,8 @@ class CargaAcademicaController extends BaseController
 			}
 		}
 
-		return "Carga de semestre actualizada";
+		$detalleUAS = DB::select('SELECT carga.grupo,carga.periodo,SUBSTR(carga.grupo FROM 2 FOR 1) as semestre,carga.uaprendizaje,uaprendizaje.descripcionmat,uaprendizaje.creditos,uaprendizaje.HC,etapas.descripcion as etapa,uaprendizaje.claveD,uaprendizaje.plan FROM carga INNER JOIN uaprendizaje ON carga.uaprendizaje = uaprendizaje.uaprendizaje INNER JOIN etapas ON uaprendizaje.etapa = etapas.etapa WHERE SUBSTR(carga.grupo FROM 1 FOR 1) = ? ORDER BY semestre ASC',array($programa));
+
+		return Response::json($detalleUAS);
 	}
 }

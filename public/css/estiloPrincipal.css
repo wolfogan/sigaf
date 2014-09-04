@@ -1574,6 +1574,11 @@ background: #EFCA0D;
 	margin: -32px 0 0 -32px;
 }
 
+input[readonly],input[readonly="readonly"]
+{
+	background-color: #E8E8E8;
+}
+
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
 .dd_con_estilo
 {

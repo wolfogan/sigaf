@@ -277,7 +277,7 @@
 					</tr>
 					<tr>
 						<td>Clave:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="clave2F" id="claveSeriacion_update" size="25"></td>
+						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="clave2F" id="claveSeriacion_update" size="25" disabled="disabled"></td>
 						<td>Materia:</td>
 						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25" disabled="disabled"></td>
 					</tr>
@@ -561,6 +561,17 @@
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
 					$("#descripcionSeriacion_update").val(materia);
 				});
+			}
+		});
+
+		// Si se selecciono tipo de seriacion que no sea SIN SERIACION
+		$("#seriacion_update").on("change",function(){
+			if($(this).val()!=1)
+				$("#claveSeriacion_update").attr("disabled",false);
+			else
+			{
+				$("#claveSeriacion_update").val("");
+				$("#claveSeriacion_update").attr("disabled",true);
 			}
 		});
 	});

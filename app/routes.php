@@ -34,10 +34,20 @@ Route::get('pruebas',function(){
 	//$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
 
 	$plan = PlanEstudio::find('20101')->nivelD;
+
+	$programas = DB::table("plan_programa")
+				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
+				->select("plan_programa.programaedu","programaedu.descripcion")
+				->whereIn("plan_programa.plan",array(20092,20101))
+				->distinct()
+				->get();
+
+	$nombrePrograma = ProgramaEducativo::find(4);
+
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $plan->descripcion;
+	return $nombrePrograma;
 });
