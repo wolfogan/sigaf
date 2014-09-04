@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	<div id="ubicacion" class="texto_body">
-		Disponibilidad docente: Registro
+		Disponibilidad docente: Consulta
 	</div>
 	<div id="loginmanual">
 		<div id="login" class="texto_body">
@@ -61,16 +61,61 @@
 
 		<section>
 			<div class="nombre_coordinacion">Lic. en Informática</div>
+
+			<div id="statusPlanEstudios"><label>Estatus: En proceso</label></div>
+			<div id="checkSubdirector">
+				<input style="width:18px; height:18px;" type="checkbox" name="checkSubdirector" value="Generar"><label style="font-size:18px;">Completado</label>
+			</div>
+
+
+
+		<fieldset id="dd_consulta">
+			<legend>Consultar por:</legend>
+
+			
+				<div id="dd_consultaPeriodo">
+					<label>Periódo: </label>
+					<input class="dd_con_estilo"type="text" name="dd_periodoConsulta" id="dd_periodoConsulta" list="datalist_periodo_ca" size=1 onkeypress="ValidaSoloNumeros()"/>
+					<datalist id="datalist_dd_periodoConsulta">
+						<option value="2013-2">
+						<option value="2013-4">
+						<option value="2014-1">
+					</datalist>
+				</div>
+
+				<div id="dd_consultarPor">
+					<label>Consultar por: </label>
+					<select class="dd_estilo_combo" style="width:220px" name="dd_consultarPor" size=1>
+						<option value="TC">DATOS PERSONALES</option>
+						<option value="ADMON">GRADO DE ESTUDIOS</option>
+						<option value="CONTAB">CURSOS Y/O CONGRESOS</option>
+						<option value="INFORMATICA">MATERIAS A IMPARTIR</option>
+						<option value="NEGOCIOS">MATRIZ DE DISPONIBILIDAD</option>
+						<option value="NEGOCIOS">MATERIAS OFERTADAS</option>
+					</select>
+				</div>
+
+
+				
+					<div id="dd_btnBuscar"><input class="estilo_button2" style="width:145px" type="button" value="Buscar">
+			
+			
+
+		</fieldset>
+
+
+
+
 			<div class="tabs">
 	    
 			    <input id="tab-1"  type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
 				<label for="tab-1" class="tab-label-1">Datos personales</label>
 				
-			    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+			    <!--<input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
 				<label for="tab-2" class="tab-label-2">Estudios y cursos</label>
 				
 			    <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
-				<label for="tab-3" class="tab-label-3">Disponibilidad</label>
+				<label for="tab-3" class="tab-label-3">Disponibilidad</label>-->
 		               
 					 
 				<div class="clear-shadow"></div>
@@ -149,7 +194,7 @@
 		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
 						</div>
 		                    
-					    <div class="content-2">
+					   <!-- <div class="content-2">
 		                    
      
 							<h2>Grado de estudios</h2>
@@ -689,7 +734,7 @@
 
 
 								
-						</div>
+						</div>-->
 
 		                    
 		                                    

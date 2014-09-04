@@ -39,7 +39,7 @@
 		</div>
 <div class="container">
 	<div class="main">
-		<div class="view view-tenth">
+		<div class="view view-tenth" onclick="location.href='planestudio/registro'">
 			<img src="imagenes/plan1.png"/>
 			<a href="planestudio/registro"><div class="mask"></a>
 				<h2>Plan de estudios</h2>
@@ -48,7 +48,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="view view-tenth">
+		<div class="view view-tenth" onclick="location.href='cargaacademica/registro'">
 			<img src="imagenes/carga1.png"/>
 			<div class="mask">
 				<h2>Carga academica</h2>
@@ -61,7 +61,7 @@
 				<a href="#"></a>
 			</div>
 		</div>
-		<div class="view view-tenth">
+		<div class="view view-tenth" onclick="location.href='disponibilidaddocente/registro'">
 			<img src="imagenes/disponibilidad1.png"/>
 			<div class="mask">
 				<h2>Disponibilidad docente</h2>
