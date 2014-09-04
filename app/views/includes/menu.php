@@ -4,7 +4,7 @@
 			<a href="#" titile="Plan de estudios">Plan de estudios</a>
 			<ul>
 				<li><a href="<?=URL::to('catalogos');?>" title="Catalogos">Catálogos</a></li>
-				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Administrar catálogos">Admón. Catálogos</a></li>
+				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Modificación y eliminación de catálogos</a></li>
 				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/bitacora')?>" titile="Bitacora">Bitácora</a></li>
@@ -24,9 +24,9 @@
 			<a href="#" title="Disponibilidad docente">Disponibilidad docente</a>
 			<ul>
 				<li><a href="<?=URL::to('disponibilidaddocente/registro');?>" title="Registrar DD">Registrar Disp. Doc.</a></li>
-				<li><a href="<?=URL::to('disponibilidaddocente/estudios');?>" title="Registrar estudios">Registrar estudios</a></li>
-				<li><a href="<?=URL::to('disponibilidaddocente/disponibilidad');?>" title="Registrar disponibilidad">Registrar disponibilidad</a></li>
-				<li class="ultimo"><a href="#" title="Eliminar DD">Eliminar DD</a></li>
+				<li><a href="<?=URL::to('disponibilidaddocente/consulta');?>" title="Consultar y modificar DD">Consultar Disp. Doc.</a></li>
+				
+				<li class="ultimo"><a href="<?=URL::to('disponibilidaddocente/eliminar');?>" title="Eliminar DD">Eliminar Disp. Doc.</a></li>
 			</ul>
 		</li>
 		<li>

@@ -179,8 +179,6 @@ footer
 	height: 130px;
 	width: 115px;
 
-
-
 }
 #consultaboton_limpiar
 {
@@ -203,7 +201,7 @@ background: #EFCA0D;
 }
 .con_estilo
 {
-	font-size: 13px;
+	font-size: 15px;
 	width:120px;
 	height:30px;
 	border-radius: 5px;
@@ -1146,6 +1144,23 @@ background: #EFCA0D;
 }
 
 /*--------------------------CATALOGOS ADMIN-------------------------*/
+.clsModificarFila
+{
+	background-image:url(../imagenes/modify.png);
+	height:25px; 
+	width:28px; 
+	border-radius:5px;
+	border-color: #468C00;
+	background-color:#fff;
+	font-size:16px;
+	font-weight:bold;
+}
+.clsModificarFila:hover
+{
+	border-color: #468C00;
+
+}
+
 
 #adminCatalogosFieldset
 {
@@ -1565,46 +1580,401 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.dd_con_estilo
+{
+	font-size: 18px;
+	width:170px;
+	height:30px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+}
+.dd_con_estilo_largo
+{
+	font-size: 18px;
+	width:300px;
+	height:30px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+}
+.dd_estilo_combo
+{
+	font-size: 18px;
+	width:130px;
+	height:30px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+
+}
+.dd_con_estilo_foto
+{
+	font-size: 18px;
+	width:170px;
+	height:100px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+	margin-left:43px;
+
+}
+.dd_con_estilo_corto
+{
+	font-size: 18px;
+	width:70px;
+	height:30px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+	margin-left:43px;
+}
+
+
+#dd_noEmpleado_fechaIngreso
+{
+	
+	float: right;
+	width: 500px;
+}
+
 #dd_noEmpleado
 {
-	background: blue;
+	
+	
 	float: left;
 	height: 30px;
+	padding-top: 10px;
 	width: 200px;
 
 }
 #dd_fechaIngreso
 {
-	background: pink;
+	
+	
 	float: left;
 	height: 30px;
-	width: 400px;
+	width: 300px;
+}
+
+#dd_aPaterno_aMaterno_nombres_sexo
+{
+	
+	margin-top: 90px;
+	width: 1170px;
 }
 #dd_aPaterno
 {
-	background: purple;
+	
+	
 	float: left;
-	width: 400px;
+	padding-right: 18px;
+	width: 260px;
 
 }
 #dd_aMaterno
 {
-
+	
+	float: left;
+	padding-right: 18px;
+	width: 270px;
 }
-#dd_nombreSemestre
+#dd_nombres
 {
 
+	float: left;
+	padding-right: 18px;
+	width: 390px;
 }
 #dd_sexo
 {
-
+	
+	float: left;
+	width: 180px;
 }
+
+
 #dd_foto
 {
 
+	margin-top: 140px;
+	width: 270px;
+
+}
+
+#dd_calle
+{
+	
+	float: left;
+	padding-right: 20px;
+	width: 380px;
+
+}
+#dd_colonia_calle_int_ext_cp
+{
+	margin-top:50px;
+}
+
+#dd_int
+{
+	
+	float: left;
+	padding-right: 10px;
+	width: 140px;
+
+}
+#dd_ext
+{
+	
+	float: left;
+	padding-right: 10px;
+	width: 140px;
+
+}
+#dd_cp
+{
+	
+	float: left;
+	padding-right: 10px;
+	width: 120px;
+
+}
+#dd_colonia
+{
+	
+	float: left;
+	width: 250px;
+
+}
+#dd_telefonos_correo
+{
+	margin-top: 50px;
+}
+
+#dd_telOficina
+{
+	
+	padding-right: 40px;
+	float: left;
+}
+#dd_telParticular
+{
+	
+	float: left;
+	padding-right: 40px;
+
+}
+#dd_celular
+{
+	
+	float: left;
+	padding-right: 40px;
+
+}
+#dd_correo
+{
+	
+	float: left;
+
+}
+#dd_correoA
+{
+	
+	margin-top: 100px;
+}
+
+#dd_trabajoFuera_puesto_antiguedad
+{
+	
+	margin-top: 80px;
+
+}
+#dd_rfc
+{
+	
+	float: right;
+	font-size: 20px;
+	color: #000;
+	padding-right: 25px;
+	margin-top: 10px;
+
+}
+#dd_trabajoFuera
+{
+	
+	float: left;
+	padding-right: 23px;
+
+}
+#dd_puesto
+{
+	
+	float: left;
+	padding-right: 20px;
+
+}
+#dd_antiguedad
+{
+	
+	float: left;
+
+
+}
+.dd_licenciatura_uniEgreso_fechaTitulacion_cedula
+{
+
+	padding-bottom: 40px;
+	width: 1150px;
+}
+.dd_licenciatura
+{
+	
+	float: left;
+	margin-left:40px;
+	padding-right: 20px;
+
+}
+.dd_uniEgreso
+{
+	
+	float: left;
+	padding-right: 20px;
+
+}
+.dd_fechaTitulacion
+{
+	
+	float: left;
+	padding-right: 25px;
+
+}
+.dd_cedula
+{
+	background: white;
+	float: left;
+	padding-left: 20px;
+	width: 200px;
+
+}
+.dd_btnAdd
+{
+	
+	
+	float: left;
+	width: 30px;
+	
+}
+.dd_estilo_check
+{
+	background: blue;
+	height: 20px;
+ 	margin-left:15px;"
+	width: 20px;
+
+}
+.dd_especialidad
+{
+	
+	font-size: 16px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	width: 200px;
+}
+.dd_label
+{
+	
+	font-size: 18px;
+	color: green;
+}
+.dd_btnEstudiosCursos
+{
+	
+	float: right;
+	margin-top: 20px;
+}
+#dd_impartirMaterias
+{
+	margin-top: 100px;
+}
+.dd_tablaImpartirMaterias
+{
+	
+	
+	margin-left: 70px;
+	margin-bottom: 30px;
+	width: 1000px;
+}
+.dd_tablaImpartirMaterias td
+{
+	border:1px solid gray;
+	border-collapse: separate;
+  	border-spacing: 10px;
+
+  	font-size: 16px;
+
+
+}
+.dd_encabezadoImpartirMaterias
+{
+	font-size: 18px;
+	color: green;
+	border:1px solid gray;
 }
 
 
+#dd_consultaPeriodo
+{
+	
+	float: left;
+	margin-left: 40px;
+	margin-top: 	15px;
+	
+	width: 250px;
+
+}
+#dd_consultarPor
+{
+	
+	float: left;
+	margin-top: 15px;
+
+	width: 350px;
+}
+
+
+#dd_btnBuscar
+{
+	
+	float: left;
+}
+
+#dd_consulta
+{
+	margin:auto;
+	margin-top: 40px;
+	width: 850px;
+}
+
+#dd_consultaEmpleado
+{
+	
+	float: left;
+	margin-left: 10px;
+	padding-right: 30px;
+	width: 230px;
+
+
+}
+#dd_consultarNombre
+{
+	
+	float: left;
+	width: 400px;
+}
+#dd_eliminarDocentes
+{
+	margin-top: 30px;
+	margin-left: 90px;
+}
+
+
+
 /*----------------------------------------------------------------------------------------------*/
+
 
 

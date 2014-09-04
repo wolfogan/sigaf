@@ -19,5 +19,13 @@ class DisponibilidadDocenteController extends BaseController
 	{
 		return View::make("dd.registrodisponibilidad");
 	}
+	public function getConsulta()
+	{
+		return View::make("dd.consulta");
+	}
+	public function getEliminar()
+	{
+		return View::make("dd.eliminar");
+	}
 
 }

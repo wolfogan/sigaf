@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<div id="ubicacion" class="texto_body">
-				Administración de catálogos
+				Plan de estudios: Modificar y eliminar catálogos
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
@@ -110,6 +110,7 @@
 						<th>FECHA INICIO</th>
 						<th>FECHA FIN</th>
 						<th>CREDITOS PRACTICAS</th>
+						<th>MODIFICAR</th>
 						<th>ELIMINAR</th>
 					
 						
@@ -125,6 +126,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -134,6 +136,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -143,6 +146,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -152,6 +156,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -161,6 +166,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -170,6 +176,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 
 					</tr>
@@ -179,6 +186,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -188,6 +196,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -199,6 +208,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -208,6 +218,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -217,6 +228,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>
@@ -226,6 +238,7 @@
 						<td>9:38 am</td>
 						<td class="center">12/02/14</td>
 						<td class="center">13:24 pm</td>
+						<td><input type="button" value="" class="clsModificarFila"></td>
 						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
 					</tr>

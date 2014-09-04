@@ -169,7 +169,7 @@
 					Etapa terminal
 				</div>
 			</div>
-			<div id="basica_semestres">
+			<!--<div id="basica_semestres">
 				<div id="semestre_uno">1</div>
 				<div id="semestre_dos">2</div>
 				<div id="semestre_tres">3</div>
@@ -183,7 +183,9 @@
 				<div id="semestre_siete">7</div>
 				<div id="semestre_ocho">8</div>
 				<div id="semestre_nueve">9</div>
-			</div>
+			</div>-->
+			<br>
+			<br>
 		</div>
 		<script type="text/javascript">
 			$("ul:first").dragsort();
