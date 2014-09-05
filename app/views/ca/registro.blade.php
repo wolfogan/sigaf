@@ -1012,6 +1012,27 @@
 			return numPrograma;
 		}
 
+		function desmarcar_carreras(selectGrupos)
+		{
+			// Limpiar Control
+			$('option',selectGrupos).each(function(element) {
+				$(selectGrupos).multiselect('deselect', $(this).val());
+			});
+			$(selectGrupos).multiselect("refresh");
+			// Habilitar Carreras
+			$(selectGrupos).find("option").removeAttr('disabled');
+			$(selectGrupos).multiselect('refresh');
+		}
+		function marcar_carreras(selectGrupos)
+		{
+			// Revisar cada option
+			$('option',selectGrupos).each(function(element){
+				$(selectGrupos).multiselect('select',$(this).val()); // Seleccionar option
+				$(selectGrupos).find('option').attr('disabled','disabled'); // Deshabilitar option
+				$(selectGrupos).multiselect('refresh'); // Refrescar option
+			});
+		}
+
 		$(function(){
 			
 			var numPrograma = verificarUsuario();
@@ -1061,11 +1082,15 @@
 				var caracter = $(this).val();
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:caracter},function(uas){
 					$("#listboxPlanVigente").jqxListBox({source: uas});
+					if(caracter != 1)
+						desmarcar_carreras($("#selectGruposVigente"));
+					else
+						marcar_carreras($("#selectGruposVigente"));
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
-
+				
 			});
 
 			// CUANDO CAMBIEN EL CARACTER OBLIGATORIO DE LAS MATERIAS PLAN ANTERIOR
@@ -1082,6 +1107,7 @@
 				var caracter = $(this).val();
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:programa,caracter:caracter},function(uas){
 					$("#listboxPlanAnterior").jqxListBox({source: uas});
+					
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
@@ -1121,6 +1147,12 @@
 					// Llenar las carreras que pertenecen al plan seleccionado
 					$('#selectGruposVigente').html(options);
 					$('.grupos').multiselect('rebuild');
+
+					// Si es de caracter obligatorio seleccionar todos los grupos y deshabilitar
+					if($("#selectCaracterVigente").val()==1)
+					{
+						marcar_carreras($("#selectGruposVigente"));
+					}
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
