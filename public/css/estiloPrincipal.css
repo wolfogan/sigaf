@@ -257,9 +257,9 @@ background: #EFCA0D;
 }
 #botones
 {
-	margin-top: -50px;
+	margin-top: -55px;
 	width: 280px;
-	float: left;
+	float: right;
 }
 #cimarron
 {
@@ -1630,7 +1630,8 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: right;
-	width: 500px;
+	font-size: 18px;
+	width: 550px;
 }
 
 #dd_noEmpleado
@@ -1639,7 +1640,8 @@ input[readonly],input[readonly="readonly"]
 	
 	float: left;
 	height: 30px;
-	padding-top: 10px;
+	padding-top: 7px;
+	padding-right: 30px;
 	width: 200px;
 
 }
@@ -1649,21 +1651,21 @@ input[readonly],input[readonly="readonly"]
 	
 	float: left;
 	height: 30px;
-	width: 300px;
+	width: 310px;
 }
 
 #dd_aPaterno_aMaterno_nombres_sexo
 {
 	
-	margin-top: 90px;
-	width: 1170px;
+	margin-top: 20px;
+	width: 1130px;
 }
 #dd_aPaterno
 {
 	
 	
 	float: left;
-	padding-right: 18px;
+	padding-right: 10px;
 	width: 260px;
 
 }
@@ -1671,14 +1673,14 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 18px;
+	padding-right: 7px;
 	width: 270px;
 }
 #dd_nombres
 {
 
 	float: left;
-	padding-right: 18px;
+	padding-right: 10px;
 	width: 390px;
 }
 #dd_sexo
@@ -1692,7 +1694,7 @@ input[readonly],input[readonly="readonly"]
 #dd_foto
 {
 
-	margin-top: 140px;
+	margin-top: 70px;
 	width: 270px;
 
 }
@@ -1707,7 +1709,16 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_colonia_calle_int_ext_cp
 {
-	margin-top:50px;
+
+
+	border-radius: 7px;
+	height: 130px;
+	border:3px solid #ECECFB;
+	padding-left: 10px;
+	padding-top:20px;
+
+	
+
 }
 
 #dd_int
@@ -1743,7 +1754,7 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_telefonos_correo
 {
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 #dd_telOficina
@@ -1781,10 +1792,16 @@ input[readonly],input[readonly="readonly"]
 #dd_trabajoFuera_puesto_antiguedad
 {
 	
-	margin-top: 80px;
+	height: 50px;
+	border-radius: 7px;
+	border:3px solid #ECECFB;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+
 
 }
-#dd_rfc
+.dd_rfc
 {
 	
 	float: right;
@@ -1817,7 +1834,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_licenciatura_uniEgreso_fechaTitulacion_cedula
 {
-
+	
 	padding-bottom: 40px;
 	width: 1150px;
 }
@@ -1970,6 +1987,71 @@ input[readonly],input[readonly="readonly"]
 {
 	margin-top: 30px;
 	margin-left: 90px;
+}
+
+.dd_clsAgregarFila
+{
+	
+	background-color:#004000;
+	color:#fff;
+	text-align: center;
+	height:30px; 
+	width:30px; 
+	border-radius:5px;
+	border-color: #468C00;
+	font-size:16px;
+	font-weight:bold;
+}
+.dd_clsAgregarFila:hover
+{
+	background: #ECA22E;
+	color:#004000;
+	font-weight: bolder;
+
+}
+.dd_divDecoracion
+{
+	border-radius: 7px;
+	border:3px solid #ECECFB;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	
+
+}
+#dd_pais_estado_ciudad_otro
+{
+	margin-top: 80px;
+
+}
+#dd_pais
+{
+
+	float: left;
+	margin-left: 10px;
+	padding-right: 31px;
+	width: 250px;
+
+}
+#dd_estado
+{
+	
+	float: left;
+	padding-right: 30px;
+	width: 250px;
+	
+}
+#dd_ciudad
+{
+	
+	float: left;
+	padding-right: 30px;
+	width: 250px;
+}
+#dd_otro
+{
+	
+	float: left;
+	width: 250px;
 }
 
 
