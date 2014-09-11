@@ -149,13 +149,33 @@
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 	<script type="text/javascript" src="../js/prettify.js"></script>
-
+	
+	<!-------------------------------- PARA MULTISELECT ---------------------------->
 	<script type="text/javascript">
 	$(function() {
-		$('.grupos').multiselect({
-			includeSelectAllOption: true
-		});
+		$('.grupos').multiselect(configurationObligatorio);
 	});
+
+	var configurationObligatorio =
+	{
+		includeSelectAllOption: false,
+		onChange: function(element,checked,index){
+			if($("#selectCaracterVigente").val()==1)
+			{
+				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
+				$('#selectGruposVigente').multiselect('select',element.val());
+			}
+			if($("#selectCaracterAnterior").val()==1)
+			{
+				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
+				$('#selectGruposAnterior').multiselect('select',element.val());
+			}
+		}
+	}
+	var configurationOptativo =
+	{
+		includeSelectAllOption: true,
+	}
 	</script>
 
 	<!-------------------------------------------------------------------------------------------->
@@ -512,7 +532,7 @@
 				<table class="tabla_cargaUA" id="semestre2">
 						<thead class="semestre_plan">
 							<tr>
-								<th>SEMESTRE: 1</th>
+								<th>SEMESTRE 2:</th>
 								<th>PLAN: 2014-1</th>
 							</tr>
 						</thead>
@@ -563,7 +583,7 @@
 				<table class="tabla_cargaUA" id="semestre3">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 3</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -614,7 +634,7 @@
 				<table class="tabla_cargaUA" id="semestre4">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 4</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -665,7 +685,7 @@
 				<table class="tabla_cargaUA" id="semestre5">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 5</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -716,7 +736,7 @@
 				<table class="tabla_cargaUA" id="semestre6">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 6</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -767,7 +787,7 @@
 				<table class="tabla_cargaUA" id="semestre7">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 7</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -818,7 +838,7 @@
 				<table class="tabla_cargaUA" id="semestre8">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 8</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -869,7 +889,7 @@
 				<table class="tabla_cargaUA" id="semestre9">
 					<thead class="semestre_plan">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 9</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
@@ -950,7 +970,11 @@
 				alert(errorText.responseText);
 			});
 		}
-
+		/**
+		 * Funcion para registrar un grupo en la carga actual
+		 * @param  {bool} vigente Verifica si es un grupo del plan vigente o anterior
+		 * @return {null}         No reguresa ningun tipo de valor
+		 */
 		function registrarGrupo(vigente)
 		{
 			var dataGrupo;
@@ -968,12 +992,19 @@
 				{
 					$("#selectGruposVigente").append("<option value="+result+" >"+result+"</option>");
 					$('.grupos').multiselect('rebuild');
-
+					if($("#selectCaracterVigente").val()==1)
+					{
+						marcar_carreras($("#selectGruposVigente"));
+					}
 				}
 				else
 				{
 					$("#selectGruposAnterior").append("<option value="+result+" >"+result+"</option>");
 					$('.grupos').multiselect('rebuild');
+					if($("#selectCaracterAnterior").val()==1)
+					{
+						marcar_carreras($("#selectGruposAnterior"));
+					}
 				}
 				//alert(result); Verificar el grupo registrado
 				alert("Grupo dado de alta");
@@ -1028,7 +1059,7 @@
 			// Revisar cada option
 			$('option',selectGrupos).each(function(element){
 				$(selectGrupos).multiselect('select',$(this).val()); // Seleccionar option
-				$(selectGrupos).find('option').attr('disabled','disabled'); // Deshabilitar option
+				//$(selectGrupos).find('option').attr('disabled','disabled'); // Deshabilitar option
 				$(selectGrupos).multiselect('refresh'); // Refrescar option
 			});
 		}
@@ -1083,9 +1114,17 @@
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:caracter},function(uas){
 					$("#listboxPlanVigente").jqxListBox({source: uas});
 					if(caracter != 1)
+					{
+						$('#selectGruposVigente').multiselect('setOptions',configurationOptativo);
+						$('#selectGruposVigente').multiselect('rebuild');
 						desmarcar_carreras($("#selectGruposVigente"));
+					}
 					else
+					{
+						$('#selectGruposVigente').multiselect('setOptions',configurationObligatorio);
+						$('#selectGruposVigente').multiselect('rebuild');
 						marcar_carreras($("#selectGruposVigente"));
+					}
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
@@ -1107,7 +1146,18 @@
 				var caracter = $(this).val();
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:programa,caracter:caracter},function(uas){
 					$("#listboxPlanAnterior").jqxListBox({source: uas});
-					
+					if(caracter != 1)
+					{
+						$('#selectGruposAnterior').multiselect('setOptions',configurationOptativo);
+						$('#selectGruposAnterior').multiselect('rebuild');
+						desmarcar_carreras($("#selectGruposAnterior"));
+					}
+					else
+					{
+						$('#selectGruposAnterior').multiselect('setOptions',configurationObligatorio);
+						$('#selectGruposAnterior').multiselect('rebuild');
+						marcar_carreras($("#selectGruposAnterior"));
+					}
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
@@ -1174,6 +1224,7 @@
 				{
 					var programa = numPrograma;
 				}
+				alert(semestre + " " + planAnterior +" "+ periodo + " " + programa);
 				// Obtener grupos de ese plan, periodo y semestre
 				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:planAnterior,noperiodo:periodo,noprograma:programa},function(grupos){
 					var options = "";
@@ -1184,11 +1235,18 @@
 					// Llenar las carreras que pertenecen al plan seleccionado
 					$('#selectGruposAnterior').html(options);
 					$('.grupos').multiselect('rebuild');
+
+					// Si es de caracter obligatorio seleccionar todos los grupos y deshabilitar
+					if($("#selectCaracterAnterior").val()==1)
+					{
+						marcar_carreras($("#selectGruposAnterior"));
+					}
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
 			});
+			
 			// PARA ALMACENAR LAS CARGAS
 			
 			$("#btnGuardarCargaV").on("click",function(){
@@ -1204,10 +1262,19 @@
 				}
 				// Mostrar unidades de aprendizaje en las tablas
 				$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente,programa:programa},function(uas){
+					//alert(uas);
 					$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
 					for (var i = 0; i < uas.length; i++) {
 						var renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-						$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
+						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+						if (uas[i].caracter == 1)
+						{
+							$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
+						}
+						else
+						{
+							$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
+						}
 					};
 				})
 				.fail(function(errorText,textError,errorThrow){
