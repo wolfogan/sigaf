@@ -116,7 +116,7 @@
 			<div class="mask">
 				<h2>Manual y ayuda</h2>
 				<p>
-					Registro, consulta, modificacion, eliminacion
+					<a href="<?=URL::to('ayuda/menuayuda');?>" style="color:#004000">Ver manual y ayuda</a>
 				</p>
 			</div>
 		</div>

@@ -1,0 +1,89 @@
+/*Estilo contenedor general de la ventana modal*/
+
+#modal {
+	margin:auto;
+	width:1350px;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	}
+#modal .header {
+	border-radius: 5px 5px 0 0;
+	}
+#modal h1 {
+	text-align:center;
+	color: #F9B304;
+	font-size:36px;
+	font-weight:bold;
+	margin-top:-20px;
+	}
+#modal h1 span{
+	font-size:25px;
+	}
+.modal-content {
+	margin-top:30px;
+	background: #FFFFFF;
+	position: relative;
+	z-index: 20;
+	border-radius:8px;
+	border:2px solid #F0D51F;
+	}
+#modal .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,.7);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	}
+#salir{
+	width:40px;
+	height:40px;
+	margin:10px 1280px;
+	}
+#back{
+	width:70px;
+	height:70px;
+	margin-left:20px;
+	margin-top:-80px;
+	}
+
+/* General Demo Style */
+body{
+	font-weight: 400;
+	font-size: 15px;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+a{
+	color: #555;
+	text-decoration: none;
+	}
+.container{
+	width: 100%;
+	position: relative;
+	}
+.clr{
+	clear: both;
+	padding: 0;
+	height: 0;
+	margin: 0;
+	}
+
+.container > header h1{
+	text-align:center;
+	font-size:36px;
+	font-weight:bold;
+	}
+
+.container > header h2{
+	font-size: 19px;
+	margin: 0;
+	padding: 15px 0 5px 0;
+	color: #004000;
+	text-align:center;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+	}

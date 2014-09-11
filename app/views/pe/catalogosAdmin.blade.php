@@ -64,7 +64,7 @@
 					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
 				</div>
 				<div id="manual" class="texto_body">
-					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
+					<img src="../imagenes/manual.png" alt=""><a href="<?=URL::to('ayuda/ayudape');?>"style="text-decoration:none; color:#004000;">&nbsp;Manual</a>
 				</div>
 			</div>
 		</div>

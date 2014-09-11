@@ -1,0 +1,100 @@
+/* CSS Document */
+#modal{
+	margin:auto;
+	width:1350px;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	}
+#modal .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,.7);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -10;
+	}
+h1{
+	font-family:"Corbel";
+	font-size:27px;
+	color:#004000;
+	text-align:center;
+	}
+h1 span{
+	font-size:38px;
+	}
+h2{
+	font-family:"Corbel";
+	font-size:20px;
+	color:#004000;
+	text-align:center;
+	padding-top:133px;
+	}
+#ventanacompleta{
+	width:900px;
+	height:700px;
+	margin:auto;
+	margin-top:110px;
+	border:5px solid #F7AE10;
+	border-radius:10px;
+	background:white;
+	}
+#ventanacompleta:hover{
+	background:rgba(233,230,178,1.00);
+	}
+#contenedor{
+	width:660px;
+	height:auto;
+	margin:auto;
+	margin-top:60px;
+	}
+.opcion{
+	width:200px;
+	height: 175px;
+	float:left;
+	border:5px solid #F7AE10;
+	border-radius:5px;
+	margin-left:10px;
+	margin-bottom:10px;
+	background:white;
+	}
+#plan{
+	background-image:url(../imagenes/principal/pe.png);
+	background-repeat:no-repeat;
+	}
+#carga{
+	background-image:url(../imagenes/principal/ca.png);
+	background-repeat:no-repeat;
+	}
+#disponibilidad{
+	background-image:url(../imagenes/principal/dd.png);
+	background-repeat:no-repeat;
+	}
+#horarios{
+	background-image:url(../imagenes/principal/ch.png);
+	background-repeat:no-repeat;
+	}
+#calendarizacion{
+	background-image:url(../imagenes/principal/ce.png);
+	background-repeat:no-repeat;
+	}
+#inasistencias{
+	background-image:url(../imagenes/principal/ci.png);
+	background-repeat:no-repeat;
+	}
+#salir{
+	width:40px;
+	height:40px;
+	margin:5px 835px;
+	}
+#pie{
+	font-family:"Corbel";
+	font-size:22px;
+	text-align:center;
+	margin-top:480px;
+	}
+	
+
+
