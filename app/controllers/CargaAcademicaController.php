@@ -328,4 +328,16 @@ class CargaAcademicaController extends BaseController
 
 		return Response::json($detalleUAS);
 	}
+
+	public function postObtenergruposua()
+	{
+		$uaprendizaje = Input::get('uaprendizaje');
+		$semestre = Input::get('semestre');
+		$grupos = DB::table('carga')
+					->select('grupo')
+					->where('uaprendizaje','=',$uaprendizaje)
+					->where('grupo','LIKE',"_".$semestre."_")
+					->get();
+		return Response::json($grupos);
+	}
 }

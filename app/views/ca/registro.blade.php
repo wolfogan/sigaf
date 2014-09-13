@@ -504,15 +504,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -555,15 +546,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>000459</td>
-								<td>QUIMICA I 231, 233, 234</td>
-								<td>9</td>
-								<td>20</td>
-								<td>BASICA</td>
-								<td>none</td>
-								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-							</tr>
 						</tbody>
 						<thead class="encabezado_tabla">
 							<td>GRUPOS Y TURNOS: </td>
@@ -606,15 +588,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -657,15 +630,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -708,15 +672,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -759,15 +714,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -810,15 +756,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -861,15 +798,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -912,15 +840,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>000459</td>
-							<td>QUIMICA I 231, 233, 234</td>
-							<td>9</td>
-							<td>20</td>
-							<td>BASICA</td>
-							<td>none</td>
-							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-						</tr>
 					</tbody>
 					<thead class="encabezado_tabla">
 						<td>GRUPOS Y TURNOS: </td>
@@ -1265,15 +1184,38 @@
 					//alert(uas);
 					$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
 					for (var i = 0; i < uas.length; i++) {
-						var renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						var renglon = "";
 						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
 						if (uas[i].caracter == 1)
 						{
+							renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
 							$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
 						}
 						else
 						{
+							var ua = uas[i].uaprendizaje;
+							var semestre = uas[i].semestre;
+							var renglonGrupos = "";
+							$.ajax({
+								type: "POST",
+								url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+								data: {uaprendizaje:ua,semestre:semestre},
+								dataType: "json",
+								success: function(grupos){
+									renglonGrupos = "";
+									for(var j=0;j<grupos.length;j++)
+									{
+										if(j == grupos.length-1)
+											renglonGrupos+=grupos[j].grupo;
+										else
+											renglonGrupos+=grupos[j].grupo + ", ";
+									}
+								},
+								async:false
+							});
+							renglon="<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+" "+renglonGrupos+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
 							$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
+							//alert("Si fue sincrono");
 						}
 					};
 				})
