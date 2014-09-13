@@ -340,4 +340,27 @@ class CargaAcademicaController extends BaseController
 					->get();
 		return Response::json($grupos);
 	}
+
+	public function postObtenerturnos()
+	{
+		$grupos = Input::get('grupos');
+		//$gruposTurno = new stdClass(); // Clase vacia php para recoger variables.
+		$gruposTurno = "";
+		// Alternativo al for para ultimo elemento
+		$ultimo = end($grupos);
+
+		foreach ($grupos as $grupo) {
+			$turno = DB::table('grupos')
+						->select('turnos.descripcion')
+						->join('turnos','grupos.turno','=','turnos.turno')
+						->where('grupos.grupo','=',$grupo)
+						->first();
+			if($ultimo!=$grupo)
+				$gruposTurno .= (string)$grupo." T".substr($turno->descripcion, 0,1).", ";
+			else
+				$gruposTurno .= (string)$grupo." T".substr($turno->descripcion, 0,1);
+		}
+
+		return $gruposTurno;
+	}
 }

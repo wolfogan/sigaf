@@ -509,9 +509,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
@@ -551,9 +548,6 @@
 							<td>GRUPOS Y TURNOS: </td>
 						</thead>
 						<tbody>
-							<tr>
-								<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
 						</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
@@ -593,9 +587,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
@@ -635,9 +626,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
@@ -677,9 +665,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
@@ -719,9 +704,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
@@ -761,9 +743,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
@@ -803,9 +782,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
@@ -845,9 +821,6 @@
 						<td>GRUPOS Y TURNOS: </td>
 					</thead>
 					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
@@ -1166,9 +1139,10 @@
 				});
 			});
 			
-			// PARA ALMACENAR LAS CARGAS
-			
+
+			// PARA GENERAR LAS CARGA ACADEMICA
 			$("#btnGuardarCargaV").on("click",function(){
+				
 				var grupos = $("#selectGruposVigente").val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 				if(numPrograma == 0)
@@ -1182,8 +1156,9 @@
 				// Mostrar unidades de aprendizaje en las tablas
 				$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasVigente,programa:programa},function(uas){
 					//alert(uas);
-					$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
-					for (var i = 0; i < uas.length; i++) {
+					$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
+					for (var i = 0; i < uas.length; i++) 
+					{
 						var renglon = "";
 						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
 						if (uas[i].caracter == 1)
@@ -1217,11 +1192,25 @@
 							$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
 							//alert("Si fue sincrono");
 						}
-					};
+					}
+					// Cargar grupos en la tabla correspondiente
+					var gruposCompletos = [];
+					$("#selectGruposVigente option").each(function(index,element){
+						gruposCompletos.push($(element).text());
+					});
+					$.post("<?php echo URL::to('cargaacademica/obtenerturnos'); ?>",{grupos:gruposCompletos},function(data){
+						$("#semestre" + $("#semestresVigente").val() + " tbody:eq(2)").html("<tr><td>"+data+"</td></tr>")
+					})
+					.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+					});
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
+
+				// Limpiar listboxPlanVigente
+				$("#listboxPlanVigente").jqxListBox("uncheckAll");
 			});
 
 			$("#btnGuardarCargaA").on("click",function(){
