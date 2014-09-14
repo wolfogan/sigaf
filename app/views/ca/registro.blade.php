@@ -1029,6 +1029,88 @@
 			});
 		}
 
+		function generarCarga (selectGrupos,listboxPlan,uasPlan,numPrograma,semestre) 
+		{
+			var grupos = $(selectGrupos).val();
+			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			if(numPrograma == 0)
+			{
+				var programa = $("#carreraAdmin").val();
+			}
+			else
+			{
+				var programa = numPrograma;
+			}
+			// Mostrar unidades de aprendizaje en las tablas
+			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa},function(uas){
+				//alert(uas);
+				$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
+				for (var i = 0; i < uas.length; i++) 
+				{
+					var renglon = "";
+					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+					if (uas[i].caracter == 1)
+					{
+						renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
+					}
+					else
+					{
+						var ua = uas[i].uaprendizaje;
+						var semestreua = uas[i].semestre;
+						var renglonGrupos = "";
+						// Obtener los grupos a los que pertenece la ua de tipo optativa
+						$.ajax({
+							type: "POST",
+							url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+							data: {uaprendizaje:ua,semestre:semestreua},
+							dataType: "json",
+							success: function(grupos){
+								renglonGrupos = "";
+								for(var j=0;j<grupos.length;j++)
+								{
+									if(j == grupos.length-1)
+										renglonGrupos+=grupos[j].grupo;
+									else
+										renglonGrupos+=grupos[j].grupo + ", ";
+								}
+							},
+							async:false
+						});
+						renglon="<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+" "+renglonGrupos+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
+						//alert("Si fue sincrono");
+					}
+				}
+
+				function agregarGruposSemestre(semestre,selectGrupos,callback)
+				{
+					// Cargar grupos en la tabla correspondiente
+					var gruposCompletos = [];
+					$(selectGrupos).find("option").each(function(index,element){
+						gruposCompletos.push($(element).text());
+					});
+
+					$.post("<?php echo URL::to('cargaacademica/obtenerturnos'); ?>",{grupos:gruposCompletos},function(data){
+						callback(data);
+						
+					})
+					.fail(function(errorText,textError,errorThrow){
+						alert(errorText.responseText);
+					});
+				}
+				
+				agregarGruposSemestre(semestre,selectGrupos,function(data){
+					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td>"+data+"</td></tr>");
+				});
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+
+			// Limpiar listboxPlanVigente
+			$(listboxPlan).jqxListBox("uncheckAll");
+		}
 
 		$(function(){
 			
@@ -1088,81 +1170,6 @@
 				seleccionarSemestre("#grupoSemestreA","#selectGruposAnterior","#selectGruposAnterior",numPrograma,$(this).val(),planAnterior);
 			});
 
-			function generarCarga (selectGrupos,listboxPlan,uasPlan,numPrograma,semestre) 
-			{
-				var grupos = $(selectGrupos).val();
-				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-				if(numPrograma == 0)
-				{
-					var programa = $("#carreraAdmin").val();
-				}
-				else
-				{
-					var programa = numPrograma;
-				}
-				// Mostrar unidades de aprendizaje en las tablas
-				$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa},function(uas){
-					//alert(uas);
-					$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
-					for (var i = 0; i < uas.length; i++) 
-					{
-						var renglon = "";
-						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
-						if (uas[i].caracter == 1)
-						{
-							renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-							$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
-						}
-						else
-						{
-							var ua = uas[i].uaprendizaje;
-							var semestre = uas[i].semestre;
-							var renglonGrupos = "";
-							// Obtener los grupos a los que pertenece la ua de tipo optativa
-							$.ajax({
-								type: "POST",
-								url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
-								data: {uaprendizaje:ua,semestre:semestre},
-								dataType: "json",
-								success: function(grupos){
-									renglonGrupos = "";
-									for(var j=0;j<grupos.length;j++)
-									{
-										if(j == grupos.length-1)
-											renglonGrupos+=grupos[j].grupo;
-										else
-											renglonGrupos+=grupos[j].grupo + ", ";
-									}
-								},
-								async:false
-							});
-							renglon="<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+" "+renglonGrupos+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-							$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
-							//alert("Si fue sincrono");
-						}
-					}
-					// Cargar grupos en la tabla correspondiente
-					var gruposCompletos = [];
-					$(selectGrupos).find("option").each(function(index,element){
-						gruposCompletos.push($(element).text());
-					});
-
-					$.post("<?php echo URL::to('cargaacademica/obtenerturnos'); ?>",{grupos:gruposCompletos},function(data){
-						
-						$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td>"+data+"</td></tr>");
-					})
-					.fail(function(errorText,textError,errorThrow){
-						alert(errorText.responseText);
-					});
-					
-				})
-				.fail(function(errorText,textError,errorThrow){
-					alert(errorText.responseText);
-				});
-
-				// Limpiar listboxPlanVigente
-				$(listboxPlan).jqxListBox("uncheckAll");
-			}
 
 			// PARA GENERAR LAS CARGA ACADEMICA
 			$("#btnGuardarCargaV").on("click",function(){
