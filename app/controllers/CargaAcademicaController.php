@@ -363,4 +363,16 @@ class CargaAcademicaController extends BaseController
 
 		return $gruposTurno;
 	}
+
+	public function postEliminaruacarga()
+	{
+		$uaprendizaje = Input::get("uaprendizaje");
+		$periodo = Input::get("periodo");
+
+		DB::table("carga")
+				->where("uaprendizaje","=",$uaprendizaje)
+				->where("periodo","=",$periodo)
+				->delete();
+		return "Unidad de aprendizaje dada de baja de la carga correctamente!";
+	}
 }

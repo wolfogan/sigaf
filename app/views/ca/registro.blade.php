@@ -1180,6 +1180,20 @@
 				generarCarga("#selectGruposAnterior","#listboxPlanAnterior",uasAnterior,numPrograma,$("#semestresAnterior").val());
 			});
 
+			// PARA ELIIMINAR UA DE LA CARGA
+			$("table").on("click",".clsEliminarFila",function(){
+				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))
+				{
+					// Obtener UA,periodo
+					var row = $(this).parents().get(1);
+					var ua = $(row).find("td:eq(0)").text();
+					var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua},function(data){
+						alert(data);
+						$(row).remove();
+					});
+				}
+			});
 		});
 	</script>
 </body>
