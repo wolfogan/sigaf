@@ -1259,6 +1259,14 @@
 					});
 				}
 			});
+
+			// ELIMINAR TODA LA CARGA
+			$("#planAntCa").on("click",function(){
+				$.post("<?php echo URL::to('cargaacademica/eliminarcarga'); ?>").done(function(){
+					$("table tbody").empty();
+					alert("Carga Eliminada");
+				});
+			});
 		});
 	</script>
 </body>

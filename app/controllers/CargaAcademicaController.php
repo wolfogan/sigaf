@@ -375,4 +375,9 @@ class CargaAcademicaController extends BaseController
 				->delete();
 		return "Unidad de aprendizaje dada de baja de la carga correctamente!";
 	}
+
+	public function postEliminarcarga()
+	{
+		DB::table("carga")->truncate();
+	}
 }
