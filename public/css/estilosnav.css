@@ -10,7 +10,7 @@ nav {
    font: 14px Trebuchets Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
    font-weight:bold;
    width: 1281px;
-     
+  z-index: 1001;
           
 }
 nav ul{

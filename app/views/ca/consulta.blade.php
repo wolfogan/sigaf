@@ -145,27 +145,36 @@
 
 	</div>
 
-		<div id="GridPlanEstudio" style="height:1500px; margin-top:80px">
+		<div id="GridPlanEstudio" style="height:2200px; margin-top:80px">
 	<br>
-		
+		<!-------------------------------------------SEMESTRE 1 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
 
-				<thead class="semestre_plan">
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
 					<tr>
 						<td>000453</td>
@@ -232,11 +241,14 @@
 						<td>none</td>
 					</tr>
 
-				<thead class="encabezado_optativas">
-					<tr>
-						<th>OPTATIVAS</th>
-					</tr>
-				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
+					</thead>
 
 				<tr>
 						<td>000458</td>
@@ -263,43 +275,47 @@
 						<td>none</td>
 					</tr>
 
-				<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-					</tr>
-				</thead>
-				<tr>
-						<td>206 TM, 207 TI, 208 TN</td>
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-					</tr>
-							
-						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
 
-
+<!-------------------------------------------SEMESTRE 2 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 2</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -307,8 +323,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -316,9 +330,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -326,9 +338,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -337,8 +347,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -346,9 +354,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -357,8 +363,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -366,9 +370,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -378,40 +380,81 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+				    <thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
-
-
+<!-------------------------------------------SEMESTRE 3 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 3</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -419,8 +462,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -428,9 +469,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -438,9 +477,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -449,8 +486,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -458,9 +493,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -469,8 +502,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -478,9 +509,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -490,37 +519,81 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>		
-				</tbody>	
-			</table>
 
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
+			</table>
+<!-------------------------------------------SEMESTRE 4 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 4</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -528,8 +601,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -537,9 +608,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -547,9 +616,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -558,8 +625,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -567,9 +632,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -578,8 +641,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -587,9 +648,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -599,39 +658,83 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
 
+
+<!-------------------------------------------SEMESTRE 5 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 5</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -639,8 +742,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -648,9 +749,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -658,9 +757,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -669,8 +766,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -678,9 +773,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -689,8 +782,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -698,9 +789,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -710,39 +799,82 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
 
+<!-------------------------------------------SEMESTRE 6 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 6</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -750,8 +882,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -759,9 +889,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -769,9 +897,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -780,8 +906,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -789,9 +913,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -800,8 +922,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -809,9 +929,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -821,40 +939,81 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
-
-
+<!-------------------------------------------SEMESTRE 7 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 7</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -862,8 +1021,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -871,9 +1028,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -881,9 +1036,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -892,8 +1045,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -901,9 +1052,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -912,8 +1061,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -921,9 +1068,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -933,41 +1078,82 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
 
-
-
+<!-------------------------------------------SEMESTRE 8 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 8</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -975,8 +1161,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -984,9 +1168,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -994,9 +1176,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -1005,8 +1185,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -1014,9 +1192,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -1025,8 +1201,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -1034,9 +1208,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -1046,40 +1218,81 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+				<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
-
-
+<!-------------------------------------------SEMESTRE 9 CONSULTA -------------------------------------------->
 			<table class="tabla_ca">
-				<thead class="semestre_plan">
+
+				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 9</th>
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="encabezado_tabla">
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<tr>
-						<th>CLAVE</th>
-						<th>MATERIA</th>
-						<th>NO. CREDITOS</th>
-						<th>HC</th>
-						<th>ETAPA</th>
-						<th>REQ. SERIACION</th>
-					
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
 					</tr>
 				</thead>
-				
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+				</thead>
+
 				<tbody>
-
-
 					<tr>
 						<td>000453</td>
 						<td>DESARROLLO SUSTENTABLE</td>
@@ -1087,8 +1300,6 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -1096,9 +1307,7 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -1106,9 +1315,7 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -1117,8 +1324,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -1126,9 +1331,7 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -1137,8 +1340,6 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						
-
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -1146,9 +1347,7 @@
 						<td>9</td>
 						<td>20</td>
 						<td>BASICA</td>
-						<td>none</td>
-						
-						
+						<td>none</td>	
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -1158,27 +1357,113 @@
 						<td>BASICA</td>
 						<td>none</td>
 					</tr>
-					<thead class="semestre_plan">
-					<tr>
-						<th>GRUPOS Y TURNOS:</th>
-						
-					</tr>
-				</thead>
+
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
 							
+						</tr>
+
+					</thead>
+
+					<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL 206</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I 207</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>	
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS 208</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+					</tr>
+
+					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						
-				</tbody>	
+						<th colspan="2">GRUPOS Y TURNOS:</th>
+						<tbody>
+							<tr>
+								
+								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+							</tr>
+						</tbody>		
+					</thead>
 			</table>
 
-					<div class="nombre_escuela">UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA</div>
-					<div class="nombre_escuela">FACULTAD DE CONTADURIA Y ADMINISTRACION</div>
-					<div class="nombre_escuela">DIRECTOR:</div>
-					<div class="nombre_escuela">SUBDIRECTOR:</div>
-					<div class="nombre_escuela">ADMINISTRADOR:</div>
-					<div class="nombre_escuela">COORDINADOR:</div>
-					<div class="nombre_escuela">CREDITOS/PLAN:</div>
-					<div class="nombre_escuela">OBLIGATORIAS:</div>
-					<div class="nombre_escuela">OPTATIVAS:</div>
-					<div class="nombre_escuela">TOTAL:</div>
+<!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
+
+
+					<table class="ca_tblResumenConsulta">
+
+						<thead class="ca_tblResumenEncabezado">
+
+							<tr>
+								<th colspan="2">UNIVERSIDAD AUTÓNOMA DE BAJA CALIFORNIA</th>
+							</tr>
+
+							<tr>
+								<th colspan="2">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</th>
+							</tr>
+
+						</thead>
+
+							<tr>
+								<td style="width:100px">DIRECTOR:</td>
+								<td>BERNARDO DUARTE</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">SUBDIRECTOR:</td>
+								<td>MAGDALENA FRAUSTO FUENTES</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">ADMINISTRADOR:</td>
+								<td>BERNARDO DUARTE FRAUSTO</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">COORDINADOR:</td>
+								<td>VASTI MAGDALENA DUARTE FRAUSTO</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">CREDITOS/PLAN:</td>
+								<td>90</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">OBLIGATORIAS:</td>
+								<td>60</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">OPTATIVAS:</td>
+								<td>30</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">TOTAL:</td>
+								<td>90</td>
+							</tr>
+
+					</table>
+
+<!---------------------------------------------------------------------------------------------------------------->
 
 
 
