@@ -458,30 +458,65 @@
 			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
 			<div id="contenedorRegistroca_mostrar">
 				<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre1">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre1">
+					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 1</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -494,14 +529,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 				<br>
@@ -509,50 +547,88 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre2">
-						<thead class="semestre_plan">
-							<tr>
-								<th>SEMESTRE: 1</th>
-								<th>PLAN: 2014-1</th>
-							</tr>
-						</thead>
-						<thead class="encabezado_tabla">
-							<tr>
-								<th>CLAVE</th>
-								<th>MATERIA</th>
-								<th>NO. CREDITOS</th>
-								<th>HC</th>
-								<th>ETAPA</th>
-								<th>REQ. SERIACION</th>
-								<th>ELIMINAR</th>
-							</tr>
-						</thead>
-						<tbody>
-						</tbody>
-						<thead class="encabezado_tabla">
-							<tr>
-								<th>OPTATIVAS</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>000459</td>
-								<td>QUIMICA I 231, 233, 234</td>
-								<td>9</td>
-								<td>20</td>
-								<td>BASICA</td>
-								<td>none</td>
-								<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-							</tr>
-						</tbody>
-						<thead class="encabezado_tabla">
-							<td>GRUPOS Y TURNOS: </td>
-						</thead>
-						<tbody>
-							<tr>
-								<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>
+				<table class="dd_tabla" id="semestre2">
+					<thead class="dd_encabezado">
+						<tr>
+							<th>SEMESTRE: 2</th>
+							<th>PLAN: 2014-1</th>
+						</tr>
+					</thead>
+					
+					<thead class="dd_encabezado_colorNaranja">
+						<tr>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
+						</tr>
+					</thead>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OBLIGATORIAS</th>
+							
+						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
+					</thead>
+					<tbody>
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
+					</thead>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
 				<br>
@@ -560,30 +636,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre3">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre3">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 3</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -596,14 +707,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
 				<br>
@@ -611,30 +725,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre4">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre4">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 4</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -647,14 +796,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
 				<br>
@@ -662,30 +814,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre5">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre5">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 5</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -698,14 +885,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
 				<br>
@@ -713,30 +903,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre6">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre6">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 6</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -749,14 +974,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
 				<br>
@@ -764,30 +992,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre7">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre7">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 7</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -800,14 +1063,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
 				<br>
@@ -815,30 +1081,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre8">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre8">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 8</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -851,14 +1152,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
 				<br>
@@ -866,30 +1170,65 @@
 				<br>
 				<br>
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
-				<table class="tabla_cargaUA" id="semestre9">
-					<thead class="semestre_plan">
+				<table class="dd_tabla" id="semestre9">
+					<thead class="dd_encabezado">
 						<tr>
-							<th>SEMESTRE: 1</th>
+							<th>SEMESTRE: 9</th>
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="encabezado_tabla">
+					
+					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th>CLAVE</th>
-							<th>MATERIA</th>
-							<th>NO. CREDITOS</th>
-							<th>HC</th>
-							<th>ETAPA</th>
-							<th>REQ. SERIACION</th>
-							<th>ELIMINAR</th>
+							<th style="width:150px">CLAVE</th>
+							<th style="width:500px">MATERIA</th>
+							<th style="width:50px">NO. CREDITOS</th>
+							<th style="width:50px">HC</th>
+							<th style="width:130px">ETAPA</th>
+							<th style="width:70px">REQ. SERIACION</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<tbody>
-					</tbody>
-					<thead class="encabezado_tabla">
+					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
-							<th>OPTATIVAS</th>
+							<th colspan="7">OBLIGATORIAS</th>
+							
 						</tr>
+
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+
+						<tr>
+							<td>000459</td>
+							<td>QUIMICA I 231, 233, 234</td>
+							<td>9</td>
+							<td>20</td>
+							<td>BASICA</td>
+							<td>none</td>
+							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+						</tr>
+					
+					</tbody>
+					<thead class="dd_encabezado_colorNaranja">
+
+						<tr>
+							<th colspan="7">OPTATIVAS</th>
+							
+						</tr>
+
 					</thead>
 					<tbody>
 						<tr>
@@ -902,14 +1241,17 @@
 							<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 						</tr>
 					</tbody>
-					<thead class="encabezado_tabla">
-						<td>GRUPOS Y TURNOS: </td>
+					<thead class="dd_encabezado_colorNaranja">
+						
+							<th colspan="2">GRUPOS Y TURNOS:</th>
+							<tbody>
+								<tr>
+									
+									<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
+								</tr>
+							</tbody>
 					</thead>
-					<tbody>
-						<tr>
-							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-						</tr>
-					</tbody>
+					
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
 			<!--<div id="btnGuardarCa_registro">

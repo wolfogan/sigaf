@@ -473,7 +473,7 @@
 						     	</div>
 						     </div>
 
-						     	<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
+						     	<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
 														
 						</div>
 		                    
@@ -484,63 +484,63 @@
 
 
 		                    <div id="dd_impartirMaterias">
-			                    <table class="dd_tablaImpartirMaterias">
+			                    <table class="dd_tabla">
 									
-									<thead class="dd_encabezadoImpartirMaterias">
+									<thead class="dd_encabezado">
 										<tr>
-											<th>CLAVE</th>
-											<th>MATERIA</th>
-											<th>MODIFICAR</th>
-											<th>ELIMINAR</th>
+											<th style="width:50px;">CLAVE</th>
+											<th style="width:350px;">MATERIA</th>
+											<th style="width:50px;">MODIFICAR</th>
+											<th style="width:50px;">ELIMINAR</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>000453</td>
 											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
+											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
+											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 																		
@@ -554,9 +554,9 @@
 							<h2>Disponibilidad</h2>
 
 							<div id="dd_impartirMaterias">
-			                    <table class="dd_tablaImpartirMaterias">
+			                    <table class="dd_tabla">
 									
-									<thead class="dd_encabezadoImpartirMaterias">
+									<thead class="dd_encabezado">
 										<tr>
 											<th>HORARIO</th>
 											<th>LUNES</th>
@@ -570,154 +570,163 @@
 									<tbody>
 										<tr>
 											<td>7:00 - 8:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
+											<td><label onclick="'cambiarColor()'"></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+
 
 
 										</tr>
 										<tr>
 											<td>8:00 - 9:00</td>
+											<!--<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
 											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
 											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
 											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
 											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
+											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	-->
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 
 										</tr>
 										<tr>
 											<td>9:00 - 10:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 
 										</tr>
 										<tr>
 											<td>10:00 - 11:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>11:00 - 12:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>12:00 - 13:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>13:00 - 14:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>14:00 - 15:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>15:00 - 16:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>16:00 - 17:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>17:00 - 18:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>18:00 - 19:00</td>
-										<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>19:00 - 20:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>20:00 - 21:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 										<tr>
 											<td>21:00 - 22:00</td>
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-
+											<td><label></label></td>	
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+											<td><label></label></td>
+						
 										</tr>
 																		
 									
@@ -747,6 +756,19 @@
 
 </div>
 </body>
+
+<!--- CAMBIAR DE COLOR LA LABEL DE LA DISPONIBILIDAD -->
+
+<script type="text/javascript">
+function cambiarColor () {
+
+	
+}
+
+
+</script>
+
+<!------------------------------------------------------------>
 
 <script src="js/mascara.js" type="text/javascript"></script>
 	

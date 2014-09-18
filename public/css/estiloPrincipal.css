@@ -89,6 +89,7 @@ section:hover
 	background-color: white;
 	border: 2.2px solid orange;
 	box-shadow: 0px 0px 20px orange;
+
 }
 section #primerBloque
 {
@@ -1336,14 +1337,7 @@ background: #EFCA0D;
 	width: 1300px;
 
 }
-/*#btnGuardarCa_registro
-{
-	
-	height: 50px;
-	margin-top: 30px;
-	margin-left: 1040px;
-	width: 200px;
-}*/
+
 .filtroMaterias_ca
 {
 	height: 50px;
@@ -1359,13 +1353,6 @@ background: #EFCA0D;
 
 	width: 250px;
 
-}
-.tabla_cargaUA
-{
-	
-	margin: -60px auto;
-	margin-bottom: 30px;
-	width: 1200px;
 }
 
 .cmbGrupos_superior
@@ -1426,10 +1413,7 @@ background: #EFCA0D;
 	margin-top: 15px;
 	width: 200px;
 }
-.nombre_escuela
-{
-	margin-left: 800px;
-}
+
 .consultar_admin
 {
 	
@@ -1531,29 +1515,77 @@ background: #EFCA0D;
 
 	
 	float: left;
-	font-size: 12px;
 	margin-bottom: 30px;
 	margin-left: 20px;
 	margin-right: 20px;
+	width: 600px;
 		
 }
-.semestre_plan
+.tabla_ca td
 {
-	font-size: 15px;
-	font-weight: bold;
+	
+	border:1px solid gray;
+	border-collapse: separate;
+  	border-spacing: 5px;
+  	background: #F0FFFF;
+  	font-size: 12px;
+  	height: 20px;
+
+}
+
+.dd_encabezado_tablaConsulta
+{
+
+	background: green;
+	font-size: 12px;
+	color: #fff;
+	border:1px solid gray;
+}
+.dd_encabezado_tablaConsulta th
+{
+	height: 25px;
+}
+
+.dd_encabezado_colorNaranja_tablaConsulta
+{
+	background: #ECA22E;
+	font-size: 12px;
+	color:#004000; 
 	
 }
-.encabezado_tabla
+.dd_encabezado_colorNaranja_tablaConsulta th
 {
-	font-size: 14px;
-	color: green;
-	border: 1px solid #000;
+	height: 25px;
+	border:1px solid gray;
 }
-.encabezado_optativas
+
+
+.ca_tblResumenConsulta
 {
-	font-size: 14px;
-	color: green;
+	width: 550px;
+	border: 2px solid green;
+	float: left;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
+.ca_tblResumenConsulta td
+{
+	background: #F0FFFF;
+	text-align: left;
+	border: 2px dotted green;
+  	padding: 4px;
+}
+
+.ca_tblResumenEncabezado
+{
+	font-size: 18px;
+	color:green;
+	height: 30px;
+	background: #fff;
+}
+
+
 
 #ajaxLoad
 {
@@ -1582,32 +1614,32 @@ input[readonly],input[readonly="readonly"]
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
 .dd_con_estilo
 {
-	font-size: 18px;
+	font-size: 14px;
 	width:170px;
-	height:30px;
+	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
 }
 .dd_con_estilo_largo
 {
-	font-size: 18px;
+	font-size: 14px;
 	width:300px;
-	height:30px;
+	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
 }
 .dd_estilo_combo
 {
-	font-size: 18px;
+	font-size: 14px;
 	width:130px;
-	height:30px;
+	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
 
 }
 .dd_con_estilo_foto
 {
-	font-size: 18px;
+	font-size: 14px;
 	width:170px;
 	height:100px;
 	border-radius: 5px;
@@ -1617,9 +1649,9 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_con_estilo_corto
 {
-	font-size: 18px;
+	font-size: 14px;
 	width:70px;
-	height:30px;
+	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
 	margin-left:43px;
@@ -1906,30 +1938,48 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_impartirMaterias
 {
-	margin-top: 100px;
+	margin-top: 50px;
+	width: 1200px;
+
 }
-.dd_tablaImpartirMaterias
+.dd_tabla
 {
 	
-	
-	margin-left: 70px;
-	margin-bottom: 30px;
+	margin:auto;
 	width: 1000px;
 }
-.dd_tablaImpartirMaterias td
+.dd_tabla td
 {
+	text-align: left;
+	padding: 5px;
 	border:1px solid gray;
-	border-collapse: separate;
-  	border-spacing: 10px;
-
+  	background: #F0FFFF;
   	font-size: 16px;
+  	height: 15px;
 
 
 }
-.dd_encabezadoImpartirMaterias
+.dd_encabezado
 {
+	background: green;
 	font-size: 18px;
-	color: green;
+	color: #fff;
+	border:1px solid gray;
+}
+.dd_encabezado th
+{
+	height: 40px;
+}
+.dd_encabezado_colorNaranja
+{
+	background: #ECA22E;
+	font-size: 14px;
+	color:#004000; 
+	
+}
+.dd_encabezado_colorNaranja th
+{
+	height: 30px;
 	border:1px solid gray;
 }
 
@@ -2011,6 +2061,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_divDecoracion
 {
+	background: #F5F5F5;
 	border-radius: 7px;
 	border:3px solid #ECECFB;
 	padding-left: 10px;
@@ -2021,6 +2072,7 @@ input[readonly],input[readonly="readonly"]
 #dd_pais_estado_ciudad_otro
 {
 	margin-top: 80px;
+
 
 }
 #dd_pais
