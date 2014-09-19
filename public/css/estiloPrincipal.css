@@ -1254,7 +1254,7 @@ background: #EFCA0D;
  {
  	
  	float: left;
- 	height: 700px;
+ 	height: 600px;
  	width: 500px;
  	margin-top: 10px;
  	margin-left: 40px;
@@ -1274,7 +1274,7 @@ background: #EFCA0D;
  {
  	
  	float: left;
- 	height: 700px;
+ 	height: 600px;
  	width: 500px;
  	margin-top: 12px;
  		
@@ -1316,7 +1316,7 @@ background: #EFCA0D;
 }
 .listasCa
 {
-	height: 550px;
+	height: 350px;
 	margin-top: 5px;
 }
 .nombrePlan
@@ -1333,7 +1333,8 @@ background: #EFCA0D;
 {
 	
 	margin: auto;
-	margin-top: 900px;
+	margin-top: 650px;
+	margin-bottom: 30px;
 	width: 1300px;
 
 }
@@ -1946,7 +1947,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	margin:auto;
-	width: 1000px;
+	width: 95%;
 }
 .dd_tabla td
 {

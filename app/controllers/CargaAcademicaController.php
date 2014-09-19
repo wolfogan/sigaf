@@ -341,7 +341,7 @@ class CargaAcademicaController extends BaseController
 		return Response::json($grupos);
 	}
 
-	public function postObtenerturnos()
+	public function postFormateargruposturnos()
 	{
 		$grupos = Input::get('grupos');
 		//$gruposTurno = new stdClass(); // Clase vacia php para recoger variables.
@@ -379,5 +379,41 @@ class CargaAcademicaController extends BaseController
 	public function postEliminarcarga()
 	{
 		DB::table("carga")->truncate();
+	}
+
+	public function postObtenercarga()
+	{
+		$periodo = Input::get("periodo");
+		$programa = Input::get("programa");
+
+		$uas = DB::table("carga")
+						->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
+						->distinct()
+						->join("uaprendizaje","carga.uaprendizaje","=","uaprendizaje.uaprendizaje")
+						->join("etapas","uaprendizaje.etapa","=","etapas.etapa")
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",$periodo)
+						->where("grupos.programaedu","=",$programa)
+						->get();
+		$grupos = DB::table("carga")
+						->select("carga.grupo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"))
+						->distinct()
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",$periodo)
+						->where("grupos.programaedu","=",$programa)
+						->get();
+
+		foreach ($grupos as $g) {
+			$turno = DB::table('grupos')
+						->select('turnos.descripcion')
+						->join('turnos','grupos.turno','=','turnos.turno')
+						->where('grupos.grupo','=',$g->grupo)
+						->first();
+
+			$g->grupo = (string)$g->grupo." T".substr($turno->descripcion, 0,1);
+		}
+
+		return Response::json(array('uas' => $uas,'grupos'=> $grupos));
+
 	}
 }

@@ -34,7 +34,7 @@
 		return string1+stringAdd+string2;
 	}
 	$(function (){
-		
+		$("table:not(.tblCatPlan)").hide();
 		Date.prototype.now = function(){
 			var dd = this.getDate();
 			var mm = this.getMonth()+1;
@@ -70,8 +70,8 @@
 		planAnterior = {{$planes[1]}};
 		//alert(source[0].plan);
 		// Create a jqxListBox
-		$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 530, theme: 'orange'});
-		$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 530, theme: 'orange'});
+		$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
+		$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
 		// Check several items.
 		// $(".listbox").jqxListBox('checkIndex', 0);
 		// $(".listbox").jqxListBox('checkIndex', 1);
@@ -519,10 +519,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
 				<table class="dd_tabla" id="semestre2">
 					<thead class="dd_encabezado">
@@ -565,10 +562,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
 				<table class="dd_tabla" id="semestre3">
 					<thead class="dd_encabezado">
@@ -611,10 +605,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
 				<table class="dd_tabla" id="semestre4">
 					<thead class="dd_encabezado">
@@ -657,10 +648,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
 				<table class="dd_tabla" id="semestre5">
 					<thead class="dd_encabezado">
@@ -705,10 +693,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
 				<table class="dd_tabla" id="semestre6">
 					<thead class="dd_encabezado">
@@ -751,10 +736,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
 				<table class="dd_tabla" id="semestre7">
 					<thead class="dd_encabezado">
@@ -797,10 +779,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
 				<table class="dd_tabla" id="semestre8">
 					<thead class="dd_encabezado">
@@ -843,10 +822,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
-				<br>
-				<br>
-				<br>
-				<br>
+			
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
 				<table class="dd_tabla" id="semestre9">
 					<thead class="dd_encabezado">
@@ -1060,6 +1036,10 @@
 
 		function seleccionarSemestre(grupoSemestre,selectGrupos,selectCaracter,numPrograma,semestre,plan)
 		{
+			// Aparecer tabla correspondiente
+			$("table:not(.tblCatPlan)").css("display","none");
+			$("#semestre"+semestre).fadeIn("slow");
+
 			// Asignar valor semestre a la ventana modal en la segunda posicion.
 			$(grupoSemestre).val(semestre);
 			// Obtener los grupos asociados al semestre seleccionado.
@@ -1166,7 +1146,7 @@
 				}
 				
 				agregarGruposSemestre(semestre,selectGrupos,function(data){
-					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td colspan='2#004000'>"+data+"</td></tr>");
+					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+data+"</td></tr>");
 				});
 			})
 			.fail(function(errorText,textError,errorThrow){
@@ -1213,6 +1193,59 @@
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
+				// Obtene la carga academica si existe en el momento
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
+
+					$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
+					for (var i = 0; i < data.uas.length; i++) 
+					{
+
+						var renglon = "";
+						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+						if (data.uas[i].caracter == 1)
+						{
+							renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+							$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
+						}
+						else
+						{
+							var ua = data.uas[i].uaprendizaje;
+							var semestreua = data.uas[i].semestre;
+							var renglonGrupos = "";
+							// Obtener los grupos a los que pertenece la ua de tipo optativa
+							$.ajax({
+								type: "POST",
+								url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+								data: {uaprendizaje:ua,semestre:semestreua},
+								dataType: "json",
+								success: function(grupos){
+									renglonGrupos = "";
+									for(var j=0;j<grupos.length;j++)
+									{
+										if(j == grupos.length-1)
+											renglonGrupos+=grupos[j].grupo;
+										else
+											renglonGrupos+=grupos[j].grupo + ", ";
+									}
+								},
+								async:false
+							});
+							renglon="<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+							$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
+							//alert("Si fue sincrono");
+						}
+					}
+
+					for (var i = 0; i < data.grupos.length; i++) 
+					{
+						alert(data.grupos[i].grupo);
+					}
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
 			});
 
 			// CUANDO SELECCIONEN EL CARACTER EJ. OBLIGATORIO DE LAS MATERIAS PLAN VIGENTE
