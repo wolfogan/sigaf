@@ -165,6 +165,7 @@
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
 				$('#selectGruposVigente').multiselect('select',element.val());
 			}
+			
 			if($("#selectCaracterAnterior").val()==1)
 			{
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
@@ -174,7 +175,7 @@
 	}
 	var configurationOptativo =
 	{
-		includeSelectAllOption: true,
+		includeSelectAllOption: true
 	}
 	</script>
 
@@ -477,6 +478,7 @@
 			</div>
 			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
 			<div id="contenedorRegistroca_mostrar">
+				<a id="botonAll" class="btnStyleAllTable">Todos</a>
 				<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 				<table class="dd_tabla" id="semestre1">
 					<thead class="dd_encabezado">
@@ -553,7 +555,7 @@
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -571,7 +573,7 @@
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -582,21 +584,21 @@
 							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -639,7 +641,7 @@
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -658,7 +660,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -669,7 +671,7 @@
 							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
@@ -677,14 +679,14 @@
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -727,7 +729,7 @@
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -745,7 +747,7 @@
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -756,21 +758,21 @@
 							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -813,7 +815,7 @@
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -831,7 +833,7 @@
 							<th>PLAN: 2014-1</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -842,21 +844,21 @@
 							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_colorVerdeClaro">
 						<tr>
 							<th colspan="2">GRUPOS Y TURNOS:</th>
 						</tr>
@@ -1016,6 +1018,7 @@
 			var caracter = $(selectCaracter).val();
 			$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:programa,caracter:caracter},function(uas){
 				$(listboxPlan).jqxListBox({source: uas});
+				alert(caracter);
 				if(caracter != 1)
 				{
 					$(selectGrupos).multiselect('setOptions',configurationOptativo);
@@ -1037,8 +1040,11 @@
 		function seleccionarSemestre(grupoSemestre,selectGrupos,selectCaracter,numPrograma,semestre,plan)
 		{
 			// Aparecer tabla correspondiente
-			$("table:not(.tblCatPlan)").css("display","none");
-			$("#semestre"+semestre).fadeIn("slow");
+			if(!$("table:not(.tblCatPlan)").hasClass("tableAll"))
+			{
+				$("table:not(.tblCatPlan)").css("display","none");
+				$("#semestre"+semestre).fadeIn("slow");
+			}
 
 			// Asignar valor semestre a la ventana modal en la segunda posicion.
 			$(grupoSemestre).val(semestre);
@@ -1074,35 +1080,25 @@
 			});
 		}
 
-		function generarCarga (selectGrupos,listboxPlan,uasPlan,numPrograma,semestre) 
+		function obtenerCarga(periodo,programa)
 		{
-			var grupos = $(selectGrupos).val();
-			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-			if(numPrograma == 0)
-			{
-				var programa = $("#carreraAdmin").val();
-			}
-			else
-			{
-				var programa = numPrograma;
-			}
-			// Mostrar unidades de aprendizaje en las tablas
-			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa},function(uas){
-				//alert(uas);
-				$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
-				for (var i = 0; i < uas.length; i++) 
+			// Obtene la carga academica si existe en el momento
+			//alert(programa);
+			$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
+				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+				for (var i = 0; i < data.uas.length; i++) 
 				{
 					var renglon = "";
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
-					if (uas[i].caracter == 1)
+					if (data.uas[i].caracter == 1)
 					{
-						renglon = "<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-						$("#semestre"+uas[i].semestre+" tbody:eq(0)").append(renglon);
+						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
 					}
 					else
 					{
-						var ua = uas[i].uaprendizaje;
-						var semestreua = uas[i].semestre;
+						var ua = data.uas[i].uaprendizaje;
+						var semestreua = data.uas[i].semestre;
 						var renglonGrupos = "";
 						// Obtener los grupos a los que pertenece la ua de tipo optativa
 						$.ajax({
@@ -1122,32 +1118,45 @@
 							},
 							async:false
 						});
-						renglon="<tr><td>"+uas[i].uaprendizaje+"</td><td>"+uas[i].descripcionmat+" "+renglonGrupos+"</td><td>"+uas[i].creditos+"</td><td>"+uas[i].HC+"</td><td>"+uas[i].etapa+"</td><td>"+uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-						$("#semestre"+uas[i].semestre+" tbody:eq(1)").append(renglon);
+						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
 						//alert("Si fue sincrono");
 					}
 				}
 
-				function agregarGruposSemestre(semestre,selectGrupos,callback)
+				for (var i = 0; i < data.grupos.length; i++) 
 				{
-					// Cargar grupos en la tabla correspondiente
-					var gruposCompletos = [];
-					$(selectGrupos).find("option").each(function(index,element){
-						gruposCompletos.push($(element).text());
-					});
-
-					$.post("<?php echo URL::to('cargaacademica/obtenerturnos'); ?>",{grupos:gruposCompletos},function(data){
-						callback(data);
-						
-					})
-					.fail(function(errorText,textError,errorThrow){
-						alert(errorText.responseText);
-					});
+					var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
+					if(grupoTurno.length == 0)
+						grupoTurno += data.grupos[i].grupo + " ";
+					else
+						grupoTurno += ", "+data.grupos[i].grupo;
+					$("#semestre" + data.grupos[i].semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+grupoTurno+"</td></tr>");
 				}
-				
-				agregarGruposSemestre(semestre,selectGrupos,function(data){
-					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+data+"</td></tr>");
-				});
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
+
+		function generarCarga(selectGrupos,listboxPlan,uasPlan,numPrograma,semestre)
+		{
+			var grupos = $(selectGrupos).val();
+			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			var programa = 0;
+			if(numPrograma == 0)
+			{
+				var programa = $("#carreraAdmin").val();
+			}
+			else
+			{
+				var programa = numPrograma;
+			}
+			// Mostrar unidades de aprendizaje en las tablas
+			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa},function(uas){
+				//Actualizar tabla de semestres
+				obtenerCarga(periodo,programa);
+				alert(uas);
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
@@ -1158,8 +1167,8 @@
 		}
 
 		$(function(){
-			
 			var numPrograma = verificarUsuario();
+			var tablaActualSemestre = 0;
 			$("#carreraAdmin").val("");
 			$("#semestresVigente").val("");
 			$("#semestresAnterior").val("");
@@ -1179,6 +1188,7 @@
 				$(".grupoPrograma").val($(this).val());
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
 				var programa = $("#carreraAdmin").val();
+				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 				//Obtener las unidades de aprendizaje obligatorias formateadas Ej. 11236 - Matematicas 
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:1},function(uas){
 					$("#listboxPlanVigente").jqxListBox({source:uas});
@@ -1193,79 +1203,32 @@
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
 				});
-				// Obtene la carga academica si existe en el momento
-				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-				$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
-
-					$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
-					for (var i = 0; i < data.uas.length; i++) 
-					{
-
-						var renglon = "";
-						// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
-						if (data.uas[i].caracter == 1)
-						{
-							renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-							$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
-						}
-						else
-						{
-							var ua = data.uas[i].uaprendizaje;
-							var semestreua = data.uas[i].semestre;
-							var renglonGrupos = "";
-							// Obtener los grupos a los que pertenece la ua de tipo optativa
-							$.ajax({
-								type: "POST",
-								url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
-								data: {uaprendizaje:ua,semestre:semestreua},
-								dataType: "json",
-								success: function(grupos){
-									renglonGrupos = "";
-									for(var j=0;j<grupos.length;j++)
-									{
-										if(j == grupos.length-1)
-											renglonGrupos+=grupos[j].grupo;
-										else
-											renglonGrupos+=grupos[j].grupo + ", ";
-									}
-								},
-								async:false
-							});
-							renglon="<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
-							$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
-							//alert("Si fue sincrono");
-						}
-					}
-
-					for (var i = 0; i < data.grupos.length; i++) 
-					{
-						alert(data.grupos[i].grupo);
-					}
-				})
-				.fail(function(errorText,textError,errorThrow){
-					alert(errorText.responseText);
-				});
-
+				// Actualizar tablas de semestres
+				obtenerCarga(periodo,programa);
 			});
 
 			// CUANDO SELECCIONEN EL CARACTER EJ. OBLIGATORIO DE LAS MATERIAS PLAN VIGENTE
 			$("#selectCaracterVigente").on("change",function(){
-				seleccionarCaracter(this,"#listboxPlanVigente","#selectGruposVigente",numPrograma,planVigente);
+				seleccionarCaracter($(this),"#listboxPlanVigente","#selectGruposVigente",numPrograma,planVigente);
 			});
 
 			// CUANDO SELECCIONEN EL CARACTER EJ. OBLIGATORIO DE LAS MATERIAS PLAN ANTERIOR
 			$("#selectCaracterAnterior").on("change",function(){
-				seleccionarCaracter(this,"#listboxPlanAnterior","#selectGruposAnterior",numPrograma,planAnterior);
+				seleccionarCaracter($(this),"#listboxPlanAnterior","#selectGruposAnterior",numPrograma,planAnterior);
 			});
 
 			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
 			$("#semestresVigente").on("change",function(){
+				$("#botonAll").show("slow");
+				tablaActualSemestre = $(this).val();
 				seleccionarSemestre("#grupoSemestreV","#selectGruposVigente","#selectCaracterVigente",numPrograma,$(this).val(),planVigente);
 			});
 
 			// CUANDO CAMBIEN EL SEMESTRE DEL PLAN ANTERIOR
 			$("#semestresAnterior").on("change",function(){
-				seleccionarSemestre("#grupoSemestreA","#selectGruposAnterior","#selectGruposAnterior",numPrograma,$(this).val(),planAnterior);
+				$("#botonAll").show("slow");
+				tablaActualSemestre = $(this).val();
+				seleccionarSemestre("#grupoSemestreA","#selectGruposAnterior","#selectCaracterAnterior",numPrograma,$(this).val(),planAnterior);
 			});
 
 
@@ -1279,7 +1242,8 @@
 			});
 
 			// PARA ELIIMINAR UA DE LA CARGA
-			$("table").on("click",".clsEliminarFila",function(){
+			$("table").on("click",".clsEliminarFila",function(event){
+				event.stopPropagation();
 				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))
 				{
 					// Obtener UA,periodo
@@ -1296,9 +1260,25 @@
 			// ELIMINAR TODA LA CARGA
 			$("#planAntCa").on("click",function(){
 				$.post("<?php echo URL::to('cargaacademica/eliminarcarga'); ?>").done(function(){
-					$("table tbody").empty();
+					$("table:not(.tblCatPlan) tbody").empty();
 					alert("Carga Eliminada");
 				});
+			});
+
+			// BOTON ALL
+			$("#botonAll").on("click",function(){
+				if($("table:not(.tblCatPlan,#semestre"+tablaActualSemestre+")").hasClass("tableAll"))
+				{
+					$("table:not(.tblCatPlan,#semestre"+tablaActualSemestre+")").removeClass("tableAll").fadeOut("fast");
+					//$("#semestre"+tablaActualSemestre).fadeIn();
+					$(this).text("Todos");
+				}
+				else
+				{
+					$("table:not(.tblCatPlan,#semestre"+tablaActualSemestre+")").addClass("tableAll").fadeIn("fast");
+					$("#semestre"+tablaActualSemestre).css("margin-bottom","8%");
+					$(this).text("Individual");
+				}
 			});
 		});
 	</script>

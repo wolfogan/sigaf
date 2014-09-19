@@ -1975,7 +1975,7 @@ input[readonly],input[readonly="readonly"]
 {
 	background: #ECA22E;
 	font-size: 14px;
-	color:#004000; 
+	color:#FFF4C7; 
 	
 }
 
@@ -2136,6 +2136,58 @@ input[readonly],input[readonly="readonly"]
 
 
 /*----------------------------------------------------------------------------------------------*/
+/*------------------------------------PRUEBA IVAN-----------------------------------------------*/
+.btnStyleAllTable {
+	-moz-box-shadow:inset 0px 3px 8px -2px #ffffff;
+	-webkit-box-shadow:inset 0px 3px 8px -2px #ffffff;
+	box-shadow:inset 0px 3px 8px -2px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1f4200), color-stop(1, #3f8c00) );
+	background:-moz-linear-gradient( center top, #1f4200 5%, #3f8c00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f4200', endColorstr='#3f8c00');
+	background-color:#1f4200;
+	-webkit-border-top-left-radius:37px;
+	-moz-border-radius-topleft:37px;
+	border-top-left-radius:37px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:37px;
+	-moz-border-radius-bottomright:37px;
+	border-bottom-right-radius:37px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #0a1a00;
+	display:none;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:38px;
+	line-height:38px;
+	width:81px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 20px #000000;
+	float:right;
+	margin-right: 2.2%;
+	cursor: pointer;
+}
+.btnStyleAllTable:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3f8c00), color-stop(1, #1f4200) );
+	background:-moz-linear-gradient( center top, #3f8c00 5%, #1f4200 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f8c00', endColorstr='#1f4200');
+	background-color:#3f8c00;
+}.btnStyleAllTable:active {
+	position:relative;
+	top:4px;
+}
 
 
+.tableAll{
+	margin-bottom: 8%;
+}
 
+/*------------------------------------PRUEBA IVAN-----------------------------------------------*/

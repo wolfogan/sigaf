@@ -309,7 +309,7 @@ class CargaAcademicaController extends BaseController
 		}
 		return $uaformateadas;
 	}
-
+	
 	public function postRegistrarcarga()
 	{
 		$grupos = Input::get('grupos');
@@ -324,9 +324,8 @@ class CargaAcademicaController extends BaseController
 			}
 		}
 
-		$detalleUAS = DB::select('SELECT DISTINCT carga.periodo,SUBSTR(carga.grupo FROM 2 FOR 1) as semestre,carga.uaprendizaje,uaprendizaje.descripcionmat,uaprendizaje.caracter,uaprendizaje.creditos,uaprendizaje.HC,etapas.descripcion as etapa,uaprendizaje.claveD,uaprendizaje.plan FROM carga INNER JOIN uaprendizaje ON carga.uaprendizaje = uaprendizaje.uaprendizaje INNER JOIN etapas ON uaprendizaje.etapa = etapas.etapa WHERE SUBSTR(carga.grupo FROM 1 FOR 1) = ? ORDER BY semestre,carga.uaprendizaje ASC',array($programa));
-
-		return Response::json($detalleUAS);
+		
+		return "Carga dada de alta con exito!";
 	}
 
 	public function postObtenergruposua()
