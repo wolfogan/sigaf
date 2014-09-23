@@ -1559,6 +1559,19 @@ background: #EFCA0D;
 	border:1px solid gray;
 }
 
+.dd_encabezado_colorBlanco_tablaConsulta
+{
+	background: #fff;
+	font-size: 12px;
+	color:#000; 
+	
+}
+.dd_encabezado_colorBlanco_tablaConsulta th
+{
+	height: 25px;
+	border:1px solid gray;
+}
+
 
 .ca_tblResumenConsulta
 {
@@ -1612,6 +1625,14 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.dd_con_estilo_largo_tabla
+{
+	font-size: 14px;
+	width:400px;
+	height:25px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+}
 .dd_con_estilo
 {
 	font-size: 14px;
@@ -1742,7 +1763,7 @@ input[readonly],input[readonly="readonly"]
 #dd_colonia_calle_int_ext_cp
 {
 
-
+	background: #F5F5F5;
 	border-radius: 7px;
 	height: 130px;
 	border:3px solid #ECECFB;
@@ -1823,7 +1844,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_trabajoFuera_puesto_antiguedad
 {
-	
+	background: #F5F5F5;
 	height: 50px;
 	border-radius: 7px;
 	border:3px solid #ECECFB;
@@ -1959,6 +1980,23 @@ input[readonly],input[readonly="readonly"]
 
 
 }
+.dd_tabla_MatImpartir
+{
+	
+	margin:auto;
+	width: 900px;
+}
+.dd_tabla_MatImpartir td
+{
+	text-align: center;
+	padding: 5px;
+	border:1px dotted gray;
+  	background: #F0FFFF;
+  	font-size: 16px;
+  	height: 15px;
+
+
+}
 .dd_encabezado
 {
 	background: green;
@@ -1970,6 +2008,20 @@ input[readonly],input[readonly="readonly"]
 {
 	height: 40px;
 }
+
+.dd_encabezado_blanco
+{
+	background: #fff;
+	font-size: 18px;
+	color: #000;
+	border:1px solid gray;
+}
+.dd_encabezado_blanco th
+{
+	height: 40px;
+}
+
+
 .dd_encabezado_colorNaranja
 {
 	background: #ECA22E;

@@ -466,7 +466,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -555,7 +555,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -644,7 +644,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -733,7 +733,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -822,7 +822,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -911,7 +911,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -1000,7 +1000,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -1089,7 +1089,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -1178,7 +1178,7 @@
 						</tr>
 					</thead>
 					
-					<thead class="dd_encabezado_colorNaranja">
+					<thead class="dd_encabezado_blanco">
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>

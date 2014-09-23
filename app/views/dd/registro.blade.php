@@ -484,7 +484,7 @@
 
 
 		                    <div id="dd_impartirMaterias">
-			                    <table class="dd_tabla">
+			                    <table class="dd_tabla_MatImpartir">
 									
 									<thead class="dd_encabezado">
 										<tr>
@@ -496,53 +496,48 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
-										<tr>
-											<td>000453</td>
-											<td>DESARROLLO SUSTENTABLE</td>
-											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
-											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
-										</tr>
+										
 																		
 									
 									</tbody>
@@ -554,23 +549,23 @@
 							<h2>Disponibilidad</h2>
 
 							<div id="dd_impartirMaterias">
-			                    <table class="dd_tabla">
+			                    <table class="dd_tabla_MatImpartir">
 									
 									<thead class="dd_encabezado">
 										<tr>
-											<th>HORARIO</th>
-											<th>LUNES</th>
-											<th>MARTES</th>
-											<th>MIERCOLES</th>
-											<th>JUEVES</th>
-											<th>VIERNES</th>
-											<th>SABADO</th>
+											<th style="width:100px;">HORARIO</th>
+											<th style="width:100px;">LUNES</th>
+											<th style="width:100px;">MARTES</th>
+											<th style="width:100px;">MIERCOLES</th>
+											<th style="width:100px;">JUEVES</th>
+											<th style="width:100px;">VIERNES</th>
+											<th style="width:100px;">SABADO</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>7:00 - 8:00</td>
-											<td><label onclick="'cambiarColor()'"></label></td>	
+											<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>	
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -582,12 +577,7 @@
 										</tr>
 										<tr>
 											<td>8:00 - 9:00</td>
-											<!--<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	
-											<td><input type="button" value="X" title='Seleccionar' class="clsEliminarFila"/></td>	-->
+											
 											<td><label></label></td>	
 											<td><label></label></td>
 											<td><label></label></td>
@@ -759,14 +749,19 @@
 
 <!--- CAMBIAR DE COLOR LA LABEL DE LA DISPONIBILIDAD -->
 
-<script type="text/javascript">
-function cambiarColor () {
+<script language="javascript">
 
-	
-}
+	function cambiacolor_over(celda){ celda.style.backgroundColor="#ff0000" } 
+	function cambiacolor_out(celda){ celda.style.backgroundColor="#F0FFFF" }
 
+	/*if
+	{
+		onClick==true;
+		celda.style.backgroundColor="#ff0000";
+	}*/
 
 </script>
+
 
 <!------------------------------------------------------------>
 
