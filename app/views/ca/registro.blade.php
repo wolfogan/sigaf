@@ -486,7 +486,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 1</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -529,7 +529,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 2</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -572,7 +572,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 3</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -615,7 +615,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 4</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -658,7 +658,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 5</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					
@@ -703,7 +703,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 6</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -746,7 +746,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 7</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -789,7 +789,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 8</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -832,7 +832,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 9</th>
-							<th>PLAN: 2014-1</th>
+							<th>PLAN:</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -1143,7 +1143,23 @@
 
 		function generarCarga(selectGrupos,listboxPlan,uasPlan,numPrograma,semestre)
 		{
+			// $(selectGrupos).val() instanceof Array = Saber si es un arreglo
+			
+			// Validar seleccion de unidad de aprendizaje
+			if(uasPlan.length < 1)
+			{
+				alert("Es necesario seleccionar una unidad de aprendizaje para generar la carga");
+				return false;
+			}
+			
+			// Validar si ha seleccionado grupos en el caso de las optativas
 			var grupos = $(selectGrupos).val();
+			if(grupos == null)
+			{
+				alert("No hay ningun grupo seleccionado para realizar la carga");
+				return false;
+			}
+
 			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 			var programa = 0;
 			if(numPrograma == 0)
