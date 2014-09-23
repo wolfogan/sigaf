@@ -164,12 +164,14 @@
 			{
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
 				$('#selectGruposVigente').multiselect('select',element.val());
+				return false;
 			}
 			
 			if($("#selectCaracterAnterior").val()==1)
 			{
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
 				$('#selectGruposAnterior').multiselect('select',element.val());
+				return false;
 			}
 		}
 	}
