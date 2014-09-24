@@ -365,13 +365,14 @@
 	</div>
 	<section>
 		<div class="contenedor_Ca">
+
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
-			<div id="periodoCa">
+			<div class="periodoCa">
 				
-				<div id="divPeriodo">
+				<div class="divPeriodo">
 					Periódo: 
-					<input type="text" class="con_estilo"  name="periodo" id="periodo" list="datalistPeriodo"/>
+					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
 					<datalist id="datalistPeriodo">
 						@foreach ($codigosPeriodo as $periodo)
 							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
@@ -379,22 +380,22 @@
 					</datalist>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
+			
+
+				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
+						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
+							@foreach ($programas as $program)
+								<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
+							@endforeach
+						</select>
+
+				</div>
 			</div>
 
-			<div id="consultarAdmin" class="consultar_admin"><span id="labelCarrera">Carrera:</span>
-					<select class="con_estilo" style="height:30px;" name="carrera_admin" id="carreraAdmin">
-						@foreach ($programas as $program)
-							<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
-						@endforeach
-					</select>
-
-					<div class="ca_checkstatus">
-						<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
-						<label>Carga capturada</label>
-					</div>
-
+			<div class="ca_checkstatus">
+				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+				<label>Carga capturada</label>
 			</div>
-
 
 			
 			
@@ -489,7 +490,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorVerde">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -532,7 +535,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -575,7 +580,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorVerde">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -618,7 +625,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -662,7 +671,9 @@
 						</tr>
 					</thead>
 					
+
 					<thead class="dd_encabezado_colorVerde">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -706,7 +717,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -749,7 +762,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorVerde">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -792,7 +807,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorNaranja">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
@@ -835,7 +852,9 @@
 							<th>PLAN:</th>
 						</tr>
 					</thead>
+
 					<thead class="dd_encabezado_colorVerde">
+
 						<tr>
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>

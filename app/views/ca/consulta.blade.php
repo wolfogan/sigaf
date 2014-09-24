@@ -156,7 +156,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -296,7 +296,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -435,7 +435,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -574,7 +574,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -715,7 +715,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -855,7 +855,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -994,7 +994,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -1134,7 +1134,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -1273,7 +1273,7 @@
 						<th>PLAN:</th>
 					</tr>
 				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
@@ -1465,7 +1465,9 @@
 
 <!---------------------------------------------------------------------------------------------------------------->
 
-
+		<div class="ca_btnImprimir">
+			<input class="estilo_button2" style="width:145px;" type="button" value="Imprimir">
+		</div>
 
 
 </section>

@@ -468,6 +468,11 @@ background: #EFCA0D;
 	margin-top: 10px;
 	padding-right: 20px;
 }
+
+.ca_btnImprimir
+{
+	margin-left: 1000px;
+}
 #guardar
 {
 	float:left;
@@ -776,6 +781,7 @@ background: #EFCA0D;
 }
 #periodo_Ca
 {
+
 	margin: 10px;
 	width: 270px;
 }
@@ -1234,7 +1240,7 @@ background: #EFCA0D;
 /*-------------------------------CARGA ACADEMICA--------------------------------------*/
 .contenedorCa
 {
-	height: 1500px;
+	height: 1700px;
 	width: 1320px;
 }
 .nombre_coordinacion
@@ -1279,13 +1285,14 @@ background: #EFCA0D;
  	margin-top: 12px;
  		
  }
-#periodoCa
+.periodoCa
 {
-
+	
 	height: 40px;
-	margin-top: -20px;
-	margin-left: 50px;
-	width: 330px;
+	margin-top: 0px;
+	margin-left: 45px;
+	margin-bottom: 20px;
+	width: 550px;
 }
 .controlesListasCa
 {
@@ -1306,13 +1313,14 @@ background: #EFCA0D;
 	margin: 10px;
 	width: 230px;
 }
-#divPeriodo
+.divPeriodo
 {
+	
 	float: left;
 	font-size: 20px;
 	height: 40px;
-	margin: 0px 20px 0px 0px;
-	width: 350px;
+	margin: 0px 10px 0px 0px;
+	width: 270px;
 }
 .listasCa
 {
@@ -1390,7 +1398,7 @@ background: #EFCA0D;
 	width: 405px;
 	height: 50px;
 	margin: auto;
-	margin-top: -300px;
+	margin-top: -100px;
 
 }
 .nombre_semestre
@@ -1420,14 +1428,13 @@ background: #EFCA0D;
 	
 	font-size: 20px;
 	height: 40px;
-	margin-left: 50px;
-	margin-top: 5px;
-	margin-bottom: 20px;
+	float: left;
 	width: 230px;
 }
 .ca_checkstatus
 {
-	margin: -25px 300px;
+	float: right;
+	margin-top: -40px;
 	height: 30px;
 	width: 200px;
 
@@ -1560,12 +1567,25 @@ background: #EFCA0D;
 	border:1px solid gray;
 }
 
+.dd_encabezado_colorBlanco_tablaConsulta
+{
+	background: #fff;
+	font-size: 12px;
+	color:#000; 
+	
+}
+.dd_encabezado_colorBlanco_tablaConsulta th
+{
+	height: 25px;
+	border:1px solid gray;
+}
+
 
 .ca_tblResumenConsulta
 {
 	width: 550px;
 	border: 2px solid green;
-	float: left;
+	float: right;
 	margin-bottom: 30px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -1613,6 +1633,14 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.dd_con_estilo_largo_tabla
+{
+	font-size: 14px;
+	width:400px;
+	height:25px;
+	border-radius: 5px;
+	border-color: #CACAD9;
+}
 .dd_con_estilo
 {
 	font-size: 14px;
@@ -1743,7 +1771,7 @@ input[readonly],input[readonly="readonly"]
 #dd_colonia_calle_int_ext_cp
 {
 
-
+	background: #F5F5F5;
 	border-radius: 7px;
 	height: 130px;
 	border:3px solid #ECECFB;
@@ -1824,7 +1852,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_trabajoFuera_puesto_antiguedad
 {
-	
+	background: #F5F5F5;
 	height: 50px;
 	border-radius: 7px;
 	border:3px solid #ECECFB;
@@ -1960,6 +1988,23 @@ input[readonly],input[readonly="readonly"]
 
 
 }
+.dd_tabla_MatImpartir
+{
+	
+	margin:auto;
+	width: 900px;
+}
+.dd_tabla_MatImpartir td
+{
+	text-align: center;
+	padding: 5px;
+	border:1px dotted gray;
+  	background: #F0FFFF;
+  	font-size: 16px;
+  	height: 15px;
+
+
+}
 .dd_encabezado
 {
 	background: green;
@@ -1971,6 +2016,20 @@ input[readonly],input[readonly="readonly"]
 {
 	height: 40px;
 }
+
+.dd_encabezado_blanco
+{
+	background: #fff;
+	font-size: 18px;
+	color: #000;
+	border:1px solid gray;
+}
+.dd_encabezado_blanco th
+{
+	height: 40px;
+}
+
+
 .dd_encabezado_colorNaranja
 {
 	background: #ECA22E;
