@@ -45,10 +45,17 @@ Route::get('pruebas',function(){
 
 	$nombrePrograma = ProgramaEducativo::find(4);
 
+	$planSemestres = DB::table("carga")
+						->select(DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"grupos.plan")
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",'20142')
+						->groupBy("semestre","carga.periodo")
+						->get();
+
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
 	//$u->lastQuery = $last_query;
 
-	return $nombrePrograma;
+	return $last_query;
 });

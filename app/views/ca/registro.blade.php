@@ -1144,7 +1144,7 @@
 						//alert("Si fue sincrono");
 					}
 				}
-
+				// Para generar los grupos de la carga
 				for (var i = 0; i < data.grupos.length; i++) 
 				{
 					var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
@@ -1278,7 +1278,7 @@
 				generarCarga("#selectGruposAnterior","#listboxPlanAnterior",uasAnterior,numPrograma,$("#semestresAnterior").val());
 			});
 
-			// PARA ELIIMINAR UA DE LA CARGA
+			// PARA ELIIMINAR UA DE LA CARGA FALTA EL FILTRO DE CARRRRRRRRERASSASAAAASDASDASDFASDFASDF
 			$("table").on("click",".clsEliminarFila",function(event){
 				event.stopPropagation();
 				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))

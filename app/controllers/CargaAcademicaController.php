@@ -401,6 +401,12 @@ class CargaAcademicaController extends BaseController
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
 						->get();
+		$planSemestres = DB::table("carga")
+						->select(DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.periodo","grupos.plan")
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",$periodo)
+						->groupBy("semestre","carga.periodo")
+						->get();
 
 		foreach ($grupos as $g) {
 			$turno = DB::table('grupos')
@@ -412,7 +418,7 @@ class CargaAcademicaController extends BaseController
 			$g->grupo = (string)$g->grupo." T".substr($turno->descripcion, 0,1);
 		}
 
-		return Response::json(array('uas' => $uas,'grupos'=> $grupos));
+		return Response::json(array('uas' => $uas,'grupos'=> $grupos,'planSemestres'=>$planSemestres));
 
 	}
 }
