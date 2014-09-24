@@ -372,7 +372,7 @@
 				
 				<div class="divPeriodo">
 					Periódo: 
-					<input type="text" class="con_estilo"  name="periodo" id="periodo" list="datalistPeriodo"/>
+					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
 					<datalist id="datalistPeriodo">
 						@foreach ($codigosPeriodo as $periodo)
 							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
@@ -383,7 +383,7 @@
 			
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
-						<select class="con_estilo" style="height:30px;" name="carrera_admin" id="carreraAdmin">
+						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
 							@foreach ($programas as $program)
 								<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
 							@endforeach

@@ -309,12 +309,12 @@
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 				<div class="periodoCa">
 
-					<div class="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
+					<div class="divPeriodo">Periódo: <input type="text" class="con_estilo" style="height:25px" name="txtPeriodoCa" id="txtPeriodoCa"/>
 						<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 					</div>
 
 					<div class="consultar_admin">Carrera:
-						<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
+						<select class="con_estilo" style="width:135px; height:30px" name="consultar_admin" size=1>
 							<option value="INFORMATICA">INFORMATICA</option>
 							<option value="NEGOCIOS">NEGOCIOS</option>
 							<option value="ADMINISTRACION">ADMINISTRACION</option>

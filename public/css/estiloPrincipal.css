@@ -1290,7 +1290,7 @@ background: #EFCA0D;
 	
 	height: 40px;
 	margin-top: 0px;
-	margin-left: 50px;
+	margin-left: 45px;
 	margin-bottom: 20px;
 	width: 550px;
 }
@@ -1319,7 +1319,7 @@ background: #EFCA0D;
 	float: left;
 	font-size: 20px;
 	height: 40px;
-	margin: 0px 20px 0px 0px;
+	margin: 0px 10px 0px 0px;
 	width: 270px;
 }
 .listasCa
@@ -1429,7 +1429,6 @@ background: #EFCA0D;
 	font-size: 20px;
 	height: 40px;
 	float: left;
-
 	width: 230px;
 }
 .ca_checkstatus
