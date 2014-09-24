@@ -302,513 +302,540 @@
 
 		<section>
 
-			<div class="contenedor_Ca">
+			
+			
 				<div class="nombre_coordinacion">Lic. en Informática</div>
 
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
-			<div id="periodoCa">
+				<div class="periodoCa">
 
-				<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
-					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
-				</div>
-			</div>
-
-			</div>
-
-			<div class="consultar_admin">Carrera:
-					<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
-						<option value="INFORMATICA">INFORMATICA</option>
-						<option value="NEGOCIOS">NEGOCIOS</option>
-						<option value="ADMINISTRACION">ADMINISTRACION</option>
-						<option value="CONTADURIA">CONTADURIA</option>
-					</select>
-
-					<div class="ca_checkstatus">
-						<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
-						<label>Carga capturada</label>
+					<div class="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
+						<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 					</div>
 
-
-			</div>
-
-			<!--<div class="ca_checkstatus"<input type="checkbox" name="checkSubdirector_ca" value="Generar">
-			<label>Carga capturada</label></div>
-
-
-				<div id="periodoCa">
-					<div id="btnNuevaCaDiv"><input type="button" style="width:200px;" class="estilo_button2" value="Nueva CA" name="btnNuevaCa" id="btnNuevaCa" /></div>
-
-					<div id="divPeriodo">Periódo: <input type="text" class="con_estilo" name="txtPeriodoCa" id="txtPeriodoCa"/>
-					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
-
-					<input style="width:18px; height:18px; margin-left:310px" type="checkbox" name="checkSubdirector_ca" value="Generar"><label style="font-size:18px;">Carga capturada</label>
+					<div class="consultar_admin">Carrera:
+						<select class="con_estilo" style="height:30px;" name="consultar_admin" size=1>
+							<option value="INFORMATICA">INFORMATICA</option>
+							<option value="NEGOCIOS">NEGOCIOS</option>
+							<option value="ADMINISTRACION">ADMINISTRACION</option>
+							<option value="CONTADURIA">CONTADURIA</option>
+						</select>
+					</div>
 
 				</div>
 
-				<div class="consultar_admin">Carreras:
-					<select class="con_estilo" style="width:145px" name="consultar_admin" size=1>
-						<option value="INFORMATICA">INFORMATICA</option>
-						<option value="NEGOCIOS">NEGOCIOS</option>
-						<option value="ADMINISTRACION">ADMINISTRACION</option>
-						<option value="CONTADURIA">CONTADURIA</option>
-								
-					</select>
+				<div class="ca_checkstatus">
+					<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+					<label>Carga capturada</label>
+				</div>
 
-				</div>-->
+			
 
+
+
+			
+				<div class="contenedorCa">
 			<!----------------------- LISTA PRIMER SEMESTRE ------------------------>
 
-				<div class="carga_listas" style="margin-top:20px;">
-					
-						<div class="nombre_semestre">SEMESTRE: 1</div>
-						<div class="nombre_plan">2014-1</div>
+						<div class="carga_listas" style="margin-top:20px;">
+						
+							<div class="nombre_semestre">SEMESTRE: 1</div>
+							<div class="nombre_plan">2014-1</div>
 
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-							
-
-						</div>
-
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
 
-							<div class="listasCa">  
-								<div id="listaPrimerSemestre" style="margin:0;"></div>
+								
+
 							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
 
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaPrimerSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
 
 
 				<!----------------------- LISTA SEGUNDO SEMESTRE ------------------------>
 
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 2</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
+						<div class="carga_listas">
 						
-
-						</div>
-
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							<div class="nombre_semestre">SEMESTRE: 2</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaSegundoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA TERCER SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 3</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
 
-						</div>
-
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
-									
-								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaTercerSemestre" style="margin:0;"></div>
 							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
 									</select>
-								 
+							</div>
 
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA CUARTO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 4</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
-
+								<div class="listasCa">  
+									<div id="listaSegundoSemestre" style="margin:0;"></div>
+								</div>
 							
-						</div>
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
 
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
 
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+					<!----------------------- LISTA TERCER SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 3</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaCuartoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA QUINTO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 5</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
 
-						</div>
+								
 
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							</div>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaTercerSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA CUARTO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 4</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaQuintoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA SEXTO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 6</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
 
-						</div>
+								
+							</div>
 
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaCuartoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA QUINTO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 5</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaSextoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA SEPTIMO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 7</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
 
-						</div>
+								
 
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							</div>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaQuintoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA SEXTO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 6</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaSeptimoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA OCTAVO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 8</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
 
-						</div>
+								
 
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							</div>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaSextoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA SEPTIMO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 7</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
-
-							<div class="listasCa">  
-								<div id="listaOctavoSemestre" style="margin:0;"></div>
-							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
-									</select>
-								 
-
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
-
-				<!----------------------- LISTA NOVENO SEMESTRE ------------------------>
-
-				<div class="carga_listas">
-					
-						<div class="nombre_semestre">SEMESTRE: 9</div>
-						<div class="nombre_plan">2014-1</div>
-						<div class="filtroMaterias_ca2">Materias:                           
-							<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
-								<option value="OBLIGATORIAS">OBLIGATORIAS</option>
-								<option value="OPTATIVAS">OPTATIVAS</option>
-								
-							</select>
-
-						
 
 							
+
+								
+
+							</div>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaSeptimoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA OCTAVO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
 						
-						</div>
-
-
-						<div class="cmbGrupos_superior">Consultar:
-								<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
-									<option value="321">321</option>
-									<option value="322">322</option>
+							<div class="nombre_semestre">SEMESTRE: 8</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
 									
 								</select>
-						</div>
 
-							<div class="listasCa">  
-								<div id="listaNovenoSemestre" style="margin:0;"></div>
+							
+
+								
+
 							</div>
-						
-						<div class="controlesListasCa_2">
-							Grupos:
-									<select name="example" multiple="multiple" class="example41">
-										<option value="231" selected>231</option>
-										<option value="232" selected>232</option>
-										<option value="241" selected>241</option>
-										<option value="242" selected>242</option>
-										<option value="251" selected>251</option>
-										<option value="252" selected>252</option>
+
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
 									</select>
-								 
+							</div>
 
-							<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
-							<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
-							<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
-						</div>
-				</div>  
+								<div class="listasCa">  
+									<div id="listaOctavoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
 
-				
-					<div class="nombre_escuela">UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA</div>
-					<div class="nombre_escuela">FACULTAD DE CONTADURIA Y ADMINISTRACION</div>
-					<div class="nombre_escuela">DIRECTOR:</div>
-					<div class="nombre_escuela">SUBDIRECTOR:</div>
-					<div class="nombre_escuela">ADMINISTRADOR:</div>
-					<div class="nombre_escuela">COORDINADOR:</div>
-					<div class="nombre_escuela">CREDITOS/PLAN:</div>
-					<div class="nombre_escuela">OBLIGATORIAS:</div>
-					<div class="nombre_escuela">OPTATIVAS:</div>
-					<div class="nombre_escuela">TOTAL:</div>
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+					<!----------------------- LISTA NOVENO SEMESTRE ------------------------>
+
+						<div class="carga_listas">
+						
+							<div class="nombre_semestre">SEMESTRE: 9</div>
+							<div class="nombre_plan">2014-1</div>
+							<div class="filtroMaterias_ca2">Materias:                           
+								<select class="con_estilo" style="width:135px; height:30px" name="filtro_materias_ca2" size=1>
+									<option value="OBLIGATORIAS">OBLIGATORIAS</option>
+									<option value="OPTATIVAS">OPTATIVAS</option>
+									
+								</select>
+
+							
+
+								
+							
+							</div>
 
 
-			</div>
+							<div class="cmbGrupos_superior">Consultar:
+									<select class="con_estilo" style="width:132px; height:30px" name="cmbGrupos_superior" size=1>
+										<option value="321">321</option>
+										<option value="322">322</option>
+										
+									</select>
+							</div>
+
+								<div class="listasCa">  
+									<div id="listaNovenoSemestre" style="margin:0;"></div>
+								</div>
+							
+							<div class="controlesListasCa_2">
+								Grupos:
+										<select name="example" multiple="multiple" class="example41">
+											<option value="231" selected>231</option>
+											<option value="232" selected>232</option>
+											<option value="241" selected>241</option>
+											<option value="242" selected>242</option>
+											<option value="251" selected>251</option>
+											<option value="252" selected>252</option>
+										</select>
+									 
+
+								<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoGrupo" id="btnCatalogoGrupo" />
+								<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
+								<input type="button" style="width:100px" value="Guardar"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCa" />
+							</div>
+						</div>  
+
+				<!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
+
+
+					<table class="ca_tblResumenConsulta">
+
+						<thead class="ca_tblResumenEncabezado">
+
+							<tr>
+								<th colspan="2">UNIVERSIDAD AUTÓNOMA DE BAJA CALIFORNIA</th>
+							</tr>
+
+							<tr>
+								<th colspan="2">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</th>
+							</tr>
+
+						</thead>
+
+							<tr>
+								<td style="width:100px">DIRECTOR:</td>
+								<td>BERNARDO DUARTE</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">SUBDIRECTOR:</td>
+								<td>MAGDALENA FRAUSTO FUENTES</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">ADMINISTRADOR:</td>
+								<td>BERNARDO DUARTE FRAUSTO</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">COORDINADOR:</td>
+								<td>VASTI MAGDALENA DUARTE FRAUSTO</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">CREDITOS/PLAN:</td>
+								<td>90</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">OBLIGATORIAS:</td>
+								<td>60</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">OPTATIVAS:</td>
+								<td>30</td>
+							</tr>
+
+							<tr>
+								<td style="width:100px">TOTAL:</td>
+								<td>90</td>
+							</tr>
+
+					</table>
+
+<!---------------------------------------------------------------------------------------------------------------->
+
+				</div>
 
 
 				

@@ -309,7 +309,7 @@ class CargaAcademicaController extends BaseController
 		}
 		return $uaformateadas;
 	}
-
+	
 	public function postRegistrarcarga()
 	{
 		$grupos = Input::get('grupos');
@@ -324,8 +324,95 @@ class CargaAcademicaController extends BaseController
 			}
 		}
 
-		$detalleUAS = DB::select('SELECT carga.grupo,carga.periodo,SUBSTR(carga.grupo FROM 2 FOR 1) as semestre,carga.uaprendizaje,uaprendizaje.descripcionmat,uaprendizaje.creditos,uaprendizaje.HC,etapas.descripcion as etapa,uaprendizaje.claveD,uaprendizaje.plan FROM carga INNER JOIN uaprendizaje ON carga.uaprendizaje = uaprendizaje.uaprendizaje INNER JOIN etapas ON uaprendizaje.etapa = etapas.etapa WHERE SUBSTR(carga.grupo FROM 1 FOR 1) = ? ORDER BY semestre ASC',array($programa));
+		
+		return "Carga dada de alta con exito!";
+	}
 
-		return Response::json($detalleUAS);
+	public function postObtenergruposua()
+	{
+		$uaprendizaje = Input::get('uaprendizaje');
+		$semestre = Input::get('semestre');
+		$grupos = DB::table('carga')
+					->select('grupo')
+					->where('uaprendizaje','=',$uaprendizaje)
+					->where('grupo','LIKE',"_".$semestre."_")
+					->get();
+		return Response::json($grupos);
+	}
+
+	public function postFormateargruposturnos()
+	{
+		$grupos = Input::get('grupos');
+		//$gruposTurno = new stdClass(); // Clase vacia php para recoger variables.
+		$gruposTurno = "";
+		// Alternativo al for para ultimo elemento
+		$ultimo = end($grupos);
+
+		foreach ($grupos as $grupo) {
+			$turno = DB::table('grupos')
+						->select('turnos.descripcion')
+						->join('turnos','grupos.turno','=','turnos.turno')
+						->where('grupos.grupo','=',$grupo)
+						->first();
+			if($ultimo!=$grupo)
+				$gruposTurno .= (string)$grupo." T".substr($turno->descripcion, 0,1).", ";
+			else
+				$gruposTurno .= (string)$grupo." T".substr($turno->descripcion, 0,1);
+		}
+
+		return $gruposTurno;
+	}
+
+	public function postEliminaruacarga()
+	{
+		$uaprendizaje = Input::get("uaprendizaje");
+		$periodo = Input::get("periodo");
+
+		DB::table("carga")
+				->where("uaprendizaje","=",$uaprendizaje)
+				->where("periodo","=",$periodo)
+				->delete();
+		return "Unidad de aprendizaje dada de baja de la carga correctamente!";
+	}
+
+	public function postEliminarcarga()
+	{
+		DB::table("carga")->truncate();
+	}
+
+	public function postObtenercarga()
+	{
+		$periodo = Input::get("periodo");
+		$programa = Input::get("programa");
+
+		$uas = DB::table("carga")
+						->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
+						->distinct()
+						->join("uaprendizaje","carga.uaprendizaje","=","uaprendizaje.uaprendizaje")
+						->join("etapas","uaprendizaje.etapa","=","etapas.etapa")
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",$periodo)
+						->where("grupos.programaedu","=",$programa)
+						->get();
+		$grupos = DB::table("carga")
+						->select("carga.grupo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"))
+						->distinct()
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",$periodo)
+						->where("grupos.programaedu","=",$programa)
+						->get();
+
+		foreach ($grupos as $g) {
+			$turno = DB::table('grupos')
+						->select('turnos.descripcion')
+						->join('turnos','grupos.turno','=','turnos.turno')
+						->where('grupos.grupo','=',$g->grupo)
+						->first();
+
+			$g->grupo = (string)$g->grupo." T".substr($turno->descripcion, 0,1);
+		}
+
+		return Response::json(array('uas' => $uas,'grupos'=> $grupos));
+
 	}
 }

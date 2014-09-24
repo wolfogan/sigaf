@@ -468,6 +468,11 @@ background: #EFCA0D;
 	margin-top: 10px;
 	padding-right: 20px;
 }
+
+.ca_btnImprimir
+{
+	margin-left: 1000px;
+}
 #guardar
 {
 	float:left;
@@ -776,6 +781,7 @@ background: #EFCA0D;
 }
 #periodo_Ca
 {
+
 	margin: 10px;
 	width: 270px;
 }
@@ -1234,7 +1240,7 @@ background: #EFCA0D;
 /*-------------------------------CARGA ACADEMICA--------------------------------------*/
 .contenedorCa
 {
-	height: 1500px;
+	height: 1700px;
 	width: 1320px;
 }
 .nombre_coordinacion
@@ -1254,7 +1260,7 @@ background: #EFCA0D;
  {
  	
  	float: left;
- 	height: 700px;
+ 	height: 600px;
  	width: 500px;
  	margin-top: 10px;
  	margin-left: 40px;
@@ -1274,18 +1280,19 @@ background: #EFCA0D;
  {
  	
  	float: left;
- 	height: 700px;
+ 	height: 600px;
  	width: 500px;
  	margin-top: 12px;
  		
  }
-#periodoCa
+.periodoCa
 {
-
+	
 	height: 40px;
-	margin-top: -20px;
+	margin-top: 0px;
 	margin-left: 50px;
-	width: 330px;
+	margin-bottom: 20px;
+	width: 550px;
 }
 .controlesListasCa
 {
@@ -1306,17 +1313,18 @@ background: #EFCA0D;
 	margin: 10px;
 	width: 230px;
 }
-#divPeriodo
+.divPeriodo
 {
+	
 	float: left;
 	font-size: 20px;
 	height: 40px;
 	margin: 0px 20px 0px 0px;
-	width: 350px;
+	width: 270px;
 }
 .listasCa
 {
-	height: 550px;
+	height: 350px;
 	margin-top: 5px;
 }
 .nombrePlan
@@ -1333,7 +1341,8 @@ background: #EFCA0D;
 {
 	
 	margin: auto;
-	margin-top: 900px;
+	margin-top: 650px;
+	margin-bottom: 30px;
 	width: 1300px;
 
 }
@@ -1389,7 +1398,7 @@ background: #EFCA0D;
 	width: 405px;
 	height: 50px;
 	margin: auto;
-	margin-top: -300px;
+	margin-top: -100px;
 
 }
 .nombre_semestre
@@ -1419,14 +1428,14 @@ background: #EFCA0D;
 	
 	font-size: 20px;
 	height: 40px;
-	margin-left: 50px;
-	margin-top: 5px;
-	margin-bottom: 20px;
+	float: left;
+
 	width: 230px;
 }
 .ca_checkstatus
 {
-	margin: -25px 300px;
+	float: right;
+	margin-top: -40px;
 	height: 30px;
 	width: 200px;
 
@@ -1577,7 +1586,7 @@ background: #EFCA0D;
 {
 	width: 550px;
 	border: 2px solid green;
-	float: left;
+	float: right;
 	margin-bottom: 30px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -1967,11 +1976,11 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	margin:auto;
-	width: 1000px;
+	width: 95%;
 }
 .dd_tabla td
 {
-	text-align: left;
+	text-align: center;
 	padding: 5px;
 	border:1px solid gray;
   	background: #F0FFFF;
@@ -2026,15 +2035,41 @@ input[readonly],input[readonly="readonly"]
 {
 	background: #ECA22E;
 	font-size: 14px;
-	color:#004000; 
+	color:#FFF4C7; 
 	
 }
+
+.dd_encabezado_colorVerde
+{
+	background:#004000;
+	font-size: 14px;
+	color:#D9EEDF;
+}
+
+.dd_encabezado_colorVerdeClaro
+{
+	background:green;
+	font-size: 14px;
+	color:#FFFFFF;
+}
+
 .dd_encabezado_colorNaranja th
 {
 	height: 30px;
 	border:1px solid gray;
 }
 
+.dd_encabezado_colorVerde th
+{
+	height: 30px;
+	border:1px solid gray;
+}
+
+.dd_encabezado_colorVerdeClaro th
+{
+	height: 30px;
+	border:1px solid gray;
+}
 
 #dd_consultaPeriodo
 {
@@ -2161,6 +2196,58 @@ input[readonly],input[readonly="readonly"]
 
 
 /*----------------------------------------------------------------------------------------------*/
+/*------------------------------------PRUEBA IVAN-----------------------------------------------*/
+.btnStyleAllTable {
+	-moz-box-shadow:inset 0px 3px 8px -2px #ffffff;
+	-webkit-box-shadow:inset 0px 3px 8px -2px #ffffff;
+	box-shadow:inset 0px 3px 8px -2px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1f4200), color-stop(1, #3f8c00) );
+	background:-moz-linear-gradient( center top, #1f4200 5%, #3f8c00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f4200', endColorstr='#3f8c00');
+	background-color:#1f4200;
+	-webkit-border-top-left-radius:37px;
+	-moz-border-radius-topleft:37px;
+	border-top-left-radius:37px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:37px;
+	-moz-border-radius-bottomright:37px;
+	border-bottom-right-radius:37px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #0a1a00;
+	display:none;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:38px;
+	line-height:38px;
+	width:81px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 20px #000000;
+	float:right;
+	margin-right: 2.2%;
+	cursor: pointer;
+}
+.btnStyleAllTable:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3f8c00), color-stop(1, #1f4200) );
+	background:-moz-linear-gradient( center top, #3f8c00 5%, #1f4200 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f8c00', endColorstr='#1f4200');
+	background-color:#3f8c00;
+}.btnStyleAllTable:active {
+	position:relative;
+	top:4px;
+}
 
 
+.tableAll{
+	margin-bottom: 8%;
+}
 
+/*------------------------------------PRUEBA IVAN-----------------------------------------------*/

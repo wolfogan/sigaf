@@ -1465,7 +1465,9 @@
 
 <!---------------------------------------------------------------------------------------------------------------->
 
-
+		<div class="ca_btnImprimir">
+			<input class="estilo_button2" style="width:145px;" type="button" value="Imprimir">
+		</div>
 
 
 </section>
