@@ -1221,8 +1221,16 @@
 
 			// CUANDO CAMBIEN EL PERIODO
 			$("#periodo").on("input",function(){
-				$(".grupoPer").text($(this).val());
-				$(".grupoPeriodo").val($("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo"));
+				if($(this).val().length == 6)
+				{
+					var periodo = $("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo");
+					$(".grupoPer").text($(this).val());
+					$(".grupoPeriodo").val(periodo);
+					if(numPrograma != 0)
+					{
+						obtenerCarga(periodo,numPrograma);
+					}
+				}
 			});
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR

@@ -635,14 +635,15 @@
 				alert(data);
 				$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 				reset_campos();
-				desmarcar_carreras();
+				//desmarcar_carreras();
 			})
-			.fail(function(){
-				alert("Fallo el registro de la Unidad de Aprendizaje");
+			.fail(function(errorText,textError,errorThrow){
+				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
 			})
 			.always(function(){
 				// OCULTAR AJAXLOADER
 				$("#ajaxLoad").css("display","none");
+				$("#clave1F").focus();
 			});
 		}
 		else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
@@ -681,6 +682,7 @@
 			.always(function(){
 				// OCULTAR AJAXLOADER
 				$("#ajaxLoad").css("display","none");
+
 			});
 			
 		}
@@ -753,9 +755,10 @@
 		$("#carrera").val("");
 		$("#etapaF").val("1");
 		$("#tipoF").val("1");
-		$("#clave2F").val("");
 		$("#materiaSeriada").val("");
 		$("#serie").val("1");
+		$("#clave2F").val("");
+		$("#clave2F").attr("disabled",true);
 		$("#seriacion").val("");
 		$("#hc").val(0);
 		$("#hl").val(0);
