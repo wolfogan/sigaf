@@ -341,7 +341,7 @@
 				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
 				<div id="carreraDiv">
 					<label>Carrera:</label>
-					<select id="select_carreras" name="example" multiple="multiple" class="example41"></select>
+					<select id="select_carreras" name="programas[]" multiple="multiple" class="example41"></select>
 					<!-- Campo oculto para id´s de carreras -->
 					<input type="hidden" name="carreras" id="carreras"/>
 					<input type="hidden" name="add_carreras" id="add_carreras" />
@@ -498,6 +498,7 @@
 					<div id="botones">
 						<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
 						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
+						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Ver" name="ver" id="ver" />
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
 				</div>
@@ -1181,6 +1182,11 @@
 					
 				});
 			}
+		});
+
+		$("#ver").on("click",function(){
+			alert("Mi zorrita esta cachorra y la adoro a la tontassss");
+			alert($("#select_carreras").val());
 		});
 	});
 	</script>
