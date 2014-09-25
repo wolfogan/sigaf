@@ -487,7 +487,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 1</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -532,7 +532,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 2</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -577,7 +577,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 3</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -622,7 +622,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 4</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -667,7 +667,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 5</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 					
@@ -714,7 +714,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 6</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -759,7 +759,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 7</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -804,7 +804,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 8</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -849,7 +849,7 @@
 					<thead class="dd_encabezado">
 						<tr>
 							<th>SEMESTRE: 9</th>
-							<th>PLAN:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -1107,6 +1107,7 @@
 			//alert(programa);
 			$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
 				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+				$(".dd_encabezado tr th:eq(1)").empty();
 				for (var i = 0; i < data.uas.length; i++) 
 				{
 					var renglon = "";
@@ -1153,6 +1154,12 @@
 					else
 						grupoTurno += ", "+data.grupos[i].grupo;
 					$("#semestre" + data.grupos[i].semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+grupoTurno+"</td></tr>");
+				}
+
+				// Para mostrar el plan al que pertenece la carga de cada semestre
+				for (var i = 0; i < data.planSemestres.length; i++)
+				{
+					$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
 				}
 			})
 			.fail(function(errorText,textError,errorThrow){
@@ -1281,13 +1288,22 @@
 			// PARA ELIIMINAR UA DE LA CARGA FALTA EL FILTRO DE CARRRRRRRRERASSASAAAASDASDASDFASDFASDF
 			$("table").on("click",".clsEliminarFila",function(event){
 				event.stopPropagation();
+				alert(numPrograma);
 				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))
 				{
 					// Obtener UA,periodo
 					var row = $(this).parents().get(1);
 					var ua = $(row).find("td:eq(0)").text();
 					var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
-					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua},function(data){
+					if(numPrograma == 0)
+					{
+						var programa = $("#carreraAdmin").val();
+					}
+					else
+					{
+						var programa = numPrograma;
+					}
+					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua,programa:programa},function(data){
 						alert(data);
 						$(row).remove();
 					});

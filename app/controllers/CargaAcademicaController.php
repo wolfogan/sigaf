@@ -367,11 +367,12 @@ class CargaAcademicaController extends BaseController
 	{
 		$uaprendizaje = Input::get("uaprendizaje");
 		$periodo = Input::get("periodo");
-
-		DB::table("carga")
-				->where("uaprendizaje","=",$uaprendizaje)
-				->where("periodo","=",$periodo)
-				->delete();
+		$programa = Input::get('programa');
+		/*DB::table("carga")
+				->where("carga.uaprendizaje","=",$uaprendizaje)
+				->where("carga.periodo","=",$periodo)
+				->delete();*/
+		DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.periodo = ? and carga.uaprendizaje = ? and grupos.programaedu = ?",array($periodo,$uaprendizaje,$programa));
 		return "Unidad de aprendizaje dada de baja de la carga correctamente!";
 	}
 
@@ -405,6 +406,7 @@ class CargaAcademicaController extends BaseController
 						->select(DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.periodo","grupos.plan")
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",$periodo)
+						->where("grupos.programaedu","=",$programa)
 						->groupBy("semestre","carga.periodo")
 						->get();
 
