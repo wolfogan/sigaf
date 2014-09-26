@@ -490,7 +490,7 @@
 				var descripcionUA = "";
 				for (var i = 0; i < uas.length; i++) 
 				{
-					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> L<span>' + uas[i].HL + '</span> CR<span>' + uas[i].creditos + '</span>';
+					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> T<span>' + uas[i].HT + '</span> CR<span>' + uas[i].creditos + '</span>';
 					bloque = $('<li>' +
 									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
 										descripcionUA +

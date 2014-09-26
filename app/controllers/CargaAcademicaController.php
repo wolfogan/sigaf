@@ -233,6 +233,13 @@ class CargaAcademicaController extends BaseController
 
 	public function getConsulta()
 	{
+		// Cargar periodos 2010-1, 2010-2
+		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		$codigosPeriodo = array();
+		for ($i=0; $i < count($periodos); $i++) { 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
+		}
+
 		return View::make("ca.consulta");
 	}
 
