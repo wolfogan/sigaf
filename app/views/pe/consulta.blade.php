@@ -390,25 +390,13 @@
 					reqseriacion = "";
 					coordinacion = "";
 					caracter = "";
-				}).fail(function(){alert("Fallo en obtener los programas educativos");});
-				// Obtener las claves para la seriación de las ua registradas en el plan.
-				// 
-				$.post("<?php echo URL::to('planestudio/obtenerclaveseries'); ?>",{noplan:plan},function(claves){
-					var optionsClave="",optionsDescripcion="";
-					for(var i=0;i<claves.length;i++)
-					{
-						optionsClave += "<option value="+claves[i].uaprendizaje+" />";
-						optionsDescripcion += '<option value="'+claves[i].descripcionmat+'" />';
-					}
-					$("#datalist_clave").html(optionsClave);
-					$("#datalist_materia").html(optionsDescripcion);
-					//$("#datalist_materia").html(options);
-					//alert("Funciono");
-				}).fail(function(){alert("Fallo en obtener las unidades de aprendizaje");});
+				}).fail(function(errorText,textError,errorThrow){alert("Fallo en obtener los programas educativos " + errorText.responseText);});
+				
 			}
 		});
 		// ACCIONES PARA EL COMBOBOX DE PROGRAMAS EDUCATIVOS
 		$("#carrera").on("change",function(){
+			//alert(plan);
 			carrera = $(this).val();
 			if($(this).val()!=6)
 			{
@@ -427,6 +415,22 @@
 				etapa = 1;
 				tipo = "";
 			}
+
+			// Obtener las claves para la seriación de las ua registradas en el plan.
+			$.post("<?php echo URL::to('planestudio/obtenerclavescarrera'); ?>",{noplan:plan,programaedu:carrera},function(claves){
+				var optionsClave="",optionsDescripcion="";
+				for(var i=0;i<claves.length;i++)
+				{
+					optionsClave += "<option value="+claves[i].uaprendizaje+" />";
+					optionsDescripcion += '<option value="'+claves[i].descripcionmat+'" />';
+				}
+				$("#datalist_clave").html(optionsClave);
+				$("#datalist_materia").html(optionsDescripcion);
+				//$("#datalist_materia").html(options);
+				//alert("Funciono");
+			}).fail(function(errorText,textError,errorThrow){
+				alert("Fallo en obtener las unidades de aprendizaje" + errorText.responseText);
+			});
 		});
 		// ELECCION DE VARIABLES CONSULTA, CARACTER,REQSERIACION,COORDINACION
 		$("#etapa").on("change",function(){
@@ -483,31 +487,47 @@
 			function creacionBloques(uas,lista)
 			{
 				var bloque ="";
-					var descripcionUA = "";
-					for (var i = 0; i < uas.length; i++) 
+				var descripcionUA = "";
+				for (var i = 0; i < uas.length; i++) 
+				{
+					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> L<span>' + uas[i].HL + '</span> CR<span>' + uas[i].creditos + '</span>';
+					bloque = $('<li>' +
+									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
+										descripcionUA +
+									'</div>'+
+								'</li>').hide().fadeIn("slow");
+					if(uas[i].reqseriacion != "1")
 					{
-						descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> L<span>' + uas[i].HL + '</span> CR<span>' + uas[i].creditos + '</span>';
-						bloque = $('<li>' +
-										'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
-											descripcionUA +
-										'</div>'+
-									'</li>').hide().fadeIn("slow");
-						if(uas[i].reqseriacion != "1")
-						{
-							var color = color_aleatorio();
-							$(bloque).children().css("border","4px dotted "+ color);
-							$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dotted " + color);
-						}
-						
-						
-						$(lista).append(bloque);
-						bloque = "";
-						if(uas[i].caracter=="OBLIGATORIA")
-							creditosObligatorias += uas[i].creditos;
-						if(uas[i].caracter=="OPTATIVA")
-							creditosOptativas += uas[i].creditos;
+						var color = color_aleatorio();
+						$(bloque).children().css("border","4px dotted "+ color);
+						$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dotted " + color);
 					}
+					
+					
+					$(lista).append(bloque);
+					bloque = "";
+					if(uas[i].caracter=="OBLIGATORIA")
+						creditosObligatorias += uas[i].creditos;
+					if(uas[i].caracter=="OPTATIVA")
+						creditosOptativas += uas[i].creditos;
+				}
 			}
+			// Filtro individual y retornar la funcion.
+			if($("#clave").val().length == 5)
+			{
+				var ua = $("#clave").val();
+				$.post("<?php echo URL::to('planestudio/obtenerdatauacarrera'); ?>",{noplan:plan,programaedu:carrera,uaprendizaje:ua},function(ua){
+					creacionBloques(ua,$("#list" + ua[0].etapa));
+					activarModal();
+					asignarEventoDatos();
+					// Mostrar informacion de los creditos
+					$("#creditos_obligatorias").text(creditosObligatorias);
+					$("#creditos_optativas").text(creditosOptativas);
+					$("#creditos_total").text(totalCreditos);
+				});
+				return;
+			}
+
 			if(etapa=="")
 			{
 				$.post("<?php echo URL::to('planestudio/obteneruascarrera'); ?>",{noplan:plan,programaedu:carrera,etapa:1,caracter:caracter,reqseriacion:reqseriacion,coordinacion:coordinacion,troncocomun:troncoComun},function(uas){
@@ -578,7 +598,8 @@
 	</script>
 
 	<script type="text/javascript">
-		var divUA;
+		var divUA; // Para almacenar el div seleccionado
+		var etapaOld = 0; // Si cambian la etapa almacenar la etapa vieja para hacer la comparacion funciones involucradas (actualizarUA,asignarEventosDatos)
 		$("#list1, #list2, #list3").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
 		// Variables total de los creditos
 		var creditosObligatorias = 0;
@@ -625,6 +646,7 @@
 			// eq(3) - hl
 			// eq(4) - total
 			dataUA = $("#formUpdate").serialize();
+			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
 				$(divUA).find("span").eq(1).text($("#descripcion_update").val());
 				$(divUA).find("span").eq(2).text($("#hc_update").val());
@@ -641,11 +663,18 @@
 
 				$(".md-close").click();
 
-				// Colocar en la nueva etapa si se cambio
-				var lista = "#list" + $("#etapa_update").val();
-				$(lista).append($(divUA).parent());
+				// Colocar en la nueva etapa si se modifico la etapa, evaluar la etapaOld
+				//alert(etapaOld);
+				//alert(ua.etapa);
+				if(etapaOld != ua.etapa)
+				{
+					var lista = "#list" + $("#etapa_update").val();
+					$(lista).append($(divUA).parent());
+				}
 			})
-			.fail(function(){alert("Fallo la actualizacion");});
+			.fail(function(errorText,textError,errorThrow){
+				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
+			});
 		}
 
 		function asignarEventoDatos()
@@ -662,6 +691,7 @@
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(ua.etapa);
+					etapaOld = ua.etapa; // Por si cambian la etapa reubicar el div en la etapa correspondiente
 					$("#tipo_update").val(ua.caracter);
 					$("#semestre_update").val(ua.semestre);
 					$("#seriacion_update").val(ua.reqseriacion);

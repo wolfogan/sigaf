@@ -575,6 +575,7 @@
 	 */
 	function registrarUnidadAprendizaje()
 	{
+
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $("#tblUA").DataTable();
 		var opcion = $("#guardar").val();
@@ -614,6 +615,8 @@
 				var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
 				var creditosF=$("#creditosF").val();
 				var tablaDatos= $("#tblUA");
+
+			
 				// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
 				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
 					if($(elemento).hasClass('active') && indice != 0)
@@ -645,7 +648,7 @@
 			.always(function(){
 				// OCULTAR AJAXLOADER
 				$("#ajaxLoad").css("display","none");
-				$("#clave1F").focus();
+				
 			});
 		}
 		else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
@@ -660,6 +663,7 @@
 				$("#limpiar").val("Limpiar");
 				$("#tblUA").dataTable().fnClearTable();
 				ActualizarUAS(plan);
+			
 				alert("Datos actualizados");
 				// Limpiar Control
 				$('option',$(".example41")).each(function(element) {
@@ -688,6 +692,9 @@
 			});
 			
 		}
+		// Regresar foco a la clave
+		$("#clave1F").focus();
+
 	}
 
 	// FUNCION ActualizarUAS
@@ -1036,6 +1043,7 @@
 						$("#ajaxLoad").css("display","block");
 						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,claveD:serie}, function(json)
 						{
+							//console.log(json);
 							if(json.success)
 							{
 								$('#clave1F').val(json.uaprendizaje);

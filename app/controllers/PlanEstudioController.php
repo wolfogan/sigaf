@@ -322,6 +322,21 @@ class PlanEstudioController extends BaseController
 		return $unidadesAprendizaje;
 	}
 
+	public function postObtenerclavescarrera()
+	{
+		$noplan = Input::get('noplan');
+		$programaedu = Input::get('programaedu');
+		$uas = DB::table("p_ua")
+					->select('p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('p_ua.programaedu','=',$programaedu)
+					->orderBy('p_ua.uaprendizaje','asc')
+					->get();
+
+		return Response::json($uas);
+	}
+
 	public function postObtenerprogramas()
 	{
 		$noplan = Input::get('noplan');
@@ -410,6 +425,26 @@ class PlanEstudioController extends BaseController
 
 		return $UAS;
 
+	}
+
+	public function postObtenerdatauacarrera()
+	{
+		$noplan = Input::get('noplan');
+		$programaedu = Input::get('programaedu');
+		$uaprendizaje = Input::get('uaprendizaje');
+		$UA = DB::table('p_ua')
+					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
+					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.reqseriacion','uaprendizaje.claveD','uaprendizaje.etapa','coordinaciona.descripcion as coordinaciona')
+					->where('uaprendizaje.plan','=',$noplan)
+					->where('uaprendizaje.uaprendizaje','=',$uaprendizaje)
+					->where('p_ua.programaedu','=',$programaedu)
+					->get();
+		return $UA;
 	}
 
 	public function postContaruas()
@@ -511,16 +546,20 @@ class PlanEstudioController extends BaseController
 			}
 		}*/
 
-		// Eliminar en p_ua Unidades asociadas a las carreras para hacer una actualizacion.
-		DB::table('p_ua')
-			->where("uaprendizaje","=",$UA -> uaprendizaje)
-			->delete();
-
-		// Posteriormente hacer las inserciones en p_ua de las Unidades Aprendizaje asociadas a los programas.
+		// CONDICION PARA QUE NO AFECTE LA ACTUALIZACION DE LA CONSULTA 
 		$programas = Input::get('carreras');
-		foreach ($programas as $carrera)
+		if(!empty($programas))
 		{
-			DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+			// Eliminar en p_ua Unidades asociadas a las carreras para hacer una actualizacion.
+			DB::table('p_ua')
+				->where("uaprendizaje","=",$UA -> uaprendizaje)
+				->delete();
+
+			// Posteriormente hacer las inserciones en p_ua de las Unidades Aprendizaje asociadas a los programas.
+			foreach ($programas as $carrera)
+			{
+				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+			}
 		}
 	}
 
