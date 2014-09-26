@@ -341,10 +341,10 @@
 				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
 				<div id="carreraDiv">
 					<label>Carrera:</label>
-					<select id="select_carreras" name="programas[]" multiple="multiple" class="example41"></select>
+					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
 					<!-- Campo oculto para id´s de carreras -->
-					<input type="hidden" name="carreras" id="carreras"/>
-					<input type="hidden" name="add_carreras" id="add_carreras" />
+					<!-- <input type="hidden" name="carreras" id="carreras"/> -->
+					<!-- <input type="hidden" name="add_carreras" id="add_carreras" /> -->
 					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
 					<!--<input class="md-trigger" data-modal="carrera" type="button" value="+">-->
 					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
@@ -498,7 +498,7 @@
 					<div id="botones">
 						<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
 						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
-						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Ver" name="ver" id="ver" />
+						
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
 				</div>
@@ -594,7 +594,8 @@
 
 		// Mostrar AjaxLoader
 		$("#ajaxLoad").css("display","block");
-		// INSERTAR UNIDAD DE APRENDIZAJE
+		
+		// REGISTRAR UNIDAD DE APRENDIZAJE
 		if(opcion == "Guardar")
 		{
 			var dataUA = $("#formularioPlanEstudio").serialize();
@@ -838,52 +839,8 @@
 
 		// INICIALIZAR MULTISELECTS DE PROGRAMAS EDUCATIVOS (CARRERAS)
 		$('.example41').multiselect({
-			includeSelectAllOption: true,
-			onChange: function(element, checked,index){
-				var brands = $('.example41 option:selected');
-				var selected = [];
-				$(brands).each(function(index, brand){
-					selected.push([$(this).val()]);
-				});
-				// Asignar arreglos para guardar los números de las carreras
-				$("#carreras").val(selected);
-
-				// En caso de actualizar guardar solo las nuevas
-				if($("#guardar").val()=="Actualizar")
-				{
-					if($(element).val()!=undefined) // Si no seleccionan todas las carreras
-					{
-						if(checked==true)
-						{
-							updated.push($(element).val());
-						}
-						else
-						{
-							var pos = updated.indexOf($(element).val());
-							pos > -1 && updated.splice(pos,1);
-						}
-						//alert(updated);
-					}
-					else
-					{
-						if(checked==true)
-						{
-							updated = [];
-							$('#select_carreras + div > button + .multiselect-container li input:enabled').each(function(index,element){
-								if(index!=0)
-									updated.push($(element).val());
-							});
-						}
-						else
-						{
-							updated=[];
-						}
-						//alert(updated);
-					}
-				}
-				$("#add_carreras").val(updated);
-			}
-		});
+			includeSelectAllOption: true
+			});
 
 		$('.plancarreras').multiselect({
 			includeSelectAllOption: true,
@@ -1110,7 +1067,7 @@
 								for(i in json.programas)
 								{
 									$(".example41").multiselect('select',json.programas[i].programaedu);
-									$("#select_carreras option[value='"+json.programas[i].programaedu+"']").attr('disabled','disabled');
+									//$("#select_carreras option[value='"+json.programas[i].programaedu+"']").attr('disabled','disabled');
 									$(".example41").multiselect('refresh');
 								}
 							}
@@ -1184,10 +1141,7 @@
 			}
 		});
 
-		$("#ver").on("click",function(){
-			alert("Mi zorrita esta cachorra y la adoro a la tontassss");
-			alert($("#select_carreras").val());
-		});
+		
 	});
 	</script>
 </body>

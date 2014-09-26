@@ -8,7 +8,10 @@ class PlanEstudioController extends BaseController
 		$this->beforeFilter('auth');
 	}
 	
-
+	/**
+	 * Ruta REST para obtener la vista del registro de una UNIDAD DE APRENDIZAJE
+	 * @return VIEW REGRESA LA VISTA CON LAS CONSULTAS DINAMICAS
+	 */
 	public function getRegistro()
 	{
 		// Obtener planes de estudio: 2010-1, 2010-2, 2010-3
@@ -271,14 +274,13 @@ class PlanEstudioController extends BaseController
 			
 			$UA -> save();
 
-			$programas = explode(",",Input::get('carreras'));
+			//$programas = explode(",",Input::get('carreras')); Cuando lo hacia de la manera compleja
+			$programas = Input::get('carreras');
 			foreach ($programas as $carrera) {
-
 				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
 			}
 
 			$mensaje = "Registros insertados";
-
 		}
 		else
 		{
@@ -476,6 +478,7 @@ class PlanEstudioController extends BaseController
 
 	public function postActualizarua()
 	{
+
 		$clave = Input::get("clave1F");
 		$UA = UnidadAprendizaje::find($clave);
 		//$UA -> plan = $noplan;
@@ -497,7 +500,8 @@ class PlanEstudioController extends BaseController
 		$UA -> coordinaciona = Input::get('coord');
 		$UA -> save();
 		
-		$add =Input::get('add_carreras');
+		// Esto era de la manera dificil
+		/*$add =Input::get('add_carreras');
 		if(!empty($add))
 		{
 			$programas = explode(",",Input::get('add_carreras'));
@@ -505,6 +509,18 @@ class PlanEstudioController extends BaseController
 			{
 				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
 			}
+		}*/
+
+		// Eliminar en p_ua Unidades asociadas a las carreras para hacer una actualizacion.
+		DB::table('p_ua')
+			->where("uaprendizaje","=",$UA -> uaprendizaje)
+			->delete();
+
+		// Posteriormente hacer las inserciones en p_ua de las Unidades Aprendizaje asociadas a los programas.
+		$programas = Input::get('carreras');
+		foreach ($programas as $carrera)
+		{
+			DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
 		}
 	}
 

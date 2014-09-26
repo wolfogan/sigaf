@@ -59,3 +59,61 @@ EN REGISTRO DE CARGA
 				agregarGruposSemestre(semestre,selectGrupos,function(data){
 					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+data+"</td></tr>");
 				});
+
+
+EN REGISTRO DE PLAN DE ESTUDIO
+
+	// INICIALIZAR MULTISELECTS DE PROGRAMAS EDUCATIVOS (CARRERAS)
+		$('.example41').multiselect({
+			includeSelectAllOption: true,
+			onChange: function(element, checked,index){
+				var brands = $('.example41 option:selected');
+				var selected = [];
+				$(brands).each(function(index, brand){
+					selected.push([$(this).val()]);
+				});
+				// Asignar arreglos para guardar los números de las carreras
+				$("#carreras").val(selected);
+
+				// En caso de actualizar guardar solo las nuevas
+				if($("#guardar").val()=="Actualizar")
+				{
+					if($(element).val()!=undefined) // Si no seleccionan todas las carreras
+					{
+						if(checked==true)
+						{
+							updated.push($(element).val());
+						}
+						else
+						{
+							var pos = updated.indexOf($(element).val());
+							pos > -1 && updated.splice(pos,1);
+						}
+						//alert(updated);
+					}
+					else
+					{
+						if(checked==true)
+						{
+							updated = [];
+							$('#select_carreras + div > button + .multiselect-container li input:enabled').each(function(index,element){
+								if(index!=0)
+									updated.push($(element).val());
+							});
+						}
+						else
+						{
+							updated=[];
+						}
+						//alert(updated);
+					}
+				}
+				$("#add_carreras").val(updated);
+			}
+		});
+
+		<input type="button" style="width:120px"class="estilo_button2" type="button" value="Ver" name="ver" id="ver" />
+		$("#ver").on("click",function(){
+			alert("Mi zorrita esta cachorra y la adoro a la tontassss");
+			alert($("#select_carreras").val());
+		});
