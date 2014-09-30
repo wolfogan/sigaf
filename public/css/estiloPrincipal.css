@@ -95,9 +95,7 @@ section #primerBloque
 {
 	
 	
-	padding-top: 20px;
-	padding-right: 0px;
-	padding-bottom: 10px;
+	padding-top: 40px;
 	height: 40px;
 	width: 1250px;
 	margin: auto;
@@ -105,8 +103,8 @@ section #primerBloque
 section #segundoBloque
 {
 	
-	padding-top: 20px;
-	padding-left:20px;
+	padding-top: 40px;
+	padding-left:10px;
 	height: 50px;
 	width: 1250px;
 	margin:auto;
@@ -114,21 +112,20 @@ section #segundoBloque
 section #tercerBloque
 {
 	
-	padding-top: 40px;
-	height: 60px;
-	width: 1250px;
-	margin-left: 0px;
-	margin-top: auto;
-	margin-right: auto;
-	margin-bottom: auto;
+	height: 40px;
+	width: 500px;
+	float: left;
+	margin-left: -10px;
+	margin-top: 20px;
 }
 section #cuartoBloque
 {
-
-	padding-top: 20px;
+	
+	float: left;
+	margin-top: 20px;
 	height: 125px;
-	width: 1250px;
-	margin: auto;
+	width: 450px;
+	
 }
 footer
 {
@@ -246,11 +243,11 @@ background: #EFCA0D;
 	border-radius:5px;
 	background-color:#004000; 
 	color:#fff; 
-	font-size:23px; 
+	font-size:21px; 
 	text-align: center;
 	height: 50px;
 	width:100px;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .estilo_button2:hover
 {
@@ -258,9 +255,9 @@ background: #EFCA0D;
 }
 #botones
 {
-	margin-top: -55px;
-	width: 280px;
+	margin-top: -70px;
 	float: right;
+	width: 360px;
 }
 #cimarron
 {
@@ -593,17 +590,18 @@ background: #EFCA0D;
 	
 	width: 240px;
 	float: left;
-	margin-left: 0px;
+	margin-left: 10px;
 	padding-right:7px;
 }
 #unidadAcademicaDiv
 {
 	
-	width: 150px;
+	width: 170px;
 	float: left;
 	margin-top:5px;
 	margin-left: -12px;	
 	padding-left: 20px;
+	padding-right: 30px;
 	
 }
 /*#campusDiv
@@ -622,14 +620,13 @@ background: #EFCA0D;
 	float: left;
 	margin-top: 5px;
 	padding-left: 15px;
-	padding-right: 15px;
+	padding-right: 30px;
 }
 #nivelDiv
 { 
-
-	width: 230px;
+	
+	width: 200px;
 	float: left;
-	padding-left: 66px;
 	padding-top: 5px;
 }
 /*#tipoProgrDiv
@@ -666,13 +663,8 @@ background: #EFCA0D;
 	float: left;
 	margin-left: 65px;
 }
-#semestreDiv
-{
-	width: 165px;
-	float: left;
-	padding-left:33px;
-}
-#claveSerDiv
+
+/*#claveSerDiv
 {
 	width: 140px;
 	float: left;
@@ -691,14 +683,19 @@ background: #EFCA0D;
 	width: 300px;
 	float: left;
 	padding-left: 10px;
+}*/
+#semestreDiv
+{
+	width: 165px;
+	float: left;
+	padding-left:33px;
+	padding-right: 30px;
 }
 #coordDiv
 {
-	
 	width: 245px;
 	float: left;
-	margin-left: 1020px;
-	margin-top: -45px;
+	
 }
 #hcDiv
 {
@@ -741,16 +738,19 @@ background: #EFCA0D;
 	
 	width: 200px;
 	float: left;
-	margin-left: -7px;
+	margin-left: 258px;
 
 }
 #observacionesDiv
 {
 	
-	width: 480px;
 	float: left;
-	margin-left: 270px;
 	margin-top: -80px;
+	margin-left: 10px;
+	width: 500px;
+	
+	
+	
 }
 
 #planTerminado
@@ -872,6 +872,28 @@ background: #EFCA0D;
 	text-align: left;
 	
 }
+
+.tblCatPlanAgregarSeriacion
+{
+	background:#ECECFB;
+	border-style: none;
+	border-collapse: separate;
+  	border-spacing: 7px 15px;
+  	border-radius: 7px;   	
+  	font-size: 14px; 	  	
+  	margin: auto;
+  	margin-left: -25px;
+  	margin-top: 50px;
+  	padding:10px;
+	width: 600px;
+}
+.tblCatPlanAgregarSeriacion td 
+{
+	color:#004000;
+	text-align: left;
+	
+}
+
 .lblCatalogosDependencias
 {
 	

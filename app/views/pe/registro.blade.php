@@ -37,6 +37,119 @@
 </head>
 <body>
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
+	
+	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
+	<div class="md-modal md-effect-11" id="add_seriacion"> 
+		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+			<h3>Agregar Seriación</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlanAgregarSeriacion">
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+
+					<tr>
+						<td>Tipo:</td>
+						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
+								<option value="SIN SERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGADA</option>
+								<option value="SUGERIDA">SUGERIDA</option>			
+							</select>
+						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
+						
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+					</tr>
+
+					<tr>
+						<td>Tipo:</td>
+						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
+								<option value="SIN SERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGADA</option>
+								<option value="SUGERIDA">SUGERIDA</option>			
+							</select>
+						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
+						
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+					</tr>
+
+					<tr>
+						<td>Tipo:</td>
+						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
+								<option value="SIN SERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGADA</option>
+								<option value="SUGERIDA">SUGERIDA</option>			
+							</select>
+						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
+						
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+					</tr>
+
+					<tr>
+						<td>Tipo:</td>
+						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
+								<option value="SIN SERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGADA</option>
+								<option value="SUGERIDA">SUGERIDA</option>			
+							</select>
+						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
+						
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+					</tr>
+
+					<tr>
+						<td>Tipo:</td>
+						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
+								<option value="SIN SERIACION">SIN SERIACION</option>
+								<option value="OBLIGADA">OBLIGADA</option>
+								<option value="SUGERIDA">SUGERIDA</option>			
+							</select>
+						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
+						
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+					</tr>
+					
+					
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+
+
+
 
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 	<div class="md-modal md-effect-11" id="plan"> 
@@ -322,6 +435,18 @@
 						<label>Campus: </label>
 						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
 					</div>-->
+
+				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
+				<div id="carreraDiv">
+					<label>Carrera:</label>
+					<select id="select_carreras" name="example" multiple="multiple" class="example41"></select>
+					<!-- Campo oculto para id´s de carreras -->
+					<input type="hidden" name="carreras" id="carreras"/>
+					<input type="hidden" name="add_carreras" id="add_carreras" />
+					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
+					<!--<input class="md-trigger" data-modal="carrera" type="button" value="+">-->
+					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
+				</div>
 				<!------------------------------------ UNIDAD ------------------------------------>
 				<div id="unidadDiv">
 					<label>Unidad: </label>
@@ -338,17 +463,7 @@
 					<!--<input class="md-trigger" data-modal="unidad" type="button" value="+">-->
 					<!-- LLAMADA MODAL UNIDAD ACADEMICA -->
 				</div>
-				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
-				<div id="carreraDiv">
-					<label>Carrera:</label>
-					<select id="select_carreras" name="example" multiple="multiple" class="example41"></select>
-					<!-- Campo oculto para id´s de carreras -->
-					<input type="hidden" name="carreras" id="carreras"/>
-					<input type="hidden" name="add_carreras" id="add_carreras" />
-					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
-					<!--<input class="md-trigger" data-modal="carrera" type="button" value="+">-->
-					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
-				</div>
+				
 				<!------------------------------------ NIVEL ------------------------------------>
 				<div id="nivelDiv">
 					<label>Nivel: </label>
@@ -408,37 +523,10 @@
 						<label>Sem:</label>
 						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 					</div>
-					<!-- INICIA MARCO DEL GRUPO SERIACIÓN -->
-					<fieldset id="group_seriacion">
-						<legend>Seriación</legend>
-						<!---------------------------------- TIPO SERIACION ---------------------------------->
-						<div id="seriacionDivTipo">
-							<label>Tipo Seriación: </label>
-							<select style="width: 143px; height:30px" class="con_estilo" name="serie" id="serie" size=1 type="text" required>
-								@foreach ($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-								@endforeach
-							</select>
-							<!-- LLAMADA MODAL SERIACIÓN-->
-							<input class="md-trigger" data-modal="seriacion" type="button" value="+">
-							<!-- LLAMADA MODAL SERIACIÓN-->
-						</div>
-						<!---------------------------------- CLAVE SERIACION ---------------------------------->
-						<div id="claveSerDiv">
-							<label>Clave: </label>
-								<input class="estilo_text" type="text" name="clave2F" id="clave2F" list="datalist_clave2F" size="1" disabled="disabled" autocomplete="off">
-								<datalist id="datalist_clave2F">
-									{{-- @foreach ($unidadesAprendizaje as $materia)
-										<option value="{{$materia->uaprendizaje}}" />
-									@endforeach --}}
-								</datalist>
-						</div>
-						<!---------------------------- DESCRIPCION UA SERIACION ---------------------------->
-						<div id="seriacionDivMateria">
-							<input class="con_estilo" style="height: 25px; width: 280px" text-transform:"uppercase" type="text" name="materiaSeriada" id="materiaSeriada" size="1" disabled/>	
-						</div>
-					<!-- TERMINA MARCO DEL GRUPO SERIACIÓN -->
-					</fieldset>
+					
+				
+
+
 					<!---------------------------------- COORDINACION ---------------------------------->
 					<div id="coordDiv">
 						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
@@ -489,19 +577,29 @@
 					<div id="creditosDiv">
 						<label>Créditos: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" >
 					</div>
-					<!------------------------------------ OBSERVACIONES ------------------------------------>
+					
+				</div>
+				<!-- TERMINA CUARTA SECCIÓN -->
+
+				<!------------------------------------ OBSERVACIONES ------------------------------------>
 					<div id="observacionesDiv">
 						<label>Observaciones:</label><br>
 						<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
-						<input type="submit" style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
-						<input type="button" style="width:120px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
+						
+						
+						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Seriación" name="seriacion"  />
+						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
+						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
+
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
-				</div>
-				<!-- TERMINA CUARTA SECCIÓN -->
+
+
+
+
 			</fieldset>
 			<!------------------------------------ MARCO SEGUNDA SECCIÓN ------------------------------------>
 		</form>
@@ -533,6 +631,7 @@
 						<th>HL</th>
 						<th>HT</th>
 						<th>CRÉDITOS</th>
+						<th>MODIFICAR</th>
 						<th>ELIMINAR</th>
 					</tr>
 				</thead>
@@ -549,6 +648,7 @@
 						<th>HL</th>
 						<th>HT</th>
 						<th>CRÉDITOS</th>
+						<th>MODIFICAR</th>
 						<th>ELIMINAR</th>
 					</tr>
 				</tfoot>
