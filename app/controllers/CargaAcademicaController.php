@@ -67,6 +67,7 @@ class CargaAcademicaController extends BaseController
 		$programas = DB::table("plan_programa")
 				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
 				->select("plan_programa.programaedu","programaedu.descripcion")
+				->where("plan_programa.programaedu","<>",6)
 				->whereIn("plan_programa.plan",$planes)
 				->distinct()
 				->get();
@@ -233,6 +234,21 @@ class CargaAcademicaController extends BaseController
 
 	public function getConsulta()
 	{
+		/**
+	 	* Función para integrar el guión en el código del plan de estudio 2009-2
+		 * @param  string $string_add    La cadena a agregar
+		 * @param  string $string_target La cadena donde se va a agregar el string
+		 * @param  int $offset        Puntero donde corta la caden
+		 * @return string                Regresa la cadena concatenada
+		 */
+		function str_insert($string_add,$string_target,$offset)
+		{
+			$part1 = substr($string_target,0, $offset);
+			$part2 = substr($string_target, $offset);
+
+			return $part1.$string_add.$part2;
+		}
+
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
 		$codigosPeriodo = array();
@@ -240,7 +256,13 @@ class CargaAcademicaController extends BaseController
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
-		return View::make("ca.consulta");
+		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
+		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+
+		// Matutino, Vespertino, Interturno
+		$turnos = Turno::all();
+
+		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
 	}
 
 	// Altas a tablas principales
@@ -299,10 +321,11 @@ class CargaAcademicaController extends BaseController
 		$plan = Input::get('noplan');
 		$programa = Input::get('programa');
 		$caracter = Input::get('caracter');
+		// Traer uas aprendizaje con las de tronco comun
 		$UAS = DB::table('p_ua')
 				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->select('p_ua.uaprendizaje','uaprendizaje.descripcionmat')
-				->where('p_ua.programaedu','=',$programa)
+				->whereIn('p_ua.programaedu',array($programa,6))
 				->where('uaprendizaje.plan','=',$plan)
 				->where('uaprendizaje.caracter','=',$caracter)
 				->orderBy('p_ua.uaprendizaje','asc')

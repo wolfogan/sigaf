@@ -9,8 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 
 		<!-- ------------------------------ Scripts Generales -------------------------------->
-		<script type="text/javascript" src="../js/jquery.js"></script>
-
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 		
 
@@ -71,20 +70,18 @@
 					<label>Periódo: </label>
 					<input class="estilo_text" style="width:150px;" type="text" name="periodo_ca" id="periodo_ca" list="datalist_periodo_ca" size=1 onkeypress="ValidaSoloNumeros()"/>
 					<datalist id="datalist_periodo_ca">
-						<option value="2013-2">
-						<option value="2013-4">
-						<option value="2014-1">
+						@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}">
+						@endforeach
 					</datalist>
 				</div>
 
 				<div id="consul_carrera_ca">
 					<label>Carrera: </label>
-					<select class="con_estilo" style="width:150px;" name="carrera_ca" size=1>
-						<option value="TC">TRONCO COMUN</option>
-						<option value="ADMON">ADMON.</option>
-						<option value="CONTAB">CONTAB.</option>
-						<option value="INFORMATICA">INFORMATICA</option>
-						<option value="NEGOCIOS">NEGOCIOS</option>
+					<select class="con_estilo" style="width:150px;" id="carrera_ca">
+						@foreach($programas as $programa)
+							<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
+						@endforeach
 					</select>
 				</div>
 
@@ -1479,5 +1476,10 @@
 	</footer>
 
 </div>
+<script type="text/javascript">
+	$(function(){
+		$("#carrera_ca").val("");
+	});
+</script>
 </body>
 </html>

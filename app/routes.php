@@ -51,7 +51,12 @@ Route::get('pruebas',function(){
 						->where("carga.periodo","=",'20142')
 						->groupBy("semestre","carga.periodo")
 						->get();
-	DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.uaprendizaje = ? and carga.periodo = ? and grupos.programaedu = ?",array(11236,20142,1));
+	
+	//DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.uaprendizaje = ? and carga.periodo = ? and grupos.programaedu = ?",array(11236,20142,1));
+
+
+	$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
