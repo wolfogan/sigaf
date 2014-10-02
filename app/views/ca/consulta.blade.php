@@ -87,20 +87,33 @@
 
 				<div id="consul_turno_ca">
 					<label>Turno: </label>
-					<input class="estilo_text" style="width:150px;" type="text" name="turno_ca" id="turno_ca" list="datalist_turno_ca" size="1"/>
+					<!--<input class="estilo_text" style="width:150px;" type="text" name="turno_ca" id="turno_ca" list="datalist_turno_ca" size="1"/>
 					<datalist id="datalist_turno_ca">
 						<option value="MATUTINO">
 						<option value="INTERTURNO">
 						<option value="VESPERTINO">
-					</datalist>
+					</datalist>-->
+					<select class="estilo_text" style="width:150px;" name="turno_ca" id="turno_ca"/>
+						<option value="0">TODOS</option>
+						@foreach($turnos as $turno)
+							<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
+						@endforeach
+					</select>
 				</div>
 
 				<div id="consul_semestre_ca">
 					<label>Semestre: </label>
 					<select class="con_estilo" style="width:80px;" name="semestre_ca" size=1>
-						<option value="PRIMERO">1</option>
-						<option value="SEGUNDO">2</option>
-						<option value="TERCERO">3</option>
+						<option value="0">TODOS</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
 					</select>
 				</div>
 				
@@ -1478,7 +1491,18 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		$("#carrera_ca").val("");
+		$("#periodo_ca").on("input",function(){
+			var periodoVal = $(this).val();
+			if(periodoVal.length == 6)
+			{
+				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{},function(data){
+
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			}
+		});
 	});
 </script>
 </body>
