@@ -314,12 +314,19 @@ class CargaAcademicaController extends BaseController
 					->where('programaedu','=',$programa)
 					->get();
 		return Response::json($grupos);
-	}t
+	}
 
 	public function postObtenergruposperiodo()
 	{
-		$programa = Input::get("programa"):
+		$programa = Input::get("programa");
 		$periodo = Input::get("periodo");
+		
+		$grupos = DB::table("grupos")
+					->where("programaedu","=",$programa)
+					->where("periodo","=",$periodo)
+					->get();
+
+		return $grupos;
 	}
 
 	public function postObteneruas()

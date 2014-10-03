@@ -66,6 +66,16 @@
 			<legend>Consultar por:</legend>
 
 			<div class="consultax_ca">
+				
+				<div id="consul_carrera_ca">
+					<label>Carrera: </label>
+					<select class="con_estilo" style="width:150px;" id="carrera_ca">
+						@foreach($programas as $programa)
+							<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
+						@endforeach
+					</select>
+				</div>
+
 				<div id="consul_periodo_ca">
 					<label>Periódo: </label>
 					<input class="estilo_text" style="width:150px;" type="text" name="periodo_ca" id="periodo_ca" list="datalist_periodo_ca" size=1 onkeypress="ValidaSoloNumeros()"/>
@@ -76,14 +86,6 @@
 					</datalist>
 				</div>
 
-				<div id="consul_carrera_ca">
-					<label>Carrera: </label>
-					<select class="con_estilo" style="width:150px;" id="carrera_ca">
-						@foreach($programas as $programa)
-							<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
-						@endforeach
-					</select>
-				</div>
 
 				<div id="consul_turno_ca">
 					<label>Turno: </label>
@@ -121,9 +123,6 @@
 					<label>Grupo: </label>
 					<input class="estilo_text" style="width:80px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
 					<datalist id="datalist_grupo_ca">
-						<option value="231">
-						<option value="241">
-						<option value="243">
 					</datalist>
 				</div>
 				
@@ -1491,12 +1490,24 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		$("#periodo_ca").on("input",function(){
-			var periodoVal = $(this).val();
-			if(periodoVal.length == 6)
-			{
-				$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{},function(data){
 
+		$("#carrera_ca").on("change",function(){
+			$("#periodo_ca").val("");
+		});
+
+		$("#periodo_ca").on("input",function(){
+			var periodoVal = $("#datalist_periodo_ca option[value='" + $(this).val() + "']").attr("codigo");
+			// AQUI POSIBLE EVALUACION DEPENDIENDO EL USUARIO
+			var programaVal = $("#carrera_ca").val();
+			//alert(periodoVal + " "+ programaVal);
+			if(periodoVal.length == 5)
+			{
+				$.post("<?php echo URL::to('cargaacademica/obtenergruposperiodo'); ?>",{programa:programaVal,periodo:periodoVal},function(grupos){
+					var options = "";
+					for (var i = 0; i < grupos.length; i++) {
+						options += "<option value='" + grupos[i].grupo + "'>";
+					}
+					$("#datalist_grupo_ca").html(options);
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);

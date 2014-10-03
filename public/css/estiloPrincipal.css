@@ -1456,7 +1456,8 @@ background: #EFCA0D;
 #consul_carrera_ca
 {
 	float: left;
-	padding-right: 40px;
+	margin-left: 20px;
+	padding-right: 25px;
 }
 #consul_grupo_ca
 {
