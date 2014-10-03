@@ -141,10 +141,10 @@
 					
 				</table>
 			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
-			</div>
+						<div class="CatBotones">
+							<input type="submit" class="estilo_button2" value="Guardar"/>
+							<input type="button" value="Salir" class="md-close" />
+						</div>
 		</form>
 	</div>
 

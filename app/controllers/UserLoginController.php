@@ -33,4 +33,10 @@ class UserLoginController extends BaseController
 		Auth::logout();
 		return Redirect::to('/');
 	}
+
+
+	public function getUsuariosregistro()
+	{
+		return View::make('usuarios.usuariosRegistro');
+	}
 }

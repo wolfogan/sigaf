@@ -197,7 +197,19 @@
 
 		                   		<div id="dd_trabajoFuera_puesto_antiguedad">
 									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text"/></div>
-									<div class="dd_otroEmpleo">Puesto:<input class="dd_con_estilo_largo" style="margin-left:122px;" type="text"/></div>
+									
+									<div class="dd_otroEmpleo">Puesto:
+										<select style="margin-left:117px; width:252px;" class="dd_con_estilo_largo">
+											<option>DIRECTOR</option>
+											<option>SUBDIRECTOR</option>
+											<option>COORDINADOR</option>
+										</select>
+									</div>
+
+
+
+
+										
 									<div class="dd_otroEmpleo">Fecha de ingreso:<input class="dd_con_estilo_largo" style="margin-left:50px;" type="date"/></div>
 									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:90px;" type="text"/></div>
 								</div>
