@@ -137,8 +137,11 @@ class PlanEstudioController extends BaseController
 
 
 
-	// ALTAS DE CATALOGOS
-	// 
+	///////////////////////////////////// ALTAS DE CATALOGOS /////////////////////////////////////
+	/**
+	 * Función que permite registrar un nuevo plan de estudios
+	 * @return string Mensaje de confirmación
+	 */
 	public function postRegistrarplan()
 	{
 		$plan = new PlanEstudio;
@@ -149,6 +152,7 @@ class PlanEstudioController extends BaseController
 		$plan -> feciniciovig = Input::get('planestudio_feciniciovig');
 		$plan -> fecfinvig = Input::get('planestudio_fecfinvig');
 		$plan -> credpracticas = Input::get('planestudio_credpracticas');
+		$plan -> users_id = Input::get('planestudio_userid');
 		$plan -> save();
 		
 		

@@ -1,0 +1,8 @@
+http://www.identi.li/index.php?topic=339541
+http://www.identi.li/index.php?topic=334650
+http://bohr.inf.um.es/miembros/rgm/s+mf/161s+mf.pdf
+http://javascript.espaciolatino.com/orientar/formscript.htm
+https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JavaScript_Language_Rules
+http://mundogeek.net/archivos/2004/07/22/javascript-variables-constantes-y-tipos-de-datos/
+http://www.forosdelweb.com/f13/pasar-valores-formulario-funcion-javascript-279304/
+http://vertutoriales.com/asignar-valor-a-un-objeto-html-con-javascript-utilizando-document-getelementbyid/

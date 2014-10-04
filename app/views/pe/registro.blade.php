@@ -153,7 +153,7 @@
 
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 	<div class="md-modal md-effect-11" id="plan"> 
-		<form id="formUA" action="<?=URL::to('planestudio/registrarplan'); ?>" class="md-content" method="post">
+		<form id="formUA" action="javascript:registrarPlanEstudios(document.forms.formUA);" name="formUA" class="md-content" method="post">
 			<h3>Agregar Plan</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -207,6 +207,7 @@
 				</table>
 			</div>
 			<div class="CatBotones">
+				<input type="hidden" name="planestudio_userid" />
 				<input type="submit" class="estilo_button2" value="Guardar"/>
 				<input type="button" value="Salir" class="md-close" />
 			</div>
@@ -664,6 +665,25 @@
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
 	<script type="text/javascript">
+
+	function registrarPlanEstudios(formPlan)
+	{
+		console.log(formPlan);
+		alert(USER_ID);
+		formPlan.planestudio_userid.value = USER_ID;
+		alert(formPlan.planestudio_userid.value);
+		var datosPlan = $(formPlan).serialize();
+		$.post("<?=URL::to('planestudio/registrarplan'); ?>",datosPlan,function(mensaje){
+			alert(mensaje);
+		})
+		.fail(function(errorText,textError,errorThrow){
+			alert(errorText.responseText);
+			console.log(errorText);
+			console.log(textError);
+			console.log(errorThrow);
+		});
+	}
+
 	// FUNCION registrarUnidadAprendizaje
 	/**
 	 * Función principal que permite el registro de la Unidad de Aprendizaje en un Plan de Estudio
@@ -891,7 +911,8 @@
 
 |	<script type="text/javascript">
 	$(function(){
-		
+		// Guardar Constantes
+		USER_ID = {{Auth::user()->id}};
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $('#tblUA').DataTable();
 		// Para añadir unidades de aprendizaje a las carreras con el update
