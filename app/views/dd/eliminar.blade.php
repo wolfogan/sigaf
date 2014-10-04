@@ -88,15 +88,15 @@
 		</fieldset>
 
 							<div id="dd_eliminarDocentes">
-			                    <table class="dd_tablaImpartirMaterias">
+			                    <table class="dd_tabla_MatImpartir">
 									
-									<thead class="dd_encabezadoImpartirMaterias">
+									<thead class="dd_encabezado">
 										<tr>
 											<th>NO. EMPLEADO</th>
 											<th>NOMBRE</th>
 											<th>HABILITAR/ DESHABILITAR</th>
 											<th>MODIFICAR</th>
-											<th>ELIMINAR</th>
+											
 										</tr>
 									</thead>
 									<tbody>
@@ -105,105 +105,105 @@
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>	
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
 											<td>HABILITADO</td>
 											<td><input type="button" value="" class="clsModificarFila"></td>
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
+											
 										</tr>
 										
 																		

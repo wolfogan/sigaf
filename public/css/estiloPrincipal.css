@@ -95,9 +95,7 @@ section #primerBloque
 {
 	
 	
-	padding-top: 20px;
-	padding-right: 0px;
-	padding-bottom: 10px;
+	padding-top: 40px;
 	height: 40px;
 	width: 1250px;
 	margin: auto;
@@ -105,8 +103,8 @@ section #primerBloque
 section #segundoBloque
 {
 	
-	padding-top: 20px;
-	padding-left:20px;
+	padding-top: 40px;
+	padding-left:10px;
 	height: 50px;
 	width: 1250px;
 	margin:auto;
@@ -114,21 +112,20 @@ section #segundoBloque
 section #tercerBloque
 {
 	
-	padding-top: 40px;
-	height: 60px;
-	width: 1250px;
-	margin-left: 0px;
-	margin-top: auto;
-	margin-right: auto;
-	margin-bottom: auto;
+	height: 40px;
+	width: 500px;
+	float: left;
+	margin-left: -10px;
+	margin-top: 20px;
 }
 section #cuartoBloque
 {
-
-	padding-top: 20px;
+	
+	float: left;
+	margin-top: 20px;
 	height: 125px;
-	width: 1250px;
-	margin: auto;
+	width: 450px;
+	
 }
 footer
 {
@@ -246,11 +243,11 @@ background: #EFCA0D;
 	border-radius:5px;
 	background-color:#004000; 
 	color:#fff; 
-	font-size:23px; 
+	font-size:21px; 
 	text-align: center;
 	height: 50px;
 	width:100px;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .estilo_button2:hover
 {
@@ -258,9 +255,9 @@ background: #EFCA0D;
 }
 #botones
 {
-	margin-top: -55px;
-	width: 280px;
+	margin-top: -70px;
 	float: right;
+	width: 360px;
 }
 #cimarron
 {
@@ -593,17 +590,18 @@ background: #EFCA0D;
 	
 	width: 240px;
 	float: left;
-	margin-left: 0px;
+	margin-left: 10px;
 	padding-right:7px;
 }
 #unidadAcademicaDiv
 {
 	
-	width: 150px;
+	width: 170px;
 	float: left;
 	margin-top:5px;
 	margin-left: -12px;	
 	padding-left: 20px;
+	padding-right: 30px;
 	
 }
 /*#campusDiv
@@ -622,14 +620,13 @@ background: #EFCA0D;
 	float: left;
 	margin-top: 5px;
 	padding-left: 15px;
-	padding-right: 15px;
+	padding-right: 30px;
 }
 #nivelDiv
 { 
-
-	width: 230px;
+	
+	width: 200px;
 	float: left;
-	padding-left: 66px;
 	padding-top: 5px;
 }
 /*#tipoProgrDiv
@@ -666,13 +663,8 @@ background: #EFCA0D;
 	float: left;
 	margin-left: 65px;
 }
-#semestreDiv
-{
-	width: 165px;
-	float: left;
-	padding-left:33px;
-}
-#claveSerDiv
+
+/*#claveSerDiv
 {
 	width: 140px;
 	float: left;
@@ -691,14 +683,19 @@ background: #EFCA0D;
 	width: 300px;
 	float: left;
 	padding-left: 10px;
+}*/
+#semestreDiv
+{
+	width: 165px;
+	float: left;
+	padding-left:33px;
+	padding-right: 30px;
 }
 #coordDiv
 {
-	
 	width: 245px;
 	float: left;
-	margin-left: 1020px;
-	margin-top: -45px;
+	
 }
 #hcDiv
 {
@@ -741,16 +738,19 @@ background: #EFCA0D;
 	
 	width: 200px;
 	float: left;
-	margin-left: -7px;
+	margin-left: 258px;
 
 }
 #observacionesDiv
 {
 	
-	width: 480px;
 	float: left;
-	margin-left: 270px;
 	margin-top: -80px;
+	margin-left: 10px;
+	width: 500px;
+	
+	
+	
 }
 
 #planTerminado
@@ -872,6 +872,28 @@ background: #EFCA0D;
 	text-align: left;
 	
 }
+
+.tblCatPlanAgregarSeriacion
+{
+	background:#ECECFB;
+	border-style: none;
+	border-collapse: separate;
+  	border-spacing: 7px 15px;
+  	border-radius: 7px;   	
+  	font-size: 14px; 	  	
+  	margin: auto;
+  	margin-left: -25px;
+  	margin-top: 50px;
+  	padding:10px;
+	width: 600px;
+}
+.tblCatPlanAgregarSeriacion td 
+{
+	color:#004000;
+	text-align: left;
+	
+}
+
 .lblCatalogosDependencias
 {
 	
@@ -891,170 +913,46 @@ background: #EFCA0D;
 /*-----------------TERMINA CATALOGOS-------------*/
 
 /* ---------------- USUARIOS --------------------*/
-#usuarioContrasena
-{
-	background: blue;
-	 height: 300px;
-	 width: 450px;
-	 margin: auto;
-	 padding-bottom: 150px;
-}
-#introUsuarioContrasena
-{
-	
-	color:#004000;
-	font-size: 17px;
-	margin-left:-36px;
-	padding-bottom: 20px;
-	width: 450px;
 
-}
-#usuarios
-{
-	background: white;
-	border-radius: 10px;
-	border: 3px solid orange;
-	height: 300px;
-	width: 400px;
-	margin: auto;
-	margin-top: 70px;
-	
-}
-#usuarioLogin
+.us_txtNoEmpleado
 {
 	
-	margin: auto;
-	margin-top: 10px;
-	width: 300px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 500px;
 }
-#contrasenaLogin
-{
-	
-	margin: auto;
-	margin-top: 20px;
-	padding-bottom: 20px;
-	width: 300px;
-	
-	
-}
-#btnIniciarSesion
-{
 
-	margin: auto;
-	width: 200px;
-}
-#RegistrarseUsuarios
+.btnUnidadAcadRegistro
 {
+	
+	margin-left: 415px;
+	margin-top: -27px;
+	width: 50px;
 
-	font-size: 16px;
-	font-family: "Trebuchet Ms";
-	font-weight: bold;
-	color:#004000;
-	margin-right:0px;
-	margin-top: 15px;
-	width: 300px;
 }
 
 #formularioRegUsuarios
 {
-
-	
-	margin: auto;
-	margin-top: 70px;
-	padding-bottom: 50px;
-	width: 670px;
-}
-#nombreApellidos
-{
-	
-	margin-top: 30px;
-	margin: auto;
-	padding-left: 15px;
-	padding-top: 20px;
-	padding-bottom:60px;
-	width: 630px;
-
-}
-#nombreRegUsuarios
-{
-	
-	float: left;
-	width: 300px;
-}
-#apellidosRegUsuarios
-{
-	
-	float: left;
-	padding-left: 30px;
-	width: 300px;
-}
-#correoContrasena
-{
-	margin:auto;
-	padding-left: 15px;
-	padding-bottom: 70px;
-	width: 630px;
-	
-}
-#correoE
-{
-	
-	float: left;	
-	width: 300px;
-}
-#contrasenaRegUsuarios
-{
-	
-	float: left;	
-	padding-left: 30px;
-	width: 300px;
-}
-
-#unidadCampusReg
-{
-
-	
-	margin:auto;
-	padding-left: 15px;
-	padding-bottom: 150px;
-	width: 670px;
-
-}
-#unidadAcadRegUsuarios
-{
-	
-	float: left;
+	border: 1px solid gray;
 	padding-left: 20px;
-	width: 300px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: auto;
+	margin-top: 30px;
+	width: 530px;
 }
-#campusRegUsuarios
-{
-	
-	float: left;
-	padding-left: 30px;
-	width: 320px;
-}
-#btnCampusReg
-{
-	
-	float: left;
-	padding-left: 7px;
-	width: 30px;
-}
-#btnRegistroUsuario
-{
-	
-	margin:auto;
-	width: 200px;
-}
-#btnUnidadAcadRegistro
-{
-	
-	float: left;
-	padding-left: 7px;
-	width: 30px;
 
+#us_btnRegistroUsuario
+{
+	padding-top: 30px;
+	margin: auto;
+	width: 220px;
 }
+
+
+
+
+
 
 /* ------------------------------------------------------*/
 
@@ -1164,7 +1062,10 @@ background: #EFCA0D;
 }
 .clsModificarFila:hover
 {
-	border-color: #468C00;
+
+	border: 3px solid green;
+	background-color: #fff;
+	background-image: url(../imagenes/modify.png);
 
 }
 
@@ -1650,10 +1551,11 @@ input[readonly],input[readonly="readonly"]
 	border-radius: 5px;
 	border-color: #CACAD9;
 }
+
 .dd_con_estilo_largo
 {
 	font-size: 14px;
-	width:300px;
+	width:250px;
 	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
@@ -1667,16 +1569,17 @@ input[readonly],input[readonly="readonly"]
 	border-color: #CACAD9;
 
 }
-.dd_con_estilo_foto
+
+.dd_estilo_cedula
 {
 	font-size: 14px;
-	width:170px;
-	height:100px;
+	width:100px;
+	height:25px;
 	border-radius: 5px;
 	border-color: #CACAD9;
-	margin-left:43px;
 
 }
+
 .dd_con_estilo_corto
 {
 	font-size: 14px;
@@ -1722,64 +1625,88 @@ input[readonly],input[readonly="readonly"]
 	margin-top: 20px;
 	width: 1130px;
 }
-#dd_aPaterno
+.dd_datosPersonales
 {
+
 	
-	
-	float: left;
+	padding-bottom: 20px;
 	padding-right: 10px;
-	width: 260px;
-
+	width: 400px;
 }
-#dd_aMaterno
+.dd_otroEmpleo
 {
 	
-	float: left;
-	padding-right: 7px;
-	width: 270px;
-}
-#dd_nombres
-{
-
-	float: left;
+	
+	padding-bottom: 20px;
 	padding-right: 10px;
-	width: 390px;
+	width: 500px;
 }
-#dd_sexo
-{
-	
-	float: left;
-	width: 180px;
-}
-
 
 #dd_foto
 {
-
-	margin-top: 70px;
+	margin-left: 500px;
+	margin-top: -220px;
 	width: 270px;
+	margin-bottom: 45px;
 
+}
+#dd_RemovFoto
+{
+	margin-left: 750px;
+	margin-top:-150px;
+}
+
+#dd_foto input
+{
+	border: 5px dotted #ECECFB;
+	border-radius: 5px 5px 5px 5px;
+
+	width:200px;
+	height:150px;
+	margin-left:43px;
+}
+#dd_subirFoto
+{
+	
+	margin-top: -90px;
+	margin-left: 750px;
+	margin-bottom: 50px;
+	width: 200px;
 }
 
 #dd_calle
 {
 	
 	float: left;
-	padding-right: 20px;
+	padding-right: 5px;
 	width: 380px;
 
 }
-#dd_colonia_calle_int_ext_cp
+.dd_colonia_calle_int_ext_cp
 {
 
-	background: #F5F5F5;
+	background: #fff;
 	border-radius: 7px;
 	height: 130px;
 	border:3px solid #ECECFB;
-	padding-left: 10px;
+	margin-left: 20px;
+	padding-left: 15px;
 	padding-top:20px;
-
+	width: 1150px;
 	
+
+}
+.dd_divDecoracionTelefonos
+{
+	background: #fff;
+	border-radius: 7px;
+	border:3px solid #ECECFB;
+	margin-left: 20px;
+	padding-left: 15px;
+	padding-top:10px;
+	padding-bottom: 20px;
+	height: 130px;
+	width: 1150px;
 
 }
 
@@ -1787,7 +1714,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 10px;
+	padding-right: 24px;
 	width: 140px;
 
 }
@@ -1795,7 +1722,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 10px;
+	padding-right: 24px;
 	width: 140px;
 
 }
@@ -1803,7 +1730,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 10px;
+	padding-right: 24px;
 	width: 120px;
 
 }
@@ -1853,13 +1780,15 @@ input[readonly],input[readonly="readonly"]
 
 #dd_trabajoFuera_puesto_antiguedad
 {
-	background: #F5F5F5;
-	height: 50px;
+	background: #fff;
+	height: 200px;
 	border-radius: 7px;
 	border:3px solid #ECECFB;
 	padding-top: 20px;
-	padding-left: 10px;
+	padding-left: 20px;
 	padding-bottom: 10px;
+	margin-left: 150px;
+	width: 850px;
 
 
 }
@@ -1896,15 +1825,14 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_licenciatura_uniEgreso_fechaTitulacion_cedula
 {
-	
 	padding-bottom: 40px;
-	width: 1150px;
+	width: 1180px;
 }
 .dd_licenciatura
 {
 	
 	float: left;
-	margin-left:40px;
+	margin-left:10px;
 	padding-right: 20px;
 
 }
@@ -1919,22 +1847,25 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 25px;
+	padding-right: 5px;
 
 }
 .dd_cedula
 {
-	background: white;
+	
 	float: left;
 	padding-left: 20px;
-	width: 200px;
+	width: 170px;
 
 }
+
+
 .dd_btnAdd
 {
 	
 	
 	float: left;
+	padding-right: 5px;
 	width: 30px;
 	
 }
@@ -2018,6 +1949,7 @@ input[readonly],input[readonly="readonly"]
 	height: 40px;
 }
 
+
 .dd_encabezado_blanco
 {
 	background: #fff;
@@ -2099,6 +2031,8 @@ input[readonly],input[readonly="readonly"]
 
 #dd_consulta
 {
+	
+	margin-bottom: 30px;
 	margin:auto;
 	margin-top: 40px;
 	width: 850px;
@@ -2129,7 +2063,9 @@ input[readonly],input[readonly="readonly"]
 .dd_clsAgregarFila
 {
 	
-	background-color:#004000;
+	background-image: url(../imagenes/add.png);
+	background-repeat: no-repeat;
+
 	color:#fff;
 	text-align: center;
 	height:30px; 
@@ -2141,18 +2077,93 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_clsAgregarFila:hover
 {
-	background: #ECA22E;
-	color:#004000;
-	font-weight: bolder;
+	border: 3px solid green;
+	background-image: url(../imagenes/add1.png);
+
+}
+
+.dd_clsAgregarArchivo
+{
+	
+	background-image: url(../imagenes/attachhh.png);
+	background-repeat: no-repeat;
+	background-color: #fff;
+	background-position: center;
+
+
+	
+	height:30px; 
+	width:30px; 
+	border-radius:5px;
+	border-color: #468C00;
+	font-size:16px;
+	font-weight:bold;
+}
+.dd_clsAgregarArchivo:hover
+{
+	border: 3px solid green;
+	background-image: url(../imagenes/attachhh1.png);
+	background-color: #fff;
+
+}
+
+.dd_clsCancelar
+{
+	
+	background-image: url(../imagenes/cancel.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+
+
+	
+	
+	height:30px; 
+	width:30px; 
+	border-radius:5px;
+	border-color: #468C00;
+	font-size:16px;
+	font-weight:bold;
+}
+.dd_clsCancelar:hover
+{
+	border: 3px solid green;
+	background-color: #fff;
+	background-image: url(../imagenes/cancel1.png);
 
 }
 .dd_divDecoracion
 {
-	background: #F5F5F5;
+	margin-left: 150px;
+	background: #FFF;
+	border-radius: 7px;
+	border:3px solid #ECECFB;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	width: 850px;
+	
+
+}
+.dd_divDecoracionCursos
+{
+	
+	background: #FFF;
 	border-radius: 7px;
 	border:3px solid #ECECFB;
 	padding-left: 10px;
 	padding-bottom: 10px;
+	width: 1200px;
+	
+
+}
+.dd_divDecoracionEstudios
+{
+	background: #FFF;	
+	border-radius: 7px;
+	border:3px solid #ECECFB;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 1200px;
 	
 
 }
@@ -2175,7 +2186,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 30px;
+	padding-right: 5px;
 	width: 250px;
 	
 }
@@ -2183,14 +2194,14 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: left;
-	padding-right: 30px;
+	padding-right: 13px;
 	width: 250px;
 }
 #dd_otro
 {
 	
 	float: left;
-	width: 250px;
+	width: 280px;
 }
 
 

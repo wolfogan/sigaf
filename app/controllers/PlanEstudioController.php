@@ -112,10 +112,10 @@ class PlanEstudioController extends BaseController
 		return View::make('pe.usuarios');
 	}
 	
-	public function getUsuariosregistro()
+	/*public function getUsuariosregistro()
 	{
 		return View::make('pe.usuariosRegistro');
-	}
+	}*/
 
 	public function getBitacora()
 	{
