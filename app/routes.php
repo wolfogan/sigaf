@@ -29,6 +29,7 @@ Route::controller('planestudio','PlanEstudioController');
 Route::controller('cargaacademica','CargaAcademicaController');
 Route::controller('disponibilidaddocente','DisponibilidadDocenteController');
 Route::controller('ayuda','AyudaController');
+Route::controller('usuarios','UserLoginController');
 
 Route::get('pruebas',function(){
 

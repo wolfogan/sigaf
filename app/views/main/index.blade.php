@@ -106,7 +106,7 @@
 			<div class="mask">
 				<h2>Login y usuarios</h2>
 				<p>
-					Registro, consulta, modificación, eliminación
+					<a href="<?=URL::to('usuarios/usuariosregistro');?>" style="color:#004000">Registrar usuario, consultar, modificar, eliminar</a>
 				</p>
 				<!--<a href="#" class="info">Read More</a>-->
 			</div>
