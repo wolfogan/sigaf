@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-10-04 13:53:40
+Date: 2014-10-06 20:53:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `act_adicional_emp` (
   CONSTRAINT `fk_act_adicional_emp_caracteristica_cur1` FOREIGN KEY (`caracteristica_cur`) REFERENCES `caracteristica_cur` (`caracteristica_cur`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_act_adicional_emp_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_act_adicional_emp_tipo_curso_emp1` FOREIGN KEY (`tipo_curso_emp`) REFERENCES `tipo_curso_emp` (`tipo_curso_emp`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_act_adicional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_act_adicional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -57,7 +57,7 @@ CREATE TABLE `act_profesional_adic` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`curso`),
   KEY `fk_act_profesional_adic_users1_idx` (`users_id`),
-  CONSTRAINT `fk_act_profesional_adic_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_act_profesional_adic_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -84,7 +84,7 @@ CREATE TABLE `act_profesional_emp` (
   KEY `fk_act_profesional_emp_nvprograma1_idx` (`nivel`),
   KEY `fk_act_profesional_emp_users1_idx` (`users_id`),
   CONSTRAINT `fk_act_profesional_emp_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`),
-  CONSTRAINT `fk_act_profesional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION,
+  CONSTRAINT `fk_act_profesional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_carreras_emp_has_empleados_carreras_emp1` FOREIGN KEY (`carrera`) REFERENCES `carreras_emp` (`carrera`),
   CONSTRAINT `fk_carreras_emp_has_empleados_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_carr_emp_universidades_emp1` FOREIGN KEY (`universidad`) REFERENCES `universidades_emp` (`universidad`)
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=996 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1104 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1108,6 +1108,114 @@ INSERT INTO `bitacora` VALUES ('992', 'programaedu', '10', 'U', '2014-10-04 00:0
 INSERT INTO `bitacora` VALUES ('993', 'programaedu', '10', 'I', '2014-10-04 00:00:00', '0|SISTEMAS COMPUTACIONALES|1|2|1|1|1', null);
 INSERT INTO `bitacora` VALUES ('994', 'programaedu', '10', 'U', '2014-10-04 00:00:00', '7|SISTEMAS COMPUTACIONALES|1|2|1|1|1', '0|SISTEMAS COMPUTACIONALES|1|2|1|1|1');
 INSERT INTO `bitacora` VALUES ('995', 'programaedu', '10', 'I', '2014-10-04 00:00:00', '1|ARTES|1|2|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('996', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20101|Plan 2010-1 SEP 534523|400|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('997', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|400|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('998', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20101|Plan 2010-1 SEP 534523|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('999', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1000', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1001', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1002', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1003', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1004', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1005', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1006', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('1007', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('1008', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('1009', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('1010', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('1011', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1012', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1013', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1014', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1015', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1016', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1017', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1018', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1019', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1020', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1021', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1022', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1023', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1024', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('1025', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('1026', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('1027', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('1028', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('1029', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1030', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1031', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1032', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1033', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1034', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1035', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1036', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1037', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1038', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20102|Plan 2010-2 SEP 432421|900|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1039', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|1', null);
+INSERT INTO `bitacora` VALUES ('1040', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|2', null);
+INSERT INTO `bitacora` VALUES ('1041', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|3', null);
+INSERT INTO `bitacora` VALUES ('1042', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|4', null);
+INSERT INTO `bitacora` VALUES ('1043', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|5', null);
+INSERT INTO `bitacora` VALUES ('1044', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|6', null);
+INSERT INTO `bitacora` VALUES ('1045', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|7', null);
+INSERT INTO `bitacora` VALUES ('1046', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20103|Plan 2010-3 SEP 432421|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1047', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|1', null);
+INSERT INTO `bitacora` VALUES ('1048', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|2', null);
+INSERT INTO `bitacora` VALUES ('1049', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|3', null);
+INSERT INTO `bitacora` VALUES ('1050', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|4', null);
+INSERT INTO `bitacora` VALUES ('1051', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|5', null);
+INSERT INTO `bitacora` VALUES ('1052', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|6', null);
+INSERT INTO `bitacora` VALUES ('1053', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20103|7', null);
+INSERT INTO `bitacora` VALUES ('1054', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20104|vamos|890|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1055', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20105|asdf|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1056', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20107|adsf|8000|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1057', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1058', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1059', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('1060', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('1061', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('1062', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('1063', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('1064', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|1');
+INSERT INTO `bitacora` VALUES ('1065', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|2');
+INSERT INTO `bitacora` VALUES ('1066', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|3');
+INSERT INTO `bitacora` VALUES ('1067', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|4');
+INSERT INTO `bitacora` VALUES ('1068', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|5');
+INSERT INTO `bitacora` VALUES ('1069', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|6');
+INSERT INTO `bitacora` VALUES ('1070', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|7');
+INSERT INTO `bitacora` VALUES ('1071', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|1');
+INSERT INTO `bitacora` VALUES ('1072', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|2');
+INSERT INTO `bitacora` VALUES ('1073', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|3');
+INSERT INTO `bitacora` VALUES ('1074', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|4');
+INSERT INTO `bitacora` VALUES ('1075', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|5');
+INSERT INTO `bitacora` VALUES ('1076', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|6');
+INSERT INTO `bitacora` VALUES ('1077', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20103|7');
+INSERT INTO `bitacora` VALUES ('1078', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1079', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20102|Plan 2010-2 SEP 432421|900|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1080', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20103|Plan 2010-3 SEP 432421|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1081', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20104|vamos|890|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1082', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20105|asdf|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1083', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20107|adsf|8000|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1084', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20101|Plan 2010-1 SEP 534523|600|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1085', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1086', 'planestudio', '9', 'I', '2014-10-06 00:00:00', '20102|Por favor una descripicion|900|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1087', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|1', null);
+INSERT INTO `bitacora` VALUES ('1088', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|2', null);
+INSERT INTO `bitacora` VALUES ('1089', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|3', null);
+INSERT INTO `bitacora` VALUES ('1090', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|4', null);
+INSERT INTO `bitacora` VALUES ('1091', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|5', null);
+INSERT INTO `bitacora` VALUES ('1092', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|6', null);
+INSERT INTO `bitacora` VALUES ('1093', 'plan_programa', '9', 'I', '2014-10-06 00:00:00', '20102|7', null);
+INSERT INTO `bitacora` VALUES ('1094', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1095', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|1');
+INSERT INTO `bitacora` VALUES ('1096', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|2');
+INSERT INTO `bitacora` VALUES ('1097', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|3');
+INSERT INTO `bitacora` VALUES ('1098', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|4');
+INSERT INTO `bitacora` VALUES ('1099', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|5');
+INSERT INTO `bitacora` VALUES ('1100', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|6');
+INSERT INTO `bitacora` VALUES ('1101', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|7');
+INSERT INTO `bitacora` VALUES ('1102', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|600|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1103', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20102|Por favor una descripicion|900|2014-10-01|2014-10-31|1');
 
 -- ----------------------------
 -- Table structure for campus
@@ -1124,7 +1232,7 @@ CREATE TABLE `campus` (
   KEY `fk_campus_ciudad1_idx` (`ciudad`),
   KEY `fk_campus_users1_idx` (`users_id`),
   CONSTRAINT `fk_campus_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
-  CONSTRAINT `fk_campus_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_campus_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -1146,7 +1254,7 @@ CREATE TABLE `caracter` (
   PRIMARY KEY (`caracter`),
   UNIQUE KEY `CAR_codigo_UNIQUE` (`caracter`),
   KEY `fk_caracter_users1_idx` (`users_id`),
-  CONSTRAINT `fk_caracter_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_caracter_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -1166,7 +1274,7 @@ CREATE TABLE `caracteristica_cur` (
   PRIMARY KEY (`caracteristica_cur`),
   UNIQUE KEY `caracteristica_cur_UNIQUE` (`caracteristica_cur`),
   KEY `fk_caracteristica_cur_users1_idx` (`users_id`),
-  CONSTRAINT `fk_caracteristica_cur_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_caracteristica_cur_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1188,7 +1296,7 @@ CREATE TABLE `carga` (
   KEY `fk_carga_users1_idx` (`users_id`),
   CONSTRAINT `fk_carga_grupos1` FOREIGN KEY (`grupo`, `periodo`) REFERENCES `grupos` (`grupo`, `periodo`),
   CONSTRAINT `fk_carga_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`),
-  CONSTRAINT `fk_carga_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_carga_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1205,7 +1313,7 @@ CREATE TABLE `carreras_emp` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`carrera`),
   KEY `fk_carreras_emp_users1_idx` (`users_id`),
-  CONSTRAINT `fk_carreras_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_carreras_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1223,7 +1331,7 @@ CREATE TABLE `categorias` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`categoria`),
   KEY `fk_categorias_users1_idx` (`users_id`),
-  CONSTRAINT `fk_categorias_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_categorias_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1249,7 +1357,7 @@ CREATE TABLE `ciudad` (
   KEY `fk_ciudad_estado1_idx` (`estado`),
   KEY `fk_ciudad_users1_idx` (`users_id`),
   CONSTRAINT `fk_ciudad_estado1` FOREIGN KEY (`estado`) REFERENCES `estado` (`estado`),
-  CONSTRAINT `fk_ciudad_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_ciudad_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=651 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -1920,7 +2028,7 @@ CREATE TABLE `coordinaciona` (
   KEY `fk_coordinaciona_programaedu1_idx` (`programaedu`),
   KEY `fk_coordinaciona_users1_idx` (`users_id`),
   CONSTRAINT `fk_coordinaciona_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`),
-  CONSTRAINT `fk_coordinaciona_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_coordinaciona_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1962,7 +2070,7 @@ CREATE TABLE `detalleseriacion` (
   KEY `fk_detalleseriacion_users1_idx` (`users_id`),
   CONSTRAINT `fk_detalleseriacion_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_detalleseriacion_uaprendizaje2` FOREIGN KEY (`uaprequisito`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detalleseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_detalleseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -1980,7 +2088,7 @@ CREATE TABLE `dias` (
   PRIMARY KEY (`dia`),
   UNIQUE KEY `DI_dia_UNIQUE` (`dia`),
   KEY `fk_dias_users1_idx` (`users_id`),
-  CONSTRAINT `fk_dias_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_dias_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2008,7 +2116,7 @@ CREATE TABLE `disp_hrs_dias` (
   CONSTRAINT `fk_disponibilidad_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_disponibilidad_horas1` FOREIGN KEY (`hora`) REFERENCES `horas` (`hora`),
   CONSTRAINT `fk_disp_hrs_dias_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`),
-  CONSTRAINT `fk_disp_hrs_dias_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_disp_hrs_dias_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2033,7 +2141,7 @@ CREATE TABLE `disp_ua` (
   CONSTRAINT `fk_disp_ua_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_disp_ua_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`),
   CONSTRAINT `fk_disp_ua_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`),
-  CONSTRAINT `fk_disp_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_disp_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2050,7 +2158,7 @@ CREATE TABLE `doctos` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`docto`),
   KEY `fk_doctos_users1_idx` (`users_id`),
-  CONSTRAINT `fk_doctos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_doctos_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2073,7 +2181,7 @@ CREATE TABLE `documentos_emp` (
   KEY `fk_documentos_emp_users1_idx` (`users_id`),
   CONSTRAINT `fk_doctos_has_empleados_doctos1` FOREIGN KEY (`docto`) REFERENCES `doctos` (`docto`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_doctos_has_empleados_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_documentos_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_documentos_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2117,7 +2225,7 @@ CREATE TABLE `empleados` (
   KEY `fk_empleados_users1_idx` (`users_id`),
   CONSTRAINT `fk_empleados_categorias1` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`categoria`),
   CONSTRAINT `fk_empleados_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
-  CONSTRAINT `fk_empleados_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_empleados_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2138,7 +2246,7 @@ CREATE TABLE `empresa_adic` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`empresa`),
   KEY `fk_empresa_adic_users1_idx` (`users_id`),
-  CONSTRAINT `fk_empresa_adic_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_empresa_adic_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2157,7 +2265,7 @@ CREATE TABLE `esp_prog_edu` (
   PRIMARY KEY (`especialidad`),
   UNIQUE KEY `ENP_codigo_UNIQUE` (`especialidad`),
   KEY `fk_esp_prog_edu_users1_idx` (`users_id`),
-  CONSTRAINT `fk_esp_prog_edu_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_esp_prog_edu_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2180,7 +2288,7 @@ CREATE TABLE `estado` (
   KEY `fk_estado_pais1_idx` (`pais`),
   KEY `fk_estado_users1_idx` (`users_id`),
   CONSTRAINT `fk_estado_pais1` FOREIGN KEY (`pais`) REFERENCES `pais` (`pais`),
-  CONSTRAINT `fk_estado_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_estado_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2230,7 +2338,7 @@ CREATE TABLE `etapas` (
   PRIMARY KEY (`etapa`),
   UNIQUE KEY `ET_codigo_UNIQUE` (`etapa`),
   KEY `fk_etapas_users1_idx` (`users_id`),
-  CONSTRAINT `fk_etapas_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_etapas_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2259,7 +2367,7 @@ CREATE TABLE `grupos` (
   CONSTRAINT `fk_grupos_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`),
   CONSTRAINT `fk_grupos_planestudio1` FOREIGN KEY (`plan`, `programaedu`) REFERENCES `plan_programa` (`plan`, `programaedu`),
   CONSTRAINT `fk_grupos_turnos1` FOREIGN KEY (`turno`) REFERENCES `turnos` (`turno`),
-  CONSTRAINT `fk_grupos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_grupos_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2289,7 +2397,7 @@ CREATE TABLE `horarios` (
   CONSTRAINT `fk_horarios_grupos1` FOREIGN KEY (`grupo`, `periodo`) REFERENCES `grupos` (`grupo`, `periodo`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_horarios_horas1` FOREIGN KEY (`hora`) REFERENCES `horas` (`hora`),
   CONSTRAINT `fk_horarios_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_horarios_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_horarios_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2308,7 +2416,7 @@ CREATE TABLE `horas` (
   PRIMARY KEY (`hora`),
   UNIQUE KEY `HR_hora_UNIQUE` (`hora`),
   KEY `fk_horas_users1_idx` (`users_id`),
-  CONSTRAINT `fk_horas_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_horas_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2326,7 +2434,7 @@ CREATE TABLE `nvprograma` (
   PRIMARY KEY (`nivel`),
   UNIQUE KEY `NV_codigo_UNIQUE` (`nivel`),
   KEY `fk_nvprograma_users1_idx` (`users_id`),
-  CONSTRAINT `fk_nvprograma_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_nvprograma_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2347,7 +2455,7 @@ CREATE TABLE `pais` (
   PRIMARY KEY (`pais`),
   UNIQUE KEY `PA_codigo_UNIQUE` (`pais`),
   KEY `fk_pais_users1_idx` (`users_id`),
-  CONSTRAINT `fk_pais_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_pais_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=238 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2601,7 +2709,7 @@ CREATE TABLE `periodos` (
   KEY `fk_periodos_periodo_prog_edu1_idx` (`periodo_pedu`),
   KEY `fk_periodos_users1_idx` (`users_id`),
   CONSTRAINT `fk_periodos_periodo_prog_edu1` FOREIGN KEY (`periodo_pedu`) REFERENCES `periodo_prog_edu` (`periodo_pedu`),
-  CONSTRAINT `fk_periodos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_periodos_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2619,7 +2727,7 @@ CREATE TABLE `periodo_prog_edu` (
   PRIMARY KEY (`periodo_pedu`),
   UNIQUE KEY `TP_codigo_UNIQUE` (`periodo_pedu`),
   KEY `fk_periodo_prog_edu_users1_idx` (`users_id`),
-  CONSTRAINT `fk_periodo_prog_edu_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_periodo_prog_edu_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2646,7 +2754,7 @@ CREATE TABLE `planestudio` (
   KEY `fk_planestudiodesc_users1_idx` (`users_id`),
   KEY `fk_planestudiodesc_nvprograma1_idx` (`nivel`),
   CONSTRAINT `fk_planestudiodesc_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_planestudiodesc_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_planestudiodesc_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2667,7 +2775,7 @@ CREATE TABLE `plan_programa` (
   KEY `fk_planestudio_users1_idx` (`users_id`),
   CONSTRAINT `fk_planestudio_planestudiodesc1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_planestudio_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`),
-  CONSTRAINT `fk_planestudio_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_planestudio_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2701,7 +2809,7 @@ CREATE TABLE `programaedu` (
   CONSTRAINT `fk_programaedu_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`),
   CONSTRAINT `fk_programaedu_periodo_prog_edu1` FOREIGN KEY (`periodo_pedu`) REFERENCES `periodo_prog_edu` (`periodo_pedu`),
   CONSTRAINT `fk_programaedu_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`),
-  CONSTRAINT `fk_programaedu_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_programaedu_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2726,7 +2834,7 @@ CREATE TABLE `puesto` (
   PRIMARY KEY (`puesto`),
   UNIQUE KEY `DI_directivopuesto_UNIQUE` (`puesto`),
   KEY `fk_directivopuesto_users1_idx` (`users_id`),
-  CONSTRAINT `fk_puesto_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_puesto_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2753,7 +2861,7 @@ CREATE TABLE `puestosemp` (
   CONSTRAINT `fk_puestosemp_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_puestosemp_puesto1` FOREIGN KEY (`puesto`) REFERENCES `puesto` (`puesto`),
   CONSTRAINT `fk_puestosemp_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`),
-  CONSTRAINT `fk_puestosemp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_puestosemp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2778,7 +2886,7 @@ CREATE TABLE `p_ua` (
   CONSTRAINT `fk_p_ua_etapas1` FOREIGN KEY (`etapa`) REFERENCES `etapas` (`etapa`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_p_ua_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`),
   CONSTRAINT `fk_p_ua_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`),
-  CONSTRAINT `fk_p_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_p_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2796,7 +2904,7 @@ CREATE TABLE `reqseriacion` (
   PRIMARY KEY (`reqseriacion`),
   UNIQUE KEY `RS_codigo_UNIQUE` (`reqseriacion`),
   KEY `fk_reqseriacion_users1_idx` (`users_id`),
-  CONSTRAINT `fk_reqseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_reqseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2816,7 +2924,7 @@ CREATE TABLE `status` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`status`),
   KEY `fk_status_users1_idx` (`users_id`),
-  CONSTRAINT `fk_status_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_status_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2842,7 +2950,7 @@ CREATE TABLE `status_horarios` (
   CONSTRAINT `fk_status_horarios_empleados2` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_horarios_periodos1` FOREIGN KEY (`periodo`) REFERENCES `periodos` (`periodo`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_horarios_status1` FOREIGN KEY (`status`) REFERENCES `status` (`status`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_status_horarios_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_status_horarios_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2869,7 +2977,7 @@ CREATE TABLE `status_procesos` (
   CONSTRAINT `fk_status_procesos_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_procesos_status1` FOREIGN KEY (`status_carga`) REFERENCES `status` (`status`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_status_procesos_status2` FOREIGN KEY (`status_plan`) REFERENCES `status` (`status`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_status_procesos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_status_procesos_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2886,7 +2994,7 @@ CREATE TABLE `tipo_curso_emp` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`tipo_curso_emp`),
   KEY `fk_tipo_curso_emp_users1_idx` (`users_id`),
-  CONSTRAINT `fk_tipo_curso_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_tipo_curso_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2911,7 +3019,7 @@ CREATE TABLE `trabadicional_emp` (
   CONSTRAINT `fk_empleados_has_trabadic_emp_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_empleados_trabadic_puesto1` FOREIGN KEY (`puesto`) REFERENCES `puesto` (`puesto`),
   CONSTRAINT `fk_trabadicional_emp_empresa_adic1` FOREIGN KEY (`empresa`) REFERENCES `empresa_adic` (`empresa`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_trabadicional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_trabadicional_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2929,7 +3037,7 @@ CREATE TABLE `turnos` (
   PRIMARY KEY (`turno`),
   UNIQUE KEY `codigo_UNIQUE` (`turno`),
   KEY `fk_turnos_users1_idx` (`users_id`),
-  CONSTRAINT `fk_turnos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_turnos_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -2954,7 +3062,7 @@ CREATE TABLE `uacademica` (
   KEY `fk_uacademica_campus1_idx` (`campus`),
   KEY `fk_uacademica_users1_idx` (`users_id`),
   CONSTRAINT `fk_uacademica_campus1` FOREIGN KEY (`campus`) REFERENCES `campus` (`campus`),
-  CONSTRAINT `fk_uacademica_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_uacademica_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -3008,7 +3116,7 @@ CREATE TABLE `uaprendizaje` (
   CONSTRAINT `fk_uaprendizaje_etapas1` FOREIGN KEY (`etapa`) REFERENCES `etapas` (`etapa`),
   CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `plan_programa` (`plan`),
   CONSTRAINT `fk_uaprendizaje_reqseriacion1` FOREIGN KEY (`reqseriacion`) REFERENCES `reqseriacion` (`reqseriacion`),
-  CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -3028,7 +3136,7 @@ CREATE TABLE `universidades_emp` (
   KEY `fk_universidades_emp_ciudad1_idx` (`ciudad`),
   KEY `fk_universidades_emp_users1_idx` (`users_id`),
   CONSTRAINT `fk_universidades_emp_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
-  CONSTRAINT `fk_universidades_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_universidades_emp_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -3040,6 +3148,38 @@ CREATE TABLE `universidades_emp` (
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` int(11) NOT NULL,
+  `campus` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `unidad` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ua` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `programaedu` int(255) NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`),
+  UNIQUE KEY `users_username_unique` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES ('8', 'Ivan', 'Duarte', 'wolfogan@gmail.com', 'Real de Calacoaya 7810-3B', '6450706', 'TIJUANA', 'ENSENADA', 'FCA', '1', 'LoganX', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '0', '2014-04-19 12:30:58', '2014-08-28 22:09:40', 'Jd3knfA4G2aDhiIKHF5r7UpAkjuf8HWStUbFjlJJlMX0eW51R28fJNaWo0oz');
+INSERT INTO `users` VALUES ('9', 'Cynthia', 'Duarte', 'zyntya@hotmail.com', 'Col. Nueva Tijuana', '6233987', 'TIJUANA', 'VALLE DE LA TRINIDAD', 'FD', '0', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 12:30:58', '2014-08-28 22:09:18', 'Rbs0XNlxpwL16k3dPTN6vI4eNlubWfiHlqhNQZkJT8rvMq2hyI2NlD48CoP0');
+
+-- ----------------------------
+-- Table structure for users_delia
+-- ----------------------------
+DROP TABLE IF EXISTS `users_delia`;
+CREATE TABLE `users_delia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `empleado` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -3054,19 +3194,19 @@ CREATE TABLE `users` (
   KEY `fk_users_uacademica1_idx` (`uacademica`),
   KEY `fk_users_campus1_idx` (`campus`),
   KEY `fk_users_empleados1_idx` (`empleado`),
-  CONSTRAINT `fk_users_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_users_campus1` FOREIGN KEY (`campus`) REFERENCES `campus` (`campus`),
+  CONSTRAINT `fk_users_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_users_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Records of users
+-- Records of users_delia
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9St', '0', '2014-04-19 19:30:58', '2014-04-19 19:30:58', '', '1', '1');
-INSERT INTO `users` VALUES ('9', '1', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLs', '1', '2014-04-19 19:30:58', '2014-05-14 22:29:32', 'E4uGco0FtNqNTuFFvxq4mSIrfA2qWORYIkt7KDU3SCMzLG90S3AlIhNIIUY8', '1', '1');
-INSERT INTO `users` VALUES ('10', '1', 'ra21', '$2y$10$BCYlojviBdFVCG4jfpdcluYJWLW/2/gGIjDsgx', '0', '2014-04-19 19:31:10', '2014-04-19 19:31:10', '', '1', '1');
-INSERT INTO `users` VALUES ('11', '1', 'paquito', '$2y$10$NFJnp7SweU./sBw/YqBuM.Fg1mHuVjngo2e55Z', '0', '2014-04-21 15:08:27', '2014-04-21 17:03:15', '', '1', '1');
-INSERT INTO `users` VALUES ('17', '1', 'uni', '$2y$10$T3ztXBdUMPxZGvOSyNk8wuSKCiX2gYu7WSLZ9A', '1', '2014-04-25 09:42:07', '2014-04-25 09:42:07', '', '1', '1');
+INSERT INTO `users_delia` VALUES ('1', '1', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9St', '0', '2014-04-19 19:30:58', '2014-04-19 19:30:58', '', '1', '1');
+INSERT INTO `users_delia` VALUES ('9', '1', 'Tikita', '', '1', '2014-04-19 19:30:58', '2014-05-14 22:29:32', 'E4uGco0FtNqNTuFFvxq4mSIrfA2qWORYIkt7KDU3SCMzLG90S3AlIhNIIUY8', '1', '1');
+INSERT INTO `users_delia` VALUES ('10', '1', 'ra21', '$2y$10$BCYlojviBdFVCG4jfpdcluYJWLW/2/gGIjDsgx', '0', '2014-04-19 19:31:10', '2014-04-19 19:31:10', '', '1', '1');
+INSERT INTO `users_delia` VALUES ('11', '1', 'paquito', '$2y$10$NFJnp7SweU./sBw/YqBuM.Fg1mHuVjngo2e55Z', '0', '2014-04-21 15:08:27', '2014-04-21 17:03:15', '', '1', '1');
+INSERT INTO `users_delia` VALUES ('17', '1', 'uni', '$2y$10$T3ztXBdUMPxZGvOSyNk8wuSKCiX2gYu7WSLZ9A', '1', '2014-04-25 09:42:07', '2014-04-25 09:42:07', '', '1', '1');
 DROP TRIGGER IF EXISTS `bit_I_act_adicional_emp`;
 DELIMITER ;;
 CREATE TRIGGER `bit_I_act_adicional_emp` AFTER INSERT ON `act_adicional_emp` FOR EACH ROW BEGIN

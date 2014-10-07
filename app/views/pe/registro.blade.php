@@ -163,11 +163,11 @@
 					</tr>
 					<tr>		
 						<td>No. Plan:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" size="1" />&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" size="1" /></td>
+						<td><input title="Por favor, introduce un año." style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" required/></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" required/></td>
 					</tr>
 					<tr>
 						<td>Nivel:</td>
@@ -194,15 +194,15 @@
 					</tr>
 					<tr>
 						<td>Créditos Prácticas:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" size=1 /></td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" required/></td>
 					</tr>
 					<tr>
 						<td>Fecha Inicio:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' required/></td>
 					</tr>
 					<tr>
 						<td>Fecha Final:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" required/></td>
 					</tr>
 				</table>
 			</div>
@@ -669,18 +669,31 @@
 	function registrarPlanEstudios(formPlan)
 	{
 		console.log(formPlan);
-		alert(USER_ID);
+		if(formPlan.alta_plan_carreras.value === "")
+		{
+			alert("Seleccione un programa educativo para continuar.");
+			return;
+		}
+		//alert(USER_ID);
 		formPlan.planestudio_userid.value = USER_ID;
-		alert(formPlan.planestudio_userid.value);
+		//alert(formPlan.planestudio_userid.value);
 		var datosPlan = $(formPlan).serialize();
 		$.post("<?=URL::to('planestudio/registrarplan'); ?>",datosPlan,function(mensaje){
 			alert(mensaje);
+			var newPlan = {
+				plan:formPlan.planestudio_anio.value + formPlan.planestudio_semestre.value,
+				formato:formPlan.planestudio_anio.value + "-" + formPlan.planestudio_semestre.value
+			};
+			
+			$("#noPlan").prepend("<option value='"+newPlan.plan+"''>"+newPlan.formato+"</option>");
+			$("#noPlan").val(newPlan.plan);
+			$(".md-close").click();
 		})
 		.fail(function(errorText,textError,errorThrow){
 			alert(errorText.responseText);
-			console.log(errorText);
+			/*console.log(errorText);
 			console.log(textError);
-			console.log(errorThrow);
+			console.log(errorThrow);*/
 		});
 	}
 

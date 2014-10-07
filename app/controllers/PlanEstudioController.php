@@ -159,10 +159,10 @@ class PlanEstudioController extends BaseController
 		$carreras = explode(',',Input::get('alta_plan_carreras'));
 		foreach($carreras as $carrera)
 		{
-			DB::table('plan_programa') -> insert (array('plan' => $noplan,'programaedu'=>$carrera));
+			DB::table('plan_programa') -> insert (array('plan' => $noplan,'programaedu'=>$carrera,'users_id'=>$plan -> users_id));
 		}
 		
-		return Redirect::back();
+		return '!Plan de Estudios registrado correctamente¡';
 	}
 
 	public function postRegistrarnivel()
