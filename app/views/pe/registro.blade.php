@@ -167,7 +167,7 @@
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" required/></td>
+						<td><input title="Por favor, introduce una descripción." style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="planestudio_descripcion" required/></td>
 					</tr>
 					<tr>
 						<td>Nivel:</td>
@@ -194,15 +194,15 @@
 					</tr>
 					<tr>
 						<td>Créditos Prácticas:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" required/></td>
+						<td><input title="Por favor,introduce los creditos" min="1" style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" required/></td>
 					</tr>
 					<tr>
 						<td>Fecha Inicio:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' required/></td>
+						<td><input title="Por favor, introduce una fecha valida" style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaIni" name='planestudio_feciniciovig' required/></td>
 					</tr>
 					<tr>
 						<td>Fecha Final:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" required/></td>
+						<td><input title="Por favor, introduce una fecha valida"  style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="txtCatFechaFin" name="planestudio_fecfinvig" required/></td>
 					</tr>
 				</table>
 			</div>
