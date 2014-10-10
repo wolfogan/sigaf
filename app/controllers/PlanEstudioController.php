@@ -364,9 +364,9 @@ class PlanEstudioController extends BaseController
 				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
 				->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
-				->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+				->join('etapas','p_ua.etapa','=','etapas.etapa')
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
-				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
+				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 				->where('uaprendizaje.plan','=',$noplan)
 				->get();
 

@@ -53,92 +53,39 @@
 						<th></th>
 					</tr>
 
-					<tr>
+					<tr class="fila-base-seriacion">
 						<td>Tipo:</td>
-						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
-								<option value="SIN SERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGADA</option>
-								<option value="SUGERIDA">SUGERIDA</option>			
+						<td>
+							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+								@foreach($seriaciones as $seriacion)
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
 							</select>
 						</td>
 
 						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
-						
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' disabled="true"/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
 						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
 						<td><input type="button" class="dd_clsAgregarFila"></td>
 					</tr>
 
-					<tr>
+					<tr class="fila-uno-seriacion">
 						<td>Tipo:</td>
-						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
-								<option value="SIN SERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGADA</option>
-								<option value="SUGERIDA">SUGERIDA</option>			
+						<td>
+							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+								@foreach($seriaciones as $seriacion)
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
 							</select>
 						</td>
 
 						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
-						
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' disabled="true"/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
 						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
 						<td><input type="button" class="dd_clsAgregarFila"></td>
 					</tr>
-
-					<tr>
-						<td>Tipo:</td>
-						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
-								<option value="SIN SERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGADA</option>
-								<option value="SUGERIDA">SUGERIDA</option>			
-							</select>
-						</td>
-
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
-						
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
-						<td><input type="button" class="dd_clsAgregarFila"></td>
-					</tr>
-
-					<tr>
-						<td>Tipo:</td>
-						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
-								<option value="SIN SERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGADA</option>
-								<option value="SUGERIDA">SUGERIDA</option>			
-							</select>
-						</td>
-
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
-						
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
-						<td><input type="button" class="dd_clsAgregarFila"></td>
-					</tr>
-
-					<tr>
-						<td>Tipo:</td>
-						<td><select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtTipoSeriacion" size=1 />
-								<option value="SIN SERIACION">SIN SERIACION</option>
-								<option value="OBLIGADA">OBLIGADA</option>
-								<option value="SUGERIDA">SUGERIDA</option>			
-							</select>
-						</td>
-
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtClaveSeriada" name='txtClaveSeriada' size=1 /></td>
-						
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtUa" name='txtUa' disabled="true" size=1 /></td>
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
-						<td><input type="button" class="dd_clsAgregarFila"></td>
-					</tr>
-					
-					
 				</table>
 			</div>
 						<div class="CatBotones">
@@ -686,8 +633,9 @@
 			};
 			
 			$("#noPlan").prepend("<option value='"+newPlan.plan+"''>"+newPlan.formato+"</option>");
-			$("#noPlan").val(newPlan.plan);
 			$(".md-close").click();
+			$("#noPlan").val(newPlan.plan);
+			$("#noPlan").change();
 		})
 		.fail(function(errorText,textError,errorThrow){
 			alert(errorText.responseText);
@@ -846,7 +794,7 @@
 							uas[i].descripcion,
 							uas[i].etapa,
 							uas[i].caracter,
-							uas[i].claveD,
+							"11236",// Falta llenar las seriaciones
 							uas[i].coordinaciona,
 							uas[i].HC,
 							uas[i].HL,
@@ -856,6 +804,12 @@
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
+		})
+		.fail(function(errorText,textError,errorThrow){
+			alert(errorText.responseText);
+			/*console.log(errorText);
+			console.log(textError);
+			console.log(errorThrow);*/
 		});
 	}
 
@@ -940,6 +894,7 @@
 		
 		// AL CAMBIO COMBOBOX NO DE PLAN CARGA LAS UNIDADES DE APRENDIZAJES ASIGNADAS A LAS CARRERAS Y LAS UA SERIADAS.
 		$("#noPlan").on("change",function(){
+			//alert("un cambio");
 			reset_campos();
 			$("#grid_plan").html($(this).val());
 			disabled_campos(false);
@@ -1059,20 +1014,7 @@
 				});
 			}
 		});
-		// CASOS DE LA PARA ASIGNAR LA SERIACIÓN
-		$("#serie").on("change",function(){
-			var opcionSerie = $(this).val();
-			if(opcionSerie==1)
-			{
-				$('#clave2F').attr('disabled','disabled').val("");
-				$('#materiaSeriada').val("");
-			}
-			else
-			{
-				$("#clave2F").removeAttr('disabled').val("").focus();
-				$("#materiaSeriada").val("");
-			}
-		});
+		
 		// VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
 		$("#clave2F").on("focusout",function(){
 			if($("#serie").val()!=1){
@@ -1138,6 +1080,49 @@
 			{
 				reset_campos();
 				desmarcar_carreras();
+			}
+		});
+
+		// EVENTOS PARA LA TABLA DE LAS SERIACIONES
+		$(".tblCatPlanAgregarSeriacion").on("click",".dd_clsAgregarFila",function(){
+			
+			$(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			//console.log(filaSeriacion);
+		});
+
+		$(".tblCatPlanAgregarSeriacion").on("click",".clsEliminarFila",function(){
+			var filaSeriacion = $(this).parents().get(1);
+			if(!$(filaSeriacion).hasClass("fila-uno-seriacion"))
+				$(filaSeriacion).remove();
+		});
+		// Habilitar inputs cuando elijan seriacion
+		$(".tblCatPlanAgregarSeriacion").on("change",".tipo-seriacion",function(){
+			var opcionSerie = $(this).val();
+			if(opcionSerie==1)
+			{
+				var filaSeriacion = $(this).parents().get(1);
+				$(filaSeriacion).find(".clave-seriacion").attr('disabled',true).val("");
+				$(filaSeriacion).find(".clave-seriacion-descripcion").val("");
+			}
+			else
+			{
+				var filaSeriacion = $(this).parents().get(1);
+				$(filaSeriacion).find(".clave-seriacion").removeAttr('disabled').val("");
+			}
+		});
+		// Cargar descripcion de ua cuando la tecleen o seleccionen
+		$(".tblCatPlanAgregarSeriacion").on("input",".clave-seriacion",function(){
+			
+			if($(this).val()!="" && $(this).val().length>=5)
+			{
+				var idua = $(this).val();
+				var filaSeriacion = $(this).parents().get(1);
+				alert(idua);
+				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+					alert(materia);
+					$(filaSeriacion).find(".clave-seriacion-descripcion").val(materia);
+					
+				});
 			}
 		});
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE

@@ -887,6 +887,8 @@ background: #EFCA0D;
   	padding:10px;
 	width: 600px;
 }
+
+
 .tblCatPlanAgregarSeriacion td 
 {
 	color:#004000;
@@ -2262,3 +2264,9 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*------------------------------------PRUEBA IVAN-----------------------------------------------*/
+
+/*************************** MODAL SERIACION *******************************/
+.fila-base-seriacion
+{
+	display: none;
+}
