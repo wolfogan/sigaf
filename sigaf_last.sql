@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50612
+Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : sigaf_last
 
 Target Server Type    : MYSQL
-Target Server Version : 50612
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-10-09 20:45:20
+Date: 2014-10-10 05:53:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1216 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1221 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1328,6 +1328,11 @@ INSERT INTO `bitacora` VALUES ('1212', 'plan_programa', '9', 'I', '2014-10-09 00
 INSERT INTO `bitacora` VALUES ('1213', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|6', null);
 INSERT INTO `bitacora` VALUES ('1214', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|7', null);
 INSERT INTO `bitacora` VALUES ('1215', 'uaprendizaje', '10', 'I', '2014-10-09 00:00:00', '11236|MATEMATICAS|10|10|10|10|10|10|200|2014-10-09|VAMOS A VER|1|1|1|1|20092', null);
+INSERT INTO `bitacora` VALUES ('1216', 'uaprendizaje', '10', 'D', '2014-10-09 00:00:00', null, '11236|MATEMATICAS|10|10|10|10|10|10|200|2014-10-09|VAMOS A VER|1|1|1|1|20092');
+INSERT INTO `bitacora` VALUES ('1217', 'reqseriacion', '1', 'D', '2014-10-09 00:00:00', null, '1|SIN SERIACION');
+INSERT INTO `bitacora` VALUES ('1218', 'reqseriacion', '1', 'U', '2014-10-09 00:00:00', '1|OBLIGATORIA', '2|OBLIGATORIA');
+INSERT INTO `bitacora` VALUES ('1219', 'reqseriacion', '1', 'U', '2014-10-09 00:00:00', '2|SUGERIDA', '3|SUGERIDA');
+INSERT INTO `bitacora` VALUES ('1220', 'uaprendizaje', '10', 'I', '2014-10-10 00:00:00', '11236|MATEMATICAS|10|10|10|10|10|10|100|2014-10-10|AFASDF|1|1|1|1|20092', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -1343,8 +1348,7 @@ CREATE TABLE `campus` (
   UNIQUE KEY `CM_codigo_UNIQUE` (`campus`),
   KEY `fk_campus_ciudad1_idx` (`ciudad`),
   KEY `fk_campus_users1_idx` (`users_id`),
-  CONSTRAINT `fk_campus_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
-  CONSTRAINT `fk_campus_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
+  CONSTRAINT `fk_campus_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -2175,14 +2179,17 @@ INSERT INTO `coordinaciona` VALUES ('22', 'SIN COORDINACION', '6', '11');
 DROP TABLE IF EXISTS `detalleseriacion`;
 CREATE TABLE `detalleseriacion` (
   `uaprendizaje` int(11) NOT NULL COMMENT 'U aprendizaje',
+  `reqseriacion` int(11) NOT NULL,
   `uaprequisito` int(11) NOT NULL COMMENT 'Uap requisito',
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   KEY `fk_detalleseriacion_uaprendizaje1_idx` (`uaprendizaje`),
   KEY `fk_detalleseriacion_uaprendizaje2_idx` (`uaprequisito`),
   KEY `fk_detalleseriacion_users1_idx` (`users_id`),
+  KEY `fk_detalleseriacion_reqseriacion1` (`reqseriacion`),
+  CONSTRAINT `fk_detalleseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION,
+  CONSTRAINT `fk_detalleseriacion_reqseriacion1` FOREIGN KEY (`reqseriacion`) REFERENCES `reqseriacion` (`reqseriacion`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_detalleseriacion_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detalleseriacion_uaprendizaje2` FOREIGN KEY (`uaprequisito`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detalleseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_detalleseriacion_uaprendizaje2` FOREIGN KEY (`uaprequisito`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -3030,9 +3037,8 @@ CREATE TABLE `reqseriacion` (
 -- ----------------------------
 -- Records of reqseriacion
 -- ----------------------------
-INSERT INTO `reqseriacion` VALUES ('1', 'SIN SERIACION', '1');
-INSERT INTO `reqseriacion` VALUES ('2', 'OBLIGATORIA', '1');
-INSERT INTO `reqseriacion` VALUES ('3', 'SUGERIDA', '1');
+INSERT INTO `reqseriacion` VALUES ('1', 'OBLIGATORIA', '1');
+INSERT INTO `reqseriacion` VALUES ('2', 'SUGERIDA', '1');
 
 -- ----------------------------
 -- Table structure for status
@@ -3217,7 +3223,6 @@ CREATE TABLE `uaprendizaje` (
   `observa` varchar(60) DEFAULT NULL COMMENT 'Observaciones',
   `semestre_sug` int(11) NOT NULL COMMENT 'Semestre sugerido',
   `caracter` int(11) NOT NULL COMMENT 'Codigo caracter para especificar 1=Obligatoria/2=Optativa',
-  `reqseriacion` int(11) NOT NULL COMMENT 'Codigo req seriacion para especificar Obligada, Sugerida, s/seriación',
   `coordinaciona` int(11) NOT NULL COMMENT 'Codigo coordinacion area',
   `plan` int(11) NOT NULL COMMENT 'Codigo plan estudio',
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
@@ -3225,21 +3230,19 @@ CREATE TABLE `uaprendizaje` (
   UNIQUE KEY `UA_clave_UNIQUE` (`uaprendizaje`),
   UNIQUE KEY `HPC_UNIQUE` (`HPC`),
   KEY `fk_uaprendizaje_caracter1_idx` (`caracter`),
-  KEY `fk_uaprendizaje_reqseriacion1_idx` (`reqseriacion`),
   KEY `fk_uaprendizaje_coordinaciona1_idx` (`coordinaciona`),
   KEY `fk_uaprendizaje_planestudio1_idx` (`plan`),
   KEY `fk_uaprendizaje_users1_idx` (`users_id`),
-  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_caracter1` FOREIGN KEY (`caracter`) REFERENCES `caracter` (`caracter`),
   CONSTRAINT `fk_uaprendizaje_coordinaciona1` FOREIGN KEY (`coordinaciona`) REFERENCES `coordinaciona` (`coordinaciona`),
-  CONSTRAINT `fk_uaprendizaje_reqseriacion1` FOREIGN KEY (`reqseriacion`) REFERENCES `reqseriacion` (`reqseriacion`),
+  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
 -- Records of uaprendizaje
 -- ----------------------------
-INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMATICAS', '10', '10', '10', '10', '10', '10', '200', '2014-10-09', 'VAMOS A VER', '1', '1', '1', '1', '20092', '10');
+INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMATICAS', '10', '10', '10', '10', '10', '10', '100', '2014-10-10', 'AFASDF', '1', '1', '1', '20092', '10');
 
 -- ----------------------------
 -- Table structure for universidades_emp
@@ -3266,7 +3269,7 @@ CREATE TABLE `universidades_emp` (
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -3285,13 +3288,15 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   UNIQUE KEY `users_username_unique` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1', 'Ivan', 'Duarte', 'wolfogan1@gmail.com', 'Real de Calacoaya 7810-3B', '6450706', 'TIJUANA', 'ENSENADA', 'FCA', '1', 'LoganX1', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '0', '2014-04-19 12:30:58', '2014-08-28 22:09:40', 'Jd3knfA4G2aDhiIKHF5r7UpAkjuf8HWStUbFjlJJlMX0eW51R28fJNaWo0oz');
 INSERT INTO `users` VALUES ('8', 'Ivan', 'Duarte', 'wolfogan@gmail.com', 'Real de Calacoaya 7810-3B', '6450706', 'TIJUANA', 'ENSENADA', 'FCA', '1', 'LoganX', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '0', '2014-04-19 12:30:58', '2014-08-28 22:09:40', 'Jd3knfA4G2aDhiIKHF5r7UpAkjuf8HWStUbFjlJJlMX0eW51R28fJNaWo0oz');
 INSERT INTO `users` VALUES ('9', 'Cynthia', 'Duarte', 'zyntya@hotmail.com', 'Col. Nueva Tijuana', '6233987', 'TIJUANA', 'VALLE DE LA TRINIDAD', 'FD', '0', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 12:30:58', '2014-08-28 22:09:18', 'Rbs0XNlxpwL16k3dPTN6vI4eNlubWfiHlqhNQZkJT8rvMq2hyI2NlD48CoP0');
+INSERT INTO `users` VALUES ('11', 'Cynthia', 'Duarte', 'zyntyaa@hotmail.com', 'Col. Nueva Tijuana', '6233987', 'TIJUANA', 'VALLE DE LA TRINIDAD', 'FD', '0', 'Tikitaa', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 12:30:58', '2014-08-28 22:09:18', 'Rbs0XNlxpwL16k3dPTN6vI4eNlubWfiHlqhNQZkJT8rvMq2hyI2NlD48CoP0');
 
 -- ----------------------------
 -- Table structure for users_delia
