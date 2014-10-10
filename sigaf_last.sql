@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50617
+Source Server Version : 50612
 Source Host           : localhost:3306
 Source Database       : sigaf_last
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2014-10-06 20:53:33
+Date: 2014-10-09 20:45:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1104 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1216 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1216,6 +1216,118 @@ INSERT INTO `bitacora` VALUES ('1100', 'plan_programa', '9', 'D', '2014-10-06 00
 INSERT INTO `bitacora` VALUES ('1101', 'plan_programa', '9', 'D', '2014-10-06 00:00:00', null, '20102|7');
 INSERT INTO `bitacora` VALUES ('1102', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20101|Plan 2010-1 SEP 534523|600|2014-10-01|2014-10-31|1');
 INSERT INTO `bitacora` VALUES ('1103', 'planestudio', '9', 'D', '2014-10-06 00:00:00', null, '20102|Por favor una descripicion|900|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1104', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20101|Plan 2010-1 SEP 534523|900|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1105', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1106', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1107', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1108', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1109', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1110', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1111', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1112', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20102|Plan 2010-2 SEP 432421|922|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1113', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|1', null);
+INSERT INTO `bitacora` VALUES ('1114', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|2', null);
+INSERT INTO `bitacora` VALUES ('1115', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|3', null);
+INSERT INTO `bitacora` VALUES ('1116', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|4', null);
+INSERT INTO `bitacora` VALUES ('1117', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|5', null);
+INSERT INTO `bitacora` VALUES ('1118', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|6', null);
+INSERT INTO `bitacora` VALUES ('1119', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20102|7', null);
+INSERT INTO `bitacora` VALUES ('1120', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20103|VAMOS A VER|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1121', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|1', null);
+INSERT INTO `bitacora` VALUES ('1122', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|2', null);
+INSERT INTO `bitacora` VALUES ('1123', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|3', null);
+INSERT INTO `bitacora` VALUES ('1124', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|4', null);
+INSERT INTO `bitacora` VALUES ('1125', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|5', null);
+INSERT INTO `bitacora` VALUES ('1126', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|6', null);
+INSERT INTO `bitacora` VALUES ('1127', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|7', null);
+INSERT INTO `bitacora` VALUES ('1128', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20104|Plan 2010-1 SEP 534523|500|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1129', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|1', null);
+INSERT INTO `bitacora` VALUES ('1130', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|2', null);
+INSERT INTO `bitacora` VALUES ('1131', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|3', null);
+INSERT INTO `bitacora` VALUES ('1132', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|4', null);
+INSERT INTO `bitacora` VALUES ('1133', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|5', null);
+INSERT INTO `bitacora` VALUES ('1134', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|6', null);
+INSERT INTO `bitacora` VALUES ('1135', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20104|7', null);
+INSERT INTO `bitacora` VALUES ('1136', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1137', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1138', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('1139', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('1140', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('1141', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('1142', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('1143', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|1');
+INSERT INTO `bitacora` VALUES ('1144', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|2');
+INSERT INTO `bitacora` VALUES ('1145', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|3');
+INSERT INTO `bitacora` VALUES ('1146', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|4');
+INSERT INTO `bitacora` VALUES ('1147', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|5');
+INSERT INTO `bitacora` VALUES ('1148', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|6');
+INSERT INTO `bitacora` VALUES ('1149', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20102|7');
+INSERT INTO `bitacora` VALUES ('1150', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|1');
+INSERT INTO `bitacora` VALUES ('1151', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|2');
+INSERT INTO `bitacora` VALUES ('1152', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|3');
+INSERT INTO `bitacora` VALUES ('1153', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|4');
+INSERT INTO `bitacora` VALUES ('1154', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|5');
+INSERT INTO `bitacora` VALUES ('1155', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|6');
+INSERT INTO `bitacora` VALUES ('1156', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|7');
+INSERT INTO `bitacora` VALUES ('1157', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|1');
+INSERT INTO `bitacora` VALUES ('1158', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|2');
+INSERT INTO `bitacora` VALUES ('1159', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|3');
+INSERT INTO `bitacora` VALUES ('1160', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|4');
+INSERT INTO `bitacora` VALUES ('1161', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|5');
+INSERT INTO `bitacora` VALUES ('1162', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|6');
+INSERT INTO `bitacora` VALUES ('1163', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20104|7');
+INSERT INTO `bitacora` VALUES ('1164', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20101|Plan 2010-1 SEP 534523|900|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1165', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20102|Plan 2010-2 SEP 432421|922|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1166', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20103|VAMOS A VER|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1167', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20104|Plan 2010-1 SEP 534523|500|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1168', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20103|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1169', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|1', null);
+INSERT INTO `bitacora` VALUES ('1170', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|2', null);
+INSERT INTO `bitacora` VALUES ('1171', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|3', null);
+INSERT INTO `bitacora` VALUES ('1172', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|4', null);
+INSERT INTO `bitacora` VALUES ('1173', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|5', null);
+INSERT INTO `bitacora` VALUES ('1174', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|6', null);
+INSERT INTO `bitacora` VALUES ('1175', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20103|7', null);
+INSERT INTO `bitacora` VALUES ('1176', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20101|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1177', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1178', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1179', 'planestudio', '9', 'U', '2014-10-09 00:00:00', '20103|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|2', '20103|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1180', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1181', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1182', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|1');
+INSERT INTO `bitacora` VALUES ('1183', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|2');
+INSERT INTO `bitacora` VALUES ('1184', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|3');
+INSERT INTO `bitacora` VALUES ('1185', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|4');
+INSERT INTO `bitacora` VALUES ('1186', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|5');
+INSERT INTO `bitacora` VALUES ('1187', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|6');
+INSERT INTO `bitacora` VALUES ('1188', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20103|7');
+INSERT INTO `bitacora` VALUES ('1189', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20101|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1190', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20103|Plan 2010-2 SEP 432421|800|2014-10-01|2014-10-31|2');
+INSERT INTO `bitacora` VALUES ('1191', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1192', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1193', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1194', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1195', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1196', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1197', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1198', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1199', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('1200', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('1201', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('1202', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('1203', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('1204', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('1205', 'plan_programa', '9', 'D', '2014-10-09 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('1206', 'planestudio', '9', 'D', '2014-10-09 00:00:00', null, '20101|Plan 2010-1 SEP 534523|700|2014-10-01|2014-10-31|1');
+INSERT INTO `bitacora` VALUES ('1207', 'planestudio', '9', 'I', '2014-10-09 00:00:00', '20092|Plan 2009-2 SEP 534523|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1208', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|1', null);
+INSERT INTO `bitacora` VALUES ('1209', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|2', null);
+INSERT INTO `bitacora` VALUES ('1210', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|3', null);
+INSERT INTO `bitacora` VALUES ('1211', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|4', null);
+INSERT INTO `bitacora` VALUES ('1212', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|5', null);
+INSERT INTO `bitacora` VALUES ('1213', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|6', null);
+INSERT INTO `bitacora` VALUES ('1214', 'plan_programa', '9', 'I', '2014-10-09 00:00:00', '20092|7', null);
+INSERT INTO `bitacora` VALUES ('1215', 'uaprendizaje', '10', 'I', '2014-10-09 00:00:00', '11236|MATEMATICAS|10|10|10|10|10|10|200|2014-10-09|VAMOS A VER|1|1|1|1|20092', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -2760,6 +2872,7 @@ CREATE TABLE `planestudio` (
 -- ----------------------------
 -- Records of planestudio
 -- ----------------------------
+INSERT INTO `planestudio` VALUES ('20092', 'Plan 2009-2 SEP 534523', '800', '2014-10-01', '2014-10-31', '1', '9');
 
 -- ----------------------------
 -- Table structure for plan_programa
@@ -2781,6 +2894,13 @@ CREATE TABLE `plan_programa` (
 -- ----------------------------
 -- Records of plan_programa
 -- ----------------------------
+INSERT INTO `plan_programa` VALUES ('20092', '1', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '2', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '3', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '4', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '5', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '6', '9');
+INSERT INTO `plan_programa` VALUES ('20092', '7', '9');
 
 -- ----------------------------
 -- Table structure for programaedu
@@ -3098,7 +3218,6 @@ CREATE TABLE `uaprendizaje` (
   `semestre_sug` int(11) NOT NULL COMMENT 'Semestre sugerido',
   `caracter` int(11) NOT NULL COMMENT 'Codigo caracter para especificar 1=Obligatoria/2=Optativa',
   `reqseriacion` int(11) NOT NULL COMMENT 'Codigo req seriacion para especificar Obligada, Sugerida, s/seriación',
-  `etapa` int(11) NOT NULL COMMENT 'Código etapa para especificar Basica, Disciplinario, Terminal',
   `coordinaciona` int(11) NOT NULL COMMENT 'Codigo coordinacion area',
   `plan` int(11) NOT NULL COMMENT 'Codigo plan estudio',
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
@@ -3107,14 +3226,12 @@ CREATE TABLE `uaprendizaje` (
   UNIQUE KEY `HPC_UNIQUE` (`HPC`),
   KEY `fk_uaprendizaje_caracter1_idx` (`caracter`),
   KEY `fk_uaprendizaje_reqseriacion1_idx` (`reqseriacion`),
-  KEY `fk_uaprendizaje_etapas1_idx` (`etapa`),
   KEY `fk_uaprendizaje_coordinaciona1_idx` (`coordinaciona`),
   KEY `fk_uaprendizaje_planestudio1_idx` (`plan`),
   KEY `fk_uaprendizaje_users1_idx` (`users_id`),
+  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_caracter1` FOREIGN KEY (`caracter`) REFERENCES `caracter` (`caracter`),
   CONSTRAINT `fk_uaprendizaje_coordinaciona1` FOREIGN KEY (`coordinaciona`) REFERENCES `coordinaciona` (`coordinaciona`),
-  CONSTRAINT `fk_uaprendizaje_etapas1` FOREIGN KEY (`etapa`) REFERENCES `etapas` (`etapa`),
-  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `plan_programa` (`plan`),
   CONSTRAINT `fk_uaprendizaje_reqseriacion1` FOREIGN KEY (`reqseriacion`) REFERENCES `reqseriacion` (`reqseriacion`),
   CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users_delia` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
@@ -3122,6 +3239,7 @@ CREATE TABLE `uaprendizaje` (
 -- ----------------------------
 -- Records of uaprendizaje
 -- ----------------------------
+INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMATICAS', '10', '10', '10', '10', '10', '10', '200', '2014-10-09', 'VAMOS A VER', '1', '1', '1', '1', '20092', '10');
 
 -- ----------------------------
 -- Table structure for universidades_emp
@@ -6520,7 +6638,6 @@ NEW.observa,
 NEW.semestre_sug,
 NEW.caracter,
 NEW.reqseriacion,
-NEW.etapa,
 NEW.coordinaciona,
 NEW.plan                                                                                                                   
 ) 
@@ -6561,7 +6678,6 @@ NEW.observa,
 NEW.semestre_sug,
 NEW.caracter,
 NEW.reqseriacion,
-NEW.etapa,
 NEW.coordinaciona,
 NEW.plan                                                                                                                   
 ),
@@ -6580,7 +6696,6 @@ OLD.observa,
 OLD.semestre_sug,
 OLD.caracter,
 OLD.reqseriacion,
-OLD.etapa,
 OLD.coordinaciona,
 OLD.plan                                                                                                                   
 )  
@@ -6621,7 +6736,6 @@ OLD.observa,
 OLD.semestre_sug,
 OLD.caracter,
 OLD.reqseriacion,
-OLD.etapa,
 OLD.coordinaciona,
 OLD.plan                                                                                                                   
 ) 
