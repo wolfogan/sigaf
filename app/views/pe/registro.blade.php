@@ -44,15 +44,9 @@
 			<h3>Agregar Seriación</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlanAgregarSeriacion">
-					<tr>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
+					<tr class="sin-seriacion">
+						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 					</tr>
-
 					<tr class="fila-base-seriacion">
 						<td>Tipo:</td>
 						<td>
@@ -64,32 +58,17 @@
 						</td>
 
 						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' disabled="true"/></td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' /></td>
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
+						
 						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
 						<td><input type="button" class="dd_clsAgregarFila"></td>
-					</tr>
 
-					<tr class="fila-uno-seriacion">
-						<td>Tipo:</td>
-						<td>
-							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
-								@foreach($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' disabled="true"/></td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
-						<td><input type="button" class="dd_clsAgregarFila"></td>
 					</tr>
 				</table>
 			</div>
 						<div class="CatBotones">
-							<input type="submit" class="estilo_button2" value="Guardar"/>
+							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 							<input type="button" value="Salir" class="md-close" />
 						</div>
 		</form>
@@ -1086,45 +1065,84 @@
 		// EVENTOS PARA LA TABLA DE LAS SERIACIONES
 		$(".tblCatPlanAgregarSeriacion").on("click",".dd_clsAgregarFila",function(){
 			
+			var filaSeriacion = $(this).parents().get(1);
+			// Validar clave de seriación
+			if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
+			{
+				alert("Por favor, agregue una seriación válida");
+				return;
+			}
+			// Duplicar fila base y añadir a tabla
 			$(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			$(".sin-seriacion").hide();
 			//console.log(filaSeriacion);
+			
+			// Deshabilitar fila anterior
+			$(filaSeriacion).find("input,select").attr("disabled",true);
 		});
 
 		$(".tblCatPlanAgregarSeriacion").on("click",".clsEliminarFila",function(){
 			var filaSeriacion = $(this).parents().get(1);
-			if(!$(filaSeriacion).hasClass("fila-uno-seriacion"))
-				$(filaSeriacion).remove();
+			// Remover fila
+			$(filaSeriacion).remove();
+			// Habilitar fila anterior
+			$(".tblCatPlanAgregarSeriacion tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
+
+			// Si se elimina la última fila, mostrar mensaje sin seriación
+			var rowCount = $(".tblCatPlanAgregarSeriacion > tbody > tr").length;
+			if(rowCount == 2)
+				$(".sin-seriacion").show();
 		});
-		// Habilitar inputs cuando elijan seriacion
-		$(".tblCatPlanAgregarSeriacion").on("change",".tipo-seriacion",function(){
-			var opcionSerie = $(this).val();
-			if(opcionSerie==1)
-			{
-				var filaSeriacion = $(this).parents().get(1);
-				$(filaSeriacion).find(".clave-seriacion").attr('disabled',true).val("");
-				$(filaSeriacion).find(".clave-seriacion-descripcion").val("");
-			}
-			else
-			{
-				var filaSeriacion = $(this).parents().get(1);
-				$(filaSeriacion).find(".clave-seriacion").removeAttr('disabled').val("");
-			}
-		});
+		
 		// Cargar descripcion de ua cuando la tecleen o seleccionen
 		$(".tblCatPlanAgregarSeriacion").on("input",".clave-seriacion",function(){
 			
-			if($(this).val()!="" && $(this).val().length>=5)
+			var idua = $(this).val();
+			var filaSeriacion = $(this).parents().get(1);
+			// Si la clave seriada no esta vacia y es mayor o igual a 5 consultar.
+			if($(this).val()!="" && $(this).val().length==5)
 			{
-				var idua = $(this).val();
-				var filaSeriacion = $(this).parents().get(1);
-				alert(idua);
+				//alert(idua);
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
-					alert(materia);
+					//alert(materia);
 					$(filaSeriacion).find(".clave-seriacion-descripcion").val(materia);
 					
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
 				});
+
+			}
+			else
+			{
+				// Indicar que no existe la clave en la descripción
+				$(filaSeriacion).find(".clave-seriacion-descripcion").val("NO EXISTE");
 			}
 		});
+
+
+		// Boton AGREGAR en ventana modal seriacion
+		$("#agregarSeriacion").on("click",function(){
+			var rowCount = $(".tblCatPlanAgregarSeriacion > tbody > tr").length;
+			if(rowCount > 2)
+			{
+				var filaSeriacion = $(".tblCatPlanAgregarSeriacion tr:last-child");
+				if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
+				{
+					alert("Por favor, agregue una seriación válida");
+					return;
+				}
+			}
+
+			$(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			$(".sin-seriacion").hide();
+
+			console.log($(".tblCatPlanAgregarSeriacion .md-close").fn);
+		});
+
+		
+
+		
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
 		$('#tblUA tbody').on('click','td',function(event){
 			

@@ -1,0 +1,924 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"funcio",
+				"function"
+			],
+			[
+				"md",
+				"md-close"
+			],
+			[
+				"remo",
+				"removeAttr"
+			],
+			[
+				"clave",
+				"clave-seriacion-descripcion"
+			],
+			[
+				"err",
+				"errorText"
+			],
+			[
+				"erro",
+				"errorThrow"
+			],
+			[
+				"row",
+				"rowCount"
+			],
+			[
+				"tbl",
+				"tblCatPlanAgregarSeriacion"
+			],
+			[
+				"plan",
+				"planestudio"
+			],
+			[
+				"form",
+				"formPlan"
+			],
+			[
+				"eror",
+				"errorText"
+			],
+			[
+				"er",
+				"errorThrow"
+			],
+			[
+				"text",
+				"textError"
+			],
+			[
+				"error",
+				"errorText"
+			],
+			[
+				"pe",
+				"periodo_ca"
+			],
+			[
+				"pro",
+				"programaVal"
+			],
+			[
+				"perio",
+				"periodoVal"
+			],
+			[
+				"datala",
+				"datalist_periodo_ca"
+			],
+			[
+				"data",
+				"datalist_grupo_ca"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"programa",
+				"programaedu"
+			],
+			[
+				"uas",
+				"uasPlan"
+			],
+			[
+				"fa",
+				"false"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"select",
+				"selectGrupos"
+			],
+			[
+				"ajax",
+				"ajaxGruposSemestre"
+			],
+			[
+				"j",
+				"jqxlistbox"
+			],
+			[
+				"list",
+				"listbosPlanVigente"
+			],
+			[
+				"semestres",
+				"semestresVigente"
+			],
+			[
+				"grupo",
+				"gruposCompletos"
+			],
+			[
+				"selectGrupo",
+				"selectGruposVigente"
+			],
+			[
+				"grupos",
+				"gruposTurno"
+			],
+			[
+				"descrip",
+				"descripcion"
+			],
+			[
+				"focus",
+				"focus"
+			],
+			[
+				"activ",
+				"activarModal"
+			],
+			[
+				"add",
+				"add_carreras"
+			],
+			[
+				"datali",
+				"datalist_coord"
+			],
+			[
+				"sub",
+				"substring"
+			],
+			[
+				"check",
+				"checkedItems"
+			],
+			[
+				"ua",
+				"uaformateadas"
+			],
+			[
+				"desc",
+				"descripcionmat"
+			],
+			[
+				"cara",
+				"caracter"
+			],
+			[
+				"Unida",
+				"UnidadAprendizaje"
+			],
+			[
+				"se",
+				"semestre"
+			],
+			[
+				"semes",
+				"semestresVigente"
+			],
+			[
+				"periodo",
+				"periodosPrograma"
+			],
+			[
+				"datalist",
+				"datalistPeriodo"
+			],
+			[
+				"registro",
+				"registrarPeriodo"
+			],
+			[
+				"fecha",
+				"fechaIniPeriodo"
+			],
+			[
+				"str",
+				"insertStr"
+			],
+			[
+				"string",
+				"string2"
+			],
+			[
+				"strin",
+				"stringAdd"
+			],
+			[
+				"arra",
+				"array	$… = array (…)"
+			],
+			[
+				"cred",
+				"creditosObligatorias"
+			],
+			[
+				"actu",
+				"actualizarCreditos"
+			],
+			[
+				"cre",
+				"creditosOptativas"
+			],
+			[
+				"CRE",
+				"creditosObligatorias"
+			],
+			[
+				"credi",
+				"creditosOptativas"
+			],
+			[
+				"crei",
+				"creditosObligatorias"
+			],
+			[
+				"total",
+				"totalCreditos"
+			],
+			[
+				"creditos",
+				"creditos_obligatorias"
+			],
+			[
+				"coor",
+				"coordinaciona"
+			],
+			[
+				"dat",
+				"datalist_coord"
+			],
+			[
+				"coo",
+				"coordinaciona"
+			],
+			[
+				"carre",
+				"carrera_update"
+			],
+			[
+				"tronco",
+				"troncoComun"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"carrera",
+				"carrera_actualizar"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"tron",
+				"troncoComun"
+			],
+			[
+				"blo",
+				"bloque"
+			],
+			[
+				"bloqu",
+				"bloquesUA"
+			],
+			[
+				"des",
+				"descripcionUA"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/controllers/PlanEstudioController.php",
+			"settings":
+			{
+				"buffer_size": 19735,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/pe/registro.blade.php",
+			"settings":
+			{
+				"buffer_size": 48298,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/modalEffects.js",
+			"settings":
+			{
+				"buffer_size": 1152,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"COMM",
+				"Toggle Comment"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/SOPORTE/Desktop/sigaf/public/js/insertarua.js",
+		"/C/Users/SOPORTE/Desktop/sigaf/CODIGOS ANTERIORES.txt",
+		"/C/Users/SOPORTE/Desktop/programacion_basica/gatoperrojson.html",
+		"/C/Users/SOPORTE/Desktop/programacion_basica/mipaginita.html",
+		"/C/Users/SOPORTE/Desktop/programacion_basica/codigo.js",
+		"/C/Users/SOPORTE/Desktop/programacion_basica/clase1.html",
+		"/C/Users/SOPORTE/Desktop/programacion_basica/pokemon.html",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/PlanEstudioController.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/pe/registro.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/routes.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/config/database.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/public/css/estiloPrincipal.css",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/CargaAcademicaController.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/ca/registro.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/ca/consulta.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/q",
+		"/C/Users/SOPORTE/Desktop/Porcentajes Error.sql",
+		"/C/Users/SOPORTE/Desktop/registro.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/CAMBIOS A BASE DE DATOS.txt",
+		"/C/Users/SOPORTE/Desktop/sigaf/ANOMALIAS.txt",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/pe/consulta.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/PREGUNTAS.txt",
+		"/C/Users/SOPORTE/Desktop/sigaf/PENDIENTES.txt",
+		"/C/Users/SOPORTE/Desktop/sigaf/public/css/estilodrag.css",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/index.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/helpers.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/controllers/home.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/comentarios.txt",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/controllers/contactos.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/views/home.tpl.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/.htaccess",
+		"/C/Users/SOPORTE/Desktop/sigaf/public/.htaccess",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/views/contactos.tpl.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/contactos.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/home.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/config.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/view.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/helloworld.php",
+		"/C/Users/SOPORTE/Desktop/mejorandophp/helloworld.html",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Turno.php",
+		"/C/wamp/alias/sigaf.conf",
+		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/login.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Periodo.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/PlanEstudio.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/views/ca/registro2.blade.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Caracter.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Coordinacion.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Especialidad.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Etapa.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/NivelPrograma.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/PeriodoPrograma.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/public/js/funcionalidad.carga.js",
+		"/C/Users/SOPORTE/Desktop/CA/16_Bkp_full_hr_25ju14_E.sql",
+		"/C/Users/SOPORTE/Desktop/nombre",
+		"/C/Users/SOPORTE/Desktop/sigaf.conf",
+		"/E/sigaf.sql",
+		"/C/Users/SOPORTE/Desktop/sigaf.sql",
+		"/C/Users/SOPORTE/Desktop/sigaf/.gitignore",
+		"/C/Users/SOPORTE/Desktop/ModalWindowEffects/js/modalEffects.js",
+		"/C/Users/SOPORTE/Desktop/ModalWindowEffects/js/cssParser.js",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/UserLoginController.php",
+		"/C/Users/SOPORTE/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 55.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"error",
+			"registrarPlanEstudios",
+			"semestre",
+			"carrera_ca",
+			"carreraAdmin",
+			"carrera",
+			"carrera_ca",
+			"string",
+			"PLAN:",
+			"uasVigente",
+			" 2014-1",
+			"Naranja",
+			"listboxPlanVigente",
+			"listbosPlanVigente",
+			"<tr>\n							<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>\n						</tr>",
+			"<tr>\n								<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>\n							</tr>",
+			"GRUPOS",
+			"<tr>\n								<td>231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>\n							</tr>",
+			"coord",
+			"'",
+			"t",
+			"this",
+			"insertarua",
+			"registrarPeriodo",
+			"insertarUA",
+			"registrarUnidadAprendizaje",
+			"example",
+			"tipo_update",
+			"divUA",
+			"1",
+			"add_carreras",
+			"();\n",
+			".listbo",
+			"});\n",
+			"Vigente",
+			"tabla",
+			"search",
+			"periodo",
+			"Periodo",
+			"periodo",
+			"lapso",
+			"Lapso",
+			"lapso",
+			"Lapso",
+			"lapso",
+			"periodo",
+			"Periodo",
+			"periodo",
+			"txtPeriodoCa",
+			"fechaFinPeriodo",
+			"fechaIniPeriodo",
+			"TipoPrograma",
+			"tblCatPeriodo",
+			"1",
+			"prueba",
+			"example41",
+			"removeModal",
+			"sumarCreditos",
+			"actualizarua",
+			"actualizarUA",
+			"coordinacion",
+			"COORDINACION",
+			"coordinacion",
+			"consulta",
+			"semestre_consulta",
+			"carrera_update",
+			"carrera_actualizar",
+			"troncoComun",
+			"$(\"#checkTroncoComun\").hide();",
+			"checkTroncoComun",
+			"bold"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/PlanEstudioController.php",
+					"settings":
+					{
+						"buffer_size": 19735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9450,
+								9450
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4025.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/pe/registro.blade.php",
+					"settings":
+					{
+						"buffer_size": 48298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43532,
+								43532
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 15536.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/modalEffects.js",
+					"settings":
+					{
+						"buffer_size": 1152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1095,
+								1095
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "app/views/pe/registro.blade.php",
+					"settings":
+					{
+						"buffer_size": 48298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2407,
+								2407
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 113.0,
+						"translation.y": 546.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.428451178451,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/SOPORTE/Desktop/programacion_basica/programacionbasica.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 178.0,
+	"status_bar_visible": true
+}

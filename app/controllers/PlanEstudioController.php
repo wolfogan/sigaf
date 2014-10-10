@@ -309,7 +309,10 @@ class PlanEstudioController extends BaseController
 	{
 		$ua_id = Input::get('uaprendizaje');
 		$uaprendizaje = UnidadAprendizaje::find($ua_id);
-		return $uaprendizaje->descripcionmat;
+		if(empty($uaprendizaje))
+			return "NO EXISTE";
+		else
+			return $uaprendizaje->descripcionmat;
 	}
 
 	public function postObtenerclave()

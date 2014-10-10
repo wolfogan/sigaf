@@ -117,3 +117,21 @@ EN REGISTRO DE PLAN DE ESTUDIO
 			alert("Mi zorrita esta cachorra y la adoro a la tontassss");
 			alert($("#select_carreras").val());
 		});
+
+
+// PARA EL CASO DE LAS SERIACIONES CUANDO EXISTIA EL SIN SERIACION
+/* Habilitar inputs cuando elijan seriacion
+		$(".tblCatPlanAgregarSeriacion").on("change",".tipo-seriacion",function(){
+			var opcionSerie = $(this).val();
+			if(opcionSerie==1)
+			{
+				var filaSeriacion = $(this).parents().get(1);
+				$(filaSeriacion).find(".clave-seriacion").attr('disabled',true).val("");
+				$(filaSeriacion).find(".clave-seriacion-descripcion").val("");
+			}
+			else
+			{
+				var filaSeriacion = $(this).parents().get(1);
+				$(filaSeriacion).find(".clave-seriacion").removeAttr('disabled').val("");
+			}
+		});*/
