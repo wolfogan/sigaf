@@ -40,7 +40,7 @@
 	
 	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
 	<div class="md-modal md-effect-11" id="add_seriacion"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+		<form  id="formSeriacion" class="md-content" method="post">
 			<h3>Agregar Seriación</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlanAgregarSeriacion">
@@ -58,7 +58,7 @@
 						</td>
 
 						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" name='txtClaveSeriada' /></td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
 						
 						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
@@ -642,12 +642,12 @@
 			alert("No has seleccionado ninguna carrera");
 			return;
 		}
-		// Validar seriacion
+		/* Validar seriacion
 		if($("#serie").val()!=1 && $("#clave2F").val().length<1)
 		{
 			alert("Debes escribir una materia seriada");
 			return;
-		}
+		}*/
 
 		// Mostrar AjaxLoader
 		$("#ajaxLoad").css("display","block");
@@ -655,8 +655,10 @@
 		// REGISTRAR UNIDAD DE APRENDIZAJE
 		if(opcion == "Guardar")
 		{
-			var dataUA = $("#formularioPlanEstudio").serialize();
-			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
+			//var dataUA = $("#formularioPlanEstudio").serialize();
+			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
+			console.log($("#formSeriacion").serialize());
+			/*$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
 				var noPlan=$("#noPlan").val();
 				var clave1F=$("#clave1F").val();
 				var materia=$("#materia").val();
@@ -705,7 +707,7 @@
 				// OCULTAR AJAXLOADER
 				$("#ajaxLoad").css("display","none");
 				
-			});
+			});*/
 		}
 		else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
 		{
@@ -937,19 +939,26 @@
 				var idua = $(this).val();
 			
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
-					$("#materia").val(materia);
-					$("#materia").css({"background":"pink","color":"black"});
-					$("#clave1F").css("background","pink");
-					if($("#guardar").val()=="Guardar")
+					if(materia != "NO EXISTE")
 					{
-						alert("Esta unidad de aprendizaje ya esta registrada indique otro número de clave por favor");
-						$("#clave1F").val("").focus();
-						$("#materia").val("").css({"background":"","color":"black"});
-						$("#clave1F").css("background","");
+						$("#materia").val(materia);
+						$("#materia").css({"background":"pink","color":"black"});
+						$("#clave1F").css("background","pink");
+						if($("#guardar").val()=="Guardar")
+						{
+							alert("Esta unidad de aprendizaje ya esta registrada indique otro número de clave por favor");
+							$("#clave1F").val("").focus();
+							$("#materia").val("").css({"background":"","color":"black"});
+							$("#clave1F").css("background","");
+						}
+					}
+					else
+					{
+						$("#materia").css({"background":"#173C00","color":"white","font-size":"130%"}).focus();
 					}
 				})
 				.fail(function(){
-					$("#materia").css({"background":"#173C00","color":"white","font-size":"130%"}).focus();
+					
 				});
 			}
 		});
@@ -1073,12 +1082,15 @@
 				return;
 			}
 			// Duplicar fila base y añadir a tabla
-			$(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
 			$(".sin-seriacion").hide();
 			//console.log(filaSeriacion);
 			
+			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+
 			// Deshabilitar fila anterior
-			$(filaSeriacion).find("input,select").attr("disabled",true);
+			$(filaSeriacion).find("select,input").attr("disabled",true);
 		});
 
 		$(".tblCatPlanAgregarSeriacion").on("click",".clsEliminarFila",function(){
@@ -1133,11 +1145,15 @@
 					return;
 				}
 			}
+			
 
-			$(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+			
 			$(".sin-seriacion").hide();
 
-			console.log($(".tblCatPlanAgregarSeriacion .md-close").fn);
+			
 		});
 
 		

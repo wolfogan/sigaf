@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50617
+Source Server Version : 50612
 Source Host           : localhost:3306
 Source Database       : sigaf_last
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2014-10-10 05:53:23
+Date: 2014-10-10 17:05:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -4205,7 +4205,8 @@ registro
 )
 VALUES (
 'detalleseriacion', NEW.users_id, 'I', curdate( ) , concat_WS( '|', 
-NEW.uaprendizaje, 
+NEW.uaprendizaje,
+NEW.reqseriacion, 
 NEW.uaprequisito) 
 );
 
@@ -4229,8 +4230,8 @@ fecha,
 registro,registro_old
 )
 VALUES (
-'detalleseriacion', NEW.users_id, 'U', curdate( ) , concat_WS( '|',NEW.uaprendizaje, NEW.uaprequisito),
-concat_WS( '|',OLD.uaprendizaje, OLD.uaprequisito));
+'detalleseriacion', NEW.users_id, 'U', curdate( ) , concat_WS( '|',NEW.uaprendizaje, NEW.reqseriacion, NEW.uaprequisito),
+concat_WS( '|',OLD.uaprendizaje,OLD.reqseriacion,OLD.uaprequisito));
 
 END
 ;;
@@ -4253,7 +4254,8 @@ registro_old
 )
 VALUES (
 'detalleseriacion', OLD.users_id, 'D', curdate( ) , concat_WS( '|', 
-OLD.uaprendizaje, 
+OLD.uaprendizaje,
+OLD.reqseriacion, 
 OLD.uaprequisito) 
 );
 
@@ -6608,214 +6610,6 @@ registro_old
 VALUES (
 'uacademica', OLD.users_id, 'D', curdate( ) , concat_WS( '|', OLD.uacademica, OLD.descripshort, OLD.descripcion,OLD.campus 
 ));
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_I_uaprendizaje`;
-DELIMITER ;;
-CREATE TRIGGER `bit_I_uaprendizaje` AFTER INSERT ON `uaprendizaje` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al INSERTAR REGISTRO en *uaprendizaje*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro
-)
-VALUES (
-'uaprendizaje', NEW.users_id, 'I', curdate( ) , concat_WS( '|', 
-NEW.uaprendizaje, 
-NEW.descripcionmat, 
-NEW.HC,
-NEW.HL,
-NEW.HT,
-NEW.HPC,
-NEW.HCL,
-NEW.HE,
-NEW.creditos,
-NEW.fec_aut,
-NEW.observa,
-NEW.semestre_sug,
-NEW.caracter,
-NEW.reqseriacion,
-NEW.coordinaciona,
-NEW.plan                                                                                                                   
-) 
-);
-
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_U_uaprendizaje`;
-DELIMITER ;;
-CREATE TRIGGER `bit_U_uaprendizaje` AFTER UPDATE ON `uaprendizaje` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al MODIFICAR REGISTRO en *uaprendizaje*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro,registro_old
-)
-VALUES (
-'uaprendizaje', NEW.users_id, 'U', curdate( ) , concat_WS( '|', 
-NEW.uaprendizaje, 
-NEW.descripcionmat, 
-NEW.HC,
-NEW.HL,
-NEW.HT,
-NEW.HPC,
-NEW.HCL,
-NEW.HE,
-NEW.creditos,
-NEW.fec_aut,
-NEW.observa,
-NEW.semestre_sug,
-NEW.caracter,
-NEW.reqseriacion,
-NEW.coordinaciona,
-NEW.plan                                                                                                                   
-),
-concat_WS( '|', 
-OLD.uaprendizaje, 
-OLD.descripcionmat, 
-OLD.HC,
-OLD.HL,
-OLD.HT,
-OLD.HPC,
-OLD.HCL,
-OLD.HE,
-OLD.creditos,
-OLD.fec_aut,
-OLD.observa,
-OLD.semestre_sug,
-OLD.caracter,
-OLD.reqseriacion,
-OLD.coordinaciona,
-OLD.plan                                                                                                                   
-)  
-);
-
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_D_uaprendizaje`;
-DELIMITER ;;
-CREATE TRIGGER `bit_D_uaprendizaje` AFTER DELETE ON `uaprendizaje` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al BORRAR REGISTRO en *uaprendizaje*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro_old
-)
-VALUES (
-'uaprendizaje', OLD.users_id, 'D', curdate( ) , concat_WS( '|', 
-OLD.uaprendizaje, 
-OLD.descripcionmat, 
-OLD.HC,
-OLD.HL,
-OLD.HT,
-OLD.HPC,
-OLD.HCL,
-OLD.HE,
-OLD.creditos,
-OLD.fec_aut,
-OLD.observa,
-OLD.semestre_sug,
-OLD.caracter,
-OLD.reqseriacion,
-OLD.coordinaciona,
-OLD.plan                                                                                                                   
-) 
-);
-
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_I_universidades_emp`;
-DELIMITER ;;
-CREATE TRIGGER `bit_I_universidades_emp` AFTER INSERT ON `universidades_emp` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al INSERTAR REGISTRO en *universidades_emp*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro
-)
-VALUES (
-'universidades_emp', NEW.users_id, 'I', curdate( ) , concat_WS( '|', NEW.universidad, NEW.desripcion, NEW.ciudad ) 
-);
-
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_U_universidades_emp`;
-DELIMITER ;;
-CREATE TRIGGER `bit_U_universidades_emp` AFTER UPDATE ON `universidades_emp` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al MODIFICAR REGISTRO en *universidades_emp*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro,registro_old
-)
-VALUES (
-'universidades_emp', NEW.users_id, 'U', curdate( ) , concat_WS( '|', NEW.universidad, NEW.desripcion, NEW.ciudad ),
-concat_WS( '|', OLD.universidad, OLD.desripcion, OLD.ciudad )  
-);
-
-END
-;;
-DELIMITER ;
-DROP TRIGGER IF EXISTS `bit_D_universidades_emp`;
-DELIMITER ;;
-CREATE TRIGGER `bit_D_universidades_emp` AFTER DELETE ON `universidades_emp` FOR EACH ROW BEGIN 
--- -----------------------------------------------------
--- Bitacora al BORRAR REGISTRO en *universidades_emp*
--- Uso: SIGAF UABC 
--- Autor:Delia Yadira Gambino Tj. BC Oct 2014 
--- -----------------------------------------------------
-
-INSERT INTO `bitacora` (
-tabla,
-usuario,
-operacion,
-fecha,
-registro_old
-)
-VALUES (
-'universidades_emp', OLD.users_id, 'D', curdate( ) , concat_WS( '|', OLD.universidad, OLD.desripcion, OLD.ciudad ) 
-);
-
 END
 ;;
 DELIMITER ;
