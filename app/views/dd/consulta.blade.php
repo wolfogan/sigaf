@@ -248,7 +248,9 @@
 									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:90px;" type="text"/></div>
 								</div>
 
+
 		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
+		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Modificar" name="dd_modificar" id="dd_modificar" /></div>
 						</div>
 
 <!----------------------------- SEGUNDO TAB CONTENIDO ------------------------------------------>

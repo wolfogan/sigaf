@@ -112,8 +112,7 @@
 						<th>CREDITOS PRACTICAS</th>
 						<th>MODIFICAR</th>
 						<th>ELIMINAR</th>
-					
-						
+		
 
 					</tr>
 				</thead>

@@ -916,16 +916,49 @@ background: #EFCA0D;
 
 .us_txtNoEmpleado
 {
-	
 	padding-bottom: 10px;
 	padding-left: 10px;
-	width: 500px;
+	width: 850px;
 }
+
+.us_nuevo_usuario
+{
+	
+	float: left;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 50px;
+
+}
+.us_div
+{
+	
+	margin-top: 80px;
+
+
+}
+.us_nuevo
+{
+	float: left;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 20px;
+	width: 400px;
+}
+.us_repetir
+{
+	
+	float: left;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 450px;
+}
+
 
 .btnUnidadAcadRegistro
 {
 	
-	margin-left: 415px;
+	margin-left: 410px;
 	margin-top: -27px;
 	width: 50px;
 
@@ -936,16 +969,17 @@ background: #EFCA0D;
 	border: 1px solid gray;
 	padding-left: 20px;
 	padding-top: 20px;
-	padding-bottom: 20px;
 	margin: auto;
 	margin-top: 30px;
-	width: 530px;
+	margin-bottom: 40px;
+	width: 910px;
 }
 
 #us_btnRegistroUsuario
 {
-	padding-top: 30px;
 	margin: auto;
+	margin-top: 260px;
+	margin-bottom: 20px;
 	width: 220px;
 }
 
@@ -1824,8 +1858,9 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_licenciatura_uniEgreso_fechaTitulacion_cedula
 {
+	
 	padding-bottom: 40px;
-	width: 1180px;
+	width: 1190px;
 }
 .dd_licenciatura
 {
