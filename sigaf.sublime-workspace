@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"form",
+				"formPlan"
+			],
+			[
+				"data",
+				"dataUA"
+			],
+			[
 				"funcio",
 				"function"
 			],
@@ -40,10 +48,6 @@
 				"planestudio"
 			],
 			[
-				"form",
-				"formPlan"
-			],
-			[
 				"eror",
 				"errorText"
 			],
@@ -74,10 +78,6 @@
 			[
 				"datala",
 				"datalist_periodo_ca"
-			],
-			[
-				"data",
-				"datalist_grupo_ca"
 			],
 			[
 				"for",
@@ -307,7 +307,7 @@
 			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 19735,
+				"buffer_size": 19901,
 				"line_ending": "Windows"
 			}
 		},
@@ -315,7 +315,7 @@
 			"file": "app/views/pe/registro.blade.php",
 			"settings":
 			{
-				"buffer_size": 48298,
+				"buffer_size": 48897,
 				"line_ending": "Windows"
 			}
 		},
@@ -540,7 +540,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -548,15 +548,15 @@
 					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 19735,
+						"buffer_size": 19901,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9450,
-								9450
+								9259,
+								9259
 							]
 						],
 						"settings":
@@ -613,7 +613,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4025.0,
+						"translation.y": 3311.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -623,15 +623,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 48298,
+						"buffer_size": 48897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43532,
-								43532
+								27827,
+								27827
 							]
 						],
 						"settings":
@@ -688,7 +688,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15536.0,
+						"translation.y": 9119.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -779,7 +779,7 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 48298,
+						"buffer_size": 48897,
 						"regions":
 						{
 						},
@@ -880,7 +880,7 @@
 		"cols":
 		[
 			0.0,
-			0.428451178451,
+			0.708754208754,
 			1.0
 		],
 		"rows":

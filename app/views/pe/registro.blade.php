@@ -657,9 +657,11 @@
 		{
 			//var dataUA = $("#formularioPlanEstudio").serialize();
 			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
-			console.log($("#formSeriacion").serialize());
+			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize();
+			console.log(dataUA);
+			alert(dataUA);
 			/*$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
-				var noPlan=$("#noPlan").val();
+				/*var noPlan=$("#noPlan").val();
 				var clave1F=$("#clave1F").val();
 				var materia=$("#materia").val();
 				//var carrera = "INFORMATICA";
@@ -698,9 +700,9 @@
 				alert(data);
 				$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 				reset_campos();
-				//desmarcar_carreras();
-			})
-			.fail(function(errorText,textError,errorThrow){
+				//desmarcar_carreras();alert(data);
+			});
+			/*.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
 			})
 			.always(function(){

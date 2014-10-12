@@ -247,8 +247,8 @@ class PlanEstudioController extends BaseController
 
 	public function postRegistrarua()
 	{
-
-		$noplan = Input::get('noPlan');
+		$tipo = gettype(Input::get("seriacion_clave"));
+		/*$noplan = Input::get('noPlan');
 		$clave = Input::get('clave1F');
 		$UA = UnidadAprendizaje::where('uaprendizaje',$clave) -> where('plan',$noplan) ->get();
 		
@@ -295,7 +295,7 @@ class PlanEstudioController extends BaseController
 
 		return $mensaje;
 
-
+*/ return $tipo;
 	}
 
 	// LLAMADAS ASINCRONAS
