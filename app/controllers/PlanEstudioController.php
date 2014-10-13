@@ -286,7 +286,7 @@ class PlanEstudioController extends BaseController
 				DB::table('p_ua') -> insert(array('programaedu' => $carrera,'uaprendizaje' => $clave,'etapa' => $etapa,'users_id' => $users_id));
 			}
 
-			// Capturar claves y tipos
+			// Capturar claves seriadas[11236,11237] y tipos [OBLIGATORIAS,OPTATIVAS]
 			$tipos = Input::get("seriacion_tipo");
 			$claves = Input::get("seriacion_clave");
 			// Registrar las materias seriadas en detalleseriacion si existen registros
@@ -297,14 +297,14 @@ class PlanEstudioController extends BaseController
 				}
 			}
 
-			$mensaje = "Registros insertados";
+			$mensaje = "¡Unidad de Aprendizaje registrada correctamente!";
 		}
 		else
 		{
-			$mensaje = "Materia ya existe";
+			$mensaje = "¡Materia ya existe!";
 		}
 
-		//$mensaje = "hola";
+		
 
 		return $mensaje;
 	}

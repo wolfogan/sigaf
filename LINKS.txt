@@ -6,3 +6,14 @@ https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JavaScrip
 http://mundogeek.net/archivos/2004/07/22/javascript-variables-constantes-y-tipos-de-datos/
 http://www.forosdelweb.com/f13/pasar-valores-formulario-funcion-javascript-279304/
 http://vertutoriales.com/asignar-valor-a-un-objeto-html-con-javascript-utilizando-document-getelementbyid/
+http://www.w3schools.com/jsref/jsref_join.asp
+http://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=799:arrays-javascript-arreglos-declaracion-inicializacion-array-vacio-length-undefined-ejemplos-cu01121e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206
+http://www.desarrolloweb.com/articulos/630.php
+http://stackoverflow.com/questions/8449449/how-to-write-a-jquery-selector-with-multiple-eqs-in-single-expression
+http://jsperf.com/jquery-selecting-elements-by-index/3
+http://jsperf.com/first-vs-first-vs-eq-0/5
+http://www.anerbarrena.com/php-foreach-4298/
+http://sql.11sql.com/sql-left-join.htm
+http://www.mysqltutorial.org/mysql-group_concat/
+http://dev.mysql.com/doc/refman/5.0/es/group-by-functions.html
+http://blog.unelink.es/wiki/mysql-2/concatenar-dos-campos-en-mysql/

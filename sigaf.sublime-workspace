@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"sin",
+				"sin-seriacion"
+			],
+			[
+				"UAS",
+				"uasSeriadas"
+			],
+			[
+				"uas",
+				"uasSeriadas"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"user",
+				"users_id"
+			],
+			[
 				"form",
 				"formPlan"
 			],
@@ -80,16 +100,8 @@
 				"datalist_periodo_ca"
 			],
 			[
-				"for",
-				"for	for (…) {…}"
-			],
-			[
 				"programa",
 				"programaedu"
-			],
-			[
-				"uas",
-				"uasPlan"
 			],
 			[
 				"fa",
@@ -304,26 +316,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/PlanEstudioController.php",
-			"settings":
-			{
-				"buffer_size": 19901,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/views/pe/registro.blade.php",
 			"settings":
 			{
-				"buffer_size": 48897,
+				"buffer_size": 49881,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/js/modalEffects.js",
+			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 1152,
+				"buffer_size": 20458,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LINKS.txt",
+			"settings":
+			{
+				"buffer_size": 1399,
 				"line_ending": "Windows"
 			}
 		}
@@ -372,6 +384,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/SOPORTE/Desktop/sigaf/public/js/modalEffects.js",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/BaseController.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/LINKS.txt",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/UnidadAprendizaje.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Periodo.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/NivelPrograma.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Seriacion.php",
+		"/C/Users/SOPORTE/Desktop/sigaf/app/config/database.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/public/js/insertarua.js",
 		"/C/Users/SOPORTE/Desktop/sigaf/CODIGOS ANTERIORES.txt",
 		"/C/Users/SOPORTE/Desktop/programacion_basica/gatoperrojson.html",
@@ -382,7 +402,6 @@
 		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/PlanEstudioController.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/views/pe/registro.blade.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/routes.php",
-		"/C/Users/SOPORTE/Desktop/sigaf/app/config/database.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/public/css/estiloPrincipal.css",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/CargaAcademicaController.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/views/ca/registro.blade.php",
@@ -415,14 +434,12 @@
 		"/C/wamp/alias/sigaf.conf",
 		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/views/login.blade.php",
-		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Periodo.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/PlanEstudio.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/views/ca/registro2.blade.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Caracter.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Coordinacion.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Especialidad.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/Etapa.php",
-		"/C/Users/SOPORTE/Desktop/sigaf/app/models/NivelPrograma.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/models/PeriodoPrograma.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/public/js/funcionalidad.carga.js",
 		"/C/Users/SOPORTE/Desktop/CA/16_Bkp_full_hr_25ju14_E.sql",
@@ -452,6 +469,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ActualizarUAS",
+			".sin-seriacion",
+			"\").show();\n		});",
+			".sin-seriacion",
+			"#sin-seriacion",
+			"reset_campos",
+			"seriacion",
+			"serie",
+			"reset_campos",
+			"filter",
+			"$(\"#tblCat\")",
+			"focusout",
+			"clsEliminarFila",
 			"error",
 			"registrarPlanEstudios",
 			"semestre",
@@ -540,23 +570,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/PlanEstudioController.php",
+					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 19901,
+						"buffer_size": 49881,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9259,
-								9259
+								31956,
+								31956
 							]
 						],
 						"settings":
@@ -613,25 +643,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3311.0,
+						"translation.y": 14011.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/pe/registro.blade.php",
+					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 48897,
+						"buffer_size": 20458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27827,
-								27827
+								11679,
+								12648
 							]
 						],
 						"settings":
@@ -688,25 +718,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9119.0,
+						"translation.y": 6623.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "public/js/modalEffects.js",
+					"file": "LINKS.txt",
 					"settings":
 					{
-						"buffer_size": 1152,
+						"buffer_size": 1399,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1095,
-								1095
+								1399,
+								1399
 							]
 						],
 						"settings":
@@ -759,8 +789,7 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -775,19 +804,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 0,
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 48897,
+						"buffer_size": 49881,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2407,
-								2407
+								40182,
+								40182
 							]
 						],
 						"settings":
@@ -843,8 +872,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 113.0,
-						"translation.y": 546.0,
+						"translation.x": 0.0,
+						"translation.y": 18251.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -880,7 +909,7 @@
 		"cols":
 		[
 			0.0,
-			0.708754208754,
+			0.914723465144,
 			1.0
 		],
 		"rows":

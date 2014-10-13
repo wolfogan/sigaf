@@ -694,6 +694,7 @@
 				{
 					uasSeriadas = "SIN SERIACIÓN";
 				}
+				// Agregar fila por cada carrera seleccionada
 				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
 					if($(elemento).hasClass('active') && indice != 0)
 					{
@@ -848,10 +849,10 @@
 		$("#carrera").val("");
 		$("#etapaF").val("1");
 		$("#tipoF").val("1");
-		$("#materiaSeriada").val("");
-		$("#serie").val("1");
-		$("#clave2F").val("");
-		$("#clave2F").attr("disabled",true);
+		//$("#materiaSeriada").val("");
+		//$("#serie").val("1");
+		//$("#clave2F").val("");
+		//$("#clave2F").attr("disabled",true);
 		$("#seriacion").val("");
 		$("#hc").val(0);
 		$("#hl").val(0);
@@ -864,6 +865,8 @@
 		$("#semestre").val(1);
 		$("#observaciones").val("");
 
+		$(".tblCatPlanAgregarSeriacion > tbody > tr").not(":eq(0) , :eq(1)").remove();
+		$(".sin-seriacion").show();
 	}
 
 	function desmarcar_carreras()
@@ -1022,7 +1025,7 @@
 			}
 		});
 		
-		// VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
+		/* VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
 		$("#clave2F").on("focusout",function(){
 			if($("#serie").val()!=1){
 				if($(this).val().length<1)
@@ -1031,7 +1034,8 @@
 					$(this).css("background-color","");
 			}
 				
-		});
+		});*/
+
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE DE LA SERIACIÓN CUANDO PIERDE EL FOCO.
 		$("#clave2F").on("focusout",function(){
 			if($(this).val()!="")
