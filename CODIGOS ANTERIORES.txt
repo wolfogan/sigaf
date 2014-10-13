@@ -135,3 +135,15 @@ EN REGISTRO DE PLAN DE ESTUDIO
 				$(filaSeriacion).find(".clave-seriacion").removeAttr('disabled').val("");
 			}
 		});*/
+
+CUANDO ERA UNA MATERIA INDIVIDUAL SERIADA
+	/* VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
+		$("#clave2F").on("focusout",function(){
+			if($("#serie").val()!=1){
+				if($(this).val().length<1)
+					$(this).css("background-color","pink");
+				else
+					$(this).css("background-color","");
+			}
+				
+		});*/

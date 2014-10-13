@@ -795,7 +795,7 @@
 							uas[i].descripcion,
 							uas[i].etapa,
 							uas[i].caracter,
-							"11236",// Falta llenar las seriaciones
+							(uas[i].seriacion == null ) ? "SIN SERIACIÓN" : uas[i].seriacion,// Falta llenar las seriaciones
 							uas[i].coordinaciona,
 							uas[i].HC,
 							uas[i].HL,
@@ -1025,17 +1025,6 @@
 			}
 		});
 		
-		/* VERIFICAR QUE SELECCIONEN UNA CLAVE DE SERIACION CUANDO (OBLIGATORIA, SUGERIDA)
-		$("#clave2F").on("focusout",function(){
-			if($("#serie").val()!=1){
-				if($(this).val().length<1)
-					$(this).css("background-color","pink");
-				else
-					$(this).css("background-color","");
-			}
-				
-		});*/
-
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE DE LA SERIACIÓN CUANDO PIERDE EL FOCO.
 		$("#clave2F").on("focusout",function(){
 			if($(this).val()!="")
@@ -1185,11 +1174,11 @@
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
 		$('#tblUA tbody').on('click','td',function(event){
 			
-			if(t.cell(this).index().column!=11)
+			if(t.cell(this).index().column < 11)
 			{
-				// Habilitar todas las carreras
+				/* Habilitar todas las carreras
 				$("#select_carreras option").removeAttr('disabled');
-				$(".example41").multiselect('refresh');
+				$(".example41").multiselect('refresh');*/
 
 				$("#limpiar").val("Cancelar");
 
@@ -1259,7 +1248,7 @@
 								alert("Hubo error");
 							}
 						})
-						.fail(function(){alert("fallo");})
+						.fail(function(errorText,textError,errorThrow){alert("Fallor al cargar datos para actualizar: " + errorText.responseText);})
 						.always(function(){
 							// OCULTAR AJAXLOADER
 							$("#ajaxLoad").css("display","none");

@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCAL
-Source Server Version : 50617
+Source Server Version : 50612
 Source Host           : localhost:3306
 Source Database       : sigaf_last
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2014-10-13 03:39:20
+Date: 2014-10-13 13:49:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1321 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1372 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1432,6 +1432,57 @@ INSERT INTO `bitacora` VALUES ('1317', 'p_ua', '9', 'I', '2014-10-13 00:00:00', 
 INSERT INTO `bitacora` VALUES ('1318', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11238|1', null);
 INSERT INTO `bitacora` VALUES ('1319', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11238|11236', null);
 INSERT INTO `bitacora` VALUES ('1320', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11238|11237', null);
+INSERT INTO `bitacora` VALUES ('1321', 'p_ua', '9', 'D', '2014-10-13 00:00:00', null, '3|11237|1');
+INSERT INTO `bitacora` VALUES ('1322', 'p_ua', '9', 'D', '2014-10-13 00:00:00', null, '3|11238|1');
+INSERT INTO `bitacora` VALUES ('1323', 'p_ua', '9', 'D', '2014-10-13 00:00:00', null, '5|11237|1');
+INSERT INTO `bitacora` VALUES ('1324', 'p_ua', '9', 'D', '2014-10-13 00:00:00', null, '5|11238|1');
+INSERT INTO `bitacora` VALUES ('1325', 'detalleseriacion', '9', 'D', '2014-10-13 00:00:00', null, '11238|11236');
+INSERT INTO `bitacora` VALUES ('1326', 'detalleseriacion', '9', 'D', '2014-10-13 00:00:00', null, '11238|11237');
+INSERT INTO `bitacora` VALUES ('1327', 'uaprendizaje', '9', 'D', '2014-10-13 00:00:00', null, '11238|CIVISMO|5|0|0|0|0|0|10|2014-10-13||1|1|2|20092');
+INSERT INTO `bitacora` VALUES ('1328', 'uaprendizaje', '9', 'D', '2014-10-13 00:00:00', null, '11237|ESPAÑOL|10|0|0|0|0|0|20|2014-10-13|SIN SERIACIONES|1|1|1|20092');
+INSERT INTO `bitacora` VALUES ('1329', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11237|ESPAÑOL|10|0|0|0|0|0|20|2014-10-13||1|1|1|20092', null);
+INSERT INTO `bitacora` VALUES ('1330', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '3|11237|1', null);
+INSERT INTO `bitacora` VALUES ('1331', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11237|1', null);
+INSERT INTO `bitacora` VALUES ('1332', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11237|11236', null);
+INSERT INTO `bitacora` VALUES ('1333', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '1|CONTABILIDAD BASICA|6', '1|COORD. CONTABILIDAD BASICA|6');
+INSERT INTO `bitacora` VALUES ('1334', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '2|CONTABILIDAD AVANZADA|6', '2|COORD. CONTABILIDAD AVANZADA|6');
+INSERT INTO `bitacora` VALUES ('1335', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '3|CONTABILIDAD DE COSTOS|6', '3|COORD. CONTABILIDAD DE COSTOS|6');
+INSERT INTO `bitacora` VALUES ('1336', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '4|FINANZAS|6', '4|COORD.  FINANZAS|6');
+INSERT INTO `bitacora` VALUES ('1337', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '5|AUDITORIA|6', '5|COORD. AUDITORIA|6');
+INSERT INTO `bitacora` VALUES ('1338', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '6|IMPUESTOS|6', '6|COORD. IMPUESTOS|6');
+INSERT INTO `bitacora` VALUES ('1339', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '7|MERCADOTECNIA|6', '7|COORD. MERCADOTECNIA|6');
+INSERT INTO `bitacora` VALUES ('1340', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '8|RECURSOS HUMANOS|6', '8|COORD. RECURSOS HUMANOS|6');
+INSERT INTO `bitacora` VALUES ('1341', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '9|PRODUCCION|6', '9|COORD. PRODUCCION|6');
+INSERT INTO `bitacora` VALUES ('1342', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '10|ADMINISTRACION BASICA|6', '10|COORD.  ADMINISTRACION BASICA|6');
+INSERT INTO `bitacora` VALUES ('1343', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '11|ADMINISTRACION AVANZADA|6', '11|COORD. ADMINISTRACION AVANZADA|6');
+INSERT INTO `bitacora` VALUES ('1344', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '12|INFORMATICA|6', '12|COORD. INFORMATICA|6');
+INSERT INTO `bitacora` VALUES ('1345', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '13|MATEMATICAS|6', '13|COORD. MATEMATICAS|6');
+INSERT INTO `bitacora` VALUES ('1346', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '14|CIENCIAS COMPUTACIONALES|6', '14|COORD. CIENCIAS COMPUTACIONALES|6');
+INSERT INTO `bitacora` VALUES ('1347', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '15|SISTEMAS DE INFORMACION|6', '15|COORD. SISTEMAS DE INFORMACION|6');
+INSERT INTO `bitacora` VALUES ('1348', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '16|PROGRAMACION|6', '16|COORD. PROGRAMACION|6');
+INSERT INTO `bitacora` VALUES ('1349', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '17|ECONOMIA|6', '17|COORD. ECONOMIA|6');
+INSERT INTO `bitacora` VALUES ('1350', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '18|COMERCIO EXTERIOR|6', '18|COORD. COMERCIO EXTERIOR|6');
+INSERT INTO `bitacora` VALUES ('1351', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '19|DERECHO|6', '19|COORD. DERECHO|6');
+INSERT INTO `bitacora` VALUES ('1352', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '20|EMPRENDEDORES|6', '20|COORD. EMPRENDEDORES|6');
+INSERT INTO `bitacora` VALUES ('1353', 'coordinaciona', '11', 'U', '2014-10-13 00:00:00', '21|ASIGNATURAS DE APOYO|6', '21|COORD. ASIGNATURAS DE APOYO|6');
+INSERT INTO `bitacora` VALUES ('1354', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11238|CIVISMO|4|0|0|0|0|0|8|2014-10-13||1|1|5|20092', null);
+INSERT INTO `bitacora` VALUES ('1355', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '3|11238|1', null);
+INSERT INTO `bitacora` VALUES ('1356', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11238|1', null);
+INSERT INTO `bitacora` VALUES ('1357', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11238|11236', null);
+INSERT INTO `bitacora` VALUES ('1358', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11238|11237', null);
+INSERT INTO `bitacora` VALUES ('1359', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '3|11236|1', null);
+INSERT INTO `bitacora` VALUES ('1360', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11239|BIOLOGÍA|5|0|0|0|0|0|10|2014-10-13||1|1|5|20092', null);
+INSERT INTO `bitacora` VALUES ('1361', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11239|1', null);
+INSERT INTO `bitacora` VALUES ('1362', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11239|11236', null);
+INSERT INTO `bitacora` VALUES ('1363', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11240|GEOGRAFÍA|2|0|0|0|0|0|4|2014-10-13||1|1|4|20092', null);
+INSERT INTO `bitacora` VALUES ('1364', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11240|1', null);
+INSERT INTO `bitacora` VALUES ('1365', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11240|11237', null);
+INSERT INTO `bitacora` VALUES ('1366', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11241|EDUCACIÓN FÍSICA|4|0|0|0|0|0|8|2014-10-13||1|1|3|20092', null);
+INSERT INTO `bitacora` VALUES ('1367', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11241|1', null);
+INSERT INTO `bitacora` VALUES ('1368', 'uaprendizaje', '9', 'I', '2014-10-13 00:00:00', '11242|AHHH|6|0|0|0|0|0|12|2014-10-13||1|1|3|20092', null);
+INSERT INTO `bitacora` VALUES ('1369', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11242|1', null);
+INSERT INTO `bitacora` VALUES ('1370', 'p_ua', '9', 'D', '2014-10-13 00:00:00', null, '5|11242|1');
+INSERT INTO `bitacora` VALUES ('1371', 'uaprendizaje', '9', 'D', '2014-10-13 00:00:00', null, '11242|AHHH|6|0|0|0|0|0|12|2014-10-13||1|1|3|20092');
 
 -- ----------------------------
 -- Table structure for campus
@@ -2249,27 +2300,27 @@ CREATE TABLE `coordinaciona` (
 -- ----------------------------
 -- Records of coordinaciona
 -- ----------------------------
-INSERT INTO `coordinaciona` VALUES ('1', 'COORD. CONTABILIDAD BASICA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('2', 'COORD. CONTABILIDAD AVANZADA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('3', 'COORD. CONTABILIDAD DE COSTOS', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('4', 'COORD.  FINANZAS', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('5', 'COORD. AUDITORIA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('6', 'COORD. IMPUESTOS', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('7', 'COORD. MERCADOTECNIA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('8', 'COORD. RECURSOS HUMANOS', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('9', 'COORD. PRODUCCION', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('10', 'COORD.  ADMINISTRACION BASICA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('11', 'COORD. ADMINISTRACION AVANZADA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('12', 'COORD. INFORMATICA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('13', 'COORD. MATEMATICAS', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('14', 'COORD. CIENCIAS COMPUTACIONALES', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('15', 'COORD. SISTEMAS DE INFORMACION', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('16', 'COORD. PROGRAMACION', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('17', 'COORD. ECONOMIA', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('18', 'COORD. COMERCIO EXTERIOR', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('19', 'COORD. DERECHO', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('20', 'COORD. EMPRENDEDORES', '6', '11');
-INSERT INTO `coordinaciona` VALUES ('21', 'COORD. ASIGNATURAS DE APOYO', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('1', 'CONTABILIDAD BASICA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('2', 'CONTABILIDAD AVANZADA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('3', 'CONTABILIDAD DE COSTOS', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('4', 'FINANZAS', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('5', 'AUDITORIA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('6', 'IMPUESTOS', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('7', 'MERCADOTECNIA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('8', 'RECURSOS HUMANOS', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('9', 'PRODUCCION', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('10', 'ADMINISTRACION BASICA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('11', 'ADMINISTRACION AVANZADA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('12', 'INFORMATICA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('13', 'MATEMATICAS', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('14', 'CIENCIAS COMPUTACIONALES', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('15', 'SISTEMAS DE INFORMACION', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('16', 'PROGRAMACION', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('17', 'ECONOMIA', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('18', 'COMERCIO EXTERIOR', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('19', 'DERECHO', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('20', 'EMPRENDEDORES', '6', '11');
+INSERT INTO `coordinaciona` VALUES ('21', 'ASIGNATURAS DE APOYO', '6', '11');
 INSERT INTO `coordinaciona` VALUES ('22', 'SIN COORDINACION', '6', '11');
 
 -- ----------------------------
@@ -2294,8 +2345,11 @@ CREATE TABLE `detalleseriacion` (
 -- ----------------------------
 -- Records of detalleseriacion
 -- ----------------------------
+INSERT INTO `detalleseriacion` VALUES ('11237', '1', '11236', '9');
 INSERT INTO `detalleseriacion` VALUES ('11238', '1', '11236', '9');
 INSERT INTO `detalleseriacion` VALUES ('11238', '2', '11237', '9');
+INSERT INTO `detalleseriacion` VALUES ('11239', '1', '11236', '9');
+INSERT INTO `detalleseriacion` VALUES ('11240', '2', '11237', '9');
 
 -- ----------------------------
 -- Table structure for dias
@@ -3120,10 +3174,14 @@ CREATE TABLE `p_ua` (
 -- ----------------------------
 -- Records of p_ua
 -- ----------------------------
+INSERT INTO `p_ua` VALUES ('3', '11236', '1', '9');
 INSERT INTO `p_ua` VALUES ('3', '11237', '1', '9');
 INSERT INTO `p_ua` VALUES ('3', '11238', '1', '9');
 INSERT INTO `p_ua` VALUES ('5', '11237', '1', '9');
 INSERT INTO `p_ua` VALUES ('5', '11238', '1', '9');
+INSERT INTO `p_ua` VALUES ('5', '11239', '1', '9');
+INSERT INTO `p_ua` VALUES ('5', '11240', '1', '9');
+INSERT INTO `p_ua` VALUES ('5', '11241', '1', '9');
 
 -- ----------------------------
 -- Table structure for reqseriacion
@@ -3348,8 +3406,11 @@ CREATE TABLE `uaprendizaje` (
 -- Records of uaprendizaje
 -- ----------------------------
 INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMATICAS', '10', '10', '10', '10', '10', '10', '100', '2014-10-10', 'AFASDF', '1', '1', '1', '20092', '10');
-INSERT INTO `uaprendizaje` VALUES ('11237', 'ESPAÑOL', '10', '0', '0', '0', '0', '0', '20', '2014-10-13', 'SIN SERIACIONES', '1', '1', '1', '20092', '9');
-INSERT INTO `uaprendizaje` VALUES ('11238', 'CIVISMO', '5', '0', '0', '0', '0', '0', '10', '2014-10-13', '', '1', '1', '2', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11237', 'ESPAÑOL', '10', '0', '0', '0', '0', '0', '20', '2014-10-13', '', '1', '1', '1', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11238', 'CIVISMO', '4', '0', '0', '0', '0', '0', '8', '2014-10-13', '', '1', '1', '5', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11239', 'BIOLOGÍA', '5', '0', '0', '0', '0', '0', '10', '2014-10-13', '', '1', '1', '5', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11240', 'GEOGRAFÍA', '2', '0', '0', '0', '0', '0', '4', '2014-10-13', '', '1', '1', '4', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11241', 'EDUCACIÓN FÍSICA', '4', '0', '0', '0', '0', '0', '8', '2014-10-13', '', '1', '1', '3', '20092', '9');
 
 -- ----------------------------
 -- Table structure for universidades_emp
