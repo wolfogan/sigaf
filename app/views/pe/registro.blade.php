@@ -657,17 +657,17 @@
 		{
 			//var dataUA = $("#formularioPlanEstudio").serialize();
 			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
-			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize();
-			console.log(dataUA);
-			alert(dataUA);
-			/*$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
-				/*var noPlan=$("#noPlan").val();
+			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
+			//console.log(dataUA);
+			//alert(dataUA);
+			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
+				var noPlan=$("#noPlan").val();
 				var clave1F=$("#clave1F").val();
 				var materia=$("#materia").val();
 				//var carrera = "INFORMATICA";
 				var etapaF=$("#etapaF option:selected").html();
 				var tipoF=$("#tipoF option:selected").html();
-				var clave2F=$("#clave2F").val();
+				//var clave2F=$("#clave2F").val();
 				//var materiaSeriada=$("#materiaSeriada").val();
 				var hc=$("#hc").val();
 				var hl=$("#hl").val();
@@ -677,23 +677,40 @@
 				var tablaDatos= $("#tblUA");
 
 			
-				// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
+				//***** Agregar registro al Datatable para consulta, modificacion, etc.
+				// Guardar las materias seriadas
+				var uasSeriadas = [];
+				if($(".tblCatPlanAgregarSeriacion > tbody > tr").length > 2)
+				{
+					$(".tblCatPlanAgregarSeriacion > tbody > tr").each(function(index,element){
+						if(index >= 2) // Si no es sin seriacion, ni la fila base.
+						{
+							uasSeriadas.push($(element).find("input").first().val()); // Agregar al arreglo la serie de la carrera.
+						}
+					});
+					uasSeriadas = uasSeriadas.join(",") // Unir por coma para mostrar en el renglon.
+				}
+				else
+				{
+					uasSeriadas = "SIN SERIACIÓN";
+				}
 				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
 					if($(elemento).hasClass('active') && indice != 0)
 					{
-						var input = $(elemento).find('input').val();
+						var input = $(elemento).find('input').val(); // Obtener el value de la carrera su id.
 						t.row.add([
 									clave1F,
-									materia,
-									$(elemento).text(),
+									materia.toUpperCase(),
+									$(elemento).text(), // El nombre de la carrera
 									etapaF,
 									tipoF,
-									clave2F,
+									uasSeriadas,
 									coord,
 									hc,
 									hl,
 									ht,
 									creditosF,
+									"<input type='button' value='+' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>",
 									"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
 					}
 				});
@@ -701,15 +718,15 @@
 				$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
 				reset_campos();
 				//desmarcar_carreras();alert(data);
-			});
-			/*.fail(function(errorText,textError,errorThrow){
+			})
+			.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
 			})
 			.always(function(){
 				// OCULTAR AJAXLOADER
 				$("#ajaxLoad").css("display","none");
 				
-			});*/
+			});
 		}
 		else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
 		{
@@ -1028,7 +1045,7 @@
 		// VALIDAR COORDINACION
 		$("#coord").on("focusout",function(e){
 			var flag = $("#datalist_coord option[value='"+$(this).val()+"']").attr("label");
-			if(flag == undefined)
+			if(flag == undefined && $("#clave1F").val().length >= 5)
 			{
 				alert("No existe la coordinación tecleada");
 				$(this).focus();

@@ -24,20 +24,20 @@ class UnidadAprendizaje extends Eloquent
 		return $this->hasOne('Caracter','caracter','caracter');
 	}
 
-	public function seriacion()
+	/*public function seriacion()
 	{
 		return $this->hasOne('Seriacion','reqseriacion','reqseriacion');
-	}
+	}*/
 
-	public function claveSeriacion()
+	/*public function claveSeriacion()
 	{
 		return $this->hasOne('UnidadAprendizaje','uaprendizaje','claveD');
-	}
+	}*/
 
-	public function etapaUA()
+	/*public function etapaUA()
 	{
 		return $this->hasOne('Etapa','etapa','etapa');
-	}
+	}*/
 
 	public function coordinacion()
 	{

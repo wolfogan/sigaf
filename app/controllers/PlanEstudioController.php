@@ -247,8 +247,8 @@ class PlanEstudioController extends BaseController
 
 	public function postRegistrarua()
 	{
-		$tipo = gettype(Input::get("seriacion_clave"));
-		/*$noplan = Input::get('noPlan');
+		
+		$noplan = Input::get('noPlan');
 		$clave = Input::get('clave1F');
 		$UA = UnidadAprendizaje::where('uaprendizaje',$clave) -> where('plan',$noplan) ->get();
 		
@@ -256,10 +256,12 @@ class PlanEstudioController extends BaseController
 		// Si no existe la ua se crea
 		if(strlen($UA)==2)
 		{
+			$users_id = Input::get('users_id');
+			
 			$UA = new UnidadAprendizaje;
 			$UA -> uaprendizaje = $clave;
 			$UA -> plan = $noplan;
-			$UA -> descripcionmat = Input::get('materia');
+			$UA -> descripcionmat = Str::upper(Input::get('materia'));
 			$UA -> HC = Input::get('hc');
 			$UA -> HL = Input::get('hl');
 			$UA -> HT = Input::get('ht');
@@ -267,21 +269,32 @@ class PlanEstudioController extends BaseController
 			$UA -> HCL = Input::get('hcl');
 			$UA -> HE = Input::get('he');
 			$UA -> creditos = Input::get('creditosF');
-			$UA -> semestre = Input::get('semestre');
+			$UA -> semestre_sug = Input::get('semestre');
 			$UA -> fec_aut = date('Y-m-d');
 			$UA -> observa = Input::get('observaciones');
 			$UA -> caracter = Input::get('tipoF');
-			$UA -> reqseriacion = Input::get('serie');
-			$UA -> claveD = Input::get('clave2F');
-			$UA -> etapa = Input::get('etapaF');
 			$UA -> coordinaciona = Input::get('coord');
-			
+			$UA -> users_id = $users_id;
 			$UA -> save();
+			$UA -> push();
 
+			// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
 			//$programas = explode(",",Input::get('carreras')); Cuando lo hacia de la manera compleja
 			$programas = Input::get('carreras');
+			$etapa = Input::get('etapaF');
 			foreach ($programas as $carrera) {
-				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+				DB::table('p_ua') -> insert(array('programaedu' => $carrera,'uaprendizaje' => $clave,'etapa' => $etapa,'users_id' => $users_id));
+			}
+
+			// Capturar claves y tipos
+			$tipos = Input::get("seriacion_tipo");
+			$claves = Input::get("seriacion_clave");
+			// Registrar las materias seriadas en detalleseriacion si existen registros
+			if(isset($claves))
+			{
+				foreach ($claves as $key => $value) {
+					DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
+				}
 			}
 
 			$mensaje = "Registros insertados";
@@ -294,8 +307,6 @@ class PlanEstudioController extends BaseController
 		//$mensaje = "hola";
 
 		return $mensaje;
-
-*/ return $tipo;
 	}
 
 	// LLAMADAS ASINCRONAS
