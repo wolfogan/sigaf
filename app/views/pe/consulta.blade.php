@@ -721,7 +721,7 @@
 			// eq(2) - hc
 			// eq(3) - hl
 			// eq(4) - total
-			dataUA = $("#formUpdate").serialize() + & + $(".tblCatPlanUpdateSeriacion").serialize();
+			dataUA = $("#formUpdate").serialize(); //+ & + $(".tblCatPlanUpdateSeriacion").serialize();
 			alert(dataUA);
 			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
