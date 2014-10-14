@@ -224,100 +224,108 @@
 				<h3 id="titulo_update">Modificar unidad de aprendizaje</h3>
 				<div id="tablita2contenedor">
 					<table cellpadding="5" id="tablita2">
-					
-					<tr>
-						<td>Carrera:</td>
-						<td>
-							<label id="carrera_update">Informática</label>
-						</td>
-					</tr>
-					<tr>
-						<td width="95">Clave:</td>
-						<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
-						<td>Materia:</td>
-						<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
-					</tr>
-					
-					<tr>
-						<td>Etapa:</td>
-						<td>
-							<select class="con_estilo" name="etapaF" id="etapa_update" size=1>
-								@foreach ($etapas as $etapa)
-									<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Tipo:</td>
-						<td>
-							<select class="con_estilo" name="tipoF" id="tipo_update" size=1>
-								@foreach ($tiposCaracter as $tipo)
-									<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Semestre:</td>
-						<td>
-							<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
-						</td>
-					</tr>
-					<tr>
-						<td>TipoSer.:</td>
-						<td>
-							<select class="con_estilo" name="serie" id="seriacion_update" size=1>
-								@foreach ($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Clave:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:120px;" name="clave2F" id="claveSeriacion_update" size="25" disabled="disabled"></td>
-						<td>Materia:</td>
-						<td><input type="text" style="height: 25px; text-transform:uppercase; width:180px;" name="descripcionSeriacion_update" id="descripcionSeriacion_update" size="25" disabled="disabled"></td>
-					</tr>
-					<tr>
-						<td size="10">HC:</td>
-						<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-						<td size="10">HL:</td>
-						<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-					</tr>
-					
-					<tr>
-						<td size="10">HT:</td>
-						<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-						<td size="10">HE:</td>
-						<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-					</tr>
-					
-					<tr>
-						<td size="10">HPC:</td>
-						<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-						<td size="10">HCL:</td>
-						<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
-					</tr>
-					<tr>
-						<td>Cred.:</td>
-						<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
-					</tr>
-					<tr>
-						<td>Coord.:</td>
-						<td>
-							<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord" />
-							<input type="hidden" name="coord" id="coord" />
-						</td>
-					</tr>
-						</table>
+						<tr>
+							<td>Carrera:</td>
+							<td>
+								<label id="carrera_update">Informática</label>
+							</td>
+						</tr>
+						<tr>
+							<td width="95">Clave:</td>
+							<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+							<td>Materia:</td>
+							<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+						</tr>
+						
+						<tr>
+							<td>Etapa:</td>
+							<td>
+								<select class="con_estilo" name="etapaF" id="etapa_update" size=1>
+									@foreach ($etapas as $etapa)
+										<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Tipo:</td>
+							<td>
+								<select class="con_estilo" name="tipoF" id="tipo_update" size=1>
+									@foreach ($tiposCaracter as $tipo)
+										<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>Semestre:</td>
+							<td>
+								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+							</td>
+						</tr>
+						<tr>
+							<td size="10">HC:</td>
+							<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HL:</td>
+							<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						
+						<tr>
+							<td size="10">HT:</td>
+							<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HE:</td>
+							<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						
+						<tr>
+							<td size="10">HPC:</td>
+							<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HCL:</td>
+							<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						<tr>
+							<td>Cred.:</td>
+							<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
+						</tr>
+						<tr>
+							<td>Coord.:</td>
+							<td>
+								<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord" />
+								<input type="hidden" name="coord" id="coord" />
+							</td>
+						</tr>
+					</table>
+					<br>
+					<label for="title-seriacion" >Unidades de Aprendijaze Seriadas:</label>
+					<table class="tblCatPlanUpdateSeriacion">
+						<tr class="sin-seriacion">
+							<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
+						</tr>
+						<tr class="fila-base-seriacion">
+							<td>Tipo:</td>
+							<td>
+								<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+									@foreach($seriaciones as $seriacion)
+										<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+
+							<td>Clave:</td>
+							<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
+							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
+							
+							<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+							<td><input type="button" class="dd_clsAgregarFila"></td>
+						</tr>
+					</table>
 				</div>
 
 				<input type="submit" value="Guardar" class="estilo_button2">
 				<input type="button" class="md-close" value="Salir">
 			</form>
+
 		</div>
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
 		<div class="md-overlay">
@@ -547,8 +555,8 @@
 						});
 					});
 				})
-				.fail(function(){
-					
+				.fail(function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
 				});
 			}
 			else // Si solo es una etapa

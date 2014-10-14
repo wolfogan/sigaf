@@ -896,6 +896,29 @@ background: #EFCA0D;
 	
 }
 
+.tblCatPlanUpdateSeriacion
+{
+	background:#ECECFB;
+	border-style: none;
+	border-collapse: separate;
+  	border-spacing: 7px 15px;
+  	border-radius: 7px;   	
+  	font-size: 14px; 	  	
+  	margin: auto;
+  	margin-left: 5px;
+  	margin-top: 20px;
+  	padding:10px;
+	width: 540px;
+}
+
+
+.tblCatPlanUpdateSeriacion td 
+{
+	color:#004000;
+	text-align: left;
+	
+}
+
 .lblCatalogosDependencias
 {
 	
