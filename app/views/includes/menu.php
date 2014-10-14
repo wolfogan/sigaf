@@ -56,8 +56,8 @@
 		<li>
 			<a href="#" title="Login y usuarios" style="border-right:1px solid #FEA417;">Login y usuarios</a>
 			<ul>
-				<li><a href="<?=URL::to('usuarios/usuariosregistro');?>" title="Registrar DD">Registrar usuario</a></li>
-				<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
+				<li><a href="<?=URL::to('usuarios/usuariosregistro');?>" title="Registro, consulta y modificación de usuarios">Registro, consulta, modificación usuarios</a></li>
+				<li><a href="<?=URL::to('usuarios/modificarcontrasena');?>" title="Modificar contraseña">Cambiar contraseña</a></li>
 				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
 
 

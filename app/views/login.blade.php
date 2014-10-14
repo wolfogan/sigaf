@@ -37,11 +37,13 @@
                         <div class="pull-left text">
                                 <div id="loading"><img src="{{ asset('imagenes/loading-icons/loader.gif')}}"></div>
                         </div>
+
+                        <div id="us_cambiarContrasena">Cambiar contraseña</div>
     
                     </div>
                 </form>
                 </div>
-                <span style="color:#FFF">@include('includes.footer') </span>
+               <!-- <span style="color:#FFF">@include('includes.footer') </span>-->
         </div>
 
         <?php echo HTML::script('js/jquery.js'); ?>

@@ -39,4 +39,8 @@ class UserLoginController extends BaseController
 	{
 		return View::make('usuarios.usuariosRegistro');
 	}
+	public function getModificarcontrasena()
+	{
+		return View::make('usuarios.modificarContrasena');
+	}
 }

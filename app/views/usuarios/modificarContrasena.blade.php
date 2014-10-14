@@ -210,7 +210,7 @@
 				</div>
 			</div>
 			<div id="ubicacion" class="texto_body">
-				Login y usuarios: Registrar usuario
+				Login y usuarios: Modificar contraseña
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
