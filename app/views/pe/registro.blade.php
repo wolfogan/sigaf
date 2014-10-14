@@ -300,6 +300,36 @@
 	</div>
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
 
+
+	<!-------------------------------------- MODAL PARA CAMBIAR ETAPA EN EL GRID CON EL BOTON MODIFICAR -------------------------------------->
+	<div class="md-modal md-effect-11" id="cambiar_etapa"> 
+		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+			<h3>Agregar Etapa</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>Etapa:</td>
+						<td><select>
+							<option>BASICA</option>
+							<option>DISCIPLINARIA</option>
+							<option>TERMINAL</option>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
+
+
 	<!-------------------------------------- MODAL TIPO SERIACION -------------------------------------->
 	<div class="md-modal md-effect-11" id="seriacion"> 
 		<form  action="<?=URL::to('planestudio/registrarseriacion'); ?>" class="md-content" method="post">
@@ -812,7 +842,9 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
+							"<input type='button' class='clsModificarFila' value='' data-modal='cambiar_etapa'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
+
 			}
 			$("#ajaxLoad").css("display","none");
 		});

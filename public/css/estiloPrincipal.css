@@ -980,7 +980,7 @@ background: #EFCA0D;
 	margin: auto;
 	margin-top: 260px;
 	margin-bottom: 20px;
-	width: 220px;
+	width: 440px;
 }
 
 
@@ -1200,6 +1200,8 @@ background: #EFCA0D;
  	margin-top: 10px;
  	margin-left: 40px;
  }
+
+
 #btnPlanA
 {
 	
@@ -1259,6 +1261,7 @@ background: #EFCA0D;
 }
 .listasCa
 {
+
 	height: 350px;
 	margin-top: 5px;
 }

@@ -324,6 +324,7 @@
 						
 
 						<div id="us_btnRegistroUsuario">
+							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario">
 							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario">
 						</div>
 
