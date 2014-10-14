@@ -808,6 +808,7 @@
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
+			
 		})
 		.fail(function(errorText,textError,errorThrow){
 			alert(errorText.responseText);
@@ -1209,7 +1210,7 @@
 
 						// MOSTRAR AJAXLOADER
 						$("#ajaxLoad").css("display","block");
-						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,claveD:serie}, function(json)
+						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia}, function(json)
 						{
 							//console.log(json);
 							reset_campos();

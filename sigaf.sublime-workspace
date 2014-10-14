@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"descrip",
+				"descripcionetapa"
+			],
+			[
+				"GRU",
+				"groupBy"
+			],
+			[
+				"err",
+				"errorThrow"
+			],
+			[
+				"erro",
+				"errorText"
+			],
+			[
+				"uap",
+				"uaprendizaje"
+			],
+			[
 				"fila",
 				"fila-base-seriacion"
 			],
@@ -14,10 +34,6 @@
 			[
 				"tb",
 				"tbody"
-			],
-			[
-				"descrip",
-				"descripcionmat"
 			],
 			[
 				"uapre",
@@ -70,14 +86,6 @@
 			[
 				"clave",
 				"clave-seriacion-descripcion"
-			],
-			[
-				"err",
-				"errorText"
-			],
-			[
-				"erro",
-				"errorThrow"
 			],
 			[
 				"row",
@@ -339,7 +347,7 @@
 			"file": "app/views/pe/consulta.blade.php",
 			"settings":
 			{
-				"buffer_size": 29469,
+				"buffer_size": 32849,
 				"line_ending": "Windows"
 			}
 		},
@@ -347,7 +355,7 @@
 			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 21898,
+				"buffer_size": 23069,
 				"line_ending": "Windows"
 			}
 		},
@@ -371,7 +379,23 @@
 			"file": "app/views/pe/registro.blade.php",
 			"settings":
 			{
-				"buffer_size": 51111,
+				"buffer_size": 51102,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "CODIGOS ANTERIORES.txt",
+			"settings":
+			{
+				"buffer_size": 6002,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "PREGUNTAS.txt",
+			"settings":
+			{
+				"buffer_size": 286,
 				"line_ending": "Windows"
 			}
 		}
@@ -420,6 +444,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/SOPORTE/Desktop/sigaf/CAMBIOS A BASE DE DATOS.txt",
 		"/C/Users/SOPORTE/Desktop/sigaf/public/js/modalEffects.js",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/controllers/BaseController.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/LINKS.txt",
@@ -445,7 +470,6 @@
 		"/C/Users/SOPORTE/Desktop/sigaf/q",
 		"/C/Users/SOPORTE/Desktop/Porcentajes Error.sql",
 		"/C/Users/SOPORTE/Desktop/registro.blade.php",
-		"/C/Users/SOPORTE/Desktop/sigaf/CAMBIOS A BASE DE DATOS.txt",
 		"/C/Users/SOPORTE/Desktop/sigaf/ANOMALIAS.txt",
 		"/C/Users/SOPORTE/Desktop/sigaf/app/views/pe/consulta.blade.php",
 		"/C/Users/SOPORTE/Desktop/sigaf/PREGUNTAS.txt",
@@ -505,6 +529,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"obtenerdataua",
+			"groupby",
+			"detalle.",
+			"raw",
+			"DB::raw",
+			"nAgregar",
+			"Agregar",
 			"obtenerdataua",
 			"actualizarua",
 			".filter",
@@ -614,7 +645,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -622,15 +653,15 @@
 					"file": "app/views/pe/consulta.blade.php",
 					"settings":
 					{
-						"buffer_size": 29469,
+						"buffer_size": 32849,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21275,
-								21275
+								19699,
+								19699
 							]
 						],
 						"settings":
@@ -687,7 +718,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9475.0,
+						"translation.y": 9482.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -697,15 +728,15 @@
 					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 21898,
+						"buffer_size": 23069,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14264,
-								14264
+								14226,
+								14201
 							]
 						],
 						"settings":
@@ -761,8 +792,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 7103.0,
+						"translation.x": 1358.0,
+						"translation.y": 7052.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -920,15 +951,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 51111,
+						"buffer_size": 51102,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31221,
-								31221
+								46475,
+								46475
 							]
 						],
 						"settings":
@@ -985,7 +1016,156 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 13100.0,
+						"translation.y": 21542.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "CODIGOS ANTERIORES.txt",
+					"settings":
+					{
+						"buffer_size": 6002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5668,
+								5668
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2790.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "PREGUNTAS.txt",
+					"settings":
+					{
+						"buffer_size": 286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1001,15 +1181,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 51111,
+						"buffer_size": 51102,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40439,
-								40439
+								40443,
+								40443
 							]
 						],
 						"settings":
@@ -1066,7 +1246,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 18251.0,
+						"translation.y": 23807.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

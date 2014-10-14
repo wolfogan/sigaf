@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-10-13 21:19:39
+Date: 2014-10-14 13:40:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1555 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1569 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1666,6 +1666,20 @@ INSERT INTO `bitacora` VALUES ('1551', 'p_ua', '9', 'I', '2014-10-13 00:00:00', 
 INSERT INTO `bitacora` VALUES ('1552', 'p_ua', '9', 'I', '2014-10-13 00:00:00', '5|11237|2', null);
 INSERT INTO `bitacora` VALUES ('1553', 'detalleseriacion', '9', 'D', '2014-10-13 00:00:00', null, '11237|11237');
 INSERT INTO `bitacora` VALUES ('1554', 'detalleseriacion', '9', 'I', '2014-10-13 00:00:00', '11237|11237', null);
+INSERT INTO `bitacora` VALUES ('1555', 'p_ua', '9', 'D', '2014-10-14 00:00:00', null, '6|11238|1');
+INSERT INTO `bitacora` VALUES ('1556', 'p_ua', '9', 'I', '2014-10-14 00:00:00', '6|11238|1', null);
+INSERT INTO `bitacora` VALUES ('1557', 'detalleseriacion', '9', 'D', '2014-10-14 00:00:00', null, '11238|11236');
+INSERT INTO `bitacora` VALUES ('1558', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11238|11236', null);
+INSERT INTO `bitacora` VALUES ('1559', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11238|11237', null);
+INSERT INTO `bitacora` VALUES ('1560', 'p_ua', '9', 'D', '2014-10-14 00:00:00', null, '6|11238|1');
+INSERT INTO `bitacora` VALUES ('1561', 'p_ua', '9', 'I', '2014-10-14 00:00:00', '5|11238|1', null);
+INSERT INTO `bitacora` VALUES ('1562', 'detalleseriacion', '9', 'D', '2014-10-14 00:00:00', null, '11238|11236');
+INSERT INTO `bitacora` VALUES ('1563', 'detalleseriacion', '9', 'D', '2014-10-14 00:00:00', null, '11238|11237');
+INSERT INTO `bitacora` VALUES ('1564', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11238|11236', null);
+INSERT INTO `bitacora` VALUES ('1565', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11238|11237', null);
+INSERT INTO `bitacora` VALUES ('1566', 'uaprendizaje', '9', 'I', '2014-10-14 00:00:00', '11239|MATEMATICAS TERMINAL|1|0|0|0|0|0|2|2014-10-14||1|2|2|20092', null);
+INSERT INTO `bitacora` VALUES ('1567', 'p_ua', '9', 'I', '2014-10-14 00:00:00', '5|11239|3', null);
+INSERT INTO `bitacora` VALUES ('1568', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11239|11237', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -2528,8 +2542,10 @@ CREATE TABLE `detalleseriacion` (
 -- ----------------------------
 -- Records of detalleseriacion
 -- ----------------------------
-INSERT INTO `detalleseriacion` VALUES ('11238', '2', '11236', '9');
 INSERT INTO `detalleseriacion` VALUES ('11237', '2', '11237', '9');
+INSERT INTO `detalleseriacion` VALUES ('11238', '2', '11236', '9');
+INSERT INTO `detalleseriacion` VALUES ('11238', '1', '11237', '9');
+INSERT INTO `detalleseriacion` VALUES ('11239', '1', '11237', '9');
 
 -- ----------------------------
 -- Table structure for dias
@@ -3207,8 +3223,8 @@ CREATE TABLE `planestudio` (
   PRIMARY KEY (`plan`),
   KEY `fk_planestudiodesc_users1_idx` (`users_id`),
   KEY `fk_planestudiodesc_nvprograma1_idx` (`nivel`),
-  CONSTRAINT `fk_planestudiodesc_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `fk_planestudiodesc_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_planestudiodesc_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`) ON UPDATE NO ACTION,
+  CONSTRAINT `fk_planestudiodesc_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -3228,9 +3244,9 @@ CREATE TABLE `plan_programa` (
   KEY `fk_planestudio_planestudiodesc1_idx` (`plan`),
   KEY `fk_planestudio_programaedu1_idx` (`programaedu`),
   KEY `fk_planestudio_users1_idx` (`users_id`),
-  CONSTRAINT `fk_planestudio_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_planestudio_planestudiodesc1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
-  CONSTRAINT `fk_planestudio_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`)
+  CONSTRAINT `fk_planestudio_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`),
+  CONSTRAINT `fk_planestudio_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -3266,12 +3282,12 @@ CREATE TABLE `programaedu` (
   KEY `fk_programaedu_nvprograma1_idx` (`nivel`),
   KEY `fk_programaedu_periodo_prog_edu1_idx` (`periodo_pedu`),
   KEY `fk_programaedu_users1_idx` (`users_id`),
-  CONSTRAINT `fk_programaedu_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_programaedu_empleados1` FOREIGN KEY (`empleado`) REFERENCES `empleados` (`empleado`),
   CONSTRAINT `fk_programaedu_esp_prog_edu1` FOREIGN KEY (`especialidad`) REFERENCES `esp_prog_edu` (`especialidad`),
   CONSTRAINT `fk_programaedu_nvprograma1` FOREIGN KEY (`nivel`) REFERENCES `nvprograma` (`nivel`),
   CONSTRAINT `fk_programaedu_periodo_prog_edu1` FOREIGN KEY (`periodo_pedu`) REFERENCES `periodo_prog_edu` (`periodo_pedu`),
-  CONSTRAINT `fk_programaedu_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`)
+  CONSTRAINT `fk_programaedu_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`),
+  CONSTRAINT `fk_programaedu_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -3345,10 +3361,10 @@ CREATE TABLE `p_ua` (
   KEY `fk_p_ua_uaprendizaje1_idx` (`uaprendizaje`),
   KEY `fk_p_ua_users1_idx` (`users_id`),
   KEY `fk_p_ua_etapas1_idx` (`etapa`),
-  CONSTRAINT `fk_p_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_p_ua_etapas1` FOREIGN KEY (`etapa`) REFERENCES `etapas` (`etapa`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_p_ua_programaedu1` FOREIGN KEY (`programaedu`) REFERENCES `programaedu` (`programaedu`),
-  CONSTRAINT `fk_p_ua_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`)
+  CONSTRAINT `fk_p_ua_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`),
+  CONSTRAINT `fk_p_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -3358,7 +3374,8 @@ INSERT INTO `p_ua` VALUES ('3', '11237', '2', '9');
 INSERT INTO `p_ua` VALUES ('4', '11237', '2', '9');
 INSERT INTO `p_ua` VALUES ('5', '11236', '1', '9');
 INSERT INTO `p_ua` VALUES ('5', '11237', '2', '9');
-INSERT INTO `p_ua` VALUES ('6', '11238', '1', '9');
+INSERT INTO `p_ua` VALUES ('5', '11238', '1', '9');
+INSERT INTO `p_ua` VALUES ('5', '11239', '3', '9');
 
 -- ----------------------------
 -- Table structure for reqseriacion
@@ -3573,10 +3590,10 @@ CREATE TABLE `uaprendizaje` (
   KEY `fk_uaprendizaje_planestudio1_idx` (`plan`),
   KEY `fk_uaprendizaje_users1_idx` (`users_id`),
   KEY `HPC_UNIQUE` (`HPC`) USING BTREE,
-  CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_uaprendizaje_caracter1` FOREIGN KEY (`caracter`) REFERENCES `caracter` (`caracter`),
   CONSTRAINT `fk_uaprendizaje_coordinaciona1` FOREIGN KEY (`coordinaciona`) REFERENCES `coordinaciona` (`coordinaciona`),
-  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`)
+  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
+  CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
@@ -3585,6 +3602,7 @@ CREATE TABLE `uaprendizaje` (
 INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMÁTICAS', '12', '0', '0', '0', '0', '0', '24', '2014-10-14', 'vamos a ver', '1', '1', '1', '20092', '9');
 INSERT INTO `uaprendizaje` VALUES ('11237', 'MATEMATICAS III', '2', '1', '1', '1', '1', '1', '9', '2014-10-14', '', '3', '2', '5', '20092', '9');
 INSERT INTO `uaprendizaje` VALUES ('11238', 'MATEMATICAS COMPUTADORA', '3', '0', '0', '0', '0', '0', '6', '2014-10-14', 'vamos a ver', '1', '1', '3', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11239', 'MATEMATICAS TERMINAL', '1', '0', '0', '0', '0', '0', '2', '2014-10-14', '', '1', '2', '2', '20092', '9');
 
 -- ----------------------------
 -- Table structure for universidades_emp

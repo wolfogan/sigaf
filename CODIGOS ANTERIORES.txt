@@ -147,3 +147,27 @@ CUANDO ERA UNA MATERIA INDIVIDUAL SERIADA
 			}
 				
 		});*/
+
+CONSULTA PEEEEEEEEEEEEEEEE
+///////////////////////////// EN LA VENTANA MODAL DE ACTUALIZACION //////////////////////////////////////
+// Si se quita el foco de la clave seriada mostrar nombre
+		$("#claveSeriacion_update").on("focusout",function(){
+			if($(this).val()!="")
+			{
+				var idua = $(this).val();
+				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+					$("#descripcionSeriacion_update").val(materia);
+				});
+			}
+		});
+
+		// Si se selecciono tipo de seriacion que no sea SIN SERIACION
+		$("#seriacion_update").on("change",function(){
+			if($(this).val()!=1)
+				$("#claveSeriacion_update").attr("disabled",false);
+			else
+			{
+				$("#claveSeriacion_update").val("");
+				$("#claveSeriacion_update").attr("disabled",true);
+			}
+		});

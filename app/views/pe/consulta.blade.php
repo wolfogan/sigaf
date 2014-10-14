@@ -219,11 +219,11 @@
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
-		<div class="md-modal md-effect-11" id="modal-11">
+		<div class="md-modal md-effect-11" id="modal-11" >
 			<form id="formUpdate" action="javascript:actualizarUA()" class="md-content">
 				<h3 id="titulo_update">Modificar unidad de aprendizaje</h3>
-				<div id="tablita2contenedor">
-					<table cellpadding="5" id="tablita2">
+				<div id="tablita2contenedor" >
+					<table cellpadding="5" id="tablita2" >
 						<tr>
 							<td>Carrera:</td>
 							<td>
@@ -299,7 +299,7 @@
 					<br>
 					<label for="title-seriacion" >Unidades de Aprendijaze Seriadas:</label>
 					<table class="tblCatPlanUpdateSeriacion">
-						<tr class="sin-seriacion">
+						<tr class="sin-seriacion" onmouseover="javascript:this.style.cursor='pointer'">
 							<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 						</tr>
 						<tr class="fila-base-seriacion">
@@ -314,7 +314,7 @@
 
 							<td>Clave:</td>
 							<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
-							<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
+							<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
 							
 							<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
 							<td><input type="button" class="dd_clsAgregarFila"></td>
@@ -498,6 +498,7 @@
 				var descripcionUA = "";
 				for (var i = 0; i < uas.length; i++) 
 				{
+					alert(uas[i].seriacion); // Mostrar las seriaciones
 					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> T<span>' + uas[i].HT + '</span> CR<span>' + uas[i].creditos + '</span>';
 					bloque = $('<li>' +
 									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
@@ -532,6 +533,9 @@
 					$("#creditos_obligatorias").text(creditosObligatorias);
 					$("#creditos_optativas").text(creditosOptativas);
 					$("#creditos_total").text(totalCreditos);
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
 				});
 				return;
 			}
@@ -584,25 +588,86 @@
 			$("#creditos_update").val(creditos);
 		});
 		// EVENTOS EN LA VENTANA MODAL DE CONSULTA DE UNIDAD DE APRENDIZAJE
-		// Si se quita el foco de la clave seriada mostrar nombre
-		$("#claveSeriacion_update").on("focusout",function(){
-			if($(this).val()!="")
+		$(".sin-seriacion").on("click",function(){
+			var rowCount = $(".tblCatPlanUpdateSeriacion > tbody > tr").length;
+			if(rowCount > 2)
 			{
-				var idua = $(this).val();
-				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
-					$("#descripcionSeriacion_update").val(materia);
-				});
+				var filaSeriacion = $(".tblCatPlanUpdateSeriacion tr:last-child");
+				if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
+				{
+					alert("Por favor, agregue una seriación válida");
+					return;
+				}
+			}
+			
+
+			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanUpdateSeriacion");
+			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+			
+			$(this).hide();
+		});
+		// Presionene boton agregar de las filas
+		$(".tblCatPlanUpdateSeriacion").on("click",".dd_clsAgregarFila",function(){
+			
+			var filaSeriacion = $(this).parents().get(1);
+			// Validar clave de seriación
+			if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
+			{
+				alert("Por favor, agregue una seriación válida");
+				return;
+			}
+			// Duplicar fila base y añadir a tabla
+			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanUpdateSeriacion");
+			$(".sin-seriacion").hide();
+			//console.log(filaSeriacion);
+			
+			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+
+			// Deshabilitar fila anterior
+			if($("#guardar").val()!="Actualizar")
+			{
+				$(filaSeriacion).find("select,input").attr("disabled",true);
 			}
 		});
+		// Presionen el boton eliminar de las filas
+		$(".tblCatPlanUpdateSeriacion").on("click",".clsEliminarFila",function(){
+			var filaSeriacion = $(this).parents().get(1);
+			// Remover fila
+			$(filaSeriacion).remove();
+			// Habilitar fila anterior
+			$(".tblCatPlanUpdateSeriacion tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
 
-		// Si se selecciono tipo de seriacion que no sea SIN SERIACION
-		$("#seriacion_update").on("change",function(){
-			if($(this).val()!=1)
-				$("#claveSeriacion_update").attr("disabled",false);
+			// Si se elimina la última fila, mostrar mensaje sin seriación
+			var rowCount = $(".tblCatPlanUpdateSeriacion > tbody > tr").length;
+			if(rowCount == 2)
+				$(".sin-seriacion").show();
+		});
+		
+		// Cargar descripcion de ua cuando la tecleen o seleccionen
+		$(".tblCatPlanUpdateSeriacion").on("input",".clave-seriacion",function(){
+			
+			var idua = $(this).val();
+			var filaSeriacion = $(this).parents().get(1);
+			// Si la clave seriada no esta vacia y es mayor o igual a 5 consultar.
+			if($(this).val()!="" && $(this).val().length==5)
+			{
+				//alert(idua);
+				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
+					//alert(materia);
+					$(filaSeriacion).find(".clave-seriacion-descripcion").val(materia);
+					
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+			}
 			else
 			{
-				$("#claveSeriacion_update").val("");
-				$("#claveSeriacion_update").attr("disabled",true);
+				// Indicar que no existe la clave en la descripción
+				$(filaSeriacion).find(".clave-seriacion-descripcion").val("NO EXISTE");
 			}
 		});
 	});
@@ -704,9 +769,9 @@
 					$("#etapa_update").val(ua.etapa);
 					etapaOld = ua.etapa; // Por si cambian la etapa reubicar el div en la etapa correspondiente
 					$("#tipo_update").val(ua.caracter);
-					$("#semestre_update").val(ua.semestre);
-					$("#seriacion_update").val(ua.reqseriacion);
-					$("#claveSeriacion_update").val(ua.claveD);
+					$("#semestre_update").val(ua.semestre_sug);
+					//$("#seriacion_update").val(ua.reqseriacion);
+					//$("#claveSeriacion_update").val(ua.claveD);
 					// FALTA DESCRIPCION DE LA SERIADA
 					$("#hc_update").val(ua.hc);
 					$("#hl_update").val(ua.hl);
@@ -717,9 +782,11 @@
 					$("#creditos_update").val(ua.creditos);
 					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
 					$("#coord").val(ua.coordinaciona);
+
+
 					
 				})
-				.fail(function(){alert("Fallo en la consulta de la unidad de aprendizaje")});
+				.fail(function(errorText,textError,errorThrow){alert("Fallo en la consulta de la unidad de aprendizaje: " + errorText.responseText)});
 			});
 		}
 		function activarModal()
