@@ -1,4 +1,57 @@
 /* CSS Document */
+/*El estilo se encuentra ordenado de forma alfabetica, primero se enlistan los id y luego las clases, se crearon
+carpetas por funcionalidad es decir, las imagenes se ubican dentro de la carpeta correspondiente. Los ID se identifican 
+por el simbolo "#" y las clases por el simbolo "." */
+
+#calendarizacion{
+	background-image:url(../imagenes/principal/ce.png);
+	background-repeat:no-repeat;
+	}
+#carga{
+	background-image:url(../imagenes/principal/ca.png);
+	background-repeat:no-repeat;
+	}
+/*Este div contiene las opciones del menu principal correspondientes a cada módulo*/
+#contenedor{
+	width:660px;
+	height:auto;
+	margin:auto;
+	margin-top:60px;
+	}
+#contenedor div:hover{
+	border-style:dotted;
+}
+#disponibilidad{
+	background-image:url(../imagenes/principal/dd.png);
+	background-repeat:no-repeat;
+	}
+#horarios{
+	background-image:url(../imagenes/principal/ch.png);
+	background-repeat:no-repeat;
+	}
+#inasistencias{
+	background-image:url(../imagenes/principal/ci.png);
+	background-repeat:no-repeat;
+	}
+/*Div que dibuja la linea color naranja*/
+#linea1{
+	width:500px;
+	height:5px;
+	background:#F7AE10;
+	margin-bottom:-15px;
+	margin-left:200px;
+	
+	}
+/*Div que dibuja la linea color verde*/
+#linea2{
+	width:500px;
+	height:5px;
+	background:green;
+	float:right;
+	margin-top:-15px;
+	margin-right:200px;
+	}
+/*Div que forma la ventana modal*/
 #modal{
 	margin:auto;
 	width:1350px;
@@ -8,7 +61,7 @@
 	}
 #modal .overlay {
 	background-color: #000;
-	background: rgba(0,0,0,.7);
+	background: rgba(0,0,0,.8);
 	height: 100%;
 	left: 0;
 	position: fixed;
@@ -16,22 +69,27 @@
 	width: 100%;
 	z-index: -10;
 	}
-h1{
+/*Div que contiene la informacion del pie de página*/
+#pie{
 	font-family:"Corbel";
-	font-size:27px;
-	color:#004000;
+	font-size:21px;
 	text-align:center;
+	margin-top:480px;
 	}
-h1 span{
-	font-size:38px;
+#pie span{
+	font-size:18px;
 	}
-h2{
-	font-family:"Corbel";
-	font-size:20px;
-	color:#004000;
-	text-align:center;
-	padding-top:133px;
+#plan{
+	background-image:url(../imagenes/principal/pe.png);
+	background-repeat:no-repeat;
 	}
+/*Div que contiene la imagen del boton salir*/
+#salir{
+	width:40px;
+	height:40px;
+	margin:5px 835px;
+	}
+/*Representa el div que tiene todo el contenido del menu inicial*/
 #ventanacompleta{
 	width:900px;
 	height:700px;
@@ -41,14 +99,21 @@ h2{
 	border-radius:10px;
 	background:white;
 	}
-#ventanacompleta:hover{
-	background:rgba(233,230,178,1.00);
+h1{
+	font-family:"Corbel";
+	font-size:38px;
+	color:#004000;
+	text-align:center;
 	}
-#contenedor{
-	width:660px;
-	height:auto;
-	margin:auto;
-	margin-top:60px;
+h1 span{
+	font-size:27px;
+	}
+h2{
+	font-family:"Corbel";
+	font-size:20px;
+	color:#004000;
+	text-align:center;
+	padding-top:133px;
 	}
 .opcion{
 	width:200px;
@@ -60,41 +125,3 @@ h2{
 	margin-bottom:10px;
 	background:white;
 	}
-#plan{
-	background-image:url(../imagenes/principal/pe.png);
-	background-repeat:no-repeat;
-	}
-#carga{
-	background-image:url(../imagenes/principal/ca.png);
-	background-repeat:no-repeat;
-	}
-#disponibilidad{
-	background-image:url(../imagenes/principal/dd.png);
-	background-repeat:no-repeat;
-	}
-#horarios{
-	background-image:url(../imagenes/principal/ch.png);
-	background-repeat:no-repeat;
-	}
-#calendarizacion{
-	background-image:url(../imagenes/principal/ce.png);
-	background-repeat:no-repeat;
-	}
-#inasistencias{
-	background-image:url(../imagenes/principal/ci.png);
-	background-repeat:no-repeat;
-	}
-#salir{
-	width:40px;
-	height:40px;
-	margin:5px 835px;
-	}
-#pie{
-	font-family:"Corbel";
-	font-size:22px;
-	text-align:center;
-	margin-top:480px;
-	}
-	
-
-

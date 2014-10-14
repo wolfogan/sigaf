@@ -1,6 +1,77 @@
+/*Los estilos siguientes se encuentran divididos en estilo de la plantilla y estilo del contenido, el orden es de manera alfabetica, primero los ID y luego las clases*/
+
+/*--------------------------------------------------Estilo de la plantilla-------------------------------------------------*/
 body{
 	font-family: "Corbel";
+	
 	}
+/*Estilo para los botones(tabs) que muestran las funcionalidades*/
+
+.clear-shadow {
+	clear: both;
+	}
+/*Estilo del contenedor principal*/
+.content {
+	margin-top:5px;
+	background: #FFF;
+	overflow:scroll;
+	overflow-x:hidden;	
+	position: relative;
+    width: 100%;
+	height: 600px;
+	z-index: 5;
+ 	border:2px solid #FBE202;
+	box-shadow: 0px 0px 10px orange;
+    border-radius: 10px;
+	padding-bottom:30px;
+	}
+.content div {
+    position: absolute;
+	overflow:-x:hidden;
+	top: 0;
+	left: 0;
+	padding: 10px 40px;
+	z-index: 1;
+    opacity: 0;
+    -webkit-transition: opacity linear 0.1s;
+    -moz-transition: opacity linear 0.1s;
+    -o-transition: opacity linear 0.1s;
+    -ms-transition: opacity linear 0.1s;
+    transition: opacity linear 0.1s;
+	}
+/*Estilo para dar formato al scrollbar*/
+.content::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+	border-radius:10px;
+	}
+.content::-webkit-scrollbar-thumb {
+	background-color: #F90;	
+	border-radius:10px;
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+											  }
+.content div h2{
+	color: #004000;
+	font-size:30px;
+	text-align:center;
+	}
+.content div p {
+	font-size: 22px;
+	line-height: 30px;
+	text-align: justify;
+	margin: 0;
+	color: #004000;
+	padding-left: 15px;
+	border-left: 8px solid rgba(0,124,42, 0.2);
+	margin-bottom:10px;
+	}						
 .tabs{
     position: relative;
 	margin: 40px auto;
@@ -51,7 +122,6 @@ body{
 	border: 2px solid #EDC90E;
 	-webkit-box-shadow: 5px 5px 5px rgba(227, 199, 17, 1);
 	-moz-box-shadow:5px 5px 5px rgba(227, 199, 17, 1);
-	/*box-shadow: 5px 5px 5px rgba(227, 199, 17, 1);*/
 	 box-shadow: 5px 5px 5px orange;
 	margin-left:10px;
 	margin-bottom:11px;
@@ -65,7 +135,7 @@ body{
 	display: block;
 	}
 .tabs input:hover + label {
-	background: #42AF63;
+	background:#FDE7B0;
 	}
 .tabs label:first-of-type {
     z-index: 7;
@@ -93,56 +163,7 @@ body{
     background: #FFE70C;
 	z-index: 8;
 	}
-.clear-shadow {
-	clear: both;
-	}
-.content {
-	margin-top:5px;
-	background: #FFF/*#FCF6CC*/;
-	overflow:scroll;
-	overflow-x:hidden;	
-	position: relative;
-    width: 100%;
-	height: 600px;
-	z-index: 5;
- 	border:2px solid #FBE202;
-	box-shadow: 0px 0px 10px orange;
-    border-radius: 10px;
-	padding-bottom:30px;
-	}
-
-.content div {
-    position: absolute;
-	overflow:-x:hidden;
-	top: 0;
-	left: 0;
-	padding: 10px 40px;
-	z-index: 1;
-    opacity: 0;
-    -webkit-transition: opacity linear 0.1s;
-    -moz-transition: opacity linear 0.1s;
-    -o-transition: opacity linear 0.1s;
-    -ms-transition: opacity linear 0.1s;
-    transition: opacity linear 0.1s;
-	}
-.content::-webkit-scrollbar {
-	width: 10px;
-	background-color: #F5F5F5;
-	border-radius:10px;
-	}
-.content::-webkit-scrollbar-thumb {
-	background-color: #F90;	
-	border-radius:10px;
-	background-image: -webkit-linear-gradient(45deg,
-	                                          rgba(255, 255, 255, .2) 25%,
-											  transparent 25%,
-											  transparent 50%,
-											  rgba(255, 255, 255, .2) 50%,
-											  rgba(255, 255, 255, .2) 75%,
-											  transparent 75%,
-											  transparent)
-											  }
-
+/*Asociacion de los tabs con el contenido*/
 .tabs input.tab-selector-1:checked ~ .content .content-1,
 .tabs input.tab-selector-2:checked ~ .content .content-2,
 .tabs input.tab-selector-3:checked ~ .content .content-3,
@@ -160,24 +181,40 @@ body{
     -ms-transition: opacity ease-out 0.2s 0.1s;
     transition: opacity ease-out 0.2s 0.1s;
 }
-.content div h2{
-	color: #004000;
-	font-size:30px;
+
+
+
+
+/*----------------------------------------------------------Estilo del contenido---------------------------------------------------*/
+#modifCatal a:visited{
+	color:white;
 	}
-.content div p {
-	font-size: 22px;
-	line-height: 30px;
-	text-align: justify;
-	margin: 0;
-	color: #004000;
-	padding-left: 15px;
-	border-left: 8px solid rgba(0,124,42, 0.2);
-	margin-bottom:10px;
+#pasos{
+	text-align:justify;
+	font-family:"Corbel";
+	font-size:19px;
+	margin-left:150px;	
 	}
-
-
-/*----------------------------------formato del contenido de catalogos--------------------------------------*/
-
+#pasos td{
+	border-bottom:2px solid #E9B10A;
+	}
+#regCatal{
+	margin-left:280px;
+	margin-right:10px;
+	}
+#regCatal a:visited{
+	color:white;
+	}
+.botonCatalogo{
+	width:300px;
+	height:55px;
+	background:#004000;
+	border:solid 2px #ECC703;
+	border-radius:5px;
+	color:white;
+	font-size:23px;
+	font-family:"Corbel";
+	}
 .lista-catalogos{
 	font-size:23px;
 	color: #004000;
@@ -192,22 +229,30 @@ body{
 	line-height: 30px;
 	list-style-type:none;	
 	}
-.lista-vineta
-{
+.lista-vineta{
 	font-size:22px;
 	margin-left:40px;
 	color:#004000;
 	list-style-type:none;
-}
-#pasos{
 	text-align:justify;
-	font-family:"Corbel";
-	font-size:19px;
-	margin-left:150px;	
 	}
-#pasos td{
-	border-bottom:2px solid #E9B10A;
+.lista-faq{
+	list-style-type:none;
+	font-family:"Corbel";
+	font-size:23px;
+	color:#004000;
 	}
 .otrasopc{
 	margin-left:30px;
 	}
+.registro{
+	width:300px;
+	height:60px;
+	}
+h3{
+	font-size:27px;
+	font-family:"Corbel";
+	color:#004000;
+	}
+
+

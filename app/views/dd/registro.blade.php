@@ -12,10 +12,6 @@
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
-		
-
-
-		
 
 <!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
@@ -85,8 +81,14 @@
 
 			<!------------------- CONTENIDO PRIMER TAB ---------------------------->
 
+
+						
+					 
+					 
 		                <div class="content-1">
 							<h2>Datos personales</h2>
+
+							<form id="dd_datosPersonales" method="post" action="http://titan:8080/form">
 		                      	
 			                        <div id="dd_noEmpleado_fechaIngreso">
 										<div id="dd_noEmpleado">No. empleado:<label class="dd_label">12345</label></div>
@@ -116,12 +118,19 @@
 										</div>
 
 										<div id="dd_foto">Foto:<input  id="txtfoto" type="text"></div>	
-										<div id="dd_RemovFoto"><input class="dd_clsAgregarArchivo" style="margin-left:20px; margin-top:-20px;" type="button" id="dd_btnRemover" value=""></div>
+
+										<!--<div id="dd_RemovFoto"><input class="dd_clsAgregarArchivo" style="margin-left:20px; margin-top:-20px;" type="submit" id="submit" value=""></div>
+										<div id="dd_RemovFoto"><input type="file" name="file" class="dd_clsAgregarArchivo"  style="margin-left:20px; margin-top:-20px;" />	</div>-->		 
+										<div id="dd_RemovFoto"><input type="button" name="file" class="dd_clsAgregarArchivo"  style="margin-left:20px; margin-top:-20px;" />	</div>		 
+		 								
+
 										<div id="dd_subirFoto"><input class="dd_clsCancelar" style="margin-left:20px; margin-top:100px;" type="button" id="dd_btnSubirFoto" value=""></div>
+
+
+
 
 									</div>
 								</div>
-
 								
 
 									<br>
@@ -215,10 +224,12 @@
 								</div>
 
 		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
+
+		                        <!--<button id="submit" type="submit">Submit Form</button>-->
 						</div>
 
 				<!------------------- CONTENIDO SEGUNDO TAB ---------------------------->
-		                    
+
 					    <div class="content-2">
 		                    
      
@@ -239,14 +250,18 @@
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button"></div>
+									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
 
 								</div>
 
 							
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input class="dd_con_estilo_largo"  type="text"/></div>
+									<div class="dd_licenciatura"><input class="dd_con_estilo_largo"  type="text" readonly="readonly"/></div>
+
+									
+
+
 									<div class="dd_uniEgreso">Escuela:<input class="dd_con_estilo" type="text"/></div>
 									<div class="dd_fechaTitulacion">Titulación:<input class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
@@ -645,7 +660,8 @@
 									<tbody>
 										<tr>
 											<td>7:00 - 8:00</td>
-											<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>	
+											<!--<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>-->
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -660,7 +676,7 @@
 											
 											<td><label></label></td>	
 											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -673,7 +689,7 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 						
 
@@ -682,7 +698,7 @@
 											<td>10:00 - 11:00</td>
 											<td><label></label></td>	
 											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -703,7 +719,7 @@
 											<td><label></label></td>	
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 						
@@ -715,13 +731,13 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 						
 										</tr>
 										<tr>
 											<td>14:00 - 15:00</td>
 											<td><label></label></td>	
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -869,4 +885,32 @@
                 }    
     
     </script>
+
+<!------------------------------------ SCRIPT PARA SUBIR ARCHIVOS -------------------------------------->
+
+
+<script>
+			 document.getElementById("submit").onclick = handleButtonPress;
+ 
+			 var httpRequest;
+ 
+			 function handleButtonPress(e) {
+				 e.preventDefault();
+var form = document.getElementById("dd_datosPersonales");
+ 
+			 var formData = new FormData(form);
+				 httpRequest = new XMLHttpRequest();
+				 httpRequest.onreadystatechange = handleResponse;
+				 httpRequest.open("POST", form.action);
+				 httpRequest.send(formData);
+			 }
+ 
+			 function handleResponse() {
+				 if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+					 document.getElementById("results").innerHTML
+						 = httpRequest.responseText;
+				 }
+			 }
+		 </script>
+<!-------------------------------------------------------------------------------------------------------->
 </html>

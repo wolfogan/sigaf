@@ -3,7 +3,7 @@
 		<li>
 			<a href="#" titile="Plan de estudios">Plan de estudios</a>
 			<ul>
-				<li><a href="<?=URL::to('catalogos');?>" title="Catalogos">Catálogos</a></li>
+				<!--<li><a href="<?=URL::to('catalogos');?>" title="Catalogos">Catálogos</a></li>-->
 				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Catálogos: modificación y eliminación </a></li>
 				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
@@ -16,8 +16,12 @@
 			<ul>
 				<li><a href="<?=URL::to('cargaacademica/registro');?>" title="Registrar CA">Registro Inicial CA</a></li>
 				<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registro subsecuente CA</a></li>
+				<li><a href="<?=URL::to('cargaacademica/registro3');?>" title="Registrar CA3">Registro subsecuente CA 2</a></li>
 				<li><a href="<?=URL::to('cargaacademica/consulta');?>" title="Consultar CA">Consultar Carga A.</a></li>
-				<li class="ultimo"><a href="#" title="Modificar CA">Modificar Carga A.</a></li>
+				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
+				
+
+				
 			</ul>
 		</li>
 		<li>
@@ -25,8 +29,9 @@
 			<ul>
 				<li><a href="<?=URL::to('disponibilidaddocente/registro');?>" title="Registrar DD">Registrar Disp. Doc.</a></li>
 				<li><a href="<?=URL::to('disponibilidaddocente/consulta');?>" title="Consultar y modificar DD">Consultar Disp. Doc.</a></li>
-				
-				<li class="ultimo"><a href="<?=URL::to('disponibilidaddocente/eliminar');?>" title="Eliminar DD">Eliminar Disp. Doc.</a></li>
+				<li><a href="<?=URL::to('disponibilidaddocente/eliminar');?>" title="Eliminar DD">Eliminar Disp. Doc.</a></li>
+				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
+			
 			</ul>
 		</li>
 		<li>
@@ -58,7 +63,8 @@
 			<ul>
 				<li><a href="<?=URL::to('usuarios/usuariosregistro');?>" title="Registro, consulta y modificación de usuarios">Registro, consulta, modificación usuarios</a></li>
 				<li><a href="<?=URL::to('usuarios/modificarcontrasena');?>" title="Modificar contraseña">Cambiar contraseña</a></li>
-				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
+				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
+
 
 
 			</ul>
