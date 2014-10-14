@@ -734,7 +734,10 @@
 
 			var materia=$("#clave1F").val();
 			var plan = $("#noPlan").val();
-			var dataUA = $("#formularioPlanEstudio").serialize();
+			// Habilitar seriaciones para permitir guardado
+			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
+			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
+			//alert(dataUA);
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(data){
 				//alert(data);
 				$("#guardar").val("Guardar");
@@ -742,7 +745,7 @@
 				$("#tblUA").dataTable().fnClearTable();
 				ActualizarUAS(plan);
 			
-				alert("Datos actualizados");
+				alert("!Unidad de Aprendizaje actualizada!");
 				// Limpiar Control
 				$('option',$(".example41")).each(function(element) {
 					$(".example41").multiselect('deselect', $(this).val());
@@ -1102,7 +1105,10 @@
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 
 			// Deshabilitar fila anterior
-			$(filaSeriacion).find("select,input").attr("disabled",true);
+			if($("#guardar").val()!="Actualizar")
+			{
+				$(filaSeriacion).find("select,input").attr("disabled",true);
+			}
 		});
 
 		$(".tblCatPlanAgregarSeriacion").on("click",".clsEliminarFila",function(){
@@ -1206,6 +1212,8 @@
 						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,claveD:serie}, function(json)
 						{
 							//console.log(json);
+							reset_campos();
+
 							if(json.success)
 							{
 								$('#clave1F').val(json.uaprendizaje);
@@ -1222,7 +1230,7 @@
 								$('#hpc').val(json.hpc);
 								$('#hcl').val(json.hcl);
 								$('#he').val(json.he);
-								$('#semestre').val(json.semestre);
+								$('#semestre').val(json.semestre_sug);
 								$('#creditosF').val(json.creditos);
 								$('#observaciones').val(json.observa);
 								$("#guardar").val("Actualizar");
@@ -1243,18 +1251,24 @@
 
 								for(i in json.series)
 								{
-									// Duplicar fila base y añadir a tabla
+									// Duplicar fila base y añadir a tabla las seriaciones extraidas de la BD
 									var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
 									$(".sin-seriacion").hide();
 									//console.log(filaSeriacion);
 									
+									// Valores de las ua seriadas
 									$(seriacionNueva).find("select:eq(0)").val(json.series[i].reqseriacion);
 									$(seriacionNueva).find("input:eq(0)").val(json.series[i].uaprequisito);
 									$(seriacionNueva).find("input:eq(1)").val(json.series[i].descripcionmat);
 
+									// Para la actualizacion posterior
 									$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 									$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 								}
+
+								// Habilitar ultima fila
+								//$(".tblCatPlanAgregarSeriacion > tbody > tr").not(":eq(0) , :eq(1),:last-child").find("input,select").attr('disabled',true);
+								
 							}
 							else
 							{

@@ -527,7 +527,7 @@ class PlanEstudioController extends BaseController
 			'hpc'=>$ua->HPC,
 			'hcl'=>$ua->HCL,
 			'he'=>$ua->HE,
-			'semestre'=>$ua->semestre,
+			'semestre_sug'=>$ua->semestre_sug,
 			'creditos'=>$ua->creditos,
 			'programas'=>$programas,
 			'series'=> $series
@@ -542,7 +542,7 @@ class PlanEstudioController extends BaseController
 		$clave = Input::get("clave1F");
 		$UA = UnidadAprendizaje::find($clave);
 		//$UA -> plan = $noplan;
-		$UA -> descripcionmat = Input::get('materia');
+		$UA -> descripcionmat = Str::upper(Input::get('materia'));
 		$UA -> HC = Input::get('hc');
 		$UA -> HL = Input::get('hl');
 		$UA -> HT = Input::get('ht');
@@ -551,12 +551,12 @@ class PlanEstudioController extends BaseController
 		$UA -> HE = Input::get('he');
 		$UA -> creditos = Input::get('creditosF');
 		//$UA -> fec_aut = date('Y-m-d');
-		$UA -> semestre = Input::get('semestre');
+		$UA -> semestre_sug = Input::get('semestre');
 		$UA -> observa = Input::get('observaciones');
 		$UA -> caracter = Input::get('tipoF');
-		$UA -> reqseriacion = Input::get('serie');
-		$UA -> claveD = Input::get('clave2F');
-		$UA -> etapa = Input::get('etapaF');
+		//$UA -> reqseriacion = Input::get('serie');
+		//$UA -> claveD = Input::get('clave2F');
+		//$UA -> etapa = Input::get('etapaF');
 		$UA -> coordinaciona = Input::get('coord');
 		$UA -> save();
 		
@@ -571,6 +571,27 @@ class PlanEstudioController extends BaseController
 			}
 		}*/
 
+		// ACTUALIZACION DE LAS UAS SERIADAS METODO: ELIMINACION-ALTA
+
+		// Capturar claves seriadas[11236,11237] y tipos [OBLIGATORIAS,OPTATIVAS]
+		$tipos = Input::get("seriacion_tipo");
+		$claves = Input::get("seriacion_clave");
+		$users_id = Input::get("users_id");
+		$etapa = Input::get('etapaF');
+		
+		// Registrar las materias seriadas en detalleseriacion si existen registros
+		// Borrar las uas seriadas
+		DB::table('detalleseriacion')->where('uaprendizaje','=',$clave)->delete();
+		
+		if(isset($claves))
+		{
+			// Inserción
+			foreach ($claves as $key => $value) {
+				DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
+			}
+		}
+
+
 		// CONDICION PARA QUE NO AFECTE LA ACTUALIZACION DE LA CONSULTA 
 		$programas = Input::get('carreras');
 		if(!empty($programas))
@@ -583,7 +604,7 @@ class PlanEstudioController extends BaseController
 			// Posteriormente hacer las inserciones en p_ua de las Unidades Aprendizaje asociadas a los programas.
 			foreach ($programas as $carrera)
 			{
-				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave));
+				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave,'etapa'=>$etapa,'users_id'=>$users_id));
 			}
 		}
 	}
