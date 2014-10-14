@@ -433,14 +433,14 @@ class PlanEstudioController extends BaseController
 					->leftjoin('detalleseriacion','p_ua.uaprendizaje','=',"detalleseriacion.uaprendizaje")
 					//->join('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
 					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
-					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
+					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','p_ua.etapa as etapa','etapas.descripcion as descripcionetapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
 					->where('uaprendizaje.plan','=',$noplan)
 					->where('p_ua.etapa','=',$etapa)
 					->where('uaprendizaje.caracter','LIKE',"%$caracter%")
 					//->where('detalleseriacion.reqseriacion',"LIKE","%$reqseriacion%")
 					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
 					->where('p_ua.programaedu','=',$programaedu)
-					->groupBy('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
+					->groupBy('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','descripcionetapa','coordinaciona')
 					->orderBy('uaprendizaje.uaprendizaje','asc')
 					->get();
 			
@@ -520,7 +520,7 @@ class PlanEstudioController extends BaseController
 			'success' => true,
 			'uaprendizaje' => $ua->uaprendizaje,
 			'descripcionmat' => $ua->descripcionmat,
-			'etapa'=>$ua->etapa,
+			//'etapa'=>$ua->etapa,
 			'caracter'=>$ua->caracter,
 			//'reqseriacion'=>$ua->reqseriacion,
 			//'claveD'=>$ua->claveD,

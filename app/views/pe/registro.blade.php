@@ -1165,7 +1165,7 @@
 				}
 			}
 			
-
+			// Crear fila y agregar atributos para pasar por el formulario
 			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
 			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");

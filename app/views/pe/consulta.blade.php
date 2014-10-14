@@ -498,10 +498,10 @@
 				var descripcionUA = "";
 				for (var i = 0; i < uas.length; i++) 
 				{
-					alert(uas[i].seriacion); // Mostrar las seriaciones
+					//alert(uas[i].seriacion); // Mostrar las seriaciones
 					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> T<span>' + uas[i].HT + '</span> CR<span>' + uas[i].creditos + '</span>';
 					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'">' +
+									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'" etapa="'+uas[i].etapa+'">' +
 										descripcionUA +
 									'</div>'+
 								'</li>').hide().fadeIn("slow");
@@ -721,7 +721,8 @@
 			// eq(2) - hc
 			// eq(3) - hl
 			// eq(4) - total
-			dataUA = $("#formUpdate").serialize();
+			dataUA = $("#formUpdate").serialize() + & + $(".tblCatPlanUpdateSeriacion").serialize();
+			alert(dataUA);
 			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
 				$(divUA).find("span").eq(1).text($("#descripcion_update").val());
@@ -759,15 +760,17 @@
 				//alert("Aqui paso algo");
 				divUA = $(this);
 				var uaid = $(this).find("span").eq(0).text();
+				var etapa = $(divUA).attr("etapa");
 				//alert(uaid);
 				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:uaid},function(ua){
 					//alert("consulto");
+					
 					$("#titulo_update").html(ua.descripcionmat);
 					$("#carrera_update").text($("#carrera option:selected").html());
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
-					$("#etapa_update").val(ua.etapa);
-					etapaOld = ua.etapa; // Por si cambian la etapa reubicar el div en la etapa correspondiente
+					$("#etapa_update").val(etapa);
+					etapaOld = etapa; // Por si cambian la etapa reubicar el div en la etapa correspondiente
 					$("#tipo_update").val(ua.caracter);
 					$("#semestre_update").val(ua.semestre_sug);
 					//$("#seriacion_update").val(ua.reqseriacion);
@@ -783,7 +786,27 @@
 					$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
 					$("#coord").val(ua.coordinaciona);
 
+					// CARGAR SERIACIONES
+					// Limpiar tabla seriaciones
+					$(".tblCatPlanUpdateSeriacion > tbody > tr").not(":eq(0) , :eq(1)").remove();
+					$(".sin-seriacion").show();
+					// Iterar por las series
+					for(i in ua.series)
+					{
+						// Duplicar fila base y añadir a tabla las seriaciones extraidas de la BD
+						var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanUpdateSeriacion");
+						$(".sin-seriacion").hide();
+						//console.log(filaSeriacion);
+						
+						// Valores de las ua seriadas
+						$(seriacionNueva).find("select:eq(0)").val(ua.series[i].reqseriacion);
+						$(seriacionNueva).find("input:eq(0)").val(ua.series[i].uaprequisito);
+						$(seriacionNueva).find("input:eq(1)").val(ua.series[i].descripcionmat);
 
+						// Para la actualizacion posterior
+						$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+						$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+					}
 					
 				})
 				.fail(function(errorText,textError,errorThrow){alert("Fallo en la consulta de la unidad de aprendizaje: " + errorText.responseText)});
