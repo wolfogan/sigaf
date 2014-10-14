@@ -244,7 +244,7 @@
 		</form>
 	</div>
 
-	<!-------------------------------------- MODAL PLAN DE ESTUDIOS -------------------------------------->
+	<!-------------------------------------- MODAL AGREGAR UNIDAD DE APRENDIZAJE -------------------------------------->
 	<div class="md-modal md-effect-11" id="btnAgregarUa"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Unidades de aprendizaje</h3>
