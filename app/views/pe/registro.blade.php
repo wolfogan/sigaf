@@ -1210,11 +1210,11 @@
 							{
 								$('#clave1F').val(json.uaprendizaje);
 								$('#materia').val(json.descripcionmat);
-								$('#etapaF').val(json.etapa);
+								//$('#etapaF').val(json.etapa);
 								$('#tipoF').val(json.caracter);
 								$('#serie').val(json.reqseriacion);
-								$('#clave2F').val(json.claveD);
-								$('#materiaSeriada').val(json.materiaseriada);
+								//$('#clave2F').val(json.claveD);
+								//$('#materiaSeriada').val(json.materiaseriada);
 								$('#coord').val(json.coordinaciona);
 								$('#hc').val(json.hc);
 								$('#hl').val(json.hl);
@@ -1239,6 +1239,21 @@
 									$(".example41").multiselect('select',json.programas[i].programaedu);
 									//$("#select_carreras option[value='"+json.programas[i].programaedu+"']").attr('disabled','disabled');
 									$(".example41").multiselect('refresh');
+								}
+
+								for(i in json.series)
+								{
+									// Duplicar fila base y añadir a tabla
+									var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
+									$(".sin-seriacion").hide();
+									//console.log(filaSeriacion);
+									
+									$(seriacionNueva).find("select:eq(0)").val(json.series[i].reqseriacion);
+									$(seriacionNueva).find("input:eq(0)").val(json.series[i].uaprequisito);
+									$(seriacionNueva).find("input:eq(1)").val(json.series[i].descripcionmat);
+
+									$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+									$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 								}
 							}
 							else

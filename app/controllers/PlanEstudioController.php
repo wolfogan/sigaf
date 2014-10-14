@@ -492,8 +492,8 @@ class PlanEstudioController extends BaseController
 	public function postObtenerdataua()
 	{
 		$uaid = Input::get('uaprendizaje');
-		$uaserieid = Input::get('claveD');
 		$ua = UnidadAprendizaje::find($uaid);
+		/*$uaserieid = Input::get('claveD');
 		if(empty($uaserieid))
 		{
 			$uaserie = "";
@@ -502,20 +502,25 @@ class PlanEstudioController extends BaseController
 		{
 			$data = UnidadAprendizaje::find($uaserieid);
 			$uaserie = $data->descripcionmat;
-		}
+		}*/
 
 		$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
+		$series= DB::table('detalleseriacion')
+						->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
+						->select('detalleseriacion.uaprendizaje','detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','detalleseriacion.users_id','uaprendizaje.descripcionmat')
+						->where('detalleseriacion.uaprendizaje','=',$uaid)->get();
+		
 		$data= array(
 			'success' => true,
 			'uaprendizaje' => $ua->uaprendizaje,
 			'descripcionmat' => $ua->descripcionmat,
 			'etapa'=>$ua->etapa,
 			'caracter'=>$ua->caracter,
-			'reqseriacion'=>$ua->reqseriacion,
-			'claveD'=>$ua->claveD,
+			//'reqseriacion'=>$ua->reqseriacion,
+			//'claveD'=>$ua->claveD,
+			//'materiaseriada' => $uaserie,
 			'coordinaciona'=>$ua->coordinaciona,
 			'observa'=>$ua->observa,
-			'materiaseriada' => $uaserie,
 			'hc'=>$ua->HC,
 			'hl'=>$ua->HL,
 			'ht'=>$ua->HT,
@@ -524,7 +529,8 @@ class PlanEstudioController extends BaseController
 			'he'=>$ua->HE,
 			'semestre'=>$ua->semestre,
 			'creditos'=>$ua->creditos,
-			'programas'=>$programas
+			'programas'=>$programas,
+			'series'=> $series
 		);
 
 		return Response::json($data);
