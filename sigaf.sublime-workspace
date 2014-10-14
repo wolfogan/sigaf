@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"fila",
+				"fila-base-seriacion"
+			],
+			[
+				"las",
+				"last-child"
+			],
+			[
+				"tb",
+				"tbody"
+			],
+			[
+				"descrip",
+				"descripcionmat"
+			],
+			[
+				"uapre",
+				"uaprequisito"
+			],
+			[
+				"de",
+				"detalleseriacion"
+			],
+			[
 				"sin",
 				"sin-seriacion"
 			],
@@ -142,10 +166,6 @@
 			[
 				"grupos",
 				"gruposTurno"
-			],
-			[
-				"descrip",
-				"descripcion"
 			],
 			[
 				"focus",
@@ -316,10 +336,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/pe/registro.blade.php",
+			"file": "app/views/pe/consulta.blade.php",
 			"settings":
 			{
-				"buffer_size": 49881,
+				"buffer_size": 29469,
 				"line_ending": "Windows"
 			}
 		},
@@ -327,7 +347,7 @@
 			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 20458,
+				"buffer_size": 21898,
 				"line_ending": "Windows"
 			}
 		},
@@ -336,6 +356,22 @@
 			"settings":
 			{
 				"buffer_size": 1399,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "PENDIENTES.txt",
+			"settings":
+			{
+				"buffer_size": 2419,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/pe/registro.blade.php",
+			"settings":
+			{
+				"buffer_size": 51111,
 				"line_ending": "Windows"
 			}
 		}
@@ -455,7 +491,7 @@
 	],
 	"find":
 	{
-		"height": 55.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -469,6 +505,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"obtenerdataua",
+			"actualizarua",
+			".filter",
+			".find",
+			".filter",
+			"dataua",
+			"dataUA",
+			"obtenerdataua",
 			"ActualizarUAS",
 			".sin-seriacion",
 			"\").show();\n		});",
@@ -570,23 +614,23 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/pe/registro.blade.php",
+					"file": "app/views/pe/consulta.blade.php",
 					"settings":
 					{
-						"buffer_size": 49881,
+						"buffer_size": 29469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31956,
-								31956
+								21275,
+								21275
 							]
 						],
 						"settings":
@@ -643,7 +687,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 14011.0,
+						"translation.y": 9475.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -653,15 +697,15 @@
 					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 20458,
+						"buffer_size": 21898,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11679,
-								12648
+								14264,
+								14264
 							]
 						],
 						"settings":
@@ -718,7 +762,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6623.0,
+						"translation.y": 7103.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -796,6 +840,155 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "PENDIENTES.txt",
+					"settings":
+					{
+						"buffer_size": 2419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2419,
+								2419
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/pe/registro.blade.php",
+					"settings":
+					{
+						"buffer_size": 51111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31221,
+								31221
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13100.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		},
@@ -804,19 +997,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 0,
+					"buffer": 4,
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 49881,
+						"buffer_size": 51111,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40182,
-								40182
+								40439,
+								40439
 							]
 						],
 						"settings":

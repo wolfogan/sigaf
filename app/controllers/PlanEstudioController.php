@@ -407,15 +407,15 @@ class PlanEstudioController extends BaseController
 					->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 					->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
-					->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
-					->join('etapas','uaprendizaje.etapa','=','etapas.etapa')
+					->join('etapas','p_ua.etapa','=','etapas.etapa')
+					//->join('reqseriacion','uaprendizaje.reqseriacion','=','reqseriacion.reqseriacion')
 					->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
 					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','uaprendizaje.reqseriacion','uaprendizaje.claveD','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona')
 					->where('uaprendizaje.plan','=',$noplan)
-					->where('uaprendizaje.etapa','=',$etapa)
 					->where('uaprendizaje.caracter','LIKE',"%$caracter%")
 					->where('uaprendizaje.reqseriacion',"LIKE","%$reqseriacion%")
 					->where('uaprendizaje.coordinaciona','LIKE',"%$coordinacion%")
+					->where('p_ua.etapa','=',$etapa)
 					->whereIn('p_ua.programaedu',array($programaedu,6)) // Carrera + Tronco Común
 					->orderBy('uaprendizaje.uaprendizaje','asc')
 					->get();
@@ -579,19 +579,6 @@ class PlanEstudioController extends BaseController
 		$users_id = Input::get("users_id");
 		$etapa = Input::get('etapaF');
 		
-		// Registrar las materias seriadas en detalleseriacion si existen registros
-		// Borrar las uas seriadas
-		DB::table('detalleseriacion')->where('uaprendizaje','=',$clave)->delete();
-		
-		if(isset($claves))
-		{
-			// Inserción
-			foreach ($claves as $key => $value) {
-				DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
-			}
-		}
-
-
 		// CONDICION PARA QUE NO AFECTE LA ACTUALIZACION DE LA CONSULTA 
 		$programas = Input::get('carreras');
 		if(!empty($programas))
@@ -607,6 +594,20 @@ class PlanEstudioController extends BaseController
 				DB::table('p_ua') -> insert (array('programaedu' => $carrera,'uaprendizaje'=>$clave,'etapa'=>$etapa,'users_id'=>$users_id));
 			}
 		}
+
+		// Registrar las materias seriadas en detalleseriacion si existen registros
+		// Borrar las uas seriadas
+		DB::table('detalleseriacion')->where('uaprendizaje','=',$clave)->delete();
+		
+		if(isset($claves))
+		{
+			// Inserción
+			foreach ($claves as $key => $value) {
+				DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
+			}
+		}
+
+
 	}
 
 	public function postActualizaretapa()

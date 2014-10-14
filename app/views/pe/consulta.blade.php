@@ -546,6 +546,9 @@
 							
 						});
 					});
+				})
+				.fail(function(){
+					
 				});
 			}
 			else // Si solo es una etapa
