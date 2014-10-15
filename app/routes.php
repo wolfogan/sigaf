@@ -26,6 +26,7 @@ Route::controller('login','UserLoginController');
 
 
 Route::controller('planestudio','PlanEstudioController');
+Route::controller('catalogos','CatalogosController');
 Route::controller('cargaacademica','CargaAcademicaController');
 Route::controller('disponibilidaddocente','DisponibilidadDocenteController');
 Route::controller('ayuda','AyudaController');

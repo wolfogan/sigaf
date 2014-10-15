@@ -3,7 +3,7 @@
 		<li>
 			<a href="#" titile="Plan de estudios">Plan de estudios</a>
 			<ul>
-				<!--<li><a href="<?=URL::to('catalogos');?>" title="Catalogos">Catálogos</a></li>-->
+				<li><a href="<?=URL::to('catalogos/catalogos');?>" title="Catalogos">Catálogos</a></li>
 				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Catálogos: modificación y eliminación </a></li>
 				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
