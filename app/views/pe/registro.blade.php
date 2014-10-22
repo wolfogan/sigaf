@@ -698,10 +698,10 @@
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
-						<th>CARRERA</th>
+						<th>CARRERAS</th>
 						<th>ETAPA</th>
 						<th>TIPO</th>
-						<th>CLAVE_SERIACION</th>
+						<TH>SERIACION</TH>
 						<th>COORDINACIÓN</th>
 						<th>HC</th>
 						<th>HL</th>
@@ -715,10 +715,10 @@
 					<tr>
 						<th>CLAVE</th>
 						<th>MATERIA</th>
-						<th>CARRERA</th>
+						<th>CARRERAS</th>
 						<th>ETAPA</th>
 						<th>TIPO</th>
-						<th>CLAVE_SERIACION</th>
+						<th>SERIACION</th>
 						<th>COORDINACIÓN</th>
 						<th>HC</th>
 						<th>HL</th>
@@ -947,7 +947,7 @@
 				t.row.add([
 							uas[i].uaprendizaje,
 							uas[i].descripcionmat,
-							uas[i].descripcion,
+							uas[i].siglas,
 							uas[i].etapa,
 							uas[i].caracter,
 							(uas[i].seriacion == null ) ? "SIN SERIACIÓN" : uas[i].seriacion,// Falta llenar las seriaciones

@@ -62,7 +62,22 @@ Route::get('pruebas',function(){
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
+	$sql = DB::table('p_ua')
+				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->join('etapas','p_ua.etapa','=','etapas.etapa')
+				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
+				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->leftjoin('detalleseriacion',function($join){
+						$join->on('detalleseriacion.uaprendizaje','=','p_ua.uaprendizaje')
+							->on('detalleseriacion.programaedu','=','p_ua.programaedu');
+						})
+				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
+				->where('uaprendizaje.plan','=',20092)
+				->groupBy('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
+				->toSql();
+
 	//$u->lastQuery = $last_query;
 
-	return $last_query;
+	return $sql;
 });

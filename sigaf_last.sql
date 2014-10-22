@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-10-14 13:40:03
+Date: 2014-10-22 13:45:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1569 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1604 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1680,6 +1680,41 @@ INSERT INTO `bitacora` VALUES ('1565', 'detalleseriacion', '9', 'I', '2014-10-14
 INSERT INTO `bitacora` VALUES ('1566', 'uaprendizaje', '9', 'I', '2014-10-14 00:00:00', '11239|MATEMATICAS TERMINAL|1|0|0|0|0|0|2|2014-10-14||1|2|2|20092', null);
 INSERT INTO `bitacora` VALUES ('1567', 'p_ua', '9', 'I', '2014-10-14 00:00:00', '5|11239|3', null);
 INSERT INTO `bitacora` VALUES ('1568', 'detalleseriacion', '9', 'I', '2014-10-14 00:00:00', '11239|11237', null);
+INSERT INTO `bitacora` VALUES ('1569', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '5|11239|3');
+INSERT INTO `bitacora` VALUES ('1570', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '5|11238|1');
+INSERT INTO `bitacora` VALUES ('1571', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '5|11237|2');
+INSERT INTO `bitacora` VALUES ('1572', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '5|11236|1');
+INSERT INTO `bitacora` VALUES ('1573', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '4|11237|2');
+INSERT INTO `bitacora` VALUES ('1574', 'p_ua', '9', 'D', '2014-10-21 00:00:00', null, '3|11237|2');
+INSERT INTO `bitacora` VALUES ('1575', 'detalleseriacion', '9', 'D', '2014-10-21 00:00:00', null, '11239|11237');
+INSERT INTO `bitacora` VALUES ('1576', 'detalleseriacion', '9', 'D', '2014-10-21 00:00:00', null, '11238|11237');
+INSERT INTO `bitacora` VALUES ('1577', 'detalleseriacion', '9', 'D', '2014-10-21 00:00:00', null, '11238|11236');
+INSERT INTO `bitacora` VALUES ('1578', 'detalleseriacion', '9', 'D', '2014-10-21 00:00:00', null, '11237|11237');
+INSERT INTO `bitacora` VALUES ('1579', 'p_ua', '9', 'I', '2014-10-21 00:00:00', '1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('1580', 'p_ua', '9', 'I', '2014-10-21 00:00:00', '2|11236|1', null);
+INSERT INTO `bitacora` VALUES ('1581', 'p_ua', '9', 'I', '2014-10-21 00:00:00', '3|11236|1', null);
+INSERT INTO `bitacora` VALUES ('1582', 'p_ua', '9', 'I', '2014-10-21 00:00:00', '1|11237|1', null);
+INSERT INTO `bitacora` VALUES ('1583', 'p_ua', '9', 'I', '2014-10-21 00:00:00', '1|11238|1', null);
+INSERT INTO `bitacora` VALUES ('1584', 'planestudio', '9', 'I', '2014-10-22 00:00:00', '20101|Plan SEP 2010-1 324ES2|800|2014-10-01|2014-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('1585', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('1586', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('1587', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('1588', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('1589', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('1590', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('1591', 'plan_programa', '9', 'I', '2014-10-22 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('1592', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '1|ARTES|1|2|1|1|1', '1|ARTES|1|2|1|1|1');
+INSERT INTO `bitacora` VALUES ('1593', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '2|ADMON. DE EMPRESAS|1|2|1|1|1', '2|ADMON. DE EMPRESAS|1|2|1|1|1');
+INSERT INTO `bitacora` VALUES ('1594', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '3|INFORMATICA|1|3|1|1|1', '3|INFORMATICA|1|3|1|1|1');
+INSERT INTO `bitacora` VALUES ('1595', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '1|ARTES|1|2|1|1|1', '1|ARTES|1|2|1|1|1');
+INSERT INTO `bitacora` VALUES ('1596', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '4|NEGOCIOS INTERNACIONALES|1|4|1|1|1', '4|NEGOCIOS INTERNACIONALES|1|4|1|1|1');
+INSERT INTO `bitacora` VALUES ('1597', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '5|CONTADURIA|1|4|1|1|1', '5|CONTADURIA|1|4|1|1|1');
+INSERT INTO `bitacora` VALUES ('1598', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '6|TRONCO COMUN|1|4|1|1|1', '6|TRONCO COMUN|1|4|1|1|1');
+INSERT INTO `bitacora` VALUES ('1599', 'programaedu', '9', 'U', '2014-10-22 00:00:00', '7|SISTEMAS COMPUTACIONALES|1|2|1|1|1', '7|SISTEMAS COMPUTACIONALES|1|2|1|1|1');
+INSERT INTO `bitacora` VALUES ('1600', 'detalleseriacion', '9', 'I', '2014-10-22 00:00:00', '11237|11236', null);
+INSERT INTO `bitacora` VALUES ('1601', 'detalleseriacion', '9', 'I', '2014-10-22 00:00:00', '11237|11237', null);
+INSERT INTO `bitacora` VALUES ('1602', 'p_ua', '9', 'U', '2014-10-22 00:00:00', '1|11237|2', '1|11237|1');
+INSERT INTO `bitacora` VALUES ('1603', 'p_ua', '9', 'U', '2014-10-22 00:00:00', '1|11238|3', '1|11238|1');
 
 -- ----------------------------
 -- Table structure for campus
@@ -2525,6 +2560,7 @@ INSERT INTO `coordinaciona` VALUES ('22', 'SIN COORDINACION', '6', '11');
 -- ----------------------------
 DROP TABLE IF EXISTS `detalleseriacion`;
 CREATE TABLE `detalleseriacion` (
+  `programaedu` int(11) NOT NULL,
   `uaprendizaje` int(11) NOT NULL COMMENT 'U aprendizaje',
   `reqseriacion` int(11) NOT NULL,
   `uaprequisito` int(11) NOT NULL COMMENT 'Uap requisito',
@@ -2533,8 +2569,9 @@ CREATE TABLE `detalleseriacion` (
   KEY `fk_detalleseriacion_uaprendizaje2_idx` (`uaprequisito`),
   KEY `fk_detalleseriacion_users1_idx` (`users_id`),
   KEY `fk_detalleseriacion_reqseriacion1` (`reqseriacion`),
+  KEY `fk_detalleseriacion_pua` (`programaedu`,`uaprendizaje`),
+  CONSTRAINT `fk_detalleseriacion_pua` FOREIGN KEY (`programaedu`, `uaprendizaje`) REFERENCES `p_ua` (`programaedu`, `uaprendizaje`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_detalleseriacion_reqseriacion1` FOREIGN KEY (`reqseriacion`) REFERENCES `reqseriacion` (`reqseriacion`) ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detalleseriacion_uaprendizaje1` FOREIGN KEY (`uaprendizaje`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_detalleseriacion_uaprendizaje2` FOREIGN KEY (`uaprequisito`) REFERENCES `uaprendizaje` (`uaprendizaje`) ON UPDATE NO ACTION,
   CONSTRAINT `fk_detalleseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -2542,10 +2579,8 @@ CREATE TABLE `detalleseriacion` (
 -- ----------------------------
 -- Records of detalleseriacion
 -- ----------------------------
-INSERT INTO `detalleseriacion` VALUES ('11237', '2', '11237', '9');
-INSERT INTO `detalleseriacion` VALUES ('11238', '2', '11236', '9');
-INSERT INTO `detalleseriacion` VALUES ('11238', '1', '11237', '9');
-INSERT INTO `detalleseriacion` VALUES ('11239', '1', '11237', '9');
+INSERT INTO `detalleseriacion` VALUES ('1', '11237', '1', '11236', '9');
+INSERT INTO `detalleseriacion` VALUES ('1', '11237', '1', '11237', '9');
 
 -- ----------------------------
 -- Table structure for dias
@@ -3231,6 +3266,7 @@ CREATE TABLE `planestudio` (
 -- Records of planestudio
 -- ----------------------------
 INSERT INTO `planestudio` VALUES ('20092', 'Plan 2009-2 SEP 534523', '800', '2014-10-01', '2014-10-31', '1', '9');
+INSERT INTO `planestudio` VALUES ('20101', 'Plan SEP 2010-1 324ES2', '800', '2014-10-01', '2014-10-31', '1', '9');
 
 -- ----------------------------
 -- Table structure for plan_programa
@@ -3259,6 +3295,13 @@ INSERT INTO `plan_programa` VALUES ('20092', '4', '9');
 INSERT INTO `plan_programa` VALUES ('20092', '5', '9');
 INSERT INTO `plan_programa` VALUES ('20092', '6', '9');
 INSERT INTO `plan_programa` VALUES ('20092', '7', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '1', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '2', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '3', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '4', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '5', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '6', '9');
+INSERT INTO `plan_programa` VALUES ('20101', '7', '9');
 
 -- ----------------------------
 -- Table structure for programaedu
@@ -3267,6 +3310,7 @@ DROP TABLE IF EXISTS `programaedu`;
 CREATE TABLE `programaedu` (
   `programaedu` int(11) NOT NULL COMMENT 'Código Programa Educativo( Carrera)',
   `descripcion` varchar(60) NOT NULL COMMENT 'Descripción detallenivprog (carrera)',
+  `siglas` varchar(5) CHARACTER SET utf8 NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '1=Activa/0=Baja',
   `empleado` int(11) NOT NULL COMMENT 'No empl. coordinador',
   `uacademica` int(11) NOT NULL COMMENT 'Uacademica',
@@ -3293,13 +3337,13 @@ CREATE TABLE `programaedu` (
 -- ----------------------------
 -- Records of programaedu
 -- ----------------------------
-INSERT INTO `programaedu` VALUES ('1', 'ARTES', '1', '2', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('2', 'ADMON. DE EMPRESAS', '1', '2', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('3', 'INFORMATICA', '1', '3', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('4', 'NEGOCIOS INTERNACIONALES', '1', '4', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('5', 'CONTADURIA', '1', '4', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('6', 'TRONCO COMUN', '1', '4', '1', null, '1', '1', '9');
-INSERT INTO `programaedu` VALUES ('7', 'SISTEMAS COMPUTACIONALES', '1', '2', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('1', 'ARTES', 'LA', '1', '2', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('2', 'ADMON. DE EMPRESAS', 'LAE', '1', '2', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('3', 'INFORMATICA', 'LI', '1', '3', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('4', 'NEGOCIOS INTERNACIONALES', 'LNI', '1', '4', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('5', 'CONTADURIA', 'LC', '1', '4', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('6', 'TRONCO COMUN', 'TC', '1', '4', '1', null, '1', '1', '9');
+INSERT INTO `programaedu` VALUES ('7', 'SISTEMAS COMPUTACIONALES', 'LSC', '1', '2', '1', null, '1', '1', '9');
 
 -- ----------------------------
 -- Table structure for puesto
@@ -3370,12 +3414,11 @@ CREATE TABLE `p_ua` (
 -- ----------------------------
 -- Records of p_ua
 -- ----------------------------
-INSERT INTO `p_ua` VALUES ('3', '11237', '2', '9');
-INSERT INTO `p_ua` VALUES ('4', '11237', '2', '9');
-INSERT INTO `p_ua` VALUES ('5', '11236', '1', '9');
-INSERT INTO `p_ua` VALUES ('5', '11237', '2', '9');
-INSERT INTO `p_ua` VALUES ('5', '11238', '1', '9');
-INSERT INTO `p_ua` VALUES ('5', '11239', '3', '9');
+INSERT INTO `p_ua` VALUES ('1', '11236', '1', '9');
+INSERT INTO `p_ua` VALUES ('1', '11237', '2', '9');
+INSERT INTO `p_ua` VALUES ('1', '11238', '3', '9');
+INSERT INTO `p_ua` VALUES ('2', '11236', '1', '9');
+INSERT INTO `p_ua` VALUES ('3', '11236', '1', '9');
 
 -- ----------------------------
 -- Table structure for reqseriacion

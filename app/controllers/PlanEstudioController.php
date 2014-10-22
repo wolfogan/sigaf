@@ -373,17 +373,33 @@ class PlanEstudioController extends BaseController
 		//$plan = PlanEstudio::find($noplan);
 		//$uas = $plan->unidades;
 
-		$UAS = DB::table('p_ua')
+		$UAS = $sql = DB::table('p_ua')
 				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('etapas','p_ua.etapa','=','etapas.etapa')
 				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
-				->leftjoin('detalleseriacion','detalleseriacion.uaprendizaje','=','uaprendizaje.uaprendizaje')
-				->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
-				->where('uaprendizaje.plan','=',$noplan)
-				->groupBy('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
+				->leftjoin('detalleseriacion',function($join){
+						$join->on('detalleseriacion.uaprendizaje','=','p_ua.uaprendizaje')
+							->on('detalleseriacion.programaedu','=','p_ua.programaedu');
+						})
+				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
+				->where('uaprendizaje.plan','=',20092)
+				->groupBy('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
 				->get();
+
+		/*
+		$UAS = DB::table('p_ua')
+				->join('etapas','p_ua.etapa','=','etapas.etapa')
+				->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->rightjoin('uaprendizaje','uaprendizaje.uaprendizaje','=','p_ua.uaprendizaje')
+				->join('caracter','caracter.caracter','=','uaprendizaje.caracter')
+				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->select('uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("IFNULL(GROUP_CONCAT(programaedu.siglas),'N/A') as programas"))
+				->groupBy('uaprendizaje.uaprendizaje','uaprendizaje.descripcionmat')
+				->get();
+		*/
+
 
 		return Response::json($UAS);
 
