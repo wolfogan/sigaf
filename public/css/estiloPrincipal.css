@@ -113,18 +113,20 @@ section #tercerBloque
 {
 	
 	height: 40px;
-	width: 500px;
+	width: 250px;
 	float: left;
-	margin-left: -10px;
+	margin-left: 20px;
 	margin-top: 20px;
 }
 section #cuartoBloque
 {
 	
+	
 	float: left;
 	margin-top: 20px;
+	margin-left: 15px;
 	height: 125px;
-	width: 450px;
+	width: 430px;
 	
 }
 footer
@@ -255,8 +257,9 @@ background: #EFCA0D;
 }
 #botones
 {
-	margin-top: -70px;
-	float: right;
+
+	
+	margin: auto;
 	width: 360px;
 }
 #cimarron
@@ -477,16 +480,55 @@ background: #EFCA0D;
 #carreraDiv 
 {
 	
-	margin: 1em 0em;
 	float:left;
-	width: 250px;
-	margin-top:0px;
-	margin-left: 18px;
-	/*margin: 1em 0em;
-	width: 250px;
-	float: left;
-	padding-left: 15px;*/
+	width: 400px;
+	margin-left: 150px;
+	margin-top:15px;
+	padding-bottom: 30px;
+
 }
+
+.pe_catalogos_tbl
+{
+	
+	height: 200px;
+	width: 600px;
+
+}
+
+.pe_tbl_seriaciones
+{
+
+	margin:auto;
+	width: 700px;
+}
+.pe_tbl_seriaciones td
+{
+	color:#000;
+	text-align: center;
+	padding: 2px;
+	border:1px dotted gray;
+  	background: #F0FFFF;
+  	font-size: 14px;
+  	height: 10px;
+
+
+}
+.pe_tbl_encabezado
+{
+	background: green;
+	font-size: 16px;
+	color: #fff;
+	border:1px solid gray;
+}
+.pe_tbl_encabezado th
+{
+	height: 30px;
+}
+
+
+
+
 	/*#ingresar
 {
 	width:140px;
@@ -595,8 +637,8 @@ background: #EFCA0D;
 }
 #unidadAcademicaDiv
 {
-	
-	width: 170px;
+	text-align: center;
+	width: 300px;
 	float: left;
 	margin-top:5px;
 	margin-left: -12px;	
@@ -615,8 +657,8 @@ background: #EFCA0D;
 }*/
 #unidadDiv
 {
-	
-	width: 250px;
+	text-align: center;
+	width: 300px;
 	float: left;
 	margin-top: 5px;
 	padding-left: 15px;
@@ -624,8 +666,8 @@ background: #EFCA0D;
 }
 #nivelDiv
 { 
-	
-	width: 200px;
+	text-align: center;
+	width: 300px;
 	float: left;
 	padding-top: 5px;
 }
@@ -640,28 +682,30 @@ background: #EFCA0D;
 #claveDiv
 {
 	width: 178px;
+	padding-left: 15px;
 	float: left;
 }
 #materiaDiv
 {
+	
 	width: 450px;
 	float: left;
 	padding-left: 20px;
 }
-#etapaDiv
+/*#etapaDiv
 {
 	
 	width: 240px;
 	float: left;
 	padding-left:60px;
 	
-}
+}*/
 #tipoDiv
 {
 	
+	padding-left: 50px;
 	width: 230px;
 	float: left;
-	margin-left: 65px;
 }
 
 /*#claveSerDiv
@@ -686,9 +730,10 @@ background: #EFCA0D;
 }*/
 #semestreDiv
 {
-	width: 165px;
+	
+	width: 130px;
 	float: left;
-	padding-left:33px;
+	padding-left:70px;
 	padding-right: 30px;
 }
 #coordDiv
@@ -737,16 +782,18 @@ background: #EFCA0D;
 {
 	
 	width: 200px;
+	padding-left: 8px;
 	float: left;
-	margin-left: 258px;
+	
 
 }
 #observacionesDiv
 {
 	
+	padding-left:40px;
 	float: left;
-	margin-top: -80px;
-	margin-left: 10px;
+	margin-bottom: 15px;
+	margin-top: 10px;
 	width: 500px;
 	
 	
@@ -882,8 +929,6 @@ background: #EFCA0D;
   	border-radius: 7px;   	
   	font-size: 14px; 	  	
   	margin: auto;
-  	margin-left: -25px;
-  	margin-top: 50px;
   	padding:10px;
 	width: 600px;
 }

@@ -12,10 +12,6 @@
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
-		
-
-
-		
 
 <!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
