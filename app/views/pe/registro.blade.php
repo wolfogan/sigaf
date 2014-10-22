@@ -40,9 +40,22 @@
 	
 	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
 	<div class="md-modal md-effect-11" id="add_seriacion"> 
-		<form  id="formSeriacion" class="md-content" method="post">
-			<h3>Agregar Seriación</h3>
-			<div class="tblCatalogos">
+		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
+			<h3>Nombre de la materia</h3>
+			<div id="carreraDiv">
+						<label>Carrera:</label>
+						<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
+
+
+						<label>Etapa:</label>
+						<select style="height:32px; color:#000">
+							<option>BASICA</option>
+							<option>DISCIPLINARIA</option>
+							<option>TERMINAL</option>
+						</select>
+					
+			</div>
+			<div class="pe_catalogos_tbl" style="margin:auto;">
 				<table class="tblCatPlanAgregarSeriacion">
 					<tr class="sin-seriacion">
 						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
@@ -67,7 +80,46 @@
 					</tr>
 				</table>
 			</div>
-						<div class="CatBotones">
+
+			<div class="tbl_seriaciones">
+			                    <table class="pe_tbl_seriaciones">
+									
+									<thead class="pe_tbl_encabezado">
+										<tr>
+											<th>PROGR. EDUCATIVO</th>
+											<th>ETAPA</th>
+											<th>SERIACIÓN</th>
+											<th>ELIMINAR</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+				
+									</tbody>
+								</table>
+							</div>
+						<div class="CatBotones" style="margin-top:10px;">
 							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 							<input type="button" value="Salir" class="md-close" />
 						</div>
@@ -89,7 +141,7 @@
 					</tr>
 					<tr>		
 						<td>No. Plan:</td>
-						<td><input title="Por favor, introduce un año." style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" required/></td>
+						<td><input title="Por favor, introduce un año." style="width: 120px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" required/>&nbsp;-&nbsp;<input style="width: 60px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" required/></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
@@ -98,7 +150,7 @@
 					<tr>
 						<td>Nivel:</td>
 						<td>
-							<select name="planestudio_nivel" id="planestudio_nivel">
+							<select style= "width:200px; height:30px;" name="planestudio_nivel" id="planestudio_nivel">
 								@foreach ($niveles as $nivel)
 									<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
 								@endforeach
@@ -108,7 +160,7 @@
 					<tr>
 						<td>Carreras:</td>
 						<td>
-							<select name="example" multiple="multiple" class="plancarreras">
+							<select  name="example" multiple="multiple" class="plancarreras">
 								@foreach ($programasEducativos as $carrera)
 									<option value="{{$carrera->programaedu}}" >{{$carrera->descripcion}}</option>
 								@endforeach
@@ -120,7 +172,7 @@
 					</tr>
 					<tr>
 						<td>Créditos Prácticas:</td>
-						<td><input title="Por favor,introduce los creditos" min="1" style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" required/></td>
+						<td><input title="Por favor,introduce los creditos" min="1" style="width: 120px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="number" id="txtCatCredPract" name="planestudio_credpracticas" required/></td>
 					</tr>
 					<tr>
 						<td>Fecha Inicio:</td>
@@ -203,8 +255,8 @@
 	</div>-->
 	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
 
-	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
-	<div class="md-modal md-effect-11" id="etapa"> 
+ 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
+	<!--<div class="md-modal md-effect-11" id="etapa"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Agregar Etapa</h3>
 			<div class="tblCatalogos">
@@ -224,35 +276,103 @@
 				<input type="button" value="Salir" class="md-close" />
 			</div>
 		</form>
-	</div>
+	</div>-->
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
 
 
 	<!-------------------------------------- MODAL PARA CAMBIAR ETAPA EN EL GRID CON EL BOTON MODIFICAR -------------------------------------->
 	<div class="md-modal md-effect-11" id="cambiar_etapa"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
-			<div class="tblCatalogos">
-				<table class="tblCatPlan">
-					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-					<tr>
-						<td>Etapa:</td>
-						<td><select>
+		
+		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
+			<h3>Nombre de la materia</h3>
+			<div id="carreraDiv">
+						<label>Carrera:</label>
+						<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
+
+
+						<label>Etapa:</label>
+						<select style="height:32px; color:#000">
 							<option>BASICA</option>
 							<option>DISCIPLINARIA</option>
 							<option>TERMINAL</option>
+						</select>
+					
+			</div>
+			<div class="pe_catalogos_tbl" style="margin:auto;">
+				<table class="tblCatPlanAgregarSeriacion">
+					<tr class="sin-seriacion">
+						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
+					</tr>
+					<tr class="fila-base-seriacion">
+						<td>Tipo:</td>
+						<td>
+							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+								@foreach($seriaciones as $seriacion)
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
+							</select>
 						</td>
+
+						<td>Clave:</td>
+						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
+						
+						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td><input type="button" class="dd_clsAgregarFila"></td>
+
 					</tr>
 				</table>
 			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
-			</div>
+
+			<div class="tbl_seriaciones">
+			                    <table class="pe_tbl_seriaciones">
+									
+									<thead class="pe_tbl_encabezado">
+										<tr>
+											<th>PROGR. EDUCATIVO</th>
+											<th>ETAPA</th>
+											<th>SERIACIÓN</th>
+											<th>ELIMINAR</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+										<tr>
+											<td>000453</td>
+											<td>UNICE ESPINOZA</td>
+											<td>HABILITADO</td>	
+											<td><input type="button" value="-" class="clsEliminarFila"></td>
+											
+										</tr>
+				
+									</tbody>
+								</table>
+							</div>
+						<div class="CatBotones" style="margin-top:10px;">
+							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
+							<input type="button" value="Salir" class="md-close" />
+						</div>
 		</form>
+
+
+
+
+
+		
 	</div>
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
 
@@ -260,9 +380,11 @@
 	<!-------------------------------------- MODAL TIPO SERIACION -------------------------------------->
 	<div class="md-modal md-effect-11" id="seriacion"> 
 		<form  action="<?=URL::to('planestudio/registrarseriacion'); ?>" class="md-content" method="post">
-			<h3>Agregar Seriación</h3>
+			<h3>Agregar seriación</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
+					
+
 					<tr>
 						<th></th>
 						<th></th>
@@ -371,6 +493,9 @@
 		</div>
 	</div>
 	<section>
+
+
+
 		<!---------------------------- FORMULARIO PRINCIPAL DE UNIDAD DE APRENDIZAJE ---------------------------->
 		<form id="formularioPlanEstudio" method="POST" action="javascript:registrarUnidadAprendizaje();">
 			<!-- INICIA PRIMER SECCIÓN -->
@@ -394,16 +519,11 @@
 					</div>-->
 
 				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
-				<div id="carreraDiv">
+				<!--<div id="carreraDiv">
 					<label>Carrera:</label>
 					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
-					<!-- Campo oculto para id´s de carreras -->
-					<!-- <input type="hidden" name="carreras" id="carreras"/> -->
-					<!-- <input type="hidden" name="add_carreras" id="add_carreras" /> -->
-					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
-					<!--<input class="md-trigger" data-modal="carrera" type="button" value="+">-->
-					<!-- LLAMADA MODAL PROGRAMA EDUCATIVO -->
-				</div>
+					
+				</div>-->
 				<!------------------------------------ UNIDAD ------------------------------------>
 				<div id="unidadDiv">
 					<label>Unidad: </label>
@@ -435,7 +555,7 @@
 					<!------------------------------------ CLAVE UA ------------------------------------>
 					<div id="claveDiv">
 						 &nbsp;<label>Clave: </label>
-						<input class="estilo_text" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
+						<input class="estilo_text" style="width:120px;" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
 						<input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/>
 						<br />
 						<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
@@ -446,17 +566,17 @@
 						<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1" title="Es necesario una descripción de la unidad de aprendizaje" required/>
 					</div>
 					<!-------------------------------------- ETAPA -------------------------------------->
-					<div id="etapaDiv">
+					<!--<div id="etapaDiv">
 						<label>Etapa: </label>
 						<select style="width:143px; height:30px" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" required>
 							@foreach ($etapas as $etapa)
 								<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
 							@endforeach
-						</select>
+						</select>-->
 						<!-- LLAMADA MODAL ETAPA -->
-							<input class="md-trigger" data-modal="etapa" type="button" value="+">
+							<!--<input class="md-trigger" data-modal="etapa" type="button" value="+">-->
 						<!-- LLAMADA MODAL ETAPA -->
-					</div>
+					<!--</div>-->
 					<!---------------------------------- TIPO CARACTER ---------------------------------->
 					<div id="tipoDiv">
 						<label>Tipo: </label>
@@ -470,33 +590,17 @@
 						<!-- LLAMADA MODAL TIPO CARACTER -->
 					</div>
 					<!---------------------------------------------------------------------------------->
-				</div>
-				<!-- TERMINA SEGUNDA SECCIÓN -->
-				<!------------------------------------ SEMESTRE ------------------------------------>
-				<!-- INICIA TERCER SECCIÓN -->
-				<div id="tercerBloque">
+
+					<!------------------------------------ SEMESTRE ------------------------------------>
 					<div id="semestreDiv">
 						<label>Sem:</label>
 						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 					</div>
 					
-				
-
-
-					<!---------------------------------- COORDINACION ---------------------------------->
-					<div id="coordDiv">
-						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
-						<datalist id="datalist_coord" name="c">
-							@foreach ($coordinaciones as $coordinacion)
-								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
-							@endforeach
-						</datalist>
-						<!-- LLAMADA MODAL COORDINACIÓN-->
-						<input class="md-trigger" data-modal="coordina" type="button" value="+">
-						<!-- LLAMADA MODAL COORDINACIÓN-->
-					</div>
-					<!---------------------------------------------------------------------------------->
 				</div>
+				<!-- TERMINA SEGUNDA SECCIÓN -->
+				
+				
 				<!-- TERMINAR TERCER SECCIÓN -->
 				<!------------------------------------ HORAS ------------------------------------>
 				<!-- INICIA CUARTA SECCIÓN -->
@@ -531,9 +635,27 @@
 					<br />
 					<!------------------------------------ CREDITOS ------------------------------------>
 					<div id="creditosDiv">
-						<label>Créditos: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" >
+						<label>CDTOS: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" >
 					</div>
 					
+				</div>
+
+				<!-- INICIA TERCER SECCIÓN -->
+				<div id="tercerBloque">
+
+					<!---------------------------------- COORDINACION ---------------------------------->
+					<div id="coordDiv">
+						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
+						<datalist id="datalist_coord" name="c">
+							@foreach ($coordinaciones as $coordinacion)
+								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
+							@endforeach
+						</datalist>
+						<!-- LLAMADA MODAL COORDINACIÓN-->
+						<input class="md-trigger" data-modal="coordina" type="button" value="+">
+						<!-- LLAMADA MODAL COORDINACIÓN-->
+					</div>
+					<!---------------------------------------------------------------------------------->
 				</div>
 				<!-- TERMINA CUARTA SECCIÓN -->
 
@@ -571,7 +693,7 @@
 			</div>
 			<br />
 			<!-- INICIA TABLA DATATABLES PARA LAS UA -->
-			<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+			<table cellpadding="0" cellspacing="0" border="0" class="display"  id="tblUA">
 				<thead>
 					<tr>
 						<th>CLAVE</th>
@@ -741,7 +863,7 @@
 									hl,
 									ht,
 									creditosF,
-									"<input type='button' value='+' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>",
+									"<input type='button' value='' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>",
 									"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
 					}
 				});
