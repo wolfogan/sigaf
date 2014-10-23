@@ -807,9 +807,9 @@
 		// REGISTRAR UNIDAD DE APRENDIZAJE
 		if(opcion == "Guardar")
 		{
-			//var dataUA = $("#formularioPlanEstudio").serialize();
-			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
-			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
+			var dataUA = $("#formularioPlanEstudio").serialize();
+			//$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
+			//var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
 			//console.log(dataUA);
 			//alert(dataUA);
 			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){

@@ -351,7 +351,7 @@
 			"file": "app/views/pe/registro.blade.php",
 			"settings":
 			{
-				"buffer_size": 55589,
+				"buffer_size": 55591,
 				"line_ending": "Windows"
 			}
 		},
@@ -359,7 +359,7 @@
 			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 24074,
+				"buffer_size": 24071,
 				"line_ending": "Windows"
 			}
 		},
@@ -631,7 +631,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -639,15 +639,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 55589,
+						"buffer_size": 55591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								37190,
-								37190
+								32468,
+								32468
 							]
 						],
 						"settings":
@@ -704,7 +704,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 16877.0,
+						"translation.y": 14049.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -714,15 +714,15 @@
 					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 24074,
+						"buffer_size": 24071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12989,
-								12989
+								9789,
+								9789
 							]
 						],
 						"settings":
@@ -778,8 +778,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 56.0,
-						"translation.y": 6611.0,
+						"translation.x": 0.0,
+						"translation.y": 5238.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -945,7 +945,7 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 55589,
+						"buffer_size": 55591,
 						"regions":
 						{
 						},
@@ -1046,7 +1046,7 @@
 		"cols":
 		[
 			0.0,
-			0.505703291417,
+			0.953617810761,
 			1.0
 		],
 		"rows":
@@ -1084,7 +1084,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 288.0,
 	"status_bar_visible": true
 }

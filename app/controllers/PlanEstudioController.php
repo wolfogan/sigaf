@@ -279,10 +279,10 @@ class PlanEstudioController extends BaseController
 			$UA -> push();
 
 			// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
-			//$programas = explode(",",Input::get('carreras')); Cuando lo hacia de la manera compleja
-			$programas = Input::get('carreras');
-			$etapa = Input::get('etapaF');
-			foreach ($programas as $carrera) {
+			// $programas = explode(",",Input::get('carreras')); Cuando lo hacia de la manera compleja
+			// $programas = Input::get('carreras');
+			// $etapa = Input::get('etapaF');
+			/*foreach ($programas as $carrera) {
 				DB::table('p_ua') -> insert(array('programaedu' => $carrera,'uaprendizaje' => $clave,'etapa' => $etapa,'users_id' => $users_id));
 			}
 
@@ -295,9 +295,9 @@ class PlanEstudioController extends BaseController
 				foreach ($claves as $key => $value) {
 					DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
 				}
-			}
+			}*/
 
-			$mensaje = "¡Unidad de Aprendizaje registrada correctamente!";
+			$mensaje = "¡Unidad de Aprendizaje registrada!";
 		}
 		else
 		{
