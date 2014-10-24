@@ -481,19 +481,40 @@ background: #EFCA0D;
 {
 	
 	float:left;
-	width: 400px;
-	margin-left: 150px;
+	width: 200px;
+	margin-left: 15px;
 	margin-top:15px;
 	padding-bottom: 30px;
 
 }
+#etapaDiv
+{
+	
+	float: left;
+	width: 200px;
+	margin-left: -60px;
+	margin-top: 15px;
+	padding-bottom: 30px;
+
+}
+/*#pe_contenedor_tablas
+{
+	background: blue;
+	height: 500px;
+}*/
+
 
 .pe_catalogos_tbl
 {
-	
-	height: 200px;
-	width: 600px;
+	width: 700px;
 
+}
+.tbl_seriaciones
+{
+	width: 650px;
+	height: 100px;
+	overflow: auto;
+	overflow-x:hidden;
 }
 
 .pe_tbl_seriaciones
@@ -501,6 +522,8 @@ background: #EFCA0D;
 
 	margin:auto;
 	width: 700px;
+	height: 100px;
+	
 }
 .pe_tbl_seriaciones td
 {
@@ -511,9 +534,8 @@ background: #EFCA0D;
   	background: #F0FFFF;
   	font-size: 14px;
   	height: 10px;
-
-
 }
+
 .pe_tbl_encabezado
 {
 	background: green;
