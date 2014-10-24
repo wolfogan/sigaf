@@ -674,7 +674,7 @@
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
-						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Seriación" name="seriacion"  />
+						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Seriación" name="seriacion" id="asignacion"/>
 						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
 						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
 
@@ -797,11 +797,11 @@
 		var opcion = $("#guardar").val();
 		// Validar si no eligieron carreras.
 		var nCarreras = $("#select_carreras").val();
-		if(nCarreras==null)
+		/*if(nCarreras==null)
 		{
 			alert("No has seleccionado ninguna carrera");
 			return;
-		}
+		}¨*/
 		/* Validar seriacion
 		if($("#serie").val()!=1 && $("#clave2F").val().length<1)
 		{
@@ -815,7 +815,7 @@
 		// REGISTRAR UNIDAD DE APRENDIZAJE
 		if(opcion == "Guardar")
 		{
-			var dataUA = $("#formularioPlanEstudio").serialize();
+			var dataUA = $("#formularioPlanEstudio").serialize() + "&" + "users_id=" + USER_ID;
 			//$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
 			//var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
 			//console.log(dataUA);
@@ -835,50 +835,10 @@
 				var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
 				var creditosF=$("#creditosF").val();
 				var tablaDatos= $("#tblUA");
-
-			
-				//***** Agregar registro al Datatable para consulta, modificacion, etc.
-				// Guardar las materias seriadas
-				var uasSeriadas = [];
-				if($(".tblCatPlanAgregarSeriacion > tbody > tr").length > 2)
-				{
-					$(".tblCatPlanAgregarSeriacion > tbody > tr").each(function(index,element){
-						if(index >= 2) // Si no es sin seriacion, ni la fila base.
-						{
-							uasSeriadas.push($(element).find("input").first().val()); // Agregar al arreglo la serie de la carrera.
-						}
-					});
-					uasSeriadas = uasSeriadas.join(",") // Unir por coma para mostrar en el renglon.
-				}
-				else
-				{
-					uasSeriadas = "SIN SERIACIÓN";
-				}
-				// Agregar fila por cada carrera seleccionada
-				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
-					if($(elemento).hasClass('active') && indice != 0)
-					{
-						var input = $(elemento).find('input').val(); // Obtener el value de la carrera su id.
-						t.row.add([
-									clave1F,
-									materia.toUpperCase(),
-									$(elemento).text(), // El nombre de la carrera
-									etapaF,
-									tipoF,
-									uasSeriadas,
-									coord,
-									hc,
-									hl,
-									ht,
-									creditosF,
-									"<input type='button' value='' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>",
-									"<input type='button' value='-' title='"+clave1F+"' data="+input+" class='clsEliminarFila'>"]).draw();
-					}
-				});
 				alert(data);
-				$("#materia").css({"background-color":"white","color":"black","font-size":"100%"});
-				reset_campos();
-				//desmarcar_carreras();alert(data);
+			
+				//reset_campos();
+				$("#asignacion").click();
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
@@ -934,7 +894,7 @@
 			
 		}
 		// Regresar foco a la clave
-		$("#clave1F").focus();
+		//$("#clave1F").focus();
 
 	}
 

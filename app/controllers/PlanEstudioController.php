@@ -278,24 +278,7 @@ class PlanEstudioController extends BaseController
 			$UA -> save();
 			$UA -> push();
 
-			// Insertar en 'p_ua' las carreras que contendran esa Unidad de Aprendizaje
-			// $programas = explode(",",Input::get('carreras')); Cuando lo hacia de la manera compleja
-			// $programas = Input::get('carreras');
-			// $etapa = Input::get('etapaF');
-			/*foreach ($programas as $carrera) {
-				DB::table('p_ua') -> insert(array('programaedu' => $carrera,'uaprendizaje' => $clave,'etapa' => $etapa,'users_id' => $users_id));
-			}
-
-			// Capturar claves seriadas[11236,11237] y tipos [OBLIGATORIAS,OPTATIVAS]
-			$tipos = Input::get("seriacion_tipo");
-			$claves = Input::get("seriacion_clave");
-			// Registrar las materias seriadas en detalleseriacion si existen registros
-			if(isset($claves))
-			{
-				foreach ($claves as $key => $value) {
-					DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
-				}
-			}*/
+			
 
 			$mensaje = "¡Unidad de Aprendizaje registrada!";
 		}
