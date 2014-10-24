@@ -497,35 +497,60 @@ background: #EFCA0D;
 	padding-bottom: 30px;
 
 }
-/*#pe_contenedor_tablas
-{
-	background: blue;
-	height: 500px;
-}*/
 
+/* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
 
-.pe_catalogos_tbl
-{
-	width: 700px;
-
+html>body div.tableContainer table {
+	width: 700px
 }
-.tbl_seriaciones
-{
-	width: 650px;
-	height: 100px;
+
+thead.fixedHeader tr {
+	position: relative
+}
+
+html>body thead.fixedHeader tr {
+	display: block
+}
+
+thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
+	color: #FFF;
+	display: block;
+	text-decoration: none;
+	width: 100%
+}
+
+thead.fixedHeader a:hover {
+	color: #FFF;
+	display: block;
+	text-decoration: underline;
+	width: 100%
+}
+
+html>body tbody.scrollContent {
+	display: block;
+	height: 170px;
 	overflow: auto;
-	overflow-x:hidden;
+	width: 100%
 }
 
-.pe_tbl_seriaciones
-{
-
-	margin:auto;
-	width: 700px;
-	height: 100px;
-	
+html>body thead.fixedHeader th {
+	width: 200px
 }
-.pe_tbl_seriaciones td
+
+html>body thead.fixedHeader th + th {
+	width: 150px
+}
+
+html>body thead.fixedHeader th + th + th {
+	width: 300px
+}
+
+
+html>body thead.fixedHeader th + th + th + th {
+	width: 50px
+}
+
+.scrollContent td
 {
 	color:#000;
 	text-align: center;
@@ -535,27 +560,39 @@ background: #EFCA0D;
   	font-size: 14px;
   	height: 10px;
 }
-
-.pe_tbl_encabezado
+.fixedHeader th
 {
 	background: green;
 	font-size: 16px;
 	color: #fff;
 	border:1px solid gray;
-}
-.pe_tbl_encabezado th
-{
 	height: 30px;
 }
 
 
+html>body tbody.scrollContent td {
+	width: 200px
+}
+
+html>body tbody.scrollContent td + td {
+	width: 150px
+}
+
+html>body tbody.scrollContent td + td + td{
+	width: 300px
+}
+
+html>body tbody.scrollContent td + td + td + td {
+	width: 50px
+} /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
 
 
-	/*#ingresar
+.pe_catalogos_tbl
 {
-	width:140px;
-	 height:70px;
-}*/
+	width: 700px;
+
+}
+
 .tablaDatos 
 {
 	font-family:"Trebuchet MS";
@@ -583,7 +620,6 @@ background: #EFCA0D;
 {
 	background:#EDF7ED;
 }
-
 
 /*Estilo para la ventana de consulta (controles de busqueda)*/
 #consul_noPlan

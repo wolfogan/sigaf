@@ -34,6 +34,8 @@
 		<script src="../js/jquery.dataTables.js"></script>
 
 		<!-------------------------------------------------------------------------------->
+
+
 </head>
 <body>
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
@@ -56,8 +58,6 @@
 					<option>TERMINAL</option>
 				</select>
 			</div>
-
-		<!--<div id="pe_contenedor_tablas">-->
 
 			<div class="pe_catalogos_tbl" style="margin:auto;">
 				<table class="tblCatPlanAgregarSeriacion" style="width:700px;">
@@ -85,52 +85,97 @@
 				</table>
 			</div>
 
-			<div class="tbl_seriaciones">
-				
-			                    <table class="pe_tbl_seriaciones">
-									
-									<thead class="pe_tbl_encabezado">
-										<tr>
-											<th>PROGR. EDUCATIVO</th>
-											<th>ETAPA</th>
-											<th>SERIACIÓN</th>
-											<th>ELIMINAR</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-				
-									</tbody>
-								</table>
-							</div>
-						<div class="CatBotones" style="margin-top:10px;">
+			<div id="tableContainer" class="tableContainer">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+					<thead class="fixedHeader">
+						<tr>
+							<th>PROGR. EDUCATIVO</th>
+							<th>ETAPA</th>
+							<th>SERIACIÓN</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody class="scrollContent">
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+						<div class="CatBotones">
 							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 							<input type="button" value="Salir" class="md-close" />
 				
 						</div>
-				
-			<!--</div>-->
 		</form>
 	</div>
 
@@ -332,55 +377,98 @@
 				</table>
 			</div>
 
-			<div class="tbl_seriaciones">
-			                    <table class="pe_tbl_seriaciones">
-									
-									<thead class="pe_tbl_encabezado">
-										<tr>
-											<th>PROGR. EDUCATIVO</th>
-											<th>ETAPA</th>
-											<th>SERIACIÓN</th>
-											<th>ELIMINAR</th>
-											
-										</tr>
-									</thead>
-									<tbody id="prueba">
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="-" class="clsEliminarFila"></td>
-											
-										</tr>
-				
-									</tbody>
-								</table>
-							</div>
+			<div id="tableContainer" class="tableContainer">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+					<thead class="fixedHeader">
+						<tr>
+							<th>PROGR. EDUCATIVO</th>
+							<th>ETAPA</th>
+							<th>SERIACIÓN</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody class="scrollContent">
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr>
+							<td>INFORMÁTICA</td>
+							<td>DISCIPLINARIA</td>
+							<td>BASE DE DATOS II</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 						<div class="CatBotones" style="margin-top:10px;">
 							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 							<input type="button" value="Salir" class="md-close" />
 						</div>
 		</form>
-
-
-
-
-
-		
 	</div>
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
 
