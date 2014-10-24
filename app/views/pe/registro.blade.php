@@ -39,24 +39,28 @@
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
 	
 	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
-	<div class="md-modal md-effect-11" id="add_seriacion"> 
+	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
 		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
-			<h3>Nombre de la materia</h3>
+			<h3>Clave y nombre de la materia</h3>
 			<div id="carreraDiv">
-						<label>Carrera:</label>
-						<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
-
-
-						<label>Etapa:</label>
-						<select style="height:32px; color:#000">
-							<option>BASICA</option>
-							<option>DISCIPLINARIA</option>
-							<option>TERMINAL</option>
-						</select>
-					
+				<label>Carrera:</label>
+				<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
+		
 			</div>
+
+			<div id="etapaDiv">
+				<label>Etapa:</label>
+				<select style="height:32px; color:#000">
+					<option>BASICA</option>
+					<option>DISCIPLINARIA</option>
+					<option>TERMINAL</option>
+				</select>
+			</div>
+
+		<!--<div id="pe_contenedor_tablas">-->
+
 			<div class="pe_catalogos_tbl" style="margin:auto;">
-				<table class="tblCatPlanAgregarSeriacion">
+				<table class="tblCatPlanAgregarSeriacion" style="width:700px;">
 					<tr class="sin-seriacion">
 						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 					</tr>
@@ -82,6 +86,7 @@
 			</div>
 
 			<div class="tbl_seriaciones">
+				
 			                    <table class="pe_tbl_seriaciones">
 									
 									<thead class="pe_tbl_encabezado">
@@ -122,7 +127,10 @@
 						<div class="CatBotones" style="margin-top:10px;">
 							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 							<input type="button" value="Salir" class="md-close" />
+				
 						</div>
+				
+			<!--</div>-->
 		</form>
 	</div>
 
@@ -336,7 +344,7 @@
 											
 										</tr>
 									</thead>
-									<tbody>
+									<tbody id="prueba">
 										<tr>
 											<td>000453</td>
 											<td>UNICE ESPINOZA</td>
