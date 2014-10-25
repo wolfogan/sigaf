@@ -43,7 +43,7 @@
 	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
 		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
-			<h3>Clave y nombre de la materia</h3>
+			<h3 id="detalle">Clave y nombre de la materia</h3>
 			<div id="carreraDiv">
 				<label>Carrera:</label>
 				<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
@@ -52,10 +52,10 @@
 
 			<div id="etapaDiv">
 				<label>Etapa:</label>
-				<select style="height:32px; color:#000">
-					<option>BASICA</option>
-					<option>DISCIPLINARIA</option>
-					<option>TERMINAL</option>
+				<select id="etapita" style="height:32px; color:#000">
+					<option value="1">BASICA</option>
+					<option value="2">DISCIPLINARIA</option>
+					<option value="3">TERMINAL</option>
 				</select>
 			</div>
 
@@ -331,147 +331,6 @@
 		</form>
 	</div>-->
 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
-
-
-	<!-------------------------------------- MODAL PARA CAMBIAR ETAPA EN EL GRID CON EL BOTON MODIFICAR -------------------------------------->
-	<div class="md-modal md-effect-11" id="cambiar_etapa"> 
-		
-		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
-			<h3>Nombre de la materia</h3>
-			<div id="carreraDiv">
-						<label>Carrera:</label>
-						<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
-
-
-						<label>Etapa:</label>
-						<select style="height:32px; color:#000">
-							<option>BASICA</option>
-							<option>DISCIPLINARIA</option>
-							<option>TERMINAL</option>
-						</select>
-					
-			</div>
-			<div class="pe_catalogos_tbl" style="margin:auto;">
-				<table class="tblCatPlanAgregarSeriacion">
-					<tr class="sin-seriacion">
-						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
-					</tr>
-					<tr class="fila-base-seriacion">
-						<td>Tipo:</td>
-						<td>
-							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
-								@foreach($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
-						
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
-						<td><input type="button" class="dd_clsAgregarFila"></td>
-
-					</tr>
-				</table>
-			</div>
-
-			<div id="tableContainer" class="tableContainer">
-				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-					<thead class="fixedHeader">
-						<tr>
-							<th>PROGR. EDUCATIVO</th>
-							<th>ETAPA</th>
-							<th>SERIACIÓN</th>
-							<th>ELIMINAR</th>
-						</tr>
-					</thead>
-					<tbody class="scrollContent">
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-						<div class="CatBotones" style="margin-top:10px;">
-							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
-							<input type="button" value="Salir" class="md-close" />
-						</div>
-		</form>
-	</div>
-	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
-
 
 	<!-------------------------------------- MODAL TIPO SERIACION -------------------------------------->
 	<div class="md-modal md-effect-11" id="seriacion"> 
@@ -926,7 +785,10 @@
 				alert(data);
 			
 				//reset_campos();
+				// Mostrar la ventan modal para el detalle
+				$("#detalle").text(clave1F+ " - " + materia.toUpperCase());
 				$("#asignacion").click();
+
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
@@ -1012,7 +874,7 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
-							"<input type='button' class='clsModificarFila' value='' data-modal='cambiar_etapa'/>",
+							"<input type='button' class='clsModificarFila' value='' data-modal='add_seriacion'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
@@ -1318,6 +1180,8 @@
 			{
 				$(filaSeriacion).find("select,input").attr("disabled",true);
 			}
+
+
 		});
 
 		$(".tblCatPlanAgregarSeriacion").on("click",".clsEliminarFila",function(){
@@ -1361,24 +1225,14 @@
 
 
 		// Boton AGREGAR en ventana modal seriacion
-		$("#agregarSeriacion").on("click",function(){
-			var rowCount = $(".tblCatPlanAgregarSeriacion > tbody > tr").length;
-			if(rowCount > 2)
-			{
-				var filaSeriacion = $(".tblCatPlanAgregarSeriacion tr:last-child");
-				if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
-				{
-					alert("Por favor, agregue una seriación válida");
-					return;
-				}
-			}
+		$(".sin-seriacion").on("click",function(event){
 			
 			// Crear fila y agregar atributos para pasar por el formulario
 			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblCatPlanAgregarSeriacion");
 			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 			
-			$(".sin-seriacion").hide();
+			$(this).hide();
 
 			
 		});

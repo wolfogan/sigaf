@@ -512,20 +512,6 @@ html>body thead.fixedHeader tr {
 	display: block
 }
 
-thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
-	color: #FFF;
-	display: block;
-	text-decoration: none;
-	width: 100%
-}
-
-thead.fixedHeader a:hover {
-	color: #FFF;
-	display: block;
-	text-decoration: underline;
-	width: 100%
-}
-
 html>body tbody.scrollContent {
 	display: block;
 	height: 170px;

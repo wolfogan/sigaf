@@ -18,6 +18,9 @@ var ModalEffects = (function() {
 			}
 
 			function removeModalHandler() {
+				// Condicion de los rows
+				if($("#select_carreras").val()==null)
+					return;
 				removeModal( classie.has( el, 'md-setperspective' ) ); 
 			}
 
