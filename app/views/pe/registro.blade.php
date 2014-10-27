@@ -52,14 +52,14 @@
 
 			<div id="etapaDiv">
 				<label>Etapa:</label>
-				<select style="height:32px; color:#000">
+				<select class="dd_estilo_combo" style="color:#000; height:32px;">
 					<option>BASICA</option>
 					<option>DISCIPLINARIA</option>
 					<option>TERMINAL</option>
 				</select>
 			</div>
 
-			<div class="pe_catalogos_tbl" style="margin:auto;">
+			<div class="pe_catalogos_tbl">
 				<table class="tblCatPlanAgregarSeriacion" style="width:700px;">
 					<tr class="sin-seriacion">
 						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
@@ -83,7 +83,16 @@
 
 					</tr>
 				</table>
+
+				<div id="pe_BtnseriacionAgregar">
+					<input type="button" style="height:35px;" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
+				</div>
 			</div>
+
+
+
+
+			<div id="pe_programasAsociados">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</div>
 
 			<div id="tableContainer" class="tableContainer">
 				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
@@ -171,9 +180,9 @@
 					</tbody>
 				</table>
 			</div>
-						<div class="CatBotones">
-							<input type="button" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
-							<input type="button" value="Salir" class="md-close" />
+						<div class="CatBotones" style="margin-left:600px;">
+							
+							<input style="height:35px;" type="button" value="Salir" class="md-close" />
 				
 						</div>
 		</form>
@@ -344,7 +353,7 @@
 
 
 						<label>Etapa:</label>
-						<select style="height:32px; color:#000">
+						<select class="dd_estilo_combo" style="color:#000; height:32px;">
 							<option>BASICA</option>
 							<option>DISCIPLINARIA</option>
 							<option>TERMINAL</option>

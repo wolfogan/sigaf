@@ -481,7 +481,7 @@ background: #EFCA0D;
 {
 	
 	float:left;
-	width: 200px;
+	width: 230px;
 	margin-left: 15px;
 	margin-top:15px;
 	padding-bottom: 30px;
@@ -492,15 +492,26 @@ background: #EFCA0D;
 	
 	float: left;
 	width: 200px;
-	margin-left: -60px;
+	margin-left: -80px;
 	margin-top: 15px;
 	padding-bottom: 30px;
+}
 
+#pe_programasAsociados
+{
+	height: 15px;
+	width: 500px;
+	font-size: 1.2em;
+	margin-left: 10px;
+	margin-top: 20px;
+	
 }
 
 /* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
 
 html>body div.tableContainer table {
+	
+	margin-top: -15px;
 	width: 700px
 }
 
@@ -512,19 +523,6 @@ html>body thead.fixedHeader tr {
 	display: block
 }
 
-thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
-	color: #FFF;
-	display: block;
-	text-decoration: none;
-	width: 100%
-}
-
-thead.fixedHeader a:hover {
-	color: #FFF;
-	display: block;
-	text-decoration: underline;
-	width: 100%
-}
 
 html>body tbody.scrollContent {
 	display: block;
@@ -532,24 +530,6 @@ html>body tbody.scrollContent {
 	overflow: auto;
 	width: 100%
 }
-
-html>body thead.fixedHeader th {
-	width: 200px
-}
-
-html>body thead.fixedHeader th + th {
-	width: 150px
-}
-
-html>body thead.fixedHeader th + th + th {
-	width: 300px
-}
-
-
-html>body thead.fixedHeader th + th + th + th {
-	width: 50px
-}
-
 .scrollContent td
 {
 	color:#000;
@@ -562,6 +542,7 @@ html>body thead.fixedHeader th + th + th + th {
 }
 .fixedHeader th
 {
+	
 	background: green;
 	font-size: 16px;
 	color: #fff;
@@ -569,6 +550,25 @@ html>body thead.fixedHeader th + th + th + th {
 	height: 30px;
 }
 
+html>body thead.fixedHeader th {
+
+	width: 200px
+}
+
+html>body thead.fixedHeader th + th {
+
+	width: 150px
+}
+
+html>body thead.fixedHeader th + th + th {
+
+	width: 300px
+}
+
+html>body thead.fixedHeader th + th + th + th {
+
+	width: 50px
+}
 
 html>body tbody.scrollContent td {
 	width: 200px
@@ -586,10 +586,18 @@ html>body tbody.scrollContent td + td + td + td {
 	width: 50px
 } /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
 
-
+#pe_BtnseriacionAgregar
+{
+	margin-top: 10px;
+	float: right;
+}
 .pe_catalogos_tbl
 {
+	
 	width: 700px;
+	height: 270px;
+	margin:auto;
+
 
 }
 
@@ -739,7 +747,7 @@ html>body tbody.scrollContent td + td + td + td {
 }*/
 #claveDiv
 {
-	width: 178px;
+	width: 215px;
 	padding-left: 15px;
 	float: left;
 }
@@ -983,11 +991,12 @@ html>body tbody.scrollContent td + td + td + td {
 	background:#ECECFB;
 	border-style: none;
 	border-collapse: separate;
-  	border-spacing: 7px 15px;
-  	border-radius: 7px;   	
+  	border-spacing: 5px 15px;
+  	border-radius: 5px;   	
   	font-size: 14px; 	  	
   	margin: auto;
-  	padding:10px;
+  	padding:8px;
+  	height: 200px;
 	width: 600px;
 }
 
