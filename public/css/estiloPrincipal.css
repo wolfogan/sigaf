@@ -520,7 +520,7 @@ thead.fixedHeader tr {
 }
 
 html>body thead.fixedHeader tr {
-	display: block
+	display:block;
 }
 
 

@@ -60,37 +60,50 @@
 			</div>
 
 			<div class="pe_catalogos_tbl">
-				<table class="tblCatPlanAgregarSeriacion" style="width:700px;">
-					<tr class="sin-seriacion">
-						<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
-					</tr>
-					<tr class="fila-base-seriacion">
-						<td>Tipo:</td>
-						<td>
-							<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
-								@foreach($seriaciones as $seriacion)
-									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
 
-						<td>Clave:</td>
-						<td><input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/></td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  /></td>
+				<div id="tableContainer" class="tableContainer">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+					<thead style="background:green">
+						<tr>
+							<th colspan="7">MATERIAS ASOCIADAS</th>
+							
+						</tr>
+					</thead>
+					<tbody class="scrollContent">
+						<tr>
+							<td>Tipo:</td>
+							<td>
+								<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+									@foreach($seriaciones as $seriacion)
+										<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+
+							<td>Clave:</td>
+						<td>
+							<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+						</td>
+						<td>
+							<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
+						</td>
 						
-						<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
+						<td>
+							<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
+						</td>
 						<td><input type="button" class="dd_clsAgregarFila"></td>
 
-					</tr>
+						</tr>
+
+					</tbody>
 				</table>
+			</div>
+			
 
 				<div id="pe_BtnseriacionAgregar">
 					<input type="button" style="height:35px;" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
 				</div>
 			</div>
-
-
-
 
 			<div id="pe_programasAsociados">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</div>
 
@@ -257,89 +270,7 @@
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 
 
-	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
-	<!--<div class="md-modal md-effect-11" id="carrera"> 
-		<form  action="<?=URL::to('planestudio/registrarprogramaeducativo'); ?>" class="md-content" method="post">
-			<h3>Agregar Carrera</h3>
-			<div class="tblCatalogos">
-				<table class="tblCatPlan">
-						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcionCarrera" name="proe_descripcion" size=1 /></td>
-					</tr>
-					<tr>
-						<td>Status:</td>
-						<td><input style="width: 20px; height: 20px; border-radius: 5px; border-color: #DBDBEA;" type="checkbox" id="txtCatCodigoCarrera" name="proe_status" size=1 />Activado</td>
-					</tr>
-					<tr>
-						<td>Nivel:</td>
-						<td>
-						<select style="width: 200px;" name="proe_nivel" type="text" id="txtCatNivel" size=1 />
-							@foreach($niveles as $nivel)
-								<option value="{{$nivel->nivel}}">{{$nivel->descripcion}}</option>
-							@endforeach
-						</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Especialidad:</td>
-						<td>
-						<select style="width: 200px;" name="proe_especialidad" type="text" id="txtCatEspecialidad" size=1 />
-							@foreach($especialidades as $especialidad)
-								<option value="{{$especialidad->especialidad}}">{{$especialidad->descripcion}}</option>
-							@endforeach
-						</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Tipo Programa:</td>
-						<td>
-						<select style="width: 200px;" name="proe_periodo" type="text" id="txtCatTipoProgr" size=1 />
-							@foreach($periodosPrograma as $periodo)
-								<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
-							@endforeach
-						</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Coordinador:</td>
-						<td><select style="width: 200px;" name="txtCatCoordinadorCarrera" type="text" id="txtCatCoordinadorCarrera" size=1 />
-								<option value="COORDINADOR INFORMATICA">COORDINADOR INFORMATICA</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
-			</div>
-		</form>
-	</div>-->
-	<!-------------------------------------- MODAL PROGRAMA EDUCATIVO -------------------------------------->
-
- 	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
-	<!--<div class="md-modal md-effect-11" id="etapa"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Agregar Etapa</h3>
-			<div class="tblCatalogos">
-				<table class="tblCatPlan">
-					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-					<tr>
-						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="etapa_descripcion" id="txtCatDescripcionEtapa" size=1 /></td>
-					</tr>
-				</table>
-			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" />
-			</div>
-		</form>
-	</div>-->
-	<!-------------------------------------- MODAL ETAPAS -------------------------------------->
+ 	
 
 
 	<!-------------------------------------- MODAL PARA CAMBIAR ETAPA EN EL GRID CON EL BOTON MODIFICAR -------------------------------------->
