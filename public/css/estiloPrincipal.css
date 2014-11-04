@@ -481,11 +481,7 @@ background: #EFCA0D;
 {  
 	
 	float:left;
-<<<<<<< HEAD
-	width: 250px;
-=======
 	width: 230px;
->>>>>>> f22b372c690903133a642cf224888e1979c0758b
 	margin-left: 15px;
 	margin-top:15px;
 	padding-bottom: 30px;
@@ -534,16 +530,18 @@ html>body tbody.scrollContent {
 	overflow: auto;
 	width: 100%
 }
+
 .scrollContent td
 {
 	color:#000;
 	text-align: center;
 	padding: 2px;
 	border:1px dotted gray;
-  	background: #F0FFFF;
-  	font-size: 14px;
-  	height: 10px;
+	background: #F0FFFF;
+	font-size: 14px;
+	height: 10px;
 }
+
 .fixedHeader th
 {
 	
@@ -574,12 +572,16 @@ html>body thead.fixedHeader th + th + th + th {
 	width: 50px
 }
 
+.sin-seriacion td{
+	width: 700px !important
+}
+
 html>body tbody.scrollContent td {
-	width: 200px
+	width: 201px
 }
 
 html>body tbody.scrollContent td + td {
-	width: 150px
+	width: 141px
 }
 
 html>body tbody.scrollContent td + td + td{
@@ -587,7 +589,7 @@ html>body tbody.scrollContent td + td + td{
 }
 
 html>body tbody.scrollContent td + td + td + td {
-	width: 50px
+	width: 70px
 } /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
 
 #pe_BtnseriacionAgregar
@@ -990,50 +992,7 @@ html>body tbody.scrollContent td + td + td + td {
 	
 }
 
-.tblCatPlanAgregarSeriacion
-{
-	background:#ECECFB;
-	border-style: none;
-	border-collapse: separate;
-  	border-spacing: 5px 15px;
-  	border-radius: 5px;   	
-  	font-size: 14px; 	  	
-  	margin: auto;
-  	padding:8px;
-  	height: 200px;
-	width: 600px;
-}
 
-
-.tblCatPlanAgregarSeriacion td 
-{
-	color:#004000;
-	text-align: left;
-	
-}
-
-.tblCatPlanUpdateSeriacion
-{
-	background:#ECECFB;
-	border-style: none;
-	border-collapse: separate;
-  	border-spacing: 7px 15px;
-  	border-radius: 7px;   	
-  	font-size: 14px; 	  	
-  	margin: auto;
-  	margin-left: 5px;
-  	margin-top: 20px;
-  	padding:10px;
-	width: 540px;
-}
-
-
-.tblCatPlanUpdateSeriacion td 
-{
-	color:#004000;
-	text-align: left;
-	
-}
 
 .lblCatalogosDependencias
 {
