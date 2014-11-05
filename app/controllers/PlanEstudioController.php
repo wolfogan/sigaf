@@ -358,8 +358,8 @@ class PlanEstudioController extends BaseController
 
 		$UAS = $sql = DB::table('p_ua')
 				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
-				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('etapas','p_ua.etapa','=','etapas.etapa')
+				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
 				->leftjoin('detalleseriacion',function($join){

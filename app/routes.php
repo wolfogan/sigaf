@@ -64,8 +64,8 @@ Route::get('pruebas',function(){
 
 	$sql = DB::table('p_ua')
 				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
-				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('etapas','p_ua.etapa','=','etapas.etapa')
+				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
 				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
 				->leftjoin('detalleseriacion',function($join){
@@ -75,7 +75,8 @@ Route::get('pruebas',function(){
 				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
 				->where('uaprendizaje.plan','=',20092)
 				->groupBy('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
-				->toSql();
+				//->toSql();
+				->get();
 
 	//$u->lastQuery = $last_query;
 

@@ -359,7 +359,7 @@
 			"file": "app/views/pe/registro.blade.php",
 			"settings":
 			{
-				"buffer_size": 52248,
+				"buffer_size": 47463,
 				"line_ending": "Windows"
 			}
 		},
@@ -367,23 +367,7 @@
 			"file": "app/controllers/PlanEstudioController.php",
 			"settings":
 			{
-				"buffer_size": 23160,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/css/estiloPrincipal.css",
-			"settings":
-			{
-				"buffer_size": 30649,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/main/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 4126,
+				"buffer_size": 23165,
 				"line_ending": "Windows"
 			}
 		},
@@ -391,23 +375,7 @@
 			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 3476,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CODIGOS ANTERIORES.txt",
-			"settings":
-			{
-				"buffer_size": 8548,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/js/modalEffects.js",
-			"settings":
-			{
-				"buffer_size": 1236,
+				"buffer_size": 3496,
 				"line_ending": "Windows"
 			}
 		}
@@ -456,6 +424,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/FCA/Desktop/sigaf/public/css/estiloPrincipal.css",
+		"/C/Users/FCA/Desktop/sigaf/public/js/modalEffects.js",
+		"/C/Users/FCA/Desktop/sigaf/CODIGOS ANTERIORES.txt",
+		"/C/Users/FCA/Desktop/sigaf/app/routes.php",
+		"/C/Users/FCA/Desktop/sigaf/app/views/main/index.blade.php",
+		"/C/Users/FCA/Desktop/login.conf",
 		"/C/Users/FCA/Desktop/miguelnieva.github.io-master/index.html",
 		"/C/Program Files (x86)/Middle Earth Shadow of Mordor/x64/codex.ini",
 		"/C/Users/FCA/Desktop/sigafm/app/controllers/CatalogosController.php",
@@ -463,12 +437,10 @@
 		"/C/Users/FCA/Desktop/sigaf/app/views/includes/menu.php",
 		"/C/Users/FCA/Desktop/sigaf/app/controllers/CatalogosController.php",
 		"/C/Users/FCA/Desktop/sigafm/app/routes.php",
-		"/C/Users/FCA/Desktop/sigaf/app/routes.php",
 		"/C/Users/FCA/Desktop/sigaf/app/views/catalogos.blade.php",
 		"/C/Users/FCA/Desktop/sigaf/app/views/pe/registro.blade.php",
 		"/C/Users/FCA/Desktop/sigaf/app/views/ca/registro3.blade.php",
 		"/C/Users/FCA/Desktop/sigaf/PREGUNTAS.txt",
-		"/C/Users/FCA/Desktop/sigaf/CODIGOS ANTERIORES.txt",
 		"/C/Users/FCA/Desktop/sigaf/PENDIENTES.txt",
 		"/C/Users/FCA/Desktop/sigaf/LINKS.txt",
 		"/C/Users/FCA/Desktop/sigaf/app/controllers/PlanEstudioController.php",
@@ -545,7 +517,7 @@
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -559,6 +531,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ActualizarUAS",
+			"scrollcontent",
+			"sin-seriacion",
+			"body",
+			"tblCatPlanAgregarSeriacion",
 			"$(\"#agregarSeriacion\")",
 			"agregarseriacion",
 			"toupper",
@@ -682,7 +659,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -690,15 +667,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 52248,
+						"buffer_size": 47463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29357,
-								29361
+								29152,
+								29152
 							]
 						],
 						"settings":
@@ -755,7 +732,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 10833.0,
+						"translation.y": 14017.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -765,15 +742,15 @@
 					"file": "app/controllers/PlanEstudioController.php",
 					"settings":
 					{
-						"buffer_size": 23160,
+						"buffer_size": 23165,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								10929,
+								10929
 							]
 						],
 						"settings":
@@ -829,176 +806,26 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 72.0,
+						"translation.y": 6625.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "public/css/estiloPrincipal.css",
-					"settings":
-					{
-						"buffer_size": 30649,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6432,
-								6432
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9503.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/main/index.blade.php",
-					"settings":
-					{
-						"buffer_size": 4126,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1368.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/routes.php",
 					"settings":
 					{
-						"buffer_size": 3476,
+						"buffer_size": 3496,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2218,
+								2218
 							]
 						],
 						"settings":
@@ -1055,157 +882,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "CODIGOS ANTERIORES.txt",
-					"settings":
-					{
-						"buffer_size": 8548,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3382.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "public/js/modalEffects.js",
-					"settings":
-					{
-						"buffer_size": 1236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								763,
-								763
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1221,15 +898,15 @@
 					"file": "app/views/pe/registro.blade.php",
 					"settings":
 					{
-						"buffer_size": 52248,
+						"buffer_size": 47463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								38446,
+								38446
 							]
 						],
 						"settings":
@@ -1286,7 +963,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17765.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1322,7 +999,7 @@
 		"cols":
 		[
 			0.0,
-			0.925490196078,
+			0.685889804198,
 			1.0
 		],
 		"rows":
@@ -1361,6 +1038,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 325.0,
+	"side_bar_width": 179.0,
 	"status_bar_visible": true
 }
