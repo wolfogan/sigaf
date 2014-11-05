@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-10-22 13:45:57
+Date: 2014-11-04 19:19:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,7 +108,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1604 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1639 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bitacora
@@ -1715,6 +1715,41 @@ INSERT INTO `bitacora` VALUES ('1600', 'detalleseriacion', '9', 'I', '2014-10-22
 INSERT INTO `bitacora` VALUES ('1601', 'detalleseriacion', '9', 'I', '2014-10-22 00:00:00', '11237|11237', null);
 INSERT INTO `bitacora` VALUES ('1602', 'p_ua', '9', 'U', '2014-10-22 00:00:00', '1|11237|2', '1|11237|1');
 INSERT INTO `bitacora` VALUES ('1603', 'p_ua', '9', 'U', '2014-10-22 00:00:00', '1|11238|3', '1|11238|1');
+INSERT INTO `bitacora` VALUES ('1604', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|2|2|2|0|0|2|10|2014-10-24|VAMOS A VER|1|1|2|20101', null);
+INSERT INTO `bitacora` VALUES ('1605', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|2|2|2|0|0|2|10|2014-10-24|VAMOS A VER|1|1|2|20101');
+INSERT INTO `bitacora` VALUES ('1606', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|2|2|2|0|0|2|10|2014-10-24|VAMOS A VER|1|1|2|20101', null);
+INSERT INTO `bitacora` VALUES ('1607', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|2|2|2|0|0|2|10|2014-10-24|VAMOS A VER|1|1|2|20101');
+INSERT INTO `bitacora` VALUES ('1608', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|1|1|1|1|1|1|7|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1609', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|1|1|1|1|1|1|7|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1610', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|1|1|1|1|1|1|7|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1611', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|1|1|1|1|1|1|7|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1612', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1613', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1614', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1615', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1616', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1617', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1618', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1619', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1620', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1621', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1622', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1623', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1624', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATEMATICAS TERMINAL|1|0|0|0|0|0|2|2014-10-14||1|2|2|20092');
+INSERT INTO `bitacora` VALUES ('1625', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1626', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11240|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1627', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1628', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-24|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1629', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1630', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1631', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1632', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1633', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1634', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1635', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1636', 'uaprendizaje', '9', 'D', '2014-10-24 00:00:00', null, '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101');
+INSERT INTO `bitacora` VALUES ('1637', 'uaprendizaje', '9', 'I', '2014-10-24 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101', null);
+INSERT INTO `bitacora` VALUES ('1638', 'uaprendizaje', '9', 'U', '2014-11-04 00:00:00', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20092', '11239|MATERIA X|11|1|1|0|0|2|26|2014-10-25|vamos a ver|1|1|1|20101');
 
 -- ----------------------------
 -- Table structure for campus
@@ -3645,7 +3680,7 @@ CREATE TABLE `uaprendizaje` (
 INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMÁTICAS', '12', '0', '0', '0', '0', '0', '24', '2014-10-14', 'vamos a ver', '1', '1', '1', '20092', '9');
 INSERT INTO `uaprendizaje` VALUES ('11237', 'MATEMATICAS III', '2', '1', '1', '1', '1', '1', '9', '2014-10-14', '', '3', '2', '5', '20092', '9');
 INSERT INTO `uaprendizaje` VALUES ('11238', 'MATEMATICAS COMPUTADORA', '3', '0', '0', '0', '0', '0', '6', '2014-10-14', 'vamos a ver', '1', '1', '3', '20092', '9');
-INSERT INTO `uaprendizaje` VALUES ('11239', 'MATEMATICAS TERMINAL', '1', '0', '0', '0', '0', '0', '2', '2014-10-14', '', '1', '2', '2', '20092', '9');
+INSERT INTO `uaprendizaje` VALUES ('11239', 'MATERIA X', '11', '1', '1', '0', '0', '2', '26', '2014-10-25', 'vamos a ver', '1', '1', '1', '20092', '9');
 
 -- ----------------------------
 -- Table structure for universidades_emp
