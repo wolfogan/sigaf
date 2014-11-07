@@ -40,14 +40,9 @@
 <body>
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
 	
-	
-
-
-
-
-	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
+	<!-------------------------------------- MODAL ASOCIACION UA-PROGRAMA -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
-		<form  id="formSeriacion" class="md-content" style="width:800px; height:700px;" method="post">
+		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
 			<h3 id="detalle">Clave y nombre de la materia</h3>
 			<div id="carreraDiv">
 				<label>Carrera:</label>
@@ -55,11 +50,10 @@
 			</div>
 			<div id="etapaDiv">
 				<label>Etapa:</label>
-
-				<select class="dd_estilo_combo" style="color:#000; height:32px;">
-					<option>BASICA</option>
-					<option>DISCIPLINARIA</option>
-					<option>TERMINAL</option>
+				<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
+					@foreach($etapas as $etapa)
+						<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+					@endforeach
 				</select>
 			</div>
 
@@ -102,12 +96,14 @@
 					</table>
 				</div>
 				<div id="pe_BtnseriacionAgregar">
-					<input type="button" style="height:35px;" class="estilo_button2" id="agregarSeriacion" value="Agregar"/>
+					<input type="hidden" name="ua" id="asociar_ua"/>
+					<input type="hidden" name="users_id" id="asociar_user"/>
+					<input type="submit" style="height:35px;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
 				</div>
 			</div>
 			<div id="pe_programasAsociados">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</div>
 			<div id="tableContainer" class="tableContainer">
-				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
 					<thead class="fixedHeader">
 						<tr>
 							<th>PROGR. EDUCATIVO</th>
@@ -117,12 +113,6 @@
 						</tr>
 					</thead>
 					<tbody class="scrollContent">
-						<tr>
-							<td>INFORMÁTICA</td>
-							<td>DISCIPLINARIA</td>
-							<td>BASE DE DATOS II</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -778,7 +768,52 @@
 			console.log(errorThrow);*/
 		});
 	}
+	/**
+	 * Funcion que asocia la unidad de aprendizaje registrada con las carreras y sus posibles seriaciones
+	 * @return {null} No regresa dato
+	 */
+	function asociarProgramas()
+	{
+		if($("#select_carreras").val()==null)
+		{
+			alert("Seleccione un programa educativo para continuar.");
+		}
+		else
+		{
+			$(".tblSeriaciones").find("input,select").removeAttr("disabled");
+			$("#asociar_ua").val($("#clave1F").val());
+			$("#asociar_user").val(USER_ID);
+			var dataAsociar = $("#formAsociar").serialize();
+			$.post("<?php echo URL::to('planestudio/asociarprogramas'); ?>",dataAsociar,function(mensaje){
+				alert(mensaje);
+				// Obtener el numero de serie de las materias seriadas
+				var series = [];
+				$(".tblSeriaciones tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
+					var serie = $(element).find("input:first").val();
+					series.push(serie);
+				});
+				var stringSeries = "";
+				// Mostrar informacion guardada en la base de datos de los programas asociados
+				$("#select_carreras option:selected").each(function(){
+					if(series.length == 0)
+						stringSeries = "SIN SERIACION";
+					else
+						stringSeries = series.join();
+					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>"+ stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td></tr>";
+					$("#tblDetalleAsociacion").append(rowDetail);
+				});
+				// Linpiar controles
+				desmarcar_carreras();
+				$("#asociar_etapa").val(1);
+				$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+				$(".sin-seriacion").show();
 
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
+	}
 
 	function disabled_campos(deshabilitar)
 	{
@@ -830,7 +865,7 @@
 		$("#semestre").val(1);
 		$("#observaciones").val("");
 
-		$(".tblCatPlanAgregarSeriacion > tbody > tr").not(":eq(0) , :eq(1)").remove();
+		$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
 		$(".sin-seriacion").show();
 	}
 
@@ -1128,7 +1163,13 @@
 			
 		});
 
-		
+		// ASOCIAR UNIDAD DE APRENDIZAJE REGISTRADA A UN PROGRAMARA EDUCATIVO Y SUS RESPECTIVAS SERIACIONES
+		$("#asociarPrograma").on("click",function(){
+			var programas = $("#select_carreras").val();
+			var etapa = $("#asociar_etapa").val();
+			var ua = $("#clave1F").val();
+
+		});
 
 		
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE

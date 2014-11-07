@@ -292,6 +292,36 @@ class PlanEstudioController extends BaseController
 		return $mensaje;
 	}
 
+	public function postAsociarprogramas()
+	{
+		$programas = Input::get("carreras");
+		$etapa = Input::get("etapa");
+		$ua = Input::get("ua");
+		$users_id = Input::get("users_id");
+		$seriacionTipos = Input::get("seriacion_tipo");
+		$seriacionClaves = Input::get("seriacion_clave");
+		//$descripcionProgramas = [];
+
+		foreach ($programas as $programa) 
+		{
+			DB::table("p_ua")->insert(array("programaedu" => $programa,"uaprendizaje" => $ua,"etapa"=>$etapa,"users_id"=> $users_id));
+			// Insertar seriaciones por programa
+			if(isset($seriacionTipos))
+			{
+				foreach ($seriacionTipos as $key => $value)
+				{
+					DB::table('detalleseriacion') -> insert(array('programaedu' => $programa,'uaprendizaje'=>$ua,'reqseriacion'=>$seriacionTipos[$key],'uaprequisito'=>$seriacionClaves[$key],'users_id'=>$users_id));
+				}
+			}
+			//$programaedu = ProgramaEducativo::find($programa);
+			//$descripcionProgramas[] = ["programaedu" => $programa, "descripcion" => $programaedu -> descripcion];
+		}
+
+		
+		return "Unidad de Aprendizaje asociada correctamente!";
+	}
+
+
 	// LLAMADAS ASINCRONAS
 	public function postObtenernivelplan()
 	{
@@ -357,6 +387,7 @@ class PlanEstudioController extends BaseController
 		//$uas = $plan->unidades;
 
 		$UAS = $sql = DB::table('p_ua')
+				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
 				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 				->join('etapas','p_ua.etapa','=','etapas.etapa')
 				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
@@ -366,9 +397,8 @@ class PlanEstudioController extends BaseController
 						$join->on('detalleseriacion.uaprendizaje','=','p_ua.uaprendizaje')
 							->on('detalleseriacion.programaedu','=','p_ua.programaedu');
 						})
-				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
-				->where('uaprendizaje.plan','=',20092)
 				->groupBy('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
+				->where('uaprendizaje.plan','=',$noplan)
 				->get();
 
 		/*
