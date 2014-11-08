@@ -301,9 +301,25 @@ class PlanEstudioController extends BaseController
 		$seriacionTipos = Input::get("seriacion_tipo");
 		$seriacionClaves = Input::get("seriacion_clave");
 		//$descripcionProgramas = [];
-
+		
+		// En caso de actualizacion eliminar asociaciones anteriores
+		
 		foreach ($programas as $programa) 
 		{
+			// Disociar
+			DB::transaction(function() use ($programa,$ua){
+				DB::table("detalleseriacion")
+					->where("programaedu","=",$programa)
+					->where("uaprendizaje","=",$ua)
+					->delete();
+
+				DB::table("p_ua")
+					->where("programaedu","=",$programa)
+					->where("uaprendizaje","=",$ua)
+					->delete();
+			});
+
+			// Asociar
 			DB::table("p_ua")->insert(array("programaedu" => $programa,"uaprendizaje" => $ua,"etapa"=>$etapa,"users_id"=> $users_id));
 			// Insertar seriaciones por programa
 			if(isset($seriacionTipos))
@@ -321,7 +337,27 @@ class PlanEstudioController extends BaseController
 		return "Unidad de Aprendizaje asociada correctamente!";
 	}
 
+	public function postDisociarprograma()
+	{
+		$programa = Input::get("programa");
+		$ua = Input::get("ua");
 
+		// Eliminacion con transaccion por seguridad
+		DB::transaction(function()use ($programa,$ua){
+			
+			DB::table("detalleseriacion")
+				->where("programaedu","=",$programa)
+				->where("uaprendizaje","=",$ua)
+				->delete();
+
+			DB::table("p_ua")
+				->where("programaedu","=",$programa)
+				->where("uaprendizaje","=",$ua)
+				->delete();
+		});
+
+		return "Unidad Eliminada del Programa";
+	}
 	// LLAMADAS ASINCRONAS
 	public function postObtenernivelplan()
 	{

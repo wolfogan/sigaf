@@ -110,6 +110,7 @@
 							<th>ETAPA</th>
 							<th>SERIACIÓN</th>
 							<th>ELIMINAR</th>
+							<th style="display:none;">CODIGO</th>
 						</tr>
 					</thead>
 					<tbody class="scrollContent">
@@ -768,7 +769,7 @@
 			console.log(errorThrow);*/
 		});
 	}
-	/**
+	/** ASOCIAR PROGRAMAS
 	 * Funcion que asocia la unidad de aprendizaje registrada con las carreras y sus posibles seriaciones
 	 * @return {null} No regresa dato
 	 */
@@ -795,14 +796,17 @@
 				var stringSeries = "";
 				// Mostrar informacion guardada en la base de datos de los programas asociados
 				$("#select_carreras option:selected").each(function(){
+					// Eliminar renglon en caso de actualizacion
+					
+					// Agregar informacion en la tabla
 					if(series.length == 0)
 						stringSeries = "SIN SERIACION";
 					else
 						stringSeries = series.join();
-					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>"+ stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td></tr>";
+					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>"+ stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + $(this).val() + "</td></tr>";
 					$("#tblDetalleAsociacion").append(rowDetail);
 				});
-				// Linpiar controles
+				// Limpiar controles
 				desmarcar_carreras();
 				$("#asociar_etapa").val(1);
 				$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
@@ -1163,14 +1167,21 @@
 			
 		});
 
-		// ASOCIAR UNIDAD DE APRENDIZAJE REGISTRADA A UN PROGRAMARA EDUCATIVO Y SUS RESPECTIVAS SERIACIONES
-		$("#asociarPrograma").on("click",function(){
-			var programas = $("#select_carreras").val();
-			var etapa = $("#asociar_etapa").val();
-			var ua = $("#clave1F").val();
+		// Evento eliminar para la tabla tblDetalleAsociacion
+		$("#tblDetalleAsociacion tbody").on("click",".clsEliminarFila",function(){
+			var rowAsociacion = $(this).parents().get(1);
+			var programa = $(rowAsociacion).find("td:last-child").text();
+			var ua = $("#asociar_ua").val();
+			// Disociar la unidad del programa
+			$.post("<?php echo URL::to('planestudio/disociarprograma'); ?>",{programa:programa,ua:ua},function(mensaje){
+				alert(mensaje);
+				$(rowAsociacion).remove();
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
 
 		});
-
 		
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
 		$('#tblUA tbody').on('click','td',function(event){

@@ -573,7 +573,8 @@ html>body thead.fixedHeader th + th + th + th {
 }
 
 .sin-seriacion td{
-	width: 700px !important
+	width: 700px !important;
+	cursor: pointer;
 }
 
 html>body tbody.scrollContent td {
