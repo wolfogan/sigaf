@@ -29,8 +29,6 @@ a.blue {
 }
 #containerLogin {
 
-
-  
    height: 250px;
    width: 450px;
    margin: auto;
@@ -55,10 +53,16 @@ a.blue {
 }
 
 #loginbox {
+  
+  margin: 89px auto 200px auto;
   width: 400px;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
+}
+
+#loginbox:hover
+{
+  border: 2.2px solid orange;
+  box-shadow: 0px 0px 20px orange;
 }
 @media (max-width: 480px) {
 
@@ -170,4 +174,10 @@ fieldset[disabled] .btn-inverse.active {
 
 hr {
   margin: 8px 0 -5px;
+}
+#us_cambiarContrasena
+{
+  width: 150px;
+  height: 30px;
+  margin: auto;
 }

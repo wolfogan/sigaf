@@ -39,6 +39,42 @@
 			} );
 		</script><!-- Termina script dataTable -->
 
+		<!-- CAPTCHA -->
+
+		<script type="text/javascript">
+
+   //Crear/ Generar la funcion del Captcha
+    function DrawCaptcha()
+    {
+        var a = Math.ceil(Math.random() * 9)+ '';
+   		var aLetras = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u');
+		var b = aLetras[Math.floor(Math.random()*aLetras.length)];
+		var c = Math.ceil(Math.random() * 9)+ '';      
+		var d = aLetras[Math.floor(Math.random()*aLetras.length)];
+		var e = Math.ceil(Math.random() * 9)+ '';  
+		var f = aLetras[Math.floor(Math.random()*aLetras.length)];
+		var g = aLetras[Math.floor(Math.random()*aLetras.length)];
+        var code = a + ' ' + b + ' ' +c+ ' ' + d + ' ' + e + ' ' + f + ' '+ g;
+        document.getElementById("txtCaptcha").value = code
+    }
+
+   //Validar la entrada, funcion para generar el codigo de seguridad  
+    function ValidCaptcha(){
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+        var str2 = removeSpaces(document.getElementById('txtInput').value);
+        if (str1 == str2) return true;        
+        return false; 
+    }
+
+    //Quitar espacios de la entrada y generar codigo
+    function removeSpaces(string)
+    {
+        return string.split(' ').join('');
+    }
+   </script>
+
+		<!-------------------------------------------------------------------------------------->
+
 		<!-------------------------------------- MODAL AGREGAR PUESTO -------------------------------------->
 	<div class="md-modal md-effect-11" id="us_puesto"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
@@ -180,12 +216,10 @@
 		</form>
 	</div>
 	<div class="md-overlay"></div>
-		
-
-
-
-
 			
+	<!--PARA CARGAR EL CAPTCHA--> 
+	<body onload="DrawCaptcha();">
+	<!-------------------------->
 
 	</head>
 
@@ -317,175 +351,195 @@
 									<!-- TABLA MODAL CAMPUS-->
 									<div class="btnUnidadAcadRegistro"><input style="width:30px; height:30px;" class="md-trigger" data-modal="us_campus" type="button" value="+"></a></div>
 									<!--             -->
-							</div>
+							</div>		
+
+
+							<div class="us_nuevo">Pregunta:
+									<select style="margin-left:44px" class="dd_con_estilo_largo" type="text" name="us_pregunta" id="us_pregunta">
+										<option value="¿CUAL ES EL NOMBRE DE MI MASCOTA?">¿CUAL ES EL NOMBRE DE MI MASCOTA?</option>
+										<option value="¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?">¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?</option>
+										<option value="¿CUAL ES LA EDAD DE MI PAPA?">¿CUAL ES LA EDAD DE MI PAPA?</option>
+									</select>
+									
+							</div>	
+
+							<div class="us_repetir">Respuesta:
+								<input style="margin-left:75px" class="dd_con_estilo_largo" type="text" name="us_Respuesta" id="us_Respuesta" size=1>
+							</div>	
 						</div>
 
-							
-						
+						<div id="us_divCaptcha">
+							<table>
+							    <tr>
+							        <td>
+							            Introduce los caracteres:<br>
+							        </td>
+							    </tr>
+							    <tr>
+							        <td>
+							            <input class="dd_con_estilo_largo" style="background-color: rgba(104,160,26,0.3); color:green; margin-left:10px; height:40px; margin-bottom:10px; text-align:center; border:none; font-weight:bold; font-size:24px;" type="text" id="txtCaptcha"  />
+							            <input class="us_clsRefresh" type="button" id="btnrefresh" value="" onclick="DrawCaptcha();" />
+							        </td>
+							    </tr>
+							    <tr>
+							        <td>
+							            <input class="dd_con_estilo_largo" style="margin-left:-21px; text-align:center; font-size:16px;" type="text" id="txtInput"/>    
+							        </td>
+							    </tr>
+							    
+							</table>
+						</div>
 
 						<div id="us_btnRegistroUsuario">
 							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario">
-							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario">
+							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario" onclick="alert(ValidCaptcha())";>
 						</div>
-
 			</div>
 
+			<div id="us_tablaRegistro">
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+					<thead>
+						<tr>
+							<th>NO. EMPLEADO</th>
+							<th>A. PATERNO</th>
+							<th>A. MATERNO</th>
+							<th>NOMBRE</th>
+							<th>CORREO</th>
+							<th>PUESTO</th>
+							<th>ELIMINAR</th>
+						
+							
 
-			<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
-				<thead>
-					<tr>
-						<th>NO. EMPLEADO</th>
-						<th>A. PATERNO</th>
-						<th>A. MATERNO</th>
-						<th>NOMBRE</th>
-						<th>CORREO</th>
-						<th>PUESTO</th>
-						<th>CAMPUS</th>
-						<th>ELIMINAR</th>
-					
-						
-
-					</tr>
-				</thead>
-				<tbody>
+						</tr>
+					</thead>
+					<tbody>
 
 
-					<tr class="gradeX">
-						<td>1234567</td>
-						<td>GONZALEZ</td>
-						<td>AYALA</td>
-						<td>ERNESTO RAUL</td>
-						<td>ernesto.gonzalez@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeC">
-						<td>1334567</td>
-						<td>GAMBOA</td>
-						<td>AYALA</td>
-						<td>ERNESTO RAUL</td>
-						<td>ernesto.gamboa@uabc.edu.mx</td>
-						<td>2. AMINISTRADOR </td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeA">
-						<td>1434567</td>
-						<td>ROSAS</td>
-						<td>DUARTE</td>
-						<td>JUVENTINO</td>
-						<td>juventino.rosas@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeA">
-						<td>1534567</td>
-						<td>BASTIDAS</td>
-						<td>ESPINOZA</td>
-						<td>CLARA ELIZABETH</td>
-						<td>clara.bastidas@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeA">
-						<td>1634567</td>
-						<td>AVILA</td>
-						<td>FRAUSTO</td>
-						<td>MIGUELINA</td>
-						<td>miguelina.avila@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeA">
-						<td>1734567</td>
-						<td>CONTRERAS</td>
-						<td>CASTRO</td>
-						<td>RUFINO</td>
-						<td>rufino.contreras@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						<tr class="gradeX">
+							<td>1234567</td>
+							<td>GONZALEZ</td>
+							<td>AYALA</td>
+							<td>ERNESTO RAUL</td>
+							<td>ernesto.gonzalez@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeC">
+							<td>1334567</td>
+							<td>GAMBOA</td>
+							<td>AYALA</td>
+							<td>ERNESTO RAUL</td>
+							<td>ernesto.gamboa@uabc.edu.mx</td>
+							<td>2. AMINISTRADOR </td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>1434567</td>
+							<td>ROSAS</td>
+							<td>DUARTE</td>
+							<td>JUVENTINO</td>
+							<td>juventino.rosas@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>1534567</td>
+							<td>BASTIDAS</td>
+							<td>ESPINOZA</td>
+							<td>CLARA ELIZABETH</td>
+							<td>clara.bastidas@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>1634567</td>
+							<td>AVILA</td>
+							<td>FRAUSTO</td>
+							<td>MIGUELINA</td>
+							<td>miguelina.avila@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>1734567</td>
+							<td>CONTRERAS</td>
+							<td>CASTRO</td>
+							<td>RUFINO</td>
+							<td>rufino.contreras@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
 
-					</tr>
-					<tr class="gradeA">
-						<td>1234567</td>
-						<td>GONZALEZ</td>
-						<td>AYALA</td>
-						<td>ERNESTO RAUL</td>
-						<td>ernesto.gonzalez@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr class="gradeA">
+							<td>1234567</td>
+							<td>GONZALEZ</td>
+							<td>AYALA</td>
+							<td>ERNESTO RAUL</td>
+							<td>ernesto.gonzalez@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>1734567</td>
+							<td>CONTRERAS</td>
+							<td>CASTRO</td>
+							<td>RUFINO</td>
+							<td>rufino.contreras@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
 						
-					</tr>
-					<tr class="gradeA">
-						<td>1734567</td>
-						<td>CONTRERAS</td>
-						<td>CASTRO</td>
-						<td>RUFINO</td>
-						<td>rufino.contreras@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
 						
-					</tr>
-					
-					
-					<tr class="gradeX">
-						<td>1634567</td>
-						<td>AVILA</td>
-						<td>FRAUSTO</td>
-						<td>MIGUELINA</td>
-						<td>miguelina.avila@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeC">
-						<td>1234567</td>
-						<td>GONZALEZ</td>
-						<td>AYALA</td>
-						<td>ERNESTO RAUL</td>
-						<td>ernesto.gonzalez@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-					<tr class="gradeC">
-						<td>1334567</td>
-						<td>GAMBOA</td>
-						<td>AYALA</td>
-						<td>ERNESTO RAUL</td>
-						<td>ernesto.gamboa@uabc.edu.mx</td>
-						<td>2. AMINISTRADOR </td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-					</tr>
-					<tr class="gradeU">
-						<td>1534567</td>
-						<td>BASTIDAS</td>
-						<td>ESPINOZA</td>
-						<td>CLARA ELIZABETH</td>
-						<td>clara.bastidas@uabc.edu.mx</td>
-						<td>1. AMINISTRADOR MASTER</td>
-						<td>TIJUANA</td>
-						<td><input type="button" value="-" class="clsEliminarFila"></td>
-						
-					</tr>
-						
-				</tbody>	
-			</table>
+						<tr class="gradeX">
+							<td>1634567</td>
+							<td>AVILA</td>
+							<td>FRAUSTO</td>
+							<td>MIGUELINA</td>
+							<td>miguelina.avila@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeC">
+							<td>1234567</td>
+							<td>GONZALEZ</td>
+							<td>AYALA</td>
+							<td>ERNESTO RAUL</td>
+							<td>ernesto.gonzalez@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+						<tr class="gradeC">
+							<td>1334567</td>
+							<td>GAMBOA</td>
+							<td>AYALA</td>
+							<td>ERNESTO RAUL</td>
+							<td>ernesto.gamboa@uabc.edu.mx</td>
+							<td>2. AMINISTRADOR </td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+						</tr>
+						<tr class="gradeU">
+							<td>1534567</td>
+							<td>BASTIDAS</td>
+							<td>ESPINOZA</td>
+							<td>CLARA ELIZABETH</td>
+							<td>clara.bastidas@uabc.edu.mx</td>
+							<td>1. AMINISTRADOR MASTER</td>
+							<td><input type="button" value="-" class="clsEliminarFila"></td>
+							
+						</tr>
+							
+					</tbody>	
+				</table>
+			</div>
 
 				<div id="btnImprimirBit">
 					<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
