@@ -9,10 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 
-
-
-        <!-- Creación de Ventanas Modales -->
-		<script src="../js/ventanamodal.js"></script>
                
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
@@ -23,7 +19,6 @@
 		<!-- Script tiempo -->
 
 
-	
 		<!-- CAPTCHA -->
 
 		<script type="text/javascript">
@@ -60,7 +55,7 @@
 
 		<!-------------------------------------------------------------------------------------->
 
-	
+		
 	<!--PARA CARGAR EL CAPTCHA--> 
 	<body onload="DrawCaptcha();">
 	<!-------------------------->	
@@ -77,22 +72,18 @@
 			</div>
 			<figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 		</header>
- 		@include('includes.menu')
 		<div id="indicadores">
 			<div id="usuariofecha">
-				<div id="usuario" class="texto_body">
-					Usuario: Iván Avila
-				</div>
 				<div id="fecha" class="texto_body">
 					Fecha Actualizada
 				</div>
 			</div>
 			<div id="ubicacion" class="texto_body">
-				Login y usuarios: Modificar contraseña
+				Login y usuarios: ¿Olvidó contraseña?
 			</div>
 			<div id="loginmanual">
 				<div id="login" class="texto_body">
-					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Logout</a>
+					<img src="../imagenes/login.png" alt="">&nbsp;<a href="<?=URL::to('login/logout');?>"style="text-decoration:none; color:#004000;">Login</a>
 				</div>
 				<div id="manual" class="texto_body">
 					<img src="../imagenes/manual.png" alt="">&nbsp;Manual
@@ -103,19 +94,17 @@
 
 		
 
-		<section class="us_ventanasCortasMod">
+		<section class="us_ventanasCortas">
 
-			<div id="formularioRegUsuarios_mod">
+			<div id="formularioRegUsuarios_olvido">
 				
-						<div class="us_cambiar">No.Empleado:<label id="us_noEmpleadoMod">1234567</label></div>		
 
-						<div class="us_cambiar">Correo-E:		
-							<input style="margin-left:82px;" class="dd_con_estilo_largo" type="text" name="us_Correo_mod" id="us_Correo_mod" size=1>
+						
+						<div class="us_cambiar" style="height:50px;">Pregunta:<label class="us_preguntaMod">¿CUAL ES EL NOMBRE DE MI MASCOTA?</label></div>
+
+						<div class="us_cambiar">Respuesta:
+							<input style="margin-left:75px;" class="dd_con_estilo_largo" type="text" name="us_Respuesta_mod" id="us_Respuesta_mod" size=1>
 						</div>
-
-						<div class="us_cambiar">Contraseña:
-							<input style="margin-left:67px;" class="dd_con_estilo_largo" type="text" name="us_Contrasena_mod" id="us_Contrasena_mod" size=1>
-						</div>	
 
 						<div class="us_cambiar">Nueva contraseña:		
 							<input style="margin-left:20px;" class="dd_con_estilo_largo" type="text" name="us_ContrasenaNueva_mod" id="us_ContrasenaNueva_mod" size=1>
@@ -123,12 +112,6 @@
 
 						<div class="us_cambiar">Repetir contraseña:
 							<input style="margin-left:12px;" class="dd_con_estilo_largo" type="text" name="us_ContrasenaRepetir_mod" id="us_ContrasenaRepetir_mod" size=1>
-						</div>
-
-						<div class="us_cambiar" style="height:50px;">Pregunta:<label class="us_preguntaMod">¿CUAL ES EL NOMBRE DE MI MASCOTA?</label></div>
-
-						<div class="us_cambiar">Respuesta:
-							<input style="margin-left:75px;" class="dd_con_estilo_largo" type="text" name="us_Respuesta_mod" id="us_Respuesta_mod" size=1>
 						</div>
 
 						<div id="us_divCaptcha_mod">
@@ -154,7 +137,7 @@
 						</div>
 
 						<div class="us_btnRegistroUsuario_mod">
-							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario" onclick="alert(ValidCaptcha())">
+							<input type="button" style="width:200px" class="estilo_button2" value="Guardar" name="us_guardarContrasenaNueva" id="us_guardarContrasenaNueva" onclick="alert(ValidCaptcha())">
 						</div>
 
 			</div>
@@ -168,7 +151,7 @@
 
 		</footer>
 
-		
+			
 	</body>
 <!----------------------------------------------------------------->
 

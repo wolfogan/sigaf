@@ -106,6 +106,7 @@
 				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
 					<thead class="fixedHeader">
 						<tr>
+							
 							<th>PROGR. EDUCATIVO</th>
 							<th>ETAPA</th>
 							<th>SERIACIÓN</th>

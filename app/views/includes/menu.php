@@ -63,6 +63,7 @@
 			<ul>
 				<li><a href="<?=URL::to('usuarios/usuariosregistro');?>" title="Registro, consulta y modificación de usuarios">Registro, consulta, modificación usuarios</a></li>
 				<li><a href="<?=URL::to('usuarios/modificarcontrasena');?>" title="Modificar contraseña">Cambiar contraseña</a></li>
+				<li><a href="<?=URL::to('usuarios/olvidocontrasena');?>" title="Olvidó contraseña">Olvidó contraseña</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 
 
