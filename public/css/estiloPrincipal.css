@@ -11,11 +11,13 @@ margin: auto;
 {
 	color: white;
 	font-size: 13px;
+	height: 20px;
 	margin-left: 1100px;
 }
 #pie_tel
 {
 	color: white;
+	height: 20px;
 	font-size: 13px;
 	margin-left: 1188px;
 }
@@ -1013,7 +1015,122 @@ html>body tbody.scrollContent td + td + td + td {
 /*-----------------TERMINA CATALOGOS-------------*/
 
 /* ---------------- USUARIOS --------------------*/
+.us_ventanasCortasMod
+{
+	border-color:gray;
+	background: #fff;
+	margin-top: 25px;
+	margin-bottom: 30px;
+	height: 580px;
+	width: 650px;
+}
+.us_ventanasCortas
+{
+	border-color:gray;
+	background: #fff;
+	margin-top: 25px;
+	margin-bottom: 30px;
+	height: 460px;
+	width: 650px;
 
+
+}
+.us_btnRegistroUsuario_mod
+{
+	
+	margin: auto;
+	width: 220px;
+	height: 50px;
+}
+#formularioRegUsuarios_olvido 
+{
+
+	margin: auto;
+	padding-top: 20px;
+	margin-top: 30px;
+	height: 400px;
+	width: 600px;
+
+}
+#formularioRegUsuarios_olvido .us_preguntaMod
+{
+	color:green;
+	margin-left: 88px;
+	font-size:14px;
+}
+
+
+
+#us_divCaptcha_mod
+{
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	width: 300px;
+	height: 100px;
+}
+
+#formularioRegUsuarios_mod
+{
+	margin: auto;
+	padding-top: 20px;
+	margin-top: 30px;
+	height: 520px;
+	width: 600px;
+}
+
+#formularioRegUsuarios_mod #us_noEmpleadoMod
+{
+	color:green;
+	margin-left: 55px;
+	font-size:18px;
+
+}
+#formularioRegUsuarios_mod .us_preguntaMod
+{
+	color:green;
+	margin-left: 88px;
+	font-size:14px;
+
+}
+
+.us_cambiar
+{
+	margin: auto;
+	margin-bottom: 10px;
+	width: 430px;
+	height: 30px;
+}
+.us_clsRefresh
+{
+	
+	background-image: url(../imagenes/refresh.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+
+	height:30px; 
+	width:30px; 
+	border-radius:5px;
+	border-color: #468C00;
+}
+.us_clsRefresh:hover
+{
+	border: 3px solid green;
+	background-color: #fff;
+	background-image: url(../imagenes/refresh.png);
+
+}
+
+
+#us_divCaptcha
+{
+	margin: auto;
+	margin-top: 290px;
+	margin-bottom: 20px;
+	width: 300px;
+	height: 100px;
+}
 .us_txtNoEmpleado
 {
 	padding-bottom: 10px;
@@ -1039,6 +1156,7 @@ html>body tbody.scrollContent td + td + td + td {
 }
 .us_nuevo
 {
+	
 	float: left;
 	padding-bottom: 10px;
 	padding-left: 10px;
@@ -1066,6 +1184,8 @@ html>body tbody.scrollContent td + td + td + td {
 
 #formularioRegUsuarios
 {
+	
+	height: 530px;
 	border: 1px solid gray;
 	padding-left: 20px;
 	padding-top: 20px;
@@ -1077,10 +1197,14 @@ html>body tbody.scrollContent td + td + td + td {
 
 #us_btnRegistroUsuario
 {
+	
 	margin: auto;
-	margin-top: 260px;
-	margin-bottom: 20px;
-	width: 440px;
+	margin-top: 10px;
+	width: 450px;
+}
+#us_tablaRegistro
+{
+	margin-top: 10px;
 }
 
 

@@ -110,6 +110,7 @@
 				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 					<thead class="fixedHeader">
 						<tr>
+							
 							<th>PROGR. EDUCATIVO</th>
 							<th>ETAPA</th>
 							<th>SERIACIÓN</th>
@@ -118,6 +119,7 @@
 					</thead>
 					<tbody class="scrollContent">
 						<tr>
+							
 							<td>INFORMÁTICA</td>
 							<td>DISCIPLINARIA</td>
 							<td>BASE DE DATOS II</td>
