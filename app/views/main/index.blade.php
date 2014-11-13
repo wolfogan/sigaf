@@ -76,7 +76,7 @@
 			<div class="mask">
 				<h2>Creacion de horarios</h2>
 				<p>
-					Registro, consulta, modificacion, eliminacion
+					<a href="<?=URL::to('horarios/registro');?>" style="color:#004000">Registro, consulta, modificación y eliminación de horarios</a>
 				</p>
 				<!--<a href="#" class="info">Read More</a>-->
 			</div>

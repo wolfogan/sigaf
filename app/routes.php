@@ -31,6 +31,7 @@ Route::controller('cargaacademica','CargaAcademicaController');
 Route::controller('disponibilidaddocente','DisponibilidadDocenteController');
 Route::controller('ayuda','AyudaController');
 Route::controller('usuarios','UserLoginController');
+Route::controller('horarios','HorariosController');
 
 Route::get('pruebas',function(){
 

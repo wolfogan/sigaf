@@ -2530,3 +2530,163 @@ input[readonly],input[readonly="readonly"]
 {
 	display: none;
 }
+
+
+
+
+
+
+
+
+
+/*--------------------------------------- HORARIOS --------------------------------------*/
+
+#hr_trunoGrupo
+{
+	margin: 70px 30px 30px 30px;
+	height: 50px;
+	width: 1250px;
+}
+.hr_turnoHorario
+{
+	
+	margin-left: 10px;
+	height: 30px;
+	width: 280px;
+	float: left;
+}
+.hr_lblCarrera label 
+{
+	
+	color:green;
+	float: right;
+	text-align: center;
+	font-size: 22px;
+	width: 400px;
+	height: 50px;
+}
+
+/*#hr_btnCrearHr
+{
+	background: red;
+	float: left;
+	width: 110px;
+	height: 50px;
+}
+#hr_btnCrearHr input
+{
+	font-size:14px;  
+	height:30px; 
+	width:100px
+}*/
+
+.hr_tabla_ca
+{
+	float: left;
+	margin-top:10px;
+	margin-bottom: 45px;
+	margin-left: 10px;
+	margin-right: 10px;	
+
+
+}
+.hr_tabla_ca td
+{
+	border:1px solid gray;
+	border-collapse: separate;
+  	border-spacing: 7px;
+  	background: #F0FFFF;
+  	font-size: 13px;
+  	height: 30px;
+
+}
+
+.hr_encabezado_tablaConsulta
+{
+
+	background: green;
+	font-size: 12px;
+	color: #fff;
+	border:1px solid gray;
+}
+.hr_encabezado_tablaConsulta th
+{
+	font-size: 13px;
+	height: 40px;
+}
+
+.hr_encabezado_tablaHr
+{
+	background: #ECA22E;
+	color: #fff;
+	border:1px solid gray;
+
+}
+.hr_encabezado_tablaHr th
+{
+	font-size: 11px;
+	height: 40px;
+}
+
+/* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
+
+html>body div.hr_tableContainer table {
+	
+	width: 380px
+}
+
+#hr_tableContainer
+{
+
+	float: left;
+	margin: 10px 0 0 15px;
+}
+#hr_tableContainer td
+{
+	width: 80px;
+}
+#hr_tableContainer td + td
+{
+	width: 270px;
+}
+html>body tbody.scrollContent {
+	display: block;
+	height: 570px;
+	overflow: auto;
+	width: 100%
+}
+ /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
+
+ .hr_lblMaterias
+ {
+
+ 	
+ 	margin: 0px 0px 0px 15px;
+ 	width: 1290px;
+ 	height: 30px;
+ 	text-align: center;
+
+ }
+ /*.hr_lblMaterias label
+ {
+ 	color:green;
+ 	font-size: 18px;
+ }*/
+
+ .hr_titulos
+ {
+ 	
+ 	color:#000;
+ 	font-size: 18px;
+ 	float: left;
+ 	width: 200px;
+ 	height: 20px;
+ }
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------*/
