@@ -15,6 +15,16 @@ var ModalEffects = (function() {
 				if( hasPerspective ) {
 					classie.remove( document.documentElement, 'md-perspective' );
 				}
+				// Si es guardar limpiar campos
+				if($("#guardar").val()=="Guardar")
+				{
+					reset_campos();
+				}
+				else{
+					
+				}
+				// Optimizar esta parte con una bandera de actualizacion
+				ActualizarUAS($("#noPlan").val());
 			}
 
 			function removeModalHandler() {

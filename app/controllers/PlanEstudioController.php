@@ -343,7 +343,7 @@ class PlanEstudioController extends BaseController
 		$ua = Input::get("ua");
 
 		// Eliminacion con transaccion por seguridad
-		DB::transaction(function()use ($programa,$ua){
+		DB::transaction(function() use ($programa,$ua){
 			
 			DB::table("detalleseriacion")
 				->where("programaedu","=",$programa)
@@ -545,9 +545,22 @@ class PlanEstudioController extends BaseController
 	}
 	public function postEliminarua()
 	{
-		$uaid = Input::get("uaprendizaje");
-		$UA = UnidadAprendizaje::find($uaid);
-		$UA -> delete();
+		$uaprendizaje = Input::get("uaprendizaje");
+
+		// Eliminacion con transaccion por seguridad
+		DB::transaction(function() use ($uaprendizaje){
+			
+			DB::table("detalleseriacion")
+				->where("uaprendizaje","=",$uaprendizaje)
+				->delete();
+
+			DB::table("p_ua")
+				->where("uaprendizaje","=",$uaprendizaje)
+				->delete();
+
+			$UA = UnidadAprendizaje::find($uaprendizaje);
+			$UA -> delete();
+		});
 
 		return "Unidad de Aprendizaje Eliminada Exitosamente!";
 	}
@@ -557,13 +570,28 @@ class PlanEstudioController extends BaseController
 		$programaedu = Input::get('programaedu');
 		$uaprendizaje= Input::get('uaprendizaje');
 
-		DB::table('p_ua')->where('programaedu','=',$programaedu)->where('uaprendizaje','=',$uaprendizaje)->delete();
+		// Eliminacion con transaccion por seguridad
+		DB::transaction(function() use ($programaedu,$uaprendizaje){
+			
+			DB::table("detalleseriacion")
+				->where("programaedu","=",$programaedu)
+				->where("uaprendizaje","=",$uaprendizaje)
+				->delete();
+
+			DB::table("p_ua")
+				->where("programaedu","=",$programaedu)
+				->where("uaprendizaje","=",$uaprendizaje)
+				->delete();
+		});
 	}
 
 	public function postObtenerdataua()
 	{
 		$uaid = Input::get('uaprendizaje');
+		$programaedu = Input::get('programaedu');
+
 		$ua = UnidadAprendizaje::find($uaid);
+		
 		/*$uaserieid = Input::get('claveD');
 		if(empty($uaserieid))
 		{
@@ -575,11 +603,24 @@ class PlanEstudioController extends BaseController
 			$uaserie = $data->descripcionmat;
 		}*/
 
-		$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
-		$series= DB::table('detalleseriacion')
+		//$programas = DB::table('p_ua')->where('uaprendizaje','=',$uaid)->get();
+		/*$series= DB::table('detalleseriacion')
 						->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
 						->select('detalleseriacion.uaprendizaje','detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','detalleseriacion.users_id','uaprendizaje.descripcionmat')
-						->where('detalleseriacion.uaprendizaje','=',$uaid)->get();
+						->where('detalleseriacion.uaprendizaje','=',$uaid)->get();*/
+
+		$programaSeries= DB::table('p_ua')
+						->leftjoin('detalleseriacion',function($join){
+							$join -> on ('p_ua.programaedu','=','detalleseriacion.programaedu')
+									-> on ('p_ua.uaprendizaje','=','detalleseriacion.uaprendizaje');
+						})
+						->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+						->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+						->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
+						->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito) as series'))
+						->where('uaprendizaje.uaprendizaje','=',$uaid)
+						->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','uaprendizaje.uaprendizaje')
+						->get();
 		
 		$data= array(
 			'success' => true,
@@ -600,8 +641,8 @@ class PlanEstudioController extends BaseController
 			'he'=>$ua->HE,
 			'semestre_sug'=>$ua->semestre_sug,
 			'creditos'=>$ua->creditos,
-			'programas'=>$programas,
-			'series'=> $series
+			//'programas'=>$programas,
+			'series'=> $programaSeries
 		);
 
 		return Response::json($data);
@@ -645,7 +686,7 @@ class PlanEstudioController extends BaseController
 		// ACTUALIZACION DE LAS UAS SERIADAS METODO: ELIMINACION-ALTA
 
 		// Capturar claves seriadas[11236,11237] y tipos [OBLIGATORIAS,OPTATIVAS]
-		$tipos = Input::get("seriacion_tipo");
+		/*$tipos = Input::get("seriacion_tipo");
 		$claves = Input::get("seriacion_clave");
 		$users_id = Input::get("users_id");
 		$etapa = Input::get('etapaF');
@@ -676,7 +717,7 @@ class PlanEstudioController extends BaseController
 			foreach ($claves as $key => $value) {
 				DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
 			}
-		}
+		}*/
 
 
 	}

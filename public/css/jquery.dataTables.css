@@ -216,6 +216,11 @@ table.dataTable td {
   box-sizing: content-box;
 }
 
+/* AÑADIDOS */
+table.dataTable td span.font-red{
+  color: red;
+}
+
 /*
  * Control feature layout
  */

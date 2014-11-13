@@ -43,7 +43,7 @@
 	<!-------------------------------------- MODAL ASOCIACION UA-PROGRAMA -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
-			<h3 id="detalle">Clave y nombre de la materia</h3>
+			<h3 id="detalle">CLAVE - MATERIA</h3>
 			<div id="carreraDiv">
 				<label>Carrera:</label>
 				<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
@@ -504,9 +504,9 @@
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
-						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Seriación" name="seriacion" id="asignacion"/>
 						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
 						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
+						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Asociar" name="asociar" id="asignacion"/>
 
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
@@ -688,8 +688,8 @@
 			var materia=$("#clave1F").val();
 			var plan = $("#noPlan").val();
 			// Habilitar seriaciones para permitir guardado
-			$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
-			var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
+			//$(".tblCatPlanAgregarSeriacion input,.tblCatPlanAgregarSeriacion select").removeAttr("disabled");
+			var dataUA = $("#formularioPlanEstudio").serialize() + "&" + "users_id=" + USER_ID;
 			//alert(dataUA);
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(data){
 				//alert(data);
@@ -712,6 +712,7 @@
 				$("#materia").css("background-color","");
 				$("#noPlan").removeAttr('disabled').css("background-color","");
 				$("#eliminar").hide();
+				$("#asignacion").fadeOut("fast");
 				// Limpiar variable de carreras
 				$("#add_carreras").val("");
 				reset_campos();
@@ -748,8 +749,8 @@
 				t.row.add([
 							uas[i].uaprendizaje,
 							uas[i].descripcionmat,
-							uas[i].siglas,
-							uas[i].etapa,
+							(uas[i].siglas == null) ? "<span class='font-red'>NINGUNA</span>" : uas[i].siglas,
+							(uas[i].etapa == null) ? "<span class='font-red'>NINGUNA</span>" : uas[i].etapa,
 							uas[i].caracter,
 							(uas[i].seriacion == null ) ? "SIN SERIACIÓN" : uas[i].seriacion,// Falta llenar las seriaciones
 							uas[i].coordinaciona,
@@ -797,7 +798,6 @@
 				var stringSeries = "";
 				// Mostrar informacion guardada en la base de datos de los programas asociados
 				$("#select_carreras option:selected").each(function(){
-					// Eliminar renglon en caso de actualizacion
 					
 					// Agregar informacion en la tabla
 					if(series.length == 0)
@@ -805,13 +805,26 @@
 					else
 						stringSeries = series.join();
 					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>"+ stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + $(this).val() + "</td></tr>";
-					$("#tblDetalleAsociacion").append(rowDetail);
+					// Eliminar renglon en caso de actualizacion
+					var rowOld=$("#tblDetalleAsociacion tbody tr td:contains('"+$(this).text()+"')").parent();
+					if($(rowOld).length)
+					{
+						$(rowOld).replaceWith(rowDetail);
+					}
+					else
+					{
+						// Si no existe agregarlo a la tabla
+						$("#tblDetalleAsociacion").append(rowDetail);
+					}
 				});
 				// Limpiar controles
 				desmarcar_carreras();
 				$("#asociar_etapa").val(1);
 				$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
 				$(".sin-seriacion").show();
+
+				//Actualizar Grilla
+				//ActualizarUAS($("#noPlan").val());
 
 			})
 			.fail(function(errorText,textError,errorThrow){
@@ -871,7 +884,14 @@
 		$("#observaciones").val("");
 
 		$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+		$("#tblDetalleAsociacion > tbody > tr").remove();
 		$(".sin-seriacion").show();
+
+		$("#clave1F").val("").focus();
+		$("#materia").val("").css({"background":"","color":"black"});
+		$("#clave1F").css("background","");
+
+		$("#detalle").text("CLAVE - MATERIA");
 	}
 
 	function desmarcar_carreras()
@@ -897,6 +917,7 @@
 		$("#clave2F").val("");
 		$("#materiaSeriada").val("");
 		$("#eliminar").hide();
+		$("#asignacion").hide();
 		reset_campos();
 		
 		
@@ -1071,7 +1092,6 @@
 			{
 				reset_campos();
 				$("#noPlan").removeAttr('disabled').css("background-color","");
-				$("#eliminar").hide();
 				// Deseleccionar Carreras
 				desmarcar_carreras();
 				// habilitar Carreras
@@ -1080,6 +1100,9 @@
 				$("#guardar").val("Guardar");
 				$(this).val("Limpiar");
 				t.$('tr.selected').removeClass('selected'); // Remover selección
+				
+				$("#eliminar").hide();
+				$("#asignacion").fadeOut("fast");
 			}
 			else
 			{
@@ -1114,7 +1137,7 @@
 
 
 		});
-
+		// Eliminar fila de las materias seriadas sin afectar comportamiento en BD.
 		$(".tblSeriaciones").on("click",".clsEliminarFila",function(){
 			var filaSeriacion = $(this).parents().get(1);
 			// Remover fila
@@ -1180,6 +1203,9 @@
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
+			})
+			.always(function(){
+				//ActualizarUAS($("#noPlan").val());
 			});
 
 		});
@@ -1197,26 +1223,26 @@
 
 				if($(".dataTables_empty").length==0) // Si hay mas de un registro.
 				{
-					// Aparecer botón de eliminar
-					$("#eliminar").show();
-
+					
+					
 					if ( $(this).parent().hasClass('selected') ) // Si esta seleccionado
 					{
 						$(this).parent().removeClass('selected');
 					}
 					else
 					{
-						updated = []; // Limpiar arreglo para actualizar las nuevas materias seleccionadas
+						//updated = []; // Limpiar arreglo para actualizar las nuevas materias seleccionadas
 						$("#noPlan").attr('disabled','disabled').css("background-color","orange");
 						t.$('tr.selected').removeClass('selected'); // Remover selección
 						$(this).parent().addClass('selected');
 						//var renglonUA = $(this).parent();
 						var materia = $(this).parent().find('td:first').html();
-						var serie = $(this).parent().find('td').eq(5).html();
-
+						//var serie = $(this).parent().find('td').eq(5).html();
+						var programaedu = $(this).parent().find('td:last-child input').attr("data");
+						//console.log(programaedu);
 						// MOSTRAR AJAXLOADER
 						$("#ajaxLoad").css("display","block");
-						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia}, function(json)
+						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,programaedu:programaedu}, function(json)
 						{
 							//console.log(json);
 							reset_campos();
@@ -1227,7 +1253,7 @@
 								$('#materia').val(json.descripcionmat);
 								//$('#etapaF').val(json.etapa);
 								$('#tipoF').val(json.caracter);
-								$('#serie').val(json.reqseriacion);
+								//$('#serie').val(json.reqseriacion);
 								//$('#clave2F').val(json.claveD);
 								//$('#materiaSeriada').val(json.materiaseriada);
 								$('#coord').val(json.coordinaciona);
@@ -1240,16 +1266,42 @@
 								$('#semestre').val(json.semestre_sug);
 								$('#creditosF').val(json.creditos);
 								$('#observaciones').val(json.observa);
+								// Cambiar funcionalidad
 								$("#guardar").val("Actualizar");
+								// Aparecer botón de eliminar
+								$("#eliminar").show();
+								$("#asignacion").fadeIn("fast");
+								
+								// Ventana modal asociacion
+								$("#detalle").text(json.uaprendizaje + " - " + json.descripcionmat);
+								$("#asociar_ua").val(json.uaprendizaje);
+
 								var jsones = "";
 								
+								// Mostrar asociaciones con las carreras y materias seriadas en la tblDetalleAsociacion
+								for(var i = 0; i < json.series.length; i++)
+								{
+									// Si no esta asociado no mostrar renglon en vacio o nulo en la tabla detalle asociacion
+									if(json.series[i].programaedu!=null)
+									{
+										var rowDetail = "<tr><td>"+ json.series[i].descripcion +"</td><td>"+ json.series[i].etapa +"</td><td>"+((json.series[i].series == null) ? "SIN SERIACION" : json.series[i].series) +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + json.series[i].programaedu + "</td></tr>";
+										if(json.series[i].programaedu == programaedu)
+										{
+											alert("si")
+											console.log($(rowDetail));
+										}
+										$("#tblDetalleAsociacion tbody").append(rowDetail);
+									}
+								}
 								
-								desmarcar_carreras();
+								//desmarcar_carreras();
+
+								// Llenar tabla donde se asocian los programas con la materias
 
 								//$(".example41").multiselect('deselect', "multiselect-all");
 								// Limpiar Control
 								
-								for(i in json.programas)
+								/*for(i in json.programas)
 								{
 									$(".example41").multiselect('select',json.programas[i].programaedu);
 									//$("#select_carreras option[value='"+json.programas[i].programaedu+"']").attr('disabled','disabled');
@@ -1271,7 +1323,7 @@
 									// Para la actualizacion posterior
 									$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 									$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
-								}
+								}*/
 
 								// Habilitar ultima fila
 								//$(".tblCatPlanAgregarSeriacion > tbody > tr").not(":eq(0) , :eq(1),:last-child").find("input,select").attr('disabled',true);
@@ -1297,7 +1349,14 @@
 		$('#tblUA tbody').on('click','.clsEliminarFila',function(event){
 			// Evitar que se propagen los eventos
 			event.stopPropagation();
+
+			var rowUA = $(this).parents().get(1);
+			// Remover la seleccion
 			
+			$("#limpiar").click();
+			$(rowUA).addClass('selected');
+			
+
 			if (confirm("¿ Está seguro de que desea eliminar ?"))
 			{
 
@@ -1309,7 +1368,8 @@
 				.done(function(data){
 					//alert(data);
 					// if($('#tblUA').dataTable().fnGetData().length!=1)
-					if(data!=1)
+					// Condición para verificar que no sea la unica asociada a un programa. Si es solo una asociación indicarle al usuario.
+					if(data>1)
 					{
 						$.post("<?php echo URL::to('planestudio/eliminarpua'); ?>",{uaprendizaje:materia,programaedu:carrera})
 						.done(function(data){
@@ -1321,15 +1381,15 @@
 							alert("Unidad de aprendizaje: X eliminada de la carrera: X");
 						});
 
-						$(".example41").multiselect('deselect', carrera);
-						$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
-						$(".example41").multiselect('refresh');
+						//$(".example41").multiselect('deselect', carrera);
+						//$("#select_carreras option[value='"+carrera+"']").removeAttr('disabled');
+						//$(".example41").multiselect('refresh');
 					}
 					else
 					{
 						if(confirm("Se eliminara la unidad de aprendizaje en su totalidad si la eliminas del programa educativo ¿Deseas Continuar?"))
 						{
-							$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia},function(){
+							$.post("<?php echo URL::to('planestudio/eliminarua'); ?>",{uaprendizaje:materia,programaedu:carrera},function(){
 								//$('#tblUA').dataTable().fnClearTable();
 								t
 								.row($(btnDelete).parents('tr'))
@@ -1344,6 +1404,10 @@
 
 					
 				});
+			}
+			else
+			{
+				$(rowUA).removeClass("selected");
 			}
 		});
 
