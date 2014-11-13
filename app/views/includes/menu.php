@@ -37,7 +37,7 @@
 		<li>
 			<a href="#" title="Creación de horarios">Creación de horario<span></span></a>
 			<ul>
-				<li><a href="#" title="SubMenu 1">Submen&uacute; 1</a></li>
+				<li><a href="<?=URL::to('horarios/registro');?>" title="Registrar Horario">Registrar Horario</a></li>
 				<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
 				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
 			</ul>

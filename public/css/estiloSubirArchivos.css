@@ -1,0 +1,54 @@
+.clear {
+    clear: both;
+}
+
+a {
+    color: #39c;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.6em;
+    display: block;
+}
+
+code, pre {
+    font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+    color: #333;
+    font-size: 12px;
+}
+
+pre {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+strong {
+    color: #222;
+    font-weight: 700;
+}
+
+small {
+    font-size: 11px;
+}
+
+hr {
+    border: 0;
+    background: #e5e5e5;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+
+

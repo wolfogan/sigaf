@@ -9,16 +9,18 @@
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/estilo_tabs.css" />
 
+	
+
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
 
-<!--AQUI VA HORA Y FECHA-->
+		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
 
-<!---------------------------------------------------------------------------------------->
+		<!---------------------------------------------------------------------------------------->
 <title>Disponibilidad docente</title>
 </head>
 <body>
@@ -81,10 +83,6 @@
 
 			<!------------------- CONTENIDO PRIMER TAB ---------------------------->
 
-
-						
-					 
-					 
 		                <div class="content-1">
 							<h2>Datos personales</h2>
 
@@ -105,7 +103,7 @@
 										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:10px;" class="dd_con_estilo_largo" type="text" /></div>
 										<div class="dd_datosPersonales">A. materno:<input style="margin-left:5px;" class="dd_con_estilo_largo" type="text"/></div>
 										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:10px;" class="dd_con_estilo_largo" id="txtnombres" type="text"/></div>
-										
+									</div>
 
 
 
@@ -116,20 +114,7 @@
 												 <option value="MASCULINO">MASCULINO</option>
 											</select>
 										</div>
-
-										<div id="dd_foto">Foto:<input  id="txtfoto" type="text"></div>	
-
-										<!--<div id="dd_RemovFoto"><input class="dd_clsAgregarArchivo" style="margin-left:20px; margin-top:-20px;" type="submit" id="submit" value=""></div>
-										<div id="dd_RemovFoto"><input type="file" name="file" class="dd_clsAgregarArchivo"  style="margin-left:20px; margin-top:-20px;" />	</div>-->		 
-										<div id="dd_RemovFoto"><input type="button" name="file" class="dd_clsAgregarArchivo"  style="margin-left:20px; margin-top:-20px;" />	</div>		 
-		 								
-
-										<div id="dd_subirFoto"><input class="dd_clsCancelar" style="margin-left:20px; margin-top:100px;" type="button" id="dd_btnSubirFoto" value=""></div>
-
-
-
-
-									</div>
+							
 								</div>
 								
 
@@ -886,31 +871,5 @@
     
     </script>
 
-<!------------------------------------ SCRIPT PARA SUBIR ARCHIVOS -------------------------------------->
 
-
-<script>
-			 document.getElementById("submit").onclick = handleButtonPress;
- 
-			 var httpRequest;
- 
-			 function handleButtonPress(e) {
-				 e.preventDefault();
-var form = document.getElementById("dd_datosPersonales");
- 
-			 var formData = new FormData(form);
-				 httpRequest = new XMLHttpRequest();
-				 httpRequest.onreadystatechange = handleResponse;
-				 httpRequest.open("POST", form.action);
-				 httpRequest.send(formData);
-			 }
- 
-			 function handleResponse() {
-				 if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-					 document.getElementById("results").innerHTML
-						 = httpRequest.responseText;
-				 }
-			 }
-		 </script>
-<!-------------------------------------------------------------------------------------------------------->
 </html>
