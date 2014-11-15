@@ -219,15 +219,20 @@
 			<input style="font-size:19px" class="estilo_button2" type="button" value="Imprimir">
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
-		<div class="md-modal md-effect-11" id="modal-11" >
+		<div class="md-modal1 md-effect-11" id="modal-11" >
 			<form id="formUpdate" action="javascript:actualizarUA()" class="md-content">
 				<h3 id="titulo_update">Modificar unidad de aprendizaje</h3>
+				
 				<div id="tablita2contenedor" >
-					<table cellpadding="5" id="tablita2" >
+					<table cellpadding="5" id="tablita2" style="width:650px;">
 						<tr>
 							<td>Carrera:</td>
 							<td>
 								<label id="carrera_update">Informática</label>
+							</td>
+							<td>Semestre:</td>
+							<td>
+								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 							</td>
 						</tr>
 						<tr>
@@ -246,24 +251,16 @@
 									@endforeach
 								</select>
 							</td>
-						</tr>
-						<tr>
 							<td>Tipo:</td>
 							<td>
-								<select class="con_estilo" name="tipoF" id="tipo_update" size=1>
+								<select class="con_estilo" style="width:183px;" name="tipoF" id="tipo_update" size=1>
 									@foreach ($tiposCaracter as $tipo)
 										<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
 									@endforeach
 								</select>
 							</td>
 						</tr>
-						
-						<tr>
-							<td>Semestre:</td>
-							<td>
-								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
-							</td>
-						</tr>
+					
 						<tr>
 							<td size="10">HC:</td>
 							<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
@@ -287,17 +284,82 @@
 						<tr>
 							<td>Cred.:</td>
 							<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
-						</tr>
-						<tr>
 							<td>Coord.:</td>
 							<td>
-								<input type="text" id="coordinacion_update" name="coordinacion_update" style="width:120px" size="1" list="datalist_coord" />
+								<input class="con_estilo" type="text" id="coordinacion_update" name="coordinacion_update" style="width:180px" size="1" list="datalist_coord" />
 								<input type="hidden" name="coord" id="coord" />
 							</td>
 						</tr>
 					</table>
 					<br>
-					<label for="title-seriacion" >Unidades de Aprendijaze Seriadas:</label>
+
+					<div class="div_pe_tableContainer" class="pe_tableContainer">
+
+						<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+							<thead style="background:green">
+								<tr>
+									<th colspan="7">MATERIAS ASOCIADAS</th>
+								</tr>
+							</thead>
+
+							<tbody class="scrollContent" style="height:155px;">
+
+								<!--<tr class="sin-seriacion">-->
+								<tr>
+									<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
+								</tr>
+
+								<!--<tr class="fila-base-seriacion">-->
+								<tr>
+
+									<td>Tipo:</td>
+
+									<td>
+										<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+											@foreach($seriaciones as $seriacion)
+												<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+											@endforeach
+										</select>
+									</td>
+
+									<td>Clave:</td>
+
+									<td>
+									<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+									</td>
+
+									<td>
+									<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
+									</td>
+									
+									<td>
+									<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
+									</td>
+
+									<td><input type="button" class="dd_clsAgregarFila"></td>
+								</tr>
+								
+							</tbody>
+						</table>
+
+					</div>
+				<div class="catBotones" style="margin-top:10px;">
+
+					<input type="submit" value="Guardar" class="estilo_button2" style="height:40px;">
+					<input type="button" class="md-close" value="Salir" style="height:40px;">
+
+				</div>
+			</form>
+
+		</div>
+			
+
+
+
+
+					
+					<!--<label for="title-seriacion">Unidades de Aprendizaje Seriadas:</label>
+					
 					<table class="tblCatPlanUpdateSeriacion">
 						<tr class="sin-seriacion" onmouseover="javascript:this.style.cursor='pointer'">
 							<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
@@ -319,14 +381,8 @@
 							<td><input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"></td>
 							<td><input type="button" class="dd_clsAgregarFila"></td>
 						</tr>
-					</table>
-				</div>
-
-				<input type="submit" value="Guardar" class="estilo_button2">
-				<input type="button" class="md-close" value="Salir">
-			</form>
-
-		</div>
+					</table>-->
+				
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
 		<div class="md-overlay">
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
