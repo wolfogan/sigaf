@@ -2567,19 +2567,6 @@ input[readonly],input[readonly="readonly"]
 	height: 50px;
 }
 
-/*#hr_btnCrearHr
-{
-	background: red;
-	float: left;
-	width: 110px;
-	height: 50px;
-}
-#hr_btnCrearHr input
-{
-	font-size:14px;  
-	height:30px; 
-	width:100px
-}*/
 
 .hr_tabla_ca
 {
@@ -2629,39 +2616,9 @@ input[readonly],input[readonly="readonly"]
 	height: 40px;
 }
 
-/* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
-
-html>body div.hr_tableContainer table {
-	
-	width: 380px
-}
-
-#hr_tableContainer
-{
-
-	float: left;
-	margin: 10px 0 0 15px;
-}
-#hr_tableContainer td
-{
-	width: 80px;
-}
-#hr_tableContainer td + td
-{
-	width: 270px;
-}
-html>body tbody.scrollContent {
-	display: block;
-	height: 570px;
-	overflow: auto;
-	width: 100%
-}
- /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
-
  .hr_lblMaterias
  {
 
- 	
  	margin: 0px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;

@@ -1287,7 +1287,7 @@
 										var rowDetail = "<tr><td>"+ json.series[i].descripcion +"</td><td>"+ json.series[i].etapa +"</td><td>"+((json.series[i].series == null) ? "SIN SERIACION" : json.series[i].series) +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + json.series[i].programaedu + "</td></tr>";
 										if(json.series[i].programaedu == programaedu)
 										{
-											alert("si")
+											//alert("si")
 											console.log($(rowDetail));
 										}
 										$("#tblDetalleAsociacion tbody").append(rowDetail);
