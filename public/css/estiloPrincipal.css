@@ -261,7 +261,7 @@ background: #EFCA0D;
 {
 
 	
-	margin: auto;
+	float: right;
 	width: 360px;
 }
 #cimarron
@@ -479,24 +479,37 @@ background: #EFCA0D;
 {
 	float:left;
 }
-#carreraDiv 
-{  
-	
-	float:left;
-	width: 230px;
-	margin-left: 15px;
-	margin-top:15px;
-	padding-bottom: 30px;
-
-}
-#etapaDiv
+#pe_divs_modificar
 {
-	
+	height: 30px;
+}
+.carreraDiv 
+{  
+	float:left;
+	height: 30px;
+	margin-left: 3px;
+	margin-right: 40px;
+	width: 210px;
+}
+/*.etapaDiv
+{
+	background: purple
 	float: left;
-	width: 200px;
-	margin-left: -80px;
-	margin-top: 15px;
-	padding-bottom: 30px;
+	width: 190px;
+	
+}*/
+.pe_noPlan
+{
+	float:left;
+	height: 30px;
+	width: 210px;
+}
+
+.pe_noPlan label
+{
+	margin-left: 10px;
+	color:#fff;
+	font-size: 22px;
 }
 
 #pe_programasAsociados
@@ -505,7 +518,7 @@ background: #EFCA0D;
 	width: 500px;
 	font-size: 1.2em;
 	margin-left: 10px;
-	margin-top: 20px;
+	margin-top: 30px;
 	
 }
 
@@ -514,8 +527,9 @@ background: #EFCA0D;
 html>body div.tableContainer table {
 	
 	margin-top: -15px;
-	width: 700px
+	width: 700px;
 }
+
 
 thead.fixedHeader tr {
 	position: relative
@@ -593,18 +607,51 @@ html>body tbody.scrollContent td + td + td{
 
 html>body tbody.scrollContent td + td + td + td {
 	width: 70px
+
 } /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
+
+
+/* ESTILO PARA SCROLL DE LA CONSULTA PE */
+.div_pe_tableContainer
+{
+
+	margin: auto;
+	width: 650px;
+}
+
+html>body div.pe_tableContainer table {
+	
+	margin-top: -15px;
+	width: 650px;
+}
+/****************************************/
+
+/* ESTILO PARA SCROLL MODIFICACION DEL GRID 
+
+.div_pe_tableContainerMod
+{
+	background: yellow;
+	margin: auto;
+	width: 650px;
+}
+
+html>body div.pe_tableContainerMod table
+{
+	margin-top: -15px;
+	width: 650px;*/
+}
+/********************************************/
 
 #pe_BtnseriacionAgregar
 {
-	margin-top: 10px;
+	margin-top: 30px;
 	float: right;
 }
 .pe_catalogos_tbl
 {
 	
 	width: 700px;
-	height: 270px;
+	height: 230px;
 	margin:auto;
 
 
@@ -767,14 +814,7 @@ html>body tbody.scrollContent td + td + td + td {
 	float: left;
 	padding-left: 20px;
 }
-/*#etapaDiv
-{
-	
-	width: 240px;
-	float: left;
-	padding-left:60px;
-	
-}*/
+
 #tipoDiv
 {
 	
@@ -849,19 +889,32 @@ html>body tbody.scrollContent td + td + td + td {
 }
 #hclDiv
 {
+	
 	width: 130px;
 	float: left;
 	margin-left: -15px;
 }
 #creditosDiv
 {
-	
-	width: 200px;
+	height: 35px;
+	width: 150px;
 	padding-left: 8px;
 	float: left;
 	
-
 }
+#pe_btnSeriacionMod
+{
+	margin-left: 30px;
+	float: left;
+}
+#pe_btnSeriacionMod input
+{
+	width:220px; 
+	height:30px; 
+	font-size:18px; 
+}
+
+
 #observacionesDiv
 {
 	
@@ -2640,6 +2693,7 @@ input[readonly],input[readonly="readonly"]
  	width: 200px;
  	height: 20px;
  }
+
 
 
 
