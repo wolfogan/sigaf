@@ -44,17 +44,23 @@
 	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
-			<div id="carreraDiv">
-				<label>Carrera:</label>
-				<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
-			</div>
-			<div id="etapaDiv">
-				<label>Etapa:</label>
-				<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
-					@foreach($etapas as $etapa)
-						<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
-					@endforeach
-				</select>
+
+
+			<div id="pe_divs_modificar">
+
+				<div class="carreraDiv">
+					<label>Carrera:</label>
+					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
+				</div>
+				<div class="carreraDiv">
+					<label>Etapa:</label>
+					<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
+						@foreach($etapas as $etapa)
+							<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
 			</div>
 
 			<div class="pe_catalogos_tbl">
@@ -99,7 +105,9 @@
 					<input type="hidden" name="ua" id="asociar_ua"/>
 					<input type="hidden" name="users_id" id="asociar_user"/>
 					<input type="submit" style="height:35px;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
+					<input style="height:35px;" type="button" value="Salir" class="md-close" />
 				</div>
+				
 			</div>
 			<div id="pe_programasAsociados">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</div>
 			<div id="tableContainer" class="tableContainer">
@@ -118,37 +126,107 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="CatBotones" style="margin-left:600px;">
-				<input style="height:35px;" type="button" value="Salir" class="md-close" />
-			</div>
+
 		</form>
 	</div>
-	<!-------------------------------------- MODAL AGREGAR SERIACION -------------------------------------->
+	<!-------------------------------------- TERMINA MODAL AGREGAR SERIACION -------------------------------------->
+	
+
 	
 
 
+	<!-------------------------------------- MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
+	<div class="md-modal1 md-effect-11" id="seriacion_independiente"> 
+		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
+			<h3 id="detalle">CLAVE - MATERIA</h3>
+			
+			<div id="pe_divs_modificar" style="margin-top:20px;">
+				<div class="carreraDiv">
+					Carrera:<label style="margin-left:10px;">INFORMÁTICA</label>		
+				</div>
+
+				<div class="carreraDiv">
+					<label>Etapa:</label>
+					<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
+						@foreach($etapas as $etapa)
+							<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+						@endforeach
+					</select>
+				</div>
+
+				<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
+			</div>
+
+			<div class="div_pe_tableContainer" class="pe_tableContainer">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+					<thead style="background:green">
+						<tr>
+							<th colspan="7">MATERIAS ASOCIADAS</th>
+						</tr>
+					</thead>		
+
+					<tbody class="scrollContent" style="height:155px;">
+
+							<!--<tr class="sin-seriacion">-->
+						<tr>
+							<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
+						</tr>
+
+							<!--<tr class="fila-base-seriacion">-->
+						<tr>
+							<td>Tipo:</td>
+							<td>
+								<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+								@foreach($seriaciones as $seriacion)
+								<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+								@endforeach
+								</select>
+							</td>
+
+							<td>Clave:</td>
+
+							<td>
+								<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+							</td>
+
+							<td>
+								<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
+							</td>
+										
+							<td>
+								<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
+							</td>
+
+							<td><input type="button" class="dd_clsAgregarFila"></td>
+						</tr>
+								
+					</tbody>
+				</table>
+			</div>
+
+			
+
+
+				<div id="pe_BtnseriacionAgregar">
+					<input type="hidden" name="ua" id="asociar_ua"/>
+					<input type="hidden" name="users_id" id="asociar_user"/>
+					<input type="submit" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
+					<input type="button" value="Salir" class="md-close" />
+				</div>
+
+				
+			
+		</form>
+	</div>
+	<!-------------------------------------- TERMINA MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
+
+
+
+
+
+
+
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
 	<div class="md-modal md-effect-11" id="plan"> 
@@ -393,7 +471,7 @@
 					<!------------------------------------ CLAVE UA ------------------------------------>
 					<div id="claveDiv">
 						 &nbsp;<label>Clave: </label>
-						<input class="estilo_text" style="width:120px;" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
+						<input class="estilo_text" style="width:120px;" onKeyPress="ValidaSoloNumeros()" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
 						<input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/>
 						<br />
 						<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
@@ -445,36 +523,40 @@
 				<div id="cuartoBloque">
 					<div id="hcDiv">
 						<label>HC: </label>
-						<input class="estilo_numeric" type="number" name="hc" id="hc" min="1" max="20" title="Es necesario tener horas clase en la unidad de aprendizaje">
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hc" id="hc" min="1" max="20" title="Es necesario tener horas clase en la unidad de aprendizaje">
 					</div>
 					<div id="hlDiv">
 						<label>HL: </label>
-						<input class="estilo_numeric" type="number" name="hl" id="hl" min="0" max="20" >
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hl" id="hl" min="0" max="20" >
 					</div>
 					<div id="htDiv">
 						<label>HT: </label>
-						<input class="estilo_numeric" type="number" name="ht" id="ht" min="0" max="20" >
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="ht" id="ht" min="0" max="20" >
 					</div>
 					<br />
 					<br />
 					<div id="heDiv">
 						<label>HE: </label>
-						<input class="estilo_numeric" type="number" name="he" id="he" min="0" max="20" >
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="he" id="he" min="0" max="20" >
 					</div>
 					<div id="hpcDiv">
 						<label>HPC: </label>
-						<input class="estilo_numeric" type="number" name="hpc" id="hpc" min="0" max="20" >
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hpc" id="hpc" min="0" max="20" >
 					</div>
 					<div id="hclDiv">
 						<label>HCL: </label>
-						<input class="estilo_numeric" type="number" name="hcl" id="hcl" min="0" max="20" >
+						<input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hcl" id="hcl" min="0" max="20" >
 					</div>
 					<br />
 					<br />
 					<!------------------------------------ CREDITOS ------------------------------------>
 					<div id="creditosDiv">
-						<label>CDTOS: </label><input class="estilo_numeric" type="number" name="creditosF" id="creditosF" min="1" >
+						<label>CDTOS: </label><input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="creditosF" id="creditosF" min="1" >	
 					</div>
+					<div id="pe_btnSeriacionMod">
+						<input type="button" class="md-trigger" data-modal="add_seriacion" type="button" value="Actualizar seriación" name="asociar" id="asignacion"/>
+					</div>
+
 					
 				</div>
 
@@ -506,12 +588,19 @@
 					<div id="botones">
 						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
 						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
-						<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Asociar" name="asociar" id="asignacion"/>
+						<!--<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Asociar" name="asociar" id="asignacion"/>-->
+
+						<!--------------------------------A Q U I PRUEBA -------------------------------->
+
+						<input class="md-trigger" data-modal="seriacion_independiente" type="button" value="M"></a>
+
+						<!------------------------------------------------------------------------>
 
 					</div>
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
 
 
+					
 
 
 			</fieldset>
@@ -1414,5 +1503,26 @@
 		
 	});
 	</script>
+
+	 
+
+<!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57)) 
+			  event.returnValue = false;
+			}
+			
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			}    
+</script>
+
+<!------------------------------------------------------------------------------------------>
 </body>
 </html>
