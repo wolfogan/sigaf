@@ -724,11 +724,13 @@ class PlanEstudioController extends BaseController
 
 	public function postActualizaretapa()
 	{
-		$uaid = Input::get("uaprendizaje");
+		$uaprendizaje = Input::get("uaprendizaje");
+		$programaedu = Input::get("programaedu");
 		$etapa = Input::get("etapa");
-		$UA = UnidadAprendizaje::find($uaid);
-		$UA->etapa = $etapa;
-		$UA->save();
+		DB::table("p_ua")
+					->where("programaedu","=",$programaedu)
+					->where("uaprendizaje","=",$uaprendizaje)
+					->update(array("etapa"=>$etapa));
 
 		return "Etapa actualizada";
 	}

@@ -681,6 +681,7 @@
 		var creditosObligatorias = 0;
 		var creditosOptativas = 0;
 		var totalCreditos = 0;
+		
 		// ACTUALIZAR ETAPA CUANDO LA ARRASTRAN EN LA GRILLA CORRESPONDIENTE
 		function saveOrder() {
 			//var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
@@ -688,8 +689,9 @@
 			//alert("Vamos a actualizar la etapa");
 			var uaid=$(this).find("span").eq(0).text();
 			var etapa = $(this).parents("ul").attr("etapa");
-			//alert("UAID: "+uaid +"Etapa: "+etapa);
-			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{uaprendizaje:uaid,etapa:etapa},function(ua){
+			var programaedu = $("#carrera").val();
+			//alert("PROGRAMA:" + programaedu + "UAID: "+uaid +"Etapa: "+etapa);
+			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{programaedu:programaedu,uaprendizaje:uaid,etapa:etapa},function(ua){
 				//alert(ua);
 				$("#pe_consultaActualizada").css("visibility","visible").fadeIn(300).fadeOut(1000);
 			});
