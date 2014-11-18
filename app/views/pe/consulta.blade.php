@@ -571,12 +571,13 @@
 										descripcionUA +
 									'</div>'+
 								'</li>').hide().fadeIn("slow");
-					if(uas[i].reqseriacion != "1")
+					
+					/*if(uas[i].reqseriacion != "1")
 					{
 						var color = color_aleatorio();
 						$(bloque).children().css("border","4px dotted "+ color);
 						$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dotted " + color);
-					}
+					}*/
 					
 					
 					$(lista).append(bloque);
