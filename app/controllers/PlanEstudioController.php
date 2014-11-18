@@ -608,19 +608,33 @@ class PlanEstudioController extends BaseController
 						->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
 						->select('detalleseriacion.uaprendizaje','detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','detalleseriacion.users_id','uaprendizaje.descripcionmat')
 						->where('detalleseriacion.uaprendizaje','=',$uaid)->get();*/
-
-		$programaSeries= DB::table('p_ua')
-						->leftjoin('detalleseriacion',function($join){
-							$join -> on ('p_ua.programaedu','=','detalleseriacion.programaedu')
-									-> on ('p_ua.uaprendizaje','=','detalleseriacion.uaprendizaje');
-						})
-						->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
-						->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
-						->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
-						->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito) as series'))
-						->where('uaprendizaje.uaprendizaje','=',$uaid)
-						->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','uaprendizaje.uaprendizaje')
-						->get();
+		$consulta = Input::get("consulta"); 
+		if(!isset($consulta))
+		{
+			$programaSeries= DB::table('p_ua')
+							->leftjoin('detalleseriacion',function($join){
+								$join -> on ('p_ua.programaedu','=','detalleseriacion.programaedu')
+										-> on ('p_ua.uaprendizaje','=','detalleseriacion.uaprendizaje');
+							})
+							->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+							->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+							->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
+							->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito) as series'))
+							->where('uaprendizaje.uaprendizaje','=',$uaid)
+							->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','uaprendizaje.uaprendizaje')
+							->get();
+		}
+		else
+		{
+			$programaSeries= DB::table('detalleseriacion')
+							->join('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
+							->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
+							->select('detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','uaprendizaje.descripcionmat')
+							->where('detalleseriacion.programaedu','=',$programaedu)
+							->where('detalleseriacion.uaprendizaje','=',$uaid)
+							->orderBy('detalleseriacion.uaprequisito')
+							->get();
+		}
 		
 		$data= array(
 			'success' => true,
@@ -671,6 +685,41 @@ class PlanEstudioController extends BaseController
 		//$UA -> etapa = Input::get('etapaF');
 		$UA -> coordinaciona = Input::get('coord');
 		$UA -> save();
+
+		// VALIDAR ACTUALIZACION EN LA CONSULTA
+		$programa = Input::get("programaedu");
+		$etapa = Input::get("etapaF");
+		$users_id = Input::get("users_id");
+		if(isset($programa))
+		{
+			// Transacción por seguridad
+			DB::transaction(function() use ($clave,$programa,$etapa,$users_id){
+				// Actualización en la etapa
+				DB::table('p_ua')
+					->where('programaedu',$programa)
+					->where('uaprendizaje',$clave)
+					->update(array("etapa" => $etapa));
+
+				// Actualización en las seriaciones
+				// Borrar las uas seriadas
+				DB::table('detalleseriacion')
+					->where('programaedu','=',$programa)
+					->where('uaprendizaje','=',$clave)
+					->delete();
+				
+				$tipos = Input::get("seriacion_tipo");
+				$claves = Input::get("seriacion_clave");
+				
+				
+				if(isset($claves))
+				{
+					// Inserción
+					foreach ($claves as $key => $value) {
+						DB::table('detalleseriacion') -> insert(array('programaedu'=>$programa,'uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
+					}
+				}
+			});
+		}
 		
 		// Esto era de la manera dificil
 		/*$add =Input::get('add_carreras');
