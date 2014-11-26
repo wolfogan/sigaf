@@ -1333,7 +1333,7 @@
 						$("#ajaxLoad").css("display","block");
 						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,programaedu:programaedu}, function(json)
 						{
-							//console.log(json);
+							//console.log(json); un cambio
 							reset_campos();
 
 							if(json.success)
