@@ -4,7 +4,7 @@
 			<a href="#" titile="Plan de estudios">Plan de estudios</a>
 			<ul>
 				<li><a href="<?=URL::to('catalogos/catalogos');?>" title="Catalogos">Catálogos</a></li>
-				<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Catálogos: modificación y eliminación </a></li>
+				<!--<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Catálogos: modificación y eliminación </a></li>-->
 				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/bitacora')?>" titile="Bitacora">Bitácora</a></li>
@@ -15,7 +15,7 @@
 			<a href="#" titile="Carga académica">Carga académica</a>
 			<ul>
 				<li><a href="<?=URL::to('cargaacademica/registro');?>" title="Registrar CA">Registro Inicial CA</a></li>
-				<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registro subsecuente CA</a></li>
+				<!--<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registro subsecuente CA</a></li>-->
 				<li><a href="<?=URL::to('cargaacademica/registro3');?>" title="Registrar CA3">Registro subsecuente CA 2</a></li>
 				<li><a href="<?=URL::to('cargaacademica/consulta');?>" title="Consultar CA">Consultar Carga A.</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
@@ -37,9 +37,10 @@
 		<li>
 			<a href="#" title="Creación de horarios">Creación de horario<span></span></a>
 			<ul>
-				<li><a href="<?=URL::to('horarios/registro');?>" title="Registrar Horario">Registrar Horario</a></li>
-				<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
-				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>
+				<li><a href="<?=URL::to('horarios/registro');?>" title="Registrar Horario">Registrar y consultar horario</a></li>
+				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
+				<!--<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
+				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>-->
 			</ul>
 		</li>
 		<li>

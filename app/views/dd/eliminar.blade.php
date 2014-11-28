@@ -84,7 +84,7 @@
 		</fieldset>
 
 							<div id="dd_eliminarDocentes">
-			                    <table class="dd_tabla_MatImpartir">
+			                    <table class="dd_tabla_MatImpartir" style="margin-top:30px;">
 									
 									<thead class="dd_encabezado">
 										<tr>

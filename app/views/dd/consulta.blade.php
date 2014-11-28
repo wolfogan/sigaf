@@ -133,41 +133,32 @@
 					        
 		                <div class="content-1">
 							<h2>Datos personales</h2>
-		                      	
-			                        <div id="dd_noEmpleado_fechaIngreso">
-										<div id="dd_noEmpleado">No. empleado:<label class="dd_label">12345</label></div>
-										<div id="dd_fechaIngreso">Fecha ingreso UABC:<input type="date" class="dd_estilo_combo" medida="Y/M/D"></div>
-									</div>
 
-									<br>
-									<br>
-									<br>
+							<form id="dd_datosPersonales" method="post" action="http://titan:8080/form">
+		                      	
+			                        
 
 								<div class="dd_divDecoracion">	
 
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
-										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:10px;" class="dd_con_estilo_largo" type="text" /></div>
-										<div class="dd_datosPersonales">A. materno:<input style="margin-left:5px;" class="dd_con_estilo_largo" type="text"/></div>
-										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:10px;" class="dd_con_estilo_largo" id="txtnombres" type="text"/></div>
-										
-
-
+										<div id="dd_noEmpleado">No. empleado:<label class="dd_label" style="margin-left:15px;">20829</label></div>
+										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:13px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"></div>
+										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="CASTILLEJOS" /></div>
+										<div class="dd_datosPersonales">A. materno:<input style="margin-left:27px;" class="dd_con_estilo_largo" type="text" placeholder="CABALLERO"/></div>
+										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:32px;" class="dd_con_estilo_largo" id="txtnombres" type="text" placeholder="EMMA SOFIA"/></div>
 
 										<div class="dd_datosPersonales" >
 											Sexo:
-											<select class="dd_estilo_combo" style="margin-left:45px; margin-bottom:30px;">
+											<select class="dd_estilo_combo" style="margin-left:70px; margin-bottom:0px; width:252px;">
 												 <option value="FEMENINO">FEMENINO</option>
 												 <option value="MASCULINO">MASCULINO</option>
 											</select>
 										</div>
 
-										<div id="dd_foto">Foto:<input  id="txtfoto" type="text"></div>	
-										<div id="dd_RemovFoto"><input class="dd_clsAgregarArchivo" style="margin-left:20px; margin-top:-20px;" type="button" id="dd_btnRemover" value=""></div>
-										<div id="dd_subirFoto"><input class="dd_clsCancelar" style="margin-left:20px; margin-top:100px;" type="button" id="dd_btnSubirFoto" value=""></div>
-
 									</div>
-								</div>
+										<div id="dd_fotoDoc"></div>
 
+								</div>
 								
 
 									<br>
@@ -177,11 +168,11 @@
 
 						
 								<div class="dd_colonia_calle_int_ext_cp">
-									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text"/></div>
+									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
 			                		<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
+									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
 									<div id="dd_cp">C.P.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text"/></div>
+									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text" placeholder="PLAYAS DE TIJUANA"/></div>
 								
 								
 									<div id="dd_pais_estado_ciudad_otro">
@@ -206,7 +197,7 @@
 												</select>
 										</div>
 
-										<div id="dd_otro">Observaciones:<input class="dd_con_estilo" type="text" id="text_dd_otro"></div>
+										<div id="dd_otro">Observaciones:<input class="dd_con_estilo" type="text" id="text_dd_otro" placeholder="NINGUNA"></div>
 									</div>
 								</div>
 
@@ -221,10 +212,10 @@
 
 		                    <div class="dd_divDecoracionTelefonos">
 			                    <div id="dd_telefonos_correo">
-									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text"/></div>
-									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text"/></div>
-									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text"/></div>
-									<div id="dd_correo">Email:<input class="dd_con_estilo" type="text"/></div>
+									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text" placeholder="(664) 686 5679"/></div>
+									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
+									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
+									<div id="dd_correo">Email:<input class="dd_con_estilo" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
 								</div>
 
 								<div id="dd_correoA">Email alt.:<input class="dd_con_estilo" style="margin-left:5px;" type="text"/></div>
@@ -236,21 +227,27 @@
 
 							<h2>Trabajo fuera de UABC</h2>
 
-		                   		<div class="dd_rfc">RFC:<label class="dd_label">DKFEI0980KD</label></div>
-		                   		<br>
-		                   		<br>
-		                   		<br>
-
 		                   		<div id="dd_trabajoFuera_puesto_antiguedad">
-									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text"/></div>
-									<div class="dd_otroEmpleo">Puesto:<input class="dd_con_estilo_largo" style="margin-left:122px;" type="text"/></div>
+		                   			<div class="dd_otroEmpleo">RFC:<label class="dd_label">CACE7210142V1</label></div>
+
+									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text" placeholder="LABOPAT"/></div>
+									
+									<div class="dd_otroEmpleo">Puesto:
+										<select style="margin-left:117px; width:252px;" class="dd_con_estilo_largo">
+											<option>GERENTE GENERAL</option>
+											<option>DIRECTOR</option>
+											<option>SUBDIRECTOR</option>
+											<option>COORDINADOR</option>
+										</select>
+									</div>
+
 									<div class="dd_otroEmpleo">Fecha de ingreso:<input class="dd_con_estilo_largo" style="margin-left:50px;" type="date"/></div>
-									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:90px;" type="text"/></div>
+									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:91px; width:250px;" type="text" placeholder="5 AÑOS"/></div>
 								</div>
 
-
 		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
-		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Modificar" name="dd_modificar" id="dd_modificar" /></div>
+
+		                        <!--<button id="submit" type="submit">Submit Form</button>-->
 						</div>
 
 <!----------------------------- SEGUNDO TAB CONTENIDO ------------------------------------------>

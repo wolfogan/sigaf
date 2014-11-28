@@ -88,33 +88,28 @@
 
 							<form id="dd_datosPersonales" method="post" action="http://titan:8080/form">
 		                      	
-			                        <div id="dd_noEmpleado_fechaIngreso">
-										<div id="dd_noEmpleado">No. empleado:<label class="dd_label">12345</label></div>
-										<div id="dd_fechaIngreso">Fecha ingreso UABC:<input type="date" class="dd_estilo_combo" medida="Y/M/D"></div>
-									</div>
-
-									<br>
-									<br>
-									<br>
+			                        
 
 								<div class="dd_divDecoracion">	
 
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
-										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:10px;" class="dd_con_estilo_largo" type="text" /></div>
-										<div class="dd_datosPersonales">A. materno:<input style="margin-left:5px;" class="dd_con_estilo_largo" type="text"/></div>
-										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:10px;" class="dd_con_estilo_largo" id="txtnombres" type="text"/></div>
-									</div>
-
-
+										<div id="dd_noEmpleado">No. empleado:<label class="dd_label" style="margin-left:15px;">20829</label></div>
+										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:13px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"></div>
+										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="CASTILLEJOS" /></div>
+										<div class="dd_datosPersonales">A. materno:<input style="margin-left:27px;" class="dd_con_estilo_largo" type="text" placeholder="CABALLERO"/></div>
+										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:32px;" class="dd_con_estilo_largo" id="txtnombres" type="text" placeholder="EMMA SOFIA"/></div>
 
 										<div class="dd_datosPersonales" >
 											Sexo:
-											<select class="dd_estilo_combo" style="margin-left:45px; margin-bottom:30px;">
+											<select class="dd_estilo_combo" style="margin-left:70px; margin-bottom:0px; width:252px;">
 												 <option value="FEMENINO">FEMENINO</option>
 												 <option value="MASCULINO">MASCULINO</option>
 											</select>
 										</div>
-							
+
+									</div>
+										<div id="dd_fotoDoc"></div>
+
 								</div>
 								
 
@@ -125,11 +120,11 @@
 
 						
 								<div class="dd_colonia_calle_int_ext_cp">
-									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text"/></div>
+									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
 			                		<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
+									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
 									<div id="dd_cp">C.P.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text"/></div>
+									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text" placeholder="PLAYAS DE TIJUANA"/></div>
 								
 								
 									<div id="dd_pais_estado_ciudad_otro">
@@ -154,7 +149,7 @@
 												</select>
 										</div>
 
-										<div id="dd_otro">Observaciones:<input class="dd_con_estilo" type="text" id="text_dd_otro"></div>
+										<div id="dd_otro">Observaciones:<input class="dd_con_estilo" type="text" id="text_dd_otro" placeholder="NINGUNA"></div>
 									</div>
 								</div>
 
@@ -169,10 +164,10 @@
 
 		                    <div class="dd_divDecoracionTelefonos">
 			                    <div id="dd_telefonos_correo">
-									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text"/></div>
-									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text"/></div>
-									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text"/></div>
-									<div id="dd_correo">Email:<input class="dd_con_estilo" type="text"/></div>
+									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text" placeholder="(664) 686 5679"/></div>
+									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
+									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
+									<div id="dd_correo">Email:<input class="dd_con_estilo" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
 								</div>
 
 								<div id="dd_correoA">Email alt.:<input class="dd_con_estilo" style="margin-left:5px;" type="text"/></div>
@@ -184,28 +179,22 @@
 
 							<h2>Trabajo fuera de UABC</h2>
 
-		                   		<div class="dd_rfc">RFC:<label class="dd_label">DKFEI0980KD</label></div>
-		                   		<br>
-		                   		<br>
-		                   		<br>
-
 		                   		<div id="dd_trabajoFuera_puesto_antiguedad">
-									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text"/></div>
+		                   			<div class="dd_otroEmpleo">RFC:<label class="dd_label">CACE7210142V1</label></div>
+
+									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text" placeholder="LABOPAT"/></div>
 									
 									<div class="dd_otroEmpleo">Puesto:
 										<select style="margin-left:117px; width:252px;" class="dd_con_estilo_largo">
+											<option>GERENTE GENERAL</option>
 											<option>DIRECTOR</option>
 											<option>SUBDIRECTOR</option>
 											<option>COORDINADOR</option>
 										</select>
 									</div>
 
-
-
-
-										
 									<div class="dd_otroEmpleo">Fecha de ingreso:<input class="dd_con_estilo_largo" style="margin-left:50px;" type="date"/></div>
-									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:90px;" type="text"/></div>
+									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:91px; width:250px;" type="text" placeholder="5 AÑOS"/></div>
 								</div>
 
 		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
@@ -226,12 +215,12 @@
 								
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input class="dd_con_estilo_largo"  type="text"/></div>
-									<div class="dd_uniEgreso">Escuela:<input class="dd_con_estilo" type="text"/></div>
+									<div class="dd_licenciatura"><input class="dd_con_estilo_largo"  type="text" placeholder="LIC. EN INFORMATICA"/></div>
+									<div class="dd_uniEgreso">Escuela:<input class="dd_con_estilo" type="text" placeholder="UABC"/></div>
 									<div class="dd_fechaTitulacion">Titulación:<input class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input class="dd_estilo_cedula" type="text"/>  </div>
-									<div class="dd_fechaTitulacion"><input class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
+									<div class="dd_cedula">Cédula:<input class="dd_estilo_cedula" type="text" placeholder="8000054"/>  </div>
+									<div class="dd_fechaTitulacion"><input class="dd_estilo_combo" type="text" medida="Y/M/D" placeholder="cedula.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -243,9 +232,6 @@
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 									<div class="dd_licenciatura"><input class="dd_con_estilo_largo"  type="text" readonly="readonly"/></div>
-
-									
-
 
 									<div class="dd_uniEgreso">Escuela:<input class="dd_con_estilo" type="text"/></div>
 									<div class="dd_fechaTitulacion">Titulación:<input class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
@@ -375,11 +361,11 @@
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></div>
 							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
 							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></div>
+							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -390,17 +376,18 @@
 
 							        <div class="dd_licenciatura"><label>Tipo:</label>
 							            <select class="dd_estilo_combo">
+							              <option value="TALLER">TALLER</option>
 							              <option value="CURSO">CURSO</option>
 							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
+							              
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="UML Y DISEÑO DE SISTEMAS"/></div>
 							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
 							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></div>
+							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller UML.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -411,17 +398,18 @@
 
 							        <div class="dd_licenciatura"><label>Tipo:</label>
 							            <select class="dd_estilo_combo">
+							              <option value="TALLER">TALLER</option>
 							              <option value="CURSO">CURSO</option>
 							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
+							              
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DESARROLLO DE APPS PARA IOS"/></div>
 							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
+							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text" /></div>
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></div>
+							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_ios.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -432,17 +420,18 @@
 
 							        <div class="dd_licenciatura"><label>Tipo:</label>
 							            <select class="dd_estilo_combo">
+							              <option value="TALLER">TALLER</option>
 							              <option value="CURSO">CURSO</option>
 							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
+							             
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="CONTPAQI: CONTABILIDAD ELECTRONICA Y EL TIMBRADO DE LA NOMINA"/></div>
 							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
 							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></div>
+							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_contpaqi.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -453,17 +442,18 @@
 
 							       <div class="dd_licenciatura"><label>Tipo:</label>
 							            <select class="dd_estilo_combo">
+							              <option value="TALLER">TALLER</option>
 							              <option value="CURSO">CURSO</option>
 							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
+							              
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="JAVASCRIPT"/></div>
 							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
 							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></div>
+							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_javascript.png"></div>
 
 									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
@@ -489,7 +479,7 @@
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DISEÑO INSTRUCCIONAL PARA CURSOS EN LINEA"/></div>
 							         
 						     	</div>
 
@@ -503,7 +493,7 @@
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DOCENCIA Y APRENDIZAJE COOPERATIVO"/></div>
 							         
 						     	</div>
 
@@ -517,7 +507,7 @@
 							            </select>
 							        </div>
 							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="ESTRATEGIAS DIDACTICAS APOYADAS EN TCC"/></div>
 							         
 						     	</div>
 
@@ -576,20 +566,20 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11850"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="DISEÑO DE SISTEMAS"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
 										<tr>
-											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11842"/></td>
+											<td><input class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="ANALISIS DE SISTEMAS"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>		
 											<td><input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/></td>	
 										</tr>
@@ -639,7 +629,7 @@
 											<th style="width:100px;">MIERCOLES</th>
 											<th style="width:100px;">JUEVES</th>
 											<th style="width:100px;">VIERNES</th>
-											<th style="width:100px;">SABADO</th>
+											
 										</tr>
 									</thead>
 									<tbody>
@@ -647,11 +637,11 @@
 											<td>7:00 - 8:00</td>
 											<!--<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>-->
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 
 
 
@@ -659,12 +649,12 @@
 										<tr>
 											<td>8:00 - 9:00</td>
 											
-											<td><label></label></td>	
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 
 										</tr>
@@ -674,8 +664,8 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
-											<td><label></label></td>
+											<td><label></label></td>		
+											
 						
 
 										</tr>
@@ -683,10 +673,10 @@
 											<td>10:00 - 11:00</td>
 											<td><label></label></td>	
 											<td><label></label></td>
-											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
+											<td><label></label></td>		
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
@@ -696,7 +686,7 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
@@ -704,9 +694,9 @@
 											<td><label></label></td>	
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
+											<td><label></label></td>		
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
@@ -716,17 +706,17 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
+											
 						
 										</tr>
 										<tr>
 											<td>14:00 - 15:00</td>
 											<td><label></label></td>	
-											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
+											<td><label></label></td>		
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
@@ -736,7 +726,7 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
@@ -746,57 +736,57 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											<td><label></label></td>
+											
 						
 										</tr>
 										<tr>
 											<td>17:00 - 18:00</td>
-											<td><label></label></td>	
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 										</tr>
 										<tr>
 											<td>18:00 - 19:00</td>
-											<td><label></label></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
 											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 										</tr>
 										<tr>
 											<td>19:00 - 20:00</td>
-											<td><label></label></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
 											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 										</tr>
 										<tr>
 											<td>20:00 - 21:00</td>
-											<td><label></label></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
 											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 										</tr>
 										<tr>
 											<td>21:00 - 22:00</td>
-											<td><label></label></td>	
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
 											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
-											<td><label></label></td>
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											
 						
 										</tr>
 																		
