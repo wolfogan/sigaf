@@ -81,5 +81,16 @@ Route::get('pruebas',function(){
 
 	//$u->lastQuery = $last_query;
 
-	return $sql;
+	$OTRO =  DB::table("carga")
+						//->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
+						->select("carga.periodo","carga.semestre","carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","carga.semestre","uaprendizaje.plan","grupos.programaedu")
+						->distinct()
+						->join("uaprendizaje","carga.uaprendizaje","=","uaprendizaje.uaprendizaje")
+						->join("p_ua","carga.uaprendizaje","=","p_ua.uaprendizaje")
+						->join("etapas","p_ua.etapa","=","etapas.etapa")
+						->join("grupos","carga.grupo","=","grupos.grupo")
+						->where("carga.periodo","=",20141)
+						->where("grupos.programaedu","=",3)
+						->toSql();
+	return $OTRO;
 });

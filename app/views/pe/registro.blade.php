@@ -1136,7 +1136,7 @@
 					reset_campos();
 					$("#eliminar").hide();
 					$("#noPlan").removeAttr("disabled").css("background-color","");
-					desmarcar_carreras();
+					//desmarcar_carreras();
 					// Habilitar Carreras
 					$("#select_carreras option").removeAttr('disabled');
 					$(".example41").multiselect('refresh');

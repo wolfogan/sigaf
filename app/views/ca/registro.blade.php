@@ -221,6 +221,7 @@
 				</table>
 			</div>
 			<div class="CatBotones">
+				<input type="hidden" name="periodoUsersId" id="periodoUsersId"/>
 				<input type="submit" class="estilo_button2" value="Guardar"/>
 				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
 			</div>
@@ -265,6 +266,7 @@
 						<td>Programa Educativo:</td>
 						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
 					</tr>
+					<input type="hidden" name="grupo_usersid" class="grupoUsersId">
 					<input type="hidden" name="grupo_plan" id="grupoVigentePlan"/>
 					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
 					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
@@ -318,6 +320,7 @@
 						<td>Programa Educativo:</td>
 						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
 					</tr>
+					<input type="hidden" name="grupo_usersid" class="grupoUsersId">
 					<input type="hidden" name="grupo_plan" id="grupoAnteriorPlan"/>
 					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
 					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
@@ -917,6 +920,9 @@
 		function registrarPeriodo()
 		{
 			var dataPeriodo = $("#formPeriodo").serialize();
+			// Asignar usuario
+			//$("#periodoUsersId").val(USERS_ID);
+
 			$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
 				var option = "<option value='"+insertStr(result['periodo'],"-",4)+"' codigo='"+result['periodo']+"' />";
 				$("#datalistPeriodo").append(option);
@@ -981,6 +987,12 @@
 		function verificarUsuario()
 		{
 			var numPrograma = {{Auth::user()->programaedu}};
+			USERS_ID = {{Auth::user()->id}};
+			// Asignar usuario a la ventana modal de registro de periodos
+			$("#periodoUsersId").val(USERS_ID);
+			$(".grupoUsersId").val(USERS_ID);
+
+
 			if(numPrograma!=0)
 			{
 				$("#grupoCarreraV,#grupoCarreraA").val(numPrograma); // Establecer el numero de carrera para grupo
@@ -1106,6 +1118,7 @@
 			// Obtene la carga academica si existe en el momento
 			//alert(programa);
 			$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
+				// Limpiar tablas y encabezado de las mismas
 				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
 				$(".dd_encabezado tr th:eq(1)").empty();
 				for (var i = 0; i < data.uas.length; i++) 
@@ -1196,8 +1209,10 @@
 			{
 				var programa = numPrograma;
 			}
+
+
 			// Mostrar unidades de aprendizaje en las tablas
-			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa},function(uas){
+			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa,semestre:semestre,usersid:USERS_ID},function(uas){
 				//Actualizar tabla de semestres
 				obtenerCarga(periodo,programa);
 				alert(uas);

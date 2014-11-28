@@ -354,6 +354,7 @@ class CargaAcademicaController extends BaseController
 		$lapso -> descripcion = Input::get('periodoDescripcion');
 		$lapso -> inicio = Input::get('periodoFechaInicio');
 		$lapso -> fin = Input::get('periodoFechaFin');
+		$lapso -> users_id = Input::get('periodoUsersId');
 		
 
 		$lapso -> save();
@@ -366,11 +367,12 @@ class CargaAcademicaController extends BaseController
 		$grupo = Input::get('grupo_carrera').Input::get('grupo_semestre').Input::get('grupo_identificador');
 		$periodo = Input::get('grupo_periodo');
 		$plan = Input::get('grupo_plan');
+		$users_id = Input::get('grupo_usersid');
 
 		$programa = Input::get('grupo_programa');
 		$turno = Input::get('grupo_turno');
 		DB::table('grupos')->insert(
-			array("grupo"=>$grupo,"periodo"=>$periodo,"plan"=>$plan,"programaedu"=>$programa,"turno"=>$turno)
+			array("grupo"=>$grupo,"periodo"=>$periodo,"plan"=>$plan,"programaedu"=>$programa,"turno"=>$turno,"users_id"=>$users_id)
 		);
 
 		return $grupo;
@@ -436,10 +438,12 @@ class CargaAcademicaController extends BaseController
 		$uas = Input::get('uas');
 		$periodo = Input::get('periodo');
 		$programa = Input::get('programa');
+		$semestre = Input::get('semestre');
+		$users_id = Input::get('usersid');
 		foreach ($grupos as $grupo) {
 			foreach ($uas as $ua) {
 				DB::table('carga')->insert(
-					array('grupo' => $grupo,'periodo'=>$periodo,'uaprendizaje'=>$ua,'status'=>3)
+					array('grupo' => $grupo,'periodo'=>$periodo,'programaedu'=>$programa,'uaprendizaje'=>$ua,'semestre'=>$semestre,'users_id'=>$users_id)
 					);
 			}
 		}
@@ -507,23 +511,25 @@ class CargaAcademicaController extends BaseController
 		$programa = Input::get("programa");
 
 		$uas = DB::table("carga")
-						->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
+						//->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
+						->select("carga.periodo","carga.semestre","carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","carga.semestre","uaprendizaje.plan","grupos.programaedu")
 						->distinct()
 						->join("uaprendizaje","carga.uaprendizaje","=","uaprendizaje.uaprendizaje")
-						->join("etapas","uaprendizaje.etapa","=","etapas.etapa")
+						->join("p_ua","carga.uaprendizaje","=","p_ua.uaprendizaje")
+						->join("etapas","p_ua.etapa","=","etapas.etapa")
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
 						->get();
 		$grupos = DB::table("carga")
-						->select("carga.grupo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"))
+						->select("carga.grupo","carga.semestre")
 						->distinct()
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
 						->get();
 		$planSemestres = DB::table("carga")
-						->select(DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.periodo","grupos.plan")
+						->select("carga.semestre","carga.periodo","grupos.plan")
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
