@@ -882,7 +882,9 @@
 				var series = [];
 				$(".tblSeriaciones tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
 					var serie = $(element).find("input:first").val();
-					series.push(serie);
+					// Indicar si es obligatoria o conveniente la ua seriada
+					var tipo = $(element).find("select:first option:selected").html();
+					series.push(serie + " (" + tipo.substring(0,1) + ")");
 				});
 				var stringSeries = "";
 				// Mostrar informacion guardada en la base de datos de los programas asociados
@@ -1017,6 +1019,8 @@
 			$("#grid_plan").html($(this).val());
 			disabled_campos(false);
 			var plan = $(this).val();
+			// Mostrar en label de ventana modal de asociacion
+			$(".pe_noPlan label:first").text($(this).find("option:selected").html());
 			// Obtener el nivel al que pertenece el plan seleccionado
 			$.post("<?php echo URL::to('planestudio/obtenernivelplan'); ?>",{noplan:plan},function(nivel){
 				$("#plan_nivel").html(nivel);
@@ -1370,7 +1374,7 @@
 								// Mostrar asociaciones con las carreras y materias seriadas en la tblDetalleAsociacion
 								for(var i = 0; i < json.series.length; i++)
 								{
-									// Si no esta asociado no mostrar renglon en vacio o nulo en la tabla detalle asociacion
+									// Si no esta asociado, no mostrar renglon en vacio o nulo en la tabla detalle asociacion
 									if(json.series[i].programaedu!=null)
 									{
 										var rowDetail = "<tr><td>"+ json.series[i].descripcion +"</td><td>"+ json.series[i].etapa +"</td><td>"+((json.series[i].series == null) ? "SIN SERIACION" : json.series[i].series) +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + json.series[i].programaedu + "</td></tr>";
@@ -1500,7 +1504,42 @@
 			}
 		});
 
-		
+		// EVENTOS VENTANA MODAL ASOCIACION DE PROGRAMAS
+		$("#tblDetalleAsociacion").on("click","tr td",function(){
+			if($(this).index() != 3)
+			{
+				var programa = $(this).parent().find("td:last").text();
+				var etapa = $(this).parent().find("td:eq(1)").text();
+				var uaid = $("#clave1F").val();
+
+				$("#asociar_etapa option:contains('"+etapa+"')").attr('selected',true);
+				$("#select_carreras").multiselect('select',programa);
+
+				$.post("<?php echo URL::to('planestudio/obtenerdetalleseriacion'); ?>",{programaedu:programa,uaprendizaje:uaid},function(ua){
+					// Limpiar tabla seriaciones
+					$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+					$(".sin-seriacion").show();
+					// Iterar por las series
+					for(i in ua)
+					{
+						// Duplicar fila base y añadir a tabla las seriaciones extraidas de la BD
+						var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblSeriaciones");
+						$(".sin-seriacion").hide();
+						//console.log(filaSeriacion);
+						
+						// Valores de las ua seriadas
+						$(seriacionNueva).find("select:eq(0)").val(ua[i].reqseriacion);
+						$(seriacionNueva).find("input:eq(0)").val(ua[i].uaprequisito);
+						$(seriacionNueva).find("input:eq(1)").val(ua[i].descripcionmat);
+
+						// Para la actualizacion posterior
+						$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+						$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+					}
+				});
+			}
+
+		});
 	});
 	</script>
 

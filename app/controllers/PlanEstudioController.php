@@ -619,7 +619,8 @@ class PlanEstudioController extends BaseController
 							->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 							->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 							->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
-							->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito) as series'))
+							->join('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
+							->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT(\'(\',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),\')\')) as series'))
 							->where('uaprendizaje.uaprendizaje','=',$uaid)
 							->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','uaprendizaje.uaprendizaje')
 							->get();
@@ -660,6 +661,22 @@ class PlanEstudioController extends BaseController
 		);
 
 		return Response::json($data);
+	}
+
+	public function postObtenerdetalleseriacion()
+	{
+		$programaedu = Input::get('programaedu');
+		$uaid = Input::get('uaprendizaje');
+
+		$programaSeries= DB::table('detalleseriacion')
+							->join('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
+							->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
+							->select('detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','uaprendizaje.descripcionmat')
+							->where('detalleseriacion.programaedu','=',$programaedu)
+							->where('detalleseriacion.uaprendizaje','=',$uaid)
+							->orderBy('detalleseriacion.uaprequisito')
+							->get();
+		return Response::json($programaSeries);
 	}
 
 	public function postActualizarua()
