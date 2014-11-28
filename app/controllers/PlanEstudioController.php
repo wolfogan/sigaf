@@ -554,6 +554,10 @@ class PlanEstudioController extends BaseController
 				->where("uaprendizaje","=",$uaprendizaje)
 				->delete();
 
+			DB::table("carga")
+				->where('uaprendizaje',"=",$uaprendizaje)
+				->delete();
+
 			DB::table("p_ua")
 				->where("uaprendizaje","=",$uaprendizaje)
 				->delete();
@@ -574,6 +578,11 @@ class PlanEstudioController extends BaseController
 		DB::transaction(function() use ($programaedu,$uaprendizaje){
 			
 			DB::table("detalleseriacion")
+				->where("programaedu","=",$programaedu)
+				->where("uaprendizaje","=",$uaprendizaje)
+				->delete();
+
+			DB::table("carga")
 				->where("programaedu","=",$programaedu)
 				->where("uaprendizaje","=",$uaprendizaje)
 				->delete();
