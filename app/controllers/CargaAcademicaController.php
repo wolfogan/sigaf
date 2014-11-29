@@ -511,16 +511,22 @@ class CargaAcademicaController extends BaseController
 		$programa = Input::get("programa");
 
 		$uas = DB::table("carga")
-						//->select("carga.periodo",DB::raw("SUBSTR(carga.grupo FROM 2 FOR 1) as semestre"),"carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","uaprendizaje.claveD","uaprendizaje.plan","grupos.programaedu")
-						->select("carga.periodo","carga.semestre","carga.uaprendizaje","uaprendizaje.descripcionmat","uaprendizaje.caracter","uaprendizaje.creditos","uaprendizaje.HC","etapas.descripcion as etapa","carga.semestre","uaprendizaje.plan","grupos.programaedu")
-						->distinct()
-						->join("uaprendizaje","carga.uaprendizaje","=","uaprendizaje.uaprendizaje")
-						->join("p_ua","carga.uaprendizaje","=","p_ua.uaprendizaje")
-						->join("etapas","p_ua.etapa","=","etapas.etapa")
-						->join("grupos","carga.grupo","=","grupos.grupo")
+						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','uaprendizaje.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
+						->join('uaprendizaje','carga.uaprendizaje' , '=' , 'uaprendizaje.uaprendizaje')
+						->join('p_ua',function($join){
+							$join->on('carga.uaprendizaje','=','p_ua.uaprendizaje')
+								->on('carga.programaedu','=','p_ua.programaedu');
+  						})
+						->join('etapas','p_ua.etapa','=','etapas.etapa')
+						->leftjoin('detalleseriacion',function($join){
+							$join->on('carga.uaprendizaje','=','detalleseriacion.uaprendizaje')
+								->on('carga.programaedu', '=' ,'detalleseriacion.programaedu');
+						})
+						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','uaprendizaje.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
 						->where("carga.periodo","=",$periodo)
-						->where("grupos.programaedu","=",$programa)
+						->where("carga.programaedu","=",$programa)
 						->get();
+
 		$grupos = DB::table("carga")
 						->select("carga.grupo","carga.semestre")
 						->distinct()
