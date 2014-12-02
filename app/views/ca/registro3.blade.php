@@ -272,7 +272,7 @@
 		</div>
 	</div>
 	<section>
-		<div class="contenedorCa">
+		<div class="contenedorCa" style="height:1050px;">
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 			<div class="periodoCa">

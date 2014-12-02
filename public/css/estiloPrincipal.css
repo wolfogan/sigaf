@@ -1239,7 +1239,7 @@ html>body div.pe_tableContainerMod table
 #formularioRegUsuarios
 {
 	
-	height: 530px;
+	height: 350px;
 	border: 1px solid gray;
 	padding-left: 20px;
 	padding-top: 20px;
@@ -1253,7 +1253,7 @@ html>body div.pe_tableContainerMod table
 {
 	
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 30px;
 	width: 450px;
 }
 #us_tablaRegistro
@@ -1453,6 +1453,7 @@ html>body div.pe_tableContainerMod table
 /*-------------------------------CARGA ACADEMICA--------------------------------------*/
 .contenedorCa
 {
+
 	height: 1700px;
 	width: 1320px;
 }
@@ -1906,39 +1907,35 @@ input[readonly],input[readonly="readonly"]
 }
 
 
-#dd_noEmpleado_fechaIngreso
+/*#dd_noEmpleado_fechaIngreso
 {
 	
-	float: right;
+	
 	font-size: 18px;
 	width: 550px;
-}
+}*/
 
 #dd_noEmpleado
 {
-	
-	
-	float: left;
-	height: 30px;
-	padding-top: 7px;
-	padding-right: 30px;
+
+	padding-bottom: 20px;
+	padding-right: 10px;
 	width: 200px;
 
 }
 #dd_fechaIngreso
 {
-	
-	
-	float: left;
-	height: 30px;
-	width: 310px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	width: 380px;
 }
 
 #dd_aPaterno_aMaterno_nombres_sexo
 {
 	
-	margin-top: 20px;
-	width: 1130px;
+	margin-left: 15px;
+	margin-top: 10px;
+	width: 400px;
 }
 .dd_datosPersonales
 {
@@ -1950,8 +1947,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_otroEmpleo
 {
-	
-	
+
 	padding-bottom: 20px;
 	padding-right: 10px;
 	width: 500px;
@@ -1959,6 +1955,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_foto
 {
+
 	margin-left: 500px;
 	margin-top: -220px;
 	width: 270px;
@@ -2001,9 +1998,11 @@ input[readonly],input[readonly="readonly"]
 {
 
 	background: #fff;
-	border-radius: 7px;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
 	height: 130px;
-	border:3px solid #ECECFB;
 	margin-left: 20px;
 	padding-left: 15px;
 	padding-top:20px;
@@ -2014,8 +2013,10 @@ input[readonly],input[readonly="readonly"]
 .dd_divDecoracionTelefonos
 {
 	background: #fff;
-	border-radius: 7px;
-	border:3px solid #ECECFB;
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
 	margin-left: 20px;
 	padding-left: 15px;
 	padding-top:10px;
@@ -2096,18 +2097,18 @@ input[readonly],input[readonly="readonly"]
 #dd_trabajoFuera_puesto_antiguedad
 {
 	background: #fff;
-	height: 200px;
-	border-radius: 7px;
-	border:3px solid #ECECFB;
+	height: 230px;
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
 	padding-top: 20px;
-	padding-left: 20px;
+	padding-left: 40px;
 	padding-bottom: 10px;
-	margin-left: 150px;
-	width: 850px;
-
-
+	margin:auto;
+	width: 700px;
 }
-.dd_rfc
+/*.dd_rfc
 {
 	
 	float: right;
@@ -2116,7 +2117,7 @@ input[readonly],input[readonly="readonly"]
 	padding-right: 25px;
 	margin-top: 10px;
 
-}
+}*/
 #dd_trabajoFuera
 {
 	
@@ -2348,7 +2349,7 @@ input[readonly],input[readonly="readonly"]
 #dd_consulta
 {
 	
-	margin-bottom: 30px;
+	
 	margin:auto;
 	margin-top: 40px;
 	width: 850px;
@@ -2366,14 +2367,13 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_consultarNombre
 {
-	
+
 	float: left;
 	width: 400px;
 }
 #dd_eliminarDocentes
 {
-	margin-top: 30px;
-	margin-left: 90px;
+	margin:auto;
 }
 
 .dd_clsAgregarFila
@@ -2450,22 +2450,36 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_divDecoracion
 {
-	margin-left: 150px;
+
+	margin:auto;
 	background: #FFF;
-	border-radius: 7px;
-	border:3px solid #ECECFB;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
 	padding-left: 20px;
 	padding-bottom: 10px;
-	width: 850px;
+	width: 700px;
 	
+}
 
+#dd_fotoDoc
+{
+	background-image: url(../imagenes/docente.png);
+	border: 3px solid green;
+	float: right;
+	margin-top: -265px;
+	height: 250px;
+	width: 217px;
 }
 .dd_divDecoracionCursos
 {
 	
 	background: #FFF;
-	border-radius: 7px;
-	border:3px solid #ECECFB;
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
@@ -2475,8 +2489,10 @@ input[readonly],input[readonly="readonly"]
 .dd_divDecoracionEstudios
 {
 	background: #FFF;	
-	border-radius: 7px;
-	border:3px solid #ECECFB;
+	border-top: 4px dashed #FFDEAD;
+	border-bottom: 4px dashed #FFDEAD;
+	/*border-radius: 7px;
+	border:3px solid #ECECFB;*/
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
@@ -2597,7 +2613,7 @@ input[readonly],input[readonly="readonly"]
 
 #hr_trunoGrupo
 {
-	margin: 70px 30px 30px 30px;
+	margin: 50px 30px 30px 30px;
 	height: 50px;
 	width: 1250px;
 }
@@ -2671,8 +2687,8 @@ input[readonly],input[readonly="readonly"]
 
  .hr_lblMaterias
  {
-
- 	margin: 0px 0px 0px 15px;
+ 	
+ 	margin: 140px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;
  	text-align: center;
@@ -2692,6 +2708,37 @@ input[readonly],input[readonly="readonly"]
  	float: left;
  	width: 200px;
  	height: 20px;
+ }
+
+ .hr_tituloSearch
+ {
+ 	
+ 	height: 30px;
+ 	float: left;
+ 	margin-left: 200px;
+ 	width: 900px;
+
+
+ }
+
+ #hr_tituloDocente
+ {
+ 	
+ 	color:#000;
+ 	font-size: 18px;
+ 	float: left; 
+ 	margin-left: 20px;
+ 	margin-top: 5px;
+ 	width: 200px;
+ 	
+
+ }
+ #hr_searchDocente
+ {
+ 	
+ 	float: left;
+ 	margin-left: 300px;
+ 	width: 220px;
  }
 
 

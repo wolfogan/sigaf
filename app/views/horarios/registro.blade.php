@@ -55,7 +55,7 @@
 </div>
 
 		<section>
-			<div class="contenedorCa">
+			<!--<div class="contenedorCa" style="height:1400px;">-->
 
 				<div id="hr_trunoGrupo">
 					<div class="hr_turnoHorario">
@@ -70,6 +70,7 @@
 					<div class="hr_turnoHorario">
 						<label>Grupo: </label>
 						<select class="dd_estilo_combo" style="width:220px" name="hr_grupoHr" size=1>
+							<option value="321">231</option>
 							<option value="321">321</option>
 							<option value="322">322</option>
 							<option value="324">324</option>
@@ -77,10 +78,42 @@
 						</select>
 					</div>
 					<!--<div id="hr_btnCrearHr"><input class="estilo_button2" type="button" value="Crear horario">-->
-					<div class="hr_lblCarrera"><label>LIC. EN INFORMÁTICA</label></div>
+					<div class="hr_lblCarrera"><label>ADMON. DE EMPRESAS</label></div>
 				</div>
 
+				<!-- TABLA SIGNIFICADO DE COLORES -->
 
+			
+					<table class="hr_tabla_ca" style="width:220px; float:right; margin-top:-25px;">
+
+						
+						<thead class="hr_encabezado_tablaConsulta">
+							<tr>
+								<th style="width:70px; height:25px;">COLOR</th>
+								<th style="width:150px; height:25px;">SIGNIFICADO</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td style="background:#2ECCFA;"></td>
+								<td>ASIGNADA</td>
+							</tr>
+							<tr>
+								<td style="background:#00FF80"></td>
+								<td>COINCIDENCIA</td>
+							</tr>
+							<tr>
+								<td style="background:#FFFF00"></td>
+								<td>DISPONIBLE</td>
+							</tr>
+					</table>
+				
+			<!-------------------------------------------------------------------------------------------->
+
+
+
+				
 
 				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
 				
@@ -246,32 +279,32 @@
 						
 						<tbody>
 							<tr>
-								<td>11235</td>
-								<td>MATEMATICAS</td>
+								<td>12456</td>
+								<td>ADMON. DE COMPRAS</td>
 							</tr>
 							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
+								<td>12457</td>
+								<td>DISEÑO ORGANIZACIONAL</td>
 							</tr>
 							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
+								<td>11859</td>
+								<td>METODOS CUANTITATIVOS</td>
 							</tr>
 							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
+								<td>12459</td>
+								<td>RELACIONES LABORALES</td>
 							</tr>
 							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
+								<td>12458</td>
+								<td>REGISTROS ESPECIALES</td>
 							</tr>
 							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
+								<td>11843</td>
+								<td>METODOLOGIA DE LA INV.</td>
 							</tr>
 							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
+								<td>11743</td>
+								<td>ENTORNO SOCIOECONOMICO DE MEXICO</td>
 							</tr>
 							
 					</table> 
@@ -288,15 +321,15 @@
 						
 						<thead class="hr_encabezado_tablaConsulta">
 							<tr>
-								<th style="width:80px">NO. EMPLEADO</th>
-								<th style="width:260px">DOCENTE</th>
-								<th style="width:110px">HORA</th>
-								<th style="width:74px">LUNES</th>
-								<th style="width:74px">MARTES</th>
-								<th style="width:74px">MIÉRCOLES</th>
-								<th style="width:74px">JUEVES</th>
-								<th style="width:74px">VIERNES</th>
-								<th style="width:74px">SÁBADO</th>
+								<th style="width:100px">NO. EMPLEADO</th>
+								<th style="width:200px">DOCENTE</th>
+								<th style="width:100px">HORA</th>
+								<th style="width:100px">LUNES</th>
+								<th style="width:100px">MARTES</th>
+								<th style="width:100px">MIÉRCOLES</th>
+								<th style="width:100px">JUEVES</th>
+								<th style="width:100px">VIERNES</th>
+								
 							</tr>
 						</thead>
 
@@ -306,68 +339,68 @@
 								<td>23658</td>
 								<td>PEDRO PEREZ LOPEZ</td>
 								<td >07:00 - 8:00</td>
-								<td style="background:#2ECCFA;">321</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>23111</td>
-								<td>CARLOS NEGRETE PALMINO</td>
-								<td >08:00 - 9:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td style="background:#2ECCFA;">232</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
+								<td style="background:#2ECCFA;">323</td> 
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								
 							</tr>
 							<tr>
-								<td>23456</td>
-								<td>PATRICIA ANGULO SANCHEZ</td>
-								<td >09:00 - 10:00</td>
+								<td>24523</td>
+								<td>CARLOS P. ROMERO GARCIA</td>
+								<td >08:00 - 9:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">421</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">322</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td></td>
+								
+								
 							</tr>
 							<tr>
-								<td>12345</td>
-								<td>EDGAR AVILA GARRIDO</td>
+								<td>24698</td>
+								<td>ANTONIO E. CASTRO DUARTE</td>
+								<td >09:00 - 10:00</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">421</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">322</td> 
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
 								<td>10:00 - 11:00</td>
-								<td></td>
-								<td></td>
-								<td>327</td>
-								<td style="background:#FFFF00">DISPONIBLE</td> 
-								<td></td>
-								<td></td>
+								<td style="background:#00FF80"></td>
+								<td style="background:#2ECCFA;">232</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								
 							</tr>
 							<tr>
-								<td>21345</td>
-								<td>UNICE ESPINOZA BASTIDAS</td>
+								<td></td>
+								<td></td>
 								<td>11:00 - 12:00</td>
-								<td style="background:#2ECCFA;">328</td>
+								<td style="background:#2ECCFA;">621</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td></td>
-								<td style="background:#00FF80"></td> 
-								<td></td>
-								<td></td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+								
 							</tr>
 							<tr>
-								<td>23343</td>
-								<td>NICOLAS GONZALEZ HERNANDEZ</td>
+								<td></td>
+								<td></td>
 								<td>12:00 - 13:00</td>
-								<td></td>
-								<td></td>
+								<td style="background:#2ECCFA;">621</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td></td> 
-								<td style="background:#2ECCFA;">324</td>
-								<td></td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">621</td> 
+								<td style="background:#2ECCFA;">421</td>
+								
 							</tr>
 							
 						
@@ -375,16 +408,13 @@
 			<!-------------------------------------------------------------------------------------------->
 
 
-
-			
-
 			<!-- TABLA PARA CREACION DE HORARIOS: HORARIO DEL GRUPO Y TURNO -->
 
 					<div class="hr_lblMaterias">
-						<div class="hr_titulos" style="margin-left:330px;">Seleccione materias</div>
+						<div class="hr_titulos" style="margin-left:150px;">Horario del grupo</div>
 					</div>
 
-					<table class="hr_tabla_ca" style="width:900px;">	
+					<table class="hr_tabla_ca" style="width:900px; margin-top:10px; margin-left:-200px;">	
 
 						<thead class="hr_encabezado_tablaConsulta">
 
@@ -395,7 +425,7 @@
 								<th colspan="2">MIÉRCOLES</th>
 								<th colspan="2">JUEVES</th>
 								<th colspan="2">VIERNES</th>
-								<th colspan="2">SÁBADO</th>
+								
 								
 							</tr>
 						</thead>
@@ -423,9 +453,6 @@
 								<th style="width:74px">CLAVE</th>
 								<th style="width:74px">DOCENTE</th>
 
-								<!---------- SABADO ---------------->
-								<th style="width:74px">CLAVE</th>
-								<th style="width:74px">DOCENTE</th>
 
 							</tr>
 						</thead>
@@ -434,138 +461,294 @@
 							<tr>
 								
 								<td>07:00 - 8:00</td>
-								<td>1234</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>12456</td>
+								<td>23658</td>
+								<td>12457</td>
+								<td>29658</td> 
+								<td>11743</td>
+								<td>23145</td>
+								<td>11743</td>
+								<td>23145</td>
+								<td>11743</td> 
+								<td>23145</td>
+								
 							</tr>
 							<tr>
 								
 								<td>08:00 - 9:00</td>
-								<td>34556</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>12456</td>
+								<td>23658</td>
+								<td>11859</td>
+								<td>29365</td> 
+								<td>12459</td>
+								<td>24639</td>
+								<td>11859</td>
+								<td>29365</td>
+								<td>12457</td> 
+								<td>29658</td>
+								
 								
 							</tr>
-							<tr>
-								
+							<tr>								
 								<td>09:00 - 10:00</td>
-								<td>32211</td>
-								<td></td>
-								<td></td>
-								<td></td> 
-								<td>63725</td>
-								<td></td>
-								<td></td>
+								<td style="background:#00FF80">11859</td>
+								<td style="background:#00FF80">29365</td>
 								<td></td>
 								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>11743</td>
+								<td>23145</td>
+								<td>12458</td>
+								<td>21523</td>
+								<td>12459</td> 
+								<td>24639</td>
+								
 							</tr>
 							<tr>
 								
 								<td>10:00 - 11:00</td>
 								<td></td>
 								<td></td>
-								<td>90872</td>
-								<td>93847</td> 
-								<td></td>
-								<td></td>
-								<td>23948</td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>11843</td>
+								<td>27896</td> 
+								<td>12457</td>
+								<td>29658</td>
+								<td>12457</td>
+								<td>29658</td>
+								<td>11859</td> 
+								<td>29365</td>
+								
 							</tr>
 							<tr>
 								
 								<td>11:00 - 12:00</td>
-								<td>29300</td>
-								<td>39447</td>
-								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
+								<td>12459</td>
+								<td>24639</td>
+								<td>11843</td>
+								<td>27896</td> 
 								<td></td>
 								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>12458</td>
+								<td>21523</td>
+								<td>12458</td> 
+								<td>21523</td>
+								
 							</tr>
 							<tr>
 								
 								<td>12:00 - 13:00</td>
+								<td>11843</td>
+								<td>27896</td>
+								<td>12459</td>
+								<td>24639</td>
+								<td>12458</td> 
+								<td>21523</td>
 								<td></td>
 								<td></td>
-								<td></td>
-								<td>82742</td>
 								<td></td> 
-								<td>32411</td>
-								<td>92478</td>
 								<td></td>
-								<td></td> 
-								<td></td>
-								<td></td>
-								<td></td>
+								
 							</tr>
 							
 						
 					</table>
+					<!--<div id="btnImprimirBit">
+						<input style="width:120px"class="estilo_button2" type="button" value="Guardar" name="hr_GuardarHr" id="hr_GuardarHr">
+					</div>-->
+
 			<!-------------------------------------------------------------------------------------------->
 
-			<!-- TABLA SIGNIFICADO DE COLORES -->
-
+			<!-- TABLA PARA MOSTRAR DISPONIBILIDAD DEL DOCENTE -->
 				
+					<div class="hr_tituloSearch">
+						<div id="hr_tituloDocente">Horario del docente</div>
+						<div id="hr_searchDocente">Docente:<input class="estilo_text" style="width:150px;" type="text" id="hr_docente" name-"hr_docente" value=""/></div>
+						<input type="submit" style="height: 30px; width:100px"class="estilo_button2" type="button" value="Buscar" name="hr_buscar" id="hr_buscar" />
+					</div>
 
-					<table class="hr_tabla_ca" style="width:380px; float:right">
+
+					
+
+					<table class="hr_tabla_ca" style="width:900px; margin-left:200px;">
 
 						
 						<thead class="hr_encabezado_tablaConsulta">
 							<tr>
-								<th style="width:80px">COLOR</th>
-								<th style="width:300px">SIGNIFICADO</th>
+								<th style="width:200px">HORARIO</th>
+								<th style="width:120px">LUNES</th>
+								<th style="width:120px">MARTES</th>
+								<th style="width:120px">MIÉRCOLES</th>
+								<th style="width:120px">JUEVES</th>
+								<th style="width:120px">VIERNES</th>
+								
+								
 							</tr>
 						</thead>
-						
+
+												
 						<tbody>
 							<tr>
-								<td style="background:#2ECCFA;"></td>
-								<td>ASIGNADA</td>
+								<td>7:00 - 8:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td style="background:#2ECCFA;">322</td>
+								<td></td>
+								<td style="background:#2ECCFA;">323</td>
+								<td></td>
+								
+								
 							</tr>
 							<tr>
-								<td style="background:#00FF80"></td>
-								<td>COINCIDENCIA</td>
+								<td>8:00 - 9:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td></td>
+								<td style="background:#2ECCFA;">421</td>
+								<td></td>
+								<td style="background:#2ECCFA;">322</td>
+								
+								
+								
 							</tr>
 							<tr>
-								<td style="background:#FFFF00"></td>
-								<td>DISPONIBLE</td>
+								<td>9:00 10:00</td>
+								<td></td>
+								<td style="background:#2ECCFA;">421</td>
+								<td></td>
+								<td style="background:#2ECCFA;">322</td>
+								<td></td>
+								
 							</tr>
+							<tr>
+								<td>10:00 - 11:00</td>
+								<td></td>
+								<td style="background:#2ECCFA;">232</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>11:00 - 12:00</td>
+								<td style="background:#2ECCFA;">421</td>
+								<td></td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+								
+							</tr>
+							<tr>
+								<td>12:00 - 13:00</td>
+								<td style="background:#2ECCFA;">621</td>
+								<td></td>
+								<td></td>
+								<td style="background:#2ECCFA;">621</td>
+								<td style="background:#2ECCFA;">421</td>
+								
+								
+							</tr>
+							<!--<tr>
+								<td>13:00 - 14:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>14:00 - 15:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>15:00 - 16:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>16:00 - 17:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>17:00 - 18:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>18:00 - 19:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>19:00 - 20:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>20:00 - 21:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>21:00 - 22:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								
+								
+							</tr>-->
+							
+						
 					</table>
-				
+
 			<!-------------------------------------------------------------------------------------------->
 
+					<div id="btnImprimirBit">
+						<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
+					</div>
+		<!--</div>-->
 
-		</div>
+
+		
+	
 
 				
 			

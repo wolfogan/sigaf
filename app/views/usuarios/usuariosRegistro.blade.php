@@ -39,42 +39,7 @@
 			} );
 		</script><!-- Termina script dataTable -->
 
-		<!-- CAPTCHA -->
-
-		<script type="text/javascript">
-
-   //Crear/ Generar la funcion del Captcha
-    function DrawCaptcha()
-    {
-        var a = Math.ceil(Math.random() * 9)+ '';
-   		var aLetras = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u');
-		var b = aLetras[Math.floor(Math.random()*aLetras.length)];
-		var c = Math.ceil(Math.random() * 9)+ '';      
-		var d = aLetras[Math.floor(Math.random()*aLetras.length)];
-		var e = Math.ceil(Math.random() * 9)+ '';  
-		var f = aLetras[Math.floor(Math.random()*aLetras.length)];
-		var g = aLetras[Math.floor(Math.random()*aLetras.length)];
-        var code = a + ' ' + b + ' ' +c+ ' ' + d + ' ' + e + ' ' + f + ' '+ g;
-        document.getElementById("txtCaptcha").value = code
-    }
-
-   //Validar la entrada, funcion para generar el codigo de seguridad  
-    function ValidCaptcha(){
-        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-        var str2 = removeSpaces(document.getElementById('txtInput').value);
-        if (str1 == str2) return true;        
-        return false; 
-    }
-
-    //Quitar espacios de la entrada y generar codigo
-    function removeSpaces(string)
-    {
-        return string.split(' ').join('');
-    }
-   </script>
-
-		<!-------------------------------------------------------------------------------------->
-
+		
 		<!-------------------------------------- MODAL AGREGAR PUESTO -------------------------------------->
 	<div class="md-modal md-effect-11" id="us_puesto"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
@@ -217,10 +182,6 @@
 	</div>
 	<div class="md-overlay"></div>
 			
-	<!--PARA CARGAR EL CAPTCHA--> 
-	<body onload="DrawCaptcha();">
-	<!-------------------------->
-
 	</head>
 
 	<body>
@@ -292,11 +253,11 @@
 
 						<div class="us_div">
 							<div class="us_nuevo">Contraseña:
-								<input style="margin-left:27px" class="dd_con_estilo_largo" type="password" placeholder="RFC" name="contrasenaRegUsuarios" id="contrasenaRegUsuarios" size=1>
+								<label style="margin-left:25px;">DUFC870212MBCRRY04</label>
 							</div>
 
-							<div class="us_repetir">Repetir Contraseña:
-								<input style="margin-left:11px" class="dd_con_estilo_largo" type="password" placeholder="RFC" name="contrasenaRegUsuarios" id="contrasenaRegUsuarios" size=1>
+							<div class="us_repetir">Teléfono:
+								<input style="margin-left:82px" class="dd_con_estilo_largo" type="password" placeholder="RFC" name="contrasenaRegUsuarios" id="contrasenaRegUsuarios" size=1>
 							</div>
 						</div>
 
@@ -354,7 +315,7 @@
 							</div>		
 
 
-							<div class="us_nuevo">Pregunta:
+							<!--<div class="us_nuevo">Pregunta:
 									<select style="margin-left:44px" class="dd_con_estilo_largo" type="text" name="us_pregunta" id="us_pregunta">
 										<option value="¿CUAL ES EL NOMBRE DE MI MASCOTA?">¿CUAL ES EL NOMBRE DE MI MASCOTA?</option>
 										<option value="¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?">¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?</option>
@@ -365,34 +326,13 @@
 
 							<div class="us_repetir">Respuesta:
 								<input style="margin-left:75px" class="dd_con_estilo_largo" type="text" name="us_Respuesta" id="us_Respuesta" size=1>
-							</div>	
+							</div>	-->
 						</div>
 
-						<div id="us_divCaptcha">
-							<table>
-							    <tr>
-							        <td>
-							            Introduce los caracteres:<br>
-							        </td>
-							    </tr>
-							    <tr>
-							        <td>
-							            <input class="dd_con_estilo_largo" style="background-color: rgba(104,160,26,0.3); color:green; margin-left:10px; height:40px; margin-bottom:10px; text-align:center; border:none; font-weight:bold; font-size:24px;" type="text" id="txtCaptcha"  />
-							            <input class="us_clsRefresh" type="button" id="btnrefresh" value="" onclick="DrawCaptcha();" />
-							        </td>
-							    </tr>
-							    <tr>
-							        <td>
-							            <input class="dd_con_estilo_largo" style="margin-left:-21px; text-align:center; font-size:16px;" type="text" id="txtInput"/>    
-							        </td>
-							    </tr>
-							    
-							</table>
-						</div>
-
+						
 						<div id="us_btnRegistroUsuario">
 							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario">
-							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario" onclick="alert(ValidCaptcha())";>
+							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario">
 						</div>
 			</div>
 
