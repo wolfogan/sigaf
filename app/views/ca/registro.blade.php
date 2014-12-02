@@ -1127,7 +1127,7 @@
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
 					if (data.uas[i].caracter == 1)
 					{
-						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series)+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
 					}
 					else
@@ -1153,7 +1153,7 @@
 							},
 							async:false
 						});
-						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+data.uas[i].claveD+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series)+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
 						//alert("Si fue sincrono");
 					}
