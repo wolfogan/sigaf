@@ -42,7 +42,7 @@
 	
 	<!-------------------------------------- MODAL ASOCIACION UA-PROGRAMA -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
-		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
+		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:1000px; height:700px;" method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
 
 
@@ -60,7 +60,23 @@
 						@endforeach
 					</select>
 				</div>
+
+				<div class="carreraDiv">
+					<label>Tipo: </label>
+					<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
+						@foreach ($tiposCaracter as $caracter)
+							<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
+						@endforeach
+					</select>
+				</div>
+
+				<div class="carreraDiv">
+					<label>Sem:</label>
+						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+				</div>
+
 				<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
+
 			</div>
 
 			<div class="pe_catalogos_tbl">
@@ -494,24 +510,24 @@
 						<!-- LLAMADA MODAL ETAPA -->
 					<!--</div>-->
 					<!---------------------------------- TIPO CARACTER ---------------------------------->
-					<div id="tipoDiv">
+					<!--<div id="tipoDiv">
 						<label>Tipo: </label>
 						<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
 							@foreach ($tiposCaracter as $caracter)
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
-						</select>
+						</select>-->
 						<!-- LLAMADA MODAL TIPO CARACTER -->
-							<input class="md-trigger" data-modal="tipo" type="button" value="+">
+							<!--<input class="md-trigger" data-modal="tipo" type="button" value="+">-->
 						<!-- LLAMADA MODAL TIPO CARACTER -->
-					</div>
+					<!--</div>-->
 					<!---------------------------------------------------------------------------------->
 
 					<!------------------------------------ SEMESTRE ------------------------------------>
-					<div id="semestreDiv">
+					<!--<div id="semestreDiv">
 						<label>Sem:</label>
 						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
-					</div>
+					</div>-->
 					
 				</div>
 				<!-- TERMINA SEGUNDA SECCIÓN -->
