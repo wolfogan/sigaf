@@ -296,7 +296,7 @@
 
 					<div class="div_pe_tableContainer" class="pe_tableContainer">
 
-						<table id="tblUpdateSeriaciones" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+						<table id="tblUpdateSeriaciones" style="width:700px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 							<thead style="background:green">
 								<tr>
 									<th colspan="7">MATERIAS SERIADAS</th>
@@ -389,8 +389,8 @@
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 	</section>
 	<footer>
-			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
-			<div id="pie_tel">Teléfono: 664 188 9221</div>
+			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 
 	</footer>
 	<script type="text/javascript">
