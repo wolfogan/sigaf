@@ -481,15 +481,15 @@ background: #EFCA0D;
 }
 #pe_divs_modificar
 {
-	height: 30px;
+	margin-top: 50px;
+	height: 30px;	
 }
 .carreraDiv 
 {  
 	float:left;
 	height: 30px;
-	margin-top: 30px;
-	margin-left: 3px;
-	margin-right: 40px;
+	margin-right: 30px;
+	margin-bottom: 20px;
 	width: 210px;
 }
 /*.etapaDiv
@@ -501,9 +501,9 @@ background: #EFCA0D;
 }*/
 .pe_noPlan
 {
-	float:left;
-	height: 30px;
-	width: 210px;
+	float:right;
+	height: 25px;
+	width: 180px;
 }
 
 .pe_noPlan label
@@ -516,7 +516,7 @@ background: #EFCA0D;
 #pe_programasAsociados
 {
 	height: 15px;
-	width: 500px;
+	width: 900px;
 	font-size: 1.2em;
 	margin-left: 10px;
 	margin-top: 30px;
@@ -528,7 +528,7 @@ background: #EFCA0D;
 html>body div.tableContainer table {
 	
 	margin-top: -15px;
-	width: 700px;
+	width: 900px;
 }
 
 
@@ -590,7 +590,7 @@ html>body thead.fixedHeader th + th + th + th {
 }
 
 .sin-seriacion td{
-	width: 700px !important;
+	width: 900px !important;
 	cursor: pointer;
 }
 
@@ -617,13 +617,13 @@ html>body tbody.scrollContent td + td + td + td {
 {
 
 	margin: auto;
-	width: 650px;
+	width: 850px;
 }
 
 html>body div.pe_tableContainer table {
 	
 	margin-top: -15px;
-	width: 650px;
+	width: 850px;
 }
 /****************************************/
 
@@ -645,15 +645,16 @@ html>body div.pe_tableContainerMod table
 
 #pe_BtnseriacionAgregar
 {
-	margin-top: 30px;
+	margin-top: 40px;
 	float: right;
 }
 .pe_catalogos_tbl
 {
 	
-	width: 700px;
+	width: 900px;
 	height: 230px;
 	margin:auto;
+
 
 
 }

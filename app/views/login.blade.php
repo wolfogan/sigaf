@@ -84,8 +84,8 @@
         <?php echo HTML::script('js/login.js'); ?>
 
         <footer>
-            <div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
-            <div id="pie_tel">Teléfono: 664 188 9221</div>
+           <!-- <div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+            <div id="pie_tel">Teléfono: 664 188 9221</div>-->
         </footer>
 </body>
 </html>

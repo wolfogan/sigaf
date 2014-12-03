@@ -45,13 +45,14 @@
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:1000px; height:700px;" method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
 
-
+			<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
 			<div id="pe_divs_modificar">
 
-				<div class="carreraDiv">
+				<div class="carreraDiv" style="margin-left:20px;">
 					<label>Carrera:</label>
 					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
 				</div>
+
 				<div class="carreraDiv">
 					<label>Etapa:</label>
 					<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
@@ -63,19 +64,17 @@
 
 				<div class="carreraDiv">
 					<label>Tipo: </label>
-					<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
+					<select style="color:#000; width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
 						@foreach ($tiposCaracter as $caracter)
 							<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 						@endforeach
 					</select>
 				</div>
 
-				<div class="carreraDiv">
+				<div class="carreraDiv" style="width:150px;">
 					<label>Sem:</label>
-						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+						<input style="color:#000" class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 				</div>
-
-				<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
 
 			</div>
 
@@ -94,7 +93,7 @@
 							<tr class="fila-base-seriacion">
 								<td>Tipo:</td>
 								<td>
-									<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+									<select style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
 										@foreach($seriaciones as $seriacion)
 											<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 										@endforeach
@@ -106,7 +105,7 @@
 									<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
 								</td>
 								<td>
-									<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
+									<input style="width:350px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
 								</td>
 								
 								<td>
@@ -133,6 +132,8 @@
 							
 							<th>PROGR. EDUCATIVO</th>
 							<th>ETAPA</th>
+							<th>TIPO</th>
+							<th>SEMESTRE</th>
 							<th>SERIACIÓN</th>
 							<th>ELIMINAR</th>
 							<th style="display:none;">CODIGO</th>
@@ -174,7 +175,7 @@
 			</div>
 
 			<div class="div_pe_tableContainer" class="pe_tableContainer">
-				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+				<table border="0" style="width:700px;" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 					<thead style="background:green">
 						<tr>
 							<th colspan="7">MATERIAS ASOCIADAS</th>
@@ -678,8 +679,8 @@
 		<!------------------------ GRID PARA MOSTRAR UNIDADES DE APRENDIZAJE POR PLAN ------------------------>
 	</section>
 	<footer>
-			<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
-			<div id="pie_tel">Teléfono: 664 188 9221</div>
+			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
+			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 
 	</footer>
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
@@ -911,7 +912,7 @@
 						stringSeries = "SIN SERIACION";
 					else
 						stringSeries = series.join();
-					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>"+ stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + $(this).val() + "</td></tr>";
+					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() + stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + $(this).val() + "</td></tr>";
 					// Eliminar renglon en caso de actualizacion
 					var rowOld=$("#tblDetalleAsociacion tbody tr td:contains('"+$(this).text()+"')").parent();
 					if($(rowOld).length)
