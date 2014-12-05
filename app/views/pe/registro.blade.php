@@ -64,7 +64,7 @@
 
 				<div class="carreraDiv">
 					<label>Tipo: </label>
-					<select style="color:#000; width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
+					<select style="color:#000; width:143px; height:30px" class="con_estilo" name="caracter" id="asociar_caracter" size=1 type="text">
 						@foreach ($tiposCaracter as $caracter)
 							<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 						@endforeach
@@ -73,7 +73,7 @@
 
 				<div class="carreraDiv" style="width:150px;">
 					<label>Sem:</label>
-						<input style="color:#000" class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+						<input style="color:#000" class="estilo_numeric" type="number" name="semestre" id="asociar_semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 				</div>
 
 			</div>
@@ -171,7 +171,7 @@
 					</select>
 				</div>
 
-				<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
+				<div class="pe_noPlan">No. Plan:<label>0000-0</label></div>
 			</div>
 
 			<div class="div_pe_tableContainer" class="pe_tableContainer">
@@ -756,22 +756,12 @@
 			//var dataUA = $("#formularioPlanEstudio").serialize() +"&"+ $("#formSeriacion").serialize() + "&" + "users_id=" + USER_ID;
 			//console.log(dataUA);
 			//alert(dataUA);
-			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(data){
+			$.post("<?php echo URL::to('planestudio/registrarua'); ?>",dataUA,function(mensaje){
 				var noPlan=$("#noPlan").val();
 				var clave1F=$("#clave1F").val();
 				var materia=$("#materia").val();
-				//var carrera = "INFORMATICA";
-				var etapaF=$("#etapaF option:selected").html();
-				var tipoF=$("#tipoF option:selected").html();
-				//var clave2F=$("#clave2F").val();
-				//var materiaSeriada=$("#materiaSeriada").val();
-				var hc=$("#hc").val();
-				var hl=$("#hl").val();
-				var ht=$("#ht").val();
-				var coord=$("#datalist_coord option[value='"+$("#coord").val()+"']").attr("label");
-				var creditosF=$("#creditosF").val();
-				var tablaDatos= $("#tblUA");
-				alert(data);
+			
+				alert(mensaje);
 			
 				//reset_campos();
 				// Mostrar la ventan modal para el detalle
@@ -857,7 +847,7 @@
 							uas[i].descripcionmat,
 							(uas[i].siglas == null) ? "<span class='font-red'>NINGUNA</span>" : uas[i].siglas,
 							(uas[i].etapa == null) ? "<span class='font-red'>NINGUNA</span>" : uas[i].etapa,
-							uas[i].caracter,
+							(uas[i].caracter == null) ? "<span class='font-red'>NINGUNA</span>" : uas[i].caracter,
 							(uas[i].seriacion == null ) ? "SIN SERIACIÓN" : uas[i].seriacion,// Falta llenar las seriaciones
 							uas[i].coordinaciona,
 							uas[i].HC,
@@ -912,7 +902,7 @@
 						stringSeries = "SIN SERIACION";
 					else
 						stringSeries = series.join();
-					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() + stringSeries +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + $(this).val() + "</td></tr>";
+					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>" +$("#asociar_caracter option:selected").text()+"</td><td>"+$("#asociar_semestre").val()+"</td><td>"+stringSeries+"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;'>" + $(this).val() + "</td></tr>";
 					// Eliminar renglon en caso de actualizacion
 					var rowOld=$("#tblDetalleAsociacion tbody tr td:contains('"+$(this).text()+"')").parent();
 					if($(rowOld).length)
@@ -926,8 +916,10 @@
 					}
 				});
 				// Limpiar controles
-				desmarcar_carreras();
-				$("#asociar_etapa").val(1);
+				//desmarcar_carreras();
+				//$("#asociar_etapa").val(1);
+				//$("#asociar_caracter").val(1);
+				//$("#asociar_semestre").val(1);
 				$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
 				$(".sin-seriacion").show();
 
@@ -973,8 +965,9 @@
 		$("#materia").val("");
 		//$("#nivel").val("");
 		$("#carrera").val("");
-		$("#etapaF").val("1");
-		$("#tipoF").val("1");
+		$("#asociar_etapa").val("1");
+		$("#asociar_caracter").val("1");
+		$("#asociar_semestre").val("1");
 		//$("#materiaSeriada").val("");
 		//$("#serie").val("1");
 		//$("#clave2F").val("");
@@ -1362,7 +1355,7 @@
 								$('#clave1F').val(json.uaprendizaje);
 								$('#materia').val(json.descripcionmat);
 								//$('#etapaF').val(json.etapa);
-								$('#tipoF').val(json.caracter);
+								//$('#tipoF').val(json.caracter);
 								//$('#serie').val(json.reqseriacion);
 								//$('#clave2F').val(json.claveD);
 								//$('#materiaSeriada').val(json.materiaseriada);
@@ -1373,7 +1366,7 @@
 								$('#hpc').val(json.hpc);
 								$('#hcl').val(json.hcl);
 								$('#he').val(json.he);
-								$('#semestre').val(json.semestre_sug);
+								//$('#semestre').val(json.semestre_sug);
 								$('#creditosF').val(json.creditos);
 								$('#observaciones').val(json.observa);
 								// Cambiar funcionalidad
@@ -1394,7 +1387,7 @@
 									// Si no esta asociado, no mostrar renglon en vacio o nulo en la tabla detalle asociacion
 									if(json.series[i].programaedu!=null)
 									{
-										var rowDetail = "<tr><td>"+ json.series[i].descripcion +"</td><td>"+ json.series[i].etapa +"</td><td>"+((json.series[i].series == null) ? "SIN SERIACION" : json.series[i].series) +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + json.series[i].programaedu + "</td></tr>";
+										var rowDetail = "<tr><td>"+ json.series[i].descripcion +"</td><td>"+ json.series[i].etapa +"</td><td>"+json.series[i].caracter+"</td><td>"+json.series[i].semestre_sug+"</td><td>"+((json.series[i].series == null) ? "SIN SERIACION" : json.series[i].series) +"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;''>" + json.series[i].programaedu + "</td></tr>";
 										if(json.series[i].programaedu == programaedu)
 										{
 											//alert("si")

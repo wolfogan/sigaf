@@ -269,10 +269,8 @@ class PlanEstudioController extends BaseController
 			$UA -> HCL = Input::get('hcl');
 			$UA -> HE = Input::get('he');
 			$UA -> creditos = Input::get('creditosF');
-			$UA -> semestre_sug = Input::get('semestre');
 			$UA -> fec_aut = date('Y-m-d');
 			$UA -> observa = Input::get('observaciones');
-			$UA -> caracter = Input::get('tipoF');
 			$UA -> coordinaciona = Input::get('coord');
 			$UA -> users_id = $users_id;
 			$UA -> save();
@@ -296,6 +294,8 @@ class PlanEstudioController extends BaseController
 	{
 		$programas = Input::get("carreras");
 		$etapa = Input::get("etapa");
+		$caracter = Input::get("caracter");
+		$semestre = Input::get("semestre");
 		$ua = Input::get("ua");
 		$users_id = Input::get("users_id");
 		$seriacionTipos = Input::get("seriacion_tipo");
@@ -320,7 +320,7 @@ class PlanEstudioController extends BaseController
 			});
 
 			// Asociar
-			DB::table("p_ua")->insert(array("programaedu" => $programa,"uaprendizaje" => $ua,"etapa"=>$etapa,"users_id"=> $users_id));
+			DB::table("p_ua")->insert(array("programaedu" => $programa,"uaprendizaje" => $ua,"etapa"=>$etapa,"caracter"=>$caracter,"semestre_sug"=>$semestre,"users_id"=> $users_id));
 			// Insertar seriaciones por programa
 			if(isset($seriacionTipos))
 			{
@@ -423,16 +423,17 @@ class PlanEstudioController extends BaseController
 		//$uas = $plan->unidades;
 
 		$UAS = $sql = DB::table('p_ua')
-				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
-				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
-				->join('etapas','p_ua.etapa','=','etapas.etapa')
+				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT('(',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),')')) as seriacion"))
+				->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
+				->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
 				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
-				->join('caracter','uaprendizaje.caracter','=','caracter.caracter')
-				->join('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
+				->leftjoin('caracter','p_ua.caracter','=','caracter.caracter')
+				->leftjoin('coordinaciona','uaprendizaje.coordinaciona','=','coordinaciona.coordinaciona')
 				->leftjoin('detalleseriacion',function($join){
 						$join->on('detalleseriacion.uaprendizaje','=','p_ua.uaprendizaje')
 							->on('detalleseriacion.programaedu','=','p_ua.programaedu');
 						})
+				->leftjoin('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
 				->groupBy('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','etapa','coordinaciona')
 				->where('uaprendizaje.plan','=',$noplan)
 				->get();
@@ -628,10 +629,11 @@ class PlanEstudioController extends BaseController
 							->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 							->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 							->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
-							->join('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
-							->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT(\'(\',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),\')\')) as series'))
+							->leftjoin('caracter','p_ua.caracter','=','caracter.caracter')
+							->leftjoin('reqseriacion','detalleseriacion.reqseriacion','=','reqseriacion.reqseriacion')
+							->select('p_ua.programaedu','programaedu.descripcion','etapas.descripcion as etapa','caracter.descripcion as caracter','p_ua.semestre_sug','uaprendizaje.uaprendizaje',DB::raw('GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT(\'(\',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),\')\')) as series'))
 							->where('uaprendizaje.uaprendizaje','=',$uaid)
-							->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','uaprendizaje.uaprendizaje')
+							->groupBy('p_ua.programaedu','programaedu.descripcion','etapa','caracter','p_ua.semestre_sug','uaprendizaje.uaprendizaje')
 							->get();
 		}
 		else
@@ -663,7 +665,7 @@ class PlanEstudioController extends BaseController
 			'hpc'=>$ua->HPC,
 			'hcl'=>$ua->HCL,
 			'he'=>$ua->HE,
-			'semestre_sug'=>$ua->semestre_sug,
+			//'semestre_sug'=>$ua->semestre_sug,
 			'creditos'=>$ua->creditos,
 			//'programas'=>$programas,
 			'series'=> $programaSeries
@@ -703,9 +705,9 @@ class PlanEstudioController extends BaseController
 		$UA -> HE = Input::get('he');
 		$UA -> creditos = Input::get('creditosF');
 		//$UA -> fec_aut = date('Y-m-d');
-		$UA -> semestre_sug = Input::get('semestre');
+		//$UA -> semestre_sug = Input::get('semestre');
 		$UA -> observa = Input::get('observaciones');
-		$UA -> caracter = Input::get('tipoF');
+		//$UA -> caracter = Input::get('tipoF');
 		//$UA -> reqseriacion = Input::get('serie');
 		//$UA -> claveD = Input::get('clave2F');
 		//$UA -> etapa = Input::get('etapaF');
@@ -715,16 +717,19 @@ class PlanEstudioController extends BaseController
 		// VALIDAR ACTUALIZACION EN LA CONSULTA
 		$programa = Input::get("programaedu");
 		$etapa = Input::get("etapaF");
+		$caracter = Input::get("tipoF");
+		$semestre = Input::get("semestre_sug");
 		$users_id = Input::get("users_id");
+		
 		if(isset($programa))
 		{
 			// Transacción por seguridad
-			DB::transaction(function() use ($clave,$programa,$etapa,$users_id){
+			DB::transaction(function() use ($clave,$programa,$etapa,$caracter,$semestre,$users_id){
 				// Actualización en la etapa
 				DB::table('p_ua')
 					->where('programaedu',$programa)
 					->where('uaprendizaje',$clave)
-					->update(array("etapa" => $etapa));
+					->update(array("etapa" => $etapa,"caracter"=>$caracter,"semestre_sug"=>$semestre));
 
 				// Actualización en las seriaciones
 				// Borrar las uas seriadas

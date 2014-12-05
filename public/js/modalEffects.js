@@ -24,6 +24,9 @@ var ModalEffects = (function() {
 					
 				}
 				// Optimizar esta parte con una bandera de actualizacion
+				if($("#limpiar").val()=="Cancelar")
+					$("#limpiar").click();
+				
 				ActualizarUAS($("#noPlan").val());
 			}
 
