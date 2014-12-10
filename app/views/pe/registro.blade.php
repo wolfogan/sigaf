@@ -644,6 +644,63 @@
 	<script src="../js/modalEffects.js"></script>
 	<script type="text/javascript">
 
+	function activarModal()
+	{
+		var overlay = document.querySelector( '.md-overlay' );
+
+		[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i )
+		{
+
+			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+				close = modal.querySelector( '.md-close' );
+
+			function removeModal( hasPerspective ) {
+				classie.remove( modal, 'md-show' );
+
+				if( hasPerspective ) {
+					classie.remove( document.documentElement, 'md-perspective' );
+				}
+				// Si es guardar limpiar campos
+				if($("#guardar").val()=="Guardar")
+				{
+					reset_campos();
+				}
+				else{
+					
+				}
+				// Optimizar esta parte con una bandera de actualizacion
+				if($("#limpiar").val()=="Cancelar")
+					$("#limpiar").click();
+				
+				//ActualizarUAS($("#noPlan").val());
+			}
+
+			function removeModalHandler() {
+				// Condicion de los rows
+				//if($("#select_carreras").val()==null)
+				//	return;
+				removeModal( classie.has( el, 'md-setperspective' ) ); 
+			}
+
+			el.addEventListener( 'click', function( ev ) {
+				classie.add( modal, 'md-show' );
+				overlay.removeEventListener( 'click', removeModalHandler );
+				overlay.addEventListener( 'click', removeModalHandler );
+
+				if( classie.has( el, 'md-setperspective' ) ) {
+					setTimeout( function() {
+						classie.add( document.documentElement, 'md-perspective' );
+					}, 25 );
+				}
+			});
+
+			close.addEventListener( 'click', function( ev ) {
+				ev.stopPropagation();
+				removeModalHandler();
+			});
+		});
+	}
+
 	function registrarPlanEstudios(formPlan)
 	{
 		console.log(formPlan);
@@ -810,11 +867,11 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
-							"<input type='button' class='clsModificarFila' value='' data-modal='add_seriacion'/>",
+							"<input type='button' class='md-trigger clsModificarFila' value='' data-modal='seriacion_independiente'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
-			
+			activarModal();
 		})
 		.fail(function(errorText,textError,errorThrow){
 			alert(errorText.responseText);
@@ -1504,7 +1561,10 @@
 					}
 				});
 			}
-
+		});
+		// CARGAR DATOS PARA MODIFICAR INDIVIDUALMENTE
+		$("#tblUA").on("click",".clsModificarFila",function(){
+			
 		});
 	});
 	</script>
