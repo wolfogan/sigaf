@@ -121,10 +121,11 @@
 						
 								<div class="dd_colonia_calle_int_ext_cp">
 									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
-			                		<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
 									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
-									<div id="dd_cp">C.P.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
+			                		<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
 									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text" placeholder="PLAYAS DE TIJUANA"/></div>
+									<div id="dd_cp">C.P.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
+									
 								
 								
 									<div id="dd_pais_estado_ciudad_otro">
@@ -167,10 +168,10 @@
 									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text" placeholder="(664) 686 5679"/></div>
 									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
 									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
-									<div id="dd_correo">Email:<input class="dd_con_estilo" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
+									<div id="dd_correo">Correo UABC:<input class="dd_con_estilo" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
 								</div>
 
-								<div id="dd_correoA">Email alt.:<input class="dd_con_estilo" style="margin-left:5px;" type="text"/></div>
+								<div id="dd_correoA">Correo:<input class="dd_con_estilo" style="margin-left:5px;" type="text"/></div>
 							</div>
 
 								<br>

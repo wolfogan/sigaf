@@ -126,7 +126,7 @@
 							</select>
 						</div>
 						<!------------------------ TIPOS DE SERIACION ------------------------>
-						<div id="consul_serie">
+						<!--<div id="consul_serie">
 							<label>Seriación: </label>
 							<select class="con_estilo" name="seriacion" id="seriacion" size="1">
 								<option value="0">TODAS</option>
@@ -134,11 +134,11 @@
 									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 								@endforeach
 							</select>
-						</div>
+						</div>-->
 						<!------------------------ COORDINACIONES ------------------------>
 						<div id="consul_coor">
 							<label>Coord: </label>
-							<input type="text" id="coordinacion" style="width:150px" size=1 list="datalist_coord">
+							<input type="text" id="coordinacion" style="width:120px" size=1 list="datalist_coord">
 							<datalist id="datalist_coord">
 								@foreach ($coordinaciones as $coordinacion)
 									<option value="{{$coordinacion->descripcion}}" codigo="{{$coordinacion->coordinaciona}}">
@@ -147,7 +147,7 @@
 						</div>
 						<!---------------------- CHECK DE TRONCO COMUN ---------------------->
 						<div id="checkTroncoComun">
-							<input style="width:18px; height:18px;" type="checkbox" name="troncoComun" id="troncoComun"><label style="font-size:18px;">Tronco común</label>
+							<input style="width:18px; height:18px;" type="checkbox" checked name="troncoComun" id="troncoComun"><label style="font-size:18px;">Tronco común</label>
 						</div>
 					</div>
 				</fieldset>

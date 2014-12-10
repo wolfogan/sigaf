@@ -23,6 +23,7 @@ margin: auto;
 }
 #unidadaprendizaje
 {
+	
 	width: 1200px;
   	margin: auto;
 }
@@ -96,38 +97,33 @@ section:hover
 section #primerBloque
 {
 	
-	
 	padding-top: 40px;
 	height: 40px;
-	width: 1250px;
+	width: 1220px;
 	margin: auto;
 }
 section #segundoBloque
 {
-	
-	padding-top: 40px;
-	padding-left:10px;
+
+	margin: 20px 0 0 30px;
 	height: 50px;
-	width: 1250px;
-	margin:auto;
+	width: 750px;
+
 }
 section #tercerBloque
 {
-	
+
 	height: 40px;
 	width: 250px;
+	margin-top: -30px;
 	float: left;
-	margin-left: 20px;
-	margin-top: 20px;
+
 }
 section #cuartoBloque
 {
-	
-	
-	float: left;
-	margin-top: 20px;
-	margin-left: 15px;
-	height: 125px;
+
+	margin-left: 700px;
+	height: 105px;
 	width: 430px;
 	
 }
@@ -259,9 +255,8 @@ background: #EFCA0D;
 }
 #botones
 {
-
-	
-	float: right;
+	/*float: right;*/
+	margin-left: 800px;
 	width: 360px;
 }
 #cimarron
@@ -725,11 +720,11 @@ html>body div.pe_tableContainerMod table
 	margin-left:233px;
 	margin-top:-30px;
 }
-#consul_serie
+/*#consul_serie
 {
 	margin-left:415px;
 	margin-top:-30px;
-}
+}*/
 #coordinacion
 {
 	text-transform:uppercase;
@@ -740,7 +735,7 @@ html>body div.pe_tableContainerMod table
 }
 #consul_coor
 {
-	margin-left:640px;
+	margin-left:435px;
 	margin-top:-30px;
 }
 #elimImg
@@ -756,18 +751,18 @@ html>body div.pe_tableContainerMod table
 	
 	width: 240px;
 	float: left;
-	margin-left: 10px;
+	margin-left: 40px;
 	padding-right:7px;
 }
 #unidadAcademicaDiv
 {
+	
 	text-align: center;
 	width: 300px;
 	float: left;
 	margin-top:5px;
-	margin-left: -12px;	
-	padding-left: 20px;
-	padding-right: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
 	
 }
 /*#campusDiv
@@ -781,17 +776,19 @@ html>body div.pe_tableContainerMod table
 }*/
 #unidadDiv
 {
+	
 	text-align: center;
 	width: 300px;
 	float: left;
 	margin-top: 5px;
-	padding-left: 15px;
-	padding-right: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #nivelDiv
 { 
+	
 	text-align: center;
-	width: 300px;
+	width: 280px;
 	float: left;
 	padding-top: 5px;
 }
@@ -805,8 +802,8 @@ html>body div.pe_tableContainerMod table
 }*/
 #claveDiv
 {
-	width: 215px;
-	padding-left: 15px;
+	
+	width: 250px;
 	float: left;
 }
 #materiaDiv
@@ -814,7 +811,7 @@ html>body div.pe_tableContainerMod table
 	
 	width: 450px;
 	float: left;
-	padding-left: 20px;
+	padding-left: 0px;
 }
 
 /*#tipoDiv
@@ -856,7 +853,7 @@ html>body div.pe_tableContainerMod table
 #coordDiv
 {
 	width: 245px;
-	float: left;
+	
 	
 }
 #hcDiv
@@ -920,11 +917,11 @@ html>body div.pe_tableContainerMod table
 #observacionesDiv
 {
 	
-	padding-left:40px;
+	margin-left:60px;
+	margin-top: -50px;
 	float: left;
 	margin-bottom: 15px;
-	margin-top: 10px;
-	width: 500px;
+	width: 390px;
 	
 	
 	
@@ -943,7 +940,7 @@ html>body div.pe_tableContainerMod table
 {
 	
 	width: 150px;
-	margin-left: 855px;
+	margin-left: 630px;
 	margin-top: -25px;
 	
 }
