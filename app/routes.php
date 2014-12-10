@@ -63,7 +63,7 @@ Route::get('pruebas',function(){
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 
-	$sql = DB::table('p_ua')
+	/*$sql = DB::table('p_ua')
 				->join('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 				->join('etapas','p_ua.etapa','=','etapas.etapa')
 				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
@@ -91,6 +91,11 @@ Route::get('pruebas',function(){
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",20141)
 						->where("grupos.programaedu","=",3)
-						->toSql();
-	return $OTRO;
+						->toSql();*/
+	$datapua = DB::table('p_ua')
+					->select('caracter','semestre_sug')
+					->where('uaprendizaje','=',11236)
+					->where('programaedu','=',1)
+					->first();
+	return $datapua->caracter;
 });
