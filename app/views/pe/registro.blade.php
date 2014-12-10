@@ -436,7 +436,7 @@
 				<!------------------------------------ NO. PLAN -------------------------------------->
 				<div id="noPlanDiv">
 					<label>No.Plan:</label>
-					<select class="con_estilo" type="text" name="noPlan" id="noPlan" required>
+					<select style="width:141px;" class="con_estilo" type="text" name="noPlan" id="noPlan" required>
 						@foreach ($codigosPE as $codigo)
 							<option value="{{$codigo['codigo']}}">{{$codigo['formato']}}</option>
 						@endforeach
@@ -445,18 +445,7 @@
 					<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
 					<!-- LLAMADA MODAL NRO. PLAN -->
 				</div>
-				<!------------------------------------ CAMPUS ------------------------------------>
-				<!--<div id="campusDiv">
-						<label>Campus: </label>
-						<label style="color:#ECA22E">{{Auth::user()->campus}}</label>
-					</div>-->
-
-				<!------------------------------------ PROGRAMA EDUCATIVO -------------------------------------->
-				<!--<div id="carreraDiv">
-					<label>Carrera:</label>
-					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
-					
-				</div>-->
+				
 				<!------------------------------------ UNIDAD ------------------------------------>
 				<div id="unidadDiv">
 					<label>Unidad: </label>
@@ -488,7 +477,7 @@
 					<!------------------------------------ CLAVE UA ------------------------------------>
 					<div id="claveDiv">
 						 &nbsp;<label>Clave: </label>
-						<input class="estilo_text" style="width:120px;" onKeyPress="ValidaSoloNumeros()" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
+						<input class="estilo_text" style="width:143px; margin-left:10px;" onKeyPress="ValidaSoloNumeros()" type="text" name="clave1F" id="clave1F" autocomplete="off" title="Por favor, inserte el número de clave de la materia" required/>
 						<input type="button" value="-" title='Eliminar' class="clsEliminarFila" id="eliminar"/>
 						<br />
 						<input type="checkbox" id="generarClave" name="generarClave" value="Generar">Generar clave
@@ -498,43 +487,9 @@
 						<label>Materia: </label>
 						<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1" title="Es necesario una descripción de la unidad de aprendizaje" required/>
 					</div>
-					<!-------------------------------------- ETAPA -------------------------------------->
-					<!--<div id="etapaDiv">
-						<label>Etapa: </label>
-						<select style="width:143px; height:30px" class="con_estilo" name="etapaF" id="etapaF" size=1 type="text" required>
-							@foreach ($etapas as $etapa)
-								<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
-							@endforeach
-						</select>-->
-						<!-- LLAMADA MODAL ETAPA -->
-							<!--<input class="md-trigger" data-modal="etapa" type="button" value="+">-->
-						<!-- LLAMADA MODAL ETAPA -->
-					<!--</div>-->
-					<!---------------------------------- TIPO CARACTER ---------------------------------->
-					<!--<div id="tipoDiv">
-						<label>Tipo: </label>
-						<select style="width:143px; height:30px" class="con_estilo" name="tipoF" id="tipoF" size=1 type="text" required>
-							@foreach ($tiposCaracter as $caracter)
-								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
-							@endforeach
-						</select>-->
-						<!-- LLAMADA MODAL TIPO CARACTER -->
-							<!--<input class="md-trigger" data-modal="tipo" type="button" value="+">-->
-						<!-- LLAMADA MODAL TIPO CARACTER -->
-					<!--</div>-->
-					<!---------------------------------------------------------------------------------->
 
-					<!------------------------------------ SEMESTRE ------------------------------------>
-					<!--<div id="semestreDiv">
-						<label>Sem:</label>
-						<input class="estilo_numeric" type="number" name="semestre" id="semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
-					</div>-->
-					
-				</div>
-				<!-- TERMINA SEGUNDA SECCIÓN -->
-				
-				
-				<!-- TERMINAR TERCER SECCIÓN -->
+
+					<!-- TERMINAR TERCER SECCIÓN -->
 				<!------------------------------------ HORAS ------------------------------------>
 				<!-- INICIA CUARTA SECCIÓN -->
 				<div id="cuartoBloque">
@@ -576,13 +531,14 @@
 
 					
 				</div>
-
+				<!-- TERMINA SEGUNDA SECCIÓN -->
+				
 				<!-- INICIA TERCER SECCIÓN -->
 				<div id="tercerBloque">
 
 					<!---------------------------------- COORDINACION ---------------------------------->
 					<div id="coordDiv">
-						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
+						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase; margin-left:10px;" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
 						<datalist id="datalist_coord" name="c">
 							@foreach ($coordinaciones as $coordinacion)
 								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
@@ -594,12 +550,12 @@
 					</div>
 					<!---------------------------------------------------------------------------------->
 				</div>
-				<!-- TERMINA CUARTA SECCIÓN -->
+				<!-- TERMINA TERCERA SECCIÓN -->
 
 				<!------------------------------------ OBSERVACIONES ------------------------------------>
 					<div id="observacionesDiv">
-						<label>Observaciones:</label><br>
-						<textarea rows=3 cols="60" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
+						<label></label><br>
+						<textarea rows=3 cols="46" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
