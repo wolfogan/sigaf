@@ -157,22 +157,76 @@
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
 			
-			<div id="pe_divs_modificar" style="margin-top:20px;">
-				<div class="carreraDiv">
-					Carrera:<label style="margin-left:10px;">INFORMÁTICA</label>		
-				</div>
-
-				<div class="carreraDiv">
-					<label>Etapa:</label>
-					<select class="dd_estilo_combo" style="color:#000; height:32px;" id="asociar_etapa" name="etapa">
-						@foreach($etapas as $etapa)
-							<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
-						@endforeach
-					</select>
-				</div>
-
+			
 				<div class="pe_noPlan">No. Plan:<label>0000-0</label></div>
-			</div>
+			<table cellpadding="5" id="tablita2" style="width:650px;">
+						<tr>
+							<td>Carrera:</td>
+							<td>
+								<label id="carrera_update">PROGRAMA EDUCATIVO</label>
+								<input type="hidden" id="programa" name="programaedu" />
+							</td>
+							<td>Semestre:</td>
+							<td>
+								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9">
+							</td>
+						</tr>
+						<tr>
+							<td width="95">Clave:</td>
+							<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+							<td>Materia:</td>
+							<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
+						</tr>
+						
+						<tr>
+							<td>Etapa:</td>
+							<td>
+								<select class="con_estilo" name="etapaF" id="etapa_update">
+									@foreach ($etapas as $etapa)
+										<option value="{{$etapa->etapa}}">{{$etapa->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+							<td>Tipo:</td>
+							<td>
+								<select class="con_estilo" style="width:183px;" name="tipoF" id="tipo_update" size=1>
+									@foreach ($tiposCaracter as $tipo)
+										<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
+									@endforeach
+								</select>
+							</td>
+						</tr>
+					
+						<tr>
+							<td size="10">HC:</td>
+							<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HL:</td>
+							<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						
+						<tr>
+							<td size="10">HT:</td>
+							<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HE:</td>
+							<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						
+						<tr>
+							<td size="10">HPC:</td>
+							<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+							<td size="10">HCL:</td>
+							<td><input class="estilo_numeric" type="number" name="hcl" id="hcl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
+						</tr>
+						<tr>
+							<td>Cred.:</td>
+							<td><input class="estilo_numeric" type="number" name="creditosF" id="creditos_update" onkeypress="ValidaSoloNumeros()" >
+							<td>Coord.:</td>
+							<td>
+								<input class="con_estilo" type="text" id="coordinacion_update" name="coordinacion_update" style="width:180px" size="1" list="datalist_coord" />
+								<input type="hidden" name="coord" id="coord" />
+							</td>
+						</tr>
+					</table>
 
 			<div class="div_pe_tableContainer" class="pe_tableContainer">
 				<table border="0" style="width:700px;" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
