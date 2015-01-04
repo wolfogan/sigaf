@@ -9,11 +9,8 @@
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/estilo_tabs.css" />
 
-	
-
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
-
 
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
@@ -87,120 +84,105 @@
 							<h2>Datos personales</h2>
 
 							<form id="dd_datosPersonales" method="post" action="http://titan:8080/form">
-		                      	
-			                        
-
+		                      
 								<div class="dd_divDecoracion">	
+									<div id="dd_fotoDoc"></div>
 
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
 										<div id="dd_noEmpleado">No. empleado:<label class="dd_label" style="margin-left:15px;">20829</label></div>
-										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:13px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"></div>
+										<div class="dd_datosPersonales">Período:<input style="margin-left:55px;" class="dd_con_estilo_largo" type="text" placeholder="2014-2015" /></div>
+										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"></div>
 										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="CASTILLEJOS" /></div>
 										<div class="dd_datosPersonales">A. materno:<input style="margin-left:27px;" class="dd_con_estilo_largo" type="text" placeholder="CABALLERO"/></div>
 										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:32px;" class="dd_con_estilo_largo" id="txtnombres" type="text" placeholder="EMMA SOFIA"/></div>
 
 										<div class="dd_datosPersonales" >
 											Sexo:
-											<select class="dd_estilo_combo" style="margin-left:70px; margin-bottom:0px; width:252px;">
+											<select class="dd_estilo_combo" style="margin-left:75px; margin-bottom:0px; width:252px;">
 												 <option value="FEMENINO">FEMENINO</option>
 												 <option value="MASCULINO">MASCULINO</option>
 											</select>
 										</div>
 
 									</div>
-										<div id="dd_fotoDoc"></div>
-
-								</div>
-								
-
-									<br>
-								
-									
-							<h2>Dirección</h2>
-
-						
-								<div class="dd_colonia_calle_int_ext_cp">
-									<div id="dd_calle">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
-									<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
-			                		<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									<div id="dd_colonia">Colonia:<input class="dd_con_estilo" id="txtcolonia"type="text" placeholder="PLAYAS DE TIJUANA"/></div>
-									<div id="dd_cp">C.P.:<input class="dd_con_estilo_corto" style="margin-left:2px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-									
-								
-								
-									<div id="dd_pais_estado_ciudad_otro">
-										<div id="dd_pais" >País:
-												<select class="dd_con_estilo" style="margin-left:28px;">
-													 <option value="MEXICO">MEXICO</option>
-													 <option value="USA">USA</option>
-												</select>
-										</div>
-
-										<div id="dd_estado">Estado:
-											<select class="dd_con_estilo">
-													 <option value="BAJA CALIFORNIA">BAJA CALIFORNIA</option>
-													 <option value="SONORA">SONORA</option>
-												</select>
-										</div>
-
-										<div id="dd_ciudad">Ciudad:
-											<select class="dd_con_estilo">
-													 <option value="TIJUANA">TIJUANA</option>
-													 <option value="GUAYMAS">GUAYMAS</option>
-												</select>
-										</div>
-
-										<div id="dd_otro">Observaciones:<input class="dd_con_estilo" type="text" id="text_dd_otro" placeholder="NINGUNA"></div>
-									</div>
 								</div>
 
-								
+								 <h2>Dirección y teléfonos</h2>
 
-								
-								<br>
-								<br>
-						
-				  
-		                    <h2>Teléfonos</h2>
+									<div class="dd_colonia_calle_int_ext_cp">
+										<div class="dd_datosPersonales">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
+										<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:10px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
+					                	<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:15px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
+										<div class="dd_datosPersonales">Colonia:<input class="dd_con_estilo_largo" style="margin-left:15px;" id="txtcolonia"type="text" placeholder="PLAYAS DE TIJUANA"/></div>
+										<div class="dd_datosPersonales">C.P.:<input class="dd_con_estilo_corto" style="margin-left:44px;" id="txtcp" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
 
-		                    <div class="dd_divDecoracionTelefonos">
-			                    <div id="dd_telefonos_correo">
-									<div id="dd_telOficina">Oficina:<input class="dd_con_estilo" style="margin-left:18px;" type="text" placeholder="(664) 686 5679"/></div>
-									<div id="dd_telParticular">Particular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
-									<div id="dd_celular">Celular:<input class="dd_con_estilo" type="text" placeholder="(664) 188 9221"/></div>
-									<div id="dd_correo">Correo UABC:<input class="dd_con_estilo" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
-								</div>
+											
+										<div class="dd_datosPersonales" >País:
+											<select class="dd_con_estilo_largo" style="margin-left:40px;">
+												 <option value="MEXICO">MEXICO</option>
+												 <option value="USA">USA</option>
+											</select>
+										</div>
 
-								<div id="dd_correoA">Correo:<input class="dd_con_estilo" style="margin-left:5px;" type="text"/></div>
-							</div>
+										<div class="dd_datosPersonales">Estado:
+											<select class="dd_con_estilo_largo" style="margin-left:18px;">
+												<option value="BAJA CALIFORNIA">BAJA CALIFORNIA</option>
+												<option value="SONORA">SONORA</option>
+											</select>
+										</div>
 
-								<br>
-								<br>
-								
-
-							<h2>Trabajo fuera de UABC</h2>
-
-		                   		<div id="dd_trabajoFuera_puesto_antiguedad">
-		                   			<div class="dd_otroEmpleo">RFC:<label class="dd_label">CACE7210142V1</label></div>
-
-									<div class="dd_otroEmpleo">Nombre de la empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text" placeholder="LABOPAT"/></div>
-									
-									<div class="dd_otroEmpleo">Puesto:
-										<select style="margin-left:117px; width:252px;" class="dd_con_estilo_largo">
-											<option>GERENTE GENERAL</option>
-											<option>DIRECTOR</option>
-											<option>SUBDIRECTOR</option>
-											<option>COORDINADOR</option>
-										</select>
+										<div class="dd_datosPersonales">Ciudad:
+											<select class="dd_con_estilo_largo" style="margin-left:16px;">
+												<option value="TIJUANA">TIJUANA</option>
+												<option value="GUAYMAS">GUAYMAS</option>
+											</select>
+										</div>
+		
 									</div>
 
-									<div class="dd_otroEmpleo">Fecha de ingreso:<input class="dd_con_estilo_largo" style="margin-left:50px;" type="date"/></div>
-									<div class="dd_otroEmpleo">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:91px; width:250px;" type="text" placeholder="5 AÑOS"/></div>
-								</div>
+									 <div class="dd_divDecoracionTelefonos">
+										<div class="dd_datosPersonales">Oficina:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text" placeholder="(664) 686 5679"/></div>
+										<div class="dd_datosPersonales">Particular:<input class="dd_con_estilo_largo" style="margin-left:38px;" type="text" placeholder="(664) 188 9221"/></div>
+										<div class="dd_datosPersonales">Celular:<input class="dd_con_estilo_largo" style="margin-left:60px;" type="text" placeholder="(664) 188 9221"/></div>
+										<div class="dd_datosPersonales">Correo UABC:<input class="dd_con_estilo_largo" style="margin-left:12px;" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
+										<div class="dd_datosPersonales">Correo:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text"/></div>
 
-		                        <div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
+										<div id="dd_otro">
+											<label></label>
+											<textarea rows=3 cols="36" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="dd_observaciones" name="dd_observaciones" placeholder="Observaciones"></textarea>
+										</div>
+									</div>
+
+								<h2 style="margin-top:400px;">Trabajo fuera de UABC</h2>
+				                   		<div id="dd_trabajoFuera_puesto">
+
+				                   			<div class="dd_datosPersonales">RFC:<label class="dd_label" style="margin-left:50px;">CACE7210142V1</label></div>
+											<div class="dd_datosPersonales">Empresa:<input class="dd_con_estilo_largo" style="margin-left:10px;" type="text" placeholder="LABOPAT"/></div>
+											
+
+											<div class="dd_datosPersonales">Puesto:
+												<select style="margin-left:20px; width:252px;" class="dd_con_estilo_largo">
+													<option>GERENTE GENERAL</option>
+													<option>DIRECTOR</option>
+													<option>SUBDIRECTOR</option>
+													<option>COORDINADOR</option>
+												</select>
+											</div>
+
+										</div>
+										<div id="dd_ingreso_antiguedad">
+
+
+											<div class="dd_datosPersonales" style="margin-top:40px;">Fecha de ingreso:<input class="dd_con_estilo" style="margin-left:10px; width:215px" type="date"/></div>
+											<div class="dd_datosPersonales">Antigüedad:<input class="dd_con_estilo" disabled="false" style="margin-left:60px; width:215px;" type="text" placeholder="5 AÑOS"/></div>
+
+										</div>
+
+
+				                        <!--<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>-->
 
 		                        <!--<button id="submit" type="submit">Submit Form</button>-->
+		                    </form>
 						</div>
 
 				<!------------------- CONTENIDO SEGUNDO TAB ---------------------------->
@@ -614,6 +596,12 @@
 									</tbody>
 								</table>
 							</div>
+
+							<div id="dd_observaciones_materias">
+								<label>Comentarios:</label>
+								<textarea rows=3 style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" placeholder="Comentarios"></textarea>
+							</div>
+
 							<br>
 							<br>
 
@@ -630,6 +618,7 @@
 											<th style="width:100px;">MIERCOLES</th>
 											<th style="width:100px;">JUEVES</th>
 											<th style="width:100px;">VIERNES</th>
+											<th style="width:100px;">SÁBADO</th>
 											
 										</tr>
 									</thead>
@@ -642,10 +631,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-											
-
-
-
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 										</tr>
 										<tr>
 											<td>8:00 - 9:00</td>
@@ -655,9 +641,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-											
-						
-
+											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 										</tr>
 										<tr>
 											<td>9:00 - 10:00</td>
@@ -665,10 +649,8 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
+											<td><label></label></td>
 											<td><label></label></td>		
-											
-						
-
 										</tr>
 										<tr>
 											<td>10:00 - 11:00</td>
@@ -677,8 +659,7 @@
 											<td><label></label></td>		
 											<td><label></label></td>
 											<td><label></label></td>
-											
-						
+											<td><label></label></td>
 										</tr>
 										<tr>
 											<td>11:00 - 12:00</td>
@@ -687,8 +668,7 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											
-						
+											<td><label></label></td>
 										</tr>
 										<tr>
 											<td>12:00 - 13:00</td>
@@ -697,8 +677,7 @@
 											<td><label></label></td>
 											<td><label></label></td>		
 											<td><label></label></td>
-											
-						
+											<td><label></label></td>
 										</tr>
 										<tr>
 											<td>13:00 - 14:00</td>
@@ -707,13 +686,13 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
-											
-						
+											<td><label></label></td>
 										</tr>
 										<tr>
 											<td>14:00 - 15:00</td>
 											<td><label></label></td>	
 											<td><label></label></td>		
+											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -723,6 +702,7 @@
 										<tr>
 											<td>15:00 - 16:00</td>
 											<td><label></label></td>	
+											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
@@ -737,6 +717,7 @@
 											<td><label></label></td>
 											<td><label></label></td>
 											<td><label></label></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -747,6 +728,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -757,6 +739,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -767,6 +750,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -777,6 +761,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -787,6 +772,7 @@
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
 											<td><label></label></td>
 											<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+											<td><label></label></td>
 											
 						
 										</tr>
@@ -794,7 +780,7 @@
 									
 									</tbody>
 								</table>
-								<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
+								<!--<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>-->
 							</div>
 
 
