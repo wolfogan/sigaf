@@ -1850,6 +1850,25 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+#dd_observaciones_materias
+{
+	font-size: 18px;
+	margin-left: 175px;
+	margin-top: 20px;
+	width: 500px;
+}
+
+#dd_consulta_NoEmpleado
+{
+	
+	font-size: 20px;
+	float: right;
+}
+#dd_consulta_NoEmpleado label
+{
+	color:green;
+}
+
 .dd_con_estilo_largo_tabla
 {
 	font-size: 14px;
@@ -1906,14 +1925,6 @@ input[readonly],input[readonly="readonly"]
 }
 
 
-/*#dd_noEmpleado_fechaIngreso
-{
-	
-	
-	font-size: 18px;
-	width: 550px;
-}*/
-
 #dd_noEmpleado
 {
 
@@ -1928,13 +1939,25 @@ input[readonly],input[readonly="readonly"]
 	padding-right: 10px;
 	width: 380px;
 }
+#dd_fotoDoc
+{
+	background: green;
+	background-image: url(../imagenes/docente.png);
+	float: left;
+	
+	margin: 30px 0px 0px 80px;
+	border: 3px solid green;
+	height: 250px;
+	width: 217px;
+}
 
 #dd_aPaterno_aMaterno_nombres_sexo
 {
 	
-	margin-left: 15px;
-	margin-top: 10px;
-	width: 400px;
+	float: left;
+	margin-left: 90px;
+	padding: 20px;
+	width: 380px;
 }
 .dd_datosPersonales
 {
@@ -1944,13 +1967,7 @@ input[readonly],input[readonly="readonly"]
 	padding-right: 10px;
 	width: 400px;
 }
-.dd_otroEmpleo
-{
 
-	padding-bottom: 20px;
-	padding-right: 10px;
-	width: 500px;
-}
 
 #dd_foto
 {
@@ -1985,138 +2002,74 @@ input[readonly],input[readonly="readonly"]
 	width: 200px;
 }
 
-#dd_calle
-{
-	
-	float: left;
-	padding-right: 5px;
-	width: 380px;
-
-}
 .dd_colonia_calle_int_ext_cp
 {
 
-	background: #fff;
-	/*border-radius: 7px;
-	border:3px solid #ECECFB;*/
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
-	height: 130px;
-	margin-left: 20px;
-	padding-left: 15px;
-	padding-top:20px;
-	width: 1150px;
+	float: left;
+	height: 318px;
+	font-size: 18px;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
+	margin-left:190px;
+	padding:20px;
+	width: 350px;
 	
 
 }
+
 .dd_divDecoracionTelefonos
 {
-	background: #fff;
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
-	/*border-radius: 7px;
-	border:3px solid #ECECFB;*/
-	margin-left: 20px;
-	padding-left: 15px;
-	padding-top:10px;
-	padding-bottom: 20px;
-	height: 130px;
-	width: 1150px;
+	
+	font-size: 18px;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
+	float: left;
+	padding:20px;
+	width: 380px;
 
 }
 
 #dd_int
 {
-	
 	float: left;
-	padding-right: 24px;
-	width: 140px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	width: 165px;
 
 }
 #dd_ext
 {
-	
 	float: left;
-	padding-right: 24px;
-	width: 140px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	width: 165px;
 
 }
-#dd_cp
-{
-	
-	float: left;
-	padding-right: 24px;
-	width: 120px;
 
-}
-#dd_colonia
+#dd_trabajoFuera_puesto
 {
 	
 	float: left;
-	width: 250px;
-
+	font-size: 18px;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
+	padding: 20px;
+	margin-left:190px;
+	width: 350px;
 }
-#dd_telefonos_correo
-{
-	margin-top: 20px;
-}
 
-#dd_telOficina
+#dd_ingreso_antiguedad
 {
-	
-	padding-right: 40px;
+
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
 	float: left;
-}
-#dd_telParticular
-{
-	
-	float: left;
-	padding-right: 40px;
-
-}
-#dd_celular
-{
-	
-	float: left;
-	padding-right: 40px;
-
-}
-#dd_correo
-{
-	
-	float: left;
-
-}
-#dd_correoA
-{
-	
-	margin-top: 100px;
+	font-size: 18px;
+	height: 135px;
+	padding: 20px;
+	width: 380px;
 }
 
-#dd_trabajoFuera_puesto_antiguedad
-{
-	background: #fff;
-	height: 230px;
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
-	/*border-radius: 7px;
-	border:3px solid #ECECFB;*/
-	padding-top: 20px;
-	padding-left: 40px;
-	padding-bottom: 10px;
-	margin:auto;
-	width: 700px;
-}
-/*.dd_rfc
-{
-	
-	float: right;
-	font-size: 20px;
-	color: #000;
-	padding-right: 25px;
-	margin-top: 10px;
-
-}*/
 #dd_trabajoFuera
 {
 	
@@ -2211,7 +2164,7 @@ input[readonly],input[readonly="readonly"]
 {
 	
 	float: right;
-	margin-top: 20px;
+	margin-top: 200px;
 }
 #dd_impartirMaterias
 {
@@ -2319,30 +2272,11 @@ input[readonly],input[readonly="readonly"]
 	border:1px solid gray;
 }
 
-#dd_consultaPeriodo
-{
-	
-	float: left;
-	margin-left: 40px;
-	margin-top: 	15px;
-	
-	width: 250px;
-
-}
-#dd_consultarPor
-{
-	
-	float: left;
-	margin-top: 15px;
-
-	width: 350px;
-}
-
-
 #dd_btnBuscar
 {
 	
-	float: left;
+	float: right;
+	margin-right: 35px;
 }
 
 #dd_consulta
@@ -2351,23 +2285,40 @@ input[readonly],input[readonly="readonly"]
 	
 	margin:auto;
 	margin-top: 40px;
-	width: 850px;
+	width: 760px;
 }
 
 #dd_consultaEmpleado
 {
 	
 	float: left;
-	margin-left: 10px;
-	padding-right: 30px;
-	width: 230px;
+	padding: 10px;
+	margin-left: 15px;
+	width: 300px;
 
 
 }
-#dd_consultarNombre
+#dd_consultaNombre
 {
-
+	
+	padding: 10px;
 	float: left;
+	width: 390px;
+}
+
+#dd_consultaPeriodo
+{
+	
+	float: left;
+	margin-left: 15px;
+	padding: 10px;
+	width: 300px;
+
+}
+#dd_consultarPor
+{
+	float: left;
+	padding: 10px;
 	width: 400px;
 }
 #dd_eliminarDocentes
@@ -2449,34 +2400,24 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_divDecoracion
 {
-
-	margin:auto;
-	background: #FFF;
-	/*border-radius: 7px;
-	border:3px solid #ECECFB;*/
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
-	padding-left: 20px;
-	padding-bottom: 10px;
-	width: 700px;
+	
+	font-size: 18px;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
+	margin-left: 190px;
+	height: 370px;
+	width: 820px;
 	
 }
 
-#dd_fotoDoc
-{
-	background-image: url(../imagenes/docente.png);
-	border: 3px solid green;
-	float: right;
-	margin-top: -265px;
-	height: 250px;
-	width: 217px;
-}
+
+
 .dd_divDecoracionCursos
 {
 	
 	background: #FFF;
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
 	/*border-radius: 7px;
 	border:3px solid #ECECFB;*/
 	padding-left: 10px;
@@ -2488,53 +2429,15 @@ input[readonly],input[readonly="readonly"]
 .dd_divDecoracionEstudios
 {
 	background: #FFF;	
-	border-top: 4px dashed #FFDEAD;
-	border-bottom: 4px dashed #FFDEAD;
+	border-top: 4px dashed #BEF781;
+	border-bottom: 4px dashed #BEF781;
 	/*border-radius: 7px;
 	border:3px solid #ECECFB;*/
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
 	
-
 }
-#dd_pais_estado_ciudad_otro
-{
-	margin-top: 80px;
-
-
-}
-#dd_pais
-{
-
-	float: left;
-	margin-left: 10px;
-	padding-right: 31px;
-	width: 250px;
-
-}
-#dd_estado
-{
-	
-	float: left;
-	padding-right: 5px;
-	width: 250px;
-	
-}
-#dd_ciudad
-{
-	
-	float: left;
-	padding-right: 13px;
-	width: 250px;
-}
-#dd_otro
-{
-	
-	float: left;
-	width: 280px;
-}
-
 
 
 /*----------------------------------------------------------------------------------------------*/
