@@ -69,9 +69,12 @@
 		planVigente = {{$planes[0]}};
 		planAnterior = {{$planes[1]}};
 		//alert(source[0].plan);
+
+
 		// Create a jqxListBox
 		$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
 		$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
+
 		// Check several items.
 		// $(".listbox").jqxListBox('checkIndex', 0);
 		// $(".listbox").jqxListBox('checkIndex', 1);
@@ -137,6 +140,58 @@
 	});
 	</script>
 
+
+ <!-- PARA LISTA DENTRO DE MODAL, PARA MODIFICAR GRUPOS -->
+	<script type="text/javascript">
+            $(document).ready(function () {
+                var source = [
+                    "221 TM",
+                    "222 TM",
+                    "223 TM",
+                    "224 TM",
+                    "225 TM",
+                    "226 TM",
+                    "227 TM",
+                    "220 TM",
+                    "228 TM",
+                    "223 TM",
+                    "224 TM",
+                    "225 TM",
+                    "226 TM",
+                    "227 TM",
+                    "229 TM"
+		        ];
+                // Create a jqxListBox
+                $("#listaUa").jqxListBox({width: 250, source: source, checkboxes: true, height: 300, theme: 'orange'});
+                
+                // Check several items.
+                $("#listaUa").jqxListBox('checkIndex', 0);
+                $("#listaUa").jqxListBox('checkIndex', 1);
+                $("#listaUa").jqxListBox('checkIndex', 2);
+                $("#listaUa").jqxListBox('checkIndex', 5);
+
+                $("#listaUa").on('checkChange', function (event) {
+                    var args = event.args;
+                    if (args.checked) {
+                        $("#Events").text("Checked: " + args.label);
+                    }
+                    else {
+                        $("#Events").text("Unchecked: " + args.label);
+                    }
+
+                    var items = $("#listaUa").jqxListBox('getCheckedItems');
+                    var checkedItems = "";
+                    $.each(items, function (index) {
+                        if (index < items.length - 1) {
+                            checkedItems += this.label + ", ";
+                        }
+                        else checkedItems += this.label;
+                    });
+                    $("#CheckedItems").text(checkedItems);
+                });
+            });
+        </script>
+
 	<!------------------------------------------------------------------------------------->
 	
 	<!-------------------------------- AQUI VA HORA Y FECHA-------------------------------->
@@ -185,6 +240,27 @@
 
 </head>
 <body>
+
+	<!-------------------------------------- MODAL LISTA PARA MODIFICAR GRUPOS -------------------------------------->
+	<div class="md-modal2 md-effect-11" id="pruebaCa"> 
+		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+			<h3>Modificar grupos</h3>
+			<div class="tblCatalogos">
+				
+							<div class="listasCa">
+								<div id="listaUa" style="margin-top:40px; margin-left:5px;"></div>
+							</div>
+							 
+			</div>
+			<div class="CatBotones">
+				<!--<input type="submit" class="estilo_button2" value="Agregar"/>-->
+				<input type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+
+
+
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
@@ -444,6 +520,14 @@
 			<div id="btnPlanA">
 				<input type="button" style="width:200px;" class="estilo_button2" value="Plan Anterior" name="planAntCa" id="planAntCa" />
 			</div>
+
+			
+				<input type="button" style="width:200px;" class="md-trigger" value="Prueba" data-modal="pruebaCa" id="pruebaCa" />
+				
+
+
+
+
 			<!----------------------- LISTA PLAN ANTERIOR ------------------------>
 			<div id="planAnterior">
 				<fieldset id="planA"><legend>Plan anterior </legend>
@@ -504,18 +588,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -549,18 +634,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -594,18 +680,20 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
+
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -639,18 +727,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -685,11 +774,12 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 							
 						</tr>
 					</thead>
@@ -697,7 +787,7 @@
 					</tbody>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -731,18 +821,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -776,18 +867,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -821,18 +913,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorNaranja">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -866,18 +959,19 @@
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">ELIMINAR</th>
+							<th style="width:50px">MODIFICAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 						</tr>
 					</thead>
 					<tbody>
