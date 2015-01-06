@@ -324,6 +324,7 @@
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">ELIMINAR</th>
+						<th style="width:30px">MODIFICAR</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -344,6 +345,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -354,6 +356,7 @@
 						<td>none</td>	
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
 						
+						
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -363,6 +366,7 @@
 						<td>BASICA</td>
 						<td>none</td>	
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -372,6 +376,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -381,6 +386,7 @@
 						<td>BASICA</td>
 						<td>none</td>	
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -390,6 +396,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -399,6 +406,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 	
+						
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -408,6 +416,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -427,6 +436,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -436,6 +446,7 @@
 						<td>BASICA</td>
 						<td>none</td>	
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -445,6 +456,7 @@
 						<td>BASICA</td>
 						<td>none</td>
 						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+
 					</tr>
 
 					<thead class="dd_encabezado_colorNaranja_tablaConsulta">

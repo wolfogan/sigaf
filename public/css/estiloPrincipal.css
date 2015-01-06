@@ -1951,6 +1951,7 @@ input[readonly],input[readonly="readonly"]
 	width: 217px;
 }
 
+
 #dd_aPaterno_aMaterno_nombres_sexo
 {
 	
@@ -2153,6 +2154,13 @@ input[readonly],input[readonly="readonly"]
 	margin-top: 20px;
 	padding-bottom: 10px;
 	width: 200px;
+}
+#tbl_dd_cursos
+{
+	margin: 20px auto;
+	height:150px;
+
+
 }
 .dd_label
 {
@@ -2418,8 +2426,10 @@ input[readonly],input[readonly="readonly"]
 	background: #FFF;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
+	height: 150px;
 	/*border-radius: 7px;
 	border:3px solid #ECECFB;*/
+	padding-top: 15px;
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
