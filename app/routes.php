@@ -97,5 +97,5 @@ Route::get('pruebas',function(){
 					->where('uaprendizaje','=',11236)
 					->where('programaedu','=',1)
 					->first();
-	return $datapua->caracter;
+	return var_dump($datapua);
 });

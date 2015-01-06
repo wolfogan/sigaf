@@ -80,7 +80,7 @@
 
 			<div class="pe_catalogos_tbl">
 				<div id="tableContainer" class="tableContainer">
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblSeriaciones">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 						<thead style="background:green">
 							<tr>
 								<th colspan="7">MATERIAS ASOCIADAS</th>
@@ -90,6 +90,7 @@
 							<tr class="sin-seriacion">
 								<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 							</tr>
+							<!-- FILA BASE PARA SERIACIONES MODAL GENERAL -->
 							<tr class="fila-base-seriacion">
 								<td>Tipo:</td>
 								<td>
@@ -155,10 +156,10 @@
 	<!-------------------------------------- MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="seriacion_independiente"> 
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
-			<h3 id="detalle">CLAVE - MATERIA</h3>
+			<h3 id="detalle_unico">CLAVE - MATERIA</h3>
 			
 			
-				<div class="pe_noPlan">No. Plan:<label>0000-0</label></div>
+				<div class="pe_noPlan">No. Plan:<label id="seriacion_plan">0000-0</label></div>
 			<table cellpadding="5" id="tablita2" style="width:650px;">
 						<tr>
 							<td>Carrera:</td>
@@ -238,13 +239,13 @@
 
 					<tbody class="scrollContent" style="height:155px;">
 
-							<!--<tr class="sin-seriacion">-->
-						<tr>
+						<!--<tr class="sin-seriacion">-->
+						<tr class="sin-seriacion">
 							<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 						</tr>
 
-							<!--<tr class="fila-base-seriacion">-->
-						<tr>
+						<!-- FILA BASE PARA SERIACIONES MODAL INDIVIDUAL -->
+						<tr class="fila-base-seriacion">
 							<td>Tipo:</td>
 							<td>
 								<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
@@ -921,7 +922,7 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
-							"<input type='button' class='md-trigger clsModificarFila' value='' data-modal='seriacion_independiente'/>",
+							"<input type='button' class='md-trigger clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' data-modal='seriacion_independiente'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
@@ -954,7 +955,7 @@
 				alert(mensaje);
 				// Obtener el numero de serie de las materias seriadas
 				var series = [];
-				$(".tblSeriaciones tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
+				$(".scrollTable:eq(0) tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
 					var serie = $(element).find("input:first").val();
 					// Indicar si es obligatoria o conveniente la ua seriada
 					var tipo = $(element).find("select:first option:selected").html();
@@ -987,7 +988,7 @@
 				//$("#asociar_etapa").val(1);
 				//$("#asociar_caracter").val(1);
 				//$("#asociar_semestre").val(1);
-				$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+				$(".scrollTable:eq(0) > tbody > tr").not(":eq(0) , :eq(1)").remove();
 				$(".sin-seriacion").show();
 
 				//Actualizar Grilla
@@ -1051,7 +1052,8 @@
 		$("#semestre").val(1);
 		$("#observaciones").val("");
 
-		$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+		$(".scrollTable:eq(0) > tbody > tr").not(":eq(0) , :eq(1)").remove();
+		$(".scrollTable:eq(2) > tbody > tr").not(":eq(0) , :eq(1)").remove();
 		$("#tblDetalleAsociacion > tbody > tr").remove();
 		$(".sin-seriacion").show();
 
@@ -1282,7 +1284,7 @@
 		});
 
 		// EVENTOS PARA LA TABLA DE LAS SERIACIONES
-		$(".tblSeriaciones").on("click",".dd_clsAgregarFila",function(){
+		$(".scrollTable").on("click",".dd_clsAgregarFila",function(){
 			
 			var filaSeriacion = $(this).parents().get(1);
 			// Validar clave de seriación
@@ -1292,7 +1294,9 @@
 				return;
 			}
 			// Duplicar fila base y añadir a tabla
-			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblSeriaciones");
+			var tbodySeriacion = $(this).parents().get(2);
+			var filaBaseSeriacion = $(tbodySeriacion).find("tr:eq(1)");
+			var seriacionNueva = $(filaBaseSeriacion).clone().removeClass("fila-base-seriacion").appendTo(tbodySeriacion);
 			$(".sin-seriacion").hide();
 			//console.log(filaSeriacion);
 			
@@ -1308,21 +1312,25 @@
 
 		});
 		// Eliminar fila de las materias seriadas sin afectar comportamiento en BD.
-		$(".tblSeriaciones").on("click",".clsEliminarFila",function(){
+		$(".scrollTable").on("click",".clsEliminarFila",function(){
 			var filaSeriacion = $(this).parents().get(1);
+			var table = $(filaSeriacion).parents().get(1);
 			// Remover fila
 			$(filaSeriacion).remove();
-			// Habilitar fila anterior
-			$(".tblSeriaciones tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
-
+			
 			// Si se elimina la última fila, mostrar mensaje sin seriación
-			var rowCount = $(".tblSeriaciones > tbody > tr").length;
+			var rowCount = $(table).find("tbody > tr").length;
 			if(rowCount == 2)
 				$(".sin-seriacion").show();
+			else
+			{
+				// Habilitar fila anterior
+				$(table).find("tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
+			}
 		});
 		
 		// Cargar descripcion de ua cuando la tecleen o seleccionen
-		$(".tblSeriaciones").on("input",".clave-seriacion",function(){
+		$(".scrollTable").on("input",".clave-seriacion",function(){
 			
 			var idua = $(this).val();
 			var filaSeriacion = $(this).parents().get(1);
@@ -1352,7 +1360,8 @@
 		$(".sin-seriacion").on("click",function(event){
 			
 			// Crear fila y agregar atributos para pasar por el formulario
-			var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblSeriaciones");
+			var filaBaseSeriacion = $(this).next();
+			var seriacionNueva = $(filaBaseSeriacion).clone().removeClass("fila-base-seriacion").appendTo($(this).parent());
 			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 			
@@ -1406,13 +1415,25 @@
 						t.$('tr.selected').removeClass('selected'); // Remover selección
 						$(this).parent().addClass('selected');
 						//var renglonUA = $(this).parent();
-						var materia = $(this).parent().find('td:first').html();
+						var uaid = $(this).parent().find('td:first-child').text();
+						//$("#clave1F").val(uaid);
+						var materia = $(this).parent().find('td:eq(1)').html();
 						//var serie = $(this).parent().find('td').eq(5).html();
 						var programaedu = $(this).parent().find('td:last-child input').attr("data");
+						// Dar opción al usuario de asociar la unidad si no lo ha hecho
+						if(programaedu == "null")
+						{
+							if(confirm("La materia seleccionada no esta asociada a una carrera,¿Desea asociarla?"))
+							{	// Mostrar la ventan modal para el detalle
+								$("#detalle").text(uaid + " - " + materia);
+								$("#asignacion").click();
+							}
+							
+						}
 						//console.log(programaedu);
 						// MOSTRAR AJAXLOADER
 						$("#ajaxLoad").css("display","block");
-						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:materia,programaedu:programaedu}, function(json)
+						$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{uaprendizaje:uaid,programaedu:programaedu}, function(json)
 						{
 							//console.log(json); un cambio
 							reset_campos();
@@ -1583,7 +1604,7 @@
 
 		// EVENTOS VENTANA MODAL ASOCIACION DE PROGRAMAS
 		$("#tblDetalleAsociacion").on("click","tr td",function(){
-			if($(this).index() != 3)
+			if($(this).index() != 5)
 			{
 				var programa = $(this).parent().find("td:last").text();
 				var etapa = $(this).parent().find("td:eq(1)").text();
@@ -1594,13 +1615,14 @@
 
 				$.post("<?php echo URL::to('planestudio/obtenerdetalleseriacion'); ?>",{programaedu:programa,uaprendizaje:uaid},function(ua){
 					// Limpiar tabla seriaciones
-					$(".tblSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+					$(".scrollTable:eq(0) > tbody > tr").not(":eq(0) , :eq(1)").remove();
 					$(".sin-seriacion").show();
 					// Iterar por las series
 					for(i in ua)
 					{
 						// Duplicar fila base y añadir a tabla las seriaciones extraidas de la BD
-						var seriacionNueva = $(".fila-base-seriacion").clone().removeClass("fila-base-seriacion").appendTo(".tblSeriaciones");
+						var seriacionNueva = $(".scrollTable:eq(0) > tbody > tr:eq(1)").clone().removeClass("fila-base-seriacion").appendTo(".scrollTable:eq(0) tbody");
+						console.log(seriacionNueva);
 						$(".sin-seriacion").hide();
 						//console.log(filaSeriacion);
 						
@@ -1618,7 +1640,66 @@
 		});
 		// CARGAR DATOS PARA MODIFICAR INDIVIDUALMENTE
 		$("#tblUA").on("click",".clsModificarFila",function(){
-			
+			var row = $(this).parents().get(1);
+			var descripcion = $(row).find("td:eq(1)").text();
+			var uaid = $(this).attr("title");
+			var etapa = $(this).attr("etapa");
+			var programaedu = $(this).attr("data");
+			//alert(uaid+" "+programaedu);
+			//alert(descripcion);
+			$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{programaedu:programaedu,uaprendizaje:uaid,consulta:true},function(ua){
+					//alert("consulto");
+					//alert(ua.semestre_sug);
+					// Título de la materia y el id
+					$("#detalle_unico").text(uaid + " - " + descripcion);
+					$("#seriacion_plan").text($("#noPlan option:selected").text());
+
+					$("#titulo_update").html(ua.descripcionmat);
+					$("#carrera_update").text($("#carrera option:selected").html());
+					$("#clave_update").val(uaid);
+					$("#descripcion_update").val(ua.descripcionmat);
+					$("#etapa_update").val(etapa);
+					$("#tipo_update").val(ua.caracter);
+					$("#semestre_update").val(ua.semestre_sug);
+					//$("#seriacion_update").val(ua.reqseriacion);
+					//$("#claveSeriacion_update").val(ua.claveD);
+					// FALTA DESCRIPCION DE LA SERIADA
+					$("#hc_update").val(ua.hc);
+					$("#hl_update").val(ua.hl);
+					$("#ht_update").val(ua.ht);
+					$("#he_update").val(ua.he);
+					$("#hpc_update").val(ua.hpc);
+					$("#hcl_update").val(ua.hcl);
+					$("#creditos_update").val(ua.creditos);
+					//$("#coordinacion_update").val($("#datalist_coord option[codigo='"+ua.coordinaciona+"']").prop("value"));
+					$("#coordinacion_update").val(ua.coordinaciona);
+					$("#coord").val(ua.coordinaciona);
+
+					// CARGAR SERIACIONES
+					// Limpiar tabla seriaciones
+					$(".scrollTable:eq(2) > tbody > tr").not(":eq(0) , :eq(1)").remove();
+					$(".sin-seriacion").show();
+					// Iterar por las series
+					for(i in ua.series)
+					{
+						// Duplicar fila base y añadir a tabla las seriaciones extraidas de la BD}
+						var table = $(".scrollTable:eq(2) tbody");
+						var seriacionNueva = $(table).find("tr:eq(1)").clone().removeClass("fila-base-seriacion").appendTo(table);
+						$(".sin-seriacion").hide();
+						console.log(seriacionNueva);
+						
+						// Valores de las ua seriadas
+						$(seriacionNueva).find("select:eq(0)").val(ua.series[i].reqseriacion);
+						$(seriacionNueva).find("input:eq(0)").val(ua.series[i].uaprequisito);
+						$(seriacionNueva).find("input:eq(1)").val(ua.series[i].descripcionmat);
+
+						// Para la actualizacion posterior
+						$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+						$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
+					}
+					
+				})
+				.fail(function(errorText,textError,errorThrow){alert("Fallo en la consulta de la unidad de aprendizaje: " + errorText.responseText)});
 		});
 	});
 	</script>

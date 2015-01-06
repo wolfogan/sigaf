@@ -423,7 +423,7 @@ class PlanEstudioController extends BaseController
 		//$uas = $plan->unidades;
 
 		$UAS = $sql = DB::table('p_ua')
-				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT('(',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),')')) as seriacion"))
+				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','p_ua.etapa as numetapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT('(',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),')')) as seriacion"))
 				->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 				->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
 				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
@@ -599,7 +599,6 @@ class PlanEstudioController extends BaseController
 	{
 		$uaid = Input::get('uaprendizaje');
 		$programaedu = Input::get('programaedu');
-
 		$ua = UnidadAprendizaje::find($uaid);
 		
 		$datapua = DB::table('p_ua')
@@ -652,13 +651,24 @@ class PlanEstudioController extends BaseController
 							->orderBy('detalleseriacion.uaprequisito')
 							->get();
 		}
-		
+		$pua = new stdClass();
+		if(!isset($datapua))
+		{
+			$pua->caracter = "";
+			$pua->semestre_sug = "";
+		}
+		else
+		{
+			$pua->caracter = $datapua->caracter;
+			$pua->semestre_sug = $datapua->semestre_sug;
+		}
+
 		$data= array(
 			'success' => true,
 			'uaprendizaje' => $ua->uaprendizaje,
 			'descripcionmat' => $ua->descripcionmat,
 			//'etapa'=>$ua->etapa,
-			'caracter'=>$datapua->caracter,
+			'caracter'=>$pua->caracter,
 			//'reqseriacion'=>$ua->reqseriacion,
 			//'claveD'=>$ua->claveD,
 			//'materiaseriada' => $uaserie,
@@ -670,7 +680,7 @@ class PlanEstudioController extends BaseController
 			'hpc'=>$ua->HPC,
 			'hcl'=>$ua->HCL,
 			'he'=>$ua->HE,
-			'semestre_sug'=>$datapua->semestre_sug,
+			'semestre_sug'=>$pua->semestre_sug,
 			'creditos'=>$ua->creditos,
 			//'programas'=>$programas,
 			'series'=> $programaSeries
