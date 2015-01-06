@@ -483,7 +483,7 @@ background: #EFCA0D;
 {  
 	float:left;
 	height: 30px;
-	margin-right: 30px;
+	margin-right: 20px;
 	margin-bottom: 20px;
 	width: 210px;
 }
@@ -508,15 +508,15 @@ background: #EFCA0D;
 	font-size: 22px;
 }
 
-#pe_programasAsociados
+/*#pe_programasAsociados
 {
 	height: 15px;
 	width: 900px;
 	font-size: 1.2em;
 	margin-left: 10px;
-	margin-top: 30px;
+	margin-top: -50px;
 	
-}
+}*/
 
 /* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
 

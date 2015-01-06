@@ -62,12 +62,6 @@
 							        </script>
 
 
-
-
-
-
-
-
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
@@ -393,10 +387,15 @@
 
 						       	<div id="tbl_dd_cursos">
 						       		<div id="tableContainer" class="tableContainer">
-										<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblSeriaciones">
+										<table style="width:1200px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblSeriaciones">
+											<thead style="background:green;">
+												<tr>
+													<th colspan="14">Ingresar cursos recibidos o impartidos</th>
+												</tr>
+											</thead>		
 
 											
-											<tbody class="scrollContent">
+											<tbody class="scrollContent" style="height:125px;">
 
 
 											<tr>
@@ -415,8 +414,7 @@
 											            <option value="TALLER">TALLER</option>
 											          </select>
 											      </td>
-											        
-											         
+       
 											     <td><label>Nombre:</label></td><td><input class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
 											     <td><label>Valor:</label></td><td><input class="dd_estilo_cedula" type="text"/></td>
@@ -428,65 +426,6 @@
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
-
-											<tr>
-												 <td>Elija:</td>
-												 <td><select class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-												
-											     <td><label>Tipo:</label></td>
-											     <td><select class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-											        
-											         
-											     <td><label>Nombre:</label></td><td><input class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
-											     <td><label>Término:</label></td><td><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input class="dd_estilo_cedula" type="text"/></td>
-
-											     <td><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
-
-												 <td><input class="dd_clsAgregarArchivo" value="" type="button"></td>
-												 <td><input class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-
-											<tr>
-												 <td>Elija:</td>
-												 <td><select class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-												
-											     <td><label>Tipo:</label></td>
-											     <td><select class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-											        
-											         
-											     <td><label>Nombre:</label></td><td><input class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
-											     <td><label>Término:</label></td><td><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input class="dd_estilo_cedula" type="text"/></td>
-
-											     <td><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
-
-												 <td><input class="dd_clsAgregarArchivo" value="" type="button"></td>
-												 <td><input class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
 										</table>
 									</div>
 						     	</div>
