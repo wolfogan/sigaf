@@ -253,8 +253,8 @@
 							 
 			</div>
 			<div class="CatBotones">
-				<!--<input type="submit" class="estilo_button2" value="Agregar"/>-->
-				<input type="button" value="Salir" class="md-close" />
+				<input style="font-size:18px;" type="submit" class="estilo_button2" value="Actualizar"/>
+				<input style="font-size:18px;" type="button" value="Salir" class="md-close" />
 			</div>
 		</form>
 	</div>
