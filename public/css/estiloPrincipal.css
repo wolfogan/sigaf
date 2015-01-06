@@ -483,7 +483,7 @@ background: #EFCA0D;
 {  
 	float:left;
 	height: 30px;
-	margin-right: 30px;
+	margin-right: 20px;
 	margin-bottom: 20px;
 	width: 210px;
 }
@@ -508,15 +508,15 @@ background: #EFCA0D;
 	font-size: 22px;
 }
 
-#pe_programasAsociados
+/*#pe_programasAsociados
 {
 	height: 15px;
 	width: 900px;
 	font-size: 1.2em;
 	margin-left: 10px;
-	margin-top: 30px;
+	margin-top: -50px;
 	
-}
+}*/
 
 /* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
 
@@ -1951,6 +1951,7 @@ input[readonly],input[readonly="readonly"]
 	width: 217px;
 }
 
+
 #dd_aPaterno_aMaterno_nombres_sexo
 {
 	
@@ -2153,6 +2154,13 @@ input[readonly],input[readonly="readonly"]
 	margin-top: 20px;
 	padding-bottom: 10px;
 	width: 200px;
+}
+#tbl_dd_cursos
+{
+	margin: 20px auto;
+	height:150px;
+
+
 }
 .dd_label
 {
@@ -2418,8 +2426,10 @@ input[readonly],input[readonly="readonly"]
 	background: #FFF;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
+	height: 150px;
 	/*border-radius: 7px;
 	border:3px solid #ECECFB;*/
+	padding-top: 15px;
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;

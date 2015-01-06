@@ -12,10 +12,61 @@
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
+		<!---------------------------------- Checkboxlist -------------------------------------->
+		
+		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
+		<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+
+		<script type="text/javascript">
+							            $(document).ready(function () {
+							                var source = [
+							                    "CURSO PROFESIONAL DE BACKEND",
+							                    "HERRAMIENTAS CLOUD PARA EL DESARROLLO DE HABILIDADES",
+							                    "FRONTEND, APLICACIONES WEB PROFESIONAL",
+							                    "CURSO AVANZADO DE ANDROID",
+							                    "CURSO PROFESIONAL DE GIT Y GITHUB, ",
+							                    "CURSO DE ADMINISTRACION DE SERVIDORES Y DEVOPS",
+							                    "CURSO DE PROGRAMACION PARA IOS, IPHONE Y IPAD",
+							                    "NODE.JS Y JAVASCRIPT"
+									        ];
+
+							                // Create a jqxListBox
+							                $("#listbox").jqxListBox({width: 600, source: source, checkboxes: true, height: 140, theme: 'orange'});
+							                // Check several items.
+							                $("#listbox").jqxListBox('checkIndex', 0);
+							                $("#listbox").jqxListBox('checkIndex', 1);
+							                $("#listbox").jqxListBox('checkIndex', 2);
+							                $("#listbox").jqxListBox('checkIndex', 5);
+
+							                $("#listbox").on('checkChange', function (event) {
+							                    var args = event.args;
+							                    if (args.checked) {
+							                        $("#Events").text("Checked: " + args.label);
+							                    }
+							                    else {
+							                        $("#Events").text("Unchecked: " + args.label);
+							                    }
+
+							                    var items = $("#listbox").jqxListBox('getCheckedItems');
+							                    var checkedItems = "";
+							                    $.each(items, function (index) {
+							                        if (index < items.length - 1) {
+							                            checkedItems += this.label + ", ";
+							                        }
+							                        else checkedItems += this.label;
+							                    });
+							                    $("#CheckedItems").text(checkedItems);
+							                });
+							            });
+							        </script>
+
+
 		<!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
+
 
 		<!---------------------------------------------------------------------------------------->
 <title>Disponibilidad docente</title>
@@ -333,115 +384,53 @@
 							<br>
 
 						    <div class="dd_divDecoracionCursos">
-						    	<br>
-						       	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></div>
-							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
+						       	<div id="tbl_dd_cursos">
+						       		<div id="tableContainer" class="tableContainer">
+										<table style="width:1200px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblSeriaciones">
+											<thead style="background:green;">
+												<tr>
+													<th colspan="14">Ingresar cursos recibidos o impartidos</th>
+												</tr>
+											</thead>		
 
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></div>
+											
+											<tbody class="scrollContent" style="height:125px;">
 
-									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button"></div>
+
+											<tr>
+												<td>Elija:</td>
+												 <td><select class="dd_estilo_combo" style="width:100px;">
+											          	<option value="RECIBIDO">RECIBIDO</option>
+											            <option value="IMPARTIDO">IMPARTIDO</option>
+											         </select>
+											      </td>
+
+												
+											     <td><label>Tipo:</label></td>
+											     <td><select class="dd_estilo_combo" style="width:100px;">
+											          	<option value="CURSO">CURSO</option>
+											            <option value="CONGRESO">CONGRESO</option>
+											            <option value="TALLER">TALLER</option>
+											          </select>
+											      </td>
+       
+											     <td><label>Nombre:</label></td><td><input class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
+											     <td><label>Término:</label></td><td><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
+											     <td><label>Valor:</label></td><td><input class="dd_estilo_cedula" type="text"/></td>
+
+											     <td><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
+
+												 <td><input class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><input class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
+											</tr>
+
+										</table>
+									</div>
 						     	</div>
 
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="TALLER">TALLER</option>
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="UML Y DISEÑO DE SISTEMAS"/></div>
-							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
-
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller UML.png"></div>
-
-									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button"></div>
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="TALLER">TALLER</option>
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DESARROLLO DE APPS PARA IOS"/></div>
-							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text" /></div>
-
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_ios.png"></div>
-
-									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button"></div>
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="TALLER">TALLER</option>
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							             
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="CONTPAQI: CONTABILIDAD ELECTRONICA Y EL TIMBRADO DE LA NOMINA"/></div>
-							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
-
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_contpaqi.png"></div>
-
-									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button"></div>
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							       <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="TALLER">TALLER</option>
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="JAVASCRIPT"/></div>
-							         <div class="dd_fechaTitulacion"><label>Término:</label><input class="dd_estilo_combo" type="date" medida="Y/M/D"/></div>
-							         <div class="dd_cedula"><label style="padding-right:17px">Valor:</label><input class="dd_estilo_cedula" style="margin-left:5px;" type="text"/></div>
-
-							         <div class="dd_fechaTitulacion"><input class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="taller_javascript.png"></div>
-
-									<div class="dd_btnAdd"><input class="dd_clsAgregarArchivo" value="" type="button"></div>
-									<div class="dd_btnAdd"><input class="dd_clsCancelar" value="" type="button"></div>
-									
-						     	</div>
+						     	
 						     </div>
 						         <br>
 						         
@@ -450,77 +439,25 @@
 								<br>
 
 						     <div class="dd_divDecoracionCursos">
-						     	<br>
 						     
 						       	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DISEÑO INSTRUCCIONAL PARA CURSOS EN LINEA"/></div>
-							         
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="DOCENCIA Y APRENDIZAJE COOPERATIVO"/></div>
-							         
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text" placeholder="ESTRATEGIAS DIDACTICAS APOYADAS EN TCC"/></div>
-							         
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
-							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+						       		
 							        
-						     	</div>
-
-						     	<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
-
-							        <div class="dd_licenciatura"><label>Tipo:</label>
-							            <select class="dd_estilo_combo">
-							              <option value="CURSO">CURSO</option>
-							              <option value="CONGRESO">CONGRESO</option>
-							              <option value="TALLER">TALLER</option>
-							            </select>
+							        <div id='jqxWidget'>
+							            <div id="listbox"></div>
+							            <!--<div style="font-size: 13px; font-family: Verdana; margin-top: 20px;" id="Events"></div>
+							            <div style="font-size: 13px; font-family: Verdana; margin-top: 10px;" id="CheckedItems"></div>-->
 							        </div>
-							         
-							         <div class="dd_uniEgreso"><label>Nombre:</label><input class="dd_con_estilo_largo" type="text"/></div>
+
+
+							         <!--<div class="listasCa">
+										<div id="listboxPlanVigente"></div>
+									</div>-->
 							         
 						     	</div>
+
+						     	
 						     </div>
 
 						     	<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
@@ -797,6 +734,12 @@
 		</section>
 
 	<footer>
+
+		<script type="text/javascript" src="../js/jqxcore.js"></script>
+		<script type="text/javascript" src="../js/jqxbuttons.js"></script>
+		<script type="text/javascript" src="../js/jqxscrollbar.js"></script>
+		<script type="text/javascript" src="../js/jqxlistbox.js"></script>
+		<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
 			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
 			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 

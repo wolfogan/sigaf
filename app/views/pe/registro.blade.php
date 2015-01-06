@@ -41,14 +41,14 @@
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
 	
 	<!-------------------------------------- MODAL ASOCIACION UA-PROGRAMA -------------------------------------->
-	<div class="md-modal1 md-effect-11" id="add_seriacion"> 
-		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:1000px; height:700px;" method="post">
+	<div class="md-modal1 md-effect-11" id="add_seriacion" style="width:1000px;"> 
+		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content"  method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
 
 			<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
 			<div id="pe_divs_modificar">
 
-				<div class="carreraDiv" style="margin-left:20px;">
+				<div class="carreraDiv" style="margin-left:30px;">
 					<label>Carrera:</label>
 					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
 				</div>
@@ -80,13 +80,13 @@
 
 			<div class="pe_catalogos_tbl">
 				<div id="tableContainer" class="tableContainer">
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+					<table style="height:115px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 						<thead style="background:green">
 							<tr>
 								<th colspan="7">MATERIAS ASOCIADAS</th>
 							</tr>
 						</thead>
-						<tbody class="scrollContent">
+						<tbody class="scrollContent" style="height:115px; margin-bottom:10px;">
 							<tr class="sin-seriacion">
 								<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
 							</tr>
@@ -125,9 +125,15 @@
 				</div>
 				
 			</div>
-			<div id="pe_programasAsociados">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</div>
+			
 			<div id="tableContainer" class="tableContainer">
-				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
+				<table style="height:115px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
+					<thead style="background:green">
+						<tr>
+							<th colspan="6">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</th>
+						</tr>
+					</thead>
+
 					<thead class="fixedHeader">
 						<tr>
 							
@@ -140,7 +146,7 @@
 							<th style="display:none;">CODIGO</th>
 						</tr>
 					</thead>
-					<tbody class="scrollContent">
+					<tbody class="scrollContent" style="height:115px;">
 					</tbody>
 				</table>
 			</div>
