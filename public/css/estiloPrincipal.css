@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 body
 {
 background-image: url(../imagenes/fondo.png);
@@ -2406,6 +2407,25 @@ input[readonly],input[readonly="readonly"]
 	background-image: url(../imagenes/cancel1.png);
 
 }
+
+.dd_con_estilo_propio
+{
+	margin-left:10px; height:40px; 
+	font-family: 'Indie Flower'; 
+	margin-bottom:10px; 
+	text-align:center; 
+ 	font-size:30px;
+	background-image: url(../imagenes/bj.jpg);
+	color: white;
+ 	-webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
+    width:250px;
+	height:40px;
+	border-radius: 5px;
+}
+
 .dd_divDecoracion
 {
 	
@@ -2522,7 +2542,25 @@ input[readonly],input[readonly="readonly"]
 
 
 /*--------------------------------------- HORARIOS --------------------------------------*/
+.hr_doc_total_horas
+{
+	float: left;
+	font-size: 20px;
+	color:#000;
+	margin-left: 850px;
+	margin-top:-50px;
+	text-align: center;
+	height: 50px;
+	width: 200px;
+}
 
+.hr_doc_total_horas label
+{
+	color:red;
+	font-size: 24px;
+	margin-left: 10px;
+
+}
 #hr_trunoGrupo
 {
 	margin: 50px 30px 30px 30px;
@@ -2600,7 +2638,7 @@ input[readonly],input[readonly="readonly"]
  .hr_lblMaterias
  {
  	
- 	margin: 140px 0px 0px 15px;
+ 	margin: 50px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;
  	text-align: center;
