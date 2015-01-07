@@ -34,7 +34,7 @@
 		var e = Math.ceil(Math.random() * 9)+ '';  
 		var f = aLetras[Math.floor(Math.random()*aLetras.length)];
 		var g = aLetras[Math.floor(Math.random()*aLetras.length)];
-        var code = a + ' ' + b + ' ' +c+ ' ' + d + ' ' + e + ' ' + f + ' '+ g;
+        var code =a+b+c+d+e+f+g;
         document.getElementById("txtCaptcha").value = code
     }
 
@@ -123,7 +123,7 @@
 							    </tr>
 							    <tr>
 							        <td>
-							            <input class="dd_con_estilo_largo" style="background-color: rgba(104,160,26,0.3); color:green; margin-left:10px; height:40px; margin-bottom:10px; text-align:center; border:none; font-weight:bold; font-size:24px;" type="text" id="txtCaptcha"  />
+							            <input class="dd_con_estilo_propio" readonly="readonly" type="text" id="txtCaptcha"/>
 							            <input class="us_clsRefresh" type="button" id="btnrefresh" value="" onclick="DrawCaptcha();" />
 							        </td>
 							    </tr>

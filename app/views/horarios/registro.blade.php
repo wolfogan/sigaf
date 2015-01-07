@@ -81,340 +81,15 @@
 					<div class="hr_lblCarrera"><label>ADMON. DE EMPRESAS</label></div>
 				</div>
 
-				<!-- TABLA SIGNIFICADO DE COLORES -->
-
-			
-					<table class="hr_tabla_ca" style="width:220px; float:right; margin-top:-25px;">
-
-						
-						<thead class="hr_encabezado_tablaConsulta">
-							<tr>
-								<th style="width:70px; height:25px;">COLOR</th>
-								<th style="width:150px; height:25px;">SIGNIFICADO</th>
-							</tr>
-						</thead>
-						
-						<tbody>
-							<tr>
-								<td style="background:#2ECCFA;"></td>
-								<td>ASIGNADA</td>
-							</tr>
-							<tr>
-								<td style="background:#00FF80"></td>
-								<td>COINCIDENCIA</td>
-							</tr>
-							<tr>
-								<td style="background:#FFFF00"></td>
-								<td>DISPONIBLE</td>
-							</tr>
-					</table>
 				
-			<!-------------------------------------------------------------------------------------------->
-
-
-
-				
-
-				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
-				
-				<div id="hr_tableContainer" class="hr_tableContainer">
-				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-					<thead class="fixedHeader">
-						<tr>
-							
-							<th style="width:80px">CLAVE</th>
-							<th style="width:300px">MATERIA</th>
-						
-						</tr>
-					</thead>
-					<tbody class="scrollContent">
-						<tr>
-							
-							<tr>
-								<td>11235</td>
-								<td>MATEMATICAS</td>
-							</tr>
-							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
-							</tr>
-							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
-							</tr>
-							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
-							</tr>
-							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
-							</tr>
-							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11236</td>
-								<td>PROGRAMACION I</td>
-							</tr>
-							<tr>
-								<td>11237</td>
-								<td>BASES DE DATOS CORPORATIVAS</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-							<tr>
-								<td>11239</td>
-								<td>ADMINISTRACION DE PROYECTOS</td>
-							</tr>
-							<tr>
-								<td>11240</td>
-								<td>FISICA</td>
-							</tr>
-							<tr>
-								<td>11238</td>
-								<td>ESTRUCTURA DE DATOS</td>
-							</tr>
-						</tr>
-					</tbody>
-				</table>
-			</div>-->
-
-
-				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS-->
-
-				<div class="hr_lblMaterias">
-					<div class="hr_titulos" style="margin-left:80px;">Seleccione materias</div>
-					<div class="hr_titulos" style="margin-left:420px;">Disponibilidad docente</div>
-				</div>
-
-					<table class="hr_tabla_ca" style="width:380px;">
-
-						
-						<thead class="hr_encabezado_tablaConsulta">
-							<tr>
-								<th style="width:80px">CLAVE</th>
-								<th style="width:300px">MATERIA</th>
-							</tr>
-						</thead>
-						
-						<tbody>
-							<tr>
-								<td>12456</td>
-								<td>ADMON. DE COMPRAS</td>
-							</tr>
-							<tr>
-								<td>12457</td>
-								<td>DISEÑO ORGANIZACIONAL</td>
-							</tr>
-							<tr>
-								<td>11859</td>
-								<td>METODOS CUANTITATIVOS</td>
-							</tr>
-							<tr>
-								<td>12459</td>
-								<td>RELACIONES LABORALES</td>
-							</tr>
-							<tr>
-								<td>12458</td>
-								<td>REGISTROS ESPECIALES</td>
-							</tr>
-							<tr>
-								<td>11843</td>
-								<td>METODOLOGIA DE LA INV.</td>
-							</tr>
-							<tr>
-								<td>11743</td>
-								<td>ENTORNO SOCIOECONOMICO DE MEXICO</td>
-							</tr>
-							
-					</table> 
-				
-			<!-------------------------------------------------------------------------------------------->
-
-				
-
-				<!-- TABLA PARA CREACION DE HORARIOS: DISPONIBILIDAD DOCENTE -->
-
-
-					<table class="hr_tabla_ca" style="width:900px;">
-
-						
-						<thead class="hr_encabezado_tablaConsulta">
-							<tr>
-								<th style="width:100px">NO. EMPLEADO</th>
-								<th style="width:200px">DOCENTE</th>
-								<th style="width:100px">HORA</th>
-								<th style="width:100px">LUNES</th>
-								<th style="width:100px">MARTES</th>
-								<th style="width:100px">MIÉRCOLES</th>
-								<th style="width:100px">JUEVES</th>
-								<th style="width:100px">VIERNES</th>
-								
-							</tr>
-						</thead>
-
-												
-						<tbody>
-							<tr>
-								<td>23658</td>
-								<td>PEDRO PEREZ LOPEZ</td>
-								<td >07:00 - 8:00</td>
-								<td style="background:#2ECCFA;">231</td>
-								<td style="background:#2ECCFA;">232</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">323</td> 
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								
-							</tr>
-							<tr>
-								<td>24523</td>
-								<td>CARLOS P. ROMERO GARCIA</td>
-								<td >08:00 - 9:00</td>
-								<td style="background:#2ECCFA;">231</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">421</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">322</td>
-								
-								
-							</tr>
-							<tr>
-								<td>24698</td>
-								<td>ANTONIO E. CASTRO DUARTE</td>
-								<td >09:00 - 10:00</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">421</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">322</td> 
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td>10:00 - 11:00</td>
-								<td style="background:#00FF80"></td>
-								<td style="background:#2ECCFA;">232</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td>11:00 - 12:00</td>
-								<td style="background:#2ECCFA;">621</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">323</td>
-								<td style="background:#2ECCFA;">323</td>
-								<td style="background:#2ECCFA;">323</td>
-								
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td>12:00 - 13:00</td>
-								<td style="background:#2ECCFA;">621</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">621</td> 
-								<td style="background:#2ECCFA;">421</td>
-								
-							</tr>
-							
-						
-					</table>
-			<!-------------------------------------------------------------------------------------------->
-
 
 			<!-- TABLA PARA CREACION DE HORARIOS: HORARIO DEL GRUPO Y TURNO -->
 
 					<div class="hr_lblMaterias">
-						<div class="hr_titulos" style="margin-left:150px;">Horario del grupo</div>
+						<div class="hr_titulos" style="margin-left:380px;">Horario del grupo</div>
 					</div>
 
-					<table class="hr_tabla_ca" style="width:900px; margin-top:10px; margin-left:-200px;">	
+					<table class="hr_tabla_ca" style="width:900px; margin-left:50px; float:none;">	
 
 						<thead class="hr_encabezado_tablaConsulta">
 
@@ -462,7 +137,7 @@
 								
 								<td>07:00 - 8:00</td>
 								<td>12456</td>
-								<td>23658</td>
+								<td style="background:purple">23658</td>
 								<td>12457</td>
 								<td>29658</td> 
 								<td>11743</td>
@@ -477,7 +152,7 @@
 								
 								<td>08:00 - 9:00</td>
 								<td>12456</td>
-								<td>23658</td>
+								<td style="background:purple">23658</td>
 								<td>11859</td>
 								<td>29365</td> 
 								<td>12459</td>
@@ -498,9 +173,9 @@
 								<td>11743</td>
 								<td>23145</td>
 								<td>12458</td>
-								<td>21523</td>
+								<td style="background:purple">23658</td>
 								<td>12459</td> 
-								<td>24639</td>
+								<td style="background:purple">23658</td>
 								
 							</tr>
 							<tr>
@@ -515,7 +190,7 @@
 								<td>12457</td>
 								<td>29658</td>
 								<td>11859</td> 
-								<td>29365</td>
+								<td style="background:purple">23658</td>
 								
 							</tr>
 							<tr>
@@ -557,6 +232,335 @@
 
 			<!-------------------------------------------------------------------------------------------->
 
+
+			<!-- TABLA SIGNIFICADO DE COLORES -->
+
+			
+					<table class="hr_tabla_ca" style="width:220px; margin-left:1050px; margin-top:-200px;">
+
+						
+						<thead class="hr_encabezado_tablaConsulta">
+							<tr>
+								<th style="width:70px; height:25px;">COLOR</th>
+								<th style="width:150px; height:25px;">SIGNIFICADO</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td style="background:#2ECCFA;"></td>
+								<td>ASIGNADA</td>
+							</tr>
+							<tr>
+								<td style="background:#00FF80"></td>
+								<td>COINCIDENCIA</td>
+							</tr>
+							<tr>
+								<td style="background:#FFFF00"></td>
+								<td>DISPONIBLE</td>
+							</tr>
+					</table>
+				
+			<!-------------------------------------------------------------------------------------------->
+
+
+
+				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
+				
+				<div id="hr_tableContainer" class="hr_tableContainer">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+						<thead class="fixedHeader">
+							<tr>
+								
+								<th style="width:80px">CLAVE</th>
+								<th style="width:300px">MATERIA</th>
+							
+							</tr>
+						</thead>
+						<tbody class="scrollContent">
+							<tr>
+								
+								<tr>
+									<td>11235</td>
+									<td>MATEMATICAS</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>-->
+
+
+				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS-->
+				
+
+					<div class="hr_lblMaterias">
+						<div class="hr_titulos" style="margin-left:80px;">Seleccione materias</div>
+						<div class="hr_titulos" style="margin-left:440px;">Disponibilidad docente</div>
+					</div>
+
+					<table class="hr_tabla_ca" style="width:380px;">
+
+							
+						<thead class="hr_encabezado_tablaConsulta">
+							<tr>
+								<th style="width:80px">CLAVE</th>
+								<th style="width:300px">MATERIA</th>
+							</tr>
+						</thead>
+							
+						<tbody>
+							<tr>
+								<td>12456</td>
+								<td>ADMON. DE COMPRAS</td>
+							</tr>
+							<tr>
+								<td>12457</td>
+								<td>DISEÑO ORGANIZACIONAL</td>
+							</tr>
+							<tr>
+								<td>11859</td>
+								<td>METODOS CUANTITATIVOS</td>
+							</tr>
+							<tr>
+								<td>12459</td>
+								<td>RELACIONES LABORALES</td>
+							</tr>
+							<tr>
+								<td>12458</td>
+								<td>REGISTROS ESPECIALES</td>
+							</tr>
+							<tr>
+								<td>11843</td>
+								<td>METODOLOGIA DE LA INV.</td>
+							</tr>
+							<tr>
+								<td>11743</td>
+								<td>ENTORNO SOCIOECONOMICO DE MEXICO</td>
+							</tr>
+								
+					</table>
+				
+					
+			<!-------------------------------------------------------------------------------------------->
+
+				
+
+				<!-- TABLA PARA CREACION DE HORARIOS: DISPONIBILIDAD DOCENTE -->
+
+
+					<table class="hr_tabla_ca" style="width:900px;">
+
+							
+						<thead class="hr_encabezado_tablaConsulta">
+							<tr>
+								<th style="width:100px">NO. EMPLEADO</th>
+								<th style="width:200px">DOCENTE</th>
+								<th style="width:100px">HORA</th>
+								<th style="width:100px">LUNES</th>
+								<th style="width:100px">MARTES</th>
+								<th style="width:100px">MIÉRCOLES</th>
+								<th style="width:100px">JUEVES</th>
+								<th style="width:100px">VIERNES</th>		
+							</tr>
+						</thead>
+
+													
+						<tbody>
+							<tr>
+								<td>23658</td>
+								<td>PEDRO PEREZ LOPEZ</td>
+								<td >07:00 - 8:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td style="background:#2ECCFA;">232</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">323</td> 
+								<td style="background:#FFFF00">DISPONIBLE</td>
+									
+							</tr>
+							<tr>
+								<td>24523</td>
+								<td>CARLOS P. ROMERO GARCIA</td>
+								<td >08:00 - 9:00</td>
+								<td style="background:#2ECCFA;">231</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">421</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">322</td>
+									
+									
+							</tr>
+							<tr>
+								<td>24698</td>
+								<td>ANTONIO E. CASTRO DUARTE</td>
+								<td >09:00 - 10:00</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">421</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">322</td> 
+								<td style="background:#FFFF00">DISPONIBLE</td>
+									
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>10:00 - 11:00</td>
+								<td style="background:#00FF80"></td>
+								<td style="background:#2ECCFA;">232</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+									
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>11:00 - 12:00</td>
+								<td style="background:#2ECCFA;">621</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+								<td style="background:#2ECCFA;">323</td>
+									
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>12:00 - 13:00</td>
+								<td style="background:#2ECCFA;">621</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
+								<td style="background:#2ECCFA;">621</td> 
+								<td style="background:#2ECCFA;">421</td>
+									
+							</tr>
+								
+							
+						</table>
+				
+			<!-------------------------------------------------------------------------------------------->
+
+
+			
 			<!-- TABLA PARA MOSTRAR DISPONIBILIDAD DEL DOCENTE -->
 				
 					<div class="hr_tituloSearch">
@@ -592,7 +596,7 @@
 								<td style="background:#2ECCFA;">322</td>
 								<td></td>
 								<td style="background:#2ECCFA;">323</td>
-								<td></td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								
 								
 							</tr>
@@ -609,16 +613,16 @@
 							</tr>
 							<tr>
 								<td>9:00 10:00</td>
-								<td></td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">421</td>
-								<td></td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">322</td>
 								<td></td>
 								
 							</tr>
 							<tr>
 								<td>10:00 - 11:00</td>
-								<td></td>
+								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">232</td>
 								<td></td>
 								<td></td>
@@ -739,12 +743,20 @@
 						
 					</table>
 
+
 			<!-------------------------------------------------------------------------------------------->
+					
+					<div class="hr_doc_total_horas" style="margin-left:190px; margin-top:-30px;">Horas tope:<label>40</label></div>
+					<div class="hr_doc_total_horas">Horas asignadas:<label>30</label></div>
 
 					<div id="btnImprimirBit">
 						<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
 					</div>
+
+
 		<!--</div>-->
+
+
 
 
 		
