@@ -423,7 +423,7 @@ class PlanEstudioController extends BaseController
 		//$uas = $plan->unidades;
 
 		$UAS = $sql = DB::table('p_ua')
-				->select('programaedu.programaedu','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','p_ua.etapa as numetapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT('(',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),')')) as seriacion"))
+				->select('programaedu.programaedu','programaedu.descripcion','programaedu.siglas','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','etapas.descripcion as etapa','p_ua.etapa as numetapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(detalleseriacion.uaprequisito,CONCAT('(',SUBSTR(reqseriacion.descripcion FROM 1 FOR 1),')')) as seriacion"))
 				->leftjoin('programaedu','p_ua.programaedu','=','programaedu.programaedu')
 				->leftjoin('etapas','p_ua.etapa','=','etapas.etapa')
 				->rightjoin('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
@@ -710,6 +710,7 @@ class PlanEstudioController extends BaseController
 
 		$clave = Input::get("clave1F");
 		$UA = UnidadAprendizaje::find($clave);
+		$coord = Input::get('coord');
 		//$UA -> plan = $noplan;
 		$UA -> descripcionmat = Str::upper(Input::get('materia'));
 		$UA -> HC = Input::get('hc');
@@ -726,7 +727,10 @@ class PlanEstudioController extends BaseController
 		//$UA -> reqseriacion = Input::get('serie');
 		//$UA -> claveD = Input::get('clave2F');
 		//$UA -> etapa = Input::get('etapaF');
-		$UA -> coordinaciona = Input::get('coord');
+		if(isset($coord))
+			$UA -> coordinaciona = Input::get('coord');
+		else
+			$UA -> coordinaciona = Input::get('coordinacion_update');
 		$UA -> save();
 
 		// VALIDAR ACTUALIZACION EN LA CONSULTA

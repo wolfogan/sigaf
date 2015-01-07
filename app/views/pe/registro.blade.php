@@ -161,10 +161,8 @@
 
 	<!-------------------------------------- MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
 	<div class="md-modal1 md-effect-11" id="seriacion_independiente"> 
-		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content" style="width:800px; height:700px;" method="post">
+		<form  id="formUpdate" action="javascript:actualizarUAI();" class="md-content" style="width:800px; height:700px;" method="post">
 			<h3 id="detalle_unico">CLAVE - MATERIA</h3>
-			
-			
 				<div class="pe_noPlan">No. Plan:<label id="seriacion_plan">0000-0</label></div>
 			<table cellpadding="5" id="tablita2" style="width:650px;">
 						<tr>
@@ -196,7 +194,7 @@
 							</td>
 							<td>Tipo:</td>
 							<td>
-								<select class="con_estilo" style="width:183px;" name="tipoF" id="tipo_update" size=1>
+								<select class="con_estilo" style="width:183px;" name="tipoF" id="tipo_update">
 									@foreach ($tiposCaracter as $tipo)
 										<option value="{{$tipo->caracter}}">{{$tipo->descripcion}}</option>
 									@endforeach
@@ -230,7 +228,6 @@
 							<td>Coord.:</td>
 							<td>
 								<input class="con_estilo" type="text" id="coordinacion_update" name="coordinacion_update" style="width:180px" size="1" list="datalist_coord" />
-								<input type="hidden" name="coord" id="coord" />
 							</td>
 						</tr>
 					</table>
@@ -286,9 +283,9 @@
 
 
 				<div id="pe_BtnseriacionAgregar">
-					<input type="hidden" name="ua" id="asociar_ua"/>
-					<input type="hidden" name="users_id" id="asociar_user"/>
-					<input type="submit" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
+					<input type="hidden" name="ua" id="ua_update"/>
+					<input type="hidden" name="users_id" id="user_update"/>
+					<input type="submit" class="estilo_button2" id="update_ua" value="Actualizar"/>
 					<input type="button" value="Salir" class="md-close" />
 				</div>
 
@@ -599,7 +596,7 @@
 
 					<!---------------------------------- COORDINACION ---------------------------------->
 					<div id="coordDiv">
-						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase; margin-left:10px;" class="coordina" type="text" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
+						<label>Coord: </label><input autocomplete="off" style="width:143px; text-transform:uppercase; margin-left:10px;" class="coordina" name="coord" id="coord" size="1"  list="datalist_coord" title="Es necesarios especificar una coordinación." required/>
 						<datalist id="datalist_coord" name="c">
 							@foreach ($coordinaciones as $coordinacion)
 								<option value="{{$coordinacion->coordinaciona}}" label="{{$coordinacion->descripcion}}" >
@@ -626,7 +623,7 @@
 
 						<!--------------------------------A Q U I PRUEBA -------------------------------->
 
-						<input class="md-trigger" data-modal="seriacion_independiente" type="button" value="M"></a>
+						<!-- <input class="md-trigger" data-modal="seriacion_independiente" type="button" value="M"></a> -->
 
 						<!------------------------------------------------------------------------>
 
@@ -928,7 +925,7 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
-							"<input type='button' class='md-trigger clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' data-modal='seriacion_independiente'/>",
+							"<input type='button' class='md-trigger clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' carrera='" + uas[i].descripcion + "' data-modal='seriacion_independiente'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
@@ -1005,6 +1002,26 @@
 				alert(errorText.responseText);
 			});
 		}
+	}
+	
+	// ACTUALIZAR UNIDAD DE APRENDIZAJE INDIVIDUALMENTE
+	function actualizarUAI()
+	{
+		$(".scrollTable input,.scrollTable select").attr("disabled",false);
+		dataUA = $("#formUpdate").serialize(); //+ & + $("#tblUpdateSeriaciones").serialize();
+		alert(dataUA);
+		//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
+		$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
+			
+			alert("Actualizacion Completada");
+
+			$(".md-close").click();
+
+			
+		})
+		.fail(function(errorText,textError,errorThrow){
+			alert("FALLO EN EL REGISTRO: " + errorText.responseText);
+		});
 	}
 
 	function disabled_campos(deshabilitar)
@@ -1084,6 +1101,7 @@
 	$(function(){
 		// Guardar Constantes
 		USER_ID = {{Auth::user()->id}};
+		
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $('#tblUA').DataTable();
 		// Para añadir unidades de aprendizaje a las carreras con el update
@@ -1651,8 +1669,15 @@
 			var uaid = $(this).attr("title");
 			var etapa = $(this).attr("etapa");
 			var programaedu = $(this).attr("data");
+			var carrera =$(this).attr("carrera");
 			//alert(uaid+" "+programaedu);
 			//alert(descripcion);
+			// Datos para ventana modal individual
+			$("#programa").val(programaedu);
+			$("#ua_update").val(uaid);
+			$("#user_update").val(USER_ID);
+
+
 			$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{programaedu:programaedu,uaprendizaje:uaid,consulta:true},function(ua){
 					//alert("consulto");
 					//alert(ua.semestre_sug);
@@ -1661,7 +1686,7 @@
 					$("#seriacion_plan").text($("#noPlan option:selected").text());
 
 					$("#titulo_update").html(ua.descripcionmat);
-					$("#carrera_update").text($("#carrera option:selected").html());
+					$("#carrera_update").text(carrera);
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(etapa);
