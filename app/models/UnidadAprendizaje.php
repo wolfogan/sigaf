@@ -14,12 +14,12 @@ class UnidadAprendizaje extends Eloquent
 	}
 
 	// Accedo directamente a que carreras pertenece una unidad de aprendizaje
-	public function programas()
+	/*public function programas()
 	{
 		return $this->belongsToMany('ProgramaEducativo','p_ua','uaprendizaje','programaedu');
 	}
 
-	public function tipoCaracter()
+	/*public function tipoCaracter()
 	{
 		return $this->hasOne('Caracter','caracter','caracter');
 	}

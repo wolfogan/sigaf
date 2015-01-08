@@ -836,7 +836,7 @@
 				//alert(uaid);
 				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{programaedu:programaedu,uaprendizaje:uaid,consulta:true},function(ua){
 					//alert("consulto");
-					
+					//alert(ua.semestre_sug);
 					$("#titulo_update").html(ua.descripcionmat);
 					$("#carrera_update").text($("#carrera option:selected").html());
 					$("#clave_update").val(uaid);
