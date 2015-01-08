@@ -78,7 +78,7 @@
 						</select>
 					</div>
 					<!--<div id="hr_btnCrearHr"><input class="estilo_button2" type="button" value="Crear horario">-->
-					<div class="hr_lblCarrera"><label>ADMON. DE EMPRESAS</label></div>
+					<div class="hr_lblCarrera"><label>ADMÓN. DE EMPRESAS</label></div>
 				</div>
 
 				
