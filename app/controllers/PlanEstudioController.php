@@ -818,8 +818,6 @@ class PlanEstudioController extends BaseController
 				DB::table('detalleseriacion') -> insert(array('uaprendizaje'=>$clave,'reqseriacion'=>$tipos[$key],'uaprequisito'=>$claves[$key],'users_id'=>$users_id));
 			}
 		}*/
-
-
 	}
 
 	public function postActualizaretapa()

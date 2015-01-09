@@ -582,12 +582,15 @@
 					if(uas[i].programaedu == 6)
 						$(bloque).find("div").css("background-color","#99CCFF");
 
-					$(lista).append(bloque);
-					bloque = "";
 					if(uas[i].caracter=="OBLIGATORIA")
 						creditosObligatorias += uas[i].creditos;
 					if(uas[i].caracter=="OPTATIVA")
+					{
 						creditosOptativas += uas[i].creditos;
+						$(bloque).find("div").css("background-color","#F0FFFF");
+					}
+					$(lista).append(bloque);
+					bloque = "";
 				}
 			}
 			// Filtro individual y retornar la funcion.
@@ -758,11 +761,14 @@
 			//alert("Vamos a actualizar la etapa");
 			var uaid=$(this).find("span").eq(0).text();
 			var etapa = $(this).parents("ul").attr("etapa");
+			// Actualizar atributo etapa del div
+			$(this).find("div").attr("etapa",etapa);
 			var programaedu = $("#carrera").val();
 			//alert("PROGRAMA:" + programaedu + "UAID: "+uaid +"Etapa: "+etapa);
 			$.post("<?php echo URL::to('planestudio/actualizaretapa'); ?>",{programaedu:programaedu,uaprendizaje:uaid,etapa:etapa},function(ua){
 				//alert(ua);
 				$("#pe_consultaActualizada").css("visibility","visible").fadeIn(300).fadeOut(1000);
+				
 			});
 		}
 		
@@ -804,23 +810,27 @@
 				$(divUA).find("span").eq(4).text($("#creditos_update").val());
 				// Cambiar el tipo en el DIV internamente como atributo
 				if($("#tipo_update").val()==1)
+				{
 					$(divUA).attr("tipo","OBLIGATORIA");
+					$(divUA).css("background-color",""); // o removeAttr("style");
+				}
 				if($("#tipo_update").val()==2)
+				{
 					$(divUA).attr("tipo","OPTATIVA");
+					$(divUA).css("background-color","#F0FFFF");
+
+				}
+				// Actualizar el atributo etapa
+				$(divUA).attr("etapa",  $("#etapa_update").val());
 				// Actualizar creditos;
 				actualizarCreditos();
 				alert("Actualizacion Completada");
-
 				$(".md-close").click();
 
 				// Colocar en la nueva etapa si se modifico la etapa, evaluar la etapaOld
-				//alert(etapaOld);
-				//alert(ua.etapa);
-				if(etapaOld != ua.etapa)
-				{
-					var lista = "#list" + $("#etapa_update").val();
-					$(lista).append($(divUA).parent());
-				}
+				var lista = "#list" + $("#etapa_update").val();
+				$(lista).append($(divUA).parent());
+				
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
@@ -840,7 +850,7 @@
 					//alert("consulto");
 					//alert(ua.semestre_sug);
 					$("#titulo_update").html(ua.descripcionmat);
-					$("#carrera_update").text($("#carrera option:selected").html());
+					$("#carrera_update").text(ua.descripcion);
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(etapa);
