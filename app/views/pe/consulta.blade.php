@@ -228,7 +228,7 @@
 						<tr>
 							<td>Carrera:</td>
 							<td>
-								<label id="carrera_update">PROGRAMA EDUCATIVO</label>
+								<label id="carrera_update">PROGRAMA</label>
 								<input type="hidden" id="programa" name="programaedu" />
 							</td>
 							<td>Semestre:</td>
@@ -442,8 +442,7 @@
 				// Obtener las carreras que son parte del Plan de Estudios elegido
 				$.post("<?php echo URL::to('planestudio/obtenerprogramas'); ?>",{noplan:plan},function(programas){
 					var options = "";
-					carrera = programas[0].programaedu;
-					$("#programa").val(carrera);
+					carrera = programas[0].programaedu;//$("#programa").val(carrera);
 
 					for(var i = 0; i < programas.length; i++)
 					{
@@ -469,8 +468,6 @@
 			//Limpiar busquedas anteriores
 			$("#list1 li:not(:first), #list2 li:not(:first), #list3 li:not(:first)").remove();
 			carrera = $(this).val();
-			// Cambio de valores
-			$("#programa").val(carrera);
 
 			if($(this).val()!=6)
 			{
@@ -577,7 +574,7 @@
 					//alert(uas[i].seriacion); // Mostrar las seriaciones
 					descripcionUA = '<span>'+uas[i].uaprendizaje + '</span><br /><span>' + uas[i].descripcionmat + '</span><br />C<span>' + uas[i].HC + '</span> T<span>' + uas[i].HT + '</span> CR<span>' + uas[i].creditos + '</span>';
 					bloque = $('<li>' +
-									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'" etapa="'+uas[i].etapa+'">' +
+									'<div style="font-size:9px" class="md-trigger unidad" data-modal="modal-11" tipo="'+uas[i].caracter+'" etapa="'+uas[i].etapa+'" programa="'+ uas[i].programaedu+'">' +
 										descripcionUA +
 									'</div>'+
 								'</li>').hide().fadeIn("slow");
@@ -854,13 +851,21 @@
 				divUA = $(this);
 				var uaid = $(this).find("span").eq(0).text();
 				var etapa = $(divUA).attr("etapa");
-				var programaedu = $("#carrera").val();
+				var programaedu = $(this).attr("programa");
+
+				// Asignar programa al formulario
+				$("#programa").val(programaedu);
 				//alert(uaid);
 				$.post("<?php echo URL::to('planestudio/obtenerdataua'); ?>",{programaedu:programaedu,uaprendizaje:uaid,consulta:true},function(ua){
 					//alert("consulto");
 					//alert(ua.semestre_sug);
 					$("#titulo_update").html(ua.descripcionmat);
-					$("#carrera_update").text(ua.descripcion);
+					// Mostrar tronco comun con programa o solo programa
+					if(programaedu == 6)
+						$("#carrera_update").text(ua.descripcion + " - " + $("#carrera option:selected").text());
+					else
+						$("#carrera_update").text(ua.descripcion);
+					
 					$("#clave_update").val(uaid);
 					$("#descripcion_update").val(ua.descripcionmat);
 					$("#etapa_update").val(etapa);
@@ -950,6 +955,10 @@
 					$("#formUpdate :checkbox").val("");
 					$("#formUpdate input[type=number]").val(0);
 					$("#titulo_update").text("Unidad de Aprendizaje");
+					$("#carrera_update").text("PROGRAMA");
+					$// Limpiar tabla seriaciones
+					$("#tblUpdateSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
+					$(".sin-seriacion").show();
 					// Limpiar tabla seriaciones
 					//$("#tblUpdateSeriaciones > tbody > tr").not(":eq(0) , :eq(1)").remove();
 					//$(".sin-seriacion").show();

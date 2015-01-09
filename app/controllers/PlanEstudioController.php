@@ -602,6 +602,7 @@ class PlanEstudioController extends BaseController
 		$programaedu = Input::get('programaedu');
 		$ua = UnidadAprendizaje::find($uaid);
 		
+		$descripcionpro = ProgramaEducativo::find($programaedu);
 		$datapua = DB::table('p_ua')
 					->select('caracter','semestre_sug')
 					->where('uaprendizaje','=',$uaid)
@@ -623,6 +624,8 @@ class PlanEstudioController extends BaseController
 						->join('uaprendizaje','detalleseriacion.uaprequisito','=','uaprendizaje.uaprendizaje')
 						->select('detalleseriacion.uaprendizaje','detalleseriacion.reqseriacion','detalleseriacion.uaprequisito','detalleseriacion.users_id','uaprendizaje.descripcionmat')
 						->where('detalleseriacion.uaprendizaje','=',$uaid)->get();*/
+		
+		// Cuando consultan plan de estudio individual se consultan las materias seriadas.
 		$consulta = Input::get("consulta"); 
 		if(!isset($consulta))
 		{
@@ -652,21 +655,26 @@ class PlanEstudioController extends BaseController
 							->orderBy('detalleseriacion.uaprequisito')
 							->get();
 		}
+		
+		// Cuando no han asignado ningun programa educativo a la UA
 		$pua = new stdClass();
 		if(!isset($datapua))
 		{
 			$pua->caracter = "";
 			$pua->semestre_sug = "";
+			$pua->descripcion ="";
 		}
 		else
 		{
 			$pua->caracter = $datapua->caracter;
 			$pua->semestre_sug = $datapua->semestre_sug;
+			$pua->descripcion = $descripcionpro->descripcion;
 		}
 
 		$data= array(
 			'success' => true,
 			'uaprendizaje' => $ua->uaprendizaje,
+			'descripcion' => $pua->descripcion,
 			'descripcionmat' => $ua->descripcionmat,
 			//'etapa'=>$ua->etapa,
 			'caracter'=>$pua->caracter,
