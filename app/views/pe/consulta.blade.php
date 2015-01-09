@@ -8,6 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 	<link rel="stylesheet" type="text/css" href="../css/estilodrag.css">
 	<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+
+	<!-- Creación de Ventanas Modales -->
+	<script src="../js/ventanamodal.js"></script>
+
+
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="../js/jquery.min.js"></script>-->
@@ -350,9 +355,10 @@
 					<input type="button" class="md-close" value="Salir" style="height:40px;">
 
 				</div>
-			</form>
 
+			</form>
 		</div>
+		<div class="md-overlay">
 			
 
 
@@ -385,7 +391,7 @@
 					</table>-->
 				
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
-		<div class="md-overlay">
+		
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 	</section>
 	<footer>
@@ -945,6 +951,11 @@
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
+
+
+
+
 	<!--<script src="../js/css-filters-polyfill.js"></script>-->
 	<!--SCRIPT PARA VENTANA MODAL-->
 </body>
