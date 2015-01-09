@@ -533,7 +533,7 @@ class PlanEstudioController extends BaseController
 					->select('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter.descripcion as caracter','p_ua.etapa','coordinaciona.descripcion as coordinaciona',DB::raw("GROUP_CONCAT(uaprequisito ORDER BY uaprequisito) as seriacion"))
 					->where('uaprendizaje.plan','=',$noplan)
 					->where('uaprendizaje.uaprendizaje','=',$uaprendizaje)
-					->where('p_ua.programaedu','=',$programaedu)
+					->whereIn('p_ua.programaedu',array(6,$programaedu))
 					->groupBy('programaedu.programaedu','programaedu.descripcion','uaprendizaje.uaprendizaje','uaprendizaje.plan','uaprendizaje.descripcionmat','uaprendizaje.HC','uaprendizaje.HL','uaprendizaje.HT','uaprendizaje.creditos','caracter','p_ua.etapa','coordinaciona')
 					->get();
 		return $UA;

@@ -542,6 +542,16 @@
 				$("#coord").val($("#datalist_coord option[value='"+$(this).val()+"']").attr("codigo"));
 			//alert(coordinacion);
 		});
+
+		// EVENTOS PARA FILTRO POR CLAVE
+		$("#clave").on('input',function(){
+			//alert($(this).val().length);
+			if($(this).val().length>0)
+				$("#checkTroncoComun").hide();
+			else
+				$("#checkTroncoComun").show();
+		});
+
 		// BUSQUEDA Y CONSULTA DE UNIDADES DE APRENDIZAJE
 		$("#Buscar").on("click",function(){
 			// Variables total de los creditos
