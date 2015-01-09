@@ -4,11 +4,11 @@
 .titulo
 {
   display:inline-block; 
-  color: black;
+  color: #004000;
   font-family: trebuchet ms;
-  font-size: 25px;
+  font-size: 40px;
   padding-left: 600px;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .mensaje

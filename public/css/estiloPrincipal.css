@@ -267,7 +267,7 @@ background: #EFCA0D;
 #GridPlanEstudio
 {
 	margin:auto;
-	margin-top: -50px;
+	margin-top: 25px;
 	margin-bottom: 25px;
 	width: 1280px;
 }
@@ -750,7 +750,7 @@ html>body div.pe_tableContainerMod table
 #noPlanDiv
 {
 	
-	width: 240px;
+	width: 250px;
 	float: left;
 	margin-left: 40px;
 	padding-right:7px;
