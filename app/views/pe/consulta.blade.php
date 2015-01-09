@@ -579,7 +579,9 @@
 						$("ul li div span:first-child:contains('"+uas[i].claveD+"')").parent().css("border","4px dotted " + color);
 					}*/
 					
-					
+					if(uas[i].programaedu == 6)
+						$(bloque).find("div").css("background-color","#99CCFF");
+
 					$(lista).append(bloque);
 					bloque = "";
 					if(uas[i].caracter=="OBLIGATORIA")
