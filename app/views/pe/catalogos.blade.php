@@ -79,13 +79,13 @@
 							<div id="cmbBuscarCatalogo">
 								<label>Buscar por: </label>
 								<select class="con_estilo" style="width:170px;" name="buscarCatalogo" id="seleccion">
-									<option value="pais">Pais</option>
+									<option value="pais">País</option>
 									<option value="Estado">Estado</option>
 									<option value="Ciudad">Ciudad</option>
 									<option value="Campus">Campus</option>
 									<option value="series">Seriación</option>
-									<option value="uacademica">Uacademica</option>
-									<option value="caracter">Caracter</option>
+									<option value="uacademica">U. Académica</option>
+									<option value="caracter">Carácter</option>
 									<option value="etapas">Etapas</option>
 									<option value="nivelprograma">Nivel Programa</option>
 								</select>		

@@ -104,8 +104,8 @@
 			</div>
 		</div>
 
-		<section><div><div style="display:inline-block; float:left;">Ciudad</div>
-			<div style="display:inline-block; float:left; padding-left:40px; color:#ff1508;">@if($errors->any()){{$errors->first()}}@endif</div></div>
+		<section>
+
 							
 					<!-- ----------------------------------- MODULOS BITACORA  DIV ----------------------------------- -->
 					
@@ -115,13 +115,13 @@
 							<div id="cmbBuscarCatalogo">
 								<label>Buscar por: </label>
 								<select class="con_estilo" style="width:170px;" name="buscarCatalogo" id="seleccion">
-									<option value="pais">Pais</option>
+									<option value="pais">País</option>
 									<option value="Estado">Estado</option>
 									<option value="Ciudad" selected="selected">Ciudad</option>
 									<option value="Campus">Campus</option>
 									<option value="series">Seriación</option>
-									<option value="uacademica">Uacademica</option>
-									<option value="caracter">Caracter</option>
+									<option value="uacademica">U. Académica</option>
+									<option value="caracter">Carácter</option>
 									<option value="etapas">Etapas</option>
 									<option value="nivelprograma">Nivel Programa</option>
 								</select>		
@@ -132,6 +132,8 @@
 								<input style="width:120px"class="estilo_button2" type="button" value="Buscar" name="btnBuscarCatalogo" id="btnBuscarCatalogo" onclick="buscarCatalogo()">
 							</div>
 					</fieldset>
+					<div><div class="titulo">Ciudad</div>
+					</div>
 
 					<script>
 				function buscarCatalogo() {
@@ -224,7 +226,7 @@
 				</tbody>	
 			</table>
 
-				
+			<div class="mensaje">@if($errors->any()){{$errors->first()}}@endif</div>	
 		
 	</div>
 		</section>

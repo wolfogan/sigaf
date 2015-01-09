@@ -925,7 +925,7 @@
 							uas[i].HL,
 							uas[i].HT,
 							uas[i].creditos,
-							"<input type='button' class='md-trigger clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' carrera='" + uas[i].descripcion + "' data-modal='seriacion_independiente'/>",
+							(uas[i].programaedu == null) ? "<input type='button' style='background-color:red' disabled class='clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' carrera='" + uas[i].descripcion + "' data-modal='seriacion_independiente'/>" :"<input type='button' class='md-trigger clsModificarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"' etapa ='"+ uas[i].numetapa +"' carrera='" + uas[i].descripcion + "' data-modal='seriacion_independiente'/>",
 							"<input type='button' value='-' class='clsEliminarFila' title='"+uas[i].uaprendizaje+"' data='"+uas[i].programaedu+"'>"]).draw();
 			}
 			$("#ajaxLoad").css("display","none");
