@@ -78,7 +78,7 @@
 						</select>
 					</div>
 					<!--<div id="hr_btnCrearHr"><input class="estilo_button2" type="button" value="Crear horario">-->
-					<div class="hr_lblCarrera"><label>ADMON. DE EMPRESAS</label></div>
+					<div class="hr_lblCarrera"><label>ADMÓN. DE EMPRESAS</label></div>
 				</div>
 
 				
@@ -265,150 +265,7 @@
 
 
 
-				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
 				
-				<div id="hr_tableContainer" class="hr_tableContainer">
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-						<thead class="fixedHeader">
-							<tr>
-								
-								<th style="width:80px">CLAVE</th>
-								<th style="width:300px">MATERIA</th>
-							
-							</tr>
-						</thead>
-						<tbody class="scrollContent">
-							<tr>
-								
-								<tr>
-									<td>11235</td>
-									<td>MATEMATICAS</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-							</tr>
-						</tbody>
-					</table>
-				</div>-->
-
 
 				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS-->
 				
@@ -744,6 +601,151 @@
 					</table>
 
 
+
+					<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
+				
+				<div id="hr_tableContainer" class="hr_tableContainer">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+						<thead class="fixedHeader">
+							<tr>
+								
+								<th style="width:80px">CLAVE</th>
+								<th style="width:300px">MATERIA</th>
+							
+							</tr>
+						</thead>
+						<tbody class="scrollContent">
+							<tr>
+								
+								<tr>
+									<td>11235</td>
+									<td>MATEMATICAS</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11236</td>
+									<td>PROGRAMACION I</td>
+								</tr>
+								<tr>
+									<td>11237</td>
+									<td>BASES DE DATOS CORPORATIVAS</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+								<tr>
+									<td>11239</td>
+									<td>ADMINISTRACION DE PROYECTOS</td>
+								</tr>
+								<tr>
+									<td>11240</td>
+									<td>FISICA</td>
+								</tr>
+								<tr>
+									<td>11238</td>
+									<td>ESTRUCTURA DE DATOS</td>
+								</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>-->
+				
 			<!-------------------------------------------------------------------------------------------->
 					
 					<div class="hr_doc_total_horas" style="margin-left:190px; margin-top:-30px;">Horas tope:<label>40</label></div>

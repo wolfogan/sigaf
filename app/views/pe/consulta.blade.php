@@ -8,6 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 	<link rel="stylesheet" type="text/css" href="../css/estilodrag.css">
 	<link rel="stylesheet" type="text/css" href="../css/component.css"/>
+
+	<!-- Creación de Ventanas Modales -->
+	<script src="../js/ventanamodal.js"></script>
+
+
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="../js/jquery.min.js"></script>-->
@@ -220,11 +225,11 @@
 		</div>
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 		<div class="md-modal1 md-effect-11" id="modal-11" >
-			<form id="formUpdate" action="javascript:actualizarUA()" class="md-content">
+			<form id="formUpdate" action="javascript:actualizarUA()" class="md-content" style="width:800px; height:700px;">
 				<h3 id="titulo_update">Modificar unidad de aprendizaje</h3>
 				
 				<div id="tablita2contenedor" >
-					<table cellpadding="5" id="tablita2" style="width:650px;">
+					<table cellpadding="5" id="tablita2" style="width:650px; margin-top:40px;">
 						<tr>
 							<td>Carrera:</td>
 							<td>
@@ -294,65 +299,69 @@
 					</table>
 					<br>
 
-					<div class="div_pe_tableContainer" class="pe_tableContainer">
+					
 
-						<table id="tblUpdateSeriaciones" style="width:700px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-							<thead style="background:green">
-								<tr>
-									<th colspan="7">MATERIAS SERIADAS</th>
-								</tr>
-							</thead>
+						<div class="div_pe_tableContainer" class="pe_tableContainer" style="margin-left:35px;">
 
-							<tbody class="scrollContent" style="height:155px;">
+							<table id="tblUpdateSeriaciones" style="width:650px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+								<thead style="background:green">
+									<tr>
+										<th colspan="7">MATERIAS SERIADAS</th>
+									</tr>
+								</thead>
 
-								<!--<tr class="sin-seriacion">-->
-								<tr class = "sin-seriacion">
-									<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
-								</tr>
+								<tbody class="scrollContent" style="height:155px;">
 
-								<!--<tr class="fila-base-seriacion">-->
-								<tr class="fila-base-seriacion">
+									<!--<tr class="sin-seriacion">-->
+									<tr class = "sin-seriacion">
+										<td colspan="7" style="text-align:center; font-size:2em;">SIN SERIACION</td>
+									</tr>
 
-									<td>Tipo:</td>
+									<!--<tr class="fila-base-seriacion">-->
+									<tr class="fila-base-seriacion">
 
-									<td>
-										<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
-											@foreach($seriaciones as $seriacion)
-												<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
-											@endforeach
-										</select>
-									</td>
+										<td>Tipo:</td>
 
-									<td>Clave:</td>
+										<td>
+											<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+												@foreach($seriaciones as $seriacion)
+													<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+												@endforeach
+											</select>
+										</td>
 
-									<td>
-									<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
-									</td>
+										<td>Clave:</td>
 
-									<td>
-									<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
-									</td>
+										<td>
+										<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+										</td>
+
+										<td>
+										<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
+										</td>
+										
+										<td>
+										<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
+										</td>
+
+										<td><input type="button" class="dd_clsAgregarFila"></td>
+									</tr>
 									
-									<td>
-									<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
-									</td>
+								</tbody>
+							</table>
 
-									<td><input type="button" class="dd_clsAgregarFila"></td>
-								</tr>
-								
-							</tbody>
-						</table>
-
-					</div>
-				<div class="catBotones" style="margin-top:10px;">
+						</div>
+					
+				<div class="pe_BtnseriacionAgregar" style="margin-top:25px;">
 					<input type="hidden" id="user" name="users_id" / >
-					<input type="submit" value="Guardar" class="estilo_button2" style="height:40px;">
-					<input type="button" class="md-close" value="Salir" style="height:40px;">
+					<input type="submit" value="Guardar" class="estilo_button2" style="margin-left:470px;">
+					<input type="button" class="md-close" value="Salir">
 
 				</div>
-			</form>
 
+			</form>
 		</div>
+		<div class="md-overlay">
 			
 
 
@@ -385,7 +394,7 @@
 					</table>-->
 				
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
-		<div class="md-overlay">
+		
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 	</section>
 	<footer>
@@ -1000,6 +1009,11 @@
 	</script>
 	<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
+
+
+
+
 	<!--<script src="../js/css-filters-polyfill.js"></script>-->
 	<!--SCRIPT PARA VENTANA MODAL-->
 </body>

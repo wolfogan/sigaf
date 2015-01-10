@@ -48,7 +48,7 @@
 			<div class="pe_noPlan">No. Plan:<label>2009-1</label></div>
 			<div id="pe_divs_modificar">
 
-				<div class="carreraDiv" style="margin-left:30px;">
+				<div class="carreraDiv" style="margin-left:5px;" >
 					<label>Carrera:</label>
 					<select id="select_carreras" name="carreras[]" multiple="multiple" class="example41"></select>
 				</div>
@@ -71,15 +71,16 @@
 					</select>
 				</div>
 
-				<div class="carreraDiv" style="width:150px;">
+				<div class="carreraDiv" style="width:200px;">
 					<label>Sem:</label>
-						<input style="color:#000" class="estilo_numeric" type="number" name="semestre" id="asociar_semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
+						<input style="color:#000" height:"35px;" class="dd_estilo_combo" type="number" name="semestre" id="asociar_semestre" min="1" max="9" onkeypress="ValidaSoloNumeros()" >
 				</div>
 
 			</div>
 
 			<div class="pe_catalogos_tbl">
 				<div id="tableContainer" class="tableContainer">
+
 					<table style="height:115px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 						<thead style="background:green">
 							<tr>
@@ -120,14 +121,15 @@
 				<div id="pe_BtnseriacionAgregar">
 					<input type="hidden" name="ua" id="asociar_ua"/>
 					<input type="hidden" name="users_id" id="asociar_user"/>
-					<input type="submit" style="height:35px;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
-					<input style="height:35px;" type="button" value="Salir" class="md-close" />
+					
+					<input style="height:35px; float:right; margin-left:10px;" type="button" value="Salir" class="md-close" />
+					<input type="submit" style="height:35px; float:right;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
 				</div>
 				
 			</div>
 			
 			<div id="tableContainer" class="tableContainer">
-				<table style="height:115px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
+				<table style="height:90px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
 					<thead style="background:green">
 						<tr>
 							<th colspan="6">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</th>
@@ -146,7 +148,7 @@
 							<th style="display:none;">CODIGO</th>
 						</tr>
 					</thead>
-					<tbody class="scrollContent" style="height:115px;">
+					<tbody class="scrollContent" style="height:90px;">
 					</tbody>
 				</table>
 			</div>
@@ -232,8 +234,8 @@
 						</tr>
 					</table>
 
-			<div class="div_pe_tableContainer" class="pe_tableContainer">
-				<table border="0" style="width:700px;" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+			<div class="div_pe_tableContainer" class="pe_tableContainer" style="margin-left:35px;">
+				<table border="0" style="width:650px;" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 					<thead style="background:green">
 						<tr>
 							<th colspan="7">MATERIAS ASOCIADAS</th>
@@ -279,13 +281,10 @@
 				</table>
 			</div>
 
-			
-
-
-				<div id="pe_BtnseriacionAgregar">
+				<div class="pe_BtnseriacionAgregar">
 					<input type="hidden" name="ua" id="ua_update"/>
 					<input type="hidden" name="users_id" id="user_update"/>
-					<input type="submit" class="estilo_button2" id="update_ua" value="Actualizar"/>
+					<input type="submit" class="estilo_button2" style="font-size:20px; margin-left:470px;" id="update_ua" value="Actualizar"/>
 					<input type="button" value="Salir" class="md-close" />
 				</div>
 
@@ -617,8 +616,9 @@
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
-						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
 						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
+						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
+						
 						<!--<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Asociar" name="asociar" id="asignacion"/>-->
 
 						<!--------------------------------A Q U I PRUEBA -------------------------------->
