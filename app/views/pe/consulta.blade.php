@@ -779,6 +779,25 @@
 			});
 		}
 		
+		// Validar los inputs de los rows de las uas seriadas
+		function validarInputSeries(inputs)
+		{
+
+			
+			// Validar inputs de seriacion
+			var continuar = true;
+			$(inputs).each(function(index,value){
+				var valor =$(this).val();
+				if(valor.length < 1)
+				{
+					continuar = false;
+					return;
+				}
+			});
+
+			return continuar;
+		}
+
 		function actualizarCreditos()
 		{
 			creditosObligatorias = 0;
@@ -807,6 +826,13 @@
 			// eq(2) - hc
 			// eq(3) - hl
 			// eq(4) - total
+			var inputs = $("#formUpdate .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
+			if(validarInputSeries(inputs) ==false)
+			{
+				alert("Existen materias seriadas en blanco");
+				return;
+			}
+
 			dataUA = $("#formUpdate").serialize(); //+ & + $("#tblUpdateSeriaciones").serialize();
 			alert(dataUA);
 			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial

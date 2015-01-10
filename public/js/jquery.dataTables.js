@@ -13679,6 +13679,7 @@
 					var i, ien, node, button;
 					var clickHandler = function ( e ) {
 						_fnPageChange( settings, e.data.action, true );
+						activarModal(); // PARA AGREGAR LA MODAL
 					};
 	
 					for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
