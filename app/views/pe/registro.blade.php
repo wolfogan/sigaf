@@ -938,6 +938,26 @@
 			console.log(errorThrow);*/
 		});
 	}
+
+	// Validar los inputs de los rows de las uas seriadas
+	function validarInputSeries(inputs)
+	{
+
+		
+		// Validar inputs de seriacion
+		var continuar = true;
+		$(inputs).each(function(index,value){
+			var valor =$(this).val();
+			if(valor.length < 1)
+			{
+				continuar = false;
+				return;
+			}
+		});
+
+		return continuar;
+	}
+
 	/** ASOCIAR PROGRAMAS
 	 * Funcion que asocia la unidad de aprendizaje registrada con las carreras y sus posibles seriaciones
 	 * @return {null} No regresa dato
@@ -947,61 +967,68 @@
 		if($("#select_carreras").val()==null)
 		{
 			alert("Seleccione un programa educativo para continuar.");
+			return;
 		}
-		else
+		
+		var inputs = $("#formAsociar .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
+		if(validarInputSeries(inputs) ==false)
 		{
-			$(".tblSeriaciones").find("input,select").removeAttr("disabled");
-			$("#asociar_ua").val($("#clave1F").val());
-			$("#asociar_user").val(USER_ID);
-			var dataAsociar = $("#formAsociar").serialize();
-			$.post("<?php echo URL::to('planestudio/asociarprogramas'); ?>",dataAsociar,function(mensaje){
-				alert(mensaje);
-				// Obtener el numero de serie de las materias seriadas
-				var series = [];
-				$(".scrollTable:eq(0) tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
-					var serie = $(element).find("input:first").val();
-					// Indicar si es obligatoria o conveniente la ua seriada
-					var tipo = $(element).find("select:first option:selected").html();
-					series.push(serie + " (" + tipo.substring(0,1) + ")");
-				});
-				var stringSeries = "";
-				// Mostrar informacion guardada en la base de datos de los programas asociados
-				$("#select_carreras option:selected").each(function(){
-					
-					// Agregar informacion en la tabla
-					if(series.length == 0)
-						stringSeries = "SIN SERIACION";
-					else
-						stringSeries = series.join();
-					var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>" +$("#asociar_caracter option:selected").text()+"</td><td>"+$("#asociar_semestre").val()+"</td><td>"+stringSeries+"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;'>" + $(this).val() + "</td></tr>";
-					// Eliminar renglon en caso de actualizacion
-					var rowOld=$("#tblDetalleAsociacion tbody tr td:contains('"+$(this).text()+"')").parent();
-					if($(rowOld).length)
-					{
-						$(rowOld).replaceWith(rowDetail);
-					}
-					else
-					{
-						// Si no existe agregarlo a la tabla
-						$("#tblDetalleAsociacion").append(rowDetail);
-					}
-				});
-				// Limpiar controles
-				//desmarcar_carreras();
-				//$("#asociar_etapa").val(1);
-				//$("#asociar_caracter").val(1);
-				//$("#asociar_semestre").val(1);
-				$(".scrollTable:eq(0) > tbody > tr").not(":eq(0) , :eq(1)").remove();
-				$(".sin-seriacion").show();
-
-				//Actualizar Grilla
-				//ActualizarUAS($("#noPlan").val());
-
-			})
-			.fail(function(errorText,textError,errorThrow){
-				alert(errorText.responseText);
-			});
+			alert("Existen materias seriadas en blanco");
+			return;
 		}
+
+		$(".tblSeriaciones").find("input,select").removeAttr("disabled");
+		$("#asociar_ua").val($("#clave1F").val());
+		$("#asociar_user").val(USER_ID);
+		var dataAsociar = $("#formAsociar").serialize();
+		$.post("<?php echo URL::to('planestudio/asociarprogramas'); ?>",dataAsociar,function(mensaje){
+			alert(mensaje);
+			// Obtener el numero de serie de las materias seriadas
+			var series = [];
+			$(".scrollTable:eq(0) tbody tr").not(":eq(0) , :eq(1)").each(function(index,element){
+				var serie = $(element).find("input:first").val();
+				// Indicar si es obligatoria o conveniente la ua seriada
+				var tipo = $(element).find("select:first option:selected").html();
+				series.push(serie + " (" + tipo.substring(0,1) + ")");
+			});
+			var stringSeries = "";
+			// Mostrar informacion guardada en la base de datos de los programas asociados
+			$("#select_carreras option:selected").each(function(){
+				
+				// Agregar informacion en la tabla
+				if(series.length == 0)
+					stringSeries = "SIN SERIACION";
+				else
+					stringSeries = series.join();
+				var rowDetail = "<tr><td>"+ $(this).text() +"</td><td>"+ $("#asociar_etapa option:selected").text() +"</td><td>" +$("#asociar_caracter option:selected").text()+"</td><td>"+$("#asociar_semestre").val()+"</td><td>"+stringSeries+"</td><td><input type='button' value='-'' class='clsEliminarFila'></td><td style='display:none;'>" + $(this).val() + "</td></tr>";
+				// Eliminar renglon en caso de actualizacion
+				var rowOld=$("#tblDetalleAsociacion tbody tr td:contains('"+$(this).text()+"')").parent();
+				if($(rowOld).length)
+				{
+					$(rowOld).replaceWith(rowDetail);
+				}
+				else
+				{
+					// Si no existe agregarlo a la tabla
+					$("#tblDetalleAsociacion").append(rowDetail);
+				}
+			});
+			// Limpiar controles
+			//desmarcar_carreras();
+			//$("#asociar_etapa").val(1);
+			//$("#asociar_caracter").val(1);
+			//$("#asociar_semestre").val(1);
+			$(".scrollTable:eq(0) > tbody > tr").not(":eq(0) , :eq(1)").remove();
+			$(".sin-seriacion").show();
+
+			//Actualizar Grilla
+			//ActualizarUAS($("#noPlan").val());
+
+		})
+		.fail(function(errorText,textError,errorThrow){
+			alert(errorText.responseText);
+		});
+		
 	}
 	
 	// ACTUALIZAR UNIDAD DE APRENDIZAJE INDIVIDUALMENTE
@@ -1010,6 +1037,13 @@
 		$(".scrollTable input,.scrollTable select").attr("disabled",false);
 		dataUA = $("#formUpdate").serialize(); //+ & + $("#tblUpdateSeriaciones").serialize();
 		alert(dataUA);
+
+		var inputs = $("#formUpdate .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
+		if(validarInputSeries(inputs) ==false)
+		{
+			alert("Existen materias seriadas en blanco");
+			return;
+		}
 		//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 		$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
 			
@@ -1663,7 +1697,10 @@
 			}
 		});
 		// CARGAR DATOS PARA MODIFICAR INDIVIDUALMENTE
-		$("#tblUA").on("click",".clsModificarFila",function(){
+		$("#tblUA tbody").on("click",".clsModificarFila",function(event){
+			// Evitar que se propagen los
+
+
 			var row = $(this).parents().get(1);
 			var descripcion = $(row).find("td:eq(1)").text();
 			var uaid = $(this).attr("title");
@@ -1732,10 +1769,20 @@
 				})
 				.fail(function(errorText,textError,errorThrow){alert("Fallo en la consulta de la unidad de aprendizaje: " + errorText.responseText)});
 		});
+
+		/* VALIDAR SUBMIT DE SERIACIONES CUANDO DEJEN VACIO EL CAMPO
+		$("#formAsociar").on("submit",function(){
+			alert("Hiciste submit");
+			return false;
+		});*/
+
+		
+		
+	
 	});
 	</script>
 
-	 
+	
 
 <!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
 
