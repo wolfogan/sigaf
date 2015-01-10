@@ -257,8 +257,8 @@ background: #EFCA0D;
 #botones
 {
 	/*float: right;*/
-	margin-left: 800px;
-	width: 360px;
+	margin-left: 870px;
+	width: 300px;
 }
 #cimarron
 {
@@ -523,7 +523,7 @@ background: #EFCA0D;
 
 html>body div.tableContainer table {
 	
-	margin-top: -15px;
+	margin-top: -50px;
 	width: 900px;
 }
 
@@ -539,7 +539,6 @@ html>body thead.fixedHeader tr {
 
 html>body tbody.scrollContent {
 	display: block;
-	height: 170px;
 	overflow: auto;
 	width: 100%
 }
@@ -572,15 +571,23 @@ html>body thead.fixedHeader th {
 
 html>body thead.fixedHeader th + th {
 
-	width: 150px
+	width: 100px
 }
 
 html>body thead.fixedHeader th + th + th {
 
-	width: 300px
+	width: 100px
 }
 
 html>body thead.fixedHeader th + th + th + th {
+
+	width: 100px
+}
+html>body thead.fixedHeader th + th + th + th + th {
+
+	width: 350px
+}
+html>body thead.fixedHeader th + th + th + th + th + th {
 
 	width: 50px
 }
@@ -591,29 +598,44 @@ html>body thead.fixedHeader th + th + th + th {
 }
 
 html>body tbody.scrollContent td {
-	width: 201px
+	width: 196px
 }
 
 html>body tbody.scrollContent td + td {
-	width: 141px
+	width: 96px
 }
 
 html>body tbody.scrollContent td + td + td{
-	width: 300px
+	width: 94px
 }
 
 html>body tbody.scrollContent td + td + td + td {
-	width: 70px
+	width: 99px
 
-} /* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
+} 
+
+html>body tbody.scrollContent td + td + td + td + td{
+	width: 350px
+
+}
+
+html>body tbody.scrollContent td + td + td + td+ td + td{
+	width: 50px
+
+}
+
+
+
+
+/* AQUI TERMINA EL ESTILO PARA LA TABLA CON SCROLL */
 
 
 /* ESTILO PARA SCROLL DE LA CONSULTA PE */
 .div_pe_tableContainer
 {
 
-	margin: auto;
-	width: 850px;
+	
+	width: 650px;
 }
 
 html>body div.pe_tableContainer table {
@@ -643,8 +665,9 @@ html>body div.pe_tableContainerMod table
 
 
 
-#pe_BtnseriacionAgregar
+.pe_BtnseriacionAgregar
 {
+
 	margin-top: 40px;
 	float: right;
 }
@@ -654,9 +677,6 @@ html>body div.pe_tableContainerMod table
 	width: 900px;
 	height: 230px;
 	margin:auto;
-
-
-
 }
 
 .tablaDatos 
@@ -908,12 +928,12 @@ html>body div.pe_tableContainerMod table
 }
 #pe_btnSeriacionMod
 {
-	margin-left: 30px;
+	margin-left: 25px;
 	float: left;
 }
 #pe_btnSeriacionMod input
 {
-	width:220px; 
+	width:225px; 
 	height:30px; 
 	font-size:18px; 
 }
@@ -1066,6 +1086,7 @@ html>body div.pe_tableContainerMod table
 {
 
 	width: 250px;
+	float: right;
 	
 }
 
