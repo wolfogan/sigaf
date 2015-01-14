@@ -651,7 +651,7 @@
 			</div>
 			<br />
 			<!-- INICIA TABLA DATATABLES PARA LAS UA -->
-			<table cellpadding="0" cellspacing="0" border="0" class="display"  id="tblUA">
+			<table width="1280px" cellpadding="0" cellspacing="0" border="0" class="display"  id="tblUA">
 				<thead>
 					<tr>
 						<th>CLAVE</th>
@@ -659,7 +659,7 @@
 						<th>CARRERAS</th>
 						<th>ETAPA</th>
 						<th>TIPO</th>
-						<TH>SERIACION</TH>
+						<th>SERIACION</TH>
 						<th>COORDINACIÓN</th>
 						<th>HC</th>
 						<th>HL</th>

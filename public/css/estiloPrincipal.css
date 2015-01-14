@@ -266,6 +266,7 @@ background: #EFCA0D;
 }
 #GridPlanEstudio
 {
+	
 	margin:auto;
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -644,25 +645,47 @@ html>body div.pe_tableContainer table {
 	width: 850px;
 }
 
+/* ESTILO PARA TABLA DE NO. EMPLEADO / DOCENTE DE CREACION DE HORARIOS*/
 
-/****************************************/
 
-/* ESTILO PARA SCROLL MODIFICACION DEL GRID 
-
-.div_pe_tableContainerMod
+#hr_empleado_docente div.scroll  {
+   width:100%;
+   overflow-y: scroll;
+   height:218px;
+}
+#hr_empleado_docente 
 {
-	background: yellow;
-	margin: auto;
-	width: 650px;
+
+	float: left;
+	margin-top:10px;
+	margin-bottom: 45px;
+	margin-left: 10px;
+	margin-right: 10px;
+} 
+#hr_empleado_docente th 
+{
+	
+   	height: 40px;
+   	font-size: 13px;
+   	border:1px solid gray;
+
+  	color:#fff;
+	padding:1px 1px 0;
+	background-color:green;
 }
 
-html>body div.pe_tableContainerMod table
+#hr_empleado_docente td
 {
-	margin-top: -15px;
-	width: 650px;*/
+	
+ 	border: 1px solid gray;
+	border-collapse: separate;
+  	border-spacing: 7px;
+  	background: #F0FFFF;
+  	font-size: 13px;
+  	height: 30px;
 }
+
 /********************************************/
-
 
 
 .pe_BtnseriacionAgregar

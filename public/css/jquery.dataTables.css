@@ -13,7 +13,7 @@
 
 .mensaje
 {
-  width: 1300px;
+  width: 1280px;
   height: 25px;
   display:inline-block; 
   text-align: center;
@@ -79,7 +79,7 @@ table.dataTable tbody tr.selected {
 }
 table.dataTable tbody th,
 table.dataTable tbody td {
-  padding: 8px 10px;
+  padding: 5px 10px;
 }
 table.dataTable th.center,
 table.dataTable td.center,
