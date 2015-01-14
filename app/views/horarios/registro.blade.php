@@ -266,22 +266,21 @@
 
 
 				
-
 				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS-->
 				
 
 					<div class="hr_lblMaterias">
-						<div class="hr_titulos" style="margin-left:80px;">Seleccione materias</div>
-						<div class="hr_titulos" style="margin-left:440px;">Disponibilidad docente</div>
+						<div class="hr_titulos" style="margin-left:40px;">Seleccione materias</div>
+						<div class="hr_titulos" style="margin-left:350px;">Disponibilidad docente</div>
 					</div>
 
-					<table class="hr_tabla_ca" style="width:380px;">
+					<table class="hr_tabla_ca" style="width:300px; margin-left:15px">
 
 							
 						<thead class="hr_encabezado_tablaConsulta">
 							<tr>
 								<th style="width:80px">CLAVE</th>
-								<th style="width:300px">MATERIA</th>
+								<th style="width:220px">MATERIA</th>
 							</tr>
 						</thead>
 							
@@ -324,28 +323,121 @@
 
 				<!-- TABLA PARA CREACION DE HORARIOS: DISPONIBILIDAD DOCENTE -->
 
+					<table id="hr_empleado_docente" width="350px;">
+						<colgroup width="">
 
-					<table class="hr_tabla_ca" style="width:900px;">
+						  <tr>
+						    <th width="100px">NO. EMPLEADO</div></th>
+						    <th>DOCENTE</div></th>
+						  </tr>
 
-							
+						  <tr><td colspan=2>
+
+						<div class='scroll'>
+
+							  <table width="100%">
+								    <td style="background:purple" width="100px">23658</td>
+								    <td>ROCIO VERDUGO VALLES</td>
+							  </tr>
+
+							  <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							   <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+							   <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							   <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+							   <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							   <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+							   <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							   <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+							   <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							   <tr>
+							    <td>24523</td>
+							    <td>MARTHA LETICIA ROMO CARMONA</td>
+							  </tr>
+
+							  <tr>
+							    <td>24698</td>
+							    <td>EDGAR IVAN AVILA GARRIDO</td>
+							  </tr>
+
+							</table>
+						</table>
+
+					
+
+
+					<table class="hr_tabla_ca" style="width:600px;">
+
 						<thead class="hr_encabezado_tablaConsulta">
 							<tr>
-								<th style="width:100px">NO. EMPLEADO</th>
-								<th style="width:200px">DOCENTE</th>
-								<th style="width:100px">HORA</th>
-								<th style="width:100px">LUNES</th>
-								<th style="width:100px">MARTES</th>
-								<th style="width:100px">MIÉRCOLES</th>
-								<th style="width:100px">JUEVES</th>
-								<th style="width:100px">VIERNES</th>		
-							</tr>
+								<th style="width:120px">HORA</th>
+								<th style="width:110px">LUNES</th>
+								<th style="width:110px">MARTES</th>
+								<th style="width:110px">MIÉRCOLES</th>
+								<th style="width:110px">JUEVES</th>
+								<th style="width:110px">VIERNES</th>
+							<tr>
 						</thead>
 
 													
 						<tbody>
 							<tr>
-								<td>23658</td>
-								<td>PEDRO PEREZ LOPEZ</td>
 								<td >07:00 - 8:00</td>
 								<td style="background:#2ECCFA;">231</td>
 								<td style="background:#2ECCFA;">232</td>
@@ -355,20 +447,16 @@
 									
 							</tr>
 							<tr>
-								<td>24523</td>
-								<td>CARLOS P. ROMERO GARCIA</td>
+								
 								<td >08:00 - 9:00</td>
 								<td style="background:#2ECCFA;">231</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">421</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">322</td>
-									
-									
+								<td style="background:#2ECCFA;">322</td>			
 							</tr>
 							<tr>
-								<td>24698</td>
-								<td>ANTONIO E. CASTRO DUARTE</td>
+								
 								<td >09:00 - 10:00</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
 								<td style="background:#2ECCFA;">421</td>
@@ -378,8 +466,7 @@
 									
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
+								
 								<td>10:00 - 11:00</td>
 								<td style="background:#00FF80"></td>
 								<td style="background:#2ECCFA;">232</td>
@@ -389,8 +476,7 @@
 									
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
+								
 								<td>11:00 - 12:00</td>
 								<td style="background:#2ECCFA;">621</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
@@ -400,8 +486,7 @@
 									
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
+								
 								<td>12:00 - 13:00</td>
 								<td style="background:#2ECCFA;">621</td>
 								<td style="background:#FFFF00">DISPONIBLE</td>
@@ -412,7 +497,7 @@
 							</tr>
 								
 							
-						</table>
+					</table>
 				
 			<!-------------------------------------------------------------------------------------------->
 
@@ -601,151 +686,6 @@
 					</table>
 
 
-
-					<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS
-				
-				<div id="hr_tableContainer" class="hr_tableContainer">
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-						<thead class="fixedHeader">
-							<tr>
-								
-								<th style="width:80px">CLAVE</th>
-								<th style="width:300px">MATERIA</th>
-							
-							</tr>
-						</thead>
-						<tbody class="scrollContent">
-							<tr>
-								
-								<tr>
-									<td>11235</td>
-									<td>MATEMATICAS</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11236</td>
-									<td>PROGRAMACION I</td>
-								</tr>
-								<tr>
-									<td>11237</td>
-									<td>BASES DE DATOS CORPORATIVAS</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-								<tr>
-									<td>11239</td>
-									<td>ADMINISTRACION DE PROYECTOS</td>
-								</tr>
-								<tr>
-									<td>11240</td>
-									<td>FISICA</td>
-								</tr>
-								<tr>
-									<td>11238</td>
-									<td>ESTRUCTURA DE DATOS</td>
-								</tr>
-							</tr>
-						</tbody>
-					</table>
-				</div>-->
-				
 			<!-------------------------------------------------------------------------------------------->
 					
 					<div class="hr_doc_total_horas" style="margin-left:190px; margin-top:-30px;">Horas tope:<label>40</label></div>
@@ -757,15 +697,7 @@
 
 
 		<!--</div>-->
-
-
-
-
-		
 	
-
-				
-			
 		</section>
 
 	<footer>
