@@ -142,7 +142,7 @@
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
 										<div id="dd_noEmpleado">No. empleado:<label class="dd_label" style="margin-left:15px;">20829</label></div>
 										<div class="dd_datosPersonales">Período:<input style="margin-left:55px;" class="dd_con_estilo_largo" type="text" placeholder="2014-2015" /></div>
-										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"></div>
+										<div id="dd_fechaIngreso">Ingreso UABC:<input type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"/></div>
 										<div class="dd_datosPersonales">A. paterno:<input style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="CASTILLEJOS" /></div>
 										<div class="dd_datosPersonales">A. materno:<input style="margin-left:27px;" class="dd_con_estilo_largo" type="text" placeholder="CABALLERO"/></div>
 										<div class="dd_datosPersonales">Nombre(s):<input style="margin-left:32px;" class="dd_con_estilo_largo" id="txtnombres" type="text" placeholder="EMMA SOFIA"/></div>
@@ -182,26 +182,26 @@
 											</select>
 										</div>
 
-										<div class="dd_datosPersonales">Ciudad:
-											<select class="dd_con_estilo_largo" style="margin-left:16px;">
-												<option value="TIJUANA">TIJUANA</option>
-												<option value="GUAYMAS">GUAYMAS</option>
-											</select>
-										</div>
+										
 		
 									</div>
 
 									 <div class="dd_divDecoracionTelefonos">
+									 	<div class="dd_datosPersonales">Ciudad:
+											<select class="dd_con_estilo_largo" style="margin-left:60px;">
+												<option value="TIJUANA">TIJUANA</option>
+												<option value="GUAYMAS">GUAYMAS</option>
+											</select>
+										</div>
 										<div class="dd_datosPersonales">Oficina:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text" placeholder="(664) 686 5679"/></div>
 										<div class="dd_datosPersonales">Particular:<input class="dd_con_estilo_largo" style="margin-left:38px;" type="text" placeholder="(664) 188 9221"/></div>
 										<div class="dd_datosPersonales">Celular:<input class="dd_con_estilo_largo" style="margin-left:60px;" type="text" placeholder="(664) 188 9221"/></div>
 										<div class="dd_datosPersonales">Correo UABC:<input class="dd_con_estilo_largo" style="margin-left:12px;" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
 										<div class="dd_datosPersonales">Correo:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text"/></div>
-
-										<div id="dd_otro">
-											<label></label>
+										
+										<!--<div id="dd_otro">
 											<textarea rows=3 cols="36" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="dd_observaciones" name="dd_observaciones" placeholder="Observaciones"></textarea>
-										</div>
+										</div>-->
 									</div>
 
 								<h2 style="margin-top:400px;">Trabajo fuera de UABC</h2>
@@ -654,14 +654,6 @@
 								</table>
 							</div>
 
-							<div id="dd_observaciones_materias">
-								<label>Comentarios:</label>
-								<textarea rows=3 style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" placeholder="Comentarios"></textarea>
-							</div>
-
-							<br>
-							<br>
-
 							<h2>Disponibilidad</h2>
 
 							<div id="dd_impartirMaterias">
@@ -839,9 +831,13 @@
 								</table>
 								<!--<div class="dd_btnEstudiosCursos"><input type="submit" class="estilo_button2" style="width:170px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>-->
 							</div>
+							<div id="dd_observaciones_materias">
+								<label>Observaciones:</label>
+								<textarea rows=3 cols="120" style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" placeholder="Observaciones"></textarea>
+							</div>
 
 
-
+								<div id="dd_btnGuardarDisp"><input type="submit" class="estilo_button2" style="width:170px"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" /></div>
 								
 						</div>
 

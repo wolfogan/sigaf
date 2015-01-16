@@ -256,10 +256,15 @@ background: #EFCA0D;
 }
 #botones
 {
-	/*float: right;*/
 	margin-left: 870px;
-	width: 300px;
+	width: 250px;
 }
+#limpiar
+{
+	float: right;
+}
+
+
 #cimarron
 {
 	float: right;
@@ -1898,7 +1903,7 @@ input[readonly],input[readonly="readonly"]
 {
 	font-size: 18px;
 	margin-left: 175px;
-	margin-top: 20px;
+	margin-top: 30px;
 	width: 500px;
 }
 
@@ -1981,7 +1986,7 @@ input[readonly],input[readonly="readonly"]
 {
 	padding-bottom: 20px;
 	padding-right: 10px;
-	width: 380px;
+	width: 390px;
 }
 #dd_fotoDoc
 {
@@ -2007,7 +2012,6 @@ input[readonly],input[readonly="readonly"]
 .dd_datosPersonales
 {
 
-	
 	padding-bottom: 20px;
 	padding-right: 10px;
 	width: 400px;
@@ -2051,26 +2055,28 @@ input[readonly],input[readonly="readonly"]
 {
 
 	float: left;
-	height: 318px;
+	height: 295px;
 	font-size: 18px;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
 	margin-left:190px;
 	padding:20px;
-	width: 350px;
-	
-
+	width: 360px;
+	margin-top: 13px;
 }
 
 .dd_divDecoracionTelefonos
 {
-	
+
 	font-size: 18px;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
 	float: left;
-	padding:20px;
-	width: 380px;
+	padding: 20px;
+	margin-left: 5px;
+	width: 360px;
+	height: 295px;
+	margin-top: 13px;
 
 }
 
@@ -2100,7 +2106,9 @@ input[readonly],input[readonly="readonly"]
 	border-bottom: 4px dashed #BEF781;
 	padding: 20px;
 	margin-left:190px;
-	width: 350px;
+	width: 360px;
+	height: 140px;
+	margin-top: 10px;
 }
 
 #dd_ingreso_antiguedad
@@ -2110,9 +2118,11 @@ input[readonly],input[readonly="readonly"]
 	border-bottom: 4px dashed #BEF781;
 	float: left;
 	font-size: 18px;
-	height: 135px;
+	height: 140px;
 	padding: 20px;
-	width: 380px;
+	margin-left: 5px;
+	width: 360px;
+    margin-top: 10px;
 }
 
 #dd_trabajoFuera
@@ -2220,7 +2230,7 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_impartirMaterias
 {
-	margin-top: 50px;
+	margin-top: 30px;
 	width: 1200px;
 
 }
@@ -2326,9 +2336,9 @@ input[readonly],input[readonly="readonly"]
 
 #dd_btnBuscar
 {
-	
 	float: right;
-	margin-right: 35px;
+	margin-right: 100px;
+	padding-top: 10px;
 }
 
 #dd_consulta
@@ -2512,6 +2522,13 @@ input[readonly],input[readonly="readonly"]
 	
 }
 
+#dd_btnGuardarDisp
+{
+	width: 300px;
+	height: 80px;
+	margin-left: 850px;
+	margin-top: -70px;
+}
 
 /*----------------------------------------------------------------------------------------------*/
 /*------------------------------------PRUEBA IVAN-----------------------------------------------*/
