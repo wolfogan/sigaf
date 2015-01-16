@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/estilo_tabs.css" />
+		<link rel="stylesheet" type="text/css" href="../css/estiloTooltipFlip.css" />
 
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
@@ -86,9 +87,12 @@
 			<!-- TABLA PARA CREACION DE HORARIOS: HORARIO DEL GRUPO Y TURNO -->
 
 					<div class="hr_lblMaterias">
-						<div class="hr_titulos" style="margin-left:380px;">Horario del grupo</div>
+						<div class="hr_titulos" style="margin-left:380px; margin-top:50px;">Horario del grupo</div>
 					</div>
 
+					
+				<div class="dummy dummy-menu">
+						    
 					<table class="hr_tabla_ca" style="width:900px; margin-left:50px; float:none;">	
 
 						<thead class="hr_encabezado_tablaConsulta">
@@ -137,7 +141,17 @@
 								
 								<td>07:00 - 8:00</td>
 								<td>12456</td>
-								<td style="background:purple">23658</td>
+								<td style="background:purple">
+									<a class="tooltip tooltip-effect-1" href="#">23658
+										<span class="tooltip-content">
+                                        <span class="tooltip-front"><img src="../imagenes/user4.png" alt="user4"/></span>
+                                        <span class="tooltip-back">REGISTROS ESPECIALES</span>
+                                    	</span>
+                            		  </a>
+
+
+
+									</td>
 								<td>12457</td>
 								<td>29658</td> 
 								<td>11743</td>
@@ -152,7 +166,13 @@
 								
 								<td>08:00 - 9:00</td>
 								<td>12456</td>
-								<td style="background:purple">23658</td>
+								<td style="background:purple">
+									<a class="tooltip tooltip-effect-2" href="#">23658
+										<span class="tooltip-content">
+                                        <span class="tooltip-front"><img src="../imagenes/user4.png" alt="user4"/></span>
+                                        <span class="tooltip-back">REGISTROS ESPECIALES</span>
+                                    	</span>
+                            		  </a>
 								<td>11859</td>
 								<td>29365</td> 
 								<td>12459</td>
@@ -173,9 +193,21 @@
 								<td>11743</td>
 								<td>23145</td>
 								<td>12458</td>
-								<td style="background:purple">23658</td>
+								<td style="background:purple">
+									<a class="tooltip tooltip-effect-3" href="#">23658
+										<span class="tooltip-content">
+                                        <span class="tooltip-front"><img src="../imagenes/user4.png" alt="user4"/></span>
+                                        <span class="tooltip-back">REGISTROS ESPECIALES</span>
+                                    	</span>
+                            		  </a>
 								<td>12459</td> 
-								<td style="background:purple">23658</td>
+								<td style="background:purple">
+									<a class="tooltip tooltip-effect-4" href="#">23658
+										<span class="tooltip-content">
+                                        <span class="tooltip-front"><img src="../imagenes/user4.png" alt="user4"/></span>
+                                        <span class="tooltip-back">REGISTROS ESPECIALES</span>
+                                    	</span>
+                            		  </a>
 								
 							</tr>
 							<tr>
@@ -190,7 +222,13 @@
 								<td>12457</td>
 								<td>29658</td>
 								<td>11859</td> 
-								<td style="background:purple">23658</td>
+								<td style="background:purple">
+									<a class="tooltip tooltip-effect-1" href="#">23658
+										<span class="tooltip-content">
+                                        <span class="tooltip-front"><img src="../imagenes/user4.png" alt="user4"/></span>
+                                        <span class="tooltip-back">REGISTROS ESPECIALES</span>
+                                    	</span>
+                            		  </a>
 								
 							</tr>
 							<tr>
@@ -223,9 +261,9 @@
 								<td></td>
 								
 							</tr>
-							
-						
-					</table>
+						</table>
+					
+			</div>
 					<!--<div id="btnImprimirBit">
 						<input style="width:120px"class="estilo_button2" type="button" value="Guardar" name="hr_GuardarHr" id="hr_GuardarHr">
 					</div>-->
@@ -236,7 +274,7 @@
 			<!-- TABLA SIGNIFICADO DE COLORES -->
 
 			
-					<table class="hr_tabla_ca" style="width:220px; margin-left:1050px; margin-top:-200px;">
+					<table class="hr_tabla_ca" style="width:220px; margin-left:1050px; margin-top:-300px;">
 
 						
 						<thead class="hr_encabezado_tablaConsulta">
@@ -421,83 +459,83 @@
 
 					
 
+						
+									<table class="hr_tabla_ca" style="width:600px;">
 
-					<table class="hr_tabla_ca" style="width:600px;">
+										<thead class="hr_encabezado_tablaConsulta">
+											<tr>
+												<th style="width:120px">HORA</th>
+												<th style="width:110px">LUNES</th>
+												<th style="width:110px">MARTES</th>
+												<th style="width:110px">MIÉRCOLES</th>
+												<th style="width:110px">JUEVES</th>
+												<th style="width:110px">VIERNES</th>
+											<tr>
+										</thead>
 
-						<thead class="hr_encabezado_tablaConsulta">
-							<tr>
-								<th style="width:120px">HORA</th>
-								<th style="width:110px">LUNES</th>
-								<th style="width:110px">MARTES</th>
-								<th style="width:110px">MIÉRCOLES</th>
-								<th style="width:110px">JUEVES</th>
-								<th style="width:110px">VIERNES</th>
-							<tr>
-						</thead>
-
+																	
+										<tbody>
+											<tr>
+												<td >07:00 - 8:00</td>
+												<td style="background:#2ECCFA;">231</td>
+												<td style="background:#2ECCFA;">232</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">323</td> 
+												<td style="background:#FFFF00">DISPONIBLE</td>
 													
-						<tbody>
-							<tr>
-								<td >07:00 - 8:00</td>
-								<td style="background:#2ECCFA;">231</td>
-								<td style="background:#2ECCFA;">232</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">323</td> 
-								<td style="background:#FFFF00">DISPONIBLE</td>
-									
-							</tr>
-							<tr>
-								
-								<td >08:00 - 9:00</td>
-								<td style="background:#2ECCFA;">231</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">421</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">322</td>			
-							</tr>
-							<tr>
-								
-								<td >09:00 - 10:00</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">421</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">322</td> 
-								<td style="background:#FFFF00">DISPONIBLE</td>
-									
-							</tr>
-							<tr>
-								
-								<td>10:00 - 11:00</td>
-								<td style="background:#00FF80"></td>
-								<td style="background:#2ECCFA;">232</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-									
-							</tr>
-							<tr>
-								
-								<td>11:00 - 12:00</td>
-								<td style="background:#2ECCFA;">621</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">323</td>
-								<td style="background:#2ECCFA;">323</td>
-								<td style="background:#2ECCFA;">323</td>
-									
-							</tr>
-							<tr>
-								
-								<td>12:00 - 13:00</td>
-								<td style="background:#2ECCFA;">621</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#FFFF00">DISPONIBLE</td>
-								<td style="background:#2ECCFA;">621</td> 
-								<td style="background:#2ECCFA;">421</td>
-									
-							</tr>
-								
-							
-					</table>
+											</tr>
+											<tr>
+												
+												<td >08:00 - 9:00</td>
+												<td style="background:#2ECCFA;">231</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">421</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">322</td>			
+											</tr>
+											<tr>
+												
+												<td >09:00 - 10:00</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">421</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">322</td> 
+												<td style="background:#FFFF00">DISPONIBLE</td>
+													
+											</tr>
+											<tr>
+												
+												<td>10:00 - 11:00</td>
+												<td style="background:#00FF80"></td>
+												<td style="background:#2ECCFA;">232</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+													
+											</tr>
+											<tr>
+												
+												<td>11:00 - 12:00</td>
+												<td style="background:#2ECCFA;">621</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">323</td>
+												<td style="background:#2ECCFA;">323</td>
+												<td style="background:#2ECCFA;">323</td>
+													
+											</tr>
+											<tr>
+												
+												<td>12:00 - 13:00</td>
+												<td style="background:#2ECCFA;">621</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#FFFF00">DISPONIBLE</td>
+												<td style="background:#2ECCFA;">621</td> 
+												<td style="background:#2ECCFA;">421</td>
+													
+											</tr>
+												
+											
+									</table>
 				
 			<!-------------------------------------------------------------------------------------------->
 

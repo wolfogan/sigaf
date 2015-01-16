@@ -2698,7 +2698,7 @@ input[readonly],input[readonly="readonly"]
  .hr_lblMaterias
  {
  	
- 	margin: 50px 0px 0px 15px;
+ 	margin: -50px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;
  	text-align: center;
