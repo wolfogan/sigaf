@@ -73,7 +73,7 @@
 					</datalist>
 				</div>
 
-				<div id="dd_consultarNombre">
+				<div id="dd_consultaNombre">
 					<label>Nombre: </label>
 					<input type="text" class="dd_con_estilo_largo" name="dd_consultarPor" size=1/>
 						

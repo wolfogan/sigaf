@@ -78,11 +78,11 @@
 
 			</div>
 
-			<div class="pe_catalogos_tbl">
+			<!--<div class="pe_catalogos_tbl">-->
 				<div id="tableContainer" class="tableContainer">
 
 					<table style="height:115px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-						<thead style="background:green">
+						<thead style="background:green; height:35px">
 							<tr>
 								<th colspan="7">MATERIAS ASOCIADAS</th>
 							</tr>
@@ -95,7 +95,7 @@
 							<tr class="fila-base-seriacion">
 								<td>Tipo:</td>
 								<td>
-									<select style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
+									<select style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" >
 										@foreach($seriaciones as $seriacion)
 											<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 										@endforeach
@@ -111,9 +111,9 @@
 								</td>
 								
 								<td>
-									<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
+									<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"/>
 								</td>
-								<td><input type="button" class="dd_clsAgregarFila"></td>
+								<td><input type="button" class="dd_clsAgregarFila"/></td>
 							</tr>
 						</tbody>
 					</table>
@@ -126,11 +126,11 @@
 					<input type="submit" style="height:35px; float:right;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
 				</div>
 				
-			</div>
+			<!--</div>-->
 			
-			<div id="tableContainer" class="tableContainer">
-				<table style="height:90px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
-					<thead style="background:green">
+			<div id="tableContainer">
+				<table style="height:90px; margin-top:20px" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
+					<thead style="background:green; height:35px">
 						<tr>
 							<th colspan="6">PROGRAMAS EDUCATIVOS ASOCIADOS A LA MATERIA</th>
 						</tr>
@@ -139,12 +139,12 @@
 					<thead class="fixedHeader">
 						<tr>
 							
-							<th>PROGR. EDUCATIVO</th>
-							<th>ETAPA</th>
-							<th>TIPO</th>
-							<th>SEMESTRE</th>
-							<th>SERIACIÓN</th>
-							<th>ELIMINAR</th>
+							<th style="width:200px">PROGR. EDUCATIVO</th>
+							<th style="width:100px">ETAPA</th>
+							<th style="width:98px">TIPO</th>
+							<th style="width:103px">SEMESTRE</th>
+							<th style="width:355px">SERIACIÓN</th>
+							<th style="width:55px">ELIM. </th>
 							<th style="display:none;">CODIGO</th>
 						</tr>
 					</thead>
@@ -236,7 +236,7 @@
 
 			<div class="div_pe_tableContainer" class="pe_tableContainer" style="margin-left:35px;">
 				<table border="0" style="width:650px;" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-					<thead style="background:green">
+					<thead style="background:green; height:50px">
 						<tr>
 							<th colspan="7">MATERIAS ASOCIADAS</th>
 						</tr>
