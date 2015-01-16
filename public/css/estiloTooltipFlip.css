@@ -1,0 +1,217 @@
+.tooltip {
+	display: inline;
+	position: relative;
+	z-index: 999;
+}
+
+/* Gap filler */
+.tooltip::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	bottom: 100%;
+	pointer-events: none;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.tooltip:hover::after {
+	pointer-events: auto;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+	position: absolute;
+	z-index: 9999;
+	width: 160px;
+	height: 80px;
+	left: 50%;
+	margin-left: -80px;
+	bottom: 100%;
+	text-align: center;
+	color: green;
+	opacity: 0;
+	margin-bottom: 20px;
+	cursor: default;
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-1 .tooltip-content {
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+.tooltip-effect-2 .tooltip-content {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+}
+
+.tooltip-effect-3 .tooltip-content {
+	-webkit-transform: translate3d(0,10px,0) rotate3d(0,0,1,5deg);
+	transform: translate3d(0,10px,0) rotate3d(0,0,1,5deg);
+}
+
+.tooltip:hover .tooltip-content {
+	opacity: 1;
+	pointer-events: auto;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tooltip-content > span {
+	float: left;
+	width: 50%;
+	height: 100%;
+	position: relative;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.tooltip-content > span img {
+	display: block;
+	max-width: 60px;
+	margin: 10px;
+}
+
+.tooltip-front {
+	background: #fff;
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-transform: perspective(1000px) rotate3d(0,1,0,-90deg);
+	transform: perspective(1000px) rotate3d(0,1,0,-90deg);
+}
+
+.tooltip-back {
+	background: #fff;
+	font-size: .8em;
+	padding: 2.2em 1em 0;
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transform: perspective(1000px) rotate3d(0,1,0,90deg);
+	transform: perspective(1000px) rotate3d(0,1,0,90deg);
+}
+
+.tooltip:hover .tooltip-content > span {
+	-webkit-transform: perspective(1000px) rotate3d(0,1,0,0deg);
+	transform: perspective(1000px) rotate3d(0,1,0,0deg);
+}
+
+/* Arrow */
+.tooltip-content .tooltip-front::after,
+.tooltip-content .tooltip-back::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	width: 0;
+	height: 0;
+}
+
+.tooltip-content .tooltip-front::after {
+	right: 0;
+	border-top: 10px solid #fff;
+	border-left: 10px solid transparent;
+}
+
+.tooltip-content .tooltip-back::after {
+	left: 0;
+	border-top: 10px solid #fff;
+	border-right: 10px solid transparent;
+}
+
+
+/***************************************************/
+
+div *, *:after, *:before  
+{ 
+	-webkit-box-sizing: border-box; box-sizing: border-box; 
+} 
+.clearfix:before, .clearfix:after 
+{ 
+	content: ''; display: table;
+ }
+.clearfix:after
+ { 
+ 	clear: both; 
+ }
+
+.dummy-menu {
+	max-width: 100%;
+	padding: 4em 1em;
+}
+
+.dummy-menu ul,
+.dummy-team ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: 0 0 3em;
+}
+
+/*.dummy-menu ul li {
+	display: inline-block;
+	position: relative;
+	margin: 0 1em;
+	font-size: 1.5em;
+}
+
+.dummy-menu ul li a {
+	display: inline-block;
+	padding: 0.15em 0.25em 0;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.dummy-menu-icons ul li {
+	width: 2em;
+	height: 2em;
+	line-height: 1.75;
+}
+
+.dummy-image {
+	position: relative;
+}
+
+.dummy blockquote {
+
+	max-width: 700px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.dummy-avatar {
+	margin-top: 7em;
+	text-align: center;
+}
+
+.dummy-avatar > div {
+	display: inline-block;
+	margin: 0 1em;
+}
+
+.dummy-avatar a {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.dummy-avatar a img {
+	border-radius: 50%;
+}
+
+.dummy-avatar a h4 {
+	margin: 0.25em 0;
+	line-height: 1;
+	font-size: 1.75em;
+	font-weight: 400;
+}*/
