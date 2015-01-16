@@ -92,10 +92,27 @@ Route::get('pruebas',function(){
 						->where("carga.periodo","=",20141)
 						->where("grupos.programaedu","=",3)
 						->toSql();*/
-	$datapua = DB::table('p_ua')
+	/*$datapua = DB::table('p_ua')
 					->select('caracter','semestre_sug')
 					->where('uaprendizaje','=',11236)
 					->where('programaedu','=',1)
-					->first();
-	return var_dump($datapua);
+					->first();*/
+
+	// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
+		$uas = DB::table('p_ua')
+				->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->where('p_ua.caracter','=',1)
+				->whereIn('uaprendizaje.plan',array(20101,20092))
+				->orderBy('plan','desc')
+				->orderBy('p_ua.uaprendizaje','asc')
+				->get();
+
+		$contenido = "";
+		foreach ($uas as $key => $value) {
+			$contenido .= $uas[$key]->plan;
+		}
+
+		$uas["planes"] = $planes = array(20101,20092);
+	return var_dump($uas);
 });

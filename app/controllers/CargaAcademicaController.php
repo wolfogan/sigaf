@@ -28,22 +28,26 @@ class CargaAcademicaController extends BaseController
 		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
 		
 		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
-		$uas = UnidadAprendizaje::select('plan','uaprendizaje','descripcionmat')
-				->where('caracter','=',1)
-				->whereIn('plan',array($plan[0]->plan,$plan[1]->plan))->orderBy('plan','desc')
-				->orderBy('uaprendizaje','asc')->get();
+		$uas = DB::table('p_ua')
+				->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+				->where('p_ua.caracter','=',1)
+				->whereIn('uaprendizaje.plan',array($plan[0]->plan,$plan[1]->plan))
+				->orderBy('plan','desc')
+				->orderBy('p_ua.uaprendizaje','asc')
+				->get();
 		
-		$uas->planes = $planes = array($plan[0]->plan,$plan[1]->plan);;
+		$planes = array($plan[0]->plan,$plan[1]->plan);
 		$unidades  = [[],[]];
-		foreach ($uas as $ua) 
+		foreach ($uas as $key => $value) 
 		{
-			if($ua->plan == $plan[0]->plan)
+			if($uas[$key]->plan == $plan[0]->plan)
 			{
-				array_push($unidades[0], $ua);
+				array_push($unidades[0], $uas[$key]);
 			}
-			elseif ($ua->plan==$plan[1]->plan) 
+			elseif ($uas[$key]->plan==$plan[1]->plan) 
 			{
-				array_push($unidades[1], $ua);;
+				array_push($unidades[1], $uas[$key]);;
 			}
 		}
 

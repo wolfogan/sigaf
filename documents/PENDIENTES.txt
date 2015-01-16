@@ -56,3 +56,17 @@ PENDIENTE REALES
 
 - VALIDAR AGREGAR  FILA SERIACION CON UA EN LA CAJA
 - PROCESOOOOOO DE ETAPAS INCOMPLETO.
+
+
+/******************************
+	PENDIENTES PLAN DE ESTUDIOS
+/******************************
+
+- QUE NO SE BORREN DE DATOS CUANDO SE USAN LOS CATALOGOS EN LAS MODALES
+
+
+
+
+
+/************************
+/************************
