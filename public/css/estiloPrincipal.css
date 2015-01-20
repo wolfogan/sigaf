@@ -1173,7 +1173,7 @@ html>body div.pe_tableContainer table {
 	margin: auto;
 	margin-top: 30px;
 	margin-bottom: 20px;
-	width: 300px;
+	width: 450px;
 	height: 100px;
 }
 
@@ -1257,7 +1257,7 @@ html>body div.pe_tableContainer table {
 .us_div
 {
 	
-	margin-top: 80px;
+	margin-top: 85px;
 
 
 }
@@ -1299,7 +1299,7 @@ html>body div.pe_tableContainer table {
 	margin: auto;
 	margin-top: 30px;
 	margin-bottom: 40px;
-	width: 910px;
+	width: 920px;
 }
 
 #us_btnRegistroUsuario
@@ -2463,19 +2463,20 @@ input[readonly],input[readonly="readonly"]
 
 .dd_con_estilo_propio
 {
-	margin-left:10px; height:40px; 
+	margin-left:10px; 
+	height:40px; 
 	font-family: 'Indie Flower'; 
 	margin-bottom:10px; 
 	text-align:center; 
  	font-size:30px;
 	background-image: url(../imagenes/bj.jpg);
-	color: white;
+	color: #B5B0B0;
+	font-weight: normal;
  	-webkit-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select:none;
     width:250px;
-	height:40px;
 	border-radius: 5px;
 }
 
