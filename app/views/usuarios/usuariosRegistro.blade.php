@@ -226,27 +226,27 @@
 				
 
 						<div class="us_txtNoEmpleado">No. Empleado:
-							<input style="margin-left:7px" class="dd_estilo_combo" type="text"  name="nombreRegUsuarios" id="nombreRegUsuarios" size=1>
+							<input style="margin-left:7px" class="dd_estilo_combo" type="text"  name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/>
 						</div>
 				
 						<div class="us_nuevo_usuario">A. Paterno:		
-							<input style="margin-left:30px" class="dd_con_estilo_largo" type="text" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1>
+							<input style="margin-left:30px" class="dd_con_estilo_largo" type="text" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/>
 						</div>
 
 						<div class="us_nuevo_usuario">A. Materno:		
-							<input style="margin-left:68px" class="dd_con_estilo_largo" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1>
+							<input style="margin-left:68px" class="dd_con_estilo_largo" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/>
 						</div>
 
 						<div class="us_nuevo_usuario">Nombre:
-							<input style="margin-left:50px" class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" size=1>
+							<input style="margin-left:50px" class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/>
 						</div>
 
 						<div class="us_div">
 							<div class="us_nuevo">Correo:
-								<input style="margin-left:57px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1>
+								<input style="margin-left:57px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/>
 							</div>
 							<div class="us_repetir">Repetir correo:
-								<input style="margin-left:40px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1>
+								<input style="margin-left:40px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/>
 							</div>
 						</div>
 

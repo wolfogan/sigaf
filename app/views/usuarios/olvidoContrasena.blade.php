@@ -115,7 +115,7 @@
 						</div>
 
 						<div id="us_divCaptcha_mod">
-							<table>
+							<table style="margin:auto">
 							    <tr>
 							        <td>
 							            Introduce los caracteres:<br>

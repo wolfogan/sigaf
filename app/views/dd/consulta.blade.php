@@ -179,8 +179,7 @@
 								</div>
 
 								 <h2>Dirección y teléfonos</h2>
-
-									<div class="dd_colonia_calle_int_ext_cp">
+								 <div class="dd_colonia_calle_int_ext_cp">
 										<div class="dd_datosPersonales">Calle:<input class="dd_con_estilo_largo" style="margin-left:35px;" id="txtcalle" type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
 										<div id="dd_ext">No. ext.:<input class="dd_con_estilo_corto" style="margin-left:10px;" id="txtnoexterior" type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
 					                	<div id="dd_int">No. int.:<input class="dd_con_estilo_corto" style="margin-left:15px;" id="txtnointerior"type="text" onKeyPress="ValidaSoloNumeros()"/></div>
@@ -202,27 +201,29 @@
 											</select>
 										</div>
 
-										<div class="dd_datosPersonales">Ciudad:
-											<select class="dd_con_estilo_largo" style="margin-left:16px;">
-												<option value="TIJUANA">TIJUANA</option>
-												<option value="GUAYMAS">GUAYMAS</option>
-											</select>
-										</div>
+										
 		
 									</div>
 
 									 <div class="dd_divDecoracionTelefonos">
+									 	<div class="dd_datosPersonales">Ciudad:
+											<select class="dd_con_estilo_largo" style="margin-left:60px;">
+												<option value="TIJUANA">TIJUANA</option>
+												<option value="GUAYMAS">GUAYMAS</option>
+											</select>
+										</div>
 										<div class="dd_datosPersonales">Oficina:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text" placeholder="(664) 686 5679"/></div>
 										<div class="dd_datosPersonales">Particular:<input class="dd_con_estilo_largo" style="margin-left:38px;" type="text" placeholder="(664) 188 9221"/></div>
 										<div class="dd_datosPersonales">Celular:<input class="dd_con_estilo_largo" style="margin-left:60px;" type="text" placeholder="(664) 188 9221"/></div>
 										<div class="dd_datosPersonales">Correo UABC:<input class="dd_con_estilo_largo" style="margin-left:12px;" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
 										<div class="dd_datosPersonales">Correo:<input class="dd_con_estilo_largo" style="margin-left:62px;" type="text"/></div>
-
-										<div id="dd_otro">
-											<label></label>
+										
+										<!--<div id="dd_otro">
 											<textarea rows=3 cols="36" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="dd_observaciones" name="dd_observaciones" placeholder="Observaciones"></textarea>
-										</div>
-									</div>
+										</div>-->
+									</div>									
+
+									 
 
 								<h2 style="margin-top:400px;">Trabajo fuera de UABC</h2>
 				                   		<div id="dd_trabajoFuera_puesto">
