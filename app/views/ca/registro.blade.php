@@ -22,10 +22,12 @@
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 	<script type="text/javascript">
+	
 	var planVigente = 0;
 	var planAnterior = 0;
 	var uasVigente = [];
 	var uasAnterior = [];
+	
 	function insertStr(stringTarget,stringAdd,stringIndex)
 	{
 		var string1 = stringTarget.substring(0,stringIndex);
@@ -33,110 +35,145 @@
 
 		return string1+stringAdd+string2;
 	}
-	$(function (){
-		$("table:not(.tblCatPlan)").hide();
-		Date.prototype.now = function(){
+
+	Date.prototype.now = function(){
 			var dd = this.getDate();
 			var mm = this.getMonth()+1;
 			var yyyy = this.getFullYear();
 			if(dd<10) dd='0'+dd;
 			if(mm<10) mm='0'+mm;
 			return String(yyyy+"-"+mm+"-"+dd);
+	}
+
+
+	$(function()
+	{
+		// Ocultar tablas de registro de carga
+		$("table:not(.tblCatPlan,#semestre1)").hide();
+
+		var planes = $("#planes").val() > 0;
+		// Verificar existencia de planes de estudio
+		if(planes != true)
+		{
+			alert("No existen planes de estudio registrados");
+			// Desactivar opciones
+			$("#planVigente , #planAnterior").find("select, input").attr("disabled" , true);
 		}
-		// Inicializar fecha periodo
-		var date = new Date();
-		$("#periodoFechaInicio").val(date.now());
-		$("#periodoFechaFin").val(date.now());
-		//$("#periodoFechaInicio").prop('min',date.now());
-		//$("#periodoFechaInicio").prop('max','2015-08-08');
+		else
+		{
+			// INICIALIZAR ENTORNO PARA GENERAR LA CARGA
 
-		var sourcePlanVigente = [
-									@for ($i = 0;$i<count($unidades[0]);$i++)
-										{{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} 
-											@if ($i<count($unidades[0])-1)
-												{{","}}
-											@endif 
-									@endfor
-								];
-		var sourcePlanAnterior =[ 
-									@for ($i = 0;$i<count($unidades[1]);$i++)
-										{{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}}
-										@if($i<count($unidades[1])-1)
-											{{","}}
-										@endif
-									@endfor
-								];
-		planVigente = {{$planes[0]}};
-		planAnterior = {{$planes[1]}};
-		//alert(source[0].plan);
+			// Inicializar fecha periodo
+			var date = new Date();
+			$("#periodoFechaInicio").val(date.now());
+			$("#periodoFechaFin").val(date.now());
+			//$("#periodoFechaInicio").prop('min',date.now());
+			//$("#periodoFechaInicio").prop('max','2015-08-08');
+			
 
+			// Create a jqxListBox para la lista de las las unidades con los planes de estudio
+			$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
+			$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
 
-		// Create a jqxListBox
-		$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
-		$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
-
-		// Check several items.
-		// $(".listbox").jqxListBox('checkIndex', 0);
-		// $(".listbox").jqxListBox('checkIndex', 1);
-		// $(".listbox").jqxListBox('checkIndex', 2);
-		// $(".listbox").jqxListBox('checkIndex', 5);
-
-		// Asingar nombres de planes
-		$("#nombreVigente").text("Plan "+insertStr({{'"'.$planes[0].'"'}},"-",4));
-		$("#nombreAnterior").text("Plan "+insertStr({{'"'.$planes[1].'"'}},"-",4));
-		$("#grupoPlanVigente").text(insertStr({{'"'.$planes[0].'"'}},"-",4));
-		$("#grupoPlanAnterior").text(insertStr({{'"'.$planes[1].'"'}},"-",4));
-		$("#grupoVigentePlan").val({{$planes[0]}});
-		$("#grupoAnteriorPlan").val({{$planes[1]}});
-
-		// Agregar el programaeducativo estatico POR LO PRONTO
-		$(".grupoPrograma").val({{Auth::user()->programaedu}});
-		
-		$("#listboxPlanVigente").on('checkChange', function (event) {
-			/*var args = event.args;
-			if (args.checked) {
-				$("#Events").text("Checked: " + args.label);
-			}
-			else {
-				$("#Events").text("Unchecked: " + args.label);
-			}*/
-
-			var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
-			//var checkedItems = "";
-			uasVigente = [];
-			$.each(items, function (index) {
-				/*if (index < items.length - 1) {
-					checkedItems += this.label + ", ";
-				}
-				else checkedItems += this.label;*/
-				uasVigente.push(this.label.substring(0,5));
+			
+			// Agregar el programaeducativo estatico POR LO PRONTO
+			$(".grupoPrograma").val({{Auth::user()->programaedu}});
+			
+			
+			// Evento al seleccionar ua's de plan vigente.
+			$("#listboxPlanVigente").on('checkChange', function (event)
+			{
+				var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
+				// Limpiar arreglo
+				uasVigente = [];
+				// Agregar al arreglo clave de unidad de aprendizaje
+				$.each(items, function (index)
+				{
+					uasVigente.push(this.label.substring(0,5));
+				});
+				
 			});
-			//alert(uasVigente);
-			//$("#CheckedItems").text(checkedItems);
-		});
+			// Evento al seleccionar ua's de plan anterior.
+			$("#listboxPlanAnterior").on('checkChange', function (event) {
 
-		$("#listboxPlanAnterior").on('checkChange', function (event) {
-			/*var args = event.args;
-			if (args.checked) {
-				$("#Events").text("Checked: " + args.label);
-			}
-			else {
-				$("#Events").text("Unchecked: " + args.label);
-			}*/
-
-			var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
-			//var checkedItems = "";
-			uasAnterior = [];
-			$.each(items, function (index) {
-				/*if (index < items.length - 1) {
-					checkedItems += this.label + ", ";
-				}
-				else checkedItems += this.label;*/
-				uasAnterior.push(this.label.substring(0,5));
+				var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
+				// Limpiar arreglo
+				uasAnterior = [];
+				// Agregar al arreglo clave de unidad de aprendizaje
+				$.each(items, function (index)
+				{
+					uasAnterior.push( this.label.substring(0 , 5) );
+				});
+				
 			});
-			//alert(uasVigente);
-			//$("#CheckedItems").text(checkedItems);
-		});
+
+			// Obtener unidades de aprendizaje de 1 ó 2 planes de estudio
+			$.get("<?php echo URL::to('cargaacademica/unidades'); ?>",function(data){
+				// Asignar nombre de la coordinación en caso de que sea un usuario coordinador
+				$("#nombrePrograma").text("Lic. en " + data.nombrePrograma);
+
+				// Asignar tipos de período a modal de registro de períodos: SEMESTRAL,SABATINO, ETC.
+				var options = "";
+				for(key in data.periodosPrograma)
+				{
+					var periodo = data.periodosPrograma[key].periodo_pedu;
+					var descripcion = data.periodosPrograma[key].descripcion;
+					options += "<option value='" + periodo + "'>" + descripcion + "</option>"; 
+				}
+				$("#periodoTipo").html(options);
+
+				// Asignar tipos de carácter a la lista de los planes: OBLIGATORIO, OPTATIVA
+				options = "";
+				for(key in data.tiposCaracter)
+				{
+					var caracter = data.tiposCaracter[key].caracter;
+					var descripcion = data.tiposCaracter[key].descripcion;
+					options += "<option value='" + caracter + "'>" + descripcion + "</option>" 
+				}
+				$("#selectCaracterVigente,#selectCaracterAnterior").html(options);
+
+				// Asignar los periodos registrados: 2014-1, 2014-2
+				options = "";
+				for(key in data.codigosPeriodo)
+				{
+					var codigo = data.codigosPeriodo[key].codigo;
+					var formato = data.codigosPeriodo[key].formato;
+					options += "<option value = '" + formato + "' codigo = '" + codigo + "' />"; 
+				}
+				$("#datalistPeriodo").html(options);
+
+				// Asignar los turnos para los grupos TM, TV , etc.
+				options = "";
+				for(key in data.turnos)
+				{
+					var turno = data.turnos[key].turno;
+					var descripcion = data.turnos[key].descripcion;
+					options += "<option value = '" + turno + "'>" + descripcion + "</option>"; 
+				}
+				$("#grupoTurno").html(options);
+
+
+
+				// Asignar los semestres
+				options = "";
+				var semestres = [1,2,3,4,5,6,7,8,9];
+				for(key in semestres)
+				{
+					/*var option = document.createElement('option');
+					option.text = semestres[key];
+					option.value = semestres[key];
+					s.options[s.options.length] = option;*/
+					options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";  
+				}
+				$("#semestresVigente,#semestresAnterior").html(options);
+
+				$("#gurpoSemestreV").val($("#semestresVigente").val());
+				console.log(data);
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
 	});
 	</script>
 
@@ -240,7 +277,8 @@
 
 </head>
 <body>
-
+	<!-- Verificar planes de estudio -->
+	<input type="hidden" id="planes" value="{{$numPlanes}}" />
 	<!-------------------------------------- MODAL LISTA PARA MODIFICAR GRUPOS -------------------------------------->
 	<div class="md-modal2 md-effect-11" id="pruebaCa"> 
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
@@ -276,9 +314,6 @@
 						<td>Tipo Programa:</td>
 						<td>
 							<select style="width:200px;" name="periodoTipo" id="periodoTipo" />
-								@foreach ($periodosPrograma as $periodo)
-									<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
-								@endforeach
 							</select>
 						</td>
 					</tr>
@@ -324,9 +359,6 @@
 						<td>Turno:</td>
 						<td>
 							<select style="width:145px;" name="grupo_turno" id="grupoTurno" />
-								@foreach ($turnos as $turno)
-									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
-								@endforeach
 							</select>
 						</td>
 					</tr>
@@ -378,9 +410,9 @@
 						<td>Turno:</td>
 						<td>
 							<select style="width:200px;" name="grupo_turno" id="grupoTurno" />
-								@foreach ($turnos as $turno)
-									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
-								@endforeach
+								
+									<option value="1">TM</option>
+								
 							</select>
 						</td>
 					</tr>
@@ -453,9 +485,6 @@
 					Periódo: 
 					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
 					<datalist id="datalistPeriodo">
-						@foreach ($codigosPeriodo as $periodo)
-							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
-						@endforeach
 					</datalist>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
@@ -463,9 +492,7 @@
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
-							@foreach ($programas as $program)
-								<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
-							@endforeach
+							
 						</select>
 
 				</div>
@@ -485,9 +512,6 @@
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" id="selectCaracterVigente">
-							@foreach($tiposCaracter as $caracter)
-								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
-							@endforeach
 						</select>
 						
 					</div>
@@ -496,15 +520,6 @@
 					</div>
 					<label>Semestre:</label>
 					<select class="con_estilo" style="width:135px; height:30px" id="semestresVigente">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
@@ -535,9 +550,6 @@
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" id="selectCaracterAnterior">
-							@foreach($tiposCaracter as $caracter)
-								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
-							@endforeach
 						</select>
 						
 					</div>
@@ -546,15 +558,6 @@
 					</div>
 					<label>Semestre: </label>
 					<select class="con_estilo" style="width:135px; height:30px" id="semestresAnterior">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
 					</select>
 					<div class="controlesListasCa">
 						Grupos:
@@ -1091,7 +1094,7 @@
 			{
 				$("#grupoCarreraV,#grupoCarreraA").val(numPrograma); // Establecer el numero de carrera para grupo
 				$("#carreraAdmin, #labelCarrera").hide();
-				var nombre = String({{"'".$nombrePrograma."'"}});
+				var nombre = String({{"'"."Informática"."'"}});
 				$("#nombrePrograma").text("Lic. en " + nombre);
 				// Treaer materias
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:numPrograma,caracter:1},function(uas){

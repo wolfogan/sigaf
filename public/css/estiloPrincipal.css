@@ -2555,7 +2555,7 @@ input[readonly],input[readonly="readonly"]
 	border-bottom-left-radius:0px;
 	text-indent:0;
 	border:1px solid #0a1a00;
-	display:none;
+	/*display:none;*/
 	color:#ffffff;
 	font-family:Arial;
 	font-size:15px;

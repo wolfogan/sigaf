@@ -35,7 +35,7 @@ Route::controller('horarios','HorariosController');
 
 Route::get('pruebas',function(){
 
-	//$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
+	/*$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
 
 	$plan = PlanEstudio::find('20101')->nivelD;
 
@@ -99,7 +99,7 @@ Route::get('pruebas',function(){
 					->first();*/
 
 	// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
-		$uas = DB::table('p_ua')
+	/*	$uas = DB::table('p_ua')
 				->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
 				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->where('p_ua.caracter','=',1)
@@ -114,5 +114,7 @@ Route::get('pruebas',function(){
 		}
 
 		$uas["planes"] = $planes = array(20101,20092);
-	return var_dump($uas);
+	return var_dump($uas);*/
+
+	return Mensaje::men();
 });
