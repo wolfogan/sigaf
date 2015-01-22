@@ -174,6 +174,8 @@
 					Etapa terminal
 				</div>
 			</div>
+
+
 			<!--<div id="basica_semestres">
 				<div id="semestre_uno">1</div>
 				<div id="semestre_dos">2</div>
@@ -213,11 +215,50 @@
 		</div>
 		<div style="clear:both;"></div>
 		<br />
+
+		<!-- TABLA SIGNIFICADO DE COLORES -->
+				<div id="tabla_coloresPe">
+					<table class="pe_tabla_colores_style">		
+						<thead class="hr_encabezado_tablaConsulta">
+							<tr>
+								<th style="width:70px; height:25px;">COLOR</th>
+								<th style="width:150px; height:25px;">SIGNIFICADO</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td style="background:#99CCFF;"></td>
+								<td>TRONCO COMÚN</td>
+							</tr>
+							<tr>
+								<td style="background:#F0FFFF;"></td>
+								<td>OPTATIVAS</td>
+							</tr>
+							<tr>
+								<td style="background:#C4EEC6;"></td>
+								<td>ETAPA BÁSICA</td>
+							</tr>
+							<tr>
+								<td style="background:#FFCC99;"></td>
+								<td>ETAPA DISCIPLINARIA</td>
+							</tr>
+							<tr>
+								<td style="background:#ECA22E"></td>
+								<td>ETAPA TERMINAL</td>
+							</tr>
+					</table>
+				</div>
 		<div id="totalcreditos">
 			<label> Materias obligatorias:</label><label id="creditos_obligatorias">0</label>
 			<label> Materias optativas:</label><label id="creditos_optativas">0</label><br>
 			<label> Total de creditos: </label><label id="creditos_total">0</label>
 		</div>
+
+
+				
+			<!-------------------------------------------------------------------------------------------->
+
 		<div id="pe_consultaActualizada">!ETAPA ACTUALIZADA!</div>
 
 		<div id="actualizaimprime">
@@ -394,6 +435,10 @@
 					</table>-->
 				
 		<!--<button class="md-trigger" data-modal="modal-11">+</button>-->
+
+
+
+
 		
 		<!---------------------------------------- VENTANA MODAL PARA ACTULIAZACION DE UA ----------------------------------------> 
 	</section>
