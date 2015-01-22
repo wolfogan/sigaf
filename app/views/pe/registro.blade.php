@@ -104,7 +104,7 @@
 
 								<td>Clave:</td>
 								<td>
-									<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+									<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" onkeypress="ValidaSoloNumeros()"/>
 								</td>
 								<td>
 									<input style="width:350px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
@@ -175,12 +175,12 @@
 							</td>
 							<td>Semestre:</td>
 							<td>
-								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9">
+								<input class="estilo_numeric" type="number" name="semestre" id="semestre_update" min="1" max="9" onkeypress="ValidaSoloNumeros()">
 							</td>
 						</tr>
 						<tr>
 							<td width="95">Clave:</td>
-							<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25"></td>
+							<td width="301"><input type="text" name="clave1F" id="clave_update" style="height: 25px; text-transform:uppercase; width:120px;" size="25" onkeypress="ValidaSoloNumeros()"></td>
 							<td>Materia:</td>
 							<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
 						</tr>
@@ -263,7 +263,7 @@
 							<td>Clave:</td>
 
 							<td>
-								<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion"/>
+								<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion" onkeypress="ValidaSoloNumeros()"/>
 							</td>
 
 							<td>
