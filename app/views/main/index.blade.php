@@ -7,6 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="css/contenedorMenuPrincipal.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style_common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style10.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/estiloDropdownMensajes.css" />
+		<noscript><link rel="stylesheet" type="text/css" href="css/noJSestiloDropdownMensajes.css" /></noscript>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<!--AQUI VA HORA Y FECHA-->
@@ -33,10 +36,27 @@
 					<label id="reloj"></label>
 				</div>
 			</div>
-			<div id="mensajesIcono">
+
+			<!--<div id="mensajesIcono">
 				<img src="imagenes/mensajes.png" >
-			</div>
+			</div>-->
+				
+					<div class="wrapper-demo">
+						<div id="dd" class="wrapper-dropdown-5" tabindex="1">Mensajes
+							<ul class="dropdown">
+								<li><a href="#"><i class="mje1"></i>Verificar plan de estudios 2010-2</a></li>
+								<li><a href="#"><i class="mje2"></i>Carga academica</a></li>
+								<li><a href="#"><i class="mje3"></i>Disponibilidad docente</a></li>
+							</ul>
+						</div>
+					​</div>
+				
+
 		</div>
+			
+		
+
+		
 <div class="container">
 	<div class="main">
 		<div class="view view-tenth" onclick="location.href='planestudio/registro'">
@@ -122,6 +142,38 @@
 		</div>
 	</div>
 </div>
+
+<!----------------- SCRIPT PARA COMBO DE MENSAJES ---------------------->
+<script type="text/javascript">
+
+			function DropDown(el) {
+				this.dd = el;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						event.stopPropagation();
+					});	
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-5').removeClass('active');
+				});
+
+			});
+
+		</script>
+<!-------------------- TERMINA SCRIPT PARA MENSAJES -------------------------------->
 <footer>
 	<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
 	<div id="pie_tel">Teléfono: 664 188 9221</div>-->

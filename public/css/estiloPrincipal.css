@@ -1062,15 +1062,16 @@ html>body div.pe_tableContainer table {
 	width: 1320px;
 }
 
-#mensajesIcono
+/*#mensajesIcono
 {
 	
-	float:right;
+	background: blue;
+	float: right;
 	height:50px;
-	margin-right:110px;
-	width:150px;
+	margin-top: -70px;
+	width:250px;
 		
-}
+}*/
 
 #statusPlanEstudios
 {
