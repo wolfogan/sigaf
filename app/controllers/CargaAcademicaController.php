@@ -21,7 +21,7 @@ class CargaAcademicaController extends BaseController
 		return View::make('ca.registro')->with('numPlanes',$numPlanes);
 	}
 
-	public function getUnidades()
+	public function postUnidades()
 	{
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
@@ -105,7 +105,7 @@ class CargaAcademicaController extends BaseController
 				}
 			}
 			// Catalogos y unidades de aprendizaje de los planes de estudio.
-			$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos',$var_nombre,'unidades');
+			$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos',$var_nombre,'unidades','planes');
 
 			return Response::json($data);
 		}

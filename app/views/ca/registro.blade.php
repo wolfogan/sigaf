@@ -80,35 +80,10 @@
 			$(".grupoPrograma").val({{Auth::user()->programaedu}});
 			
 			
-			// Evento al seleccionar ua's de plan vigente.
-			$("#listboxPlanVigente").on('checkChange', function (event)
-			{
-				var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
-				// Limpiar arreglo
-				uasVigente = [];
-				// Agregar al arreglo clave de unidad de aprendizaje
-				$.each(items, function (index)
-				{
-					uasVigente.push(this.label.substring(0,5));
-				});
-				
-			});
-			// Evento al seleccionar ua's de plan anterior.
-			$("#listboxPlanAnterior").on('checkChange', function (event) {
-
-				var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
-				// Limpiar arreglo
-				uasAnterior = [];
-				// Agregar al arreglo clave de unidad de aprendizaje
-				$.each(items, function (index)
-				{
-					uasAnterior.push( this.label.substring(0 , 5) );
-				});
-				
-			});
+			
 
 			// Obtener unidades de aprendizaje de 1 ó 2 planes de estudio
-			$.get("<?php echo URL::to('cargaacademica/unidades'); ?>",function(data){
+			$.post("<?php echo URL::to('cargaacademica/unidades'); ?>",function(data){
 				// Asignar nombre de la coordinación en caso de que sea un usuario coordinador
 				$("#nombrePrograma").text("Lic. en " + data.nombrePrograma);
 
@@ -167,8 +142,65 @@
 				}
 				$("#semestresVigente,#semestresAnterior").html(options);
 
-				$("#gurpoSemestreV").val($("#semestresVigente").val());
-				console.log(data);
+				// Cargar input para crear grupos con el semestre elegido
+				$("#grupoSemestreV,#grupoSemestreA").val(1);
+
+				var numPlanes = $("#planes").val();
+				// Evaluar el despliegue de 1 o 2 planes
+				var planS = data.unidades[data.planes[0].plan];
+				var sourcePV = [];
+				var sourcePA = [];
+				
+				for(key in planS)
+				{
+					sourcePV.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
+				}
+
+				console.log(sourcePV);
+				
+				$("#listboxPlanVigente").jqxListBox({source: sourcePV});
+				// Deshabilitar controles del plan secundario
+				$("#planAnterior").find("input,select").attr('disabled',true);
+				// Si son 2 planes de estudio cargar el plan sencundario
+				if(numPlanes > 1)
+				{
+					planS = data.unidades[data.planes[1].plan];
+					for(key in planS)
+					{
+						sourcePA.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
+					}
+					$("#listboxPlanAnterior").jqxListBox({source : sourcePA});
+				}
+				
+				
+				// Evento al seleccionar ua's de plan vigente.
+				$("#listboxPlanVigente").on('checkChange', function (event)
+				{
+					var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasVigente = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasVigente.push(this.label.substring(0,5));
+					});
+				});
+				// Evento al seleccionar ua's de plan anterior.
+				$("#listboxPlanAnterior").on('checkChange', function (event)
+				{
+
+					var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasAnterior = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasAnterior.push( this.label.substring(0 , 5) );
+					});
+				});
+
+
+
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
@@ -1323,7 +1355,7 @@
 		}
 
 		$(function(){
-			var numPrograma = verificarUsuario();
+			//var numPrograma = verificarUsuario();
 			var tablaActualSemestre = 0;
 			$("#carreraAdmin").val("");
 			$("#semestresVigente").val("");
