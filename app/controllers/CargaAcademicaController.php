@@ -6,59 +6,34 @@ class CargaAcademicaController extends BaseController
 	{
 		$this->beforeFilter('auth');
 	}
-
+	
+	/**
+	 * Obtener la vista del registro inicial de carga acádemica.
+	 * @return [type]
+	 */
 	public function getRegistro()
 	{
-		/**
-	 	* Función para integrar el guión en el código del plan de estudio 2009-2
-		 * @param  string $string_add    La cadena a agregar
-		 * @param  string $string_target La cadena donde se va a agregar el string
-		 * @param  int $offset        Puntero donde corta la caden
-		 * @return string                Regresa la cadena concatenada
-		 */
-		function str_insert($string_add,$string_target,$offset)
-		{
-			$part1 = substr($string_target,0, $offset);
-			$part2 = substr($string_target, $offset);
-
-			return $part1.$string_add.$part2;
-		}
+		
 
 		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
-		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
-		
-		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
-		$uas = DB::table('p_ua')
-				->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
-				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
-				->where('p_ua.caracter','=',1)
-				->whereIn('uaprendizaje.plan',array($plan[0]->plan,$plan[1]->plan))
-				->orderBy('plan','desc')
-				->orderBy('p_ua.uaprendizaje','asc')
-				->get();
-		
-		$planes = array($plan[0]->plan,$plan[1]->plan);
-		$unidades  = [[],[]];
-		foreach ($uas as $key => $value) 
-		{
-			if($uas[$key]->plan == $plan[0]->plan)
-			{
-				array_push($unidades[0], $uas[$key]);
-			}
-			elseif ($uas[$key]->plan==$plan[1]->plan) 
-			{
-				array_push($unidades[1], $uas[$key]);;
-			}
-		}
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$numPlanes = count($planes);
+		return View::make('ca.registro')->with('numPlanes',$numPlanes);
+	}
 
+	public function postUnidades()
+	{
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
 
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		$codigosPeriodo = array();
-		for ($i=0; $i < count($periodos); $i++) { 
-			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
+		
+		$codigosPeriodo = array(); // ó []
+		// ["20101" => "2010-1"]
+		for ($i=0 ; $i < count($periodos) ; $i++)
+		{ 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
 		// Oblitatoria, optativa
@@ -67,29 +42,88 @@ class CargaAcademicaController extends BaseController
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
 
-		// Carreras de los planes de estudio
-		$programas = DB::table("plan_programa")
-				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
-				->select("plan_programa.programaedu","programaedu.descripcion")
-				->where("plan_programa.programaedu","<>",6)
-				->whereIn("plan_programa.plan",$planes)
-				->distinct()
-				->get();
+		// 1 - Artes, 2 - Administración
 		$numPrograma = Auth::user()->programaedu;
-		$nombrePrograma = "";
 		
-		if ($numPrograma!=0) {
+		// 0 - Administrador,!0 - Coordinador
+		// Obtener nombre en caso de ser coordinador
+		$nombrePrograma = "";
+		if ($numPrograma != 0) 
+		{
 			$nombrePrograma = ProgramaEducativo::find($numPrograma);
 			$nombrePrograma = $nombrePrograma -> descripcion;
 		}
 		
 		$var_nombre = array("nombrePrograma");
 
-		return View::make('ca.registro')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo','tiposCaracter','turnos','programas',$var_nombre));
+		// Obtener Planes
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$numPlanes = count($planes);
+		// 20101 , 20102
+		$planWhereIn = [];
+		foreach ($planes as $key => $value) {
+			array_push($planWhereIn, $planes[$key]->plan);
+		}
 		
-		//return $nombrePrograma;
-	}
 
+		// Verificar tipo de usuario
+		if($numPrograma != 0)
+		{
+
+			// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
+			$uas = DB::table('p_ua')
+					->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('p_ua.caracter','=',1)
+					->where('p_ua.programaedu','=',$numPrograma)
+					->whereIn('uaprendizaje.plan',$planWhereIn)
+					->orderBy('plan','desc')
+					->orderBy('p_ua.uaprendizaje','asc')
+					->get();
+			
+			
+			
+			// $unidades[0][0] = $uas[0]  -> 20101
+			// $unidades[0][1] = $uas[1]  -> 20101
+			// $unidades[1][0] = $uas[3]  -> 20102
+			
+			$unidades  = [];
+			foreach ($uas as $key => $value) 
+			{
+				$nombrePlan = $uas[$key]->plan;
+				if($nombrePlan == $planes[0]->plan)
+				{
+					$unidades[$nombrePlan][] = $uas[$key];
+				}
+
+				if($numPlanes > 1)
+				{
+					if ($nombrePlan == $planes[1]->plan) 
+					{
+						$unidades[$nombrePlan][] = $uas[$key];
+					}
+				}
+			}
+			// Catalogos y unidades de aprendizaje de los planes de estudio.
+			$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos',$var_nombre,'unidades','planes');
+
+			return Response::json($data);
+		}
+		else
+		{
+			// Carreras de los planes de estudio
+			$programas = DB::table("plan_programa")
+					->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
+					->select("plan_programa.programaedu","programaedu.descripcion")
+					->where("plan_programa.programaedu","<>",6)
+					->whereIn("plan_programa.plan",$planWhereIn)
+					->distinct()
+					->get();
+			// Catalogos y programas educativos
+			$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos','programas');
+			return Response::json($data);
+		}
+	}
 	
 	public function getConsulta()
 	{
@@ -123,80 +157,11 @@ class CargaAcademicaController extends BaseController
 
 		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
 	}
+
+
 	public function getRegistro3()
 	{
-		/**
-	 	* Función para integrar el guión en el código del plan de estudio 2009-2
-		 * @param  string $string_add    La cadena a agregar
-		 * @param  string $string_target La cadena donde se va a agregar el string
-		 * @param  int $offset        Puntero donde corta la caden
-		 * @return string                Regresa la cadena concatenada
-		 */
-		function str_insert($string_add,$string_target,$offset)
-		{
-			$part1 = substr($string_target,0, $offset);
-			$part2 = substr($string_target, $offset);
-
-			return $part1.$string_add.$part2;
-		}
-
-		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
-		$plan = PlanEstudio::select('plan')->orderBy('plan','desc')->take(2)->get();
 		
-		// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
-		$uas = UnidadAprendizaje::select('plan','uaprendizaje','descripcionmat')
-				->where('caracter','=',1)
-				->whereIn('plan',array($plan[0]->plan,$plan[1]->plan))->orderBy('plan','desc')
-				->orderBy('uaprendizaje','asc')->get();
-		
-		$uas->planes = $planes = array($plan[0]->plan,$plan[1]->plan);;
-		$unidades  = [[],[]];
-		foreach ($uas as $ua) 
-		{
-			if($ua->plan == $plan[0]->plan)
-			{
-				array_push($unidades[0], $ua);
-			}
-			elseif ($ua->plan==$plan[1]->plan) 
-			{
-				array_push($unidades[1], $ua);;
-			}
-		}
-
-		// Cuatrimestral, Semestral
-		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
-
-		// Cargar periodos 2010-1, 2010-2
-		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		$codigosPeriodo = array();
-		for ($i=0; $i < count($periodos); $i++) { 
-			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => str_insert("-",$periodos[$i]->periodo,4)];
-		}
-
-		// Oblitatoria, optativa
-		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
-		
-		// Matutino, Vespertino, Interturno
-		$turnos = Turno::all();
-
-		// Carreras de los planes de estudio
-		$programas = DB::table("plan_programa")
-				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
-				->select("plan_programa.programaedu","programaedu.descripcion")
-				->whereIn("plan_programa.plan",$planes)
-				->distinct()
-				->get();
-		$numPrograma = Auth::user()->programaedu;
-		$nombrePrograma = "";
-		
-		if ($numPrograma!=0) {
-			$nombrePrograma = ProgramaEducativo::find($numPrograma);
-			$nombrePrograma = $nombrePrograma -> descripcion;
-		}
-		
-		$var_nombre = array("nombrePrograma");
-
-		return View::make('ca.registro3')->with(compact('unidades','planes','periodosPrograma','codigosPeriodo','tiposCaracter','turnos','programas',$var_nombre));
 		
 
 	}
@@ -278,7 +243,7 @@ class CargaAcademicaController extends BaseController
 				->select('p_ua.uaprendizaje','uaprendizaje.descripcionmat')
 				->whereIn('p_ua.programaedu',array($programa,6))
 				->where('uaprendizaje.plan','=',$plan)
-				->where('uaprendizaje.caracter','=',$caracter)
+				->where('p_ua.caracter','=',$caracter)
 				->orderBy('p_ua.uaprendizaje','asc')
 				->get();
 		
@@ -370,7 +335,7 @@ class CargaAcademicaController extends BaseController
 		$programa = Input::get("programa");
 
 		$uas = DB::table("carga")
-						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','uaprendizaje.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
+						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
 						->join('uaprendizaje','carga.uaprendizaje' , '=' , 'uaprendizaje.uaprendizaje')
 						->join('p_ua',function($join){
 							$join->on('carga.uaprendizaje','=','p_ua.uaprendizaje')
@@ -381,7 +346,7 @@ class CargaAcademicaController extends BaseController
 							$join->on('carga.uaprendizaje','=','detalleseriacion.uaprendizaje')
 								->on('carga.programaedu', '=' ,'detalleseriacion.programaedu');
 						})
-						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','uaprendizaje.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
+						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
 						->where("carga.periodo","=",$periodo)
 						->where("carga.programaedu","=",$programa)
 						->get();
