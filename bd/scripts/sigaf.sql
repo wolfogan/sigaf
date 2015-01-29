@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-01-16 05:28:16
+Date: 2015-01-29 03:06:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,11 +96,109 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bitacora
 -- ----------------------------
+INSERT INTO `bitacora` VALUES ('1', 'planestudio', '1', 'I', '2015-01-20 00:00:00', '20101|asdf|123|2015-01-20|2015-01-21|1', null);
+INSERT INTO `bitacora` VALUES ('2', 'planestudio', '1', 'D', '2015-01-20 00:00:00', null, '20101|asdf|123|2015-01-20|2015-01-21|1');
+INSERT INTO `bitacora` VALUES ('3', 'planestudio', '1', 'I', '2015-01-20 00:00:00', '20101|asdf|123|2015-01-01|2015-01-02|1', null);
+INSERT INTO `bitacora` VALUES ('4', 'planestudio', '1', 'I', '2015-01-20 00:00:00', '20102|asdf|123|2015-01-01|2015-01-20|1', null);
+INSERT INTO `bitacora` VALUES ('5', 'planestudio', '1', 'D', '2015-01-20 00:00:00', null, '20102|asdf|123|2015-01-01|2015-01-20|1');
+INSERT INTO `bitacora` VALUES ('6', 'planestudio', '1', 'D', '2015-01-20 00:00:00', null, '20101|asdf|123|2015-01-01|2015-01-02|1');
+INSERT INTO `bitacora` VALUES ('7', 'planestudio', '1', 'I', '2015-01-20 00:00:00', '20101|asdf|123|2015-01-01|2015-01-02|1', null);
+INSERT INTO `bitacora` VALUES ('8', 'planestudio', '1', 'D', '2015-01-20 00:00:00', null, '20101|asdf|123|2015-01-01|2015-01-02|1');
+INSERT INTO `bitacora` VALUES ('9', 'planestudio', '1', 'I', '2015-01-21 00:00:00', '20091|ssdfgdasf|20|2015-01-21|2015-01-21|1', null);
+INSERT INTO `bitacora` VALUES ('10', 'planestudio', '1', 'I', '2015-01-21 00:00:00', '20092|asdfasfd|50|2015-01-01|2015-01-02|1', null);
+INSERT INTO `bitacora` VALUES ('11', 'planestudio', '1', 'D', '2015-01-21 00:00:00', null, '20092|asdfasfd|50|2015-01-01|2015-01-02|1');
+INSERT INTO `bitacora` VALUES ('12', 'uaprendizaje', '1', 'I', '2015-01-21 00:00:00', '11236|MATEMATICAS 1|5|5|0|0|0|0|15|2015-01-21|vamos a ver|1|20091', null);
+INSERT INTO `bitacora` VALUES ('13', 'uaprendizaje', '1', 'D', '2015-01-21 00:00:00', null, '11236|MATEMATICAS 1|5|5|0|0|0|0|15|2015-01-21|vamos a ver|1|20091');
+INSERT INTO `bitacora` VALUES ('14', 'planestudio', '1', 'D', '2015-01-21 00:00:00', null, '20091|ssdfgdasf|20|2015-01-21|2015-01-21|1');
+INSERT INTO `bitacora` VALUES ('15', 'planestudio', '1', 'I', '2015-01-21 00:00:00', '20092|Plan 2009-2|100|2015-01-01|2015-01-31|1', null);
+INSERT INTO `bitacora` VALUES ('16', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|1', null);
+INSERT INTO `bitacora` VALUES ('17', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|2', null);
+INSERT INTO `bitacora` VALUES ('18', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|3', null);
+INSERT INTO `bitacora` VALUES ('19', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|4', null);
+INSERT INTO `bitacora` VALUES ('20', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|5', null);
+INSERT INTO `bitacora` VALUES ('21', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|6', null);
+INSERT INTO `bitacora` VALUES ('22', 'plan_programa', '1', 'I', '2015-01-21 00:00:00', '20092|7', null);
+INSERT INTO `bitacora` VALUES ('23', 'uaprendizaje', '1', 'I', '2015-01-21 00:00:00', '11236|MATEMATICAS 1|5|5|0|0|0|0|15|2015-01-21|vamos a ver|1|20092', null);
+INSERT INTO `bitacora` VALUES ('24', 'p_ua', '1', 'I', '2015-01-21 00:00:00', '1|11236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('25', 'p_ua', '1', 'I', '2015-01-21 00:00:00', '3|11236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('26', 'uaprendizaje', '1', 'I', '2015-01-21 00:00:00', '11237|MATEMÁTICAS II|5|10|0|0|0|0|20|2015-01-21|vamos a ver|3|20092', null);
+INSERT INTO `bitacora` VALUES ('27', 'p_ua', '1', 'I', '2015-01-21 00:00:00', '1|11237|2|1|1', null);
+INSERT INTO `bitacora` VALUES ('28', 'p_ua', '1', 'I', '2015-01-21 00:00:00', '3|11237|2|1|1', null);
+INSERT INTO `bitacora` VALUES ('29', 'periodos', '2', 'I', '2015-01-21 00:00:00', '20141|1|2014|1|Un período registrado|2015-01-21|2015-10-31|1', null);
+INSERT INTO `bitacora` VALUES ('30', 'periodos', '2', 'I', '2015-01-21 00:00:00', '20142|1|2014|2|Vamos a ver|2015-01-21|2015-07-25|1', null);
+INSERT INTO `bitacora` VALUES ('31', 'planestudio', '2', 'I', '2015-01-24 00:00:00', '20101|Plan 2010-1|200|2015-01-01|2015-12-31|1', null);
+INSERT INTO `bitacora` VALUES ('32', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|1', null);
+INSERT INTO `bitacora` VALUES ('33', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|2', null);
+INSERT INTO `bitacora` VALUES ('34', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|3', null);
+INSERT INTO `bitacora` VALUES ('35', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|4', null);
+INSERT INTO `bitacora` VALUES ('36', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|5', null);
+INSERT INTO `bitacora` VALUES ('37', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|6', null);
+INSERT INTO `bitacora` VALUES ('38', 'plan_programa', '2', 'I', '2015-01-24 00:00:00', '20101|7', null);
+INSERT INTO `bitacora` VALUES ('39', 'uaprendizaje', '2', 'I', '2015-01-24 00:00:00', '12236|ESPAÑOL|5|0|0|0|0|0|10|2015-01-24|vamos a ver|1|20101', null);
+INSERT INTO `bitacora` VALUES ('40', 'p_ua', '2', 'I', '2015-01-24 00:00:00', '1|12236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('41', 'p_ua', '2', 'I', '2015-01-24 00:00:00', '2|12236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('42', 'p_ua', '2', 'I', '2015-01-24 00:00:00', '3|12236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('43', 'uaprendizaje', '2', 'I', '2015-01-24 00:00:00', '12237|LITERATURA|5|10|2|0|0|0|22|2015-01-24|si se puede|2|20101', null);
+INSERT INTO `bitacora` VALUES ('44', 'p_ua', '2', 'I', '2015-01-24 00:00:00', '1|12237|1|1|2', null);
+INSERT INTO `bitacora` VALUES ('45', 'detalleseriacion', '2', 'I', '2015-01-24 00:00:00', '12237|1|12236|1', null);
+INSERT INTO `bitacora` VALUES ('46', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|7');
+INSERT INTO `bitacora` VALUES ('47', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|6');
+INSERT INTO `bitacora` VALUES ('48', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|5');
+INSERT INTO `bitacora` VALUES ('49', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|4');
+INSERT INTO `bitacora` VALUES ('50', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|3');
+INSERT INTO `bitacora` VALUES ('51', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|2');
+INSERT INTO `bitacora` VALUES ('52', 'plan_programa', '2', 'D', '2015-01-29 00:00:00', null, '20101|1');
+INSERT INTO `bitacora` VALUES ('53', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|7');
+INSERT INTO `bitacora` VALUES ('54', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|6');
+INSERT INTO `bitacora` VALUES ('55', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|5');
+INSERT INTO `bitacora` VALUES ('56', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|4');
+INSERT INTO `bitacora` VALUES ('57', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|3');
+INSERT INTO `bitacora` VALUES ('58', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|2');
+INSERT INTO `bitacora` VALUES ('59', 'plan_programa', '1', 'D', '2015-01-29 00:00:00', null, '20092|1');
+INSERT INTO `bitacora` VALUES ('60', 'p_ua', '2', 'D', '2015-01-29 00:00:00', null, '3|12236|1|1|1');
+INSERT INTO `bitacora` VALUES ('61', 'p_ua', '1', 'D', '2015-01-29 00:00:00', null, '3|11237|2|1|1');
+INSERT INTO `bitacora` VALUES ('62', 'p_ua', '1', 'D', '2015-01-29 00:00:00', null, '3|11236|1|1|1');
+INSERT INTO `bitacora` VALUES ('63', 'p_ua', '2', 'D', '2015-01-29 00:00:00', null, '2|12236|1|1|1');
+INSERT INTO `bitacora` VALUES ('64', 'detalleseriacion', '2', 'D', '2015-01-29 00:00:00', null, '12237|1|12236|1');
+INSERT INTO `bitacora` VALUES ('65', 'p_ua', '2', 'D', '2015-01-29 00:00:00', null, '1|12237|1|1|2');
+INSERT INTO `bitacora` VALUES ('66', 'p_ua', '2', 'D', '2015-01-29 00:00:00', null, '1|12236|1|1|1');
+INSERT INTO `bitacora` VALUES ('67', 'p_ua', '1', 'D', '2015-01-29 00:00:00', null, '1|11237|2|1|1');
+INSERT INTO `bitacora` VALUES ('68', 'p_ua', '1', 'D', '2015-01-29 00:00:00', null, '1|11236|1|1|1');
+INSERT INTO `bitacora` VALUES ('69', 'uaprendizaje', '2', 'D', '2015-01-29 00:00:00', null, '12237|LITERATURA|5|10|2|0|0|0|22|2015-01-24|si se puede|2|20101');
+INSERT INTO `bitacora` VALUES ('70', 'uaprendizaje', '2', 'D', '2015-01-29 00:00:00', null, '12236|ESPAÑOL|5|0|0|0|0|0|10|2015-01-24|vamos a ver|1|20101');
+INSERT INTO `bitacora` VALUES ('71', 'uaprendizaje', '1', 'D', '2015-01-29 00:00:00', null, '11237|MATEMÁTICAS II|5|10|0|0|0|0|20|2015-01-21|vamos a ver|3|20092');
+INSERT INTO `bitacora` VALUES ('72', 'uaprendizaje', '1', 'D', '2015-01-29 00:00:00', null, '11236|MATEMATICAS 1|5|5|0|0|0|0|15|2015-01-21|vamos a ver|1|20092');
+INSERT INTO `bitacora` VALUES ('73', 'planestudio', '2', 'D', '2015-01-29 00:00:00', null, '20101|Plan 2010-1|200|2015-01-01|2015-12-31|1');
+INSERT INTO `bitacora` VALUES ('74', 'planestudio', '1', 'D', '2015-01-29 00:00:00', null, '20092|Plan 2009-2|100|2015-01-01|2015-01-31|1');
+INSERT INTO `bitacora` VALUES ('75', 'planestudio', '1', 'I', '2015-01-29 00:00:00', '20091|Plan 2009-1|200|2015-01-29|2017-12-31|1', null);
+INSERT INTO `bitacora` VALUES ('76', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|1', null);
+INSERT INTO `bitacora` VALUES ('77', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|2', null);
+INSERT INTO `bitacora` VALUES ('78', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|3', null);
+INSERT INTO `bitacora` VALUES ('79', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|4', null);
+INSERT INTO `bitacora` VALUES ('80', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|5', null);
+INSERT INTO `bitacora` VALUES ('81', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|6', null);
+INSERT INTO `bitacora` VALUES ('82', 'plan_programa', '1', 'I', '2015-01-29 00:00:00', '20091|7', null);
+INSERT INTO `bitacora` VALUES ('83', 'uaprendizaje', '1', 'I', '2015-01-29 00:00:00', '11236|MATEMÁTICAS I|5|5|0|0|0|0|15|2015-01-29|vamos a ver|1|20091', null);
+INSERT INTO `bitacora` VALUES ('84', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '1|11236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('85', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '3|11236|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('86', 'uaprendizaje', '1', 'I', '2015-01-29 00:00:00', '11237|MATEMÁTICAS II|15|2|0|0|0|0|32|2015-01-29|vamos a ver|1|20091', null);
+INSERT INTO `bitacora` VALUES ('87', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '1|11237|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('88', 'detalleseriacion', '1', 'I', '2015-01-29 00:00:00', '11237|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('89', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '3|11237|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('90', 'detalleseriacion', '1', 'I', '2015-01-29 00:00:00', '11237|3|11236|1', null);
+INSERT INTO `bitacora` VALUES ('91', 'uaprendizaje', '1', 'I', '2015-01-29 00:00:00', '11238|MATEMÁTICAS BASICAS|3|0|0|0|0|0|6|2015-01-29|vamos a ver|1|20091', null);
+INSERT INTO `bitacora` VALUES ('92', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '6|11238|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('93', 'uaprendizaje', '1', 'I', '2015-01-29 00:00:00', '11239|ESPAÑOL|3|0|0|0|0|0|6|2015-01-29|vamos a ver|2|20091', null);
+INSERT INTO `bitacora` VALUES ('94', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '6|11239|1|1|1', null);
+INSERT INTO `bitacora` VALUES ('95', 'uaprendizaje', '1', 'I', '2015-01-29 00:00:00', '11240|OPTATIVA 1|3|0|0|0|0|0|6|2015-01-29|vamos a ver|5|20091', null);
+INSERT INTO `bitacora` VALUES ('96', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '1|11240|1|2|1', null);
+INSERT INTO `bitacora` VALUES ('97', 'grupos', '1', 'I', '2015-01-29 00:00:00', '111|20141|20091|1|1', null);
+INSERT INTO `bitacora` VALUES ('98', 'grupos', '1', 'I', '2015-01-29 00:00:00', '112|20141|20091|1|3', null);
 
 -- ----------------------------
 -- Table structure for campus
@@ -977,6 +1075,8 @@ CREATE TABLE `detalleseriacion` (
 -- ----------------------------
 -- Records of detalleseriacion
 -- ----------------------------
+INSERT INTO `detalleseriacion` VALUES ('1', '11237', '1', '11236', '1');
+INSERT INTO `detalleseriacion` VALUES ('3', '11237', '1', '11236', '1');
 
 -- ----------------------------
 -- Table structure for dias
@@ -1228,6 +1328,8 @@ CREATE TABLE `grupos` (
 -- ----------------------------
 -- Records of grupos
 -- ----------------------------
+INSERT INTO `grupos` VALUES ('111', '20141', '20091', '1', '1', '1');
+INSERT INTO `grupos` VALUES ('112', '20141', '20091', '1', '3', '1');
 
 -- ----------------------------
 -- Table structure for horarios
@@ -1592,6 +1694,8 @@ CREATE TABLE `periodos` (
 -- ----------------------------
 -- Records of periodos
 -- ----------------------------
+INSERT INTO `periodos` VALUES ('20141', '1', '2014', '1', 'Un período registrado', '2015-01-21', '2015-10-31', '1', '2');
+INSERT INTO `periodos` VALUES ('20142', '1', '2014', '2', 'Vamos a ver', '2015-01-21', '2015-07-25', '1', '2');
 
 -- ----------------------------
 -- Table structure for periodo_prog_edu
@@ -1637,6 +1741,7 @@ CREATE TABLE `planestudio` (
 -- ----------------------------
 -- Records of planestudio
 -- ----------------------------
+INSERT INTO `planestudio` VALUES ('20091', 'Plan 2009-1', '200', '2015-01-29', '2017-12-31', '1', '1');
 
 -- ----------------------------
 -- Table structure for plan_programa
@@ -1658,6 +1763,13 @@ CREATE TABLE `plan_programa` (
 -- ----------------------------
 -- Records of plan_programa
 -- ----------------------------
+INSERT INTO `plan_programa` VALUES ('20091', '1', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '2', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '3', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '4', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '5', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '6', '1');
+INSERT INTO `plan_programa` VALUES ('20091', '7', '1');
 
 -- ----------------------------
 -- Table structure for programaedu
@@ -1771,6 +1883,13 @@ CREATE TABLE `p_ua` (
 -- ----------------------------
 -- Records of p_ua
 -- ----------------------------
+INSERT INTO `p_ua` VALUES ('1', '11236', '1', '1', '1', '1');
+INSERT INTO `p_ua` VALUES ('1', '11237', '1', '1', '1', '1');
+INSERT INTO `p_ua` VALUES ('1', '11240', '1', '2', '1', '1');
+INSERT INTO `p_ua` VALUES ('3', '11236', '1', '1', '1', '1');
+INSERT INTO `p_ua` VALUES ('3', '11237', '1', '1', '1', '1');
+INSERT INTO `p_ua` VALUES ('6', '11238', '1', '1', '1', '1');
+INSERT INTO `p_ua` VALUES ('6', '11239', '1', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for reqseriacion
@@ -1784,7 +1903,7 @@ CREATE TABLE `reqseriacion` (
   UNIQUE KEY `RS_codigo_UNIQUE` (`reqseriacion`),
   KEY `fk_reqseriacion_users1_idx` (`users_id`),
   CONSTRAINT `fk_reqseriacion_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
 -- Records of reqseriacion
@@ -1967,13 +2086,13 @@ DROP TABLE IF EXISTS `uaprendizaje`;
 CREATE TABLE `uaprendizaje` (
   `uaprendizaje` int(11) NOT NULL COMMENT 'Código uaprendizaje (SOLO NUMERICOS)',
   `descripcionmat` varchar(100) NOT NULL COMMENT 'Descripción  uaprendizaje',
-  `HC` int(11) NOT NULL COMMENT 'Horas Clase',
-  `HL` int(11) NOT NULL COMMENT 'Horas Laboratorio',
-  `HT` int(11) NOT NULL COMMENT 'Horas Taller',
-  `HPC` int(11) NOT NULL COMMENT 'Horas',
-  `HCL` int(11) NOT NULL COMMENT 'Horas Clinica',
-  `HE` int(11) NOT NULL COMMENT 'Horas Extra',
-  `creditos` int(11) NOT NULL COMMENT 'Numero de Créditos\n1Hr Clase= 2c',
+  `HC` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas Clase',
+  `HL` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas Laboratorio',
+  `HT` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas Taller',
+  `HPC` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas',
+  `HCL` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas Clinica',
+  `HE` int(11) NOT NULL DEFAULT '0' COMMENT 'Horas Extra',
+  `creditos` int(11) NOT NULL DEFAULT '0' COMMENT 'Numero de Créditos\n1Hr Clase= 2c',
   `fec_aut` date DEFAULT NULL COMMENT 'Fecha autorización',
   `observa` varchar(60) DEFAULT NULL COMMENT 'Observaciones',
   `coordinaciona` int(11) NOT NULL COMMENT 'Codigo coordinacion area',
@@ -1984,14 +2103,19 @@ CREATE TABLE `uaprendizaje` (
   KEY `fk_uaprendizaje_coordinaciona1_idx` (`coordinaciona`),
   KEY `fk_uaprendizaje_planestudio1_idx` (`plan`),
   KEY `fk_uaprendizaje_users1_idx` (`users_id`),
-  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_coordinaciona1` FOREIGN KEY (`coordinaciona`) REFERENCES `coordinaciona` (`coordinaciona`),
+  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
 -- ----------------------------
 -- Records of uaprendizaje
 -- ----------------------------
+INSERT INTO `uaprendizaje` VALUES ('11236', 'MATEMÁTICAS I', '5', '5', '0', '0', '0', '0', '15', '2015-01-29', 'vamos a ver', '1', '20091', '1');
+INSERT INTO `uaprendizaje` VALUES ('11237', 'MATEMÁTICAS II', '15', '2', '0', '0', '0', '0', '32', '2015-01-29', 'vamos a ver', '1', '20091', '1');
+INSERT INTO `uaprendizaje` VALUES ('11238', 'MATEMÁTICAS BASICAS', '3', '0', '0', '0', '0', '0', '6', '2015-01-29', 'vamos a ver', '1', '20091', '1');
+INSERT INTO `uaprendizaje` VALUES ('11239', 'ESPAÑOL', '3', '0', '0', '0', '0', '0', '6', '2015-01-29', 'vamos a ver', '2', '20091', '1');
+INSERT INTO `uaprendizaje` VALUES ('11240', 'OPTATIVA 1', '3', '0', '0', '0', '0', '0', '6', '2015-01-29', 'vamos a ver', '5', '20091', '1');
 
 -- ----------------------------
 -- Table structure for universidades_emp
@@ -2066,13 +2190,13 @@ CREATE TABLE `users` (
   CONSTRAINT `fk_users_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
   CONSTRAINT `fk_users_levels1` FOREIGN KEY (`level`) REFERENCES `levels` (`level`),
   CONSTRAINT `fk_users_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Cynthia', 'Duarte', '', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', '6450706', '1', '1', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 19:30:58', '2015-01-16 13:08:00', 'dKTqnhhGbpgpuajeZKjPamLNCcx4TxQ2FIXRe4b1Zjkz93OpeOPdJyFDDHwV', 'F', null, '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', '16', 'CALLE SERRADILLA', '500', 'A', 'MONTGOMERY', '22310', '664-9740000', '664-9740000', '101', 'ENSENADA', 'FCA', '0');
-INSERT INTO `users` VALUES ('2', 'Ivan', 'Duarte', '', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', '6233987', '1', '1', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9StZEMuLWOCmjfK1hO', '2', '2014-04-19 19:30:58', '2014-05-14 22:29:32', 'E4uGco0FtNqNTuFFvxq4mSIrfA2qWORYIkt7KDU3SCMzLG90S3AlIhNIIUY8', 'M', null, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', '16', 'DE LOS LAURELES', '600', '1', 'EL CIRCULO', '22450', '664-1236789', '664\'1236789', '101', 'VALLE DE LA TRINIDAD', 'FD', '1');
+INSERT INTO `users` VALUES ('1', 'Cynthia', 'Duarte', '', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', '6450706', '1', '1', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 19:30:58', '2015-01-29 09:34:54', '1zUMQe5eaQhQCI1D2jHyjLLqCAetI30Mnq35MGzrnPgNPPHdaHtcW0Um1Tfe', 'F', null, '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', '16', 'CALLE SERRADILLA', '500', 'A', 'MONTGOMERY', '22310', '664-9740000', '664-9740000', '101', 'ENSENADA', 'FCA', '0');
+INSERT INTO `users` VALUES ('2', 'Ivan', 'Duarte', '', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', '6233987', '1', '1', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9StZEMuLWOCmjfK1hO', '2', '2014-04-19 19:30:58', '2015-01-29 09:45:44', 'fw7JjrYTk6RA8bE4OfqBxN4U4mFsTAniE4gGoOMrlFvbCfUWGhBRSirjq0ZT', 'M', null, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', '16', 'DE LOS LAURELES', '600', '1', 'EL CIRCULO', '22450', '664-1236789', '664\'1236789', '101', 'VALLE DE LA TRINIDAD', 'FD', '3');
 
 -- ----------------------------
 -- View structure for vw_carga
