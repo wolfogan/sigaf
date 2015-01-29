@@ -121,7 +121,7 @@ Route::get('pruebas',function(){
 		$planesWhereIn[] = $planes[$key]['plan'];
 	}
 */
-	$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+	$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get() ->toArray();
 	$enviarPlanes = [];
 	foreach ($planes as $key => $value) 
 	{

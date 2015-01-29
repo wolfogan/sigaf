@@ -383,8 +383,8 @@
 			</div>
 
 			
-				<input type="button" style="width:200px;" class="md-trigger" value="Prueba" data-modal="pruebaCa" id="pruebaCa" />
-				
+			<!-- <input type="button" style="width:200px;" class="md-trigger" value="Prueba" data-modal="pruebaCa" id="pruebaCa" /> -->
+
 
 
 
@@ -436,8 +436,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -482,8 +482,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -528,8 +528,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 
 						</tr>
 					</thead>
@@ -575,8 +575,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -622,8 +622,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -669,8 +669,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -715,8 +715,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -761,8 +761,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorNaranja">
@@ -807,8 +807,8 @@
 							<th style="width:50px">HC</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
-							<th style="width:50px">ELIMINAR</th>
 							<th style="width:50px">MODIFICAR</th>
+							<th style="width:50px">ELIMINAR</th>
 						</tr>
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
@@ -874,6 +874,63 @@
 				if(dd<10) dd='0'+dd;
 				if(mm<10) mm='0'+mm;
 				return String(yyyy+"-"+mm+"-"+dd);
+		}
+
+		function activarModal()
+		{
+			var overlay = document.querySelector( '.md-overlay' );
+
+			[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i )
+			{
+
+				var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+					close = modal.querySelector( '.md-close' );
+
+				function removeModal( hasPerspective ) {
+					classie.remove( modal, 'md-show' );
+
+					if( hasPerspective ) {
+						classie.remove( document.documentElement, 'md-perspective' );
+					}
+					// Si es guardar limpiar campos
+					if($("#guardar").val()=="Guardar")
+					{
+						reset_campos();
+					}
+					else{
+						
+					}
+					// Optimizar esta parte con una bandera de actualizacion
+					if($("#limpiar").val()=="Cancelar")
+						$("#limpiar").click();
+					
+					//ActualizarUAS($("#noPlan").val());
+				}
+
+				function removeModalHandler() {
+					// Condicion de los rows
+					//if($("#select_carreras").val()==null)
+					//	return;
+					removeModal( classie.has( el, 'md-setperspective' ) ); 
+				}
+
+				el.addEventListener( 'click', function( ev ) {
+					classie.add( modal, 'md-show' );
+					overlay.removeEventListener( 'click', removeModalHandler );
+					overlay.addEventListener( 'click', removeModalHandler );
+
+					if( classie.has( el, 'md-setperspective' ) ) {
+						setTimeout( function() {
+							classie.add( document.documentElement, 'md-perspective' );
+						}, 25 );
+					}
+				});
+
+				close.addEventListener( 'click', function( ev ) {
+					ev.stopPropagation();
+					removeModalHandler();
+				});
+			});
 		}
 
 		/**
@@ -1167,8 +1224,19 @@
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
 					if (data.uas[i].caracter == 1)
 					{
-						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series)+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						renglon = "<tr>" + 
+									"<td>" + data.uas[i].uaprendizaje + "</td>" +
+									"<td>" + data.uas[i].descripcionmat+"</td>" +
+									"<td>" + data.uas[i].creditos + "</td>" +
+									"<td>" + data.uas[i].HC + "</td>" +
+									"<td>" + data.uas[i].etapa + "</td>" +
+									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa'/>" + "</td>" +
+									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
+								  "</tr>";
+						
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
+
 					}
 					else
 					{
@@ -1193,7 +1261,16 @@
 							},
 							async:false
 						});
-						renglon = "<tr><td>"+data.uas[i].uaprendizaje+"</td><td>"+data.uas[i].descripcionmat+" - "+renglonGrupos+"</td><td>"+data.uas[i].creditos+"</td><td>"+data.uas[i].HC+"</td><td>"+data.uas[i].etapa+"</td><td>"+((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series)+"</td><td><input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td></tr>";
+						renglon = "<tr>" +
+									"<td>" + data.uas[i].uaprendizaje + "</td>" +
+									"<td>" + data.uas[i].descripcionmat + " - " + renglonGrupos + "</td>" +
+									"<td>" + data.uas[i].creditos + "</td>" +
+									"<td>" + data.uas[i].HC + "</td>" +
+									"<td>" + data.uas[i].etapa + "</td>" +
+									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa'/>" + "</td>" +
+									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
+								  "</tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
 						//alert("Si fue sincrono");
 					}
@@ -1214,6 +1291,9 @@
 				{
 					$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
 				}
+
+				// Activar modales en la modificacion de las filas
+				activarModal();
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
@@ -1241,6 +1321,7 @@
 
 			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 			var programa = 0;
+
 			if(numPrograma == 0)
 			{
 				var programa = $("#carreraAdmin").val();
@@ -1483,6 +1564,10 @@
 
 			$("#btnGuardarCargaA").on("click",function(){
 				generarCarga("#selectGruposAnterior","#listboxPlanAnterior",uasAnterior,numPrograma,$("#semestresAnterior").val());
+			});
+			// PARA MODIFICAR GRUPOS DE LA CARGA YA REALIZADA
+			$("table").on("click",".clsModificarFila",function(event){
+
 			});
 
 			// PARA ELIIMINAR UA DE LA CARGA FALTA EL FILTRO DE CARRRRRRRRERASSASAAAASDASDASDFASDFASDF

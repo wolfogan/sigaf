@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-01-29 03:06:25
+Date: 2015-01-29 05:57:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,7 +96,7 @@ CREATE TABLE `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bitacora
@@ -199,6 +199,30 @@ INSERT INTO `bitacora` VALUES ('95', 'uaprendizaje', '1', 'I', '2015-01-29 00:00
 INSERT INTO `bitacora` VALUES ('96', 'p_ua', '1', 'I', '2015-01-29 00:00:00', '1|11240|1|2|1', null);
 INSERT INTO `bitacora` VALUES ('97', 'grupos', '1', 'I', '2015-01-29 00:00:00', '111|20141|20091|1|1', null);
 INSERT INTO `bitacora` VALUES ('98', 'grupos', '1', 'I', '2015-01-29 00:00:00', '112|20141|20091|1|3', null);
+INSERT INTO `bitacora` VALUES ('99', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('100', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11237|1', null);
+INSERT INTO `bitacora` VALUES ('101', 'carga', '1', 'I', '2015-01-29 00:00:00', '112|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('102', 'carga', '1', 'I', '2015-01-29 00:00:00', '112|20141|1|11237|1', null);
+INSERT INTO `bitacora` VALUES ('103', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '112|20141|1|11237|1');
+INSERT INTO `bitacora` VALUES ('104', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '112|20141|1|11236|1');
+INSERT INTO `bitacora` VALUES ('105', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '111|20141|1|11237|1');
+INSERT INTO `bitacora` VALUES ('106', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '111|20141|1|11236|1');
+INSERT INTO `bitacora` VALUES ('107', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('108', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('109', 'carga', '1', 'I', '2015-01-29 00:00:00', '112|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('110', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11240|1', null);
+INSERT INTO `bitacora` VALUES ('111', 'grupos', '1', 'I', '2015-01-29 00:00:00', '113|20141|20091|1|1', null);
+INSERT INTO `bitacora` VALUES ('112', 'grupos', '1', 'I', '2015-01-29 00:00:00', '114|20141|20091|1|2', null);
+INSERT INTO `bitacora` VALUES ('113', 'carga', '1', 'I', '2015-01-29 00:00:00', '111|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('114', 'carga', '1', 'I', '2015-01-29 00:00:00', '112|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('115', 'carga', '1', 'I', '2015-01-29 00:00:00', '113|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('116', 'carga', '1', 'I', '2015-01-29 00:00:00', '114|20141|1|11236|1', null);
+INSERT INTO `bitacora` VALUES ('117', 'carga', '1', 'I', '2015-01-29 00:00:00', '112|20141|1|11240|1', null);
+INSERT INTO `bitacora` VALUES ('118', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '112|20141|1|11240|1');
+INSERT INTO `bitacora` VALUES ('119', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '111|20141|1|11236|1');
+INSERT INTO `bitacora` VALUES ('120', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '112|20141|1|11236|1');
+INSERT INTO `bitacora` VALUES ('121', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '113|20141|1|11236|1');
+INSERT INTO `bitacora` VALUES ('122', 'carga', '1', 'D', '2015-01-29 00:00:00', null, '114|20141|1|11236|1');
 
 -- ----------------------------
 -- Table structure for campus
@@ -207,7 +231,7 @@ DROP TABLE IF EXISTS `campus`;
 CREATE TABLE `campus` (
   `campus` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo campus (1,2,3,4)',
   `descripcion` varchar(100) NOT NULL COMMENT 'Descripcion CAMPUS ()',
-  `direccion` varchar(60) DEFAULT NULL COMMENT 'Direccion CAMPUS',
+  `direccion` varchar(100) DEFAULT NULL COMMENT 'Direccion CAMPUS',
   `ciudad` int(11) NOT NULL DEFAULT '16' COMMENT 'Codigo ciudad',
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`campus`),
@@ -1330,6 +1354,8 @@ CREATE TABLE `grupos` (
 -- ----------------------------
 INSERT INTO `grupos` VALUES ('111', '20141', '20091', '1', '1', '1');
 INSERT INTO `grupos` VALUES ('112', '20141', '20091', '1', '3', '1');
+INSERT INTO `grupos` VALUES ('113', '20141', '20091', '1', '1', '1');
+INSERT INTO `grupos` VALUES ('114', '20141', '20091', '1', '2', '1');
 
 -- ----------------------------
 -- Table structure for horarios
@@ -2103,8 +2129,8 @@ CREATE TABLE `uaprendizaje` (
   KEY `fk_uaprendizaje_coordinaciona1_idx` (`coordinaciona`),
   KEY `fk_uaprendizaje_planestudio1_idx` (`plan`),
   KEY `fk_uaprendizaje_users1_idx` (`users_id`),
+  CONSTRAINT `fk_uaprendizaje_planprograma1` FOREIGN KEY (`plan`) REFERENCES `plan_programa` (`plan`),
   CONSTRAINT `fk_uaprendizaje_coordinaciona1` FOREIGN KEY (`coordinaciona`) REFERENCES `coordinaciona` (`coordinaciona`),
-  CONSTRAINT `fk_uaprendizaje_planestudio1` FOREIGN KEY (`plan`) REFERENCES `planestudio` (`plan`),
   CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
@@ -2195,7 +2221,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Cynthia', 'Duarte', '', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', '6450706', '1', '1', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 19:30:58', '2015-01-29 09:34:54', '1zUMQe5eaQhQCI1D2jHyjLLqCAetI30Mnq35MGzrnPgNPPHdaHtcW0Um1Tfe', 'F', null, '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', '16', 'CALLE SERRADILLA', '500', 'A', 'MONTGOMERY', '22310', '664-9740000', '664-9740000', '101', 'ENSENADA', 'FCA', '0');
+INSERT INTO `users` VALUES ('1', 'Cynthia', 'Duarte', '', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', '6450706', '1', '1', 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', '1', '2014-04-19 19:30:58', '2015-01-29 12:29:38', 'RxUzFbxTOcn7SVSFg2FFcjP7TddMVotrzDoIOgKMLnmWaUGz5EAxpqeN0q4B', 'F', null, '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', '16', 'CALLE SERRADILLA', '500', 'A', 'MONTGOMERY', '22310', '664-9740000', '664-9740000', '101', 'ENSENADA', 'FCA', '0');
 INSERT INTO `users` VALUES ('2', 'Ivan', 'Duarte', '', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', '6233987', '1', '1', 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9StZEMuLWOCmjfK1hO', '2', '2014-04-19 19:30:58', '2015-01-29 09:45:44', 'fw7JjrYTk6RA8bE4OfqBxN4U4mFsTAniE4gGoOMrlFvbCfUWGhBRSirjq0ZT', 'M', null, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', '16', 'DE LOS LAURELES', '600', '1', 'EL CIRCULO', '22450', '664-1236789', '664\'1236789', '101', 'VALLE DE LA TRINIDAD', 'FD', '3');
 
 -- ----------------------------

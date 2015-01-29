@@ -238,3 +238,175 @@ PHP
 				}
 			}*/
 
+
+/*
+		var sourcePlanVigente = [
+									@for ($i = 0;$i<count($unidades[0]);$i++)
+										{{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} 
+											@if ($i<count($unidades[0])-1)
+												{{","}}
+											@endif 
+									@endfor
+								];
+		var sourcePlanAnterior =[ 
+									@for ($i = 0;$i<count($unidades[1]);$i++)
+										{{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}}
+										@if($i<count($unidades[1])-1)
+											{{","}}
+										@endif
+									@endfor
+								];
+		planVigente = {{$planes[0]}};
+		planAnterior = {{$planes[1]}};
+		//alert(source[0].plan);
+*/
+
+@foreach ($programas as $program)
+								<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
+							@endforeach
+
+
+
+							@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
+						@endforeach
+
+/* Asingar nombres de planes
+		$("#nombreVigente").text("Plan "+insertStr({{'"'.$planes[0].'"'}},"-",4));
+		$("#nombreAnterior").text("Plan "+insertStr({{'"'.$planes[1].'"'}},"-",4));
+		$("#grupoPlanVigente").text(insertStr({{'"'.$planes[0].'"'}},"-",4));
+		$("#grupoPlanAnterior").text(insertStr({{'"'.$planes[1].'"'}},"-",4));
+		$("#grupoVigentePlan").val({{$planes[0]}});
+		$("#grupoAnteriorPlan").val({{$planes[1]}});
+		*/
+	
+
+// Check several items.
+			// $(".listbox").jqxListBox('checkIndex', 0);
+			// $(".listbox").jqxListBox('checkIndex', 1);
+			// $(".listbox").jqxListBox('checkIndex', 2);
+			// $(".listbox").jqxListBox('checkIndex', 5);
+
+	/*var args = event.args;
+				if (args.checked) {
+					$("#Events").text("Checked: " + args.label);
+				}
+				else {
+					$("#Events").text("Unchecked: " + args.label);
+				}*/
+
+
+/*if (index < items.length - 1) {
+						checkedItems += this.label + ", ";
+					}
+					else checkedItems += this.label;*/
+
+
+				//alert(uasVigente);
+				//$("#CheckedItems").text(checkedItems);
+
+
+,'planes'
+
+// Cargar input para crear grupos con el semestre elegido
+				$("#grupoSemestreV,#grupoSemestreA").val(1);
+
+				var numPlanes = $("#planes").val();
+
+				/*if(numPlanes == 1)
+				{
+					var planV = data.unidades[data.planes[0]];
+					for(key in planV)
+					{
+
+					}
+				}*/
+
+				console.log(data);
+				console.log(data.planes[0].plan);
+				console.log(data.unidades[data.planes[0].plan]);
+
+
+
+		// 20101 , 20102
+		$planWhereIn = [];
+		foreach ($planes as $key => $value) {
+			array_push($planWhereIn, $planes[$key]->plan);
+		}
+		
+var numPlanes = $("#planes").val();
+					// Evaluar el despliegue de 1 o 2 planes
+					var planS = data.unidades[data.planes[0].plan];
+					var sourcePV = [];
+					var sourcePA = [];
+					
+					for(key in planS)
+					{
+						sourcePV.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
+					}
+
+					console.log(sourcePV);
+					
+					$("#listboxPlanVigente").jqxListBox({source: sourcePV});
+					// Deshabilitar controles del plan secundario
+					$("#planAnterior").find("input,select").attr('disabled',true);
+					// Si son 2 planes de estudio cargar el plan sencundario
+					if(numPlanes > 1)
+					{
+						planS = data.unidades[data.planes[1].plan];
+						for(key in planS)
+						{
+							sourcePA.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
+						}
+						// Cargar plan anterior y habilitar controles
+						$("#listboxPlanAnterior").jqxListBox({source : sourcePA});
+						$("#planAnterior").find("input,select").attr('disabled',false);
+					}
+					
+					
+
+
+		// Verificar tipo de usuario
+		if($numPrograma != 0)
+		{
+
+			// Unidades de aprendizaje: 20101 - 11236 - Matemáticas
+			$uas = DB::table('p_ua')
+					->select('uaprendizaje.plan','p_ua.uaprendizaje','uaprendizaje.descripcionmat')
+					->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
+					->where('p_ua.caracter','=',1)
+					->where('p_ua.programaedu','=',$numPrograma)
+					->whereIn('uaprendizaje.plan',$planWhereIn)
+					->orderBy('plan','desc')
+					->orderBy('p_ua.uaprendizaje','asc')
+					->get();
+			
+			
+			
+			// $unidades[0][0] = $uas[0]  -> 20101
+			// $unidades[0][1] = $uas[1]  -> 20101
+			// $unidades[1][0] = $uas[3]  -> 20102
+			
+			$unidades  = [];
+			foreach ($uas as $key => $value) 
+			{
+				$nombrePlan = $uas[$key]->plan;
+				if($nombrePlan == $planes[0]->plan)
+				{
+					$unidades[$nombrePlan][] = $uas[$key];
+				}
+
+				if($numPlanes > 1)
+				{
+					if ($nombrePlan == $planes[1]->plan) 
+					{
+						$unidades[$nombrePlan][] = $uas[$key];
+					}
+				}
+			}
+
+
+			// Obtener nombre del programa 
+		$nombrePrograma = ProgramaEducativo::find($programa);
+		$nombrePrograma = $nombrePrograma -> descripcion;
+		$var_nombre = array("nombrePrograma");
