@@ -21,245 +21,59 @@
 	<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
-	<script type="text/javascript">
 	
-	var planVigente = 0;
-	var planAnterior = 0;
-	var uasVigente = [];
-	var uasAnterior = [];
-	
-	function insertStr(stringTarget,stringAdd,stringIndex)
-	{
-		var string1 = stringTarget.substring(0,stringIndex);
-		var string2 = stringTarget.substring(stringIndex);
-
-		return string1+stringAdd+string2;
-	}
-
-	Date.prototype.now = function(){
-			var dd = this.getDate();
-			var mm = this.getMonth()+1;
-			var yyyy = this.getFullYear();
-			if(dd<10) dd='0'+dd;
-			if(mm<10) mm='0'+mm;
-			return String(yyyy+"-"+mm+"-"+dd);
-	}
-
-
-	$(function()
-	{
-		// Ocultar tablas de registro de carga
-		$("table:not(.tblCatPlan,#semestre1)").hide();
-
-		var planes = $("#planes").val() > 0;
-		// Verificar existencia de planes de estudio
-		if(planes != true)
-		{
-			alert("No existen planes de estudio registrados");
-			// Desactivar opciones
-			$("#planVigente , #planAnterior").find("select, input").attr("disabled" , true);
-		}
-		else
-		{
-			// INICIALIZAR ENTORNO PARA GENERAR LA CARGA
-
-			// Inicializar fecha periodo
-			var date = new Date();
-			$("#periodoFechaInicio").val(date.now());
-			$("#periodoFechaFin").val(date.now());
-			//$("#periodoFechaInicio").prop('min',date.now());
-			//$("#periodoFechaInicio").prop('max','2015-08-08');
-			
-
-			// Create a jqxListBox para la lista de las las unidades con los planes de estudio
-			$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
-			$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
-
-			
-			// Agregar el programaeducativo estatico POR LO PRONTO
-			$(".grupoPrograma").val({{Auth::user()->programaedu}});
-			
-			
-			
-
-			// Obtener unidades de aprendizaje de 1 ó 2 planes de estudio
-			$.post("<?php echo URL::to('cargaacademica/unidades'); ?>",function(data){
-				// Asignar nombre de la coordinación en caso de que sea un usuario coordinador
-				$("#nombrePrograma").text("Lic. en " + data.nombrePrograma);
-
-				// Asignar tipos de período a modal de registro de períodos: SEMESTRAL,SABATINO, ETC.
-				var options = "";
-				for(key in data.periodosPrograma)
-				{
-					var periodo = data.periodosPrograma[key].periodo_pedu;
-					var descripcion = data.periodosPrograma[key].descripcion;
-					options += "<option value='" + periodo + "'>" + descripcion + "</option>"; 
-				}
-				$("#periodoTipo").html(options);
-
-				// Asignar tipos de carácter a la lista de los planes: OBLIGATORIO, OPTATIVA
-				options = "";
-				for(key in data.tiposCaracter)
-				{
-					var caracter = data.tiposCaracter[key].caracter;
-					var descripcion = data.tiposCaracter[key].descripcion;
-					options += "<option value='" + caracter + "'>" + descripcion + "</option>" 
-				}
-				$("#selectCaracterVigente,#selectCaracterAnterior").html(options);
-
-				// Asignar los periodos registrados: 2014-1, 2014-2
-				options = "";
-				for(key in data.codigosPeriodo)
-				{
-					var codigo = data.codigosPeriodo[key].codigo;
-					var formato = data.codigosPeriodo[key].formato;
-					options += "<option value = '" + formato + "' codigo = '" + codigo + "' />"; 
-				}
-				$("#datalistPeriodo").html(options);
-
-				// Asignar los turnos para los grupos TM, TV , etc.
-				options = "";
-				for(key in data.turnos)
-				{
-					var turno = data.turnos[key].turno;
-					var descripcion = data.turnos[key].descripcion;
-					options += "<option value = '" + turno + "'>" + descripcion + "</option>"; 
-				}
-				$("#grupoTurno").html(options);
-
-
-
-				// Asignar los semestres
-				options = "";
-				var semestres = [1,2,3,4,5,6,7,8,9];
-				for(key in semestres)
-				{
-					/*var option = document.createElement('option');
-					option.text = semestres[key];
-					option.value = semestres[key];
-					s.options[s.options.length] = option;*/
-					options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";  
-				}
-				$("#semestresVigente,#semestresAnterior").html(options);
-
-				// Cargar input para crear grupos con el semestre elegido
-				$("#grupoSemestreV,#grupoSemestreA").val(1);
-
-				var numPlanes = $("#planes").val();
-				// Evaluar el despliegue de 1 o 2 planes
-				var planS = data.unidades[data.planes[0].plan];
-				var sourcePV = [];
-				var sourcePA = [];
-				
-				for(key in planS)
-				{
-					sourcePV.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
-				}
-
-				console.log(sourcePV);
-				
-				$("#listboxPlanVigente").jqxListBox({source: sourcePV});
-				// Deshabilitar controles del plan secundario
-				$("#planAnterior").find("input,select").attr('disabled',true);
-				// Si son 2 planes de estudio cargar el plan sencundario
-				if(numPlanes > 1)
-				{
-					planS = data.unidades[data.planes[1].plan];
-					for(key in planS)
-					{
-						sourcePA.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
-					}
-					$("#listboxPlanAnterior").jqxListBox({source : sourcePA});
-				}
-				
-				
-				// Evento al seleccionar ua's de plan vigente.
-				$("#listboxPlanVigente").on('checkChange', function (event)
-				{
-					var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
-					// Limpiar arreglo
-					uasVigente = [];
-					// Agregar al arreglo clave de unidad de aprendizaje
-					$.each(items, function (index)
-					{
-						uasVigente.push(this.label.substring(0,5));
-					});
-				});
-				// Evento al seleccionar ua's de plan anterior.
-				$("#listboxPlanAnterior").on('checkChange', function (event)
-				{
-
-					var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
-					// Limpiar arreglo
-					uasAnterior = [];
-					// Agregar al arreglo clave de unidad de aprendizaje
-					$.each(items, function (index)
-					{
-						uasAnterior.push( this.label.substring(0 , 5) );
-					});
-				});
-
-
-
-			})
-			.fail(function(errorText,textError,errorThrow){
-				alert(errorText.responseText);
-			});
-		}
-	});
-	</script>
 
 
  <!-- PARA LISTA DENTRO DE MODAL, PARA MODIFICAR GRUPOS -->
 	<script type="text/javascript">
-            $(document).ready(function () {
-                var source = [
-                    "221 TM",
-                    "222 TM",
-                    "223 TM",
-                    "224 TM",
-                    "225 TM",
-                    "226 TM",
-                    "227 TM",
-                    "220 TM",
-                    "228 TM",
-                    "223 TM",
-                    "224 TM",
-                    "225 TM",
-                    "226 TM",
-                    "227 TM",
-                    "229 TM"
-		        ];
-                // Create a jqxListBox
-                $("#listaUa").jqxListBox({width: 250, source: source, checkboxes: true, height: 300, theme: 'orange'});
-                
-                // Check several items.
-                $("#listaUa").jqxListBox('checkIndex', 0);
-                $("#listaUa").jqxListBox('checkIndex', 1);
-                $("#listaUa").jqxListBox('checkIndex', 2);
-                $("#listaUa").jqxListBox('checkIndex', 5);
+			$(function () {
+				var source = [
+					"221 TM",
+					"222 TM",
+					"223 TM",
+					"224 TM",
+					"225 TM",
+					"226 TM",
+					"227 TM",
+					"220 TM",
+					"228 TM",
+					"223 TM",
+					"224 TM",
+					"225 TM",
+					"226 TM",
+					"227 TM",
+					"229 TM"
+				];
+				// Create a jqxListBox
+				$("#listaUa").jqxListBox({width: 250, source: source, checkboxes: true, height: 300, theme: 'orange'});
+				
+				// Check several items.
+				$("#listaUa").jqxListBox('checkIndex', 0);
+				$("#listaUa").jqxListBox('checkIndex', 1);
+				$("#listaUa").jqxListBox('checkIndex', 2);
+				$("#listaUa").jqxListBox('checkIndex', 5);
 
-                $("#listaUa").on('checkChange', function (event) {
-                    var args = event.args;
-                    if (args.checked) {
-                        $("#Events").text("Checked: " + args.label);
-                    }
-                    else {
-                        $("#Events").text("Unchecked: " + args.label);
-                    }
+				$("#listaUa").on('checkChange', function (event) {
+					var args = event.args;
+					if (args.checked) {
+						$("#Events").text("Checked: " + args.label);
+					}
+					else {
+						$("#Events").text("Unchecked: " + args.label);
+					}
 
-                    var items = $("#listaUa").jqxListBox('getCheckedItems');
-                    var checkedItems = "";
-                    $.each(items, function (index) {
-                        if (index < items.length - 1) {
-                            checkedItems += this.label + ", ";
-                        }
-                        else checkedItems += this.label;
-                    });
-                    $("#CheckedItems").text(checkedItems);
-                });
-            });
-        </script>
+					var items = $("#listaUa").jqxListBox('getCheckedItems');
+					var checkedItems = "";
+					$.each(items, function (index) {
+						if (index < items.length - 1) {
+							checkedItems += this.label + ", ";
+						}
+						else checkedItems += this.label;
+					});
+					$("#CheckedItems").text(checkedItems);
+				});
+			});
+	</script>
 
 	<!------------------------------------------------------------------------------------->
 	
@@ -277,7 +91,7 @@
 	<!-------------------------------- PARA MULTISELECT ---------------------------->
 	<script type="text/javascript">
 	$(function() {
-		$('.grupos').multiselect(configurationObligatorio);
+		$('.grupos').multiselect(configurationOptativo);
 	});
 
 	var configurationObligatorio =
@@ -540,7 +354,7 @@
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
-					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
+					<div class="nombrePlan" id="nombreVigente">Plan XXXX-X</div>
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" id="selectCaracterVigente">
@@ -578,7 +392,7 @@
 			<!----------------------- LISTA PLAN ANTERIOR ------------------------>
 			<div id="planAnterior">
 				<fieldset id="planA"><legend>Plan anterior </legend>
-					<div class="nombrePlan" id="nombreAnterior">Plan 2009-2</div>
+					<div class="nombrePlan" id="nombreAnterior">Plan XXXX-X</div>
 					<div class="filtroMaterias_ca">
 						Materias:
 						<select class="con_estilo" style="width:135px; height:30px" name="semestre_ca" id="selectCaracterAnterior">
@@ -1036,12 +850,32 @@
 			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 
 	</footer>
-		<!--SCRIPT PARA VENTANA MODAL-->
-	<script src="../js/classie.js"></script>
-	<script src="../js/modalEffects.js"></script>
-	
 	<script type="text/javascript">
-		
+		/******************** SCRIPTS DE FUNCIONES GENERALES DEL SISTEMA ********************/
+		var planVigente = 0;
+		var planAnterior = 0;
+		var uasVigente = [];
+		var uasAnterior = [];
+		var numPrograma = 0;
+		var actualizar = false;
+
+		function insertStr(stringTarget,stringAdd,stringIndex)
+		{
+			var string1 = stringTarget.substring(0,stringIndex);
+			var string2 = stringTarget.substring(stringIndex);
+
+			return String(string1+stringAdd+string2);
+		}
+
+		Date.prototype.now = function(){
+				var dd = this.getDate();
+				var mm = this.getMonth()+1;
+				var yyyy = this.getFullYear();
+				if(dd<10) dd='0'+dd;
+				if(mm<10) mm='0'+mm;
+				return String(yyyy+"-"+mm+"-"+dd);
+		}
+
 		/**
 		 * Funcion que permite registrar un periodo para generar la carga academica
 		 * @return {null} No regresa ningun valor
@@ -1113,21 +947,98 @@
 			});
 		}
 
-		function verificarUsuario()
+		function obtenerPlanesEstudio(callback)
 		{
-			var numPrograma = {{Auth::user()->programaedu}};
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/obtenerplanes') ?>",
+				type : "post",
+				success : function(planes){
+					console.log(planes);
+					var plan = String(planes[0]);
+					$("#nombreVigente").text("Plan " + insertStr(plan,"-",4));
+					$("#grupoVigentePlan").val(plan);
+					$("#grupoPlanVigente").text($("#nombreVigente").text());
+					
+					if(planes.cantidad == 2)
+					{
+						plan = String(planes[1]);
+						$("#nombreAnterior").text("Plan " + insertStr(plan,"-",4));
+						$("#grupoAnteriorPlan").val(plan);
+						$("#grupoPlanAnterior").text($("#nombreAnterior").text());
+					}
+					else
+					{
+						$("#planAnterior").find("input, select").attr("disabled",true);
+					}
+					callback(planes);
+				},
+				error: function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText); 
+				}
+			});
+
+		}
+
+		function cargarControlesUsuario(planes)
+		{
+			numPrograma = {{Auth::user()->programaedu}};
 			USERS_ID = {{Auth::user()->id}};
 			// Asignar usuario a la ventana modal de registro de periodos
 			$("#periodoUsersId").val(USERS_ID);
 			$(".grupoUsersId").val(USERS_ID);
+			
+			planVigente = planes[0];
+			planAnterior = planes[1];
 
-
-			if(numPrograma!=0)
+			// Verificar planes de estudio y pasarlos como parametros para los programas del admin.
+			var planesEstudio = [];
+			planesEstudio = (planes.cantidad < 2) ? [planVigente] : [planVigente,planAnterior];
+			
+			console.log(planesEstudio);
+			if(numPrograma == 0) // Administrador
+			{
+				// Cargar programas asociados a los planes de estudio actuales
+				$.ajax({
+					url : "<?php echo URL::to('cargaacademica/obtenerprogramasadmin'); ?>",
+					type : "post",
+					data : { programa : numPrograma, planes : planesEstudio },
+					dataType: "json",
+					success: function(programas){
+						
+						var options = "";
+						for(key in programas)
+						{
+							options += "<option value='"+ programas[key].programaedu +"'>" + programas[key].descripcion + "</option>";
+						}
+						$("#carreraAdmin").html(options);
+						$("#carreraAdmin").val("");
+						
+					},
+					error: function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+						console.log(errorText);
+					}
+				});
+		
+			}
+			else // Coordinador de carrera
 			{
 				$("#grupoCarreraV,#grupoCarreraA").val(numPrograma); // Establecer el numero de carrera para grupo
 				$("#carreraAdmin, #labelCarrera").hide();
-				var nombre = String({{"'"."Informática"."'"}});
-				$("#nombrePrograma").text("Lic. en " + nombre);
+				// Obtener nombre del programa
+				$.ajax({
+					url: "<?php echo URL::to('cargaacademica/obtenernombreprograma'); ?>",
+					type: "post",
+					data : { programa : numPrograma },
+					success: function(nombrePrograma){
+						var nombre = String(nombrePrograma);
+						$("#nombrePrograma").text("Lic. en " + nombre);
+						$(".grupoPgr").text($("#nombrePrograma").text());
+					},
+					error: function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+					}
+				});
 				// Treaer materias
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:numPrograma,caracter:1},function(uas){
 					$("#listboxPlanVigente").jqxListBox({source:uas});
@@ -1143,7 +1054,7 @@
 					alert(errorText.responseText);
 				});
 			}
-			return numPrograma;
+			
 		}
 
 		function desmarcar_carreras(selectGrupos)
@@ -1189,7 +1100,7 @@
 				}
 				else
 				{
-					$(selectGrupos).multiselect('setOptions',configurationObligatorio);
+					$(selectGrupos).multiselect('setOptions',configurationOptativo);
 					$(selectGrupos).multiselect('rebuild');
 					marcar_carreras($(selectGrupos));
 				}
@@ -1353,15 +1264,151 @@
 			// Limpiar listboxPlanVigente
 			$(listboxPlan).jqxListBox("uncheckAll");
 		}
+	</script>
 
+	<script type="text/javascript">
 		$(function(){
-			//var numPrograma = verificarUsuario();
 			var tablaActualSemestre = 0;
 			$("#carreraAdmin").val("");
 			$("#semestresVigente").val("");
 			$("#semestresAnterior").val("");
 			// Crear instancia Datatables para manipulación de renglones durante la ejecución
 			//var t = $('#tblUA').DataTable();
+
+			// Ocultar tablas de registro de carga
+			$("table:not(.tblCatPlan)").hide();
+			$("#botonAll").hide();
+			
+			var planes = $("#planes").val() > 0;
+			// Verificar existencia de planes de estudio
+			if(planes == false)
+			{
+				alert("No existen planes de estudio registrados");
+				// Desactivar opciones
+				$("#planVigente , #planAnterior").find("select, input").attr("disabled" , true);
+			}
+			else
+			{
+				// INICIALIZAR ENTORNO PARA GENERAR LA CARGA
+				
+				
+				//vaar nomPlanVigente = insertStr(planVigente),"-",3);
+				//$("#nombreVigente").val("Plan " + nomPlanVigente);
+
+				// Inicializar fecha periodo
+				var date = new Date();
+				$("#periodoFechaInicio").val(date.now());
+				$("#periodoFechaFin").val(date.now());
+				//$("#periodoFechaInicio").prop('min',date.now());
+				//$("#periodoFechaInicio").prop('max','2015-08-08');
+
+
+				// Obtener catalogos para el registro de la carga academica
+				$.get("<?php echo URL::to('cargaacademica/catalogos'); ?>",function(data)
+				{
+					// Asignar nombre de la coordinación en caso de que sea un usuario coordinador
+					//$("#nombrePrograma").text("Lic. en " + data.nombrePrograma);
+
+					// Asignar tipos de período a modal de registro de períodos: SEMESTRAL,SABATINO, ETC.
+					var options = "";
+					for(key in data.periodosPrograma)
+					{
+						var periodo = data.periodosPrograma[key].periodo_pedu;
+						var descripcion = data.periodosPrograma[key].descripcion;
+						options += "<option value='" + periodo + "'>" + descripcion + "</option>"; 
+					}
+					$("#periodoTipo").html(options);
+
+					// Asignar tipos de carácter a la lista de los planes: OBLIGATORIO, OPTATIVA
+					options = "";
+					for(key in data.tiposCaracter)
+					{
+						var caracter = data.tiposCaracter[key].caracter;
+						var descripcion = data.tiposCaracter[key].descripcion;
+						options += "<option value='" + caracter + "'>" + descripcion + "</option>" 
+					}
+					$("#selectCaracterVigente,#selectCaracterAnterior").html(options);
+
+					// Asignar los periodos registrados: 2014-1, 2014-2
+					options = "";
+					for(key in data.codigosPeriodo)
+					{
+						var codigo = data.codigosPeriodo[key].codigo;
+						var formato = data.codigosPeriodo[key].formato;
+						options += "<option value = '" + formato + "' codigo = '" + codigo + "' />"; 
+					}
+					$("#datalistPeriodo").html(options);
+
+					// Asignar los turnos para los grupos TM, TV , etc.
+					options = "";
+					for(key in data.turnos)
+					{
+						var turno = data.turnos[key].turno;
+						var descripcion = data.turnos[key].descripcion;
+						options += "<option value = '" + turno + "'>" + descripcion + "</option>"; 
+					}
+					$("#grupoTurno").html(options);
+
+
+
+					// Asignar los semestres
+					options = "";
+					var semestres = [1,2,3,4,5,6,7,8,9];
+					for(key in semestres)
+					{
+						/*var option = document.createElement('option');
+						option.text = semestres[key];
+						option.value = semestres[key];
+						s.options[s.options.length] = option;*/
+						options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";  
+					}
+					$("#semestresVigente,#semestresAnterior").html(options);
+					$("#semestresVigente , #semestresAnterior").val("");
+					// Cargar input para crear grupos con el semestre elegido
+					$("#grupoSemestreV,#grupoSemestreA").val(1);
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+				// Crear controles para las unidades de aprendizaje
+				$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
+				$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
+				// Evento al seleccionar ua's de plan vigente.
+				$("#listboxPlanVigente").on('checkChange', function (event)
+				{
+					var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasVigente = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasVigente.push(this.label.substring(0,5));
+					});
+				});
+				// Evento al seleccionar ua's de plan anterior.
+				$("#listboxPlanAnterior").on('checkChange', function (event)
+				{
+
+					var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasAnterior = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasAnterior.push( this.label.substring(0 , 5) );
+					});
+				});
+				
+				
+				// Mostrar controles por privilegio de usuario
+				// Cargar planes de estudio.
+				obtenerPlanesEstudio(function(planes){
+					cargarControlesUsuario(planes);
+				});
+
+			}
+
 
 			// CUANDO CAMBIEN EL PERIODO
 			$("#periodo").on("input",function(){
@@ -1383,6 +1430,7 @@
 				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
 				$(".grupoPrograma").val($(this).val());
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
+				$(".grupoPgr").text($("#nombrePrograma").text());
 				var programa = $("#carreraAdmin").val();
 				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 				//Obtener las unidades de aprendizaje obligatorias formateadas Ej. 11236 - Matematicas 
@@ -1487,5 +1535,16 @@
 			});
 		});
 	</script>
+
+		<!--SCRIPT PARA VENTANA MODAL-->
+	<script src="../js/classie.js"></script>
+	<script src="../js/modalEffects.js"></script>
+	
+
+
+
+
+	
+	
 </body>
 </html>

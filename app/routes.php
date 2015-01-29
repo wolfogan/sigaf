@@ -115,6 +115,21 @@ Route::get('pruebas',function(){
 
 		$uas["planes"] = $planes = array(20101,20092);
 	return var_dump($uas);*/
-
-	return Mensaje::men();
+	/*$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get() -> toArray();
+	$planesWhereIn = [];
+	foreach ($planes as $key => $value) {
+		$planesWhereIn[] = $planes[$key]['plan'];
+	}
+*/
+	$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+	$enviarPlanes = [];
+	foreach ($planes as $key => $value) 
+	{
+		$enviarPlanes[] = $planes[$key] -> plan;
+	}
+		
+	$enviarPlanes["cantidad"] = count($planes);
+		
+	return var_dump($enviarPlanes);
+	
 });

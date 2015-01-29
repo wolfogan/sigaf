@@ -27,7 +27,10 @@ var ModalEffects = (function() {
 				if($("#limpiar").val()=="Cancelar")
 					$("#limpiar").click();
 				
-				ActualizarUAS($("#noPlan").val());
+				if(actualizar == true)
+				{
+					ActualizarUAS($("#noPlan").val());
+				}
 			}
 
 			function removeModalHandler() {
