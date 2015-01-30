@@ -1218,6 +1218,7 @@
 				// Limpiar tablas y encabezado de las mismas
 				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
 				$(".dd_encabezado tr th:eq(1)").empty();
+				
 				for (var i = 0; i < data.uas.length; i++) 
 				{
 					var renglon = "";
@@ -1226,7 +1227,7 @@
 					{
 						renglon = "<tr>" + 
 									"<td>" + data.uas[i].uaprendizaje + "</td>" +
-									"<td>" + data.uas[i].descripcionmat+"</td>" +
+									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
 									"<td>" + data.uas[i].creditos + "</td>" +
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +
@@ -1242,8 +1243,8 @@
 					{
 						var ua = data.uas[i].uaprendizaje;
 						var semestreua = data.uas[i].semestre;
-						var renglonGrupos = "";
-						// Obtener los grupos a los que pertenece la ua de tipo optativa
+						/*var renglonGrupos = "";
+						 Obtener los grupos a los que pertenece la ua de tipo optativa
 						$.ajax({
 							type: "POST",
 							url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
@@ -1259,11 +1260,15 @@
 										renglonGrupos+=grupos[j].grupo + ", ";
 								}
 							},
+							error: function(errorText,textError,errorThrow){
+								alert("Error al obtener grupos asociados en la ua: " + errorText.responseText);
+							},
 							async:false
-						});
+						});*/
+						
 						renglon = "<tr>" +
 									"<td>" + data.uas[i].uaprendizaje + "</td>" +
-									"<td>" + data.uas[i].descripcionmat + " - " + renglonGrupos + "</td>" +
+									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
 									"<td>" + data.uas[i].creditos + "</td>" +
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +

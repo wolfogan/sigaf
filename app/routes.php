@@ -120,7 +120,7 @@ Route::get('pruebas',function(){
 	foreach ($planes as $key => $value) {
 		$planesWhereIn[] = $planes[$key]['plan'];
 	}
-*/
+
 	$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get() ->toArray();
 	$enviarPlanes = [];
 	foreach ($planes as $key => $value) 
@@ -129,7 +129,61 @@ Route::get('pruebas',function(){
 	}
 		
 	$enviarPlanes["cantidad"] = count($planes);
-		
-	return var_dump($enviarPlanes);
+	
+	$uas = DB::table("carga")
+						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
+						->join('uaprendizaje','carga.uaprendizaje' , '=' , 'uaprendizaje.uaprendizaje')
+						->join('p_ua',function($join){
+							$join->on('carga.uaprendizaje','=','p_ua.uaprendizaje')
+								->on('carga.programaedu','=','p_ua.programaedu');
+  						})
+						->join('etapas','p_ua.etapa','=','etapas.etapa')
+						->leftjoin('detalleseriacion',function($join){
+							$join->on('carga.uaprendizaje','=','detalleseriacion.uaprendizaje')
+								->on('carga.programaedu', '=' ,'detalleseriacion.programaedu');
+						})
+						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
+						//->where("carga.periodo","=",$periodo)
+						//->where("carga.programaedu","=",$programa)
+						->toSql();*/
+	$periodo = 20141;
+	$programa = 1;
+	$uas = DB::select("SELECT carga.periodo,
+				carga.semestre,
+				carga.uaprendizaje,
+				uaprendizaje.descripcionmat,
+				p_ua.caracter,
+				uaprendizaje.creditos,
+				uaprendizaje.HC,
+				etapas.descripcion as etapa,
+				uaprendizaje.plan,
+				carga.programaedu,
+				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
+				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos
+				FROM carga
+				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
+				INNER JOIN p_ua ON carga.uaprendizaje = p_ua.uaprendizaje AND
+													 carga.programaedu = p_ua.programaedu
+				INNER JOIN etapas ON p_ua.etapa = etapas.etapa
+				LEFT JOIN detalleseriacion ON carga.uaprendizaje = detalleseriacion.uaprendizaje 					AND	carga.programaedu = detalleseriacion.programaedu
+				WHERE
+				carga.periodo = :periodo AND
+				carga.programaedu = :programa
+				GROUP BY
+							carga.periodo,
+							carga.semestre,
+							carga.uaprendizaje,
+							uaprendizaje.descripcionmat,
+							p_ua.caracter,
+							uaprendizaje.creditos,
+							uaprendizaje.HC,etapa,
+							uaprendizaje.plan,carga.programaedu
+				" ,array('periodo' => $periodo,'programa' => $programa)); // :variable array('variable' => valor)
+
+
+
+	$queries = DB::getQueryLog();
+	$last_query = end($queries);
+	return $uas;
 	
 });

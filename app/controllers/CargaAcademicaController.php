@@ -133,7 +133,7 @@ class CargaAcademicaController extends BaseController
 
 		return $nombre->descripcion;
 	}
-	
+
 	public function postObtenerprogramasadmin()
 	{
 		//$programa = Input::get('programa');
@@ -248,8 +248,8 @@ class CargaAcademicaController extends BaseController
 		$semestre = Input::get('semestre');
 		$grupos = DB::table('carga')
 					->select('grupo')
-					->where('uaprendizaje','=',$uaprendizaje)
-					->where('grupo','LIKE',"_".$semestre."_")
+					->where('uaprendizaje' , '=' , $uaprendizaje)
+					->where('semestre' , '=' , $semestre)//->where('grupo','LIKE',"_".$semestre."_")
 					->get();
 		return Response::json($grupos);
 	}
@@ -300,22 +300,38 @@ class CargaAcademicaController extends BaseController
 		$periodo = Input::get("periodo");
 		$programa = Input::get("programa");
 
-		$uas = DB::table("carga")
-						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
-						->join('uaprendizaje','carga.uaprendizaje' , '=' , 'uaprendizaje.uaprendizaje')
-						->join('p_ua',function($join){
-							$join->on('carga.uaprendizaje','=','p_ua.uaprendizaje')
-								->on('carga.programaedu','=','p_ua.programaedu');
-  						})
-						->join('etapas','p_ua.etapa','=','etapas.etapa')
-						->leftjoin('detalleseriacion',function($join){
-							$join->on('carga.uaprendizaje','=','detalleseriacion.uaprendizaje')
-								->on('carga.programaedu', '=' ,'detalleseriacion.programaedu');
-						})
-						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
-						->where("carga.periodo","=",$periodo)
-						->where("carga.programaedu","=",$programa)
-						->get();
+		$uas = DB::select("SELECT carga.periodo,
+				carga.semestre,
+				carga.uaprendizaje,
+				uaprendizaje.descripcionmat,
+				p_ua.caracter,
+				uaprendizaje.creditos,
+				uaprendizaje.HC,
+				etapas.descripcion as etapa,
+				uaprendizaje.plan,
+				carga.programaedu,
+				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
+				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos
+				FROM carga
+				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
+				INNER JOIN p_ua ON carga.uaprendizaje = p_ua.uaprendizaje AND
+													 carga.programaedu = p_ua.programaedu
+				INNER JOIN etapas ON p_ua.etapa = etapas.etapa
+				LEFT JOIN detalleseriacion ON carga.uaprendizaje = detalleseriacion.uaprendizaje 					AND	carga.programaedu = detalleseriacion.programaedu
+				WHERE
+				carga.periodo = :periodo AND
+				carga.programaedu = :programa
+				GROUP BY
+							carga.periodo,
+							carga.semestre,
+							carga.uaprendizaje,
+							uaprendizaje.descripcionmat,
+							p_ua.caracter,
+							uaprendizaje.creditos,
+							uaprendizaje.HC,etapa,
+							uaprendizaje.plan,carga.programaedu
+				" ,array('periodo' => $periodo,'programa' => $programa));
+
 
 		$grupos = DB::table("carga")
 						->select("carga.grupo","carga.semestre")
@@ -324,6 +340,7 @@ class CargaAcademicaController extends BaseController
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
 						->get();
+		
 		$planSemestres = DB::table("carga")
 						->select("carga.semestre","carga.periodo","grupos.plan")
 						->join("grupos","carga.grupo","=","grupos.grupo")
