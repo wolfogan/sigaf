@@ -251,6 +251,7 @@ class CargaAcademicaController extends BaseController
 
 		$gruposAll = DB::table('carga')
 					->select('grupo')
+					->distinct()
 					->where('programaedu' , '=' , $programa)
 					->where('periodo','=',$periodo)
 					->where('semestre' , '=' , $semestre)//->where('grupo','LIKE',"_".$semestre."_")
@@ -266,10 +267,10 @@ class CargaAcademicaController extends BaseController
 		
 		foreach ($gruposAll as $keyA => $valueA) {
 			foreach ($gruposUA as $keyB => $valueB) {
-				if($gruposAll[$keyA]->grupo==$gruposUA[$keyB]->grupo)
+				if($gruposUA[$keyB]->grupo==$gruposAll[$keyA]->grupo)
 				{
 					$gruposAll[$keyA]->check = true;
-					'brake 1';
+					break;
 				}
 				else
 					$gruposAll[$keyA]->check = false;

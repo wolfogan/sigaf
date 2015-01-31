@@ -1606,7 +1606,7 @@
 				$.ajax({
 					url : "<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
 					type : "post",
-					data : {semestre:'1',periodo:'20141',programa:'1',uaprendizaje:'11236'},
+					data : {semestre:1,periodo:20141,programa:1,uaprendizaje:11236},
 					dataType : "JSON",
 					success : function(grupos){
 						console.log(grupos);
