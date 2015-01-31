@@ -245,13 +245,37 @@ class CargaAcademicaController extends BaseController
 	public function postObtenergruposua()
 	{
 		$uaprendizaje = Input::get('uaprendizaje');
+		$programa = Input::get('programa');
+		$periodo = Input::get('periodo');
 		$semestre = Input::get('semestre');
-		$grupos = DB::table('carga')
+
+		$gruposAll = DB::table('carga')
 					->select('grupo')
-					->where('uaprendizaje' , '=' , $uaprendizaje)
+					->where('programaedu' , '=' , $programa)
+					->where('periodo','=',$periodo)
 					->where('semestre' , '=' , $semestre)//->where('grupo','LIKE',"_".$semestre."_")
 					->get();
-		return Response::json($grupos);
+		
+		$gruposUA = DB::table('carga')
+					->select('grupo')
+					->where('programaedu' , '=' , $programa)
+					->where('periodo','=',$periodo)
+					->where('semestre' , '=' , $semestre)
+					->where('uaprendizaje','=',$uaprendizaje)
+					->get();
+		
+		foreach ($gruposAll as $keyA => $valueA) {
+			foreach ($gruposUA as $keyB => $valueB) {
+				if($gruposAll[$keyA]->grupo==$gruposUA[$keyB]->grupo)
+				{
+					$gruposAll[$keyA]->check = true;
+					'brake 1';
+				}
+				else
+					$gruposAll[$keyA]->check = false;
+			}
+		}
+		return Response::json($gruposAll);
 	}
 
 	public function postFormateargruposturnos()

@@ -1599,6 +1599,27 @@
 					});
 				}
 			});
+			// Obtener grupos para modificar en ventana modal individual
+			$("table").on("click",".clsModificarFila",function(event){
+				
+				//event.stopPropagation();
+				$.ajax({
+					url : "<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+					type : "post",
+					data : {semestre:'1',periodo:'20141',programa:'1',uaprendizaje:'11236'},
+					dataType : "JSON",
+					success : function(grupos){
+						console.log(grupos);
+					},
+					error : function(errorText,textError,errorThrow){
+						alert("Error en: " + errorText.responseText);
+					},
+					always: function(){
+						alert("terminoa ajax");
+					}
+				});
+
+			});
 
 			// ELIMINAR TODA LA CARGA
 			$("#planAntCa").on("click",function(){
