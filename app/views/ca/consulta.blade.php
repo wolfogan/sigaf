@@ -105,7 +105,7 @@
 
 				<div id="consul_semestre_ca">
 					<label>Semestre: </label>
-					<select class="con_estilo" style="width:80px;" name="semestre_ca" size=1>
+					<select class="con_estilo" style="width:80px;" name="semestre_ca" id="semestre_ca">
 						<option value="0">TODOS</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -143,7 +143,7 @@
 			</div>
 
 				<div id="consultaboton_ca">
-					<input class="estilo_button2" style="width:145px;" type="button" value="Buscar">
+					<input class="estilo_button2" style="width:145px;" type="button" value="Buscar" id="consultarCarga">
 				</div>
 
 		</fieldset>
@@ -157,8 +157,7 @@
 		<div id="GridPlanEstudio" style="height:2200px; margin-top:80px">
 	<br>
 		<!-------------------------------------------SEMESTRE 1 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre1">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
@@ -176,129 +175,29 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 
-<!-------------------------------------------SEMESTRE 2 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+		<!-------------------------------------------SEMESTRE 2 CONSULTA -------------------------------------------->
+			<table class="tabla_ca" id="semestre2">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 2</th>
@@ -316,128 +215,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-				    <thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 <!-------------------------------------------SEMESTRE 3 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre3">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 3</th>
@@ -455,128 +254,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 <!-------------------------------------------SEMESTRE 4 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre4">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 4</th>
@@ -594,130 +293,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
-
-
 <!-------------------------------------------SEMESTRE 5 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre5">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 5</th>
@@ -735,129 +332,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
-
 <!-------------------------------------------SEMESTRE 6 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre6">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 6</th>
@@ -875,128 +371,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 <!-------------------------------------------SEMESTRE 7 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre7">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 7</th>
@@ -1014,129 +410,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
-
 <!-------------------------------------------SEMESTRE 8 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre8">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 8</th>
@@ -1154,128 +449,28 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 <!-------------------------------------------SEMESTRE 9 CONSULTA -------------------------------------------->
-			<table class="tabla_ca">
-
+			<table class="tabla_ca" id="semestre9">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 9</th>
@@ -1293,126 +488,26 @@
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
 							<th colspan="7">OPTATIVAS</th>
-							
 						</tr>
-
-					</thead>
-
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
-
 <!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
 
@@ -1488,8 +583,36 @@
 	</footer>
 
 </div>
+<!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57)) 
+			  event.returnValue = false;
+			}
+			
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			}
+
+			function insertStr(stringTarget,stringAdd,stringIndex)
+			{
+				var string1 = stringTarget.substring(0,stringIndex);
+				var string2 = stringTarget.substring(stringIndex);
+
+				return String(string1+stringAdd+string2);
+			}
+</script>
+
+<!------------------------------------------------------------------------------------------>
 <script type="text/javascript">
 	$(function(){
+		// Ocultar tablas
+		$("table:not(.ca_tblResumenConsulta)").hide();
 
 		$("#carrera_ca").on("change",function(){
 			$("#periodo_ca").val("");
@@ -1514,6 +637,127 @@
 				});
 			}
 		});
+		// Consulta principal a carga académica
+		$("#consultarCarga").on("click",function(event){
+			if($("#periodo_ca").val() == "")
+			{
+				alert("Es necesario introducir un período para continuar...");
+			}
+
+			// Limpiar tablas y encabezado de las mismas
+			$("table:not(.ca_tblResumenConsulta)").hide();
+			$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+			$(".dd_encabezado_tablaConsulta tr th:eq(1)").empty();
+
+			// Obtener programa educativo
+			var programaedu = $("#carrera_ca").val();
+			var periodo = $("#datalist_periodo_ca [value='" + $("#periodo_ca").val() + "']").attr("codigo");
+			var turno = $("#turno_ca").val();
+			var semestre = $("#semestre_ca").val();
+			// Filtro de grupo
+			var grupo =$("#grupo_ca").val();
+
+			alert(programaedu + "\n" + periodo + "\n" + turno+ "\n" + semestre + "\n" + grupo);
+
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/obtenercarga'); ?>",
+				type : "post",
+				data : { programa : programaedu , periodo : periodo, semestre:semestre, grupo:grupo},
+				dataType : "JSON",
+				success : function(data){
+					console.log(data);
+
+					for (var i = 0; i < data.uas.length; i++) 
+					{
+						// Filtro de turno
+						var validarTurno = false;
+						var filtroTurno = parseInt($("#turno_ca").val());
+						
+						
+						switch(filtroTurno)
+						{
+							case 0:
+							validarTurno = true;
+							break;
+							case 1:
+							filtroTurno = "M";
+							break;
+							case 2:
+							filtroTurno = "V";
+							break;
+							case 3:
+							filtroTurno = "I";
+							break;
+							default:
+							filtroTurno = "N";
+							break;
+						}
+						
+						var turnos = data.uas[i].turnos.split(","); 
+						$.each(turnos,function(key,value){
+							if(value == filtroTurno)
+							{
+								validarTurno = true;
+								return false;
+							}
+						});
+						
+
+						if(validarTurno == true)
+						{
+							var renglon = "";
+							// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+							
+								renglon = "<tr>" + 
+											"<td>" + data.uas[i].uaprendizaje + "</td>" +
+											"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
+											"<td>" + data.uas[i].creditos + "</td>" +
+											"<td>" + data.uas[i].HC + "</td>" +
+											"<td>" + data.uas[i].etapa + "</td>" +
+											"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+										  "</tr>";
+							
+							if (data.uas[i].caracter == 1)
+							{
+								$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
+							}
+							else
+							{
+								$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
+							}
+						}
+					}
+					// Para generar los grupos de la carga
+					for (var i = 0; i < data.grupos.length; i++) 
+					{
+						var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
+						if(grupoTurno.length == 0)
+							grupoTurno += data.grupos[i].grupo + " ";
+						else
+							grupoTurno += ", "+data.grupos[i].grupo;
+						$("#semestre" + data.grupos[i].semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+grupoTurno+"</td></tr>");
+					}
+
+					// Para mostrar el plan al que pertenece la carga de cada semestre
+					for (var i = 0; i < data.planSemestres.length; i++)
+					{
+						$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado_tablaConsulta").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
+						// Filtro de semestres
+						var filtroSemestre = parseInt($("#semestre_ca").val());
+						if(filtroSemestre ==0 || filtroSemestre == data.planSemestres[i].semestre)
+						{
+							$("#semestre" + data.planSemestres[i].semestre).hide().fadeIn("slow");
+						}
+					}
+				},
+				error : function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
+				}
+			});
+		});
+
+		
+		
 	});
 </script>
 </body>

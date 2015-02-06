@@ -328,11 +328,12 @@ class CargaAcademicaController extends BaseController
 		$uaprendizaje = Input::get("uaprendizaje");
 		$periodo = Input::get("periodo");
 		$programa = Input::get('programa');
+		$semestre = Input::get('semestre');
 		/*DB::table("carga")
 				->where("carga.uaprendizaje","=",$uaprendizaje)
 				->where("carga.periodo","=",$periodo)
 				->delete();*/
-		DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.periodo = ? and carga.uaprendizaje = ? and grupos.programaedu = ?",array($periodo,$uaprendizaje,$programa));
+		DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.periodo = ? and carga.uaprendizaje = ? and grupos.programaedu = ? and carga.semestre = ?",array($periodo,$uaprendizaje,$programa,$semestre));
 		return "Unidad de aprendizaje dada de baja de la carga correctamente!";
 	}
 
@@ -345,6 +346,18 @@ class CargaAcademicaController extends BaseController
 	{
 		$periodo = Input::get("periodo");
 		$programa = Input::get("programa");
+		$semestre = Input::get('semestre');
+		$grupo = Input::get('grupo');
+
+		if(empty($semestre))
+			$semestre = "";
+		else
+			$semestre = Input::get("semestre");
+
+		if(empty($grupo))
+			$grupo = "";
+		else
+			$grupo = Input::get("grupo");
 
 		$uas = DB::select("SELECT carga.periodo,
 				carga.semestre,
@@ -357,7 +370,8 @@ class CargaAcademicaController extends BaseController
 				uaprendizaje.plan,
 				carga.programaedu,
 				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
-				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos
+				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos,
+				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos 
 				FROM carga
 				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
 				INNER JOIN p_ua ON carga.uaprendizaje = p_ua.uaprendizaje AND
@@ -366,7 +380,9 @@ class CargaAcademicaController extends BaseController
 				LEFT JOIN detalleseriacion ON carga.uaprendizaje = detalleseriacion.uaprendizaje 					AND	carga.programaedu = detalleseriacion.programaedu
 				WHERE
 				carga.periodo = :periodo AND
-				carga.programaedu = :programa
+				carga.programaedu = :programa AND
+				carga.semestre LIKE '%" . $semestre . "%' AND
+				carga.grupo LIKE '%" .$grupo. "%'
 				GROUP BY
 							carga.periodo,
 							carga.semestre,
@@ -392,7 +408,8 @@ class CargaAcademicaController extends BaseController
 						->join("grupos","carga.grupo","=","grupos.grupo")
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
-						->groupBy("semestre","carga.periodo")
+						->where("carga.grupo","LIKE","%".$grupo."%")
+						->groupBy("carga.semestre","carga.periodo")
 						->get();
 
 		foreach ($grupos as $g) {

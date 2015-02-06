@@ -707,6 +707,7 @@
 							<th style="width:50px">MODIFICAR</th>
 							<th style="width:50px">ELIMINAR</th>
 						</tr>
+
 					</thead>
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
@@ -1267,7 +1268,7 @@
 									"<td>" + data.uas[i].etapa + "</td>" +
 									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
 									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
-									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
+									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "'/>" + "</td>" +
 								  "</tr>";
 						
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
@@ -1306,7 +1307,7 @@
 									"<td>" + data.uas[i].etapa + "</td>" +
 									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
 									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
-									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
+									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "' />" + "</td>" +
 								  "</tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
 						//alert("Si fue sincrono");
@@ -1616,6 +1617,7 @@
 					// Obtener UA,periodo
 					var row = $(this).parents().get(1);
 					var ua = $(row).find("td:eq(0)").text();
+					var semestre = $(this).attr("semestre");
 					var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 					if(numPrograma == 0)
 					{
@@ -1625,7 +1627,7 @@
 					{
 						var programa = numPrograma;
 					}
-					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua,programa:programa},function(data){
+					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua,programa:programa,semestre:semestre},function(data){
 						alert(data);
 						$(row).remove();
 					});
