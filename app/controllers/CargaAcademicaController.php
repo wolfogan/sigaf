@@ -71,6 +71,7 @@ class CargaAcademicaController extends BaseController
 		
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		
 		$codigosPeriodo = array();
 		for ($i=0; $i < count($periodos); $i++) { 
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
@@ -85,6 +86,52 @@ class CargaAcademicaController extends BaseController
 		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
 	}
 
+	public function getSubsecuente()
+	{
+		// Cuatrimestral, Semestral
+		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
+
+		// Cargar periodos 2010-1, 2010-2
+		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		
+		$codigosPeriodo = array(); // ó []
+		// ["20101" => "2010-1"]
+		for ($i=0 ; $i < count($periodos) ; $i++)
+		{ 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
+		}
+
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
+		
+		// Matutino, Vespertino, Interturno
+		$turnos = Turno::all();
+
+		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
+		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+
+		// 1 - Artes, 2 - Administración
+		/*$numPrograma = Auth::user()->programaedu;
+		
+		// 0 - Administrador,!0 - Coordinador
+		// Obtener nombre en caso de ser coordinador
+		$nombrePrograma = "";
+		if ($numPrograma != 0) 
+		{
+			$nombrePrograma = ProgramaEducativo::find($numPrograma);
+			$nombrePrograma = $nombrePrograma -> descripcion;
+		}
+		
+		$var_nombre = array("nombrePrograma");
+
+		// Obtener Planes
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$numPlanes = count($planes);
+		*/
+			// Catalogos y unidades de aprendizaje de los planes de estudio.
+		return View::make('ca.subsecuente')->with(compact('periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades'));
+
+	}
 
 	// Altas a tablas principales
 	public function postRegistrarperiodo()
