@@ -15,8 +15,7 @@
 			<a href="#" titile="Carga académica">Carga académica</a>
 			<ul>
 				<li><a href="<?=URL::to('cargaacademica/registro');?>" title="Registrar CA">Registro Inicial CA</a></li>
-				<!--<li><a href="<?=URL::to('cargaacademica/registro2');?>" title="Registrar CA2">Registro subsecuente CA</a></li>-->
-				<li><a href="<?=URL::to('cargaacademica/registro3');?>" title="Registrar CA3">Registro subsecuente CA 2</a></li>
+				<li><a href="<?=URL::to('cargaacademica/subsecuente');?>" title="Registrar CA3">Registro subsecuente CA 2</a></li>
 				<li><a href="<?=URL::to('cargaacademica/consulta');?>" title="Consultar CA">Consultar Carga A.</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 				
