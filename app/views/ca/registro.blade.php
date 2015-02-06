@@ -27,33 +27,17 @@
  <!-- PARA LISTA DENTRO DE MODAL, PARA MODIFICAR GRUPOS -->
 	<script type="text/javascript">
 			$(function () {
-				var source = [
-					"221 TM",
-					"222 TM",
-					"223 TM",
-					"224 TM",
-					"225 TM",
-					"226 TM",
-					"227 TM",
-					"220 TM",
-					"228 TM",
-					"223 TM",
-					"224 TM",
-					"225 TM",
-					"226 TM",
-					"227 TM",
-					"229 TM"
-				];
-				// Create a jqxListBox
-				$("#listaUa").jqxListBox({width: 250, source: source, checkboxes: true, height: 300, theme: 'orange'});
 				
-				// Check several items.
+				// Create a jqxListBox
+				$("#listaUa").jqxListBox({width: 250, checkboxes: true, height: 300, theme: 'orange'});
+				
+				/* Check several items.
 				$("#listaUa").jqxListBox('checkIndex', 0);
 				$("#listaUa").jqxListBox('checkIndex', 1);
 				$("#listaUa").jqxListBox('checkIndex', 2);
-				$("#listaUa").jqxListBox('checkIndex', 5);
+				$("#listaUa").jqxListBox('checkIndex', 5);*/
 
-				$("#listaUa").on('checkChange', function (event) {
+				/*$("#listaUa").on('checkChange', function (event) {
 					var args = event.args;
 					if (args.checked) {
 						$("#Events").text("Checked: " + args.label);
@@ -71,7 +55,7 @@
 						else checkedItems += this.label;
 					});
 					$("#CheckedItems").text(checkedItems);
-				});
+				});*/
 			});
 	</script>
 
@@ -127,16 +111,21 @@
 	<input type="hidden" id="planes" value="{{$numPlanes}}" />
 	<!-------------------------------------- MODAL LISTA PARA MODIFICAR GRUPOS -------------------------------------->
 	<div class="md-modal2 md-effect-11" id="pruebaCa"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
+		<form  id="formActualizarGrupos" action="javascript: actualizarGrupos()" class="md-content" method="post">
 			<h3>Modificar grupos</h3>
 			<div class="tblCatalogos">
-				
-							<div class="listasCa">
-								<div id="listaUa" style="margin-top:40px; margin-left:5px;"></div>
-							</div>
-							 
+				<div class="listasCa">
+					<div id="listaUa" style="margin-top:40px; margin-left:5px;"></div>
+				</div>
 			</div>
 			<div class="CatBotones">
+				<input type="hidden" name="grupos_programa" id="actualizarGruposPrograma" />
+				<input type="hidden" name="grupos_periodo" id="actualizarGruposPeriodo"/>
+				<input type="hidden" name="grupos_semestre" id="actualizarGruposSemestre"/>
+				<input type="hidden" name="grupos_uaprendizaje" id="actualizarGruposUaprendizaje"/>
+				<input type="hidden" name="grupos_userid" id="actualizarGruposUserId" />
+				<input type="hidden" name="grupos_grupos" id="actualizarGruposGrupos" />
+
 				<input style="font-size:18px;" type="submit" class="estilo_button2" value="Actualizar"/>
 				<input style="font-size:18px;" type="button" value="Salir" class="md-close" />
 			</div>
@@ -858,7 +847,7 @@
 		var uasAnterior = [];
 		var numPrograma = 0;
 		var actualizar = false;
-
+		var renglonActualizarGrupos;
 		function insertStr(stringTarget,stringAdd,stringIndex)
 		{
 			var string1 = stringTarget.substring(0,stringIndex);
@@ -1001,6 +990,48 @@
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
+			});
+		}
+
+		function actualizarGrupos()
+		{
+			// Obtener renglon para la actualización
+			var tdGrupos = $(renglonActualizarGrupos).find("td:eq(1)");
+			var textoGrupos = $(tdGrupos).text();
+			// Obtener grupos seleccionados
+			var grupos = $("#listaUa").jqxListBox("getCheckedItems");
+			var gruposActualizar = [];
+			$.each(grupos,function(index, valor){
+				gruposActualizar.push(valor.value.substr(0,3));
+			});
+
+			if(gruposActualizar.length == 0)
+			{
+				alert("Debes seleccionar por lo menos un grupos para continuar...");
+				return;
+			}
+			// Grupos seleccionados por el usuario
+			$("#actualizarGruposGrupos").val(gruposActualizar);
+
+			// Serializar información
+			var dataGrupos = $("#formActualizarGrupos").serialize();
+			console.log(dataGrupos);
+
+			// Actualizar grupos
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/actualizargrupos') ?>",
+				type: "post",
+				data: dataGrupos,
+				success: function(grupos){
+					textoGrupos = textoGrupos.substring(0,textoGrupos.indexOf('-') + 1);
+					textoGrupos += ' ' + grupos;
+					$(tdGrupos).text(textoGrupos);
+					alert("Grupos actualizados correctamente");
+					$(".md-close").click();
+				},
+				error: function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
+				}
 			});
 		}
 
@@ -1223,6 +1254,9 @@
 				{
 					var renglon = "";
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+					var ua = data.uas[i].uaprendizaje;
+					var semestreua = data.uas[i].semestre;
+					
 					if (data.uas[i].caracter == 1)
 					{
 						renglon = "<tr>" + 
@@ -1232,7 +1266,7 @@
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +
 									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
-									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa'/>" + "</td>" +
+									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
 									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
 								  "</tr>";
 						
@@ -1241,8 +1275,6 @@
 					}
 					else
 					{
-						var ua = data.uas[i].uaprendizaje;
-						var semestreua = data.uas[i].semestre;
 						/*var renglonGrupos = "";
 						 Obtener los grupos a los que pertenece la ua de tipo optativa
 						$.ajax({
@@ -1273,7 +1305,7 @@
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +
 									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
-									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa'/>" + "</td>" +
+									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
 									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar'/>" + "</td>" +
 								  "</tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
@@ -1602,14 +1634,37 @@
 			// Obtener grupos para modificar en ventana modal individual
 			$("table").on("click",".clsModificarFila",function(event){
 				
-				//event.stopPropagation();
+				event.stopPropagation();
+				// Asignar renglos seleccionado para actualizar
+				renglonActualizarGrupos = $(this).parents().get(1);
+				console.log(renglonActualizarGrupos);
+				// Limpiar control
+				$("#listaUa").jqxListBox('clear');
+				var semestre = $(this).attr("semestre"),periodo=$(this).attr("periodo"),programa=$(this).attr("programa"),uaprendizaje = $(this).attr('uaprendizaje');
+				
+				// Cargar los valores predefinidos input:hidden para la actualizacion de los grupos
+				$("#actualizarGruposPrograma").val(programa);
+				$("#actualizarGruposPeriodo").val(periodo);
+				$("#actualizarGruposSemestre").val(semestre);
+				$("#actualizarGruposUaprendizaje").val(uaprendizaje);
+				$("#actualizarGruposUserId").val(USERS_ID);
+				// Petición para mostrar grupos por default
 				$.ajax({
 					url : "<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
 					type : "post",
-					data : {semestre:1,periodo:20141,programa:1,uaprendizaje:11236},
+					data : {semestre:semestre,periodo:periodo,programa:programa,uaprendizaje:uaprendizaje},
 					dataType : "JSON",
-					success : function(grupos){
-						console.log(grupos);
+					success : function(data){
+						$("#listaUa").jqxListBox({source: data.source});
+						console.log(data.source);
+						console.log(data.grupos);
+						
+						// Seleccionar items almacenados
+						for (var i = data.grupos.length - 1; i >= 0; i--) {
+							if(data.grupos[i].check == true)
+								$("#listaUa").jqxListBox('checkItem',data.grupos[i].grupo);
+						};
+
 					},
 					error : function(errorText,textError,errorThrow){
 						alert("Error en: " + errorText.responseText);

@@ -214,7 +214,7 @@ class CargaAcademicaController extends BaseController
 				->get();
 		
 		$uaformateadas = [];
-		
+		// Formatear unidades para que aparezca de la siguiente forma 11236 - Matemáticas
 		foreach ($UAS as $ua) {
 			$formato = $ua->uaprendizaje." - ".$ua->descripcionmat;
 			array_push($uaformateadas, $formato);
@@ -248,24 +248,42 @@ class CargaAcademicaController extends BaseController
 		$programa = Input::get('programa');
 		$periodo = Input::get('periodo');
 		$semestre = Input::get('semestre');
-
-		$gruposAll = DB::table('carga')
+		// Obtener grupos registrados se uso inyección por la complejidad del query en like
+		$gruposAll = DB::select(DB::raw("SELECT CONCAT(grupos.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = grupos.turno) FROM 1 FOR 1)) as grupo
+								FROM grupos WHERE grupos.programaedu = ? AND grupos.periodo = ? AND grupos.grupo LIKE '_".$semestre."_' ") , array($programa, $periodo));
+		
+		$gruposUA = DB::select("SELECT CONCAT(carga.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = (SELECT grupos.turno FROM grupos WHERE grupos.grupo = carga.grupo)) FROM 1 FOR 1)) as grupo
+								FROM carga WHERE carga.programaedu = :programaedu AND carga.periodo = :periodo AND carga.semestre = :semestre AND  carga.uaprendizaje = :uaprendizaje" , array('programaedu' => $programa, 'periodo' => $periodo, 'semestre' => $semestre, 'uaprendizaje' => $uaprendizaje));
+		/*DB::table('grupos')
 					->select('grupo')
 					->distinct()
 					->where('programaedu' , '=' , $programa)
 					->where('periodo','=',$periodo)
-					->where('semestre' , '=' , $semestre)//->where('grupo','LIKE',"_".$semestre."_")
+					->where('grupo','LIKE',"_".$semestre."_")
 					->get();
-		
+		// Obtener grupos asociados en la carga
 		$gruposUA = DB::table('carga')
 					->select('grupo')
 					->where('programaedu' , '=' , $programa)
 					->where('periodo','=',$periodo)
 					->where('semestre' , '=' , $semestre)
 					->where('uaprendizaje','=',$uaprendizaje)
-					->get();
-		
+					->get();*/
+		/* Formatear grupos
+		foreach ($gruposAll as $g) {
+			$turno = DB::table('grupos')
+						->select('turnos.descripcion')
+						->join('turnos','grupos.turno','=','turnos.turno')
+						->where('grupos.grupo','=',$g->grupo)
+						->first();
+
+			$g->grupo = (string)$g->grupo.' - '." T".substr($turno->descripcion, 0,1);
+		}*/
+		// Marcar grupos que coinciden y agregar atributo check->true o false 
+		// dependiendo si esta asociado para mostrar seleccionado el item
+		$gruposSource = [];
 		foreach ($gruposAll as $keyA => $valueA) {
+			$gruposSource[] = $gruposAll[$keyA] -> grupo;
 			foreach ($gruposUA as $keyB => $valueB) {
 				if($gruposUA[$keyB]->grupo==$gruposAll[$keyA]->grupo)
 				{
@@ -276,7 +294,10 @@ class CargaAcademicaController extends BaseController
 					$gruposAll[$keyA]->check = false;
 			}
 		}
-		return Response::json($gruposAll);
+		$data = new stdClass();
+		$data -> grupos = $gruposAll;
+		$data -> source = $gruposSource;
+		return Response::json($data);
 	}
 
 	public function postFormateargruposturnos()
@@ -386,6 +407,34 @@ class CargaAcademicaController extends BaseController
 
 		return Response::json(array('uas' => $uas,'grupos'=> $grupos,'planSemestres'=>$planSemestres));
 
+	}
+
+
+	public function postActualizargrupos()
+	{
+		$programaedu = Input::get('grupos_programa');
+		$periodo = Input::get('grupos_periodo');
+		$semestre = Input::get('grupos_semestre');
+		$uaprendizaje = Input::get('grupos_uaprendizaje');
+		$users_id = Input::get('grupos_userid');
+		$grupos = Input::get('grupos_grupos');
+		$grupos = explode(',', $grupos);
+		
+		DB::transaction(function() use($programaedu,$periodo,$semestre,$uaprendizaje,$users_id,$grupos){
+			DB::table('carga')
+				->where('programaedu',$programaedu)
+				->where('periodo',$periodo)
+				->where('semestre',$semestre)
+				->where('uaprendizaje',$uaprendizaje)
+				->delete();
+
+			foreach ($grupos as $grupo) {
+				DB::table('carga')
+				->insert(array('grupo'=>$grupo,'periodo'=>$periodo,'programaedu'=>$programaedu,'semestre'=>$semestre,'uaprendizaje'=>$uaprendizaje,'users_id'=>$users_id));
+			}
+		});
+
+		return implode(',', $grupos);
 	}
 
 }

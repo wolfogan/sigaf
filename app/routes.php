@@ -145,7 +145,7 @@ Route::get('pruebas',function(){
 						->groupBy('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapa','uaprendizaje.plan','carga.programaedu')
 						//->where("carga.periodo","=",$periodo)
 						//->where("carga.programaedu","=",$programa)
-						->toSql();*/
+						->toSql();
 	$periodo = 20141;
 	$programa = 1;
 	$uas = DB::select("SELECT carga.periodo,
@@ -178,12 +178,16 @@ Route::get('pruebas',function(){
 							uaprendizaje.creditos,
 							uaprendizaje.HC,etapa,
 							uaprendizaje.plan,carga.programaedu
-				" ,array('periodo' => $periodo,'programa' => $programa)); // :variable array('variable' => valor)
+				" ,array('periodo' => $periodo,'programa' => $programa)); // :variable array('variable' => valor)*/
 
-
-
+	$programa = 1;
+	$semestre = 1;
+	$uaprendizaje = 11236;
+	$periodo = 20141;
+	$gruposAll = DB::select(DB::raw("SELECT CONCAT(grupos.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = grupos.turno) FROM 1 FOR 1)) as grupo
+								FROM grupos WHERE grupos.programaedu = ? AND grupos.periodo = ? AND grupos.grupo LIKE '_".$semestre."_' ") , array($programa, $periodo));
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return $uas;
+	return var_dump($gruposAll);
 	
 });
