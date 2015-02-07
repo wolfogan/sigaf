@@ -233,6 +233,58 @@
 				<label>Carga capturada</label>
 			</div>
 
+
+			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
+			<div id="planVigente">
+				<fieldset id="planV"><legend>Plan vigente</legend>
+					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
+					
+					<div class="filtroMaterias_ca" style="float:left; width:200px;">
+						Plan:
+						<select class="con_estilo" style="width:135px; height:30px" id="selecciona_plan">
+								<option value="2009-1">2009-1</option>
+								<option value="2009-2">2009-2</option>	
+						</select>
+					</div>
+
+					<div class="filtroMaterias_ca" style="float:left; width:250px; margin-left:30px;">
+						Materias:
+						<select class="con_estilo" style="width:135px; height:30px" id="selectCaracterVigente">
+							@foreach($tiposCaracter as $caracter)
+								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
+							@endforeach
+						</select>
+						
+					</div>
+					<div class="listasCa">
+						<div id="listaPlanVigente"></div>
+					</div>
+					<label>Semestre:</label>
+					<select class="con_estilo" style="width:135px; height:30px; margin-top:40px;" id="semestresVigente">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+					</select>
+					<div class="controlesListasCa">
+						Grupos:
+						<select name="gruposV[]" id="selectGruposVigente" multiple="multiple" class="grupos">
+							<!--<option value="231" selected>231</option>-->
+						</select>
+						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
+						<!--<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />-->
+						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
+					</div>
+				</fieldset>
+			</div>
+
+
+
 			
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
@@ -262,6 +314,95 @@
 						</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td>000453</td>
+						<td>DESARROLLO SUSTENTABLE</td>
+						<td>20</td>
+						<td>21</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000454</td>
+						<td>ARQ. DE LA INFO.</td>
+						<td>15</td>
+						<td>14</td>
+						<td>BASICA</td>
+						<td>none</td>	
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+						
+					</tr>
+					<tr>
+						<td>000455</td>
+						<td>PRINCIPIOS DE PROGRAMACION</td>
+						<td>9</td>
+						<td>12</td>
+						<td>BASICA</td>
+						<td>none</td>	
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000456</td>
+						<td>MATEMATICAS I</td>
+						<td>2</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000457</td>
+						<td>FISICA I</td>
+						<td>4</td>
+						<td>30</td>
+						<td>BASICA</td>
+						<td>none</td>	
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000458</td>
+						<td>ORIENTACION VOCACIONAL</td>
+						<td>10</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000459</td>
+						<td>QUIMICA I</td>
+						<td>9</td>
+						<td>20</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						
+					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						<tr>
@@ -270,56 +411,25 @@
 						</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td>000460</td>
+						<td>ESTRUCTURA DE DATOS</td>
+						<td>2</td>
+						<td>4</td>
+						<td>BASICA</td>
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<th colspan="2">GRUPOS Y TURNOS:</th>
 				</thead>
 				<tbody>
 				</tbody>
+
 			</table>
 			<!-------------------------------------------------------------------------------------------->
-			
-
-			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
-			<div id="planVigente">
-				<fieldset id="planV"><legend>Plan vigente</legend>
-					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
-					<div class="filtroMaterias_ca">
-						Materias:
-						<select class="con_estilo" style="width:135px; height:30px" id="selectCaracterVigente">
-							@foreach($tiposCaracter as $caracter)
-								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
-							@endforeach
-						</select>
-						
-					</div>
-					<div class="listasCa">
-						<div id="listaPlanVigente"></div>
-					</div>
-					<label>Semestre:</label>
-					<select class="con_estilo" style="width:135px; height:30px" id="semestresVigente">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-					</select>
-					<div class="controlesListasCa">
-						Grupos:
-						<select name="gruposV[]" id="selectGruposVigente" multiple="multiple" class="grupos">
-							<!--<option value="231" selected>231</option>-->
-						</select>
-						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
-						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
-					</div>
-				</fieldset>
-			</div>
-
-
 
 			<!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
