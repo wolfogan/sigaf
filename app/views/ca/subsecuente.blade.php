@@ -533,35 +533,7 @@
 		</script>
 
 
-		<script type="text/javascript">
-			$(document).ready(function () {
-				
-
-				// Create a jqxListBox
-				$("#listaUa").jqxListBox({width: 480, checkboxes: true, height: 400, theme: 'orange'});
-				
-
-				$("#listaUa").on('checkChange', function (event) {
-					var args = event.args;
-					if (args.checked) {
-						$("#Events").text("Checked: " + args.label);
-					}
-					else {
-						$("#Events").text("Unchecked: " + args.label);
-					}
-
-					var items = $("#listaUa").jqxListBox('getCheckedItems');
-					var checkedItems = "";
-					$.each(items, function (index) {
-						if (index < items.length - 1) {
-							checkedItems += this.label + ", ";
-						}
-						else checkedItems += this.label;
-					});
-					$("#CheckedItems").text(checkedItems);
-				});
-			});
-		</script>
+		
 
 
 	<footer>
