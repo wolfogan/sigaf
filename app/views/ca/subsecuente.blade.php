@@ -164,81 +164,10 @@
 			</div>
 		</form>
 	</div>
-	<!-------------------------------------- MODAL AGREGAR UNIDAD DE APRENDIZAJE -------------------------------------->
-	<div class="md-modal md-effect-11" id="btnAgregarUa"> 
-		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
-			<h3>Unidades de aprendizaje</h3>
-			<div class="tblCatalogos">
-				
-							<div class="listasCa">
-								<div id="listaUa" style="margin:auto;"></div>
-							</div>
-							 
-			</div>
-			<div class="CatBotones" style="margin-top:60px">
-				<input type="submit" class="estilo_button2" value="Agregar"/>
-				<input type="button" value="Salir" class="md-close" />
-			</div>
-		</form>
-	</div>
 	
-
 	<!------------------------------------------------------------------------------>
 
-	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN ANTERIOR -------------------------------------->
-
-	<div class="md-modal md-effect-11" id="modalGruposAnterior"> 
-		<form id="formGA" action="javascript:registrarGrupo(false);" class="md-content" method="post">
-			<h3>Agregar Grupos</h3>
-			<div class="tblCatalogos">
-				<table class="tblCatPlan">
-					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-					<tr>
-						<td>Nombre:</td>
-						<td>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarreraA" maxlength="1"  readonly required/>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestreA" maxlength="1"  readonly required/>
-							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificadorA" maxlength="1" placeholder="1" required/>
-						</td>
-					</tr>
-					<tr>
-						<td>Turno:</td>
-						<td>
-							<select style="width:200px;" name="grupo_turno" id="grupoTurno" />
-								@foreach ($turnos as $turno)
-									<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
-								@endforeach
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>Plan:</td>
-						<td><label><div id="grupoPlanAnterior">Plan XXXX-X</div></label></td>
-					</tr>
-					<tr>
-						<td>Período:</td>
-						<td><label><div class="grupoPer">XXXX-X</div></label></td>
-					</tr>
-					<tr>
-						<td>Programa Educativo:</td>
-						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
-					</tr>
-					<input type="hidden" name="grupo_plan" id="grupoAnteriorPlan"/>
-					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
-					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
-				</table>
-			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close salirGrupo" />
-			</div>
-		</form>
-	</div>
-
-	<div class="md-overlay"></div>
+	
 
 	<!------------------------------------------------------------------------------>
 	<header>
@@ -308,7 +237,6 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 			<table class="tabla_ca" style="width:700px; margin-left:30px; margin-top:90px;">
-
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
@@ -323,152 +251,31 @@
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
-						<th style="width:30px">ELIMINAR</th>
 						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
+							<th colspan="8">OBLIGATORIAS</th>
 							
 						</tr>
-
 				</thead>
-
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-						
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 	
-						
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-
+				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-
 						<tr>
-							<th colspan="7">OPTATIVAS</th>
+							<th colspan="8">OPTATIVAS</th>
 							
 						</tr>
-
-					</thead>
-
-				<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL 206</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I 207</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS 208</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-
-					</tr>
-
-					<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						
-						<th colspan="2">GRUPOS Y TURNOS:</th>
-						<tbody>
-							<tr>
-								
-								<td colspan="2">231 TM, 232 TM, 233 TI, 234 TI, 235 TN, 236 TN</td>
-							</tr>
-						</tbody>		
-					</thead>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 			<!-------------------------------------------------------------------------------------------->
 			
@@ -507,7 +314,6 @@
 							<!--<option value="231" selected>231</option>-->
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
-						<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />
 						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
 					</div>
 				</fieldset>
@@ -587,103 +393,65 @@
 
 
 	 <script type="text/javascript">
-            $(document).ready(function () {
-                var source = [
-                    "MATEMATICAS I",
-                    "MATEMATICAS II",
-                    "CONTABILIDAD I",
-                    "ADMINISTRACION",
-                    "PRINCIPIOS DE PROGRAMACION",
-                    "ESTRUCTURA DE DATOS",
-                    "BASE DE DATOS II",
-                    "BASES DE DATOS CORPORATIVAS",
-                    "LOGARITMOS",
-                    "SIMULACION",
-                    "INTERFACES DE SISTEMA",
-                    "PROGRAMACION ORIENTADA A OBJETOS",
-                    "PAQUETE DE OPERACIONES",
-                    "METODOLOGIA"
-		        ];
+			$(document).ready(function () {
+			 
 
-                // Create a jqxListBox
-                $("#listaPlanVigente").jqxListBox({width: 480, source: source, checkboxes: true, height: 330, theme: 'orange'});
-                // Check several items.
-                $("#listaPlanVigente").jqxListBox('checkIndex', 0);
-                $("#listaPlanVigente").jqxListBox('checkIndex', 1);
-                $("#listaPlanVigente").jqxListBox('checkIndex', 2);
-                $("#listaPlanVigente").jqxListBox('checkIndex', 5);
+				// Create a jqxListBox
+				$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
+				
 
-                $("#listaPlanVigente").on('checkChange', function (event) {
-                    var args = event.args;
-                    if (args.checked) {
-                        $("#Events").text("Checked: " + args.label);
-                    }
-                    else {
-                        $("#Events").text("Unchecked: " + args.label);
-                    }
+				$("#listaPlanVigente").on('checkChange', function (event) {
+					var args = event.args;
+					if (args.checked) {
+						$("#Events").text("Checked: " + args.label);
+					}
+					else {
+						$("#Events").text("Unchecked: " + args.label);
+					}
 
-                    var items = $("#listaPlanVigente").jqxListBox('getCheckedItems');
-                    var checkedItems = "";
-                    $.each(items, function (index) {
-                        if (index < items.length - 1) {
-                            checkedItems += this.label + ", ";
-                        }
-                        else checkedItems += this.label;
-                    });
-                    $("#CheckedItems").text(checkedItems);
-                });
-            });
-        </script>
+					var items = $("#listaPlanVigente").jqxListBox('getCheckedItems');
+					var checkedItems = "";
+					$.each(items, function (index) {
+						if (index < items.length - 1) {
+							checkedItems += this.label + ", ";
+						}
+						else checkedItems += this.label;
+					});
+					$("#CheckedItems").text(checkedItems);
+				});
+			});
+		</script>
 
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var source = [
-                    "MATEMATICAS I",
-                    "MATEMATICAS II",
-                    "CONTABILIDAD I",
-                    "ADMINISTRACION",
-                    "PRINCIPIOS DE PROGRAMACION",
-                    "ESTRUCTURA DE DATOS",
-                    "BASE DE DATOS II",
-                    "BASES DE DATOS CORPORATIVAS",
-                    "LOGARITMOS",
-                    "SIMULACION",
-                    "INTERFACES DE SISTEMA",
-                    "PROGRAMACION ORIENTADA A OBJETOS",
-                    "PAQUETE DE OPERACIONES",
-                    "METODOLOGIA"
-		        ];
+		<script type="text/javascript">
+			$(document).ready(function () {
+				
 
-                // Create a jqxListBox
-                $("#listaUa").jqxListBox({width: 480, source: source, checkboxes: true, height: 400, theme: 'orange'});
-                // Check several items.
-                $("#listaUa").jqxListBox('checkIndex', 0);
-                $("#listaUa").jqxListBox('checkIndex', 1);
-                $("#listaUa").jqxListBox('checkIndex', 2);
-                $("#listaUa").jqxListBox('checkIndex', 5);
+				// Create a jqxListBox
+				$("#listaUa").jqxListBox({width: 480, checkboxes: true, height: 400, theme: 'orange'});
+				
 
-                $("#listaUa").on('checkChange', function (event) {
-                    var args = event.args;
-                    if (args.checked) {
-                        $("#Events").text("Checked: " + args.label);
-                    }
-                    else {
-                        $("#Events").text("Unchecked: " + args.label);
-                    }
+				$("#listaUa").on('checkChange', function (event) {
+					var args = event.args;
+					if (args.checked) {
+						$("#Events").text("Checked: " + args.label);
+					}
+					else {
+						$("#Events").text("Unchecked: " + args.label);
+					}
 
-                    var items = $("#listaUa").jqxListBox('getCheckedItems');
-                    var checkedItems = "";
-                    $.each(items, function (index) {
-                        if (index < items.length - 1) {
-                            checkedItems += this.label + ", ";
-                        }
-                        else checkedItems += this.label;
-                    });
-                    $("#CheckedItems").text(checkedItems);
-                });
-            });
-        </script>
+					var items = $("#listaUa").jqxListBox('getCheckedItems');
+					var checkedItems = "";
+					$.each(items, function (index) {
+						if (index < items.length - 1) {
+							checkedItems += this.label + ", ";
+						}
+						else checkedItems += this.label;
+					});
+					$("#CheckedItems").text(checkedItems);
+				});
+			});
+		</script>
 
 
 	<footer>
