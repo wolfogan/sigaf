@@ -67,7 +67,7 @@
 
 			<div class="consultax_ca">
 				
-				<div id="consul_carrera_ca">
+				<div class="consul_carrera_ca">
 					<label>Carrera: </label>
 					<select class="con_estilo" style="width:150px;" id="carrera_ca">
 						@foreach($programas as $programa)
@@ -76,7 +76,7 @@
 					</select>
 				</div>
 
-				<div id="consul_periodo_ca">
+				<div class="consul_carrera_ca">
 					<label>Periódo: </label>
 					<input class="estilo_text" style="width:150px;" type="text" name="periodo_ca" id="periodo_ca" list="datalist_periodo_ca" size=1 onkeypress="ValidaSoloNumeros()"/>
 					<datalist id="datalist_periodo_ca">
@@ -87,7 +87,7 @@
 				</div>
 
 
-				<div id="consul_turno_ca">
+				<div class="consul_carrera_ca">
 					<label>Turno: </label>
 					<!--<input class="estilo_text" style="width:150px;" type="text" name="turno_ca" id="turno_ca" list="datalist_turno_ca" size="1"/>
 					<datalist id="datalist_turno_ca">
@@ -95,7 +95,7 @@
 						<option value="INTERTURNO">
 						<option value="VESPERTINO">
 					</datalist>-->
-					<select class="estilo_text" style="width:150px;" name="turno_ca" id="turno_ca"/>
+					<select class="estilo_text" style="width:150px; height:30px;" name="turno_ca" id="turno_ca"/>
 						<option value="0">TODOS</option>
 						@foreach($turnos as $turno)
 							<option value="{{$turno->turno}}">{{$turno->descripcion}}</option>
@@ -103,7 +103,7 @@
 					</select>
 				</div>
 
-				<div id="consul_semestre_ca">
+				<div class="consul_carrera_ca">
 					<label>Semestre: </label>
 					<select class="con_estilo" style="width:80px;" name="semestre_ca" id="semestre_ca">
 						<option value="0">TODOS</option>
@@ -119,16 +119,20 @@
 					</select>
 				</div>
 				
-				<div id="consul_grupo_ca">
+				<div class="consul_carrera_ca">
 					<label>Grupo: </label>
 					<input class="estilo_text" style="width:80px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
 					<datalist id="datalist_grupo_ca">
 					</datalist>
 				</div>
+
+				<div class="consul_carrera_ca">
+					<input class="estilo_button2" style="width:130px; margin-top:-10px;" type="button" value="Buscar" id="consultarCarga">
+				</div>
 				
 			</div>
 
-			<div class="consultay_ca">
+			<!--<div class="consultay_ca">
 				<div id="consul_seriacion_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="seriacion_ca" value="seriacion_ca"><label>Seriadas</label>
 				</div>
@@ -140,11 +144,9 @@
 				<div id="consul_deshabilitados_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="deshabilitados_ca" value="deshabilitados_ca"><label>Deshabilitadas</label>
 				</div>
-			</div>
+			</div>-->
 
-				<div id="consultaboton_ca">
-					<input class="estilo_button2" style="width:145px;" type="button" value="Buscar" id="consultarCarga">
-				</div>
+				
 
 		</fieldset>
 
@@ -168,10 +170,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -208,10 +210,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -247,10 +249,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -286,10 +288,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -325,10 +327,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -364,10 +366,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -403,10 +405,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -442,10 +444,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -481,10 +483,10 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:50px">REQ. SERIACIÓN</th>
 					</tr>
 				</thead>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -546,7 +548,7 @@
 							</tr>
 
 							<tr>
-								<td style="width:100px">CREDITOS/PLAN:</td>
+								<td style="width:100px">CRÉDITOS/PLAN:</td>
 								<td>90</td>
 							</tr>
 

@@ -307,7 +307,7 @@
 
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
-				<fieldset id="planV"><legend>Plan vigente</legend>
+				<fieldset id="planV"><legend>Plan de estudios</legend>
 					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
 					
 					<div class="filtroMaterias_ca" style="float:left; width:200px;">
@@ -349,7 +349,8 @@
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
 						<!--<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />-->
-						<input type="button" style="width:180px" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
+						<input type="button" style="width:180px; margin-top:3px;" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
+
 					</div>
 				</fieldset>
 			</div>
@@ -359,7 +360,7 @@
 			
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
-			<table class="tabla_ca" style="width:700px; margin-left:30px; margin-top:90px;">
+			<table class="tabla_ca" style="width:700px; margin-left:30px; margin-top:70px;">
 
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -371,7 +372,7 @@
 					<tr>
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CREDITOS</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
 						<th style="width:50px">HC</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
@@ -534,6 +535,9 @@
 						</tbody>		
 					</thead>
 			</table>
+			<div id="ca_actualiza">
+				<input type="button" style="width:180px;" value="Actualizar Carga"  class="estilo_button2" name="btnActualizarCa" id="btnActualizarCargaV" />
+			</div>
 			<!-------------------------------------------------------------------------------------------->
 			
 
@@ -577,7 +581,7 @@
 							</tr>
 
 							<tr>
-								<td style="width:100px">CREDITOS/PLAN:</td>
+								<td style="width:100px">CRÉDITOS/PLAN:</td>
 								<td>90</td>
 							</tr>
 
