@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : SIGAF
@@ -60,8 +60,8 @@ CREATE TABLE `act_profesional_adic` (
 -- ----------------------------
 -- Table structure for act_profesional_emp
 -- ----------------------------
-DROP TABLE IF EXISTS `act_profesional_emp`;
-CREATE TABLE `act_profesional_emp` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
   `carrera` int(11) NOT NULL COMMENT 'Carrera adicional',
   `id` int(11) NOT NULL COMMENT 'Usuario',
   `universidad` int(11) NOT NULL COMMENT 'Universidad carr adic',
