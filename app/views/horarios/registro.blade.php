@@ -59,9 +59,20 @@
 			<!--<div class="contenedorCa" style="height:1400px;">-->
 
 				<div id="hr_trunoGrupo">
+
+					<div class="hr_turnoHorario">
+						<label>Carrera: </label>
+						<select class="dd_estilo_combo" style="width:170px" name="hr_carreraHr" size=1>
+							<option value="LIC. INFORMATICA">INFORMATICA</option>
+							<option value="LIC. CONTADURIA">CONTADURIA</option>
+							<option value="LIC. NEGOCIOS INTERNACIONALES">LNI</option>
+							<option value="LIC. ADMINISTRACION">LAE</option>
+						</select>
+					</div>
+
 					<div class="hr_turnoHorario">
 						<label>Turno: </label>
-						<select class="dd_estilo_combo" style="width:220px" name="hr_turnoHr" size=1>
+						<select class="dd_estilo_combo" style="width:170px" name="hr_turnoHr" size=1>
 							<option value="MATUTINO">MATUTINO</option>
 							<option value="INTERTURNO">INTERTURNO</option>
 							<option value="NOCTURNO">NOCTURNO</option>
@@ -70,7 +81,7 @@
 
 					<div class="hr_turnoHorario">
 						<label>Grupo: </label>
-						<select class="dd_estilo_combo" style="width:220px" name="hr_grupoHr" size=1>
+						<select class="dd_estilo_combo" style="width:170px" name="hr_grupoHr" size=1>
 							<option value="321">231</option>
 							<option value="321">321</option>
 							<option value="322">322</option>
