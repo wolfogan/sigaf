@@ -252,7 +252,7 @@
 		<div id="totalcreditos">
 			<label> Materias obligatorias:</label><label id="creditos_obligatorias">0</label>
 			<label> Materias optativas:</label><label id="creditos_optativas">0</label><br>
-			<label> Total de creditos: </label><label id="creditos_total">0</label>
+			<label> Total de créditos: </label><label id="creditos_total">0</label>
 		</div>
 
 

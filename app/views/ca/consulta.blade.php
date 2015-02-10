@@ -128,7 +128,7 @@
 				
 			</div>
 
-			<div class="consultay_ca">
+			<!--<div class="consultay_ca">
 				<div id="consul_seriacion_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="seriacion_ca" value="seriacion_ca"><label>Seriadas</label>
 				</div>
@@ -140,7 +140,7 @@
 				<div id="consul_deshabilitados_ca">
 					<input style="width:18px; height:18px;" type="checkbox" name="deshabilitados_ca" value="deshabilitados_ca"><label>Deshabilitadas</label>
 				</div>
-			</div>
+			</div>-->
 
 				<div id="consultaboton_ca">
 					<input class="estilo_button2" style="width:145px;" type="button" value="Buscar" id="consultarCarga">

@@ -45,7 +45,7 @@
 						<div id="dd" class="wrapper-dropdown-5" tabindex="1">Mensajes
 							<ul class="dropdown">
 								<li><a href="#"><i class="mje1"></i>Verificar plan de estudios 2010-2</a></li>
-								<li><a href="#"><i class="mje2"></i>Carga academica</a></li>
+								<li><a href="#"><i class="mje2"></i>Carga académica</a></li>
 								<li><a href="#"><i class="mje3"></i>Disponibilidad docente</a></li>
 							</ul>
 						</div>
@@ -71,12 +71,12 @@
 		<div class="view view-tenth" onclick="location.href='cargaacademica/registro'">
 			<img src="imagenes/carga1.png"/>
 			<div class="mask">
-				<h2>Carga academica</h2>
+				<h2>Carga académica</h2>
 				<p>
 					<a href="<?=URL::to('cargaacademica/registro');?>" style="color:#004000">Registrar carga académica</a>
 				</p>
 				<p>
-					 <a href="<?=URL::to('cargaacademica/consulta');?>" style="color:#004000">consultar, eliminar carga academica</a>
+					 <a href="<?=URL::to('cargaacademica/consulta');?>" style="color:#004000">consultar, eliminar carga académica</a>
 				</p>
 				<a href="#"></a>
 			</div>
