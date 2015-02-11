@@ -63,7 +63,7 @@
 
 	<div id="Consultas">
 		
-		<fieldset id="consultaPlan" style="margin:auto;">
+		<fieldset id="consultaPlan" style="margin:auto; width:800px;">
 			<legend>Consultar por:</legend>
 
 			<div class="consultax_ca">
