@@ -5,8 +5,8 @@
 			<ul>
 				<li><a href="<?=URL::to('catalogos/catalogos');?>" title="Catalogos">Catálogos</a></li>
 				<!--<li><a href="<?=URL::to('planestudio/catalogosadmin')?>" titile="Modificación y eliminación de catálogos">Catálogos: modificación y eliminación </a></li>-->
-				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminacion UA's</a></li>
-				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificacion UA's</a></li>
+				<li><a href="<?=URL::to('planestudio/registro')?>" title="Registro y eliminacion UAs">Registro y eliminación UA's</a></li>
+				<li><a href="<?=URL::to('planestudio/consulta')?>" titile="Consulta y modificacion">Consulta y modificación UA's</a></li>
 				<li><a href="<?=URL::to('planestudio/bitacora')?>" titile="Bitacora">Bitácora</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 			</ul>

@@ -141,6 +141,7 @@ footer
 {
 	width: 100%;
 	height: 130px;	
+	margin-top:40px;
 }
 #tabla_coloresPe
 {
@@ -179,8 +180,8 @@ footer
 }
 #consultaPlan
 {
-	height: 100px;
-	margin-top:0px;
+	height: 120px;
+	margin-top:40px;
 	margin-left:80px;
 	margin-bottom:100px; 
 	width: 1140px;
@@ -195,10 +196,8 @@ footer
 }
 #consultaboton
 {
-
-	
 	margin-left: 1100px;
-	margin-top: -210px;
+	margin-top: -215px;
 	height: 130px;
 	width: 115px;
 
@@ -555,7 +554,7 @@ background: #EFCA0D;
 html>body div.tableContainer table {
 	
 	margin-top: -50px;
-	width: 900px;
+	width: 916px;
 }
 
 
@@ -624,7 +623,7 @@ html>body thead.fixedHeader th + th + th + th + th + th {
 }
 
 .sin-seriacion td{
-	width: 900px !important;
+	width: 916px !important;
 	cursor: pointer;
 }
 
@@ -981,7 +980,7 @@ html>body div.pe_tableContainer table {
 }
 #pe_btnSeriacionMod
 {
-	margin-left: 25px;
+	margin:4px 0px 5px 28px ;
 	float: left;
 }
 #pe_btnSeriacionMod input
@@ -1794,9 +1793,9 @@ html>body div.pe_tableContainer table {
 	margin: auto;
 	margin-top: 20px;
 	text-align: center;
-	padding-left: 10px;
+	margin-right:10px;
 	
-	width: 1200px;
+	width: 1150px;
 }
 .consultay_ca
 {
@@ -1808,13 +1807,16 @@ html>body div.pe_tableContainer table {
 	padding-right: 10px;
 	width: 850px;
 }
-/*#consultaboton_ca
+#consultaboton_ca
 {
 	
 	height: 50px;
-	float:left;
+	margin-top: -10px;
+	margin-left: 980px;
 	width: 150px;	
-}*/
+	float:left;
+}
+
 .tabla_ca
 {
 
@@ -2368,13 +2370,12 @@ input[readonly],input[readonly="readonly"]
 #dd_btnBuscar
 {
 	float: right;
-	margin-right: 100px;
-	padding-top: 10px;
+	margin-right: 35px;
+	padding-top: 5px;
 }
 
 #dd_consulta
 {
-	
 	
 	margin:auto;
 	margin-top: 40px;
