@@ -62,14 +62,15 @@
 			</div>
 
 	<div id="Consultas">
-		<fieldset id="consultaPlan" style="margin:auto;">
+		
+		<fieldset id="consultaPlan" style="margin:auto; width:800px;">
 			<legend>Consultar por:</legend>
 
 			<div class="consultax_ca">
 				
 				<div class="consul_carrera_ca">
 					<label>Carrera: </label>
-					<select class="con_estilo" style="width:150px;" id="carrera_ca">
+					<select class="con_estilo" style="width:150px; margin-left:10px;" id="carrera_ca">
 						@foreach($programas as $programa)
 							<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
 						@endforeach
@@ -103,60 +104,47 @@
 					</select>
 				</div>
 
-				<div class="consul_carrera_ca">
-					<label>Semestre: </label>
-					<select class="con_estilo" style="width:80px;" name="semestre_ca" id="semestre_ca">
-						<option value="0">TODOS</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-					</select>
-				</div>
 				
-				<div class="consul_carrera_ca">
-					<label>Grupo: </label>
-					<input class="estilo_text" style="width:80px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
-					<datalist id="datalist_grupo_ca">
-					</datalist>
-				</div>
-
-				<div class="consul_carrera_ca">
-					<input class="estilo_button2" style="width:130px; margin-top:-10px;" type="button" value="Buscar" id="consultarCarga">
-				</div>
 				
 			</div>
 
-			<!--<div class="consultay_ca">
-				<div id="consul_seriacion_ca">
-					<input style="width:18px; height:18px;" type="checkbox" name="seriacion_ca" value="seriacion_ca"><label>Seriadas</label>
-				</div>
-				
-				<div id="consul_habilitados_ca">
-					<input style="width:18px; height:18px;" type="checkbox" name="habilitados_ca" value="habilitados_ca"><label>Habilitadas</label>
-				</div>
+			
 
-				<div id="consul_deshabilitados_ca">
-					<input style="width:18px; height:18px;" type="checkbox" name="deshabilitados_ca" value="deshabilitados_ca"><label>Deshabilitadas</label>
-				</div>
-			</div>-->
+			<div class="consultax_ca">
+				<div class="consul_carrera_ca">
+						<label>Semestre: </label>
+						<select class="con_estilo" style="width:150px;" name="semestre_ca" id="semestre_ca">
+							<option value="0">TODOS</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+					</div>
+					
+					<div class="consul_carrera_ca">
+						<label>Grupo: </label>
+						<input class="estilo_text" style="width:150px; margin-left:12px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
+						<datalist id="datalist_grupo_ca">
+						</datalist>
+					</div>
 
-				
+					<div class="consul_carrera_ca" >
+						<input class="estilo_button2" style="width:130px; margin-left:65px; margin-top:-5px;" type="button" value="Buscar" id="consultarCarga">
+					</div>
+			</div>
+		
 
 		</fieldset>
 
-
-
-				
-
 	</div>
 
-		<div id="GridPlanEstudio" style="height:2200px; margin-top:80px">
+		<!--<div id="GridPlanEstudio" style="height:2200px; margin-top:80px">-->
 	<br>
 		<!-------------------------------------------SEMESTRE 1 CONSULTA -------------------------------------------->
 			<table class="tabla_ca" id="semestre1">
@@ -513,7 +501,7 @@
 <!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
 
-					<table class="ca_tblResumenConsulta">
+					<table class="ca_tblResumenConsulta" style="margin-top:50px;">
 
 						<thead class="ca_tblResumenEncabezado">
 

@@ -204,10 +204,17 @@
 		<div class="contenedorCa" style="height:1050px;">
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
+
+			<div class="ca_checkstatus">
+				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+				<label>Carga capturada</label>
+			</div>
+
+
 			<div class="periodoCa">
 				
 				<div class="divPeriodo">
-					Periódo: 
+					Periodo: 
 					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
 					<datalist id="datalistPeriodo">
 						@foreach ($codigosPeriodo as $periodo)
@@ -226,12 +233,13 @@
 						</select>
 
 				</div>
+				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="btnCopiarCa" /></div>
+
 			</div>
 
-			<div class="ca_checkstatus">
-				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
-				<label>Carga capturada</label>
-			</div>
+
+			<div id="ca_nombrePeriodo">Periodo:<label>XXXX-X</label></div>
+
 
 
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>

@@ -180,11 +180,11 @@ footer
 }
 #consultaPlan
 {
-	height: 120px;
+	height: 130px;
 	margin-top:40px;
 	margin-left:80px;
 	margin-bottom:100px; 
-	width: 1140px;
+	width: 1130px;
 }
 #consultax
 {
@@ -1524,11 +1524,40 @@ html>body div.pe_tableContainer table {
 
 
 /*-------------------------------CARGA ACADEMICA--------------------------------------*/
+#ca_nombrePeriodo
+{
+	
+	font-size: 25px;
+	text-align: center;
+	padding: 15px;
+	width: 700px;
+	margin: 30px auto 20px auto;
+	
+}
+#ca_nombrePeriodo label
+{
+	margin-left: 10px;
+	width: 200px;
+	color:green;
+}
 .contenedorCa
 {
 
 	height: 1700px;
 	width: 1320px;
+}
+#btn_copiarCa
+{
+	width: 200px;
+	margin-top:-5px;
+	float: right;
+}
+#btn_copiarCa input
+{
+	width:180px; 
+	height:50px; 
+	margin-top:3px; 
+	font-size:16px;
 }
 .nombre_coordinacion
 {
@@ -1576,12 +1605,11 @@ html>body div.pe_tableContainer table {
  }
 .periodoCa
 {
-	
 	height: 40px;
-	margin-top: 0px;
+	margin-top: 10px;
 	margin-left: 45px;
 	margin-bottom: 20px;
-	width: 550px;
+	width: 1230px;
 }
 .controlesListasCa
 {
@@ -1737,65 +1765,24 @@ html>body div.pe_tableContainer table {
 }
 /*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
 
-/*#consul_periodo_ca
-{
 
-	float: left;
-	margin-left: 20px;
-	padding-right: 45px;
-}
-#consul_semestre_ca
-{
-	float: left;
-	padding-right: 40px;
-}*/
 .consul_carrera_ca
 {
 
 	float: left;
 	padding-right: 20px;
 }
-/*#consul_grupo_ca
-{
-	
-	float: left;
-	
-	
-}
-#consul_turno_ca
-{
-	float: left;
-	padding-right: 40px;
-	
-}
-#consul_seriacion_ca
-{
-	float: left;
-	margin-left: 10px;
-	padding-right: 70px;
-}
-#consul_habilitados_ca
-{
-	float: left;
-	padding-right: 70px;
-}
-#consul_deshabilitados_ca
-{
-	float: left;
-	padding-right: 70px;
-}*/
 
 .consultax_ca
 {
-		
 	font-size: 16px;
-	height: 50px;
+	height: 30px;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 15px;
 	text-align: center;
 	margin-right:10px;
 	
-	width: 1150px;
+	width: 750px;
 }
 .consultay_ca
 {
