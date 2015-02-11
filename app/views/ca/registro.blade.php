@@ -314,6 +314,11 @@
 
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
+			<div class="ca_checkstatus">
+				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
+				<label>Carga capturada</label>
+			</div>
+
 			<div class="periodoCa">
 				
 				<div class="divPeriodo">
@@ -333,10 +338,7 @@
 				</div>
 			</div>
 
-			<div class="ca_checkstatus">
-				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
-				<label>Carga capturada</label>
-			</div>
+			
 
 			
 			
