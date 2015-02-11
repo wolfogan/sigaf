@@ -298,7 +298,7 @@
 			</div>
 		</div>
 		<div id="ubicacion" class="texto_body">
-			Carga Académica: Registro
+			Carga Académica: Registro Inicial
 		</div>
 		<div id="loginmanual">
 			<div id="login" class="texto_body">

@@ -1540,6 +1540,18 @@ html>body div.pe_tableContainer table {
 	width: 200px;
 	color:green;
 }
+#Ca_aCopiar
+{
+	
+	font-size: 20px;
+	text-align: center;
+}
+#Ca_aCopiar label
+{
+	color:orange;
+	font-size: 30px;
+	margin-left: 20px;
+}
 .contenedorCa
 {
 
