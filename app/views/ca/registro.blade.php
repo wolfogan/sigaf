@@ -323,9 +323,8 @@
 				
 				<div class="divPeriodo">
 					Periódo: 
-					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
-					<datalist id="datalistPeriodo">
-					</datalist>
+					<select type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo">
+					</select>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
 			
@@ -936,9 +935,9 @@
 			//$("#periodoUsersId").val(USERS_ID);
 
 			$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
-				var option = "<option value='"+insertStr(result['periodo'],"-",4)+"' codigo='"+result['periodo']+"' />";
-				$("#datalistPeriodo").append(option);
-				$("#periodo").val(insertStr(result['periodo'],"-",4));
+				var option = "<option value='"+ + result['periodo'] +"'>"  + insertStr(result['periodo'],"-",4) + "</option>";
+				$("#periodo").append(option);
+				$("#periodo").val(result['periodo']);
 
 
 				alert("Periodo dado de alta exitosamente!!!");
@@ -1213,7 +1212,7 @@
 			// Asignar valor semestre a la ventana modal en la segunda posicion.
 			$(grupoSemestre).val(semestre);
 			// Obtener los grupos asociados al semestre seleccionado.
-			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			var periodo = $("#periodo").val();
 			if(numPrograma == 0)
 			{
 				var programa = $("#carreraAdmin").val();
@@ -1359,7 +1358,8 @@
 				return false;
 			}
 
-			var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			var periodo = $("#periodo").val();
 			var programa = 0;
 
 			if(numPrograma == 0)
@@ -1456,9 +1456,10 @@
 					{
 						var codigo = data.codigosPeriodo[key].codigo;
 						var formato = data.codigosPeriodo[key].formato;
-						options += "<option value = '" + formato + "' codigo = '" + codigo + "' />"; 
+						options += "<option value = '" + codigo + "'>" + formato + "</option>"; 
 					}
-					$("#datalistPeriodo").html(options);
+					$("#periodo").html(options);
+					$("#periodo").val("");
 
 					// Asignar los turnos para los grupos TM, TV , etc.
 					options = "";
@@ -1532,17 +1533,18 @@
 
 
 			// CUANDO CAMBIEN EL PERIODO
-			$("#periodo").on("input",function(){
-				if($(this).val().length == 6)
-				{
-					var periodo = $("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo");
-					$(".grupoPer").text($(this).val());
+			$("#periodo").on("change",function(){
+				
+					//var periodo = $("#datalistPeriodo option[value='"+$(this).val()+"']").attr("codigo");
+					var periodo = $("#periodo").val();
+					alert(periodo);
+					$(".grupoPer").text($(this).find("option:selected").text());
 					$(".grupoPeriodo").val(periodo);
 					if(numPrograma != 0)
 					{
 						obtenerCarga(periodo,numPrograma);
 					}
-				}
+				
 			});
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
@@ -1553,7 +1555,8 @@
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
 				$(".grupoPgr").text($("#nombrePrograma").text());
 				var programa = $("#carreraAdmin").val();
-				var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+				var periodo = $("#periodo").val();
 				//Obtener las unidades de aprendizaje obligatorias formateadas Ej. 11236 - Matematicas 
 				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:1},function(uas){
 					$("#listboxPlanVigente").jqxListBox({source:uas});
@@ -1620,7 +1623,8 @@
 					var row = $(this).parents().get(1);
 					var ua = $(row).find("td:eq(0)").text();
 					var semestre = $(this).attr("semestre");
-					var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+					//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+					var periodo = $("#periodo").val();
 					if(numPrograma == 0)
 					{
 						var programa = $("#carreraAdmin").val();
@@ -1666,7 +1670,9 @@
 						// Seleccionar items almacenados
 						for (var i = data.grupos.length - 1; i >= 0; i--) {
 							if(data.grupos[i].check == true)
+							{
 								$("#listaUa").jqxListBox('checkItem',data.grupos[i].grupo);
+							}
 						};
 
 					},

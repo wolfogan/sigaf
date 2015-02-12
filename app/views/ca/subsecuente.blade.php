@@ -77,9 +77,9 @@
 
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
-			<h3>Agregar Período</h3>
+			<h3>Crear Nuevo Período</h3>
 			<div class="tblCatalogos">
-			<div id="Ca_aCopiar">La carga que se esta copiando es:<label>2009-1</label></div>
+			<div id="Ca_aCopiar">La carga anterior pertenece al período:<label id="periodoCopia">{{ (!is_null($ultimoPeriodoCarga))?Snippets::str_insert('-',$ultimoPeriodoCarga->periodo,4):"XXXX-X"}}</label></div>
 				<table class="tblCatPlan">
 					<tr>
 						<td>Nombre:</td>
@@ -110,7 +110,7 @@
 				</table>
 			</div>
 			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="submit" class="estilo_button2" value="Copiar"/>
 				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
 			</div>
 		</form>
@@ -218,8 +218,9 @@
 				<div class="divPeriodo">
 					Periodo: 
 					<select class="con_estilo" type="text" style="height:30px; width:135px;" name="periodo" id="periodo"/>
-						<option value="2009-1">2009-1</option>
-						<option value="2009-2">2009-2</option>
+						@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
+						@endforeach
 					</select>
 					
 					<!--<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />-->
@@ -228,14 +229,12 @@
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
-							@foreach ($programas as $program)
-								<option value="{{$program->programaedu}}">{{$program->descripcion}}</option>
-							@endforeach
 						</select>
 
 				</div>
-				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
-
+				@if (!is_null($ultimoPeriodoCarga))
+				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="copiarCarga" /></div>
+				@endif
 			</div>
 
 
@@ -246,13 +245,14 @@
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan de estudios</legend>
-					<div class="nombrePlan" id="nombreVigente">Plan 2014-1</div>
+					<div class="nombrePlan" id="nombreVigente">Plan XXXX-X</div>
 					
 					<div class="filtroMaterias_ca" style="float:left; width:200px;">
 						Plan:
 						<select class="con_estilo" style="width:135px; height:30px" id="selecciona_plan">
-								<option value="2009-1">2009-1</option>
-								<option value="2009-2">2009-2</option>	
+								@foreach($codigosPlanes as $plan)
+									<option value="{{$plan['codigo']}}">{{$plan['formato']}}</option>
+								@endforeach
 						</select>
 					</div>
 
@@ -517,11 +517,15 @@
 	<script type="text/javascript" src="../js/jqxlistbox.js"></script>
 	<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
 
-
-	 <script type="text/javascript">
+	<script type="text/javascript">
+		var actualizar = false;
+	</script>
+	<script type="text/javascript">
 			$(document).ready(function () {
 			 
-
+				// Limpiar controles
+				$("#selecciona_plan").val("");
+				$("#periodo").val("");
 				// Create a jqxListBox
 				$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
 				

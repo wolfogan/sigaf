@@ -88,6 +88,12 @@ class CargaAcademicaController extends BaseController
 
 	public function getSubsecuente()
 	{
+		// 2 Planes de estudio actuales
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$codigosPlanes = [];
+		foreach ($planes as $plan) {
+			$codigosPlanes[] = ["codigo" => $plan->plan, "formato" => Snippets::str_insert("-",$plan->plan,4)];
+		}
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
 
@@ -110,26 +116,15 @@ class CargaAcademicaController extends BaseController
 		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
 		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
 
-		// 1 - Artes, 2 - Administración
-		/*$numPrograma = Auth::user()->programaedu;
+		// Obtener último período de carga
+		$ultimoPeriodoCarga = DB::table('carga')
+								->select('periodo')
+								->orderBy('periodo','desc')
+								->first();
 		
-		// 0 - Administrador,!0 - Coordinador
-		// Obtener nombre en caso de ser coordinador
-		$nombrePrograma = "";
-		if ($numPrograma != 0) 
-		{
-			$nombrePrograma = ProgramaEducativo::find($numPrograma);
-			$nombrePrograma = $nombrePrograma -> descripcion;
-		}
 		
-		$var_nombre = array("nombrePrograma");
 
-		// Obtener Planes
-		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
-		$numPlanes = count($planes);
-		*/
-			// Catalogos y unidades de aprendizaje de los planes de estudio.
-		return View::make('ca.subsecuente')->with(compact('periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades'));
+		return View::make('ca.subsecuente')->with(compact('codigosPlanes','periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
 
 	}
 
@@ -299,7 +294,7 @@ class CargaAcademicaController extends BaseController
 		$gruposAll = DB::select(DB::raw("SELECT CONCAT(grupos.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = grupos.turno) FROM 1 FOR 1)) as grupo
 								FROM grupos WHERE grupos.programaedu = ? AND grupos.periodo = ? AND grupos.grupo LIKE '_".$semestre."_' ") , array($programa, $periodo));
 		
-		$gruposUA = DB::select("SELECT CONCAT(carga.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = (SELECT grupos.turno FROM grupos WHERE grupos.grupo = carga.grupo)) FROM 1 FOR 1)) as grupo
+		$gruposUA = DB::select("SELECT CONCAT(carga.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = (SELECT grupos.turno FROM grupos WHERE grupos.grupo = carga.grupo and grupos.periodo = carga.periodo)) FROM 1 FOR 1)) as grupo
 								FROM carga WHERE carga.programaedu = :programaedu AND carga.periodo = :periodo AND carga.semestre = :semestre AND  carga.uaprendizaje = :uaprendizaje" , array('programaedu' => $programa, 'periodo' => $periodo, 'semestre' => $semestre, 'uaprendizaje' => $uaprendizaje));
 		/*DB::table('grupos')
 					->select('grupo')
@@ -330,8 +325,11 @@ class CargaAcademicaController extends BaseController
 		// dependiendo si esta asociado para mostrar seleccionado el item
 		$gruposSource = [];
 		foreach ($gruposAll as $keyA => $valueA) {
+			
 			$gruposSource[] = $gruposAll[$keyA] -> grupo;
+			
 			foreach ($gruposUA as $keyB => $valueB) {
+				
 				if($gruposUA[$keyB]->grupo==$gruposAll[$keyA]->grupo)
 				{
 					$gruposAll[$keyA]->check = true;
@@ -344,6 +342,9 @@ class CargaAcademicaController extends BaseController
 		$data = new stdClass();
 		$data -> grupos = $gruposAll;
 		$data -> source = $gruposSource;
+		//$data -> gruposua = $gruposUA;
+		
+		
 		return Response::json($data);
 	}
 
@@ -417,7 +418,7 @@ class CargaAcademicaController extends BaseController
 				uaprendizaje.plan,
 				carga.programaedu,
 				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
-				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos,
+				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre and cr.periodo = carga.periodo) as grupos,
 				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos 
 				FROM carga
 				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
