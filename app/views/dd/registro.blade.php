@@ -77,16 +77,16 @@
 </head>
 <body>
 
-<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
+<!-------------------------------- MODAL CATALOGO CURSOS -------------------------------->
 
-	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
+	<div class="md-modal md-effect-11" id="btnCatalogoCursos"> 
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
-			<h3>Agregar Período</h3>
+			<h3>Agregar curso de actualización</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoLapso" maxlength="1" placeholder="1" required/></td>
+						<td><input class="con_estilo_largo" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>
 					</tr>
 					<tr>
 						<td>Tipo Programa:</td>
@@ -100,15 +100,15 @@
 					</tr>
 					<tr>
 						<td>Fecha inicio:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaInicio" name='periodoFechaInicio' required/></td>
+						<td><input class="con_estilo_largo" type="date" id="periodoFechaInicio" name='periodoFechaInicio' required/></td>
 					</tr>
 					<tr>
 						<td>Fecha fin:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaFin" name='periodoFechaFin' required/></td>
+						<td><input class="con_estilo_largo" type="date" id="periodoFechaFin" name='periodoFechaFin' required/></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="periodoDescripcion" id="periodoDescripcion" placeholder="Descripción del período" required/></td>
+						<td><input class="con_estilo_largo" type="text" name="periodoDescripcion" id="periodoDescripcion" placeholder="Descripción del período" required/></td>
 					</tr>
 				</table>
 			</div>
@@ -619,7 +619,7 @@
 									</div>-->
 							         
 						     	</div>
-						     	<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
+						     	<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoCursos" id="btnCatalogoCursos" />
 
 						     	
 						     </div>

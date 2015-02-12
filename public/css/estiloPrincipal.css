@@ -2369,7 +2369,7 @@ input[readonly],input[readonly="readonly"]
 #dd_btnBuscar
 {
 	float: right;
-	margin-right: 35px;
+	margin-right: 100px;
 	padding-top: 5px;
 }
 
@@ -2783,7 +2783,15 @@ input[readonly],input[readonly="readonly"]
  	width: 220px;
  }
 
+/***************************** CONSULTA DE HORARIOS *************************************/
 
+#consultaHorarios
+{
+	
+	margin: 50px auto  auto  auto; 
+	width: 750px;
+
+}
 
 
 

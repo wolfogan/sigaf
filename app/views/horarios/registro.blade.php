@@ -7,7 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/estiloPrincipal.css">
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/estilo_tabs.css" />
 		<link rel="stylesheet" type="text/css" href="../css/estiloTooltipFlip.css" />
 
 		<!-- ------------------------------ Scripts Generales -------------------------------->
@@ -19,7 +18,7 @@
 		<!-- Script tiempo -->
 
 <!---------------------------------------------------------------------------------------->
-<title>Disponibilidad docente</title>
+<title>Horarios</title>
 </head>
 <body>
 <header>
@@ -57,6 +56,7 @@
 
 		<section>
 			<!--<div class="contenedorCa" style="height:1400px;">-->
+			<div class="hr_lblCarrera" style="margin-top:20px;"><label>ADMÓN. DE EMPRESAS</label></div>
 
 				<div id="hr_trunoGrupo">
 
@@ -90,7 +90,7 @@
 						</select>
 					</div>
 					<!--<div id="hr_btnCrearHr"><input class="estilo_button2" type="button" value="Crear horario">-->
-					<div class="hr_lblCarrera"><label>ADMÓN. DE EMPRESAS</label></div>
+					
 				</div>
 
 				

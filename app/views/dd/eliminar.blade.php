@@ -65,7 +65,7 @@
 			
 				<div id="dd_consultaEmpleado">
 					<label>No. Empleado: </label>
-					<input class="dd_con_estilo_corto"type="text" name="dd_periodoConsulta" id="dd_periodoConsulta" list="datalist_NoEmpleado" size=1 onkeypress="ValidaSoloNumeros()"/>
+					<input class="dd_con_estilo"type="text" name="dd_periodoConsulta" id="dd_periodoConsulta" list="datalist_NoEmpleado" size=1 onkeypress="ValidaSoloNumeros()"/>
 					<datalist id="datalist_dd_NoEmpleado">
 						<option value="1223">
 						<option value="1245">
@@ -84,7 +84,7 @@
 		</fieldset>
 
 							<div id="dd_eliminarDocentes">
-			                    <table class="dd_tabla_MatImpartir" style="margin-top:30px;">
+			                    <table class="dd_tabla_MatImpartir" style="margin-top:30px; margin-bottom:50px;">
 									
 									<thead class="dd_encabezado">
 										<tr>
