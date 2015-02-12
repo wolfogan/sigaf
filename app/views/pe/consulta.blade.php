@@ -12,7 +12,6 @@
 	<!-- Creación de Ventanas Modales -->
 	<script src="../js/ventanamodal.js"></script>
 
-
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="../js/jquery.min.js"></script>-->
@@ -402,7 +401,7 @@
 
 			</form>
 		</div>
-		<div class="md-overlay">
+		<div class="md-overlay"></div>
 			
 
 
@@ -446,7 +445,16 @@
 			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
 			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 
+
 	</footer>
+
+			<!--SCRIPT PARA VENTANA MODAL-->
+			<script src="../js/classie.js"></script>
+			<script src="../js/modalEffects.js"></script>
+
+
+
+
 	<script type="text/javascript">
 		function aleatorio(inferior,superior)
 		{
@@ -1052,9 +1060,7 @@
 		var polyfilter_scriptpath = '/js/';
 
 	</script>
-	<!--SCRIPT PARA VENTANA MODAL-->
-	<script src="../js/classie.js"></script>
-	<script src="../js/modalEffects.js"></script>
+	
 
 
 

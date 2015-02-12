@@ -79,6 +79,7 @@
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
 			<h3>Agregar Período</h3>
 			<div class="tblCatalogos">
+			<div id="Ca_aCopiar">La carga que se esta copiando es:<label>2009-1</label></div>
 				<table class="tblCatPlan">
 					<tr>
 						<td>Nombre:</td>
@@ -163,7 +164,8 @@
 				<input type="button" value="Salir" class="md-close salirGrupo"/>
 			</div>
 		</form>
-	</div>
+	</div>	
+	<div class="md-overlay"></div>
 	
 	<!------------------------------------------------------------------------------>
 
@@ -189,7 +191,7 @@
 			</div>
 		</div>
 		<div id="ubicacion" class="texto_body">
-			Carga Académica: Registro
+			Carga Académica: Registro Subsecuente
 		</div>
 		<div id="loginmanual">
 			<div id="login" class="texto_body">
@@ -215,13 +217,12 @@
 				
 				<div class="divPeriodo">
 					Periodo: 
-					<input type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo" list="datalistPeriodo"/>
-					<datalist id="datalistPeriodo">
-						@foreach ($codigosPeriodo as $periodo)
-							<option value="{{$periodo['formato']}}" codigo="{{$periodo['codigo']}}" />
-						@endforeach
-					</datalist>
-					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
+					<select class="con_estilo" type="text" style="height:30px; width:135px;" name="periodo" id="periodo"/>
+						<option value="2009-1">2009-1</option>
+						<option value="2009-2">2009-2</option>
+					</select>
+					
+					<!--<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />-->
 				</div>
 			
 
@@ -233,7 +234,7 @@
 						</select>
 
 				</div>
-				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="btnCopiarCa" /></div>
+				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" /></div>
 
 			</div>
 

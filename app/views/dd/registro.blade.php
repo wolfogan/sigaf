@@ -12,6 +12,10 @@
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
+		<!-- Creación de Ventanas Modales -->
+		<script src="../js/ventanamodal.js"></script>
+	
+
 		<!---------------------------------- Checkboxlist -------------------------------------->
 		
 		<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
@@ -72,6 +76,52 @@
 <title>Disponibilidad docente</title>
 </head>
 <body>
+
+<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
+
+	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
+		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+			<h3>Agregar Período</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+					<tr>
+						<td>Nombre:</td>
+						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoLapso" maxlength="1" placeholder="1" required/></td>
+					</tr>
+					<tr>
+						<td>Tipo Programa:</td>
+						<td>
+							<select style="width:200px;" name="periodoTipo" id="periodoTipo" />
+								
+									<option value="UNO">UNO</option>
+							
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Fecha inicio:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaInicio" name='periodoFechaInicio' required/></td>
+					</tr>
+					<tr>
+						<td>Fecha fin:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="date" id="periodoFechaFin" name='periodoFechaFin' required/></td>
+					</tr>
+					<tr>
+						<td>Descripción:</td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="periodoDescripcion" id="periodoDescripcion" placeholder="Descripción del período" required/></td>
+					</tr>
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
+			</div>
+		</form>
+	</div>
+
+
+
+
 <header>
 	<figure id="logo">
 	<img src="../imagenes/logo.png" alt="">
@@ -539,13 +589,6 @@
 											</tr>
 
 
-
-
-
-
-
-			
-
 										</table>
 									</div>
 						     	</div>
@@ -576,6 +619,7 @@
 									</div>-->
 							         
 						     	</div>
+						     	<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 
 						     	
 						     </div>
@@ -860,6 +904,10 @@
 			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
 
 	</footer>
+
+		<!--SCRIPT PARA VENTANA MODAL-->
+		<script src="../js/classie.js"></script>
+		<script src="../js/modalEffects.js"></script>
 
 </div>
 </body>
