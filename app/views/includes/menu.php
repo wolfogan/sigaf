@@ -37,6 +37,7 @@
 			<a href="#" title="Creación de horarios">Creación de horario<span></span></a>
 			<ul>
 				<li><a href="<?=URL::to('horarios/registro');?>" title="Registrar Horario">Registrar y consultar horario</a></li>
+				<li><a href="<?=URL::to('horarios/consulta');?>" title="Consultar Horarios">Consulta de horarios</a></li>
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 				<!--<li><a href="#" titile="SubMenu 2">Submen&uacute; 2</a></li>
 				<li class="ultimo"><a href="#" title="SubMenu 3">Submen&uacute; 3</a></li>-->

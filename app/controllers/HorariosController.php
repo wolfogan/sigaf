@@ -12,5 +12,9 @@ class HorariosController extends BaseController
 		return View::make("horarios.registro");
 	}
 	
+	public function getConsulta()
+	{
+		return View::make("horarios.consulta");
+	}
 
 }
