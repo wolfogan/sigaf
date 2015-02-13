@@ -32,7 +32,7 @@ Route::controller('disponibilidaddocente','DisponibilidadDocenteController');
 Route::controller('ayuda','AyudaController');
 Route::controller('usuarios','UserLoginController');
 Route::controller('horarios','HorariosController');
-
+Route::get('pruebametodo',"CargaAcademicaController@postCopiarcarga");
 Route::get('pruebas',function(){
 
 	/*$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();
@@ -54,7 +54,7 @@ Route::get('pruebas',function(){
 						->where("carga.periodo","=",'20142')
 						->groupBy("semestre","carga.periodo")
 						->get();
-	
+
 	//DB::delete("delete carga from carga inner join grupos on carga.grupo = grupos.grupo where carga.uaprendizaje = ? and carga.periodo = ? and grupos.programaedu = ?",array(11236,20142,1));
 
 
@@ -123,13 +123,13 @@ Route::get('pruebas',function(){
 
 	$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get() ->toArray();
 	$enviarPlanes = [];
-	foreach ($planes as $key => $value) 
+	foreach ($planes as $key => $value)
 	{
 		$enviarPlanes[] = $planes[$key] -> plan;
 	}
-		
+
 	$enviarPlanes["cantidad"] = count($planes);
-	
+
 	$uas = DB::table("carga")
 						->select('carga.periodo','carga.semestre','carga.uaprendizaje','uaprendizaje.descripcionmat','p_ua.caracter','uaprendizaje.creditos','uaprendizaje.HC','etapas.descripcion as etapa','uaprendizaje.plan','carga.programaedu',DB::raw('GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series'))
 						->join('uaprendizaje','carga.uaprendizaje' , '=' , 'uaprendizaje.uaprendizaje')
@@ -200,7 +200,7 @@ Route::get('pruebas',function(){
 				carga.programaedu,
 				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
 				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre) as grupos,
-				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos 
+				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos
 				FROM carga
 				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
 				INNER JOIN p_ua ON carga.uaprendizaje = p_ua.uaprendizaje AND
@@ -235,5 +235,5 @@ Route::get('pruebas',function(){
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
 	return $last_query;
-	
+
 });

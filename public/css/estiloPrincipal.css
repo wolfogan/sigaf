@@ -24,7 +24,7 @@ margin: auto;
 }
 #unidadaprendizaje
 {
-	
+
 	width: 1200px;
   	margin: auto;
 }
@@ -38,7 +38,7 @@ fieldset #group_seriacion
 }
 legend
 {
-	padding: 2px; 
+	padding: 2px;
 }
 figure
 {
@@ -77,7 +77,7 @@ header
 	box-shadow: 2px 2px 2px #000;
 }
 section
-{   
+{
 	background-color: rgba(104,160,26,0.3);
 	border: 2.2px solid black;
 	border-radius: 7px;
@@ -97,7 +97,7 @@ section:hover
 }
 section #primerBloque
 {
-	
+
 	padding-top: 40px;
 	height: 40px;
 	width: 1220px;
@@ -126,7 +126,7 @@ section #cuartoBloque
 	margin-left: 700px;
 	height: 105px;
 	width: 430px;
-	
+
 }
 footer
 {
@@ -140,7 +140,7 @@ footer
 #Consultas
 {
 	width: 100%;
-	height: 130px;	
+	height: 130px;
 	margin-top:40px;
 }
 #tabla_coloresPe
@@ -153,7 +153,7 @@ footer
 	float: left;
 	margin-top:10px;
 	margin-left: 10px;
-	margin-right: 10px;	
+	margin-right: 10px;
 
 
 }
@@ -171,7 +171,7 @@ footer
 
 #pe_consultaActualizada
 {
-	
+
 	font-size: 20px;
 	color:#FF9900;
 	margin: -50px auto;
@@ -183,7 +183,7 @@ footer
 	height: 130px;
 	margin-top:40px;
 	margin-left:80px;
-	margin-bottom:100px; 
+	margin-bottom:100px;
 	width: 1130px;
 }
 #consultax
@@ -208,9 +208,9 @@ footer
 }
 .clsEliminarFila
 {
-	height:25px; 
-	width:28px; 
-	border-color:#468C00; 
+	height:25px;
+	width:28px;
+	border-color:#468C00;
 	border-radius:5px;
 	background-color:#004000;
 	color:#FFF;
@@ -219,7 +219,7 @@ footer
 }
 .clsEliminarFila:hover
 {
-background: #EFCA0D;	
+background: #EFCA0D;
 }
 .con_estilo
 {
@@ -252,22 +252,22 @@ background: #EFCA0D;
 }
 .estilo_button
 {
-	border-color:#ECA22E; 
+	border-color:#ECA22E;
 	border-radius:5px;
-	background-color:#ECA22E; 
-	color:#004000; 
-	font-size:20px; 
+	background-color:#ECA22E;
+	color:#004000;
+	font-size:20px;
 	text-align: center;
 	width:30px;
 	text-decoration:none;
 }
 .estilo_button2
 {
-	border-color:#468C00; 
+	border-color:#468C00;
 	border-radius:5px;
-	background-color:#004000; 
-	color:#fff; 
-	font-size:21px; 
+	background-color:#004000;
+	color:#fff;
+	font-size:21px;
 	text-align: center;
 	height: 50px;
 	width:100px;
@@ -294,13 +294,13 @@ background: #EFCA0D;
 }
 #GridPlanEstudio
 {
-	
+
 	margin:auto;
 	margin-top: 25px;
 	margin-bottom: 25px;
 	width: 1280px;
 }
-#logo  
+#logo
 {
 	margin-left: 15px;
 	margin-top: 10px;
@@ -338,7 +338,7 @@ background: #EFCA0D;
 #ubicacion
 {
 
-	
+
 	display: inline-block;
 	font-size: 17px;
 	margin: auto;
@@ -353,7 +353,7 @@ background: #EFCA0D;
 }
 #indicadores
 {
-	
+
 	margin: 0 auto;
 	padding-top: 35px;
 	width:1320px;
@@ -421,7 +421,7 @@ background: #EFCA0D;
 }
 #semestre_cuatro
 {
-	
+
 	float: left;
 	font-size: 20px;
 	margin-left: 75px;
@@ -430,7 +430,7 @@ background: #EFCA0D;
 }
 #semestre_cinco
 {
-	
+
 	float: left;
 	font-size: 20px;
 	padding-right: 80px;
@@ -454,7 +454,7 @@ background: #EFCA0D;
 
 #semestre_siete
 {
-	
+
 	float: left;
 	font-size: 20px;
 	margin-left: 40px;
@@ -463,7 +463,7 @@ background: #EFCA0D;
 }
 #semestre_ocho
 {
-	
+
 	float: left;
 	font-size: 20px;
 	padding-right: 75px;
@@ -471,7 +471,7 @@ background: #EFCA0D;
 }
 #semestre_nueve
 {
-	
+
 	float: left;
 	font-size: 20px;
 	padding-right: 60px;
@@ -479,7 +479,7 @@ background: #EFCA0D;
 }
 #totalcreditos
 {
-	
+
 	color:#004000;
 	font-size: 18px;
 	padding-left: 25px;
@@ -508,10 +508,10 @@ background: #EFCA0D;
 #pe_divs_modificar
 {
 	margin-top: 50px;
-	height: 30px;	
+	height: 30px;
 }
-.carreraDiv 
-{  
+.carreraDiv
+{
 	float:left;
 	height: 30px;
 	margin-right: 20px;
@@ -523,7 +523,7 @@ background: #EFCA0D;
 	background: purple
 	float: left;
 	width: 190px;
-	
+
 }*/
 .pe_noPlan
 {
@@ -546,13 +546,13 @@ background: #EFCA0D;
 	font-size: 1.2em;
 	margin-left: 10px;
 	margin-top: -50px;
-	
+
 }*/
 
 /* ESTILO PARA TABLA CON SCROLL DE REGISTRO PARA PE */
 
 html>body div.tableContainer table {
-	
+
 	margin-top: -50px;
 	width: 916px;
 }
@@ -586,7 +586,7 @@ html>body tbody.scrollContent {
 
 .fixedHeader th
 {
-	
+
 	background: green;
 	font-size: 16px;
 	color: #fff;
@@ -642,7 +642,7 @@ html>body tbody.scrollContent td + td + td{
 html>body tbody.scrollContent td + td + td + td {
 	width: 99px
 
-} 
+}
 
 html>body tbody.scrollContent td + td + td + td + td{
 	width: 350px
@@ -664,12 +664,12 @@ html>body tbody.scrollContent td + td + td + td+ td + td{
 .div_pe_tableContainer
 {
 
-	
+
 	width: 650px;
 }
 
 html>body div.pe_tableContainer table {
-	
+
 	margin-top: -15px;
 	width: 850px;
 }
@@ -682,7 +682,7 @@ html>body div.pe_tableContainer table {
    overflow-y: scroll;
    height:218px;
 }
-#hr_empleado_docente 
+#hr_empleado_docente
 {
 
 	float: left;
@@ -690,10 +690,10 @@ html>body div.pe_tableContainer table {
 	margin-bottom: 45px;
 	margin-left: 10px;
 	margin-right: 10px;
-} 
-#hr_empleado_docente th 
+}
+#hr_empleado_docente th
 {
-	
+
    	height: 40px;
    	font-size: 13px;
    	border:1px solid gray;
@@ -705,7 +705,7 @@ html>body div.pe_tableContainer table {
 
 #hr_empleado_docente td
 {
-	
+
  	border: 1px solid gray;
 	border-collapse: separate;
   	border-spacing: 7px;
@@ -725,13 +725,13 @@ html>body div.pe_tableContainer table {
 }
 .pe_catalogos_tbl
 {
-	
+
 	width: 900px;
 	height: 230px;
 	margin:auto;
 }
 
-.tablaDatos 
+.tablaDatos
 {
 	font-family:"Trebuchet MS";
 	font-size: 15px;
@@ -739,16 +739,16 @@ html>body div.pe_tableContainer table {
 	text-decoration: none;
 	margin:auto;
 	margin-bottom: 20px;
-	border-collapse: collapse; 
-	border: 1px solid #CCB; 
+	border-collapse: collapse;
+	border: 1px solid #CCB;
 	width: 100%;
 }
 .tablaDatos th
 {
-	color:green; 
+	color:green;
 	height:30px;
 	text-align:center;
-	background: #E5E5E5; 
+	background: #E5E5E5;
 }
 .tablaDatos tr
 {
@@ -768,7 +768,7 @@ html>body div.pe_tableContainer table {
 #consul_carrera
 {
 	margin-left:210px;
-	margin-top:-30px;	
+	margin-top:-30px;
 }
 #consul_clave
 {
@@ -825,7 +825,7 @@ html>body div.pe_tableContainer table {
 }
 #noPlanDiv
 {
-	
+
 	width: 250px;
 	float: left;
 	margin-left: 40px;
@@ -833,27 +833,27 @@ html>body div.pe_tableContainer table {
 }
 #unidadAcademicaDiv
 {
-	
+
 	text-align: center;
 	width: 300px;
 	float: left;
 	margin-top:5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	
+
 }
 /*#campusDiv
 {
-	
+
 
 	width: 150px;
 	float: left;
 	margin-top:5px;
-	padding-left: 7px;	
+	padding-left: 7px;
 }*/
 #unidadDiv
 {
-	
+
 	text-align: center;
 	width: 300px;
 	float: left;
@@ -862,8 +862,8 @@ html>body div.pe_tableContainer table {
 	padding-right: 10px;
 }
 #nivelDiv
-{ 
-	
+{
+
 	text-align: center;
 	width: 280px;
 	float: left;
@@ -871,21 +871,21 @@ html>body div.pe_tableContainer table {
 }
 /*#tipoProgrDiv
 {
-	
+
 	width: 250px;
 	float: left;
 	padding-left: 40px;
-	
+
 }*/
 #claveDiv
 {
-	
+
 	width: 250px;
 	float: left;
 }
 #materiaDiv
 {
-	
+
 	width: 450px;
 	float: left;
 	padding-left: 0px;
@@ -893,7 +893,7 @@ html>body div.pe_tableContainer table {
 
 /*#tipoDiv
 {
-	
+
 	padding-left: 50px;
 	width: 230px;
 	float: left;
@@ -907,21 +907,21 @@ html>body div.pe_tableContainer table {
 }
 #seriacionDivMateria
 {
-	
+
 	width: 285px;
 	float: left;
 	padding-left:0px;
 }
 #seriacionDivTipo
 {
-	
+
 	width: 300px;
 	float: left;
 	padding-left: 10px;
 }*/
 /*#semestreDiv
 {
-	
+
 	width: 130px;
 	float: left;
 	padding-left:70px;
@@ -930,8 +930,8 @@ html>body div.pe_tableContainer table {
 #coordDiv
 {
 	width: 245px;
-	
-	
+
+
 }
 #hcDiv
 {
@@ -965,7 +965,7 @@ html>body div.pe_tableContainer table {
 }
 #hclDiv
 {
-	
+
 	width: 130px;
 	float: left;
 	margin-left: -15px;
@@ -976,7 +976,7 @@ html>body div.pe_tableContainer table {
 	width: 150px;
 	padding-left: 8px;
 	float: left;
-	
+
 }
 #pe_btnSeriacionMod
 {
@@ -985,28 +985,28 @@ html>body div.pe_tableContainer table {
 }
 #pe_btnSeriacionMod input
 {
-	width:225px; 
-	height:30px; 
-	font-size:18px; 
+	width:225px;
+	height:30px;
+	font-size:18px;
 }
 
 
 #observacionesDiv
 {
-	
+
 	margin-left:60px;
 	margin-top: -50px;
 	float: left;
 	margin-bottom: 15px;
 	width: 390px;
-	
-	
-	
+
+
+
 }
 
 #planTerminado
 {
-	
+
 	margin-left: 1000px;
 	margin-top: -20px;
 	margin-bottom: 10px;
@@ -1015,11 +1015,11 @@ html>body div.pe_tableContainer table {
 }
 #checkTroncoComun
 {
-	
+
 	width: 150px;
 	margin-left: 630px;
 	margin-top: -25px;
-	
+
 }
 
 #acciones
@@ -1063,18 +1063,18 @@ html>body div.pe_tableContainer table {
 
 /*#mensajesIcono
 {
-	
+
 	background: blue;
 	float: right;
 	height:50px;
 	margin-top: -70px;
 	width:250px;
-		
+
 }*/
 
 #statusPlanEstudios
 {
-	
+
 	font-size: 18px;
 	float: right;
 	margin-right: 90px;
@@ -1082,11 +1082,11 @@ html>body div.pe_tableContainer table {
 	padding-top: 12px;
 	padding-bottom: 0px;
 	width: 170px;
-	
+
 }
 #checkSubdirector
 {
-	
+
 	float: right;
 	padding: 5px;
 	padding-top: 12px;
@@ -1099,7 +1099,7 @@ html>body div.pe_tableContainer table {
 
 .tblCatalogos
 {
-	
+
 	margin-left: 30px;
 	height: 350px;
 	width: 550px;
@@ -1111,25 +1111,25 @@ html>body div.pe_tableContainer table {
 	border-style: none;
 	border-collapse: separate;
   	border-spacing: 10px 5px;
-  	border-radius: 7px;   	
-  	font-size: 18px; 	  	
+  	border-radius: 7px;
+  	font-size: 18px;
   	margin: auto;
   	margin-top: 50px;
   	padding:20px;
 	width: 500px;
 }
-.tblCatPlan td 
+.tblCatPlan td
 {
 	color:#004000;
 	text-align: left;
-	
+
 }
 
 
 
 .lblCatalogosDependencias
 {
-	
+
 	font-size: 20px;
 	font-weight: bold;
 	margin: auto;
@@ -1140,7 +1140,7 @@ html>body div.pe_tableContainer table {
 
 	width: 250px;
 	float: right;
-	
+
 }
 
 
@@ -1169,12 +1169,12 @@ html>body div.pe_tableContainer table {
 }
 .us_btnRegistroUsuario_mod
 {
-	
+
 	margin: auto;
 	width: 220px;
 	height: 50px;
 }
-#formularioRegUsuarios_olvido 
+#formularioRegUsuarios_olvido
 {
 
 	margin: auto;
@@ -1235,14 +1235,14 @@ html>body div.pe_tableContainer table {
 }
 .us_clsRefresh
 {
-	
+
 	background-image: url(../imagenes/refresh.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: #fff;
 
-	height:30px; 
-	width:30px; 
+	height:30px;
+	width:30px;
 	border-radius:5px;
 	border-color: #468C00;
 }
@@ -1272,7 +1272,7 @@ html>body div.pe_tableContainer table {
 
 .us_nuevo_usuario
 {
-	
+
 	float: left;
 	padding-bottom: 10px;
 	padding-left: 10px;
@@ -1281,14 +1281,14 @@ html>body div.pe_tableContainer table {
 }
 .us_div
 {
-	
+
 	margin-top: 85px;
 
 
 }
 .us_nuevo
 {
-	
+
 	float: left;
 	padding-bottom: 10px;
 	padding-left: 10px;
@@ -1297,7 +1297,7 @@ html>body div.pe_tableContainer table {
 }
 .us_repetir
 {
-	
+
 	float: left;
 	padding-bottom: 10px;
 	padding-left: 10px;
@@ -1307,7 +1307,7 @@ html>body div.pe_tableContainer table {
 
 .btnUnidadAcadRegistro
 {
-	
+
 	margin-left: 410px;
 	margin-top: -27px;
 	width: 50px;
@@ -1316,7 +1316,7 @@ html>body div.pe_tableContainer table {
 
 #formularioRegUsuarios
 {
-	
+
 	height: 350px;
 	border: 1px solid gray;
 	padding-left: 20px;
@@ -1329,7 +1329,7 @@ html>body div.pe_tableContainer table {
 
 #us_btnRegistroUsuario
 {
-	
+
 	margin: auto;
 	margin-top: 30px;
 	width: 450px;
@@ -1345,7 +1345,7 @@ html>body div.pe_tableContainer table {
 /* ---------------- BITACORA --------------------*/
 #controlesBuscarBit
 {
-	
+
 	margin: auto;
 	height: 130px;
 	margin-top: 15px;
@@ -1354,55 +1354,55 @@ html>body div.pe_tableContainer table {
 }
 #controlesBitacora
 {
-	
+
 	padding-top: 15px;
 	margin: auto;
 	width: 850px;
-	
-	
+
+
 }
 #modulosFechasBit
 {
-	
+
 	padding-bottom: 40px;
-	
+
 }
 #cmbModulosBit
 {
-	
+
 	float: left;
 	padding-left: 10px;
 	padding-right: 25px;
 }
 #fechaIniBit
 {
-	
+
 	float: left;
 	padding-left: 20px;
 }
 #lblFechaIniBit
 {
-	
+
 	float: left;
 	margin-top: 5px;
 	padding-right: 3px;
 }
 #fechaFinBit
 {
-	
+
 	float: left;
 	padding-left: 40px;
 }
 #lblFechaFinBit
 {
-	
+
 	float: left;
 	margin-top: 5px;
 	padding-right: 3px;
 }
 #seccionBuscarPorBit
 {
-	
+
 	margin: auto;
 	padding-left: 8px;
 	width: 1250px;
@@ -1410,13 +1410,13 @@ html>body div.pe_tableContainer table {
 }
 #cmbSeccionesBit
 {
-	
+
 	float: left;
 	padding-right: 32px;
 }
 #cmbBuscarPorBit
 {
-	
+
 	float: left;
 	padding-left: 43px;
 }
@@ -1437,8 +1437,8 @@ html>body div.pe_tableContainer table {
 .clsModificarFila
 {
 	background-image:url(../imagenes/modify.png);
-	height:25px; 
-	width:28px; 
+	height:25px;
+	width:28px;
 	border-radius:5px;
 	border-color: #468C00;
 	background-color:#fff;
@@ -1457,7 +1457,7 @@ html>body div.pe_tableContainer table {
 
 #adminCatalogosFieldset
 {
-	
+
 	margin: auto;
 	margin-top: 20px;
 	width: 420px;
@@ -1526,13 +1526,13 @@ html>body div.pe_tableContainer table {
 /*-------------------------------CARGA ACADEMICA--------------------------------------*/
 #ca_nombrePeriodo
 {
-	
+
 	font-size: 25px;
 	text-align: center;
 	padding: 15px;
 	width: 700px;
 	margin: 30px auto 20px auto;
-	
+
 }
 #ca_nombrePeriodo label
 {
@@ -1540,13 +1540,13 @@ html>body div.pe_tableContainer table {
 	width: 200px;
 	color:green;
 }
-#Ca_aCopiar
+.Ca_aCopiar
 {
-	
+
 	font-size: 20px;
 	text-align: center;
 }
-#Ca_aCopiar label
+.Ca_aCopiar label
 {
 	color:orange;
 	font-size: 30px;
@@ -1566,14 +1566,14 @@ html>body div.pe_tableContainer table {
 }
 #btn_copiarCa input
 {
-	width:180px; 
-	height:50px; 
-	margin-top:3px; 
+	width:180px;
+	height:50px;
+	margin-top:3px;
 	font-size:16px;
 }
 .nombre_coordinacion
 {
-	
+
 	font-size: 24px;
 	color: green;
 	height: 30px;
@@ -1586,7 +1586,7 @@ html>body div.pe_tableContainer table {
 
 #planVigente
  {
- 	
+
  	float: left;
  	height: 600px;
  	width: 500px;
@@ -1597,7 +1597,7 @@ html>body div.pe_tableContainer table {
 
 #btnPlanA
 {
-	
+
 	height: 50px;
 	width: 215px;
 	float: left;
@@ -1608,12 +1608,12 @@ html>body div.pe_tableContainer table {
 
  #planAnterior
  {
- 	
+
  	float: left;
  	height: 600px;
  	width: 500px;
  	margin-top: 12px;
- 		
+
  }
 .periodoCa
 {
@@ -1635,7 +1635,7 @@ html>body div.pe_tableContainer table {
 }
 #btnNuevaCaDiv
 {
-	
+
 
 	float: left;
 	height: 50px;
@@ -1644,7 +1644,7 @@ html>body div.pe_tableContainer table {
 }
 .divPeriodo
 {
-	
+
 	float: left;
 	font-size: 20px;
 	height: 40px;
@@ -1669,7 +1669,7 @@ html>body div.pe_tableContainer table {
 
 #contenedorRegistroca_mostrar
 {
-	
+
 	margin: auto;
 	margin-top: 650px;
 	margin-bottom: 30px;
@@ -1695,8 +1695,8 @@ html>body div.pe_tableContainer table {
 }
 
 .cmbGrupos_superior
-{ 
-	
+{
+
 	float: left;
 	margin-bottom: 10px;
 	margin-left: 33px;
@@ -1715,8 +1715,8 @@ html>body div.pe_tableContainer table {
 }
 .carga_listas
 {
-	
-	
+
+
 	border: 2px solid gray;
 	border-radius: 10px;
 	float: left;
@@ -1725,7 +1725,7 @@ html>body div.pe_tableContainer table {
 	margin-right: 5px;
 	margin-top: 20px;
 	height: 400px;
-	width: 420px;	
+	width: 420px;
 }
 .controlesListasCa_2
 {
@@ -1745,7 +1745,7 @@ html>body div.pe_tableContainer table {
 	height: 30px;
 	text-align: center;
 	width: 200px;
-	
+
 	margin-top: 15px;
 }
 .nombre_plan
@@ -1761,7 +1761,7 @@ html>body div.pe_tableContainer table {
 
 .consultar_admin
 {
-	
+
 	font-size: 20px;
 	height: 40px;
 	float: left;
@@ -1793,12 +1793,12 @@ html>body div.pe_tableContainer table {
 	margin-top: 15px;
 	text-align: center;
 	margin-right:10px;
-	
+
 	width: 750px;
 }
 .consultay_ca
 {
-	
+
 	font-size: 16px;
 	height: 50px;
 	margin-left: 10px;
@@ -1808,28 +1808,28 @@ html>body div.pe_tableContainer table {
 }
 #consultaboton_ca
 {
-	
+
 	height: 50px;
 	margin-top: -10px;
 	margin-left: 980px;
-	width: 150px;	
+	width: 150px;
 	float:left;
 }
 
 .tabla_ca
 {
 
-	
+
 	float: left;
 	margin-bottom: 30px;
 	margin-left: 20px;
 	margin-right: 20px;
 	width: 600px;
-		
+
 }
 .tabla_ca td
 {
-	
+
 	border:1px solid gray;
 	border-collapse: separate;
   	border-spacing: 5px;
@@ -1856,8 +1856,8 @@ html>body div.pe_tableContainer table {
 {
 	background: #ECA22E;
 	font-size: 12px;
-	color:#004000; 
-	
+	color:#004000;
+
 }
 .dd_encabezado_colorNaranja_tablaConsulta th
 {
@@ -1869,8 +1869,8 @@ html>body div.pe_tableContainer table {
 {
 	background: #fff;
 	font-size: 12px;
-	color:#000; 
-	
+	color:#000;
+
 }
 .dd_encabezado_colorBlanco_tablaConsulta th
 {
@@ -1941,7 +1941,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_consulta_NoEmpleado
 {
-	
+
 	font-size: 20px;
 	float: right;
 }
@@ -2025,7 +2025,7 @@ input[readonly],input[readonly="readonly"]
 	background: green;
 	background-image: url(../imagenes/docente.png);
 	float: left;
-	
+
 	margin: 30px 0px 0px 80px;
 	border: 3px solid green;
 	height: 250px;
@@ -2035,7 +2035,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_aPaterno_aMaterno_nombres_sexo
 {
-	
+
 	float: left;
 	margin-left: 90px;
 	padding: 20px;
@@ -2076,7 +2076,7 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_subirFoto
 {
-	
+
 	margin-top: -90px;
 	margin-left: 750px;
 	margin-bottom: 50px;
@@ -2131,7 +2131,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_trabajoFuera_puesto
 {
-	
+
 	float: left;
 	font-size: 18px;
 	border-top: 4px dashed #BEF781;
@@ -2159,34 +2159,34 @@ input[readonly],input[readonly="readonly"]
 
 #dd_trabajoFuera
 {
-	
+
 	float: left;
 	padding-right: 23px;
 
 }
 #dd_puesto
 {
-	
+
 	float: left;
 	padding-right: 20px;
 
 }
 #dd_antiguedad
 {
-	
+
 	float: left;
 
 
 }
 .dd_licenciatura_uniEgreso_fechaTitulacion_cedula
 {
-	
+
 	padding-bottom: 40px;
 	width: 1190px;
 }
 .dd_licenciatura
 {
-	
+
 	float: left;
 	margin-left:10px;
 	padding-right: 20px;
@@ -2194,21 +2194,21 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_uniEgreso
 {
-	
+
 	float: left;
 	padding-right: 20px;
 
 }
 .dd_fechaTitulacion
 {
-	
+
 	float: left;
 	padding-right: 5px;
 
 }
 .dd_cedula
 {
-	
+
 	float: left;
 	padding-left: 20px;
 	width: 170px;
@@ -2218,12 +2218,12 @@ input[readonly],input[readonly="readonly"]
 
 .dd_btnAdd
 {
-	
-	
+
+
 	float: left;
 	padding-right: 5px;
 	width: 30px;
-	
+
 }
 .dd_estilo_check
 {
@@ -2235,7 +2235,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_especialidad
 {
-	
+
 	font-size: 16px;
 	margin-top: 20px;
 	padding-bottom: 10px;
@@ -2250,13 +2250,13 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_label
 {
-	
+
 	font-size: 18px;
 	color: green;
 }
 .dd_btnEstudiosCursos
 {
-	
+
 	float: right;
 	margin-top: 200px;
 }
@@ -2268,7 +2268,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_tabla
 {
-	
+
 	margin:auto;
 	width: 95%;
 }
@@ -2285,7 +2285,7 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_tabla_MatImpartir
 {
-	
+
 	margin:auto;
 	width: 900px;
 }
@@ -2330,8 +2330,8 @@ input[readonly],input[readonly="readonly"]
 {
 	background: #ECA22E;
 	font-size: 14px;
-	color:#FFF4C7; 
-	
+	color:#FFF4C7;
+
 }
 
 .dd_encabezado_colorVerde
@@ -2375,7 +2375,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_consulta
 {
-	
+
 	margin:auto;
 	margin-top: 40px;
 	width: 760px;
@@ -2383,7 +2383,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_consultaEmpleado
 {
-	
+
 	float: left;
 	padding: 10px;
 	margin-left: 15px;
@@ -2393,7 +2393,7 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_consultaNombre
 {
-	
+
 	padding: 10px;
 	float: left;
 	width: 390px;
@@ -2401,7 +2401,7 @@ input[readonly],input[readonly="readonly"]
 
 #dd_consultaPeriodo
 {
-	
+
 	float: left;
 	margin-left: 15px;
 	padding: 10px;
@@ -2421,14 +2421,14 @@ input[readonly],input[readonly="readonly"]
 
 .dd_clsAgregarFila
 {
-	
+
 	background-image: url(../imagenes/add.png);
 	background-repeat: no-repeat;
 
 	color:#fff;
 	text-align: center;
-	height:30px; 
-	width:30px; 
+	height:30px;
+	width:30px;
 	border-radius:5px;
 	border-color: #468C00;
 	font-size:16px;
@@ -2443,16 +2443,16 @@ input[readonly],input[readonly="readonly"]
 
 .dd_clsAgregarArchivo
 {
-	
+
 	background-image: url(../imagenes/attachhh.png);
 	background-repeat: no-repeat;
 	background-color: #fff;
 	background-position: center;
 
 
-	
-	height:30px; 
-	width:30px; 
+
+	height:30px;
+	width:30px;
 	border-radius:5px;
 	border-color: #468C00;
 	font-size:16px;
@@ -2468,17 +2468,17 @@ input[readonly],input[readonly="readonly"]
 
 .dd_clsCancelar
 {
-	
+
 	background-image: url(../imagenes/cancel.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: #fff;
 
 
-	
-	
-	height:30px; 
-	width:30px; 
+
+
+	height:30px;
+	width:30px;
 	border-radius:5px;
 	border-color: #468C00;
 	font-size:16px;
@@ -2494,11 +2494,11 @@ input[readonly],input[readonly="readonly"]
 
 .dd_con_estilo_propio
 {
-	margin-left:10px; 
-	height:40px; 
-	font-family: 'Indie Flower'; 
-	margin-bottom:10px; 
-	text-align:center; 
+	margin-left:10px;
+	height:40px;
+	font-family: 'Indie Flower';
+	margin-bottom:10px;
+	text-align:center;
  	font-size:30px;
 	background-image: url(../imagenes/bj.jpg);
 	color: #B5B0B0;
@@ -2513,21 +2513,21 @@ input[readonly],input[readonly="readonly"]
 
 .dd_divDecoracion
 {
-	
+
 	font-size: 18px;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
 	margin-left: 190px;
 	height: 370px;
 	width: 820px;
-	
+
 }
 
 
 
 .dd_divDecoracionCursos
 {
-	
+
 	background: #FFF;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
@@ -2538,12 +2538,12 @@ input[readonly],input[readonly="readonly"]
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
-	
+
 
 }
 .dd_divDecoracionEstudios
 {
-	background: #FFF;	
+	background: #FFF;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
 	/*border-radius: 7px;
@@ -2551,7 +2551,7 @@ input[readonly],input[readonly="readonly"]
 	padding-left: 10px;
 	padding-bottom: 10px;
 	width: 1200px;
-	
+
 }
 
 #dd_btnGuardarDisp
@@ -2661,15 +2661,15 @@ input[readonly],input[readonly="readonly"]
 }
 .hr_turnoHorario
 {
-	
+
 	margin-left: 10px;
 	height: 30px;
 	width: 280px;
 	float: left;
 }
-.hr_lblCarrera label 
+.hr_lblCarrera label
 {
-	
+
 	color:green;
 	float: right;
 	text-align: center;
@@ -2685,7 +2685,7 @@ input[readonly],input[readonly="readonly"]
 	margin-top:10px;
 	margin-bottom: 45px;
 	margin-left: 10px;
-	margin-right: 10px;	
+	margin-right: 10px;
 
 
 }
@@ -2729,7 +2729,7 @@ input[readonly],input[readonly="readonly"]
 
  .hr_lblMaterias
  {
- 	
+
  	margin: -50px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;
@@ -2744,7 +2744,7 @@ input[readonly],input[readonly="readonly"]
 
  .hr_titulos
  {
- 	
+
  	color:#000;
  	font-size: 18px;
  	float: left;
@@ -2754,7 +2754,7 @@ input[readonly],input[readonly="readonly"]
 
  .hr_tituloSearch
  {
- 	
+
  	height: 30px;
  	float: left;
  	margin-left: 200px;
@@ -2765,19 +2765,19 @@ input[readonly],input[readonly="readonly"]
 
  #hr_tituloDocente
  {
- 	
+
  	color:#000;
  	font-size: 18px;
- 	float: left; 
+ 	float: left;
  	margin-left: 20px;
  	margin-top: 5px;
  	width: 200px;
- 	
+
 
  }
  #hr_searchDocente
  {
- 	
+
  	float: left;
  	margin-left: 300px;
  	width: 220px;
@@ -2787,8 +2787,8 @@ input[readonly],input[readonly="readonly"]
 
 #consultaHorarios
 {
-	
-	margin: 50px auto  auto  auto; 
+
+	margin: 50px auto  auto  auto;
 	width: 750px;
 
 }
