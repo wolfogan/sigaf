@@ -72,15 +72,15 @@
 </head>
 <body>
 
-
+	<input type="hidden" name="global_user_id" id="globalUserId"  value = {{Auth::user()->id}}/>
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo">
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formCopiarCarga" action="javascript:copiarCarga();" class="md-content" method="post">
 			<h3>Crear Nuevo Período</h3>
 			<div class="tblCatalogos">
-			<div id="Ca_aCopiar">La carga anterior pertenece al período:<label id="periodoCopia">{{ (!is_null($ultimoPeriodoCarga))?Snippets::str_insert('-',$ultimoPeriodoCarga->periodo,4):"XXXX-X"}}</label></div>
-				<table class="tblCatPlan">
+				<div class="Ca_aCopiar">La carga anterior pertenece al período:<label id="labelPeriodoCopia"></label></div>
+				<table class="tblCatPlan" id="tablaCopiarCarga">
 					<tr>
 						<td>Nombre:</td>
 						<td><input style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="periodoAnio" type="text" id="periodoAnio" maxlength="4" placeholder="2014" required/>&nbsp;-&nbsp;<input style="width: 80px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="periodoLapso" type="text" id="perdiodoLapso" maxlength="1" placeholder="1" required/></td>
@@ -109,8 +109,17 @@
 					</tr>
 				</table>
 			</div>
+			<figure id="ajaxLoad" style="margin-left:30px;">
+				<img src="../imagenes/copiando_carga.gif" alt="Cargando...." />
+				<img src="../imagenes/332.gif" alt="Cargando2...." style="margin-left:-50px; margin-top:9%; width:100px; height:18px;"/>
+			</figure>
+			<div class="Ca_aCopiar" id="cargaCompleta" style="float:left; margin-left:40px; padding-right:0px;">Carga copiada con éxito!!!!</div>
 			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Copiar"/>
+				<input type="hidden" name="programa_copia" id ="programaCopia" />
+				<input type="hidden" name="periodo_copia" id="periodoCopia" />
+				<input type="hidden" name="periodo_usersid" id="periodoUsersId">
+
+				<input type="submit" class="estilo_button2" value="Copiar" id="buttonCopiar"/>
 				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
 			</div>
 		</form>
@@ -235,9 +244,9 @@
 						</select>
 
 				</div>
-				@if (!is_null($ultimoPeriodoCarga))
+
 				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="copiarCarga" /></div>
-				@endif
+
 			</div>
 
 
@@ -290,7 +299,7 @@
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
 						<!--<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />-->
-						<input type="button" style="width:180px; margin-top:3px;" value="Generar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
+						<input type="button" style="width:180px; margin-top:3px;" value="Actualizar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
 
 					</div>
 				</fieldset>
@@ -302,9 +311,7 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 
-			<table class="tabla_ca" style="width:700px; margin-left:30px; margin-top:70px;">
-
-
+			<table class="tabla_ca" id="semestre1" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
@@ -326,128 +333,338 @@
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						<tr>
 							<th colspan="8">OBLIGATORIAS</th>
-
 						</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>000453</td>
-						<td>DESARROLLO SUSTENTABLE</td>
-						<td>20</td>
-						<td>21</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000454</td>
-						<td>ARQ. DE LA INFO.</td>
-						<td>15</td>
-						<td>14</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-
-					</tr>
-					<tr>
-						<td>000455</td>
-						<td>PRINCIPIOS DE PROGRAMACION</td>
-						<td>9</td>
-						<td>12</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000456</td>
-						<td>MATEMATICAS I</td>
-						<td>2</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000457</td>
-						<td>FISICA I</td>
-						<td>4</td>
-						<td>30</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000458</td>
-						<td>ORIENTACION VOCACIONAL</td>
-						<td>10</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000459</td>
-						<td>QUIMICA I</td>
-						<td>9</td>
-						<td>20</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-
-					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						<tr>
 							<th colspan="8">OPTATIVAS</th>
-
 						</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>000460</td>
-						<td>ESTRUCTURA DE DATOS</td>
-						<td>2</td>
-						<td>4</td>
-						<td>BASICA</td>
-						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
-					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 					<th colspan="2">GRUPOS Y TURNOS:</th>
 				</thead>
 				<tbody>
 				</tbody>
-
 			</table>
-			<div id="ca_actualiza">
+			<table class="tabla_ca" id="semestre2" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 2</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre3" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 3</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre4" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 4</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre5" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 5</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre6" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 6</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre7" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 7</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre8" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 8</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="tabla_ca" id="semestre9" style="width:700px; margin-left:30px; margin-top:70px;">
+				<thead class="dd_encabezado_tablaConsulta">
+					<tr>
+						<th>SEMESTRE: 9</th>
+						<th>PLAN:</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
+					<tr>
+						<th style="width:50px">CLAVE</th>
+						<th style="width:300px">MATERIA</th>
+						<th style="width:50px">NO. CRÉDITOS</th>
+						<th style="width:50px">HC</th>
+						<th style="width:100px">ETAPA</th>
+						<th style="width:50px">REQ. SERIACION</th>
+						<th style="width:30px">MODIFICAR</th>
+						<th style="width:30px">ELIMINAR</th>
+					</tr>
+				</thead>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OBLIGATORIAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+						<tr>
+							<th colspan="8">OPTATIVAS</th>
+						</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
+					<th colspan="2">GRUPOS Y TURNOS:</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<!-- <div id="ca_actualiza">
 				<input type="button" style="width:180px;" value="Actualizar Carga"  class="estilo_button2" name="btnActualizarCa" id="btnActualizarCargaV" />
-			</div>
+			</div> -->
 			<!-------------------------------------------------------------------------------------------->
 
 			<!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
@@ -522,36 +739,163 @@
 
 	<script type="text/javascript">
 		var actualizar = false;
+		var USERS_ID = $("#globalUserId").val();
+		var PROGRAMAEDU = 0;
+		var $loader = $("#ajaxLoad");
+		var $buttonCopiar = $("#buttonCopiar");
+
+		function insertStr(stringTarget,stringAdd,stringIndex)
+		{
+			var string1 = stringTarget.substring(0,stringIndex);
+			var string2 = stringTarget.substring(stringIndex);
+
+			return String(string1+stringAdd+string2);
+		}
+
+		function copiarCarga()
+		{
+
+			$buttonCopiar.attr("disabled",true).css('background-color','#C8C8C8');
+			$loader.show();
+			// Asignar usuario
+			$("#periodoUsersId").val(USERS_ID);
+			// Serializar formulario
+			var dataCopia = $("#formCopiarCarga").serialize();
+			// Crear copia con transacción para evitar inconsistencias en BD
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/copiarcarga'); ?>",
+				type: "post",
+				data: dataCopia,
+				success: function(periodo){
+					//$loader.hide();
+					$("#cargaCompleta").show();
+					// Limpieza de controles
+					$("#tablaCopiarCarga").find("input,select").val("");
+					// Añadir periodo
+					$("#periodo").append("<option value='" + periodo + "'>" + insertStr(periodo,"-",4) + "</option>");
+					$("#periodo").val(periodo);
+					// Consultar carga
+					obtenerCarga(periodo,PROGRAMAEDU);
+
+				},
+				error: function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				},
+				complete:function(){
+					$loader.hide();
+					$buttonCopiar.attr("disabled",false).css('background-color','#004000');
+				}
+			});
+		}
+
+		function obtenerCarga(periodo,programa)
+		{
+			// Obtene la carga academica si existe en el momento
+			//alert(programa);
+			$.post("<?php echo URL::to('cargaacademica/obtenercarga'); ?>",{periodo:periodo,programa:programa},function(data){
+				// Limpiar tablas y encabezado de las mismas
+				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+				$(".dd_encabezado tr th:eq(1)").empty();
+
+				for (var i = 0; i < data.uas.length; i++)
+				{
+					var renglon = "";
+					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+					var ua = data.uas[i].uaprendizaje;
+					var semestreua = data.uas[i].semestre;
+
+					renglon = "<tr>" +
+								"<td>" + data.uas[i].uaprendizaje + "</td>" +
+								"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
+								"<td>" + data.uas[i].creditos + "</td>" +
+								"<td>" + data.uas[i].HC + "</td>" +
+								"<td>" + data.uas[i].etapa + "</td>" +
+								"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+								"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
+								"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "'/>" + "</td>" +
+							  "</tr>";
+
+					if (data.uas[i].caracter == 1)
+					{
+						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
+					}
+					else
+					{
+						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
+					}
+				}
+				// Para generar los grupos de la carga
+				for (var i = 0; i < data.grupos.length; i++)
+				{
+					var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
+					if(grupoTurno.length == 0)
+						grupoTurno += data.grupos[i].grupo + " ";
+					else
+						grupoTurno += ", "+data.grupos[i].grupo;
+					$("#semestre" + data.grupos[i].semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+grupoTurno+"</td></tr>");
+				}
+
+				// Para mostrar el plan al que pertenece la carga de cada semestre
+				for (var i = 0; i < data.planSemestres.length; i++)
+				{
+					$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
+				}
+
+				// Activar modales en la modificacion de las filas
+				//activarModal();
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
+
+
 	</script>
+
 	<script type="text/javascript">
 			$(document).ready(function () {
-
 				// Limpiar controles
 				$("#selecciona_plan").val("");
 				$("#periodo").val("");
 				$("#carreraAdmin").val("");
+				// Inicializar controles
+				var $buttonCopiarCA = $("#btn_copiarCa").hide();
+				var $labelPeriodoCopia = $("#labelPeriodoCopia");
+				$("#cargaCompleta").hide();
 				// Create a jqxListBox
+
 				$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
 
+				$("#carreraAdmin").on("change",function(event){
+					event.preventDefault();
+					$buttonCopiarCA.hide();
+					PROGRAMAEDU = $("#carreraAdmin").val();
+					console.log(PROGRAMAEDU);
 
-				$("#listaPlanVigente").on('checkChange', function (event) {
-					var args = event.args;
-					if (args.checked) {
-						$("#Events").text("Checked: " + args.label);
-					}
-					else {
-						$("#Events").text("Unchecked: " + args.label);
-					}
+					$.ajax({
+						url: "<?php echo URL::to('cargaacademica/ultimoperiodo'); ?>",
+						type: "post",
+						data: {programaedu: PROGRAMAEDU},
+						success:function(periodo){
+							if(periodo === 0)
+							{
+								alert("No existe una carga anterior para el programa educativo seleccionado.");
+							}
+							else
+							{
+								$buttonCopiarCA.show();
+								$labelPeriodoCopia.text(insertStr(periodo,'-',4));
+								$("#programaCopia").val(PROGRAMAEDU);
+								$("#periodoCopia").val(periodo);
+							}
 
-					var items = $("#listaPlanVigente").jqxListBox('getCheckedItems');
-					var checkedItems = "";
-					$.each(items, function (index) {
-						if (index < items.length - 1) {
-							checkedItems += this.label + ", ";
+						},
+						error:function(errorText,textError,errorThrow){
+							alert("Error: " + errorText.responseText);
 						}
-						else checkedItems += this.label;
 					});
-					$("#CheckedItems").text(checkedItems);
+
+
 				});
 			});
 		</script>

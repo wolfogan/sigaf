@@ -6,7 +6,7 @@ class CargaAcademicaController extends BaseController
 	{
 		$this->beforeFilter('auth');
 	}
-	
+
 	/**
 	 * Obtener la vista del registro inicial de carga acádemica.
 	 * @return [type]
@@ -19,7 +19,7 @@ class CargaAcademicaController extends BaseController
 		$codigosPeriodo = array(); // ó []
 		// ["20101" => "2010-1"]
 		for ($i=0 ; $i < count($periodos) ; $i++)
-		{ 
+		{
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
@@ -27,16 +27,16 @@ class CargaAcademicaController extends BaseController
 		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
 
 		// CATALOGOS GENERALES:
-		// 
+		//
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
 
 		// Oblitatoria, optativa
 		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
-		
+
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
-		
+
 
 		$data = compact('codigosPeriodo','programas','periodosPrograma','tiposCaracter','turnos','unidades');
 		return View::make('ca.registro')->with($data);
@@ -55,17 +55,17 @@ class CargaAcademicaController extends BaseController
 
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		
+
 		$codigosPeriodo = array(); // ó []
 		// ["20101" => "2010-1"]
 		for ($i=0 ; $i < count($periodos) ; $i++)
-		{ 
+		{
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
 		// Oblitatoria, optativa
 		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
-		
+
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
 
@@ -73,23 +73,34 @@ class CargaAcademicaController extends BaseController
 		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
 
 		// Obtener último período de carga
-		$ultimoPeriodoCarga = DB::table('carga')
-								->select('periodo')
-								->orderBy('periodo','desc')
-								->first();
+
 
 		return View::make('ca.subsecuente')->with(compact('codigosPlanes','periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
 	}
 
+	public function postUltimoperiodo()
+	{
+		$programaedu = Input::get('programaedu');
+		$ultimoPeriodoCarga = DB::table('carga')
+			->select('periodo')
+			->where('programaedu',$programaedu)
+			->orderBy('periodo','desc')
+			->first();
+
+		if(empty($ultimoPeriodoCarga))
+			return 0;
+		else
+			return $ultimoPeriodoCarga->periodo;
+	}
 
 	public function getConsulta()
 	{
-		
+
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		
+
 		$codigosPeriodo = array();
-		for ($i=0; $i < count($periodos); $i++) { 
+		for ($i=0; $i < count($periodos); $i++) {
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
@@ -102,7 +113,7 @@ class CargaAcademicaController extends BaseController
 		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
 	}
 
-	
+
 
 	// Altas a tablas principales
 	public function postRegistrarperiodo()
@@ -117,7 +128,7 @@ class CargaAcademicaController extends BaseController
 		$lapso -> inicio = Input::get('periodoFechaInicio');
 		$lapso -> fin = Input::get('periodoFechaFin');
 		$lapso -> users_id = Input::get('periodoUsersId');
-		
+
 
 		$lapso -> save();
 
@@ -141,8 +152,8 @@ class CargaAcademicaController extends BaseController
 	}
 
 	// CONSULTAS A CARGA ACADEMICA
-	
-	// Obtener programas por usuario 
+
+	// Obtener programas por usuario
 	public function postObtenernombreprograma()
 	{
 		$programa = Input::get('programa');
@@ -157,7 +168,7 @@ class CargaAcademicaController extends BaseController
 		//$programa = Input::get('programa');
 		$planesWhereIn = Input::get("planes");
 
-		
+
 		// Carreras de los planes de estudio
 		$programas = DB::table("plan_programa")
 				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
@@ -167,8 +178,8 @@ class CargaAcademicaController extends BaseController
 				->distinct()
 				->get();
 		// Catalogos y programas educativos
-		
-		
+
+
 		return Response::json($programas);
 	}
 
@@ -178,14 +189,14 @@ class CargaAcademicaController extends BaseController
 		// Tabla plan_programa
 		$programaedu = Input::get("programaedu");
 
-		$planes = DB::table('plan_programa') 
+		$planes = DB::table('plan_programa')
 					-> orderBy('plan','desc')
-					-> where('programaedu',$programaedu) 
-					-> take(2) 
+					-> where('programaedu',$programaedu)
+					-> take(2)
 					-> get();
-		
+
 		$enviarPlanes = [];
-		foreach ($planes as $key => $value) 
+		foreach ($planes as $key => $value)
 		{
 			$enviarPlanes[] = $planes[$key] -> plan;
 		}
@@ -215,7 +226,7 @@ class CargaAcademicaController extends BaseController
 	{
 		$programa = Input::get("programa");
 		$periodo = Input::get("periodo");
-		
+
 		$grupos = DB::table("grupos")
 					->where("programaedu","=",$programa)
 					->where("periodo","=",$periodo)
@@ -238,7 +249,7 @@ class CargaAcademicaController extends BaseController
 				->where('p_ua.caracter','=',$caracter)
 				->orderBy('p_ua.uaprendizaje','asc')
 				->get();
-		
+
 		$uaformateadas = [];
 		// Formatear unidades para que aparezca de la siguiente forma 11236 - Matemáticas
 		foreach ($UAS as $ua) {
@@ -247,7 +258,7 @@ class CargaAcademicaController extends BaseController
 		}
 		return $uaformateadas;
 	}
-	
+
 	public function postRegistrarcarga()
 	{
 		$grupos = Input::get('grupos');
@@ -264,7 +275,7 @@ class CargaAcademicaController extends BaseController
 			}
 		}
 
-		
+
 		return "Carga dada de alta con exito!";
 	}
 
@@ -277,7 +288,7 @@ class CargaAcademicaController extends BaseController
 		// Obtener grupos registrados se uso inyección por la complejidad del query en like
 		$gruposAll = DB::select(DB::raw("SELECT CONCAT(grupos.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = grupos.turno) FROM 1 FOR 1)) as grupo
 								FROM grupos WHERE grupos.programaedu = ? AND grupos.periodo = ? AND grupos.grupo LIKE '_".$semestre."_' ") , array($programa, $periodo));
-		
+
 		$gruposUA = DB::select("SELECT CONCAT(carga.grupo,' - T',SUBSTR((SELECT turnos.descripcion FROM turnos WHERE turnos.turno = (SELECT grupos.turno FROM grupos WHERE grupos.grupo = carga.grupo and grupos.periodo = carga.periodo)) FROM 1 FOR 1)) as grupo
 								FROM carga WHERE carga.programaedu = :programaedu AND carga.periodo = :periodo AND carga.semestre = :semestre AND  carga.uaprendizaje = :uaprendizaje" , array('programaedu' => $programa, 'periodo' => $periodo, 'semestre' => $semestre, 'uaprendizaje' => $uaprendizaje));
 		/*DB::table('grupos')
@@ -305,15 +316,15 @@ class CargaAcademicaController extends BaseController
 
 			$g->grupo = (string)$g->grupo.' - '." T".substr($turno->descripcion, 0,1);
 		}*/
-		// Marcar grupos que coinciden y agregar atributo check->true o false 
+		// Marcar grupos que coinciden y agregar atributo check->true o false
 		// dependiendo si esta asociado para mostrar seleccionado el item
 		$gruposSource = [];
 		foreach ($gruposAll as $keyA => $valueA) {
-			
+
 			$gruposSource[] = $gruposAll[$keyA] -> grupo;
-			
+
 			foreach ($gruposUA as $keyB => $valueB) {
-				
+
 				if($gruposUA[$keyB]->grupo==$gruposAll[$keyA]->grupo)
 				{
 					$gruposAll[$keyA]->check = true;
@@ -327,8 +338,8 @@ class CargaAcademicaController extends BaseController
 		$data -> grupos = $gruposAll;
 		$data -> source = $gruposSource;
 		//$data -> gruposua = $gruposUA;
-		
-		
+
+
 		return Response::json($data);
 	}
 
@@ -403,7 +414,7 @@ class CargaAcademicaController extends BaseController
 				carga.programaedu,
 				GROUP_CONCAT(DISTINCT detalleseriacion.uaprequisito) as series,
 				(SELECT GROUP_CONCAT(cr.grupo) FROM carga cr WHERE cr.uaprendizaje = carga.uaprendizaje AND cr.programaedu = carga.programaedu AND cr.semestre = carga.semestre and cr.periodo = carga.periodo) as grupos,
-				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos 
+				(SELECT GROUP_CONCAT( DISTINCT SUBSTR(turnos.descripcion FROM 1 FOR 1)) FROM carga ca INNER JOIN grupos ON ca.grupo = grupos.grupo INNER JOIN turnos ON grupos.turno = turnos.turno WHERE ca.semestre = carga.semestre AND ca.uaprendizaje=carga.uaprendizaje AND ca.programaedu = carga.programaedu) AS turnos
 				FROM carga
 				INNER JOIN uaprendizaje ON carga.uaprendizaje  =  uaprendizaje.uaprendizaje
 				INNER JOIN p_ua ON carga.uaprendizaje = p_ua.uaprendizaje AND
@@ -434,7 +445,7 @@ class CargaAcademicaController extends BaseController
 						->where("carga.periodo","=",$periodo)
 						->where("grupos.programaedu","=",$programa)
 						->get();
-		
+
 		$planSemestres = DB::table("carga")
 						->select("carga.semestre","carga.periodo","grupos.plan")
 						->join("grupos","carga.grupo","=","grupos.grupo")
@@ -468,7 +479,7 @@ class CargaAcademicaController extends BaseController
 		$users_id = Input::get('grupos_userid');
 		$grupos = Input::get('grupos_grupos');
 		$grupos = explode(',', $grupos);
-		
+
 		DB::transaction(function() use($programaedu,$periodo,$semestre,$uaprendizaje,$users_id,$grupos){
 			DB::table('carga')
 				->where('programaedu',$programaedu)
@@ -484,6 +495,83 @@ class CargaAcademicaController extends BaseController
 		});
 
 		return implode(',', $grupos);
+	}
+
+	public function postCopiarcarga()
+	{
+
+		$programaCopia = Input::get('programa_copia');
+		$periodoCopia = Input::get('periodo_copia');
+		$newUsers_id = Input::get('periodo_usersid');
+
+		$newPeriodo = Input::get('periodoAnio').Input::get('periodoLapso');
+		$periodo_pedu = Input::get('periodoTipo');
+		$year = Input::get('periodoAnio');
+		$mes = Input::get('periodoLapso');
+		$descripcion = Input::get('periodoDescripcion');
+		$inicio = Input::get('periodoFechaInicio');
+		$fin = Input::get('periodoFechaFin');
+
+
+
+		$data = DB::transaction(function()use($programaCopia,$periodoCopia,$newPeriodo,$periodo_pedu,$year,$mes,$descripcion,$inicio,$fin,$newUsers_id){
+			$lapso = new Periodo;
+			$lapso -> periodo = $newPeriodo;
+			$lapso -> periodo_pedu = $periodo_pedu;
+			$lapso -> year = $year;
+			$lapso -> mes = $mes;
+			$lapso -> descripcion = $descripcion;
+			$lapso -> inicio = $inicio;
+			$lapso -> fin = $fin;
+			$lapso -> users_id = $newUsers_id;
+			$lapso -> save();
+
+			$grupos = DB::table('grupos')
+						-> select('grupo','plan','turno','users_id')
+						-> where('periodo',$periodoCopia)
+						-> where('programaedu',$programaCopia)
+						-> get();
+			foreach ($grupos as $grupo) {
+				DB::table('grupos')
+						->insert(
+								array(
+										'grupo'=>$grupo->grupo,
+										'periodo'=>$newPeriodo,
+										'plan'=>$grupo->plan,
+										'programaedu'=>$programaCopia,
+										'turno'=>$grupo->turno,
+										'users_id'=>$newUsers_id
+									)
+								);
+			}
+
+			$registrosCarga = DB::table('carga')
+								-> where('periodo',$periodoCopia)
+								-> where('programaedu',$programaCopia)
+								-> orderBy('semestre','asc')
+								-> orderBy('grupo','asc')
+								-> get();
+
+			foreach($registrosCarga as $registro)
+			{
+				DB::table('carga')
+						->insert(
+								array(
+										'grupo'=>$registro->grupo,
+										'periodo'=>$newPeriodo,
+										'programaedu'=>$registro->programaedu,
+										'uaprendizaje'=>$registro->uaprendizaje,
+										'semestre'=>$registro->semestre,
+										'users_id'=>$newUsers_id
+									)
+								);
+			}
+
+			return $newPeriodo;
+
+		}); // End transaction
+
+		return $data;
 	}
 
 }

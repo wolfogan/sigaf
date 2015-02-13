@@ -14,23 +14,23 @@
 	<!---------------------------------------------------------------------------------------->
 	<!-- Creación de Ventanas Modales -->
 	<script src="../js/ventanamodal.js"></script>
-	
+
 	<!---------------------------------- Checkboxlist -------------------------------------->
-		
+
 	<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
 	<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
-	
+
 
 
  <!-- PARA LISTA DENTRO DE MODAL, PARA MODIFICAR GRUPOS -->
 	<script type="text/javascript">
 			$(function () {
-				
+
 				// Create a jqxListBox
 				$("#listaUa").jqxListBox({width: 250, checkboxes: true, height: 300, theme: 'orange'});
-				
+
 				/* Check several items.
 				$("#listaUa").jqxListBox('checkIndex', 0);
 				$("#listaUa").jqxListBox('checkIndex', 1);
@@ -60,7 +60,7 @@
 	</script>
 
 	<!------------------------------------------------------------------------------------->
-	
+
 	<!-------------------------------- AQUI VA HORA Y FECHA-------------------------------->
 	<script src="../js/tiempoactual.js"></script>
 	<script>$(function(){startWatch(); return false;});</script>
@@ -71,7 +71,7 @@
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 	<script type="text/javascript" src="../js/prettify.js"></script>
-	
+
 	<!-------------------------------- PARA MULTISELECT ---------------------------->
 	<script type="text/javascript">
 	$(function() {
@@ -88,7 +88,7 @@
 				$('#selectGruposVigente').multiselect('select',element.val());
 				return false;
 			}
-			
+
 			if($("#selectCaracterAnterior").val()==1)
 			{
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
@@ -96,11 +96,11 @@
 				return false;
 			}
 		}
-	}
+	};
 	var configurationOptativo =
 	{
 		includeSelectAllOption: true
-	}
+	};
 	</script>
 
 	<!-------------------------------------------------------------------------------------------->
@@ -111,7 +111,7 @@
 	<input type="hidden" name="user_id" id="userID" value="{{Auth::user()->id}}"/>
 
 	<!-------------------------------------- MODAL LISTA PARA MODIFICAR GRUPOS -------------------------------------->
-	<div class="md-modal2 md-effect-11" id="pruebaCa"> 
+	<div class="md-modal2 md-effect-11" id="pruebaCa">
 		<form  id="formActualizarGrupos" action="javascript: actualizarGrupos()" class="md-content" method="post">
 			<h3>Modificar grupos</h3>
 			<div class="tblCatalogos">
@@ -137,7 +137,7 @@
 
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 
-	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
+	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo">
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
 			<h3>Agregar Período</h3>
 			<div class="tblCatalogos">
@@ -176,8 +176,8 @@
 	</div>
 
 	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN VIGENTE -------------------------------------->
-	
-	<div class="md-modal md-effect-11" id="modalGruposVigente"> 
+
+	<div class="md-modal md-effect-11" id="modalGruposVigente">
 		<form id="formGV" action="javascript:registrarGrupo(true);" class="md-content" method="post">
 			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
@@ -188,7 +188,7 @@
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarreraV" maxlength="1"  readonly required/>
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestreV" maxlength="1"  readonly required/>
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificadorV" maxlength="1" placeholder="1" required/>
-							
+
 						</td>
 					</tr>
 					<tr>
@@ -228,7 +228,7 @@
 
 	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN ANTERIOR -------------------------------------->
 
-	<div class="md-modal md-effect-11" id="modalGruposAnterior"> 
+	<div class="md-modal md-effect-11" id="modalGruposAnterior">
 		<form id="formGA" action="javascript:registrarGrupo(false);" class="md-content" method="post">
 			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
@@ -324,9 +324,9 @@
 			</div>
 
 			<div class="periodoCa">
-				
+
 				<div class="divPeriodo">
-					Periódo: 
+					Periódo:
 					<select type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo">
 						@foreach ($codigosPeriodo as $periodo)
 							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
@@ -334,7 +334,7 @@
 					</select>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
 				</div>
-			
+
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 					@if (Auth::user()->programaedu == 0)
@@ -347,10 +347,10 @@
 				</div>
 			</div>
 
-			
 
-			
-			
+
+
+
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan vigente</legend>
@@ -362,7 +362,7 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-						
+
 					</div>
 					<div class="listasCa">
 						<div id="listboxPlanVigente"></div>
@@ -394,7 +394,7 @@
 				<input type="button" style="width:200px;" class="estilo_button2" value="Borrar Carga" name="planAntCa" id="planAntCa" />
 			</div>
 
-			
+
 			<!-- <input type="button" style="width:200px;" class="md-trigger" value="Prueba" data-modal="pruebaCa" id="pruebaCa" /> -->
 
 
@@ -412,7 +412,7 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-						
+
 					</div>
 					<div class="listasCa">
 						 <div id="listboxPlanAnterior"></div>
@@ -439,7 +439,7 @@
 					</div>
 				</fieldset>
 			</div>
-			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ----------------------------------> 
+			<!---------------------------------- REGISTROS DE CARGA ACADEMICA ---------------------------------->
 			<div id="contenedorRegistroca_mostrar">
 				<a id="botonAll" class="btnStyleAllTable">Todos</a>
 				<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
@@ -487,7 +487,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
 				<table class="dd_tabla" id="semestre2">
 					<thead class="dd_encabezado">
@@ -533,7 +533,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
 				<table class="dd_tabla" id="semestre3">
 					<thead class="dd_encabezado">
@@ -580,7 +580,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
 				<table class="dd_tabla" id="semestre4">
 					<thead class="dd_encabezado">
@@ -626,7 +626,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
 				<table class="dd_tabla" id="semestre5">
 					<thead class="dd_encabezado">
@@ -635,7 +635,7 @@
 							<th></th>
 						</tr>
 					</thead>
-					
+
 
 					<thead class="dd_encabezado_colorVerde">
 
@@ -653,7 +653,7 @@
 					<thead class="dd_encabezado_colorVerde">
 						<tr>
 							<th colspan="8">OBLIGATORIAS</th>
-							
+
 						</tr>
 					</thead>
 					<tbody>
@@ -674,7 +674,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
 				<table class="dd_tabla" id="semestre6">
 					<thead class="dd_encabezado">
@@ -720,7 +720,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
 				<table class="dd_tabla" id="semestre7">
 					<thead class="dd_encabezado">
@@ -767,7 +767,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
 				<table class="dd_tabla" id="semestre8">
 					<thead class="dd_encabezado">
@@ -813,7 +813,7 @@
 					</tbody>
 				</table>
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
-			
+
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
 				<table class="dd_tabla" id="semestre9">
 					<thead class="dd_encabezado">
@@ -883,10 +883,10 @@
 		var uasAnterior = [];
 		var actualizar = false;
 		var renglonActualizarGrupos;
-		
+
 		var NUM_PROGRAMA = 0;
 		var USERS_ID = 0;
-		
+
 		function insertStr(stringTarget,stringAdd,stringIndex)
 		{
 			var string1 = stringTarget.substring(0,stringIndex);
@@ -902,7 +902,7 @@
 				if(dd<10) dd='0'+dd;
 				if(mm<10) mm='0'+mm;
 				return String(yyyy+"-"+mm+"-"+dd);
-		}
+		};
 
 		function activarModal()
 		{
@@ -926,12 +926,12 @@
 						reset_campos();
 					}
 					else{
-						
+
 					}
 					// Optimizar esta parte con una bandera de actualizacion
 					if($("#limpiar").val()=="Cancelar")
 						$("#limpiar").click();
-					
+
 					//ActualizarUAS($("#noPlan").val());
 				}
 
@@ -939,7 +939,7 @@
 					// Condicion de los rows
 					//if($("#select_carreras").val()==null)
 					//	return;
-					removeModal( classie.has( el, 'md-setperspective' ) ); 
+					removeModal( classie.has( el, 'md-setperspective' ) );
 				}
 
 				el.addEventListener( 'click', function( ev ) {
@@ -972,20 +972,20 @@
 			//$("#periodoUsersId").val(USERS_ID);
 
 			$.post("<?php echo URL::to('cargaacademica/registrarperiodo'); ?>",dataPeriodo,function(result){
-				var option = "<option value='"+ + result['periodo'] +"'>"  + insertStr(result['periodo'],"-",4) + "</option>";
+				var option = "<option value='"+ result['periodo'] +"'>"  + insertStr(result['periodo'],"-",4) + "</option>";
 				$("#periodo").append(option);
 				$("#periodo").val(result['periodo']);
 
 
 				alert("Periodo dado de alta exitosamente!!!");
 				$("#salirPeriodo").click();
-				
+
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
 			});
 		}
-		
+
 		/**
 		 * Funcion para registrar un grupo en la carga actual
 		 * @param  {bool} vigente Verifica si es un grupo del plan vigente o anterior
@@ -994,7 +994,7 @@
 		function registrarGrupo(vigente)
 		{
 			var dataGrupo;
-			if(vigente==true)
+			if(vigente == true)
 			{
 				dataGrupo = $("#formGV").serialize();
 			}
@@ -1179,17 +1179,17 @@
 				// Limpiar tablas y encabezado de las mismas
 				$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
 				$(".dd_encabezado tr th:eq(1)").empty();
-				
-				for (var i = 0; i < data.uas.length; i++) 
+
+				for (var i = 0; i < data.uas.length; i++)
 				{
 					var renglon = "";
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
 					var ua = data.uas[i].uaprendizaje;
 					var semestreua = data.uas[i].semestre;
-					
+
 					if (data.uas[i].caracter == 1)
 					{
-						renglon = "<tr>" + 
+						renglon = "<tr>" +
 									"<td>" + data.uas[i].uaprendizaje + "</td>" +
 									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
 									"<td>" + data.uas[i].creditos + "</td>" +
@@ -1199,7 +1199,7 @@
 									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
 									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "'/>" + "</td>" +
 								  "</tr>";
-						
+
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
 
 					}
@@ -1227,14 +1227,14 @@
 							},
 							async:false
 						});*/
-						
+
 						renglon = "<tr>" +
 									"<td>" + data.uas[i].uaprendizaje + "</td>" +
 									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
 									"<td>" + data.uas[i].creditos + "</td>" +
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +
-									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+									"<td>" + ((data.uas[i].series === null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
 									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
 									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "' />" + "</td>" +
 								  "</tr>";
@@ -1243,7 +1243,7 @@
 					}
 				}
 				// Para generar los grupos de la carga
-				for (var i = 0; i < data.grupos.length; i++) 
+				for (var i = 0; i < data.grupos.length; i++)
 				{
 					var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
 					if(grupoTurno.length == 0)
@@ -1276,7 +1276,7 @@
 				alert("Es necesario seleccionar una unidad de aprendizaje para generar la carga");
 				return false;
 			}
-			
+
 			// Validar si ha seleccionado grupos en el caso de las optativas
 			var grupos = $(selectGrupos).val();
 			if(grupos == null)
@@ -1323,7 +1323,7 @@
 					// Depuración
 					console.log("Planes de Estudio {programa:"+programaedu+"} :");
 					console.log(planes);
-					
+
 					// Evaluar cantidad de planes
 					if(planes.cantidad != 0)
 					{
@@ -1368,7 +1368,7 @@
 							});
 						});
 						var programa = programaedu;
-						//Obtener las unidades de aprendizaje obligatorias plan vigente formateadas Ej. 11236 - Matematicas 
+						//Obtener las unidades de aprendizaje obligatorias plan vigente formateadas Ej. 11236 - Matematicas
 						$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:programa,caracter:1},function(uas){
 							$("#listboxPlanVigente").jqxListBox({source:uas});
 						})
@@ -1395,7 +1395,7 @@
 								});
 							});
 
-							//Obtener las unidades de aprendizaje obligatorias plan anterior formateadas Ej. 11236 - Matematicas 
+							//Obtener las unidades de aprendizaje obligatorias plan anterior formateadas Ej. 11236 - Matematicas
 							$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:programa,caracter:1},function(uas){
 								$("#listboxPlanAnterior").jqxListBox({source:uas});
 							})
@@ -1407,7 +1407,7 @@
 					//callback(planes);
 				},
 				error: function(errorText,textError,errorThrow){
-					alert("Error: " + errorText.responseText); 
+					alert("Error: " + errorText.responseText);
 				}
 			});
 		}
@@ -1443,10 +1443,10 @@
 				// Cambiar valores para el registro de los grupos en la modal.
 				$("#grupoCarreraV,#grupoCarreraA").val(NUM_PROGRAMA); // Asignar carrera - Administrador para grupo
 				$(".grupoPrograma").val(NUM_PROGRAMA);
-				
+
 				// Reiniciar select de tipo caracter
 				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
-				
+
 				// Indicar nombre del programa
 				$.post("<?php echo URL::to('cargaacademica/obtenernombreprograma') ?>",{programa:NUM_PROGRAMA},function(nombre){
 					$("#nombrePrograma").text("Lic. en " + nombre);
@@ -1455,7 +1455,7 @@
 				.fail(function(errorText,textError,errorThrow){
 					alert("Error: " + errorText.responseText);
 				});
-				
+
 				obtenerPlanesEstudio(NUM_PROGRAMA);
 			}
 			// CUANDO CAMBIEN EL PERIODO
@@ -1465,7 +1465,7 @@
 					console.log("Periodo seleccionado: " + periodo);
 					$(".grupoPer").text($(this).find("option:selected").text());
 					$(".grupoPeriodo").val(periodo);
-					
+
 					if(NUM_PROGRAMA != 0)
 					{
 						obtenerCarga(periodo,NUM_PROGRAMA);
@@ -1474,25 +1474,25 @@
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
 			$("#carreraAdmin").on("change",function(){
-				
+
 				// Cambiar valores para el registro de los grupos en la modal.
 				$("#grupoCarreraV,#grupoCarreraA").val($(this).val()); // Asignar carrera - Administrador para grupo
 				$(".grupoPrograma").val($(this).val());
-				
+
 				// Reiniciar select de tipo caracter
 				$("#selectCaracterVigente,#selectCaracterAnterior").val(1);
-				
+
 				// Indicar nombre del programa
 				$("#nombrePrograma").text("Lic. en " + $("#carreraAdmin option:selected").text());
 				$(".grupoPgr").text($("#nombrePrograma").text());
-				
+
 				// Almacenar programa y periodo
 				var programa = $("#carreraAdmin").val();
 
 				//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
 				var periodo = $("#periodo").val();
 				console.log("Programa: " + programa + ", " + " Periodo: " + periodo);
-				
+
 				// Obtener planes de estudio.
 				obtenerPlanesEstudio(programa);
 
@@ -1542,7 +1542,7 @@
 				// Limpiar control
 				$("#listaUa").jqxListBox('clear');
 				var semestre = $(this).attr("semestre"),periodo=$(this).attr("periodo"),programa=$(this).attr("programa"),uaprendizaje = $(this).attr('uaprendizaje');
-				
+
 				// Cargar los valores predefinidos input:hidden para la actualizacion de los grupos
 				$("#actualizarGruposPrograma").val(programa);
 				$("#actualizarGruposPeriodo").val(periodo);
@@ -1559,7 +1559,7 @@
 						$("#listaUa").jqxListBox({source: data.source});
 						console.log(data.source);
 						console.log(data.grupos);
-						
+
 						// Seleccionar items almacenados
 						for (var i = data.grupos.length - 1; i >= 0; i--) {
 							if(data.grupos[i].check == true)
@@ -1604,7 +1604,7 @@
 					});
 				}
 			});
-			
+
 			// ELIMINAR TODA LA CARGA
 			$("#planAntCa").on("click",function(){
 				$.post("<?php echo URL::to('cargaacademica/eliminarcarga'); ?>").done(function(){
@@ -1634,12 +1634,12 @@
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
-	
 
 
 
 
-	
-	
+
+
+
 </body>
 </html>
