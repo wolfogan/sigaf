@@ -410,3 +410,318 @@ var numPlanes = $("#planes").val();
 		$nombrePrograma = ProgramaEducativo::find($programa);
 		$nombrePrograma = $nombrePrograma -> descripcion;
 		$var_nombre = array("nombrePrograma");
+
+
+
+/********CARGA FINALLLLLLLLLLLLLLLLLLLL CAMBIO ************************************************/
+
+carga/registro.blade.php
+HTML:
+
+<!-- Verificar planes de estudio -->
+	<input type="hidden" id="planes" value="{{$numPlanes}}" />
+
+
+JAVASCRIPT:
+
+var planes = $("#planes").val() > 0;
+			// Verificar existencia de planes de estudio
+			if(planes == false)
+			{
+				alert("No existen planes de estudio registrados");
+				// Desactivar opciones
+				$("#planVigente , #planAnterior").find("select, input").attr("disabled" , true);
+			}
+			else
+			{
+				// INICIALIZAR ENTORNO PARA GENERAR LA CARGA
+				
+				
+				//vaar nomPlanVigente = insertStr(planVigente),"-",3);
+				//$("#nombreVigente").val("Plan " + nomPlanVigente);
+
+				// Inicializar fecha periodo
+				var date = new Date();
+				$("#periodoFechaInicio").val(date.now());
+				$("#periodoFechaFin").val(date.now());
+				//$("#periodoFechaInicio").prop('min',date.now());
+				//$("#periodoFechaInicio").prop('max','2015-08-08');
+
+
+				// Obtener catalogos para el registro de la carga academica
+				$.get("<?php echo URL::to('cargaacademica/catalogos'); ?>",function(data)
+				{
+					// Asignar nombre de la coordinación en caso de que sea un usuario coordinador
+					//$("#nombrePrograma").text("Lic. en " + data.nombrePrograma);
+
+					// Asignar tipos de período a modal de registro de períodos: SEMESTRAL,SABATINO, ETC.
+					var options = "";
+					for(key in data.periodosPrograma)
+					{
+						var periodo = data.periodosPrograma[key].periodo_pedu;
+						var descripcion = data.periodosPrograma[key].descripcion;
+						options += "<option value='" + periodo + "'>" + descripcion + "</option>"; 
+					}
+					$("#periodoTipo").html(options);
+
+					// Asignar tipos de carácter a la lista de los planes: OBLIGATORIO, OPTATIVA
+					options = "";
+					for(key in data.tiposCaracter)
+					{
+						var caracter = data.tiposCaracter[key].caracter;
+						var descripcion = data.tiposCaracter[key].descripcion;
+						options += "<option value='" + caracter + "'>" + descripcion + "</option>" 
+					}
+					$("#selectCaracterVigente,#selectCaracterAnterior").html(options);
+
+					// Asignar los periodos registrados: 2014-1, 2014-2
+					options = "";
+					for(key in data.codigosPeriodo)
+					{
+						var codigo = data.codigosPeriodo[key].codigo;
+						var formato = data.codigosPeriodo[key].formato;
+						options += "<option value = '" + codigo + "'>" + formato + "</option>"; 
+					}
+					$("#periodo").html(options);
+					$("#periodo").val("");
+
+					// Asignar los turnos para los grupos TM, TV , etc.
+					options = "";
+					for(key in data.turnos)
+					{
+						var turno = data.turnos[key].turno;
+						var descripcion = data.turnos[key].descripcion;
+						options += "<option value = '" + turno + "'>" + descripcion + "</option>"; 
+					}
+					$("#grupoTurno").html(options);
+
+
+
+					// Asignar los semestres
+					options = "";
+					var semestres = [1,2,3,4,5,6,7,8,9];
+					for(key in semestres)
+					{
+						/*var option = document.createElement('option');
+						option.text = semestres[key];
+						option.value = semestres[key];
+						s.options[s.options.length] = option;*/
+						options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";  
+					}
+					$("#semestresVigente,#semestresAnterior").html(options);
+					$("#semestresVigente , #semestresAnterior").val("");
+					// Cargar input para crear grupos con el semestre elegido
+					$("#grupoSemestreV,#grupoSemestreA").val(1);
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+				// Crear controles para las unidades de aprendizaje
+				$("#listboxPlanVigente").jqxListBox({width: 480,   checkboxes: true, height: 330, theme: 'orange'});
+				$("#listboxPlanAnterior").jqxListBox({width: 480, checkboxes: true, height: 330, theme: 'orange'});
+				// Evento al seleccionar ua's de plan vigente.
+				$("#listboxPlanVigente").on('checkChange', function (event)
+				{
+					var items = $("#listboxPlanVigente").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasVigente = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasVigente.push(this.label.substring(0,5));
+					});
+				});
+				// Evento al seleccionar ua's de plan anterior.
+				$("#listboxPlanAnterior").on('checkChange', function (event)
+				{
+
+					var items = $("#listboxPlanAnterior").jqxListBox('getCheckedItems');
+					// Limpiar arreglo
+					uasAnterior = [];
+					// Agregar al arreglo clave de unidad de aprendizaje
+					$.each(items, function (index)
+					{
+						uasAnterior.push( this.label.substring(0 , 5) );
+					});
+				});
+				
+				
+				// Mostrar controles por privilegio de usuario
+				// Cargar planes de estudio.
+				obtenerPlanesEstudio(function(planes){
+					cargarControlesUsuario(planes);
+				});
+
+			}
+
+
+FUNCIONES:
+
+function obtenerPlanesEstudio(callback)
+		{
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/obtenerplanes') ?>",
+				type : "post",
+				success : function(planes){
+					console.log(planes);
+					var plan = String(planes[0]);
+					$("#nombreVigente").text("Plan " + insertStr(plan,"-",4));
+					$("#grupoVigentePlan").val(plan);
+					$("#grupoPlanVigente").text($("#nombreVigente").text());
+					
+					if(planes.cantidad == 2)
+					{
+						plan = String(planes[1]);
+						$("#nombreAnterior").text("Plan " + insertStr(plan,"-",4));
+						$("#grupoAnteriorPlan").val(plan);
+						$("#grupoPlanAnterior").text($("#nombreAnterior").text());
+					}
+					else
+					{
+						$("#planAnterior").find("input, select").attr("disabled",true);
+					}
+					callback(planes);
+				},
+				error: function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText); 
+				}
+			});
+
+		}
+
+		function cargarControlesUsuario(planes)
+		{
+			numPrograma = {{Auth::user()->programaedu}};
+			USERS_ID = {{Auth::user()->id}};
+			// Asignar usuario a la ventana modal de registro de periodos
+			$("#periodoUsersId").val(USERS_ID);
+			$(".grupoUsersId").val(USERS_ID);
+			
+			planVigente = planes[0];
+			planAnterior = planes[1];
+
+			// Verificar planes de estudio y pasarlos como parametros para los programas del admin.
+			var planesEstudio = [];
+			planesEstudio = (planes.cantidad < 2) ? [planVigente] : [planVigente,planAnterior];
+			
+			console.log(planesEstudio);
+			if(numPrograma == 0) // Administrador
+			{
+				// Cargar programas asociados a los planes de estudio actuales
+				$.ajax({
+					url : "<?php echo URL::to('cargaacademica/obtenerprogramasadmin'); ?>",
+					type : "post",
+					data : { programa : numPrograma, planes : planesEstudio },
+					dataType: "json",
+					success: function(programas){
+						
+						var options = "";
+						for(key in programas)
+						{
+							options += "<option value='"+ programas[key].programaedu +"'>" + programas[key].descripcion + "</option>";
+						}
+						$("#carreraAdmin").html(options);
+						$("#carreraAdmin").val("");
+						
+					},
+					error: function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+						console.log(errorText);
+					}
+				});
+		
+			}
+			else // Coordinador de carrera
+			{
+				$("#grupoCarreraV,#grupoCarreraA").val(numPrograma); // Establecer el numero de carrera para grupo
+				$("#carreraAdmin, #labelCarrera").hide();
+				// Obtener nombre del programa
+				$.ajax({
+					url: "<?php echo URL::to('cargaacademica/obtenernombreprograma'); ?>",
+					type: "post",
+					data : { programa : numPrograma },
+					success: function(nombrePrograma){
+						var nombre = String(nombrePrograma);
+						$("#nombrePrograma").text("Lic. en " + nombre);
+						$(".grupoPgr").text($("#nombrePrograma").text());
+					},
+					error: function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+					}
+				});
+				// Treaer materias
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planVigente,programa:numPrograma,caracter:1},function(uas){
+					$("#listboxPlanVigente").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:planAnterior,programa:numPrograma,caracter:1},function(uas){
+					$("#listboxPlanAnterior").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			}
+			
+		}
+
+
+CargaAcademicaController.php
+
+public function getRegistro()
+	{
+		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$numPlanes = count($planes);
+		return View::make('ca.registro')->with('numPlanes',$numPlanes);
+	}
+
+public function getCatalogos()
+	{
+		// Cuatrimestral, Semestral
+		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
+
+		// Cargar periodos 2010-1, 2010-2
+		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		
+		$codigosPeriodo = array(); // ó []
+		// ["20101" => "2010-1"]
+		for ($i=0 ; $i < count($periodos) ; $i++)
+		{ 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
+		}
+
+		// Oblitatoria, optativa
+		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
+		
+		// Matutino, Vespertino, Interturno
+		$turnos = Turno::all();
+
+		// 1 - Artes, 2 - Administración
+		/*$numPrograma = Auth::user()->programaedu;
+		
+		// 0 - Administrador,!0 - Coordinador
+		// Obtener nombre en caso de ser coordinador
+		$nombrePrograma = "";
+		if ($numPrograma != 0) 
+		{
+			$nombrePrograma = ProgramaEducativo::find($numPrograma);
+			$nombrePrograma = $nombrePrograma -> descripcion;
+		}
+		
+		$var_nombre = array("nombrePrograma");
+
+		// Obtener Planes
+		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		$numPlanes = count($planes);
+		*/
+			// Catalogos y unidades de aprendizaje de los planes de estudio.
+		$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos','unidades');
+
+		return Response::json($data);
+		
+		
+	}

@@ -14,15 +14,15 @@
 	<!---------------------------------------------------------------------------------------->
 	<!-- Creación de Ventanas Modales -->
 	<script src="../js/ventanamodal.js"></script>
-	
+
 	<!---------------------------------- Checkboxlist -------------------------------------->
-		
+
 	<link rel="stylesheet" href="../css/jqx.base.css" type="text/css" />
 	<link rel="stylesheet" href="../css/jqx.orange.css" type="text/css" />
 	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
 
-		
+
 	<!------------------------------------------------------------------------------------->
 
 	<!-------------------------------- AQUI VA HORA Y FECHA-------------------------------->
@@ -35,7 +35,7 @@
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 	<script type="text/javascript" src="../js/prettify.js"></script>
-	
+
 	<!-------------------------------- PARA MULTISELECT ---------------------------->
 	<script type="text/javascript">
 	$(function() {
@@ -52,7 +52,7 @@
 				$('#selectGruposVigente').multiselect('select',element.val());
 				return false;
 			}
-			
+
 			if($("#selectCaracterAnterior").val()==1)
 			{
 				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
@@ -60,11 +60,11 @@
 				return false;
 			}
 		}
-	}
+	};
 	var configurationOptativo =
 	{
 		includeSelectAllOption: true
-	}
+	};
 	</script>
 
 	<!-------------------------------------------------------------------------------------------->
@@ -75,7 +75,7 @@
 
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 
-	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo"> 
+	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo">
 		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
 			<h3>Crear Nuevo Período</h3>
 			<div class="tblCatalogos">
@@ -117,8 +117,8 @@
 	</div>
 
 	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN VIGENTE -------------------------------------->
-	
-	<div class="md-modal md-effect-11" id="modalGruposVigente"> 
+
+	<div class="md-modal md-effect-11" id="modalGruposVigente">
 		<form id="formGV" action="javascript:registrarGrupo(true);" class="md-content" method="post">
 			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
@@ -129,7 +129,7 @@
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" name="grupo_carrera" type="text" id="grupoCarreraV" maxlength="1"  readonly required/>
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_semestre" type="text" id="grupoSemestreV" maxlength="1"  readonly required/>
 							<input style="width: 40px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  name="grupo_identificador" type="text" id="grupoIdentificadorV" maxlength="1" placeholder="1" required/>
-							
+
 						</td>
 					</tr>
 					<tr>
@@ -164,12 +164,12 @@
 				<input type="button" value="Salir" class="md-close salirGrupo"/>
 			</div>
 		</form>
-	</div>	
+	</div>
 	<div class="md-overlay"></div>
-	
+
 	<!------------------------------------------------------------------------------>
 
-	
+
 
 	<!------------------------------------------------------------------------------>
 	<header>
@@ -214,21 +214,24 @@
 
 
 			<div class="periodoCa">
-				
+
 				<div class="divPeriodo">
-					Periodo: 
+					Periodo:
 					<select class="con_estilo" type="text" style="height:30px; width:135px;" name="periodo" id="periodo"/>
 						@foreach ($codigosPeriodo as $periodo)
 							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
 						@endforeach
 					</select>
-					
+
 					<!--<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />-->
 				</div>
-			
+
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
+							@foreach ($programas as $programa)
+								<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
+							@endforeach
 						</select>
 
 				</div>
@@ -246,7 +249,7 @@
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan de estudios</legend>
 					<div class="nombrePlan" id="nombreVigente">Plan XXXX-X</div>
-					
+
 					<div class="filtroMaterias_ca" style="float:left; width:200px;">
 						Plan:
 						<select class="con_estilo" style="width:135px; height:30px" id="selecciona_plan">
@@ -263,7 +266,7 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-						
+
 					</div>
 					<div class="listasCa">
 						<div id="listaPlanVigente"></div>
@@ -295,7 +298,7 @@
 
 
 
-			
+
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 
@@ -323,7 +326,7 @@
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						<tr>
 							<th colspan="8">OBLIGATORIAS</th>
-							
+
 						</tr>
 				</thead>
 				<tbody>
@@ -334,9 +337,9 @@
 						<td>21</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000454</td>
@@ -344,11 +347,11 @@
 						<td>15</td>
 						<td>14</td>
 						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
-						
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
+
 					</tr>
 					<tr>
 						<td>000455</td>
@@ -356,10 +359,10 @@
 						<td>9</td>
 						<td>12</td>
 						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000456</td>
@@ -368,9 +371,9 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000457</td>
@@ -378,10 +381,10 @@
 						<td>4</td>
 						<td>30</td>
 						<td>BASICA</td>
-						<td>none</td>	
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td>none</td>
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000458</td>
@@ -390,9 +393,9 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000459</td>
@@ -401,9 +404,9 @@
 						<td>20</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 					<tr>
 						<td>000460</td>
@@ -412,15 +415,15 @@
 						<td>4</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
-						
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
+
 					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
 						<tr>
 							<th colspan="8">OPTATIVAS</th>
-							
+
 						</tr>
 				</thead>
 				<tbody>
@@ -431,8 +434,8 @@
 						<td>4</td>
 						<td>BASICA</td>
 						<td>none</td>
-						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td> 
-						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td> 
+						<td><input type='button' value='-' title='Modificar' class='clsModificarFila' id='eliminar'/></td>
+						<td><input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar'/></td>
 					</tr>
 				</tbody>
 				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
@@ -522,13 +525,14 @@
 	</script>
 	<script type="text/javascript">
 			$(document).ready(function () {
-			 
+
 				// Limpiar controles
 				$("#selecciona_plan").val("");
 				$("#periodo").val("");
+				$("#carreraAdmin").val("");
 				// Create a jqxListBox
 				$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
-				
+
 
 				$("#listaPlanVigente").on('checkChange', function (event) {
 					var args = event.args;
@@ -553,7 +557,7 @@
 		</script>
 
 
-		
+
 
 
 	<footer>
@@ -564,7 +568,7 @@
 		<!--SCRIPT PARA VENTANA MODAL-->
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
-	
-	
+
+
 </body>
 </html>

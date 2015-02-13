@@ -13,20 +13,9 @@ class CargaAcademicaController extends BaseController
 	 */
 	public function getRegistro()
 	{
-		// Plan de Estudio: 20101,20092 (2 últimos planes de estudio)
-		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
-		$numPlanes = count($planes);
-		return View::make('ca.registro')->with('numPlanes',$numPlanes);
-	}
-
-	public function getCatalogos()
-	{
-		// Cuatrimestral, Semestral
-		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
-
-		// Cargar periodos 2010-1, 2010-2
+		// 1.- Cargar periodos 2010-1, 2010-2 con validación de fecha.
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		
+		// 2.- Formatear períodos.
 		$codigosPeriodo = array(); // ó []
 		// ["20101" => "2010-1"]
 		for ($i=0 ; $i < count($periodos) ; $i++)
@@ -34,56 +23,23 @@ class CargaAcademicaController extends BaseController
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
+		// 3.- Cargar programas educativo: 1 - Artes - LA - etc..... menos tronco común
+		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+
+		// CATALOGOS GENERALES:
+		// 
+		// Cuatrimestral, Semestral
+		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
+
 		// Oblitatoria, optativa
 		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
 		
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
-
-		// 1 - Artes, 2 - Administración
-		/*$numPrograma = Auth::user()->programaedu;
 		
-		// 0 - Administrador,!0 - Coordinador
-		// Obtener nombre en caso de ser coordinador
-		$nombrePrograma = "";
-		if ($numPrograma != 0) 
-		{
-			$nombrePrograma = ProgramaEducativo::find($numPrograma);
-			$nombrePrograma = $nombrePrograma -> descripcion;
-		}
-		
-		$var_nombre = array("nombrePrograma");
 
-		// Obtener Planes
-		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
-		$numPlanes = count($planes);
-		*/
-			// Catalogos y unidades de aprendizaje de los planes de estudio.
-		$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos','unidades');
-
-		return Response::json($data);
-		
-		
-	}
-	
-	public function getConsulta()
-	{
-		
-		// Cargar periodos 2010-1, 2010-2
-		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		
-		$codigosPeriodo = array();
-		for ($i=0; $i < count($periodos); $i++) { 
-			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
-		}
-
-		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
-		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
-
-		// Matutino, Vespertino, Interturno
-		$turnos = Turno::all();
-
-		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
+		$data = compact('codigosPeriodo','programas','periodosPrograma','tiposCaracter','turnos','unidades');
+		return View::make('ca.registro')->with($data);
 	}
 
 	public function getSubsecuente()
@@ -121,12 +77,32 @@ class CargaAcademicaController extends BaseController
 								->select('periodo')
 								->orderBy('periodo','desc')
 								->first();
-		
-		
 
 		return View::make('ca.subsecuente')->with(compact('codigosPlanes','periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
-
 	}
+
+
+	public function getConsulta()
+	{
+		
+		// Cargar periodos 2010-1, 2010-2
+		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
+		
+		$codigosPeriodo = array();
+		for ($i=0; $i < count($periodos); $i++) { 
+			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
+		}
+
+		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
+		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+
+		// Matutino, Vespertino, Interturno
+		$turnos = Turno::all();
+
+		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
+	}
+
+	
 
 	// Altas a tablas principales
 	public function postRegistrarperiodo()
@@ -196,19 +172,27 @@ class CargaAcademicaController extends BaseController
 		return Response::json($programas);
 	}
 
+
 	public function postObtenerplanes()
 	{
-		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
+		// Tabla plan_programa
+		$programaedu = Input::get("programaedu");
+
+		$planes = DB::table('plan_programa') 
+					-> orderBy('plan','desc')
+					-> where('programaedu',$programaedu) 
+					-> take(2) 
+					-> get();
 		
 		$enviarPlanes = [];
 		foreach ($planes as $key => $value) 
 		{
 			$enviarPlanes[] = $planes[$key] -> plan;
 		}
-			
+
 		$enviarPlanes["cantidad"] = count($planes);
-			
-			return $enviarPlanes;
+
+		return $enviarPlanes;
 	}
 
 	public function postObtenergrupos()
