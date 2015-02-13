@@ -316,25 +316,17 @@
 	<section>
 		<div class="contenedor_Ca">
 
-			<div class="nombre_coordinacion" id="nombrePrograma"></div>
+		<div class="nombre_coordinacion" id="nombrePrograma"></div>
+
+			
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
-			<div class="ca_checkstatus">
+			<div class="ca_checkstatus" style="margin-top:10px;">
 				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
 				<label>Carga capturada</label>
 			</div>
 
+
 			<div class="periodoCa">
-
-				<div class="divPeriodo">
-					Periódo:
-					<select type="text" class="con_estilo" style="height:25px" name="periodo" id="periodo">
-						@foreach ($codigosPeriodo as $periodo)
-							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
-						@endforeach
-					</select>
-					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
-				</div>
-
 
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 					@if (Auth::user()->programaedu == 0)
@@ -345,7 +337,20 @@
 					</select>
 					@endif
 				</div>
+
+				<div class="divPeriodo">
+					Periódo:
+					<select type="text" class="con_estilo" style="height:30px" name="periodo" id="periodo">
+						@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
+						@endforeach
+					</select>
+					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
+				</div>	
+
 			</div>
+
+			
 
 
 
@@ -412,7 +417,6 @@
 								<option value="{{$caracter->caracter}}">{{$caracter->descripcion}}</option>
 							@endforeach
 						</select>
-
 					</div>
 					<div class="listasCa">
 						 <div id="listboxPlanAnterior"></div>
