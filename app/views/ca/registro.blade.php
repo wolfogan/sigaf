@@ -1234,7 +1234,7 @@
 									"<td>" + data.uas[i].creditos + "</td>" +
 									"<td>" + data.uas[i].HC + "</td>" +
 									"<td>" + data.uas[i].etapa + "</td>" +
-									"<td>" + ((data.uas[i].series === null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
 									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
 									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "' />" + "</td>" +
 								  "</tr>";

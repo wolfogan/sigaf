@@ -350,6 +350,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
+
 			<table class="tabla_ca" id="semestre2" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -389,6 +392,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
+
 			<table class="tabla_ca" id="semestre3" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -428,6 +434,8 @@
 				<tbody>
 				</tbody>
 			</table>
+			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
+
 			<table class="tabla_ca" id="semestre4" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -467,6 +475,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
+
 			<table class="tabla_ca" id="semestre5" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -506,6 +517,10 @@
 				<tbody>
 				</tbody>
 			</table>
+
+
+			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
+
 			<table class="tabla_ca" id="semestre6" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -545,6 +560,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
+
 			<table class="tabla_ca" id="semestre7" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -584,6 +602,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
+
 			<table class="tabla_ca" id="semestre8" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -623,6 +644,9 @@
 				<tbody>
 				</tbody>
 			</table>
+
+			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
+
 			<table class="tabla_ca" id="semestre9" style="width:700px; margin-left:30px; margin-top:70px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -838,9 +862,9 @@
 				// Para mostrar el plan al que pertenece la carga de cada semestre
 				for (var i = 0; i < data.planSemestres.length; i++)
 				{
-					$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
+					$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado_tablaConsulta").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
 				}
-
+				console.log(data);
 				// Activar modales en la modificacion de las filas
 				//activarModal();
 			})
@@ -877,7 +901,7 @@
 						type: "post",
 						data: {programaedu: PROGRAMAEDU},
 						success:function(periodo){
-							if(periodo === 0)
+							if(periodo == 0)
 							{
 								alert("No existe una carga anterior para el programa educativo seleccionado.");
 							}
