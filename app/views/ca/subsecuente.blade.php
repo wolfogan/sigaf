@@ -38,33 +38,33 @@
 
 	<!-------------------------------- PARA MULTISELECT ---------------------------->
 	<script type="text/javascript">
-	$(function() {
-		$('.grupos').multiselect(configurationObligatorio);
-	});
+		$(function() {
+			$('.grupos').multiselect(configurationObligatorio);
+		});
 
-	var configurationObligatorio =
-	{
-		includeSelectAllOption: false,
-		onChange: function(element,checked,index){
-			if($("#selectCaracterVigente").val()==1)
-			{
-				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
-				$('#selectGruposVigente').multiselect('select',element.val());
-				return false;
-			}
+		var configurationObligatorio =
+		{
+			includeSelectAllOption: false,
+			onChange: function(element,checked,index){
+				if($("#selectCaracterVigente").val()==1)
+				{
+					//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
+					$('#selectGruposVigente').multiselect('select',element.val());
+					return false;
+				}
 
-			if($("#selectCaracterAnterior").val()==1)
-			{
-				//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
-				$('#selectGruposAnterior').multiselect('select',element.val());
-				return false;
+				if($("#selectCaracterAnterior").val()==1)
+				{
+					//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
+					$('#selectGruposAnterior').multiselect('select',element.val());
+					return false;
+				}
 			}
-		}
-	};
-	var configurationOptativo =
-	{
-		includeSelectAllOption: true
-	};
+		};
+		var configurationOptativo =
+		{
+			includeSelectAllOption: true
+		};
 	</script>
 
 	<!-------------------------------------------------------------------------------------------->
@@ -178,9 +178,6 @@
 
 	<!------------------------------------------------------------------------------>
 
-
-
-	<!------------------------------------------------------------------------------>
 	<header>
 		<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 		<div id="titulo">
@@ -211,8 +208,13 @@
 			</div>
 		</div>
 	</div>
+
 	<section>
-		<div class="contenedorCa" style="height:1050px;">
+
+		<!-- REVISAR ESTE CONTENEDOR, PORQUE SI SE AGRANDAN LAS TABLAS SE SALDRIAN DEL CONTENEDOR, POR EL HEIGHT -->
+		<div class="contenedorCa" style="height:2350px;">
+
+
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 
@@ -223,38 +225,29 @@
 
 
 			<div class="periodoCa">
-
-				<div class="divPeriodo">
-					Periodo:
-					<select class="con_estilo" type="text" style="height:30px; width:135px;" name="periodo" id="periodo"/>
-						@foreach ($codigosPeriodo as $periodo)
-							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
-						@endforeach
-					</select>
-
-					<!--<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />-->
-				</div>
-
-
 				<div class="consultar_admin"><span id="labelCarrera">Carrera:</span>
 						<select class="con_estilo" style="width:135px; height:30px" name="carrera_admin" id="carreraAdmin">
 							@foreach ($programas as $programa)
 								<option value="{{$programa->programaedu}}">{{$programa->descripcion}}</option>
 							@endforeach
 						</select>
-
 				</div>
-
+				<div class="divPeriodo">
+					Período:
+					<select class="con_estilo" type="text" style="height:30px; width:135px;" name="periodo" id="periodo"/>
+						@foreach ($codigosPeriodo as $periodo)
+							<option value="{{$periodo['codigo']}}">{{$periodo['formato']}}</option>
+						@endforeach
+					</select>
+					<!--<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />-->
+				</div>
 				<div id="btn_copiarCa"><input type="button" class="md-trigger" value="COPIAR carga anterior" data-modal="btnCatalogoPeriodo" id="copiarCarga" /></div>
-
 			</div>
 
-
-			<div id="ca_nombrePeriodo">Periodo:<label>XXXX-X</label></div>
-
-
+			<div id="ca_nombrePeriodo">Período:<label>XXXX-X</label></div>
 
 			<!------------------------------------ LISTA PLAN VIGENTE ------------------------------------>
+
 			<div id="planVigente">
 				<fieldset id="planV"><legend>Plan de estudios</legend>
 					<div class="nombrePlan" id="nombreVigente">Plan XXXX-X</div>
@@ -297,18 +290,14 @@
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
 						<!--<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />-->
 						<input type="button" style="width:180px; margin-top:3px;" value="Actualizar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
-
 					</div>
 				</fieldset>
 			</div>
 
 
-
-
-
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 
-			<table class="tabla_ca" id="semestre1" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre1" style="width:700px; margin-top:150px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
@@ -350,7 +339,8 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
 
-			<table class="tabla_ca" id="semestre2" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre2" style="margin-top:380px;">
+
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 2</th>
@@ -392,7 +382,7 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 3 -------------------------------->
 
-			<table class="tabla_ca" id="semestre3" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre3" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 3</th>
@@ -431,9 +421,10 @@
 				<tbody>
 				</tbody>
 			</table>
+
 			<!-------------------------------- REGISTROS SEMESTRE 4 -------------------------------->
 
-			<table class="tabla_ca" id="semestre4" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre4" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 4</th>
@@ -472,10 +463,9 @@
 				<tbody>
 				</tbody>
 			</table>
-
 			<!-------------------------------- REGISTROS SEMESTRE 5 -------------------------------->
 
-			<table class="tabla_ca" id="semestre5" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre5" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 5</th>
@@ -515,10 +505,9 @@
 				</tbody>
 			</table>
 
-
 			<!-------------------------------- REGISTROS SEMESTRE 6 -------------------------------->
 
-			<table class="tabla_ca" id="semestre6" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre6" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 6</th>
@@ -560,7 +549,7 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 7 -------------------------------->
 
-			<table class="tabla_ca" id="semestre7" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre7" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 7</th>
@@ -599,10 +588,9 @@
 				<tbody>
 				</tbody>
 			</table>
-
 			<!-------------------------------- REGISTROS SEMESTRE 8 -------------------------------->
 
-			<table class="tabla_ca" id="semestre8" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre8" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 8</th>
@@ -641,10 +629,9 @@
 				<tbody>
 				</tbody>
 			</table>
-
 			<!-------------------------------- REGISTROS SEMESTRE 9 -------------------------------->
 
-			<table class="tabla_ca" id="semestre9" style="width:700px; margin-left:30px; margin-top:70px;">
+			<table class="dd_tabla" id="semestre9" style="margin-top:30px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 9</th>
@@ -683,6 +670,7 @@
 				<tbody>
 				</tbody>
 			</table>
+
 			<!-- <div id="ca_actualiza">
 				<input type="button" style="width:180px;" value="Actualizar Carga"  class="estilo_button2" name="btnActualizarCa" id="btnActualizarCargaV" />
 			</div> -->
@@ -691,7 +679,7 @@
 			<!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
 
-					<table class="ca_tblResumenConsulta">
+					<table class="ca_tblResumenConsulta" style="margin-right:40px;">
 
 						<thead class="ca_tblResumenEncabezado">
 
@@ -744,13 +732,12 @@
 								<td style="width:100px">TOTAL:</td>
 								<td>90</td>
 							</tr>
-
 					</table>
+				</div>
 
-<!---------------------------------------------------------------------------------------------------------------->
-
-		</div>
 	</section>
+
+	<!---------------------------------------------------------------------------------------------------------------->
 
 	<script type="text/javascript" src="../js/jqxcore.js"></script>
 	<script type="text/javascript" src="../js/jqxbuttons.js"></script>
