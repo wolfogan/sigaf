@@ -979,7 +979,7 @@
 						{
 							if(x!="cantidad")
 							{
-								options+="<option value='" + planes[x] + "'>" + insertStr(planes[x],"-",4) + "</option>";
+								options+="<option value='" + planes[x] + "'>" + insertStr(String(planes[x]),"-",4) + "</option>";
 							}
 
 							$("#selecciona_plan").html(options);
