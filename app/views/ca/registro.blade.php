@@ -318,7 +318,7 @@
 
 		<div class="nombre_coordinacion" id="nombrePrograma"></div>
 
-			
+
 			<!--------------------- CONTROLES SUPERIOR DERECHO ------------------>
 			<div class="ca_checkstatus" style="margin-top:10px;">
 				<input type="checkbox" style="height:18px; width:18px" name="checkSubdirector_ca" value="Generar">
@@ -346,11 +346,11 @@
 						@endforeach
 					</select>
 					<input type="button" class="md-trigger" value="+" data-modal="btnCatalogoPeriodo" id="btnCatalogoPeriodo" />
-				</div>	
+				</div>
 
 			</div>
 
-			
+
 
 
 
@@ -1113,7 +1113,7 @@
 			var caracter = $(selectCaracter).val();
 			$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:programa,caracter:caracter},function(uas){
 				$(listboxPlan).jqxListBox({source: uas});
-				alert(caracter);
+				//alert(caracter);
 				if(caracter != 1)
 				{
 					$(selectGrupos).multiselect('setOptions',configurationOptativo);

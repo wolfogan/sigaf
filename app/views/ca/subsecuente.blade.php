@@ -44,22 +44,8 @@
 
 		var configurationObligatorio =
 		{
-			includeSelectAllOption: false,
-			onChange: function(element,checked,index){
-				if($("#selectCaracterVigente").val()==1)
-				{
-					//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
-					$('#selectGruposVigente').multiselect('select',element.val());
-					return false;
-				}
+			includeSelectAllOption: true
 
-				if($("#selectCaracterAnterior").val()==1)
-				{
-					//alert("El caracter es OBLIGATORIO no puedes quitar grupos");
-					$('#selectGruposAnterior').multiselect('select',element.val());
-					return false;
-				}
-			}
 		};
 		var configurationOptativo =
 		{
@@ -914,12 +900,89 @@
 			});
 		}
 
+		function desmarcar_carreras()
+		{
+			// Limpiar Control
+			$('option',"#selectGruposVigente").each(function(element) {
+				$("#selectGruposVigente").multiselect('deselect', $(this).val());
+			});
+			$("#selectGruposVigente").multiselect("refresh");
+			// Habilitar Carreras
+			$("#selectGruposVigente").find("option").removeAttr('disabled');
+			$("#selectGruposVigente").multiselect('refresh');
+		}
 
+		function marcar_carreras()
+		{
+			// Revisar cada option
+			$('option','#selectGruposVigente').each(function(element){
+				$('#selectGruposVigente').multiselect('select',$(this).val()); // Seleccionar option
+				//$('#selectGruposVigente').find('option').attr('disabled','disabled'); // Deshabilitar option
+				$('#selectGruposVigente').multiselect('refresh'); // Refrescar option
+			});
+		}
+
+		function seleccionarCaracter(selectCaracter,programa,plan)
+		{
+			/*if(NUM_PROGRAMA == 0){var programa = $("#carreraAdmin").val();}else{var programa =NUM_PROGRAMA;}*/
+
+			var caracter = selectCaracter;
+			$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:programa,caracter:caracter},function(uas){
+				$("#listaPlanVigente").jqxListBox({source: uas});
+				//alert(caracter);
+				if(caracter != 1)
+				{
+					desmarcar_carreras();
+				}
+				else
+				{
+					marcar_carreras();
+				}
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
+
+		function seleccionarSemestre(caracter,programa,semestre,plan)
+		{
+			// Aparecer tabla correspondiente
+
+
+			// Asignar valor semestre a la ventana modal en la segunda posicion.
+			$("#grupoSemestreV").val(semestre);
+
+			// Obtener los grupos asociados al semestre seleccionado.
+			var periodo = $("#periodo").val();
+
+
+			// Obtener grupos de ese plan, periodo y semestre
+			$.post("<?php echo URL::to('cargaacademica/obtenergrupos'); ?>",{nosemestre:semestre,noplan:plan,noperiodo:periodo,noprograma:programa},function(grupos){
+				var options = "";
+				for(var i = 0; i < grupos.length; i++)
+				{
+					options += "<option value="+grupos[i].grupo+" >"+grupos[i].grupo+"</option>";
+				}
+				// Llenar las carreras que pertenecen al plan seleccionado
+				$("#selectGruposVigente").html(options);
+				$('.grupos').multiselect('rebuild');
+
+				// Si es de caracter obligatorio seleccionar todos los grupos y deshabilitar
+				if(caracter==1)
+				{
+					marcar_carreras();
+				}
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
+			});
+		}
 	</script>
 
 	<script type="text/javascript">
 			$(document).ready(function () {
 				// Limpiar controles
+				$("#semestresVigente").val("");
 				$("#selecciona_plan").val("");
 				$("#periodo").val("");
 				$("#carreraAdmin").val("");
@@ -935,6 +998,8 @@
 					event.preventDefault();
 					$buttonCopiarCA.hide();
 					PROGRAMAEDU = $("#carreraAdmin").val();
+					// Para modal de registro de grupo
+					$("#grupoCarreraV").val(PROGRAMAEDU);
 					console.log(PROGRAMAEDU);
 
 					$.ajax({
@@ -970,6 +1035,7 @@
 							}
 
 							$("#selecciona_plan").html(options);
+							$("#selecciona_plan").val("");
 						}
 					})
 					.fail(function(errorText,textError,errorThrow){
@@ -977,6 +1043,60 @@
 					});
 
 				});
+
+				$("#periodo").on("change",function(){
+					var periodo = $(this).val();
+
+					if(periodo == "")
+						return;
+
+					$("#ca_nombrePeriodo > label").text(insertStr(periodo,"-",4));
+				});
+
+				$("#selecciona_plan").on("change",function(){
+					$("#selectCaracterVigente").val(1);
+
+					var plan = $(this).val();
+					if(plan == "")
+						return;
+
+					$("#nombreVigente").text("Plan " + $("#selecciona_plan option:selected").text());
+
+					//Obtener las unidades de aprendizaje obligatorias plan vigente formateadas Ej. 11236 - Matematicas
+					$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:PROGRAMAEDU,caracter:1},function(uas){
+						$("#listaPlanVigente").jqxListBox({source:uas});
+					})
+					.fail(function(errorText,textError,errorThrow){
+						alert(errorText.responseText);
+					});
+				});
+
+				$("#selectCaracterVigente").on("change",function(){
+
+					var caracter = $(this).val();
+					var plan = $("#selecciona_plan").val();
+					var programa = PROGRAMAEDU;
+					if(caracter=="")
+						return;
+
+					seleccionarCaracter(caracter,programa,plan);
+
+				});
+
+				$("#semestresVigente").on("change",function(){
+					var caracter = $("#selectCaracterVigente").val();
+					var plan =$("#selecciona_plan").val();
+					var programa = PROGRAMAEDU;
+					var semestre = $(this).val();
+
+					if(semestre == "")
+						return;
+
+					seleccionarSemestre(caracter,programa,semestre,plan);
+
+
+				});
+
 			});
 		</script>
 
