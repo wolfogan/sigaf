@@ -27,7 +27,7 @@
 	<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 
 	<!---------------------------------- DATATABLES --------------------------------------->
-		
+
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
 		<!-- JS -->
@@ -39,9 +39,9 @@
 </head>
 <body>
 <!-------------------------------------- VENTANAS MODALES CATÁLOGOS -------------------------------------->
-	
+
 	<!-------------------------------------- MODAL ASOCIACION UA-PROGRAMA -------------------------------------->
-	<div class="md-modal1 md-effect-11" id="add_seriacion" style="width:1000px;"> 
+	<div class="md-modal1 md-effect-11" id="add_seriacion" style="width:1000px;">
 		<form  id="formAsociar" action="javascript:asociarProgramas();" class="md-content"  method="post">
 			<h3 id="detalle">CLAVE - MATERIA</h3>
 
@@ -109,7 +109,7 @@
 								<td>
 									<input style="width:350px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
 								</td>
-								
+
 								<td>
 									<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-"/>
 								</td>
@@ -121,13 +121,13 @@
 				<div id="pe_BtnseriacionAgregar">
 					<input type="hidden" name="ua" id="asociar_ua"/>
 					<input type="hidden" name="users_id" id="asociar_user"/>
-					
+
 					<input style="height:35px; float:right; margin-left:10px;" type="button" value="Salir" class="md-close" />
 					<input type="submit" style="height:35px; float:right;" class="estilo_button2" id="asociarPrograma" value="Agregar"/>
 				</div>
-				
+
 			<!--</div>-->
-			
+
 			<div id="tableContainer">
 				<table style="height:90px; margin-top:20px" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable" id="tblDetalleAsociacion" />
 					<thead style="background:green; height:35px">
@@ -138,7 +138,7 @@
 
 					<thead class="fixedHeader">
 						<tr>
-							
+
 							<th style="width:200px">PROGR. EDUCATIVO</th>
 							<th style="width:100px">ETAPA</th>
 							<th style="width:98px">TIPO</th>
@@ -156,13 +156,13 @@
 		</form>
 	</div>
 	<!-------------------------------------- TERMINA MODAL AGREGAR SERIACION -------------------------------------->
-	
 
-	
+
+
 
 
 	<!-------------------------------------- MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
-	<div class="md-modal1 md-effect-11" id="seriacion_independiente"> 
+	<div class="md-modal1 md-effect-11" id="seriacion_independiente">
 		<form  id="formUpdate" action="javascript:actualizarUAI();" class="md-content" style="width:800px; height:700px;" method="post">
 			<h3 id="detalle_unico">CLAVE - MATERIA</h3>
 				<div class="pe_noPlan">No. Plan:<label id="seriacion_plan">0000-0</label></div>
@@ -184,7 +184,7 @@
 							<td>Materia:</td>
 							<td><input type="text" name="materia" id="descripcion_update" style="height: 25px; text-transform:uppercase; width:180px;" size="25"></td>
 						</tr>
-						
+
 						<tr>
 							<td>Etapa:</td>
 							<td>
@@ -203,21 +203,21 @@
 								</select>
 							</td>
 						</tr>
-					
+
 						<tr>
 							<td size="10">HC:</td>
 							<td><input class="estilo_numeric" type="number" name="hc" id="hc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 							<td size="10">HL:</td>
 							<td><input class="estilo_numeric" type="number" name="hl" id="hl_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						</tr>
-						
+
 						<tr>
 							<td size="10">HT:</td>
 							<td><input class="estilo_numeric" type="number" name="ht" id="ht_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 							<td size="10">HE:</td>
 							<td><input class="estilo_numeric" type="number" name="he" id="he_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
 						</tr>
-						
+
 						<tr>
 							<td size="10">HPC:</td>
 							<td><input class="estilo_numeric" type="number" name="hpc" id="hpc_update" min="0" max="9" onkeypress="ValidaSoloNumeros()" ></td>
@@ -240,7 +240,7 @@
 						<tr>
 							<th colspan="7">MATERIAS ASOCIADAS</th>
 						</tr>
-					</thead>		
+					</thead>
 
 					<tbody class="scrollContent" style="height:155px;">
 
@@ -269,14 +269,14 @@
 							<td>
 								<input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="clave-seriacion-descripcion" disabled="true"  />
 							</td>
-										
+
 							<td>
 								<input type="button" class="clsEliminarFila" style="height:30px; width:30px;"value="-">
 							</td>
 
 							<td><input type="button" class="dd_clsAgregarFila"></td>
 						</tr>
-								
+
 					</tbody>
 				</table>
 			</div>
@@ -288,8 +288,8 @@
 					<input type="button" value="Salir" class="md-close" />
 				</div>
 
-				
-			
+
+
 		</form>
 	</div>
 	<!-------------------------------------- TERMINA MODAL MODIFICAR MATERIAS INDEPENDIENTEMENTE DEL GRID -------------------------------------->
@@ -300,10 +300,10 @@
 
 
 
-	
+
 
 	<!-------------------------------------- MODAL PLAN DE ESTUDIO -------------------------------------->
-	<div class="md-modal md-effect-11" id="plan"> 
+	<div class="md-modal md-effect-11" id="plan">
 		<form id="formUA" action="javascript:registrarPlanEstudios(document.forms.formUA);" name="formUA" class="md-content" method="post">
 			<h3>Agregar Plan</h3>
 			<div class="tblCatalogos">
@@ -312,7 +312,7 @@
 						<th></th>
 						<th></th>
 					</tr>
-					<tr>		
+					<tr>
 						<td>No. Plan:</td>
 						<td><input title="Por favor, introduce un año." style="width: 120px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" maxlength="4" name="planestudio_anio" type="text" id="txtCatPlan" required/>&nbsp;-&nbsp;<input style="width: 60px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  maxlength="1" name="planestudio_semestre" type="text" id="txtCatPlan2" required/></td>
 					</tr>
@@ -368,12 +368,12 @@
 
 
 	<!-------------------------------------- MODAL TIPO SERIACION -------------------------------------->
-	<div class="md-modal md-effect-11" id="seriacion"> 
+	<div class="md-modal md-effect-11" id="seriacion">
 		<form  action="<?=URL::to('planestudio/registrarseriacion'); ?>" class="md-content" method="post">
 			<h3>Agregar seriación</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
-					
+
 
 					<tr>
 						<th></th>
@@ -394,7 +394,7 @@
 	<!-------------------------------------- MODAL TIPO SERIACION -------------------------------------->
 
 	<!-------------------------------------- MODAL TIPO CARACTER -------------------------------------->
-	<div class="md-modal md-effect-11" id="tipo"> 
+	<div class="md-modal md-effect-11" id="tipo">
 		<form  action="<?=URL::to('planestudio/registrarcaracter'); ?>" class="md-content" method="post">
 			<h3>Agregar Tipo</h3>
 			<div class="tblCatalogos">
@@ -418,7 +418,7 @@
 	<!-------------------------------------- MODAL TIPO CARACTER -------------------------------------->
 
 	<!-------------------------------------- MODAL COORDINACIÓN -------------------------------------->
-	<div class="md-modal md-effect-11" id="coordina"> 
+	<div class="md-modal md-effect-11" id="coordina">
 		<form  action="<?=URL::to('planestudio/registrarcoordinacion'); ?>" class="md-content" method="post">
 			<h3>Agregar Coordinación</h3>
 			<div class="lblCatalogosDependencias"></div>
@@ -433,7 +433,7 @@
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="coordinacion_descripcion" id="txtCatDescripcionCoordinacion"/></td>
 					</tr>
 					<tr>
-						<td>Programa Educativo:</td> 
+						<td>Programa Educativo:</td>
 						<td>
 							<select style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion"/>
 								<option value="1">LIC. EN INFORMATICA</option>
@@ -502,7 +502,7 @@
 					<input class="md-trigger" data-modal="plan" type="button" value="+"></a>
 					<!-- LLAMADA MODAL NRO. PLAN -->
 				</div>
-				
+
 				<!------------------------------------ UNIDAD ------------------------------------>
 				<div id="unidadDiv">
 					<label>Unidad: </label>
@@ -580,16 +580,16 @@
 					<br />
 					<!------------------------------------ CREDITOS ------------------------------------>
 					<div id="creditosDiv">
-						<label>CDTOS: </label><input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="creditosF" id="creditosF" min="1" >	
+						<label>CDTOS: </label><input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="creditosF" id="creditosF" min="1" >
 					</div>
 					<div id="pe_btnSeriacionMod">
 						<input type="button" class="md-trigger" data-modal="add_seriacion" type="button" value="Actualizar seriación" name="asociar" id="asignacion"/>
 					</div>
 
-					
+
 				</div>
 				<!-- TERMINA SEGUNDA SECCIÓN -->
-				
+
 				<!-- INICIA TERCER SECCIÓN -->
 				<div id="tercerBloque">
 
@@ -618,7 +618,7 @@
 					<div id="botones">
 						<input type="submit" style="width:110px"class="estilo_button2" type="button" value="Guardar" name="guardar" id="guardar" />
 						<input type="button" style="width:110px"class="estilo_button2" type="button" value="Limpiar" name="limpiar" id="limpiar" />
-						
+
 						<!--<input type="button" style="width:110px; height:50px; font-size=21px; margin-left:10px; margin-right:-5px;" class="md-trigger" data-modal="add_seriacion" type="button" value="Asociar" name="asociar" id="asignacion"/>-->
 
 						<!--------------------------------A Q U I PRUEBA -------------------------------->
@@ -631,7 +631,7 @@
 					<!---------------------------------- BOTON GUARDAR UA ---------------------------------->
 
 
-					
+
 
 
 			</fieldset>
@@ -722,12 +722,12 @@
 						reset_campos();
 					}
 					else{
-						
+
 					}
 					// Optimizar esta parte con una bandera de actualizacion
 					if($("#limpiar").val()=="Cancelar")
 						$("#limpiar").click();
-					
+
 					//ActualizarUAS($("#noPlan").val());
 				}
 
@@ -735,7 +735,7 @@
 					// Condicion de los rows
 					//if($("#select_carreras").val()==null)
 					//	return;
-					removeModal( classie.has( el, 'md-setperspective' ) ); 
+					removeModal( classie.has( el, 'md-setperspective' ) );
 				}
 
 				el.addEventListener( 'click', function( ev ) {
@@ -775,7 +775,7 @@
 					plan:formPlan.planestudio_anio.value + formPlan.planestudio_semestre.value,
 					formato:formPlan.planestudio_anio.value + "-" + formPlan.planestudio_semestre.value
 				};
-				
+
 				$("#noPlan").prepend("<option value='"+newPlan.plan+"''>"+newPlan.formato+"</option>");
 				$(".md-close").click();
 				$("#noPlan").val(newPlan.plan);
@@ -816,7 +816,7 @@
 
 			// Mostrar AjaxLoader
 			$("#ajaxLoad").css("display","block");
-			
+
 			// REGISTRAR UNIDAD DE APRENDIZAJE
 			if(opcion == "Guardar")
 			{
@@ -829,9 +829,9 @@
 					var noPlan=$("#noPlan").val();
 					var clave1F=$("#clave1F").val();
 					var materia=$("#materia").val();
-				
+
 					alert(mensaje);
-				
+
 					//reset_campos();
 					// Mostrar la ventan modal para el detalle
 					$("#detalle").text(clave1F+ " - " + materia.toUpperCase());
@@ -844,7 +844,7 @@
 				.always(function(){
 					// OCULTAR AJAXLOADER
 					$("#ajaxLoad").css("display","none");
-					
+
 				});
 			}
 			else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
@@ -862,7 +862,7 @@
 					$("#limpiar").val("Limpiar");
 					$("#tblUA").dataTable().fnClearTable();
 					ActualizarUAS(plan);
-				
+
 					alert("!Unidad de Aprendizaje actualizada!");
 					// Limpiar Control
 					$('option',$(".example41")).each(function(element) {
@@ -890,7 +890,7 @@
 					$("#ajaxLoad").css("display","none");
 
 				});
-				
+
 			}
 			// Regresar foco a la clave
 			//$("#clave1F").focus();
@@ -909,7 +909,7 @@
 			$("#ajaxLoad").css("display","block");
 			$.post("<?php echo URL::to('planestudio/obteneruas'); ?>",{noplan:plan},function(uas){
 				$('#tblUA').dataTable().fnClearTable();
-				for (var i = 0; i < uas.length; i++) 
+				for (var i = 0; i < uas.length; i++)
 				{
 					t.row.add([
 								uas[i].uaprendizaje,
@@ -941,7 +941,7 @@
 		function validarInputSeries(inputs)
 		{
 
-			
+
 			// Validar inputs de seriacion
 			var continuar = true;
 			$(inputs).each(function(index,value){
@@ -967,7 +967,7 @@
 				alert("Seleccione un programa educativo para continuar.");
 				return;
 			}
-			
+
 			var inputs = $("#formAsociar .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
 			if(validarInputSeries(inputs) ==false)
 			{
@@ -992,7 +992,7 @@
 				var stringSeries = "";
 				// Mostrar informacion guardada en la base de datos de los programas asociados
 				$("#select_carreras option:selected").each(function(){
-					
+
 					// Agregar informacion en la tabla
 					if(series.length == 0)
 						stringSeries = "SIN SERIACION";
@@ -1026,15 +1026,15 @@
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
 			});
-			
+
 		}
-		
+
 		// ACTUALIZAR UNIDAD DE APRENDIZAJE INDIVIDUALMENTE
 		function actualizarUAI()
 		{
 			$(".scrollTable input,.scrollTable select").attr("disabled",false);
 			dataUA = $("#formUpdate").serialize(); //+ & + $("#tblUpdateSeriaciones").serialize();
-			alert(dataUA);
+			console.log(dataUA);
 
 			var inputs = $("#formUpdate .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
 			if(validarInputSeries(inputs) ==false)
@@ -1044,12 +1044,12 @@
 			}
 			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
-				
+
 				alert("Actualizacion Completada");
 
 				$(".md-close").click();
 
-				
+
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert("FALLO EN EL REGISTRO: " + errorText.responseText);
@@ -1077,8 +1077,8 @@
 				$("#select_carreras").multiselect("disable");
 			else
 				$("#select_carreras").multiselect("enable");
-			
-			
+
+
 		}
 
 		function reset_campos()
@@ -1133,7 +1133,7 @@
 	$(function(){
 		// Guardar Constantes
 		USER_ID = {{Auth::user()->id}};
-		
+
 		// Crear instancia Datatables para manipulación de renglones durante la ejecución
 		var t = $('#tblUA').DataTable();
 		// Para añadir unidades de aprendizaje a las carreras con el update
@@ -1145,8 +1145,8 @@
 		$("#eliminar").hide();
 		$("#asignacion").hide();
 		reset_campos();
-		
-		
+
+
 		// AL CAMBIO COMBOBOX NO DE PLAN CARGA LAS UNIDADES DE APRENDIZAJES ASIGNADAS A LAS CARRERAS Y LAS UA SERIADAS.
 		$("#noPlan").on("change",function(){
 			//alert("un cambio");
@@ -1213,7 +1213,7 @@
 			if($(this).val()!="")
 			{
 				var idua = $(this).val();
-			
+
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
 					if(materia != "NO EXISTE")
 					{
@@ -1234,7 +1234,7 @@
 					}
 				})
 				.fail(function(){
-					
+
 				});
 			}
 		});
@@ -1278,7 +1278,7 @@
 				});
 			}
 		});
-		
+
 		// CARGAR LA DESCRIPCIÓN DE LA UNIDAD DE APRENDIZAJE DE LA SERIACIÓN CUANDO PIERDE EL FOCO.
 		$("#clave2F").on("focusout",function(){
 			if($(this).val()!="")
@@ -1311,7 +1311,7 @@
 			var creditos = hc + hl + ht + hcl + hpc + he;
 			$("#creditosF").val(creditos);
 		});
-		
+
 		// EVENTOS PARA EL BOTÓN LIMPIAR - GUARDAR Y CANCELAR - ACTUALIZAR
 		$("#limpiar").on('click',function(){
 			var opcion = $(this).val();
@@ -1328,7 +1328,7 @@
 				$("#guardar").val("Guardar");
 				$(this).val("Limpiar");
 				t.$('tr.selected').removeClass('selected'); // Remover selección
-				
+
 				$("#eliminar").hide();
 				$("#asignacion").fadeOut("fast");
 			}
@@ -1341,7 +1341,7 @@
 
 		// EVENTOS PARA LA TABLA DE LAS SERIACIONES
 		$(".scrollTable").on("click",".dd_clsAgregarFila",function(){
-			
+
 			var filaSeriacion = $(this).parents().get(1);
 			// Validar clave de seriación
 			if($(filaSeriacion).find(".clave-seriacion-descripcion").val()=="" || $(filaSeriacion).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
@@ -1355,7 +1355,7 @@
 			var seriacionNueva = $(filaBaseSeriacion).clone().removeClass("fila-base-seriacion").appendTo(tbodySeriacion);
 			$(".sin-seriacion").hide();
 			//console.log(filaSeriacion);
-			
+
 			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 
@@ -1373,7 +1373,7 @@
 			var table = $(filaSeriacion).parents().get(1);
 			// Remover fila
 			$(filaSeriacion).remove();
-			
+
 			// Si se elimina la última fila, mostrar mensaje sin seriación
 			var rowCount = $(table).find("tbody > tr").length;
 			if(rowCount == 2)
@@ -1384,10 +1384,10 @@
 				$(table).find("tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
 			}
 		});
-		
+
 		// Cargar descripcion de ua cuando la tecleen o seleccionen
 		$(".scrollTable").on("input",".clave-seriacion",function(){
-			
+
 			var idua = $(this).val();
 			var filaSeriacion = $(this).parents().get(1);
 			// Si la clave seriada no esta vacia y es mayor o igual a 5 consultar.
@@ -1397,7 +1397,7 @@
 				$.post("<?php echo URL::to('planestudio/obtenermateria'); ?>",{uaprendizaje:idua},function(materia){
 					//alert(materia);
 					$(filaSeriacion).find(".clave-seriacion-descripcion").val(materia);
-					
+
 				})
 				.fail(function(errorText,textError,errorThrow){
 					alert(errorText.responseText);
@@ -1414,16 +1414,16 @@
 
 		// Boton AGREGAR en ventana modal seriacion
 		$(".sin-seriacion").on("click",function(event){
-			
+
 			// Crear fila y agregar atributos para pasar por el formulario
 			var filaBaseSeriacion = $(this).next();
 			var seriacionNueva = $(filaBaseSeriacion).clone().removeClass("fila-base-seriacion").appendTo($(this).parent());
 			$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 			$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
-			
+
 			$(this).hide();
 
-			
+
 		});
 
 		// Evento eliminar para la tabla tblDetalleAsociacion
@@ -1444,10 +1444,10 @@
 			});
 
 		});
-		
+
 		// CARGAR DATOS A LOS CONTROLES AL SELECCIONAR RENGLÓN DE LA UA DEL DATATABLE
 		$('#tblUA tbody').on('click','td',function(event){
-			
+
 			if(t.cell(this).index().column < 11)
 			{
 				/* Habilitar todas las carreras
@@ -1458,8 +1458,8 @@
 
 				if($(".dataTables_empty").length==0) // Si hay mas de un registro.
 				{
-					
-					
+
+
 					if ( $(this).parent().hasClass('selected') ) // Si esta seleccionado
 					{
 						$(this).parent().removeClass('selected');
@@ -1484,7 +1484,7 @@
 								$("#detalle").text(uaid + " - " + materia);
 								$("#asignacion").click();
 							}
-							
+
 						}
 						//console.log(programaedu);
 						// MOSTRAR AJAXLOADER
@@ -1518,13 +1518,13 @@
 								// Aparecer botón de eliminar
 								$("#eliminar").show();
 								$("#asignacion").fadeIn("fast");
-								
+
 								// Ventana modal asociacion
 								$("#detalle").text(json.uaprendizaje + " - " + json.descripcionmat);
 								$("#asociar_ua").val(json.uaprendizaje);
 
 								var jsones = "";
-								
+
 								// Mostrar asociaciones con las carreras y materias seriadas en la tblDetalleAsociacion
 								for(var i = 0; i < json.series.length; i++)
 								{
@@ -1564,10 +1564,10 @@
 
 			var rowUA = $(this).parents().get(1);
 			// Remover la seleccion
-			
+
 			$("#limpiar").click();
 			$(rowUA).addClass('selected');
-			
+
 
 			if (confirm("¿ Está seguro de que desea eliminar ?"))
 			{
@@ -1614,7 +1614,7 @@
 						}
 					}
 
-					
+
 				});
 			}
 			else
@@ -1646,7 +1646,7 @@
 						console.log(seriacionNueva);
 						$(".sin-seriacion").hide();
 						//console.log(filaSeriacion);
-						
+
 						// Valores de las ua seriadas
 						$(seriacionNueva).find("select:eq(0)").val(ua[i].reqseriacion);
 						$(seriacionNueva).find("input:eq(0)").val(ua[i].uaprequisito);
@@ -1718,7 +1718,7 @@
 						var seriacionNueva = $(table).find("tr:eq(1)").clone().removeClass("fila-base-seriacion").appendTo(table);
 						$(".sin-seriacion").hide();
 						console.log(seriacionNueva);
-						
+
 						// Valores de las ua seriadas
 						$(seriacionNueva).find("select:eq(0)").val(ua.series[i].reqseriacion);
 						$(seriacionNueva).find("input:eq(0)").val(ua.series[i].uaprequisito);
@@ -1728,7 +1728,7 @@
 						$(seriacionNueva).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
 						$(seriacionNueva).find(".clave-seriacion").attr("name","seriacion_clave[]");
 					}
-					
+
 				})
 				.fail(function(errorText,textError,errorThrow){alert("Fallo en la consulta de la unidad de aprendizaje: " + errorText.responseText)});
 		});
@@ -1739,9 +1739,9 @@
 			return false;
 		});*/
 
-		
-		
-	
+
+
+
 	});
 	</script>
 
@@ -1749,24 +1749,24 @@
 
 	<script src="../js/classie.js"></script>
 	<script src="../js/modalEffects.js"></script>
-	
-	
+
+
 
 <!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
 
 <script language="javascript">
 
 			function ValidaSoloNumeros() {
-			 if ((event.keyCode < 48) || (event.keyCode > 57)) 
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
 			  event.returnValue = false;
 			}
-			
+
 			function Validate(obj){
 			  if(true != false){
 				// Así damos de nuevo el foco al INPUT
 				obj.focus();
 			  }
-			}    
+			}
 </script>
 
 <!------------------------------------------------------------------------------------------>
