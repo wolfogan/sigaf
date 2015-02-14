@@ -262,9 +262,6 @@
 					<div class="filtroMaterias_ca" style="float:left; width:200px;">
 						Plan:
 						<select class="con_estilo" style="width:135px; height:30px" id="selecciona_plan">
-								@foreach($codigosPlanes as $plan)
-									<option value="{{$plan['codigo']}}">{{$plan['formato']}}</option>
-								@endforeach
 						</select>
 					</div>
 
@@ -776,6 +773,63 @@
 			return String(string1+stringAdd+string2);
 		}
 
+		function activarModal()
+		{
+			var overlay = document.querySelector( '.md-overlay' );
+
+			[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i )
+			{
+
+				var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+					close = modal.querySelector( '.md-close' );
+
+				function removeModal( hasPerspective ) {
+					classie.remove( modal, 'md-show' );
+
+					if( hasPerspective ) {
+						classie.remove( document.documentElement, 'md-perspective' );
+					}
+					// Si es guardar limpiar campos
+					if($("#guardar").val()=="Guardar")
+					{
+						reset_campos();
+					}
+					else{
+
+					}
+					// Optimizar esta parte con una bandera de actualizacion
+					if($("#limpiar").val()=="Cancelar")
+						$("#limpiar").click();
+
+					//ActualizarUAS($("#noPlan").val());
+				}
+
+				function removeModalHandler() {
+					// Condicion de los rows
+					//if($("#select_carreras").val()==null)
+					//	return;
+					removeModal( classie.has( el, 'md-setperspective' ) );
+				}
+
+				el.addEventListener( 'click', function( ev ) {
+					classie.add( modal, 'md-show' );
+					overlay.removeEventListener( 'click', removeModalHandler );
+					overlay.addEventListener( 'click', removeModalHandler );
+
+					if( classie.has( el, 'md-setperspective' ) ) {
+						setTimeout( function() {
+							classie.add( document.documentElement, 'md-perspective' );
+						}, 25 );
+					}
+				});
+
+				close.addEventListener( 'click', function( ev ) {
+					ev.stopPropagation();
+					removeModalHandler();
+				});
+			});
+		}
+
 		function copiarCarga()
 		{
 
@@ -919,6 +973,21 @@
 						}
 					});
 
+					$.post("<?php echo URL::to('cargaacademica/obtenerplanes'); ?>",{programaedu: PROGRAMAEDU},function(planes){
+						var options = "";
+						for(var x in planes)
+						{
+							if(x!="cantidad")
+							{
+								options+="<option value='" + planes[x] + "'>" + insertStr(planes[x],"-",4) + "</option>";
+							}
+
+							$("#selecciona_plan").html(options);
+						}
+					})
+					.fail(function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+					});
 
 				});
 			});

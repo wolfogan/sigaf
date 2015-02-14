@@ -44,12 +44,7 @@ class CargaAcademicaController extends BaseController
 
 	public function getSubsecuente()
 	{
-		// 2 Planes de estudio actuales
-		$planes = PlanEstudio::select('plan') -> orderBy('plan','desc') -> take(2) -> get();
-		$codigosPlanes = [];
-		foreach ($planes as $plan) {
-			$codigosPlanes[] = ["codigo" => $plan->plan, "formato" => Snippets::str_insert("-",$plan->plan,4)];
-		}
+
 		// Cuatrimestral, Semestral
 		$periodosPrograma = PeriodoPrograma::select('periodo_pedu','descripcion')->get();
 
@@ -75,7 +70,7 @@ class CargaAcademicaController extends BaseController
 		// Obtener último período de carga
 
 
-		return View::make('ca.subsecuente')->with(compact('codigosPlanes','periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
+		return View::make('ca.subsecuente')->with(compact('periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
 	}
 
 	public function postUltimoperiodo()
