@@ -1,7 +1,7 @@
 EN REGISTRO DE CARGA
 //alert(uas); FUNCION GENERAR CARGA
 				$("#semestre1 tbody:not(:eq(2)),#semestre2 tbody:not(:eq(2)),#semestre3 tbody:not(:eq(2)),#semestre4 tbody:not(:eq(2)),#semestre5 tbody:not(:eq(2)),#semestre6 tbody:not(:eq(2)),#semestre7 tbody:not(:eq(2)),#semestre8 tbody:not(:eq(2)),#semestre9 tbody:not(:eq(2))").html("");
-				for (var i = 0; i < uas.length; i++) 
+				for (var i = 0; i < uas.length; i++)
 				{
 					var renglon = "";
 					// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
@@ -49,13 +49,13 @@ EN REGISTRO DE CARGA
 
 					$.post("<?php echo URL::to('cargaacademica/obtenerturnos'); ?>",{grupos:gruposCompletos},function(data){
 						callback(data);
-						
+
 					})
 					.fail(function(errorText,textError,errorThrow){
 						alert(errorText.responseText);
 					});
 				}
-				
+
 				agregarGruposSemestre(semestre,selectGrupos,function(data){
 					$("#semestre" + semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+data+"</td></tr>");
 				});
@@ -145,7 +145,7 @@ CUANDO ERA UNA MATERIA INDIVIDUAL SERIADA
 				else
 					$(this).css("background-color","");
 			}
-				
+
 		});*/
 
 CONSULTA PEEEEEEEEEEEEEEEE
@@ -190,7 +190,7 @@ NUEVAS MODIFICACIONES A PE
 				else
 				{
 					uasSeriadas = "SIN SERIACIÓN";
-				} 
+				}
 				// Agregar fila por cada carrera seleccionada
 				$('#select_carreras + div > button + .multiselect-container li').each(function(indice,elemento){
 					if($(elemento).hasClass('active') && indice != 0)
@@ -242,13 +242,13 @@ PHP
 /*
 		var sourcePlanVigente = [
 									@for ($i = 0;$i<count($unidades[0]);$i++)
-										{{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}} 
+										{{"'".$unidades[0][$i]->uaprendizaje." - ".$unidades[0][$i]->descripcionmat."'"}}
 											@if ($i<count($unidades[0])-1)
 												{{","}}
-											@endif 
+											@endif
 									@endfor
 								];
-		var sourcePlanAnterior =[ 
+		var sourcePlanAnterior =[
 									@for ($i = 0;$i<count($unidades[1]);$i++)
 										{{"'".$unidades[1][$i]->uaprendizaje." - ".$unidades[1][$i]->descripcionmat."'"}}
 										@if($i<count($unidades[1])-1)
@@ -279,7 +279,7 @@ PHP
 		$("#grupoVigentePlan").val({{$planes[0]}});
 		$("#grupoAnteriorPlan").val({{$planes[1]}});
 		*/
-	
+
 
 // Check several items.
 			// $(".listbox").jqxListBox('checkIndex', 0);
@@ -333,20 +333,20 @@ PHP
 		foreach ($planes as $key => $value) {
 			array_push($planWhereIn, $planes[$key]->plan);
 		}
-		
+
 var numPlanes = $("#planes").val();
 					// Evaluar el despliegue de 1 o 2 planes
 					var planS = data.unidades[data.planes[0].plan];
 					var sourcePV = [];
 					var sourcePA = [];
-					
+
 					for(key in planS)
 					{
 						sourcePV.push(planS[key].uaprendizaje + " - " + planS[key].descripcionmat);
 					}
 
 					console.log(sourcePV);
-					
+
 					$("#listboxPlanVigente").jqxListBox({source: sourcePV});
 					// Deshabilitar controles del plan secundario
 					$("#planAnterior").find("input,select").attr('disabled',true);
@@ -362,8 +362,8 @@ var numPlanes = $("#planes").val();
 						$("#listboxPlanAnterior").jqxListBox({source : sourcePA});
 						$("#planAnterior").find("input,select").attr('disabled',false);
 					}
-					
-					
+
+
 
 
 		// Verificar tipo de usuario
@@ -380,15 +380,15 @@ var numPlanes = $("#planes").val();
 					->orderBy('plan','desc')
 					->orderBy('p_ua.uaprendizaje','asc')
 					->get();
-			
-			
-			
+
+
+
 			// $unidades[0][0] = $uas[0]  -> 20101
 			// $unidades[0][1] = $uas[1]  -> 20101
 			// $unidades[1][0] = $uas[3]  -> 20102
-			
+
 			$unidades  = [];
-			foreach ($uas as $key => $value) 
+			foreach ($uas as $key => $value)
 			{
 				$nombrePlan = $uas[$key]->plan;
 				if($nombrePlan == $planes[0]->plan)
@@ -398,7 +398,7 @@ var numPlanes = $("#planes").val();
 
 				if($numPlanes > 1)
 				{
-					if ($nombrePlan == $planes[1]->plan) 
+					if ($nombrePlan == $planes[1]->plan)
 					{
 						$unidades[$nombrePlan][] = $uas[$key];
 					}
@@ -406,7 +406,7 @@ var numPlanes = $("#planes").val();
 			}
 
 
-			// Obtener nombre del programa 
+			// Obtener nombre del programa
 		$nombrePrograma = ProgramaEducativo::find($programa);
 		$nombrePrograma = $nombrePrograma -> descripcion;
 		$var_nombre = array("nombrePrograma");
@@ -435,8 +435,8 @@ var planes = $("#planes").val() > 0;
 			else
 			{
 				// INICIALIZAR ENTORNO PARA GENERAR LA CARGA
-				
-				
+
+
 				//vaar nomPlanVigente = insertStr(planVigente),"-",3);
 				//$("#nombreVigente").val("Plan " + nomPlanVigente);
 
@@ -460,7 +460,7 @@ var planes = $("#planes").val() > 0;
 					{
 						var periodo = data.periodosPrograma[key].periodo_pedu;
 						var descripcion = data.periodosPrograma[key].descripcion;
-						options += "<option value='" + periodo + "'>" + descripcion + "</option>"; 
+						options += "<option value='" + periodo + "'>" + descripcion + "</option>";
 					}
 					$("#periodoTipo").html(options);
 
@@ -470,7 +470,7 @@ var planes = $("#planes").val() > 0;
 					{
 						var caracter = data.tiposCaracter[key].caracter;
 						var descripcion = data.tiposCaracter[key].descripcion;
-						options += "<option value='" + caracter + "'>" + descripcion + "</option>" 
+						options += "<option value='" + caracter + "'>" + descripcion + "</option>"
 					}
 					$("#selectCaracterVigente,#selectCaracterAnterior").html(options);
 
@@ -480,7 +480,7 @@ var planes = $("#planes").val() > 0;
 					{
 						var codigo = data.codigosPeriodo[key].codigo;
 						var formato = data.codigosPeriodo[key].formato;
-						options += "<option value = '" + codigo + "'>" + formato + "</option>"; 
+						options += "<option value = '" + codigo + "'>" + formato + "</option>";
 					}
 					$("#periodo").html(options);
 					$("#periodo").val("");
@@ -491,7 +491,7 @@ var planes = $("#planes").val() > 0;
 					{
 						var turno = data.turnos[key].turno;
 						var descripcion = data.turnos[key].descripcion;
-						options += "<option value = '" + turno + "'>" + descripcion + "</option>"; 
+						options += "<option value = '" + turno + "'>" + descripcion + "</option>";
 					}
 					$("#grupoTurno").html(options);
 
@@ -506,7 +506,7 @@ var planes = $("#planes").val() > 0;
 						option.text = semestres[key];
 						option.value = semestres[key];
 						s.options[s.options.length] = option;*/
-						options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";  
+						options += "<option value='" + semestres[key] + "'>" + semestres[key] + "</option>";
 					}
 					$("#semestresVigente,#semestresAnterior").html(options);
 					$("#semestresVigente , #semestresAnterior").val("");
@@ -545,8 +545,8 @@ var planes = $("#planes").val() > 0;
 						uasAnterior.push( this.label.substring(0 , 5) );
 					});
 				});
-				
-				
+
+
 				// Mostrar controles por privilegio de usuario
 				// Cargar planes de estudio.
 				obtenerPlanesEstudio(function(planes){
@@ -569,7 +569,7 @@ function obtenerPlanesEstudio(callback)
 					$("#nombreVigente").text("Plan " + insertStr(plan,"-",4));
 					$("#grupoVigentePlan").val(plan);
 					$("#grupoPlanVigente").text($("#nombreVigente").text());
-					
+
 					if(planes.cantidad == 2)
 					{
 						plan = String(planes[1]);
@@ -584,7 +584,7 @@ function obtenerPlanesEstudio(callback)
 					callback(planes);
 				},
 				error: function(errorText,textError,errorThrow){
-					alert("Error: " + errorText.responseText); 
+					alert("Error: " + errorText.responseText);
 				}
 			});
 
@@ -597,14 +597,14 @@ function obtenerPlanesEstudio(callback)
 			// Asignar usuario a la ventana modal de registro de periodos
 			$("#periodoUsersId").val(USERS_ID);
 			$(".grupoUsersId").val(USERS_ID);
-			
+
 			planVigente = planes[0];
 			planAnterior = planes[1];
 
 			// Verificar planes de estudio y pasarlos como parametros para los programas del admin.
 			var planesEstudio = [];
 			planesEstudio = (planes.cantidad < 2) ? [planVigente] : [planVigente,planAnterior];
-			
+
 			console.log(planesEstudio);
 			if(numPrograma == 0) // Administrador
 			{
@@ -615,7 +615,7 @@ function obtenerPlanesEstudio(callback)
 					data : { programa : numPrograma, planes : planesEstudio },
 					dataType: "json",
 					success: function(programas){
-						
+
 						var options = "";
 						for(key in programas)
 						{
@@ -623,14 +623,14 @@ function obtenerPlanesEstudio(callback)
 						}
 						$("#carreraAdmin").html(options);
 						$("#carreraAdmin").val("");
-						
+
 					},
 					error: function(errorText,textError,errorThrow){
 						alert("Error: " + errorText.responseText);
 						console.log(errorText);
 					}
 				});
-		
+
 			}
 			else // Coordinador de carrera
 			{
@@ -665,7 +665,7 @@ function obtenerPlanesEstudio(callback)
 					alert(errorText.responseText);
 				});
 			}
-			
+
 		}
 
 
@@ -686,32 +686,32 @@ public function getCatalogos()
 
 		// Cargar periodos 2010-1, 2010-2
 		$periodos = Periodo::select('periodo')->where('fin','>=',date_format(new DateTime("now"),'Y-m-d'))->get();
-		
+
 		$codigosPeriodo = array(); // ó []
 		// ["20101" => "2010-1"]
 		for ($i=0 ; $i < count($periodos) ; $i++)
-		{ 
+		{
 			$codigosPeriodo[] = ["codigo" => $periodos[$i]->periodo,"formato" => Snippets::str_insert("-",$periodos[$i]->periodo,4)];
 		}
 
 		// Oblitatoria, optativa
 		$tiposCaracter = Caracter::select('caracter','descripcion')->get();
-		
+
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
 
 		// 1 - Artes, 2 - Administración
 		/*$numPrograma = Auth::user()->programaedu;
-		
+
 		// 0 - Administrador,!0 - Coordinador
 		// Obtener nombre en caso de ser coordinador
 		$nombrePrograma = "";
-		if ($numPrograma != 0) 
+		if ($numPrograma != 0)
 		{
 			$nombrePrograma = ProgramaEducativo::find($numPrograma);
 			$nombrePrograma = $nombrePrograma -> descripcion;
 		}
-		
+
 		$var_nombre = array("nombrePrograma");
 
 		// Obtener Planes
@@ -722,6 +722,30 @@ public function getCatalogos()
 		$data = compact('periodosPrograma','codigosPeriodo','tiposCaracter','turnos','unidades');
 
 		return Response::json($data);
-		
-		
+
+
 	}
+
+	/********************* EN CARGA SUBSECUENTE PARA OBTENER LOS GRUPOS POR UNIDAD DE APRENDIZAJE PARA LAS OPTATIVAS
+		/*var renglonGrupos = "";
+						 Obtener los grupos a los que pertenece la ua de tipo optativa
+						$.ajax({
+							type: "POST",
+							url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+							data: {uaprendizaje:ua,semestre:semestreua},
+							dataType: "json",
+							success: function(grupos){
+								renglonGrupos = "";
+								for(var j=0;j<grupos.length;j++)
+								{
+									if(j == grupos.length-1)
+										renglonGrupos+=grupos[j].grupo;
+									else
+										renglonGrupos+=grupos[j].grupo + ", ";
+								}
+							},
+							error: function(errorText,textError,errorThrow){
+								alert("Error al obtener grupos asociados en la ua: " + errorText.responseText);
+							},
+							async:false
+						});*/

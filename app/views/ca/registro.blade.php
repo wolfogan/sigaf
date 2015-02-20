@@ -1191,59 +1191,23 @@
 					var ua = data.uas[i].uaprendizaje;
 					var semestreua = data.uas[i].semestre;
 
+					renglon = "<tr>" +
+								"<td>" + data.uas[i].uaprendizaje + "</td>" +
+								"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
+								"<td>" + data.uas[i].creditos + "</td>" +
+								"<td>" + data.uas[i].HC + "</td>" +
+								"<td>" + data.uas[i].etapa + "</td>" +
+								"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+								"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
+								"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "'/>" + "</td>" +
+							  "</tr>";
 					if (data.uas[i].caracter == 1)
 					{
-						renglon = "<tr>" +
-									"<td>" + data.uas[i].uaprendizaje + "</td>" +
-									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
-									"<td>" + data.uas[i].creditos + "</td>" +
-									"<td>" + data.uas[i].HC + "</td>" +
-									"<td>" + data.uas[i].etapa + "</td>" +
-									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
-									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
-									"<td>" + "<input type='button' value='-' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "'/>" + "</td>" +
-								  "</tr>";
-
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
-
 					}
 					else
 					{
-						/*var renglonGrupos = "";
-						 Obtener los grupos a los que pertenece la ua de tipo optativa
-						$.ajax({
-							type: "POST",
-							url:"<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
-							data: {uaprendizaje:ua,semestre:semestreua},
-							dataType: "json",
-							success: function(grupos){
-								renglonGrupos = "";
-								for(var j=0;j<grupos.length;j++)
-								{
-									if(j == grupos.length-1)
-										renglonGrupos+=grupos[j].grupo;
-									else
-										renglonGrupos+=grupos[j].grupo + ", ";
-								}
-							},
-							error: function(errorText,textError,errorThrow){
-								alert("Error al obtener grupos asociados en la ua: " + errorText.responseText);
-							},
-							async:false
-						});*/
-
-						renglon = "<tr>" +
-									"<td>" + data.uas[i].uaprendizaje + "</td>" +
-									"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
-									"<td>" + data.uas[i].creditos + "</td>" +
-									"<td>" + data.uas[i].HC + "</td>" +
-									"<td>" + data.uas[i].etapa + "</td>" +
-									"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
-									"<td>" + "<input type='button' class='md-trigger clsModificarFila' data-modal='pruebaCa' programa='" + programa + "' periodo='" + periodo + "' semestre='" + semestreua + "' uaprendizaje='" + ua + "' />" + "</td>" +
-									"<td>" + "<input type='button' value='-'' title='Eliminar' class='clsEliminarFila' id='eliminar' semestre='" + semestreua + "' />" + "</td>" +
-								  "</tr>";
 						$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
-						//alert("Si fue sincrono");
 					}
 				}
 				// Para generar los grupos de la carga

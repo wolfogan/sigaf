@@ -1037,7 +1037,7 @@
 			console.log(dataUA);
 
 			var inputs = $("#formUpdate .scrollTable:eq(0) tbody tr:not(:eq(0),:eq(1)) td:nth-child(4) input");
-			if(validarInputSeries(inputs) ==false)
+			if(validarInputSeries(inputs) == false)
 			{
 				alert("Existen materias seriadas en blanco");
 				return;

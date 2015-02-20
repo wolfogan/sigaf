@@ -24,7 +24,7 @@ class CargaAcademicaController extends BaseController
 		}
 
 		// 3.- Cargar programas educativo: 1 - Artes - LA - etc..... menos tronco común
-		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+		$programas = ProgramaEducativo::all();
 
 		// CATALOGOS GENERALES:
 		//
@@ -65,7 +65,7 @@ class CargaAcademicaController extends BaseController
 		$turnos = Turno::all();
 
 		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
-		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+		$programas = ProgramaEducativo::all();
 
 		// Obtener último período de carga
 
@@ -100,7 +100,7 @@ class CargaAcademicaController extends BaseController
 		}
 
 		// Carreras de los planes de estudio: ARTES, CONTADURIA, INFORMATICA, ETC.
-		$programas = ProgramaEducativo::where('programaedu','<>','6')->get();
+		$programas = ProgramaEducativo::all();
 
 		// Matutino, Vespertino, Interturno
 		$turnos = Turno::all();
@@ -168,7 +168,6 @@ class CargaAcademicaController extends BaseController
 		$programas = DB::table("plan_programa")
 				->join("programaedu","plan_programa.programaedu","=","programaedu.programaedu")
 				->select("plan_programa.programaedu","programaedu.descripcion")
-				->where("plan_programa.programaedu","<>",6)
 				->whereIn("plan_programa.plan",$planesWhereIn)
 				->distinct()
 				->get();
@@ -239,7 +238,7 @@ class CargaAcademicaController extends BaseController
 		$UAS = DB::table('p_ua')
 				->join('uaprendizaje','p_ua.uaprendizaje','=','uaprendizaje.uaprendizaje')
 				->select('p_ua.uaprendizaje','uaprendizaje.descripcionmat')
-				->whereIn('p_ua.programaedu',array($programa,6))
+				->where('p_ua.programaedu',$programa)
 				->where('uaprendizaje.plan','=',$plan)
 				->where('p_ua.caracter','=',$caracter)
 				->orderBy('p_ua.uaprendizaje','asc')

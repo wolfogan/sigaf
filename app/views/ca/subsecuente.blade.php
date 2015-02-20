@@ -114,7 +114,7 @@
 	<!-------------------------------------- MODAL CATALOGO GRUPOS PLAN VIGENTE -------------------------------------->
 
 	<div class="md-modal md-effect-11" id="modalGruposVigente">
-		<form id="formGV" action="javascript:registrarGrupo(true);" class="md-content" method="post">
+		<form id="formG" action="javascript:registrarGrupo();" class="md-content" method="post">
 			<h3>Agregar Grupos</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -149,6 +149,7 @@
 						<td>Programa Educativo:</td>
 						<td><label><div class="grupoPgr">Lic. Informática</div></label></td>
 					</tr>
+					<input type="hidden" name="grupo_usersid" class="grupoUsersId"/>
 					<input type="hidden" name="grupo_plan" id="grupoVigentePlan"/>
 					<input type="hidden" name="grupo_periodo" class="grupoPeriodo"/>
 					<input type="hidden" name="grupo_programa" class="grupoPrograma"/>
@@ -275,7 +276,7 @@
 						</select>
 						<input type="button" class="md-trigger" value="+" data-modal="modalGruposVigente" id="modalGruposVigente" />
 						<!--<input type="button" class="md-trigger" value="UA" style="width:40px;" data-modal="btnAgregarUa" id="btnAgregarUa" />-->
-						<input type="button" style="width:180px; margin-top:3px;" value="Actualizar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnGuardarCargaV" />
+						<input type="button" style="width:180px; margin-top:3px;" value="Actualizar Carga"  class="estilo_button2" name="btnGuardarCa" id="btnActualizarCarga" />
 					</div>
 				</fieldset>
 			</div>
@@ -803,6 +804,29 @@
 			});
 		}
 
+		function registrarGrupo()
+		{
+			var dataGrupo = $("#formG").serialize();
+
+			$.post("<?php echo URL::to('cargaacademica/registrargrupo'); ?>",dataGrupo,function(result){
+
+					$("#selectGruposVigente").append("<option value="+result+" >"+result+"</option>");
+					$('.grupos').multiselect('rebuild');
+					if($("#selectCaracterVigente").val()==1)
+					{
+						marcar_carreras($("#selectGruposVigente"));
+					}
+
+				//alert(result); Verificar el grupo registrado
+				alert("Grupo dado de alta");
+				$(".salirGrupo").click();
+
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+		}
+
 		function copiarCarga()
 		{
 
@@ -818,13 +842,15 @@
 				type: "post",
 				data: dataCopia,
 				success: function(periodo){
+					var nombrePeriodo = insertStr(periodo,"-",4);
 					//$loader.hide();
 					$("#cargaCompleta").show();
 					// Limpieza de controles
 					$("#tablaCopiarCarga").find("input,select").val("");
 					// Añadir periodo
-					$("#periodo").append("<option value='" + periodo + "'>" + insertStr(periodo,"-",4) + "</option>");
+					$("#periodo").append("<option value='" + periodo + "'>" + nombrePeriodo + "</option>");
 					$("#periodo").val(periodo);
+					$("#ca_nombrePeriodo label").text(nombrePeriodo);
 					// Consultar carga
 					obtenerCarga(periodo,PROGRAMAEDU);
 
@@ -977,128 +1003,189 @@
 				alert(errorText.responseText);// CUANDO CAMBIEN EL SEMESTRE DEL PLAN VIGENTE
 			});
 		}
+
+		function generarCarga(programa)
+		{
+			// $(selectGrupos).val() instanceof Array = Saber si es un arreglo
+			// Validar seleccion de unidad de aprendizaje
+			var uasPlan = $("#listaPlanVigente").jqxListBox('getCheckedItems');
+			uasPlan.forEach(function(element,index){
+				uasPlan[index] = element.label.substring(0,5);
+			});
+
+			console.log(uasPlan);
+
+			if(uasPlan.length < 1)
+			{
+				alert("Es necesario seleccionar una unidad de aprendizaje para generar la carga");
+				return false;
+			}
+
+			// Validar si ha seleccionado grupos en el caso de las optativas
+			var grupos = $("#selectGruposVigente").val();
+			console.log(grupos);
+			if(grupos == null)
+			{
+				alert("No hay ningun grupo seleccionado para realizar la carga");
+				return false;
+			}
+
+			//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+			var periodo = $("#periodo").val();
+			var semestre = $("#semestresVigente").val();
+			var programa = PROGRAMAEDU;
+			// Mostrar unidades de aprendizaje en las tablas
+			$.post("<?php echo URL::to('cargaacademica/registrarcarga'); ?>",{grupos:grupos,periodo:periodo,uas:uasPlan,programa:programa,semestre:semestre,usersid:USERS_ID},function(uas){
+				//Actualizar tabla de semestres
+				obtenerCarga(periodo,programa);
+				alert(uas);
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+			});
+
+			// Limpiar listboxPlanVigente
+			$("#listaPlanVigente").jqxListBox("uncheckAll");
+		}
 	</script>
 
 	<script type="text/javascript">
-			$(document).ready(function () {
-				// Limpiar controles
-				$("#semestresVigente").val("");
-				$("#selecciona_plan").val("");
-				$("#periodo").val("");
-				$("#carreraAdmin").val("");
-				// Inicializar controles
-				var $buttonCopiarCA = $("#btn_copiarCa").hide();
-				var $labelPeriodoCopia = $("#labelPeriodoCopia");
-				$("#cargaCompleta").hide();
-				// Create a jqxListBox
+		$(document).ready(function () {
+			// Limpiar controles
+			$("#semestresVigente").val("");
+			$("#selecciona_plan").val("");
+			$("#periodo").val("");
+			$("#carreraAdmin").val("");
+			$(".grupoUsersId").val(USERS_ID);
+			// Inicializar controles
+			var $buttonCopiarCA = $("#btn_copiarCa").hide();
+			var $labelPeriodoCopia = $("#labelPeriodoCopia");
+			var $selectCarreraAdmin = $("#carreraAdmin");
+			$("#cargaCompleta").hide();
+			// Create a jqxListBox
 
-				$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
+			$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
 
-				$("#carreraAdmin").on("change",function(event){
-					event.preventDefault();
-					$buttonCopiarCA.hide();
-					PROGRAMAEDU = $("#carreraAdmin").val();
-					// Para modal de registro de grupo
-					$("#grupoCarreraV").val(PROGRAMAEDU);
-					console.log(PROGRAMAEDU);
+			$("#carreraAdmin").on("change",function(event){
+				event.preventDefault();
+				$buttonCopiarCA.hide();
+				PROGRAMAEDU = $("#carreraAdmin").val();
+				// Para modal de registro de grupo
+				$("#grupoCarreraV").val(PROGRAMAEDU);
 
-					$.ajax({
-						url: "<?php echo URL::to('cargaacademica/ultimoperiodo'); ?>",
-						type: "post",
-						data: {programaedu: PROGRAMAEDU},
-						success:function(periodo){
-							if(periodo == 0)
-							{
-								alert("No existe una carga anterior para el programa educativo seleccionado.");
-							}
-							else
-							{
-								$buttonCopiarCA.show();
-								$labelPeriodoCopia.text(insertStr(periodo,'-',4));
-								$("#programaCopia").val(PROGRAMAEDU);
-								$("#periodoCopia").val(periodo);
-							}
+				// Para el alta del grupo
+				$(".grupoPrograma").val(PROGRAMAEDU);
+				$(".grupoPgr").text($("#carreraAdmin option:selected").text());
+				console.log(PROGRAMAEDU);
 
-						},
-						error:function(errorText,textError,errorThrow){
-							alert("Error: " + errorText.responseText);
-						}
-					});
-
-					$.post("<?php echo URL::to('cargaacademica/obtenerplanes'); ?>",{programaedu: PROGRAMAEDU},function(planes){
-						var options = "";
-						for(var x in planes)
+				$.ajax({
+					url: "<?php echo URL::to('cargaacademica/ultimoperiodo'); ?>",
+					type: "post",
+					data: {programaedu: PROGRAMAEDU},
+					success:function(periodo){
+						if(periodo == 0)
 						{
-							if(x!="cantidad")
-							{
-								options+="<option value='" + planes[x] + "'>" + insertStr(String(planes[x]),"-",4) + "</option>";
-							}
-
-							$("#selecciona_plan").html(options);
-							$("#selecciona_plan").val("");
+							alert("No existe una carga anterior para el programa educativo seleccionado.");
 						}
-					})
-					.fail(function(errorText,textError,errorThrow){
+						else
+						{
+							$buttonCopiarCA.show();
+							$labelPeriodoCopia.text(insertStr(periodo,'-',4));
+							$("#programaCopia").val(PROGRAMAEDU);
+							$("#periodoCopia").val(periodo);
+						}
+
+					},
+					error:function(errorText,textError,errorThrow){
 						alert("Error: " + errorText.responseText);
-					});
-
+					}
 				});
 
-				$("#periodo").on("change",function(){
-					var periodo = $(this).val();
+				$.post("<?php echo URL::to('cargaacademica/obtenerplanes'); ?>",{programaedu: PROGRAMAEDU},function(planes){
+					var options = "";
+					for(var x in planes)
+					{
+						if(x!="cantidad")
+						{
+							options+="<option value='" + planes[x] + "'>" + insertStr(String(planes[x]),"-",4) + "</option>";
+						}
 
-					if(periodo == "")
-						return;
-
-					$("#ca_nombrePeriodo > label").text(insertStr(periodo,"-",4));
-				});
-
-				$("#selecciona_plan").on("change",function(){
-					$("#selectCaracterVigente").val(1);
-
-					var plan = $(this).val();
-					if(plan == "")
-						return;
-
-					$("#nombreVigente").text("Plan " + $("#selecciona_plan option:selected").text());
-
-					//Obtener las unidades de aprendizaje obligatorias plan vigente formateadas Ej. 11236 - Matematicas
-					$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:PROGRAMAEDU,caracter:1},function(uas){
-						$("#listaPlanVigente").jqxListBox({source:uas});
-					})
-					.fail(function(errorText,textError,errorThrow){
-						alert(errorText.responseText);
-					});
-				});
-
-				$("#selectCaracterVigente").on("change",function(){
-
-					var caracter = $(this).val();
-					var plan = $("#selecciona_plan").val();
-					var programa = PROGRAMAEDU;
-					if(caracter=="")
-						return;
-
-					seleccionarCaracter(caracter,programa,plan);
-
-				});
-
-				$("#semestresVigente").on("change",function(){
-					var caracter = $("#selectCaracterVigente").val();
-					var plan =$("#selecciona_plan").val();
-					var programa = PROGRAMAEDU;
-					var semestre = $(this).val();
-
-					if(semestre == "")
-						return;
-
-					seleccionarSemestre(caracter,programa,semestre,plan);
-
-
+						$("#selecciona_plan").html(options);
+						$("#selecciona_plan").val("");
+					}
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
 				});
 
 			});
-		</script>
+			// Seleccionar período para obtener carga
+			$("#periodo").on("change",function(){
+				var periodo = $(this).val();
+				var programa = $selectCarreraAdmin.val();
+				if(periodo == "")
+					return;
+
+				var nombrePeriodo = insertStr(periodo,"-",4);
+				// Para el alta del grupo
+				$(".grupoPeriodo").val(periodo);
+				$(".grupoPer").text(nombrePeriodo);
+
+				$("#ca_nombrePeriodo > label").text(nombrePeriodo);
+				// Consultar carga
+				obtenerCarga(periodo,programa);
+			});
+
+			$("#selecciona_plan").on("change",function(){
+				$("#selectCaracterVigente").val(1);
+				var plan = $(this).val();
+				if(plan == "")
+					return;
+				var nombrePlan = $("#selecciona_plan option:selected").text();
+				$("#nombreVigente").text("Plan " + nombrePlan);
+
+				// Para el alta del grupo
+				$("#grupoVigentePlan").val(plan);
+				$("#grupoPlanVigente").text("Plan " + nombrePlan);
+				//Obtener las unidades de aprendizaje obligatorias plan vigente formateadas Ej. 11236 - Matematicas
+				$.post("<?php echo URL::to('cargaacademica/obteneruas'); ?>",{noplan:plan,programa:PROGRAMAEDU,caracter:1},function(uas){
+					$("#listaPlanVigente").jqxListBox({source:uas});
+				})
+				.fail(function(errorText,textError,errorThrow){
+					alert(errorText.responseText);
+				});
+			});
+
+			$("#selectCaracterVigente").on("change",function(){
+
+				var caracter = $(this).val();
+				var plan = $("#selecciona_plan").val();
+				var programa = PROGRAMAEDU;
+				if(caracter=="")
+					return;
+
+				seleccionarCaracter(caracter,programa,plan);
+
+			});
+
+			$("#semestresVigente").on("change",function(){
+				var caracter = $("#selectCaracterVigente").val();
+				var plan =$("#selecciona_plan").val();
+				var programa = PROGRAMAEDU;
+				var semestre = $(this).val();
+
+				if(semestre == "")
+					return;
+
+				seleccionarSemestre(caracter,programa,semestre,plan);
+			});
+
+			$("#btnActualizarCarga").on("click",function(){
+				generarCarga();
+			});
+
+		});
+	</script>
 
 
 
