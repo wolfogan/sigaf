@@ -59,6 +59,30 @@
 <body>
 
 	<input type="hidden" name="global_user_id" id="globalUserId"  value = {{Auth::user()->id}}/>
+
+	<!-------------------------------------- MODAL LISTA PARA MODIFICAR GRUPOS -------------------------------------->
+	<div class="md-modal2 md-effect-11" id="pruebaCa">
+		<form  id="formActualizarGrupos" action="javascript: actualizarGrupos()" class="md-content" method="post">
+			<h3>Modificar grupos</h3>
+			<div class="tblCatalogos">
+				<div class="listasCa">
+					<div id="listaUa" style="margin-top:40px; margin-left:5px;"></div>
+				</div>
+			</div>
+			<div class="CatBotones">
+				<input type="hidden" name="grupos_programa" id="actualizarGruposPrograma" />
+				<input type="hidden" name="grupos_periodo" id="actualizarGruposPeriodo"/>
+				<input type="hidden" name="grupos_semestre" id="actualizarGruposSemestre"/>
+				<input type="hidden" name="grupos_uaprendizaje" id="actualizarGruposUaprendizaje"/>
+				<input type="hidden" name="grupos_userid" id="actualizarGruposUserId" />
+				<input type="hidden" name="grupos_grupos" id="actualizarGruposGrupos" />
+
+				<input style="font-size:18px;" type="submit" class="estilo_button2" value="Actualizar"/>
+				<input style="font-size:18px;" type="button" value="Salir" class="md-close" />
+			</div>
+		</form>
+	</div>
+
 	<!-------------------------------- MODAL CATALOGO PERIODOS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCatalogoPeriodo">
@@ -733,7 +757,8 @@
 	<script type="text/javascript" src="../js/jqxcheckbox.js"></script>
 
 	<script type="text/javascript">
-		var actualizar = false;
+
+		var actualizar = false; // BANDERA PARA MODAL DE REGISTRO DE PE
 		var USERS_ID = $("#globalUserId").val();
 		var PROGRAMAEDU = 0;
 		var $loader = $("#ajaxLoad");
@@ -919,7 +944,7 @@
 				}
 				console.log(data);
 				// Activar modales en la modificacion de las filas
-				//activarModal();
+				activarModal();
 			})
 			.fail(function(errorText,textError,errorThrow){
 				alert(errorText.responseText);
@@ -1047,6 +1072,51 @@
 			// Limpiar listboxPlanVigente
 			$("#listaPlanVigente").jqxListBox("uncheckAll");
 		}
+
+		function actualizarGrupos()
+		{
+			// Obtener renglon para la actualización
+			var tdGrupos = $(renglonActualizarGrupos).find("td:eq(1)");
+			var textoGrupos = $(tdGrupos).text();
+			// Obtener grupos seleccionados
+			var grupos = $("#listaUa").jqxListBox("getCheckedItems");
+			var gruposActualizar = [];
+
+			// Recorrer y recortar nombre de grupos
+			$.each(grupos,function(index, valor){
+				gruposActualizar.push(valor.value.substr(0,3));
+			});
+
+			if(gruposActualizar.length == 0)
+			{
+				alert("Debes seleccionar por lo menos un grupos para continuar...");
+				return;
+			}
+			// Grupos seleccionados por el usuario
+			$("#actualizarGruposGrupos").val(gruposActualizar);
+
+			// Serializar información
+			var dataGrupos = $("#formActualizarGrupos").serialize();
+			console.log(dataGrupos);
+
+			// Actualizar grupos
+			$.ajax({
+				url : "<?php echo URL::to('cargaacademica/actualizargrupos') ?>",
+				type: "post",
+				data: dataGrupos,
+				success: function(grupos){
+					textoGrupos = textoGrupos.substring(0,textoGrupos.indexOf('-') + 1);
+					textoGrupos += ' ' + grupos;
+					$(tdGrupos).text(textoGrupos);
+					alert("Grupos actualizados correctamente");
+					$(".md-close").click();
+				},
+				error: function(errorText,textError,errorThrow){
+					alert("Error: " + errorText.responseText);
+				}
+			});
+		}
+
 	</script>
 
 	<script type="text/javascript">
@@ -1057,13 +1127,15 @@
 			$("#periodo").val("");
 			$("#carreraAdmin").val("");
 			$(".grupoUsersId").val(USERS_ID);
+			$("#actualizarGruposUserId").val(USERS_ID);
 			// Inicializar controles
 			var $buttonCopiarCA = $("#btn_copiarCa").hide();
 			var $labelPeriodoCopia = $("#labelPeriodoCopia");
 			var $selectCarreraAdmin = $("#carreraAdmin");
+
 			$("#cargaCompleta").hide();
 			// Create a jqxListBox
-
+			$("#listaUa").jqxListBox({width: 250, checkboxes: true, height: 300, theme: 'orange'});
 			$("#listaPlanVigente").jqxListBox({width: 480,  checkboxes: true, height: 330, theme: 'orange'});
 
 			$("#carreraAdmin").on("change",function(event){
@@ -1183,6 +1255,72 @@
 			$("#btnActualizarCarga").on("click",function(){
 				generarCarga();
 			});
+
+			// PARA MODIFICAR GRUPOS DE LA CARGA YA REALIZADA
+			$("table").on("click",".clsModificarFila",function(event){
+				event.stopPropagation();
+				// Asignar renglos seleccionado para actualizar
+				renglonActualizarGrupos = $(this).parents().get(1);
+				console.log(renglonActualizarGrupos);
+				// Limpiar control
+				$("#listaUa").jqxListBox('clear');
+				var semestre = $(this).attr("semestre"),periodo=$(this).attr("periodo"),programa=$(this).attr("programa"),uaprendizaje = $(this).attr('uaprendizaje');
+
+				// Cargar los valores predefinidos input:hidden para la actualizacion de los grupos
+				$("#actualizarGruposPrograma").val(programa);
+				$("#actualizarGruposPeriodo").val(periodo);
+				$("#actualizarGruposSemestre").val(semestre);
+				$("#actualizarGruposUaprendizaje").val(uaprendizaje);
+				$("#actualizarGruposUserId").val(USERS_ID);
+				// Petición para mostrar grupos por default
+				$.ajax({
+					url : "<?php echo URL::to('cargaacademica/obtenergruposua'); ?>",
+					type : "post",
+					data : {semestre:semestre,periodo:periodo,programa:programa,uaprendizaje:uaprendizaje},
+					dataType : "JSON",
+					success : function(data){
+						$("#listaUa").jqxListBox({source: data.source});
+						console.log(data.source);
+						console.log(data.grupos);
+
+						// Seleccionar items almacenados
+						for (var i = data.grupos.length - 1; i >= 0; i--) {
+							if(data.grupos[i].check == true)
+							{
+								$("#listaUa").jqxListBox('checkItem',data.grupos[i].grupo);
+							}
+						};
+
+					},
+					error : function(errorText,textError,errorThrow){
+						alert("Error en: " + errorText.responseText);
+					},
+					always: function(){
+						alert("terminoa ajax");
+					}
+				});
+			});
+
+			// PARA ELIIMINAR UA DE LA CARGA FALTA EL FILTRO DE CARRRRRRRRERASSASAAAASDASDASDFASDFASDF
+			$("table").on("click",".clsEliminarFila",function(event){
+				event.stopPropagation();
+				alert(PROGRAMAEDU);
+				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))
+				{
+					// Obtener UA,periodo
+					var row = $(this).parents().get(1);
+					var ua = $(row).find("td:eq(0)").text();
+					var semestre = $(this).attr("semestre");
+					//var periodo = $("#datalistPeriodo option[value='"+$("#periodo").val()+"']").attr("codigo");
+					var periodo = $("#periodo").val();
+					var programa = PROGRAMAEDU;
+					$.post("<?php echo URL::to('cargaacademica/eliminaruacarga'); ?>",{periodo:periodo,uaprendizaje:ua,programa:programa,semestre:semestre},function(data){
+						alert(data);
+						$(row).remove();
+					});
+				}
+			});
+
 
 		});
 	</script>

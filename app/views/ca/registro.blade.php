@@ -27,35 +27,8 @@
  <!-- PARA LISTA DENTRO DE MODAL, PARA MODIFICAR GRUPOS -->
 	<script type="text/javascript">
 			$(function () {
-
 				// Create a jqxListBox
 				$("#listaUa").jqxListBox({width: 250, checkboxes: true, height: 300, theme: 'orange'});
-
-				/* Check several items.
-				$("#listaUa").jqxListBox('checkIndex', 0);
-				$("#listaUa").jqxListBox('checkIndex', 1);
-				$("#listaUa").jqxListBox('checkIndex', 2);
-				$("#listaUa").jqxListBox('checkIndex', 5);*/
-
-				/*$("#listaUa").on('checkChange', function (event) {
-					var args = event.args;
-					if (args.checked) {
-						$("#Events").text("Checked: " + args.label);
-					}
-					else {
-						$("#Events").text("Unchecked: " + args.label);
-					}
-
-					var items = $("#listaUa").jqxListBox('getCheckedItems');
-					var checkedItems = "";
-					$.each(items, function (index) {
-						if (index < items.length - 1) {
-							checkedItems += this.label + ", ";
-						}
-						else checkedItems += this.label;
-					});
-					$("#CheckedItems").text(checkedItems);
-				});*/
 			});
 	</script>
 
