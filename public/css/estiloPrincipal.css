@@ -180,7 +180,7 @@ footer
 }
 #consultaPlan
 {
-	height: 130px;
+	height: 150px;
 	margin-top:40px;
 	margin-left:80px;
 	margin-bottom:100px;
@@ -1781,7 +1781,6 @@ html>body div.pe_tableContainer table {
 
 .consul_carrera_ca
 {
-
 	float: left;
 	padding-right: 20px;
 }
