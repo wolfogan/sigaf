@@ -104,39 +104,44 @@
 					</select>
 				</div>
 
-				
-				
 			</div>
 
 			
 
 			<div class="consultax_ca">
-				<div class="consul_carrera_ca">
-						<label>Semestre: </label>
-						<select class="con_estilo" style="width:150px;" name="semestre_ca" id="semestre_ca">
-							<option value="0">TODOS</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-					</div>
-					
-					<div class="consul_carrera_ca">
-						<label>Grupo: </label>
-						<input class="estilo_text" style="width:150px; margin-left:12px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
-						<datalist id="datalist_grupo_ca">
-						</datalist>
-					</div>
 
-					<div class="consul_carrera_ca" >
-						<input class="estilo_button2" style="width:130px; margin-left:65px; margin-top:-5px;" type="button" value="Buscar" id="consultarCarga">
-					</div>
+				<div class="consul_carrera_ca">
+					<label>Semestre: </label>
+					<select class="con_estilo" style="width:150px;" name="semestre_ca" id="semestre_ca">
+						<option value="0">TODOS</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+					</select>
+				</div>
+				
+					
+				<div class="consul_carrera_ca">
+					<label>Grupo: </label>
+					<input class="estilo_text" style="width:150px; margin-left:12px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
+					<datalist id="datalist_grupo_ca">
+					</datalist>
+				</div>
+
+					<!---------------------- CHECK DE TRONCO COMUN ---------------------->
+				<div id="consul_carrera_ca">
+					<input style="width:18px; height:18px;" type="checkbox" checked name="troncoComun" id="troncoComun"><label style="font-size:18px;">Tronco común</label>
+				</div>
+
+				<div class="consul_carrera_ca" >
+					<input class="estilo_button2" style="width:130px; margin-left:65px; margin-top:3px;" type="button" value="Buscar" id="consultarCarga">
+				</div>
 			</div>
 		
 
