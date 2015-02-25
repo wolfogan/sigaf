@@ -1238,6 +1238,8 @@
 
 				seleccionarCaracter(caracter,programa,plan);
 
+
+
 			});
 
 			$("#semestresVigente").on("change",function(){
@@ -1250,6 +1252,19 @@
 					return;
 
 				seleccionarSemestre(caracter,programa,semestre,plan);
+
+				var $semestreFoco =  $("#planVigente").next();
+				console.log($semestreFoco);
+				var $semestreSeleccionado = $("#semestre"+semestre);
+				console.log($semestreSeleccionado);
+
+				//$("#planVigente").insertBefore($semestreFoco);
+				if($semestreFoco.attr("id")!=$semestreSeleccionado.attr("id"))
+				{
+					$semestreFoco.replaceWith($semestreSeleccionado.css({"width":"700px","margin-top":"150px"}));
+					$semestreFoco.css({"width":"","margin-top":"30px"});
+					$semestreFoco.insertAfter($("#planVigente").next());
+				}
 			});
 
 			$("#btnActualizarCarga").on("click",function(){
