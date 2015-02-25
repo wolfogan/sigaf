@@ -253,7 +253,8 @@
 
 						<div class="us_div">
 							<div class="us_nuevo">Contraseña:
-								<label style="margin-left:25px;">DUFC870212MBCRRY04</label>
+								<!--<label style="margin-left:25px;">DUFC870212MBCRRY04</label>-->
+								<input style="margin-left:27px" class="dd_con_estilo_largo" type="text" name="contrasena_us" id="contrasena_us" size=1/>
 							</div>
 
 							<div class="us_repetir">Teléfono:
