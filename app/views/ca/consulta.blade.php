@@ -11,7 +11,7 @@
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 
-		
+
 
 <!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
@@ -32,7 +32,7 @@
 	</div>
 <figure id="cimarron"><img src="../imagenes/cimarron.png" alt=""></figure>
 </header>
-@include('includes.menu') 
+@include('includes.menu')
 <div id="indicadores">
 	<div id="usuariofecha">
 		<div id="usuario" class="texto_body">
@@ -62,12 +62,12 @@
 			</div>
 
 	<div id="Consultas">
-		
+
 		<fieldset id="consultaPlan" style="margin:auto; width:800px;">
 			<legend>Consultar por:</legend>
 
 			<div class="consultax_ca">
-				
+
 				<div class="consul_carrera_ca">
 					<label>Carrera: </label>
 					<select class="con_estilo" style="width:150px; margin-left:10px;" id="carrera_ca">
@@ -106,7 +106,7 @@
 
 			</div>
 
-			
+
 
 			<div class="consultax_ca">
 
@@ -125,8 +125,8 @@
 						<option value="9">9</option>
 					</select>
 				</div>
-				
-					
+
+
 				<div class="consul_carrera_ca">
 					<label>Grupo: </label>
 					<input class="estilo_text" style="width:150px; margin-left:12px;" type="text" name="grupo_ca" id="grupo_ca" list="datalist_grupo_ca" size=1 onkeypress="ValidaSoloNumeros()">
@@ -143,366 +143,16 @@
 					<input class="estilo_button2" style="width:130px; margin-left:65px; margin-top:3px;" type="button" value="Buscar" id="consultarCarga">
 				</div>
 			</div>
-		
+
 
 		</fieldset>
 
 	</div>
-
 		<!--<div id="GridPlanEstudio" style="height:2200px; margin-top:80px">-->
 	<br>
-		<!-------------------------------------------SEMESTRE 1 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre1">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 1</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
 
-		<!-------------------------------------------SEMESTRE 2 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre2">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 2</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 3 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre3">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 3</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 4 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre4">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 4</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 5 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre5">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 5</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 6 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre6">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 6</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 7 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre7">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 7</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 8 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre8">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 8</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-<!-------------------------------------------SEMESTRE 9 CONSULTA -------------------------------------------->
-			<table class="tabla_ca" id="semestre9">
-				<thead class="dd_encabezado_tablaConsulta">
-					<tr>
-						<th>SEMESTRE: 9</th>
-						<th>PLAN:</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorBlanco_tablaConsulta">
-					<tr>
-						<th style="width:50px">CLAVE</th>
-						<th style="width:300px">MATERIA</th>
-						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
-						<th style="width:100px">ETAPA</th>
-						<th style="width:50px">REQ. SERIACIÓN</th>
-					</tr>
-				</thead>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OBLIGATORIAS</th>
-							
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-						<tr>
-							<th colspan="7">OPTATIVAS</th>
-						</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				<thead class="dd_encabezado_colorNaranja_tablaConsulta">
-					<th colspan="2">GRUPOS Y TURNOS:</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+	<div id="semestres" style="margin-top:40px;">
+	</div>
 <!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
 
@@ -574,19 +224,18 @@
 	<footer>
 			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
 			<div id="pie_tel">Teléfono: 664 188 9221</div>-->
-
 	</footer>
 
 </div>
 <!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
 
-<script language="javascript">
+<script type="text/javascript">
 
 			function ValidaSoloNumeros() {
-			 if ((event.keyCode < 48) || (event.keyCode > 57)) 
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
 			  event.returnValue = false;
 			}
-			
+
 			function Validate(obj){
 			  if(true != false){
 				// Así damos de nuevo el foco al INPUT
@@ -637,12 +286,13 @@
 			if($("#periodo_ca").val() == "")
 			{
 				alert("Es necesario introducir un período para continuar...");
+				return;
 			}
 
 			// Limpiar tablas y encabezado de las mismas
-			$("table:not(.ca_tblResumenConsulta)").hide();
-			$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
-			$(".dd_encabezado_tablaConsulta tr th:eq(1)").empty();
+			$("table:not(.ca_tblResumenConsulta)").remove();
+			//$("#semestre1 tbody,#semestre2 tbody,#semestre3 tbody,#semestre4 tbody,#semestre5 tbody,#semestre6 tbody,#semestre7 tbody,#semestre8 tbody,#semestre9 tbody").html("");
+			//$(".dd_encabezado_tablaConsulta tr th:eq(1)").empty();
 
 			// Obtener programa educativo
 			var programaedu = $("#carrera_ca").val();
@@ -654,6 +304,150 @@
 
 			alert(programaedu + "\n" + periodo + "\n" + turno+ "\n" + semestre + "\n" + grupo);
 
+			if($("#troncoComun").is(":checked"))
+			{
+				$.ajax({
+				url : "<?php echo URL::to('cargaacademica/obtenercarga'); ?>",
+				type : "post",
+				data : { programa : 6 , periodo : periodo, semestre:semestre, grupo:grupo},
+				dataType : "JSON",
+				success : function(data){
+						console.log(data);
+						// Recorrer por semestres
+						var tablas = "";
+						for(var x = 0;x<data.planSemestres.length;x++)
+						{
+							tablas += "<table class='tabla_ca' id='semestre" + data.planSemestres[x].semestre + "'>" +
+											"<thead class='dd_encabezado_tablaConsulta'>" +
+												"<tr>" +
+													"<th>SEMESTRE: " + data.planSemestres[x].semestre + "</th>" +
+													"<th>PLAN:</th>" +
+												"</tr>" +
+											"</thead>" +
+											"<thead class='dd_encabezado_colorBlanco_tablaConsulta'>" +
+												"<tr>" +
+													"<th style='width:50px'>CLAVE</th>" +
+													"<th style='width:300px'>MATERIA</th>" +
+													"<th style='width:50px'>NO. CRÉDITOS</th>" +
+													"<th style='width:50px'>HC</th>" +
+													"<th style='width:100px'>ETAPA</th>" +
+													"<th style='width:50px'>REQ. SERIACIÓN</th>" +
+												"</tr>" +
+											"</thead>" +
+											"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+													"<tr>" +
+														"<th colspan='7'>OBLIGATORIAS</th>" +
+
+													"</tr>" +
+											"</thead>" +
+											"<tbody>" +
+											"</tbody>" +
+											"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+													"<tr>" +
+														"<th colspan='7'>OPTATIVAS</th>" +
+													"</tr>" +
+											"</thead>" +
+											"<tbody>" +
+											"</tbody>" +
+											"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+												"<th colspan='2'>GRUPOS Y TURNOS:</th>" +
+											"</thead>" +
+											"<tbody>" +
+											"</tbody>" +
+										"</table>";
+						}
+						console.log(tablas);
+						$("#semestres").append(tablas);
+
+						for (var i = 0; i < data.uas.length; i++)
+						{
+							// Filtro de turno
+							var validarTurno = false;
+							var filtroTurno = parseInt($("#turno_ca").val());
+
+
+							switch(filtroTurno)
+							{
+								case 0:
+								validarTurno = true;
+								break;
+								case 1:
+								filtroTurno = "M";
+								break;
+								case 2:
+								filtroTurno = "V";
+								break;
+								case 3:
+								filtroTurno = "I";
+								break;
+								default:
+								filtroTurno = "N";
+								break;
+							}
+
+							var turnos = data.uas[i].turnos.split(",");
+							$.each(turnos,function(key,value){
+								if(value == filtroTurno)
+								{
+									validarTurno = true;
+									return false;
+								}
+							});
+
+
+							if(validarTurno == true)
+							{
+								var renglon = "";
+								// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
+
+									renglon = "<tr>" +
+												"<td>" + data.uas[i].uaprendizaje + "</td>" +
+												"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
+												"<td>" + data.uas[i].creditos + "</td>" +
+												"<td>" + data.uas[i].HC + "</td>" +
+												"<td>" + data.uas[i].etapa + "</td>" +
+												"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
+											  "</tr>";
+
+								if (data.uas[i].caracter == 1)
+								{
+									$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
+								}
+								else
+								{
+									$("#semestre"+data.uas[i].semestre+" tbody:eq(1)").append(renglon);
+								}
+							}
+						}
+						// Para generar los grupos de la carga
+						for (var i = 0; i < data.grupos.length; i++)
+						{
+							var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
+							if(grupoTurno.length == 0)
+								grupoTurno += data.grupos[i].grupo + " ";
+							else
+								grupoTurno += ", "+data.grupos[i].grupo;
+							$("#semestre" + data.grupos[i].semestre + " tbody:eq(2)").html("<tr><td colspan='2'>"+grupoTurno+"</td></tr>");
+						}
+
+						// Para mostrar el plan al que pertenece la carga de cada semestre
+						for (var i = 0; i < data.planSemestres.length; i++)
+						{
+							$("#semestre" + data.planSemestres[i].semestre + " .dd_encabezado_tablaConsulta").find("th:eq(1)").text("PLAN: " + insertStr(String(data.planSemestres[i].plan),"-",4));
+							// Filtro de semestres
+							var filtroSemestre = parseInt($("#semestre_ca").val());
+							if(filtroSemestre ==0 || filtroSemestre == data.planSemestres[i].semestre)
+							{
+								$("#semestre" + data.planSemestres[i].semestre).hide().fadeIn("slow");
+							}
+						}
+					},
+					error : function(errorText,textError,errorThrow){
+						alert("Error: " + errorText.responseText);
+					}
+				});
+			}
+
 			$.ajax({
 				url : "<?php echo URL::to('cargaacademica/obtenercarga'); ?>",
 				type : "post",
@@ -661,14 +455,59 @@
 				dataType : "JSON",
 				success : function(data){
 					console.log(data);
+					// Recorrer por semestres
+					var tablas = "";
+					for(var x = 0;x<data.planSemestres.length;x++)
+					{
+						tablas += "<table class='tabla_ca' id='semestre" + data.planSemestres[x].semestre + "'>" +
+										"<thead class='dd_encabezado_tablaConsulta'>" +
+											"<tr>" +
+												"<th>SEMESTRE: " + data.planSemestres[x].semestre + "</th>" +
+												"<th>PLAN:</th>" +
+											"</tr>" +
+										"</thead>" +
+										"<thead class='dd_encabezado_colorBlanco_tablaConsulta'>" +
+											"<tr>" +
+												"<th style='width:50px'>CLAVE</th>" +
+												"<th style='width:300px'>MATERIA</th>" +
+												"<th style='width:50px'>NO. CRÉDITOS</th>" +
+												"<th style='width:50px'>HC</th>" +
+												"<th style='width:100px'>ETAPA</th>" +
+												"<th style='width:50px'>REQ. SERIACIÓN</th>" +
+											"</tr>" +
+										"</thead>" +
+										"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+												"<tr>" +
+													"<th colspan='7'>OBLIGATORIAS</th>" +
 
-					for (var i = 0; i < data.uas.length; i++) 
+												"</tr>" +
+										"</thead>" +
+										"<tbody>" +
+										"</tbody>" +
+										"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+												"<tr>" +
+													"<th colspan='7'>OPTATIVAS</th>" +
+												"</tr>" +
+										"</thead>" +
+										"<tbody>" +
+										"</tbody>" +
+										"<thead class='dd_encabezado_colorNaranja_tablaConsulta'>" +
+											"<th colspan='2'>GRUPOS Y TURNOS:</th>" +
+										"</thead>" +
+										"<tbody>" +
+										"</tbody>" +
+									"</table>";
+					}
+					console.log(tablas);
+					$("#semestres").append(tablas);
+
+					for (var i = 0; i < data.uas.length; i++)
 					{
 						// Filtro de turno
 						var validarTurno = false;
 						var filtroTurno = parseInt($("#turno_ca").val());
-						
-						
+
+
 						switch(filtroTurno)
 						{
 							case 0:
@@ -687,8 +526,8 @@
 							filtroTurno = "N";
 							break;
 						}
-						
-						var turnos = data.uas[i].turnos.split(","); 
+
+						var turnos = data.uas[i].turnos.split(",");
 						$.each(turnos,function(key,value){
 							if(value == filtroTurno)
 							{
@@ -696,14 +535,14 @@
 								return false;
 							}
 						});
-						
+
 
 						if(validarTurno == true)
 						{
 							var renglon = "";
 							// Poner en la seccion correspondiente de la tabla si es obligatoria:1 o seriada:2.
-							
-								renglon = "<tr>" + 
+
+								renglon = "<tr>" +
 											"<td>" + data.uas[i].uaprendizaje + "</td>" +
 											"<td>" + data.uas[i].descripcionmat + " - " + data.uas[i].grupos + "</td>" +
 											"<td>" + data.uas[i].creditos + "</td>" +
@@ -711,7 +550,7 @@
 											"<td>" + data.uas[i].etapa + "</td>" +
 											"<td>" + ((data.uas[i].series == null) ? "SIN SERIACION" : data.uas[i].series) + "</td>" +
 										  "</tr>";
-							
+
 							if (data.uas[i].caracter == 1)
 							{
 								$("#semestre"+data.uas[i].semestre+" tbody:eq(0)").append(renglon);
@@ -723,7 +562,7 @@
 						}
 					}
 					// Para generar los grupos de la carga
-					for (var i = 0; i < data.grupos.length; i++) 
+					for (var i = 0; i < data.grupos.length; i++)
 					{
 						var grupoTurno = $("#semestre" + data.grupos[i].semestre + " tbody:eq(2) tr td").text();
 						if(grupoTurno.length == 0)
@@ -751,8 +590,8 @@
 			});
 		});
 
-		
-		
+
+
 	});
 </script>
 </body>
