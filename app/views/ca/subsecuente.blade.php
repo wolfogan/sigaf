@@ -223,7 +223,7 @@
 	<section>
 
 		<!-- REVISAR ESTE CONTENEDOR, PORQUE SI SE AGRANDAN LAS TABLAS SE SALDRIAN DEL CONTENEDOR, POR EL HEIGHT -->
-		<div class="contenedorCa" style="height:2350px;">
+		<div class="contenedorCa" style="height:auto;">
 
 
 			<div class="nombre_coordinacion" id="nombrePrograma"></div>
@@ -320,7 +320,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -350,7 +350,7 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 2 -------------------------------->
 
-			<table class="dd_tabla" id="semestre2" style="margin-top:380px;">
+			<table class="dd_tabla" id="semestre2" style="margin-top:30px;">
 
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
@@ -363,7 +363,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -405,7 +405,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -447,7 +447,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -488,7 +488,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -530,7 +530,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -572,7 +572,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -613,7 +613,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
@@ -654,7 +654,7 @@
 						<th style="width:50px">CLAVE</th>
 						<th style="width:300px">MATERIA</th>
 						<th style="width:50px">NO. CRÉDITOS</th>
-						<th style="width:50px">HC</th>
+						<th style="width:50px">HT</th>
 						<th style="width:100px">ETAPA</th>
 						<th style="width:50px">REQ. SERIACION</th>
 						<th style="width:30px">MODIFICAR</th>
