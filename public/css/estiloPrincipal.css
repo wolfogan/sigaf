@@ -1708,7 +1708,10 @@ html>body div.pe_tableContainer table {
 
 
 /*---------------------------- CARGA 2 -----------------------------------*/
-
+#contenedor_ca_subsecuente
+{
+	
+}
 #ca_actualiza input
 {
 	margin-left: 550px;
@@ -1931,6 +1934,18 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+#dd_btnVerAnterior
+{
+	margin-left: 850px;
+	margin-top: 20px;
+}
+#dd_btnCursos_actualizacion
+{
+
+	width: 50px;
+	margin-left: 610px;
+	margin-top: -120px;
+}
 #dd_observaciones_materias
 {
 	font-size: 18px;
