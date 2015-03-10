@@ -383,7 +383,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" placeholder="8000054"/>  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D" placeholder="cedula.png"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
@@ -400,7 +400,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
@@ -419,7 +419,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
@@ -436,7 +436,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
@@ -457,7 +457,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
@@ -475,7 +475,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
@@ -494,7 +494,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
@@ -511,7 +511,7 @@
 									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
-									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
+									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
@@ -561,7 +561,7 @@
 											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
-												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
 												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
@@ -589,7 +589,7 @@
 											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
-												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
 												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
@@ -617,7 +617,7 @@
 											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
-												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
 												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
@@ -645,7 +645,7 @@
 											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
-												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
 												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
@@ -673,7 +673,7 @@
 											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
-												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
 												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>

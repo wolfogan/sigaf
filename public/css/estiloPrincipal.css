@@ -2256,12 +2256,30 @@ input[readonly],input[readonly="readonly"]
 	padding-bottom: 10px;
 	width: 200px;
 }
-#tbl_dd_cursos
+/*#tbl_dd_cursos
 {
 	margin: 20px auto;
 	height:150px;
 
 
+}*/
+#tbl_dd_cursos
+{
+	margin: 20px auto;
+	height:160px;
+}
+
+#tbl_dd_cursos th
+{
+	height:35px; 
+	color:white;
+	font-family: "trebuchet MS";
+	font-size: 18px;
+	background-color: green;
+}
+#tbl_dd_cursos td
+{
+height: 35px;
 }
 .dd_label
 {
@@ -2473,6 +2491,28 @@ input[readonly],input[readonly="readonly"]
 	font-size:16px;
 	font-weight:bold;
 }
+
+.custom-input-file {
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: #468C00 solid 2px;
+    border-radius:5px;
+	background-image: url(../imagenes/attachhh.png);
+	background-position: center;
+	margin-right: 5px;
+    background-repeat: no-repeat;
+    
+}
+.custom-input-file .input-file {
+   
+   opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    cursor: pointer;
+}
 .dd_clsAgregarArchivo:hover
 {
 	border: 3px solid green;
@@ -2573,7 +2613,7 @@ input[readonly],input[readonly="readonly"]
 	border:3px solid #ECECFB;*/
 	padding-top: 15px;
 	padding-left: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	width: 1200px;
 
 
