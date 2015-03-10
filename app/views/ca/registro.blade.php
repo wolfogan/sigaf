@@ -434,7 +434,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -480,7 +480,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -526,7 +526,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -573,7 +573,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -620,7 +620,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -667,7 +667,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -713,7 +713,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -760,7 +760,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>
@@ -806,7 +806,7 @@
 							<th style="width:150px">CLAVE</th>
 							<th style="width:500px">MATERIA</th>
 							<th style="width:50px">NO. CREDITOS</th>
-							<th style="width:50px">HC</th>
+							<th style="width:50px">HT</th>
 							<th style="width:130px">ETAPA</th>
 							<th style="width:70px">REQ. SERIACION</th>
 							<th style="width:50px">MODIFICAR</th>

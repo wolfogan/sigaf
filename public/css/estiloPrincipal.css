@@ -1886,10 +1886,8 @@ html>body div.pe_tableContainer table {
 {
 	width: 550px;
 	border: 2px solid green;
-	float: right;
-	margin-bottom: 30px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 40px 20px 30px 735px;
+	
 }
 .ca_tblResumenConsulta td
 {

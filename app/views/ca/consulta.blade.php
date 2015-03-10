@@ -329,7 +329,7 @@
 													"<th style='width:50px'>CLAVE</th>" +
 													"<th style='width:300px'>MATERIA</th>" +
 													"<th style='width:50px'>NO. CRÉDITOS</th>" +
-													"<th style='width:50px'>HC</th>" +
+													"<th style='width:50px'>HT</th>" +
 													"<th style='width:100px'>ETAPA</th>" +
 													"<th style='width:50px'>REQ. SERIACIÓN</th>" +
 												"</tr>" +
@@ -471,7 +471,7 @@
 												"<th style='width:50px'>CLAVE</th>" +
 												"<th style='width:300px'>MATERIA</th>" +
 												"<th style='width:50px'>NO. CRÉDITOS</th>" +
-												"<th style='width:50px'>HC</th>" +
+												"<th style='width:50px'>HT</th>" +
 												"<th style='width:100px'>ETAPA</th>" +
 												"<th style='width:50px'>REQ. SERIACIÓN</th>" +
 											"</tr>" +
