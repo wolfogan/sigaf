@@ -13,12 +13,34 @@
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
 
+		<!-- ------------------------------ DATATABLES --------------------------------------->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+		<!-- JS -->
+		<script src="../js/jquery.dataTables.js"></script>
+
+		<!-- ---------------------------------------------------------------------------------->
+
+
 <!--AQUI VA HORA Y FECHA-->
 		<script src="../js/tiempoactual.js"></script>
 		<script>$(function(){startWatch(); return false;});</script>
 		<!-- Script tiempo -->
 
 <!---------------------------------------------------------------------------------------->
+
+
+ <!-- Script dataTable -->
+		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$('#tblUA').dataTable();
+			} );
+		</script><!-- Termina script dataTable -->
+
+
+
 <title>Disponibilidad docente</title>
 </head>
 <body>
@@ -83,130 +105,105 @@
 	
 		</fieldset>
 
-							<div id="dd_eliminarDocentes">
-			                    <table class="dd_tabla_MatImpartir" style="margin-top:30px; margin-bottom:50px;">
-									
-									<thead class="dd_encabezado">
-										<tr>
-											<th>NO. EMPLEADO</th>
-											<th>NOMBRE</th>
-											<th>HABILITAR/ DESHABILITAR</th>
-											<th>MODIFICAR</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>	
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										<tr>
-											<td>000453</td>
-											<td>UNICE ESPINOZA</td>
-											<td>HABILITADO</td>
-											<td><input type="button" value="" class="clsModificarFila"></td>
-											
-										</tr>
-										
-																		
-									
-									</tbody>
-								</table>
-							</div>
+			<div id="demo">
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblUA">
+					<thead>
+						<tr>
+							<th>NO. EMPLEADO</th>
+							<th>NOMBRE</th>
+							<th>HABILITAR/ DESHABILITAR</th>
+							<th>MODIFICAR</th>
+													
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="gradeX">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+
+						</tr>
+						<tr class="gradeC">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+							
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeA">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+
+						<tr class="gradeX">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeC">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeC">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+						<tr class="gradeU">
+							<td>000453</td>
+							<td>UNICE ESPINOZA</td>
+							<td>HABILITADO</td>	
+							<td><input type="button" value="" class="clsModificarFila"></td>
+						</tr>
+							
+					</tbody>	
+				</table>
+			</div>
+
+							
+
+
+
+
 
 		</section>
 

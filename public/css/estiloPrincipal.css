@@ -1708,7 +1708,10 @@ html>body div.pe_tableContainer table {
 
 
 /*---------------------------- CARGA 2 -----------------------------------*/
-
+#contenedor_ca_subsecuente
+{
+	
+}
 #ca_actualiza input
 {
 	margin-left: 550px;
@@ -1931,6 +1934,18 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+#dd_btnVerAnterior
+{
+	margin-left: 850px;
+	margin-top: 20px;
+}
+#dd_btnCursos_actualizacion
+{
+
+	width: 50px;
+	margin-left: 610px;
+	margin-top: -120px;
+}
 #dd_observaciones_materias
 {
 	font-size: 18px;
@@ -2182,13 +2197,13 @@ input[readonly],input[readonly="readonly"]
 {
 
 	padding-bottom: 40px;
-	width: 1190px;
+	width: 1230px;
 }
 .dd_licenciatura
 {
 
 	float: left;
-	margin-left:10px;
+	margin-left:0px;
 	padding-right: 20px;
 
 }
@@ -2241,12 +2256,30 @@ input[readonly],input[readonly="readonly"]
 	padding-bottom: 10px;
 	width: 200px;
 }
-#tbl_dd_cursos
+/*#tbl_dd_cursos
 {
 	margin: 20px auto;
 	height:150px;
 
 
+}*/
+#tbl_dd_cursos
+{
+	margin: 20px auto;
+	height:160px;
+}
+
+#tbl_dd_cursos th
+{
+	height:35px; 
+	color:white;
+	font-family: "trebuchet MS";
+	font-size: 18px;
+	background-color: green;
+}
+#tbl_dd_cursos td
+{
+height: 35px;
 }
 .dd_label
 {
@@ -2458,6 +2491,28 @@ input[readonly],input[readonly="readonly"]
 	font-size:16px;
 	font-weight:bold;
 }
+
+.custom-input-file {
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: #468C00 solid 2px;
+    border-radius:5px;
+	background-image: url(../imagenes/attachhh.png);
+	background-position: center;
+	margin-right: 5px;
+    background-repeat: no-repeat;
+    
+}
+.custom-input-file .input-file {
+   
+   opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    cursor: pointer;
+}
 .dd_clsAgregarArchivo:hover
 {
 	border: 3px solid green;
@@ -2490,6 +2545,28 @@ input[readonly],input[readonly="readonly"]
 	background-color: #fff;
 	background-image: url(../imagenes/cancel1.png);
 
+}
+
+.dd_clsDescargar
+{
+
+	background-image: url(../imagenes/descargar.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+
+	height:30px;
+	width:30px;
+	border-radius:5px;
+	border-color: #468C00;
+	font-size:16px;
+	font-weight:bold;
+}
+.dd_clsDescargar:hover
+{
+	border: 3px solid green;
+	background-color: #fff;
+	background-image: url(../imagenes/descargar1.png);
 }
 
 .dd_con_estilo_propio
@@ -2536,7 +2613,7 @@ input[readonly],input[readonly="readonly"]
 	border:3px solid #ECECFB;*/
 	padding-top: 15px;
 	padding-left: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	width: 1200px;
 
 
