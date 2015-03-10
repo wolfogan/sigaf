@@ -385,6 +385,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
 
 								</div>
@@ -401,6 +402,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
 
 								</div>
@@ -419,6 +421,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
 
 								</div>
@@ -435,6 +438,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
 
 								</div>
@@ -455,6 +459,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
 
 								</div>
@@ -472,6 +477,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
 								</div>
 
@@ -490,6 +496,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input class="dd_clsAgregarFila" value="" type="button" id="dd_agregar"></div>
 
 								</div>
@@ -506,6 +513,7 @@
 
 									<div class="dd_btnAdd"><input id="dd_btnAgregar_archivo" class="dd_clsAgregarArchivo" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
+									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
 									
 								</div>
 							</div>
@@ -550,11 +558,12 @@
        
 											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
+											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
 												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
@@ -577,11 +586,12 @@
        
 											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
+											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
 												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
@@ -604,11 +614,12 @@
        
 											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
+											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
 												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
@@ -631,11 +642,12 @@
        
 											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
+											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
 												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
@@ -658,11 +670,12 @@
        
 											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
+											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
 
 												 <td><input id="dd_btnAgregar_archivo_curso" class="dd_clsAgregarArchivo" value="" type="button"></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 

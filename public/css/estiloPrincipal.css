@@ -2197,13 +2197,13 @@ input[readonly],input[readonly="readonly"]
 {
 
 	padding-bottom: 40px;
-	width: 1190px;
+	width: 1230px;
 }
 .dd_licenciatura
 {
 
 	float: left;
-	margin-left:10px;
+	margin-left:0px;
 	padding-right: 20px;
 
 }
@@ -2505,6 +2505,28 @@ input[readonly],input[readonly="readonly"]
 	background-color: #fff;
 	background-image: url(../imagenes/cancel1.png);
 
+}
+
+.dd_clsDescargar
+{
+
+	background-image: url(../imagenes/descargar.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+
+	height:30px;
+	width:30px;
+	border-radius:5px;
+	border-color: #468C00;
+	font-size:16px;
+	font-weight:bold;
+}
+.dd_clsDescargar:hover
+{
+	border: 3px solid green;
+	background-color: #fff;
+	background-image: url(../imagenes/descargar1.png);
 }
 
 .dd_con_estilo_propio
