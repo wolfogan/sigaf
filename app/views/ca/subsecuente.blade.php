@@ -876,6 +876,9 @@
 					$("#periodo").append("<option value='" + periodo + "'>" + nombrePeriodo + "</option>");
 					$("#periodo").val(periodo);
 					$("#ca_nombrePeriodo label").text(nombrePeriodo);
+					$(".grupoPeriodo").val(periodo);
+					console.log(nombrePeriodo);
+					$(".grupoPer").text(nombrePeriodo);
 					// Consultar carga
 					obtenerCarga(periodo,PROGRAMAEDU);
 
