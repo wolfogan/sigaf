@@ -144,8 +144,8 @@ div *, *:after, *:before
  }
 
 .dummy-menu {
-	max-width: 100%;
-	padding: 4em 1em;
+	/*max-width: 100%;
+	padding: 4em 1em;*/
 }
 
 .dummy-menu ul,
