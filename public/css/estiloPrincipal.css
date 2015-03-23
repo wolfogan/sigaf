@@ -685,10 +685,10 @@ html>body div.pe_tableContainer table {
 #hr_empleado_docente
 {
 
-	float: left;
-	margin-top:10px;
+	/*float: left;*/
+	margin-top:-305px;
 	margin-bottom: 45px;
-	margin-left: 10px;
+	margin-left: 335px;
 	margin-right: 10px;
 }
 #hr_empleado_docente th
@@ -2756,7 +2756,7 @@ height: 35px;
 
 .hr_tabla_ca
 {
-	float: left;
+	/*float: left;*/
 	margin-top:10px;
 	margin-bottom: 45px;
 	margin-left: 10px;
@@ -2805,7 +2805,7 @@ height: 35px;
  .hr_lblMaterias
  {
 
- 	margin: -50px 0px 0px 15px;
+ 	margin: 50px 0px 0px 15px;
  	width: 1290px;
  	height: 30px;
  	text-align: center;
@@ -2822,7 +2822,6 @@ height: 35px;
 
  	color:#000;
  	font-size: 18px;
- 	float: left;
  	width: 200px;
  	height: 20px;
  }
@@ -2830,10 +2829,11 @@ height: 35px;
  .hr_tituloSearch
  {
 
- 	height: 30px;
- 	float: left;
- 	margin-left: 200px;
- 	width: 900px;
+ 	/*height: 30px;
+ 	/*float: left;*/
+ 	/*margin-top: 30px;
+ 	margin-left: 200px;*/
+ 	/*width: 900px;*/
 
 
  }
@@ -2843,9 +2843,9 @@ height: 35px;
 
  	color:#000;
  	font-size: 18px;
- 	float: left;
- 	margin-left: 20px;
- 	margin-top: 5px;
+ 	/*float: left;*/
+ 	margin-left: 200px;
+ 	margin-top: 150px;
  	width: 200px;
 
 
@@ -2853,9 +2853,10 @@ height: 35px;
  #hr_searchDocente
  {
 
- 	float: left;
- 	margin-left: 300px;
- 	width: 220px;
+ 	/*float: left;*/
+ 	margin-top: -20px;
+ 	margin-left: 650px;
+ 	width: 230px;
  }
 
 /***************************** CONSULTA DE HORARIOS *************************************/
