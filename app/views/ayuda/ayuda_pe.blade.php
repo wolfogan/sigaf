@@ -81,13 +81,13 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
   <h2>País</h2><br>
      <center><img src="../imagenes/catalogos/pais.png"></center>
    <ul class="lista-num">
-   <li> 1.  Para utilizar un catálogo es necesario realizar una búsqueda de dicho catálogo, selecciónelo y presione el botón de buscar, en la parte inferior de la ventana se despliega una tabla con los campos correspondientes.</li>
-    <li>2. Si desea <strong>agregar</strong> un nuevo registro presione el botón de agregar, esta funcionalidad abrirá una ventana (como se muestra en la siguiente figura) donde podrá dar de alta el nuevo registro, introduzca los datos y presione el botón de guardar.<br><br>
+      <li> 1.  Para utilizar un catálogo es necesario realizar una búsqueda de dicho catálogo, selecciónelo y presione el botón de buscar, en la parte inferior de la ventana se despliega una tabla con los campos correspondientes.</li>
+      <li>2. Si desea <strong>agregar</strong> un nuevo registro presione el botón de agregar, esta funcionalidad abrirá una ventana (como se muestra en la siguiente figura) donde podrá dar de alta el nuevo registro, introduzca los datos y presione el botón de guardar.<br><br>
     <center><img src="../imagenes/catalogos/agregarPais.png"></center></li></ul><br>
     <ul class="lista-vineta">
       <li>• Si el registro ya existe y desea <strong>modificarlo</strong>, de doble click sobre el registro deseado y edite los datos, presione el boton del teclado enter</li>
-    <li>• Para <strong>eliminar</strong> el registro presione el botón de eliminar ubicado del lado derecho del registro con un signo de "-".</li>
-    <li>• Si desea <strong>consultar</strong> dentro del catálogo, introduzca la información dentro del cuadro de texto llamado search.</li>
+      <li>• Para <strong>eliminar</strong> el registro presione el botón de eliminar ubicado del lado derecho del registro con un signo de "-".</li>
+      <li>• Si desea <strong>consultar</strong> dentro del catálogo, introduzca la información dentro del cuadro de texto llamado search.</li>
     </ul>
   </ul>
     <a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
@@ -299,8 +299,15 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
     <div class="content-2">
     <a name="arribaReg"></a>
   <h2>Registro de UA</h2>
-    <p>Contenido de la pantalla de Plan de Estudios<br>
-  <p><strong>Opciones del menú principal</strong><br>
+  
+  <p> El plan de estudios es el conjunto de actividades de enseñanza-aprendizaje que comprende la descripción general de los contenidos de un programa de unidad de aprendizaje (conjunto de materias de mapa curricular). A continuación se muestran las funcionalidades que involucra este subsistema.</p>
+  <br><center><img src="../imagenes/registro/registroUA.png"></center><br>
+  <p> Como se muestra en la Figura anterior la pantalla principal de plan de estudios está compuesta por las siguientes opciones:</p>
+
+
+
+<p>Contenido de la pantalla de Plan de Estudios<br>
+  <p><strong>1. Opciones del menú principal</strong><br>
     El menú está compuesto por las funcionalidades principales que conforman el sistema SIGAF, en cuanto al módulo de Plan de Estudios, esta opción del menú contiene un submenú formado con los siguientes valores:</p>
     <ul class="lista-vineta">
       <li>• Catálogos.</li>
@@ -310,19 +317,21 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
       <li>• Bitácora de plan de estudios.</li>
       <li>• Menú principal.</li>
     </ul>
-    <p><strong>Usuario en sesión y fecha del sistema</strong><br>
+
+    <p><strong>2. Usuario en sesión y fecha del sistema</strong><br>
    Cuando un usuario inicia sesión, en esta parte de la pantalla se indica que usuario es el que está actualmente logueado al sistema.
     La fecha que se muestra en la pantalla se toma de la PC del usuario.</p>
-    <p><strong>Logout y manual</strong><br>
+    <p><strong>3. Logout y manual</strong><br>
     La opción de Logout tiene la función de cerrar la sesión del usuario, solo pulse la opción y saldrá del sistema el cual lo enviará a la ventana de inicio de sesión.
     La opción de manual muestra la guía que el usuario requiere para conocer el funcionamiento correcto del subsistema (módulo) en el que se encuentra.</p>
-    <p><strong>Controles para insertar, modificar y eliminar las UA (Unidades de Aprendizaje).</strong><br>
+    <p><strong>4. Controles para insertar, modificar y eliminar las UA (Unidades de Aprendizaje).</strong><br>
     Muestra cada uno de los controles que se requieren para que el usuario pueda introducir los datos pertinentes del registro de las unidades de aprendizaje que conforman el plan de estudios. Dichos controles también sirven para que el usuario modifique los datos asociados a una unidad de aprendizaje o la elimine.</p>
-    <p><strong>Tabla de registros.</strong><br>
+    <p><strong>5. Tabla de registros.</strong><br>
     Muestra cada uno de los registros que el usuario ha introducido. Mediante esta tabla se pueden cargar los datos en los controles para realizar modificaciones o eliminaciones, solo necesita dar doble click sobre la fila deseada.</p>
-<br><br>
-    <center><img src="../imagenes/registro/registroUAs.png"></center><br>
-  <p>Código de colores</p>
+  <br><br>
+  <p>En la siguiente tabla se muestra el código de colores empleados durante la inserción de los datos. </p>
+
+  <p><strong>Código de colores</strong></p>
     <center><img src="../imagenes/registro/codcolores.png"></center><br>
    
     <p style="color:red"><strong>NOTA:</strong> <br>- Las unidades de aprendizaje pertenecientes a tronco común se registran solo una vez.<br>
@@ -342,12 +351,12 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
             <td><strong>No. Plan:</strong><br>
             Seleccione el plan, previo a este paso debió haber registrado el plan en el catálogo correspondiente.</td>
           </tr>
-          <tr>
+         <!-- <tr>
             <td>2</td>
             <td><img src="../imagenes/registro/p2.png"></td>
             <td><strong>Unidad:</strong><br>
             El control de Unidad obtiene un valor por default de la unidad en la que se registró el usuario que se encuentra en sesión.
-      </td>
+            </td>
           </tr>
           <tr>
             <td>3</td>
@@ -360,42 +369,42 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
             <td><img src="../imagenes/registro/p4.png"></td>
             <td><strong>Carrera:</strong> <br>
         Seleccionar una o más carreras en las que se impartirá la Unidad de Aprendizaje que se está registrando (una Unidad de Aprendizaje puede ser impartida en más de una carrera).</td>
-          </tr>
+          </tr>-->
           <tr>
-            <td>5</td>
+            <td>2</td>
             <td><img src="../imagenes/registro/p5.png"></td>
             <td><strong>Clave:</strong><br>
-        Insertar la Clave de la Unidad de Aprendizaje, al pasar el cursor al siguiente control se validarán los datos introducidos,  en caso de que la clave ya exista se mostrará el siguiente mensaje:<img src="../imagenes/registro/msgClave.png"><br>
+        Insertar la Clave de la Unidad de Aprendizaje, al pasar el cursor al siguiente control se validarán los datos introducidos,  en caso de que la clave ya exista se mostrará el siguiente mensaje:<img src="../imagenes/registro/msgClave.png"><br>Presione el botón ok e inserte una clave valida.
 Si no tiene la clave, active la casilla de verificación Generar clave la cual le generará una clave provisional que después podrá ser actualizada por la real. Solo se pueden introducir números.
             </td>
           </tr>
           <tr>
-            <td>6</td>
+            <td>3</td>
             <td><img src="../imagenes/registro/p6.png"></td>
             <td><strong>Materia: </strong><br>
-        Insertar el nombre de la Unidad de Aprendizaje, a medida que vaya tecleando se le autocompletará el control como referencia de que el nombre de la materia ya existe, el sistema validará su inserción, si ya existe el nombre tecleado, deberá introducir otro nombre.
+          Insertar el nombre de la unidad de aprendizaje. Nota: es posible insertar materias en un plan de estudio con el mismo nombre siempre y cuando tengan diferente clave.
             </td>
           </tr>
-          <tr>
-            <td>7</td>
+          <!--<tr>
+            <td>4</td>
             <td><img src="../imagenes/registro/p7.png"></td>
             <td><strong>Etapa:</strong><br>
         Seleccionar la etapa a la cual pertenece la Unidad de Aprendizaje.</td>
           </tr>
           <tr>
-            <td>8</td>
+            <td>5</td>
             <td><img src="../imagenes/registro/p8.png"></td>
             <td><strong>Tipo:</strong><br>
         Seleccionar el tipo de Unidad de Aprendizaje (se clasifican como Obligatorias u Optativas).</td>
           </tr>
           <tr>
-            <td>9</td>
+            <td>6</td>
             <td><img src="../imagenes/registro/p9.png"></td>
             <td><strong>*Sem:</strong><br>
         Insertar el semestre al cual pertenecerá la Unidad de Aprendizaje, este control puede quedar vacío. Solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>10</td>
+            <td>7</td>
             <td><img src="../imagenes/registro/p10.png"></td>
             <td><strong>Seriación:</strong><br>
         El control de Seriación tiene el valor de SIN SERIACION por default y por consecuencia los siguientes 2 controles inactivos:<br>
@@ -403,61 +412,61 @@ Si no tiene la clave, active la casilla de verificación Generar clave la cual l
         Si desea establecer una seriación cambie este valor seleccionando la opción deseada.</td>
           </tr>
           <tr>
-            <td>11</td>
+            <td>8</td>
             <td><img src="../imagenes/registro/p11.png"></td>
             <td><strong>Clave:</strong><br>
         Insertar la Clave de la Unidad de Aprendizaje con la que se desea establecer una seriación, las claves que se emplean para establecer una serie deben estar registradas, una vez que haya introducido la clave correspondiente se le mostrará el nombre de la Unidad de Aprendizaje asociado a dicha clave. Solo se pueden introducir números.</td>
-          </tr>
+          </tr>-->
+         
           <tr>
-            <td>12</td>
-            <td><img src="../imagenes/registro/p12.png"></td>
-            <td><strong>Coordinación:</strong> <br>
-Seleccionar la coordinación a la que pertenece la unidad de aprendizaje.
-</td>
-          </tr>
-          <tr>
-            <td>13</td>
+            <td>10</td>
             <td><img src="../imagenes/registro/p13.png"></td>
             <td><strong>HC:</strong> <br>
         Insertar las Horas Clase (HC) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>14</td>
+            <td>11</td>
             <td><img src="../imagenes/registro/p14.png"></td>
             <td><strong>*HL:</strong><br>
         Insertar las Horas Laboratorio (HL) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>15</td>
+            <td>12</td>
             <td><img src="../imagenes/registro/p15.png"></td>
             <td><strong>*HT:</strong><br>
         Insertar las Horas Taller (HT) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>16</td>
+            <td>13</td>
             <td><img src="../imagenes/registro/p16.png"></td>
             <td><strong>*HE:</strong> <br>
         Insertar las Horas Extra Clase (HE) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>17</td>
+            <td>14</td>
             <td><img src="../imagenes/registro/p17.png"></td>
             <td><strong>*HPC:</strong><br>
         Insertar las Horas Prácticas de Campo (HPC) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>18</td>
+            <td>15</td>
             <td><img src="../imagenes/registro/p18.png"></td>
             <td><strong>*HCL: </strong><br>
         Insertar las Horas Clínicas (HCL) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>19</td>
+            <td>16</td>
             <td><img src="../imagenes/registro/p19.png"></td>
             <td><strong>Créditos:</strong> <br>
         El valor de los créditos se calculará automáticamente a partir de las horas asignadas.</td>
-          </tr><tr>
-            <td>20</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><img src="../imagenes/registro/p12.png"></td>
+            <td><strong>Coordinación:</strong> <br> Seleccionar la coordinación a la que pertenece la unidad de aprendizaje.</td>
+          </tr>
+          <tr>
+            <td>17</td>
             <td><img src="../imagenes/registro/p20.png"></td>
             <td><strong>*Observaciones:</strong> <br>
         Insertar en este control alguna situación o dato importante asociado a la Unidad de Aprendizaje, si no existe ninguna observación puede quedar vacío.</td>
@@ -516,18 +525,35 @@ En la parte inferior de la figura se muestran los creditos totales de las unidad
       <ul class="lista-num">
         <li>1. Desde la pantalla de registro.</li>
         <li>2. Desde la pantalla de consulta y modificación mediante la ventana de modificar.</li>
-        <li>3. Al arrastrar las UA para cambiarlas de etapa.</li>
+        <li>3. Al arrastrar las UA para cambiarlas de etapa en la ventana de consulta.</li>
       </ul>
     
       <p>Cualquiera de los controles pueden ser modificados.<br><br>
     <strong>Desde la pantalla de registro.</strong><br>
-    Esta opción  se puede llevar a cabo al seleccionar de la tabla inferior la unidad de aprendizaje que se desea actualizar, de click sobre el registro deseado y se cargarán todos los datos correspondientes en los controles mostrados en la parte superior de la pantalla como se muestra en la siguiente figura.</p><br><br>
-      <center><img src="../imagenes/actualizar/actualizar.png"></center><br><br>
-      <p>Después de actualizar el registro deseado pulse en el botón de actualizar o en su defecto si desea abandonar la operación pulse el botón de cancelar.<br><br>
-    <strong>Desde la pantalla de consulta y modificación.</strong> <br>
-  Es necesario hacer click sobre el cuadro que desea actualizar, se abrirá una ventana con los datos cargados de la Unidad de Aprendizaje que usted haya seleccionado, mismos que podrá actualizar. En la siguiente figura se muestra un ejemplo:<br>
- Después de actualizar los datos haga clic sobre el botón de guardar.</p><br>
-      <center><img src="../imagenes/actualizar/modificar.png"></center><br>
+<p><strong>Opción 1:</strong>
+    Seleccione en la tabla inferior la unidad de aprendizaje que se desea actualizar, de click sobre el registro deseado y se cargaran los datos correspondientes en los campos mostrados en la parte superior de la pantalla como se muestra en la siguiente figura.</p>
+  <center><img src="../imagenes/actualizar/actualizarPE.png"></center><br><br>
+
+<p> Después de actualizar el registro deseado pulse en el botón de actualizar o en su defecto si desea abandonar la operación pulse el botón de cancelar.</p>
+ <p> <strong>Opción 2:</strong> En la tabla inferior de la ventana identifique el registro que desea actualizar y pulse el botón de modificar asociado al registro seleccionado (dicho botón se identifica por un lapicito), se abrirá la siguiente ventana.</p>
+<center><img src="../imagenes/actualizar/modUA.png"></center>
+     
+     <p>• Modifique la información correspondiente y pulse el botón de actualizar.</p>
+
+      <p><strong>Opción 3:</strong> <br>
+ 
+     Cuando se registra una unidad de aprendizaje se introducen los datos generales de la materia, se pueden dar situaciones en las que se guarde el registro pero la materia no se asocie a una carrera, etapa, tipo y semestre o en caso de tener seriaciones, en tal situación siga los siguientes pasos:</p>
+      <ul class="lista-num">
+        <li>• En la tabla inferior de la ventana seleccione el registro que desea modificar, presione el botón actualizar seriación el cual lo enviará a la siguiente ventana:
+        <center><img src="../imagenes/actualizar/actUA.png"></center></li>
+        <li><strong>Opción 4:</strong>
+        Si hay una unidad de aprendizaje registrada y desea añadirle una seriación o a un programa educativo, cambiarla de etapa, cambiar el tipo o semestre, selecciónela con un click y pulse el botón de actualizar seriación que se encuentre en la parte superior de la ventana, se abrirá la ventana mostrada en la figura N.
+        </li>
+
+      </ul>
+      
+
+      <p>2.  Desde la pantalla de consulta y modificación. </p>
       <p>Después de actualizar pulse el botón de guardar.<br><br>
     <strong>Al arrastrar las UA para cambiarlas de etapa</strong>. Esta es otra opción para realizar una modificación sobre las UA sin embargo esta solo es aplicable para el cambio de etapa, para realizar el procedimiento solo arrastre y suelte el cuadro en la etapa deseada automáticamente se realiza el cambio.</p><br><br>
       <center><img src="../imagenes/consulta/consultaMat.png"></center>

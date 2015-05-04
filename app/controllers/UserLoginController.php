@@ -34,11 +34,20 @@ class UserLoginController extends BaseController
 		return Redirect::to('/');
 	}
 
-
 	public function getUsuariosregistro()
 	{
-		return View::make('usuarios.usuariosRegistro');
+		$levels = Level::all();
+		$users = User::all();
+		return View::make('usuarios.usuariosRegistro')->with(compact('levels','users'));
+
 	}
+
+	public function getUsuarios()
+	{
+		$users = User::all();
+		return Response::json($users);
+	}
+
 	public function getModificarcontrasena()
 	{
 		return View::make('usuarios.modificarContrasena');

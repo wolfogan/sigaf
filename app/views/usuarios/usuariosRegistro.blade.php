@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-	
+
 	<head>
 		<meta charset="utf-8"/>
 		<!-- -------------------------------- Estilos CSS -------------------------------- -->
@@ -11,7 +11,7 @@
 
         <!-- Creación de Ventanas Modales -->
 		<script src="../js/ventanamodal.js"></script>
-               
+
 		<!-- ------------------------------ Scripts Generales -------------------------------->
 		<script type="text/javascript" src="../js/jquery.js"></script>
 
@@ -22,7 +22,7 @@
 
 
 		<!-- ------------------------------ DATATABLES --------------------------------------->
-		
+
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
 		<!-- JS -->
@@ -32,14 +32,14 @@
 		<!-- Script dataTable -->
 		<script type="text/javascript" src="../js/jquery.dataTables.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$('#tblUA').dataTable();
-			} );
+			// $(document).ready(function() {
+			// 	$('#tblUA').dataTable();
+			// } );
 		</script><!-- Termina script dataTable -->
 
-		
+
 		<!-------------------------------------- MODAL AGREGAR PUESTO -------------------------------------->
-	<div class="md-modal md-effect-11" id="us_puesto"> 
+	<div class="md-modal md-effect-11" id="us_puesto">
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Agregar Puesto</h3>
 			<div class="tblCatalogos">
@@ -62,7 +62,7 @@
 	</div>
 
 		<!-------------------------------------- MODAL AGREGAR CATEGORIA -------------------------------------->
-	<div class="md-modal md-effect-11" id="us_categoria"> 
+	<div class="md-modal md-effect-11" id="us_categoria">
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Agregar Categoría</h3>
 			<div class="tblCatalogos">
@@ -93,7 +93,7 @@
 	</div>
 
 	<!-------------------------------------- MODAL AGREGAR UNIDAD ACADEMICA -------------------------------------->
-	<div class="md-modal md-effect-11" id="us_uacad"> 
+	<div class="md-modal md-effect-11" id="us_uacad">
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Agregar Unidad Académica</h3>
 			<div class="tblCatalogos">
@@ -136,7 +136,7 @@
 	</div>
 
 	<!-------------------------------------- MODAL AGREGAR CAMPUS -------------------------------------->
-	<div class="md-modal md-effect-11" id="us_campus"> 
+	<div class="md-modal md-effect-11" id="us_campus">
 		<form  action="<?=URL::to('planestudio/registraretapa'); ?>" class="md-content" method="post">
 			<h3>Agregar Campus</h3>
 			<div class="tblCatalogos">
@@ -179,11 +179,11 @@
 		</form>
 	</div>
 	<div class="md-overlay"></div>
-			
+
 	</head>
 
 	<body>
-		
+
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
 			<div id="titulo">
@@ -216,7 +216,7 @@
 		</div>
 
 
-		
+
 
 		<section>
 
@@ -302,7 +302,7 @@
 							
 								</td>
 								<td>
-									<input style="width:30px; height:30px;" class="md-trigger" data-modal="us_categoria" type="button" value="+"></a>								</td>
+									<input class="md-trigger" data-modal="us_categoria" type="button" value="+"></a>								</td>
 							</tr>
 							<tr>
 								<td>U. Acad:</td>
@@ -322,23 +322,19 @@
 										<option value="Tijuana">TIJUANA</option>
 										<option value="Valle de las palmas">VALLE DE LAS PALMAS</option>
 										<option value="Mexicali">MEXICALI</option>
-									</select>
-		
+									</select>		
 								</td>
 								<td>
-									<input style="width:30px; height:30px;" class="md-trigger" data-modal="us_campus" type="button" value="+"></a>
+									<input class="md-trigger" data-modal="us_campus" type="button" value="+"></a>
 								</td>
 							</tr>
 							
-						
-					
-						
-
-							
+									
+							</div>
 
 						</table>
 
-						
+
 						<div id="us_btnRegistroUsuario">
 							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario">
 							<input type="button" style="width:200px" class="estilo_button2" value="Crear usuario" name="crearUsuario" id="crearUsuario">
@@ -356,144 +352,18 @@
 							<th>CORREO</th>
 							<th>PUESTO</th>
 							<th>ELIMINAR</th>
-						
 							
-
 						</tr>
 					</thead>
 					<tbody>
-
-
-						<tr class="gradeX">
-							<td>1234567</td>
-							<td>GONZALEZ</td>
-							<td>AYALA</td>
-							<td>ERNESTO RAUL</td>
-							<td>ernesto.gonzalez@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeC">
-							<td>1334567</td>
-							<td>GAMBOA</td>
-							<td>AYALA</td>
-							<td>ERNESTO RAUL</td>
-							<td>ernesto.gamboa@uabc.edu.mx</td>
-							<td>2. AMINISTRADOR </td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeA">
-							<td>1434567</td>
-							<td>ROSAS</td>
-							<td>DUARTE</td>
-							<td>JUVENTINO</td>
-							<td>juventino.rosas@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeA">
-							<td>1534567</td>
-							<td>BASTIDAS</td>
-							<td>ESPINOZA</td>
-							<td>CLARA ELIZABETH</td>
-							<td>clara.bastidas@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeA">
-							<td>1634567</td>
-							<td>AVILA</td>
-							<td>FRAUSTO</td>
-							<td>MIGUELINA</td>
-							<td>miguelina.avila@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeA">
-							<td>1734567</td>
-							<td>CONTRERAS</td>
-							<td>CASTRO</td>
-							<td>RUFINO</td>
-							<td>rufino.contreras@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-
-						</tr>
-						<tr class="gradeA">
-							<td>1234567</td>
-							<td>GONZALEZ</td>
-							<td>AYALA</td>
-							<td>ERNESTO RAUL</td>
-							<td>ernesto.gonzalez@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeA">
-							<td>1734567</td>
-							<td>CONTRERAS</td>
-							<td>CASTRO</td>
-							<td>RUFINO</td>
-							<td>rufino.contreras@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						
-						
-						<tr class="gradeX">
-							<td>1634567</td>
-							<td>AVILA</td>
-							<td>FRAUSTO</td>
-							<td>MIGUELINA</td>
-							<td>miguelina.avila@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeC">
-							<td>1234567</td>
-							<td>GONZALEZ</td>
-							<td>AYALA</td>
-							<td>ERNESTO RAUL</td>
-							<td>ernesto.gonzalez@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-						<tr class="gradeC">
-							<td>1334567</td>
-							<td>GAMBOA</td>
-							<td>AYALA</td>
-							<td>ERNESTO RAUL</td>
-							<td>ernesto.gamboa@uabc.edu.mx</td>
-							<td>2. AMINISTRADOR </td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-						</tr>
-						<tr class="gradeU">
-							<td>1534567</td>
-							<td>BASTIDAS</td>
-							<td>ESPINOZA</td>
-							<td>CLARA ELIZABETH</td>
-							<td>clara.bastidas@uabc.edu.mx</td>
-							<td>1. AMINISTRADOR MASTER</td>
-							<td><input type="button" value="-" class="clsEliminarFila"></td>
-							
-						</tr>
-							
-					</tbody>	
+					</tbody>
 				</table>
 			</div>
 
 				<div id="btnImprimirBit">
 					<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
 				</div>
-		
+
 		</section>
 		<footer>
 			<!--<div id="pie_correo">email: emma.castillejos@uabc.edu.mx</div>
@@ -502,11 +372,17 @@
 		</footer>
 
 			<!--SCRIPT PARA VENTANA MODAL-->
-		
+
 		<script src="../js/classie.js"></script>
 		<script src="../js/modalEffects.js"></script>
-		<script type="text/javascript"></script>
-			
+		<script type="text/javascript">
+		$(function(){
+			$("#tblUA").dataTable({
+				ajax : "usuarios/usuarios"
+			});
+		});
+		</script>
+
 	</body>
 <!----------------------------------------------------------------->
 

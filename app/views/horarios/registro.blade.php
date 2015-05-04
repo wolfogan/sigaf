@@ -97,9 +97,9 @@
 
 			<!-- TABLA PARA CREACION DE HORARIOS: HORARIO DEL GRUPO Y TURNO -->
 
-					<div class="hr_lblMaterias">
+					<!--<div class="hr_lblMaterias">-->
 						<div class="hr_titulos" style="margin-left:380px; margin-top:50px;">Horario del grupo</div>
-					</div>
+					<!--</div>-->
 
 					
 				<div class="dummy dummy-menu">
@@ -120,6 +120,7 @@
 							</tr>
 						</thead>
 						<thead class="hr_encabezado_tablaHr">
+						<tr>
 							
 								<th style="width:110px">HORA</th>
 
@@ -159,10 +160,7 @@
                                         <span class="tooltip-back">REGISTROS ESPECIALES</span>
                                     	</span>
                             		  </a>
-
-
-
-									</td>
+								</td>
 								<td>12457</td>
 								<td>29658</td> 
 								<td>11743</td>
@@ -184,6 +182,7 @@
                                         <span class="tooltip-back">REGISTROS ESPECIALES</span>
                                     	</span>
                             		  </a>
+                            	</td>
 								<td>11859</td>
 								<td>29365</td> 
 								<td>12459</td>
@@ -211,6 +210,7 @@
                                         <span class="tooltip-back">REGISTROS ESPECIALES</span>
                                     	</span>
                             		  </a>
+                            	</td>
 								<td>12459</td> 
 								<td style="background:purple">
 									<a class="tooltip tooltip-effect-4" href="#">23658
@@ -219,6 +219,7 @@
                                         <span class="tooltip-back">REGISTROS ESPECIALES</span>
                                     	</span>
                             		  </a>
+                            	</td>
 								
 							</tr>
 							<tr>
@@ -240,7 +241,7 @@
                                         <span class="tooltip-back">REGISTROS ESPECIALES</span>
                                     	</span>
                             		  </a>
-								
+								</td>
 							</tr>
 							<tr>
 								
@@ -318,12 +319,12 @@
 				<!-- TABLA PARA CREACION DE HORARIOS: MATERIAS-->
 				
 
-					<div class="hr_lblMaterias">
-						<div class="hr_titulos" style="margin-left:40px;">Seleccione materias</div>
-						<div class="hr_titulos" style="margin-left:350px;">Disponibilidad docente</div>
-					</div>
+					<!--<div class="hr_lblMaterias">-->
+						<div class="hr_titulos" style="margin-left:40px; margin-top:170px;">Seleccione materias</div>
+						<div class="hr_titulos" style="margin-left:350px; margin-top:-20px;">Disponibilidad docente</div>
+					<!--</div>-->
 
-					<table class="hr_tabla_ca" style="width:300px; margin-left:15px">
+					<table class="hr_tabla_ca" style="width:300px;">
 
 							
 						<thead class="hr_encabezado_tablaConsulta">
@@ -471,7 +472,7 @@
 					
 
 						
-									<table class="hr_tabla_ca" style="width:600px;">
+									<table class="hr_tabla_ca" style="width:600px; margin-left:710px; margin-top:-305px;">
 
 										<thead class="hr_encabezado_tablaConsulta">
 											<tr>
@@ -534,6 +535,7 @@
 												<td style="background:#2ECCFA;">323</td>
 													
 											</tr>
+
 											<tr>
 												
 												<td>12:00 - 13:00</td>
@@ -544,6 +546,7 @@
 												<td style="background:#2ECCFA;">421</td>
 													
 											</tr>
+												
 												
 											
 									</table>
@@ -557,7 +560,7 @@
 					<div class="hr_tituloSearch">
 						<div id="hr_tituloDocente">Horario del docente</div>
 						<div id="hr_searchDocente">Docente:<input class="estilo_text" style="width:150px;" type="text" id="hr_docente" name-"hr_docente" value=""/></div>
-						<input type="submit" style="height: 30px; width:100px"class="estilo_button2" type="button" value="Buscar" name="hr_buscar" id="hr_buscar" />
+						<input type="submit" style="height: 30px; width:100px; margin-left:900px; margin-top:-100px;"class="estilo_button2" type="button" value="Buscar" name="hr_buscar" id="hr_buscar" />
 					</div>
 
 
@@ -574,6 +577,7 @@
 								<th style="width:120px">MIÉRCOLES</th>
 								<th style="width:120px">JUEVES</th>
 								<th style="width:120px">VIERNES</th>
+
 								
 								
 							</tr>

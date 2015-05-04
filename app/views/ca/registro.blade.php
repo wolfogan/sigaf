@@ -122,7 +122,10 @@
 					<tr>
 						<td>Tipo Programa:</td>
 						<td>
-							<select style="width:200px;" name="periodoTipo" id="periodoTipo" />
+							<select style="width:200px;" name="periodoTipo" id="periodoTipo"/>
+								@foreach ($periodosPrograma as $periodo)
+									<option value="{{$periodo->periodo_pedu}}">{{$periodo->descripcion}}</option>
+								@endforeach
 							</select>
 						</td>
 					</tr>
@@ -952,6 +955,8 @@
 				var option = "<option value='"+ result['periodo'] +"'>"  + insertStr(result['periodo'],"-",4) + "</option>";
 				$("#periodo").append(option);
 				$("#periodo").val(result['periodo']);
+				$(".grupoPeriodo").val(result.periodo);
+				$(".grupoPer").text(insertStr(result.periodo,"-",4));
 
 
 				alert("Periodo dado de alta exitosamente!!!");
@@ -1374,6 +1379,8 @@
 			NUM_PROGRAMA = $("#userPrograma").val();
 			USERS_ID = $("#userID").val();
 			$(".grupoUsersId").val(USERS_ID);
+			$("#periodoUsersId").val(USERS_ID);
+
 
 			console.log("User programaedu: " + NUM_PROGRAMA);
 			console.log("User id: " + USERS_ID);

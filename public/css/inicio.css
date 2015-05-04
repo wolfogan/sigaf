@@ -61,7 +61,7 @@ por el simbolo "#" y las clases por el simbolo "." */
 	}
 #modal .overlay {
 	background-color: #000;
-	background: rgba(0,0,0,.8);
+	background: rgba(0,0,0,.3);
 	height: 100%;
 	left: 0;
 	position: fixed;
@@ -95,7 +95,8 @@ por el simbolo "#" y las clases por el simbolo "." */
 	height:700px;
 	margin:auto;
 	margin-top:110px;
-	border:5px solid #F7AE10;
+	/*border:5px solid #F7AE10;*/
+	border:5px solid green;
 	border-radius:10px;
 	background:white;
 	}
