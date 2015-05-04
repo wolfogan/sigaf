@@ -714,8 +714,30 @@ html>body div.pe_tableContainer table {
   	height: 30px;
 }
 
-/********************************************/
+/*****************TABLAS PARA CONSULTA HORARIOS***************************/
+.hr_contenedor_tbl_consulta{
+	
+	
+	width: 1300px;
+	margin: auto;
+	padding-bottom: 40px;
+}
+.hr_contenedor_tbl_consulta td
+{
+	padding: 5px;
 
+}
+.hr_contenedor_tbl_consulta td
+{
+	width: 125px;
+	border: 1px dotted gray;
+}
+.hr_contenedor_tbl_consulta th:first-child
+{
+	width: 120px;
+}
+
+/********************************************/
 
 .pe_BtnseriacionAgregar
 {
@@ -1263,33 +1285,29 @@ html>body div.pe_tableContainer table {
 	width: 300px;
 	height: 100px;
 }
-.us_txtNoEmpleado
+
+/*.us_div
 {
-	padding-bottom: 10px;
-	padding-left: 10px;
-	width: 850px;
+	background-color: blue;
+	width: 450px;
+	height: 280px;
+
+	
 }
-
-.us_nuevo_usuario
+.us_div2
 {
-
-	float: left;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 50px;
-
-}
-.us_div
-{
-
-	margin-top: 85px;
-
-
+	
+	background-color: red;
+	width: 450px;
+	margin-left: 450px;
+	margin-top: -268px;
+	
+	height: 280px;
+	
 }
 .us_nuevo
 {
-
-	float: left;
+	
 	padding-bottom: 10px;
 	padding-left: 10px;
 	padding-right: 20px;
@@ -1298,12 +1316,24 @@ html>body div.pe_tableContainer table {
 .us_repetir
 {
 
-	float: left;
+	
 	padding-bottom: 10px;
 	padding-left: 10px;
 	width: 450px;
+}*/
+.us_formulario
+{
+	
+	margin: auto;
 }
 
+.us_formulario td
+{
+	padding: 3px;
+	
+
+	text-align: left;
+}
 
 .btnUnidadAcadRegistro
 {
@@ -1316,7 +1346,7 @@ html>body div.pe_tableContainer table {
 
 #formularioRegUsuarios
 {
-
+	/*background-color: yellow;*/
 	height: 350px;
 	border: 1px solid gray;
 	padding-left: 20px;
@@ -1331,7 +1361,7 @@ html>body div.pe_tableContainer table {
 {
 
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 10px;
 	width: 450px;
 }
 #us_tablaRegistro
