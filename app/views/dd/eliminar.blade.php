@@ -112,7 +112,7 @@
 							<th>NO. EMPLEADO</th>
 							<th>NOMBRE</th>
 							<th>HABILITAR/ DESHABILITAR</th>
-							<th>MODIFICAR</th>
+							<!-- <th>MODIFICAR</th> -->
 													
 
 						</tr>
@@ -122,77 +122,77 @@
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 
 						<tr class="gradeX">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeU">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
 							<td>HABILITADO</td>	
-							<td><input type="button" value="" class="clsModificarFila"></td>
+							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 							
 					</tbody>	

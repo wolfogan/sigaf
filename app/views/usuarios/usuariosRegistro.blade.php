@@ -9,8 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/estilosnav.css">
 		<link rel="stylesheet" type="text/css" href="../css/component.css"/>
 
-
-
         <!-- Creación de Ventanas Modales -->
 		<script src="../js/ventanamodal.js"></script>
 
@@ -124,10 +122,10 @@
 
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>Usuario?:</td>
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarEmpleado" id="txtAgregarEmpleado" size=1 /></td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 			<div class="CatBotones">
@@ -168,10 +166,10 @@
 
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>Usuario?:</td>
 						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarEmpleado" id="txtAgregarEmpleado" size=1 /></td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 			<div class="CatBotones">
@@ -223,112 +221,118 @@
 		<section>
 
 			<div id="formularioRegUsuarios">
+				
+						<table class="us_formulario">
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
 
-
-						<div class="us_txtNoEmpleado">No. Empleado:
-							<input style="margin-left:7px" class="dd_estilo_combo" type="text"  name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/>
-						</div>
-
-						<div class="us_nuevo_usuario">A. Paterno:
-							<input style="margin-left:30px" class="dd_con_estilo_largo" type="text" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/>
-						</div>
-
-						<div class="us_nuevo_usuario">A. Materno:
-							<input style="margin-left:68px" class="dd_con_estilo_largo" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/>
-						</div>
-
-						<div class="us_nuevo_usuario">Nombre:
-							<input style="margin-left:50px" class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/>
-						</div>
-
-						<div class="us_div">
-							<div class="us_nuevo">Correo:
-								<input style="margin-left:57px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/>
-							</div>
-							<div class="us_repetir">Repetir correo:
-								<input style="margin-left:40px" class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/>
-							</div>
-						</div>
-
-
-						<div class="us_div">
-							<div class="us_nuevo">Contraseña:
-								<!--<label style="margin-left:25px;">DUFC870212MBCRRY04</label>-->
-								<input style="margin-left:27px" class="dd_con_estilo_largo" type="text" name="contrasena_us" id="contrasena_us" size=1/>
-							</div>
-
-							<div class="us_repetir">Teléfono:
-								<input style="margin-left:82px" class="dd_con_estilo_largo" type="password" placeholder="RFC" name="contrasenaRegUsuarios" id="contrasenaRegUsuarios" size=1>
-							</div>
-						</div>
-
-
-						<div class="us_div">
-							<div class="us_nuevo">Puesto:
-								<select style="margin-left:59px" class="dd_con_estilo_largo">
-									<option>1. ADMINISTRADOR MASTER</option>
-									<option>2. ADMINISTRADOR</option>
-									<option>3. AUXILIAR ADMINISTRATIVO</option>
-									<option>4. COORDINADOR DE CARRERA</option>
-									<option>5. COORDINADOR DE ÁREA</option>
-									<option>6. DOCENTES</option>
-								</select>
-
-							</div>
-
-
-							<div class="us_repetir">Categoría:
-								<select style="margin-left:80px" class="dd_con_estilo_largo">
-									<option>A</option>
-									<option>B</option>
-									<option>C</option>
-								</select>
-
-
-								<!-- TABLA MODAL CATEGORIA-->
-								<div class="btnUnidadAcadRegistro"><input style="width:30px; height:30px;" class="md-trigger" data-modal="us_categoria" type="button" value="+"></a></div>
-								<!--             -->
-							</div>
-						</div>
-
-						<div class="us_div">
-							<div class="us_nuevo">U. Acad:
-									<select style="margin-left:53px" class="dd_con_estilo_largo" type="text" placeholder="Unidad académica" name="campusRegUsuarios" id="campusRegUsuarios">
+							<tr>
+								<td>No. Empleado:</td>
+								<td><input class="dd_estilo_combo" type="text"  name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/></td>
+								<td></td>
+								<td>Ingreso a UABC:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="hr_ingresoU" id="hr_ingresoU" size=1/></td>
+								<td></td>
+								
+								
+							</tr>
+							<tr>
+								<td>A. Paterno:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/></td>
+								<td></td>
+								<td>A. Materno</td>
+								<td><input class="dd_con_estilo_largo" name="apellidosRegUsuarios" id="apellidosRegUsuarios" size=1/></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Nombre:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/></td>
+								<td></td>
+								<td>Sexo:</td>
+								<td>
+									<select class="dd_con_estilo_largo">
+										<option>Femenino</option>
+										<option>Masculino</option>		
+									</select>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Correo:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/></td>
+								<td></td>
+								<td>Repetir correo:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="correoE" id="correoE" size=1/></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Contraseña:</td>
+								<td><input class="dd_con_estilo_largo" type="text" name="contrasena_us" id="contrasena_us" size=1/></td>
+								<td></td>
+								<td>Telefono:</td>
+								<td><input class="dd_con_estilo_largo" type="password" placeholder="RFC" name="contrasenaRegUsuarios" id="contrasenaRegUsuarios" size=1></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Puesto:</td>
+								<td>
+									<select class="dd_con_estilo_largo">
+										<option>1. ADMINISTRADOR MASTER</option>
+										<option>2. ADMINISTRADOR</option>
+										<option>3. AUXILIAR ADMINISTRATIVO</option>
+										<option>4. COORDINADOR DE CARRERA</option>
+										<option>5. COORDINADOR DE ÁREA</option>
+										<option>6. DOCENTES</option>
+									</select>
+								</td>
+								<td></td>
+								<td>Categoría:</td>
+								<td>
+									<select class="dd_con_estilo_largo">
+										<option>A</option>
+										<option>B</option>
+										<option>C</option>
+									</select>
+							
+								</td>
+								<td>
+									<input class="md-trigger" data-modal="us_categoria" type="button" value="+"></a>								</td>
+							</tr>
+							<tr>
+								<td>U. Acad:</td>
+								<td>
+									<select class="dd_con_estilo_largo" type="text" placeholder="Unidad académica" name="campusRegUsuarios" id="campusRegUsuarios"> 
 										<option value="FCA">FCA</option>
 										<option value="FCQ">FCQ</option>
 										<option value="FNI">FNI</option>
-									</select>
-								    <!-- TABLA MODAL UNIDAD ACADEMICA-->
-									<div class="btnUnidadAcadRegistro"><input style="width:30px; height:30px; margin-left: -40px;" class="md-trigger" data-modal="us_uacad" type="button" value="+"></a></div>
-									<!--     -->
-							</div>
-
-
-							<div class="us_repetir">Campus:
-									<select style="margin-left:93px" class="dd_con_estilo_largo" type="text" placeholder="Campus" name="campusRegUsuarios" id="campusRegUsuarios">
+									</select>	
+								</td>
+								<td>
+									<input style="width:30px; height:30px" class="md-trigger" data-modal="us_uacad" type="button" value="+"></a>
+								</td>
+								<td>Campus:</td>
+								<td>
+									<select class="dd_con_estilo_largo" type="text" placeholder="Campus" name="campusRegUsuarios" id="campusRegUsuarios">
 										<option value="Tijuana">TIJUANA</option>
 										<option value="Valle de las palmas">VALLE DE LAS PALMAS</option>
 										<option value="Mexicali">MEXICALI</option>
-									</select>
-									<!-- TABLA MODAL CAMPUS-->
-									<div class="btnUnidadAcadRegistro"><input style="width:30px; height:30px;" class="md-trigger" data-modal="us_campus" type="button" value="+"></a></div>
-									<!--             -->
+									</select>		
+								</td>
+								<td>
+									<input class="md-trigger" data-modal="us_campus" type="button" value="+"></a>
+								</td>
+							</tr>
+							
+									
 							</div>
 
-
-							<!--<div class="us_nuevo">Pregunta:
-									<select style="margin-left:44px" class="dd_con_estilo_largo" type="text" name="us_pregunta" id="us_pregunta">
-										<option value="¿CUAL ES EL NOMBRE DE MI MASCOTA?">¿CUAL ES EL NOMBRE DE MI MASCOTA?</option>
-										<option value="¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?">¿CUAL ES LA FECHA DE NACIMIENTO DE MI ABUELO MATERNO?</option>
-										<option value="¿CUAL ES LA EDAD DE MI PAPA?">¿CUAL ES LA EDAD DE MI PAPA?</option>
-									</select>
-
-							</div>
-
-							<div class="us_repetir">Respuesta:
-								<input style="margin-left:75px" class="dd_con_estilo_largo" type="text" name="us_Respuesta" id="us_Respuesta" size=1>
-							</div>	-->
-						</div>
+						</table>
 
 
 						<div id="us_btnRegistroUsuario">
@@ -348,28 +352,7 @@
 							<th>CORREO</th>
 							<th>PUESTO</th>
 							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
+							
 						</tr>
 					</thead>
 					<tbody>

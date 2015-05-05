@@ -745,7 +745,7 @@
 					<div class="hr_doc_total_horas">Horas asignadas:<label>30</label></div>
 
 					<div id="btnImprimirBit">
-						<input style="width:120px"class="estilo_button2" type="button" value="Imprimir" name="imprimirBit" id="imprimirBit">
+						<input style="width:120px"class="estilo_button2" type="button" value="Guardar" name="guardarBit" id="guardarBit">
 					</div>
 
 
