@@ -104,7 +104,9 @@ class PlanEstudioController extends BaseController
 		// Coordinación de area
 		$coordinaciones = Coordinacion::select('coordinaciona','descripcion')->get();
 		
-		return View::make('pe.consulta')->with(compact('codigosPE','programasEducativos','etapas','tiposCaracter','seriaciones','coordinaciones'));
+		 return View::make('pe.consulta')->with(compact('codigosPE','programasEducativos','etapas','tiposCaracter','seriaciones','coordinaciones'));
+
+
 	}
 
 	public function getUsuarios()
