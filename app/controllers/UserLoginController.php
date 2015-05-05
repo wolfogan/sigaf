@@ -42,9 +42,12 @@ class UserLoginController extends BaseController
 
 	}
 
-	public function getUsuarios()
+	public function postUsuarios()
 	{
 		$users = User::all();
+		foreach ($users as $user) {
+				$user->levels;
+		}
 		return Response::json($users);
 	}
 

@@ -344,34 +344,27 @@
 							<th>NO. EMPLEADO</th>
 							<th>A. PATERNO</th>
 							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
+							<th>NOMBRE(S)</th>
 							<th>CORREO</th>
 							<th>PUESTO</th>
+							<th>SEXO</th>
+							<th>FECHA INGRESO</th>
 							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
-							<th>A. PATERNO</th>
-							<th>A. MATERNO</th>
-							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>PUESTO</th>
-							<th>ELIMINAR</th>
-							<th>NO. EMPLEADO</th>
 						</tr>
 					</thead>
+					<tfoot>
+						<tr>
+							<th>NO. EMPLEADO</th>
+							<th>A. PATERNO</th>
+							<th>A. MATERNO</th>
+							<th>NOMBRE(S)</th>
+							<th>CORREO</th>
+							<th>PUESTO</th>
+							<th>SEXO</th>
+							<th>FECHA INGRESO</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</tfoot>
 					<tbody>
 					</tbody>
 				</table>
@@ -393,10 +386,42 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/modalEffects.js"></script>
 		<script type="text/javascript">
-		$(function(){
-			$("#tblUA").dataTable({
-				ajax : "usuarios/usuarios"
+		function Actualizarusers()
+		{
+			// Crear instancia Datatables para manipulación de renglones durante la ejecución
+			var t = $('#tblUA').DataTable();
+			//$("#ajaxLoad").css("display","block");
+			$.post("<?php echo URL::to('usuarios/usuarios'); ?>",function(users){
+				$('#tblUA').dataTable().fnClearTable();
+				console.log(users);
+				for (var i = 0; i < users.length; i++)
+				{
+					t.row.add([
+								users[i].id,
+								users[i].last_name,
+								users[i].last_materno,
+								users[i].name,
+								users[i].email,
+								users[i].levels.descrip_level,
+								users[i].sexo,
+								users[i].fec_ing,
+								"<input type='button' value='-' class='clsEliminarFila' title='"+users[i].id+"'>"]).draw();
+				}
+				//$("#ajaxLoad").css("display","none");
+				//activarModal();
+			})
+			.fail(function(errorText,textError,errorThrow){
+				alert(errorText.responseText);
+				/*console.log(errorText);
+				console.log(textError);
+				console.log(errorThrow);*/
 			});
+		}
+		</script>
+		<script type="text/javascript">
+		$(function(){
+			
+			Actualizarusers();
 		});
 		</script>
 

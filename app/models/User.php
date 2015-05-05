@@ -83,8 +83,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	/**
 	 *
 	 */
-	public function level()
+	public function levels()
 	{
-		return $this->hasOne('Level');
+		return $this->hasOne('Level','level','level');
 	}
 }

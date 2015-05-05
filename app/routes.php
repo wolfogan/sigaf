@@ -178,7 +178,7 @@ Route::get('pruebas',function(){
 							uaprendizaje.creditos,
 							uaprendizaje.HC,etapa,
 							uaprendizaje.plan,carga.programaedu
-				" ,array('periodo' => $periodo,'programa' => $programa)); // :variable array('variable' => valor)*/
+				" ,array('periodo' => $periodo,'programa' => $programa)); // :variable array('variable' => valor)
 
 	$programa = 1;
 	$semestre = 1;
@@ -230,10 +230,16 @@ Route::get('pruebas',function(){
 						->where("grupos.programaedu","=",$programa)
 						->where("carga.grupo","LIKE","'%".$grupo."%'")
 						->groupBy("carga.semestre","carga.periodo")
-						->get();
+						->get();*/
+	$users = User::all();
 
+	foreach ($users as $user) {
+		$user->levels;
+	}
+	
+	
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return $last_query;
+	return Response::json($users);
 
 });
