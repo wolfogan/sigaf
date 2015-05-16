@@ -154,7 +154,7 @@
 						</div>
 
 						<div class="us_btnRegistroUsuario_mod">
-							<input type="button" style="width:200px" class="estilo_button2" value="Modificar usuario" name="modificarUsuario" id="modificarUsuario" onclick="alert(ValidCaptcha())">
+							<input type="button" style="width:210px" class="estilo_button2" value="Cambiar contraseña" name="cambiarContrasena" id="cambiarContrasena" onclick="alert(ValidCaptcha())">
 						</div>
 
 			</div>

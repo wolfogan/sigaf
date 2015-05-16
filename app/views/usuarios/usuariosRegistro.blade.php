@@ -237,7 +237,7 @@
 								<td><input class="dd_estilo_combo" type="text"  name="nombreRegUsuarios" id="nombreRegUsuarios" size=1/></td>
 								<td></td>
 								<td>Ingreso a UABC:</td>
-								<td><input class="dd_con_estilo_largo" type="text" name="hr_ingresoU" id="hr_ingresoU" size=1/></td>
+								<td><input class="dd_con_estilo_largo" type="date" name="hr_ingresoU" id="hr_ingresoU" size=1/></td>
 								<td></td>
 								
 								

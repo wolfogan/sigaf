@@ -381,7 +381,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  type="text" name="seriacion_descripcion" id="txtCatDescripcionSeriacion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;"  type="text" name="seriacion_descripcion" onkeypress="Mayusculas(this)" id="txtCatDescripcionSeriacion" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -405,7 +405,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="caracter_descripcion" id="txtCatDescripcionTipo" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="caracter_descripcion" onkeypress="Mayusculas(this)" id="txtCatDescripcionTipo" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -430,12 +430,12 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="coordinacion_descripcion" id="txtCatDescripcionCoordinacion"/></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="coordinacion_descripcion" onkeypress="Mayusculas(this)" id="txtCatDescripcionCoordinacion"/></td>
 					</tr>
 					<tr>
 						<td>Programa Educativo:</td>
 						<td>
-							<select style="width: 200px;" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion"/>
+							<select style="width: 200px; text-transform:uppercase;" onkeypress="Mayusculas(this)" name="txtCatDescripcionCoordinacion" type="text" id="txtCatDescripcionCoordinacion"/>
 								<option value="1">LIC. EN INFORMATICA</option>
 							</select>
 						</td>
@@ -542,7 +542,7 @@
 					<!---------------------------------- DESCRIPCIÓN UA ---------------------------------->
 					<div id="materiaDiv">
 						<label>Materia: </label>
-						<input style="width: 375px; height: 25px; border-radius: 5px; border-color: #DBDBEA; text-transform:uppercase" type="text" name="materia" id="materia" size="1" title="Es necesario una descripción de la unidad de aprendizaje" required/>
+						<input style="width: 375px; text-transform:uppercase; height: 25px; border-radius: 5px; border-color: #DBDBEA;" onkeypress="Mayusculas(this)" type="text" name="materia" id="materia" size="1" title="Es necesario una descripción de la unidad de aprendizaje" required/>
 					</div>
 
 
@@ -612,7 +612,7 @@
 				<!------------------------------------ OBSERVACIONES ------------------------------------>
 					<div id="observacionesDiv">
 						<label></label><br>
-						<textarea rows=3 cols="46" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
+						<textarea rows=3 cols="46" style=" border-radius:5px; border-color:#DBDBEA; text-transform:uppercase; resize:none" id="observaciones" onkeypress="Mayusculas(this)" name="observaciones" placeholder="Observaciones"></textarea>
 					</div>
 					<!---------------------------------- BOTON GUARDAR - ACTUALIZAR UA ---------------------------------->
 					<div id="botones">
@@ -1766,6 +1766,10 @@
 				// Así damos de nuevo el foco al INPUT
 				obj.focus();
 			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
 			}
 </script>
 
