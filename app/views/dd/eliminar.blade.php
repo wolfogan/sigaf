@@ -97,7 +97,7 @@
 
 				<div id="dd_consultaNombre">
 					<label>Nombre: </label>
-					<input type="text" class="dd_con_estilo_largo" name="dd_consultarPor" size=1/>
+					<input type="text" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_con_estilo_largo" name="dd_consultarPor" size=1/>
 						
 				</div>
 
@@ -226,18 +226,27 @@
        });
 	</script>
      
-     <!--SCRIPT PARA QUE SOLO ACEPTE NUMEROS--> 
-	<script language="javascript">
-    	function ValidaSoloNumeros() {
-        if ((event.keyCode < 48) || (event.keyCode > 57)) 
-        	event.returnValue = false;
-            }
-              function Validate(obj){
-              if(true != false){
-              // Así damos de nuevo el foco al INPUT
-                    obj.focus();
-                  }
-                }    
-    
-    </script>
+     <!------------------------------------ VALIDACIONES ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
+			  event.returnValue = false;
+			}
+
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
+			}
+</script>
+
+<!------------------------------------------------------------------------------------------>
+
 </html>

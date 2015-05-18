@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 	<head>
@@ -50,7 +50,7 @@
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="etapa_descripcion" id="txtCatDescripcionEtapa"  /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="etapa_descripcion" onkeypress="Mayusculas(this)" id="txtCatDescripcionEtapa" /></td>
 					</tr>
 				</table>
 			</div>
@@ -73,15 +73,15 @@
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" onkeypress="Mayusculas(this)" size=1 /></td>
 					</tr>
 					<tr>
 						<td>Nivel:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarNivel" id="txtAgregarNivel" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarNivel" id="txtAgregarNivel" onkeypress="Mayusculas(this)" size=1 /></td>
 					</tr>
 					<tr>
 						<td>No. Empleado:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarEmpleado" id="txtAgregarEmpleado" size=1 /></td>
+						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarEmpleado" id="txtAgregarEmpleado" onkeypress="ValidaSoloNumeros()" size=1 /></td>
 					</tr>
 				</table>
 			</div>
@@ -104,11 +104,11 @@
 					</tr>
 					<tr>
 						<td>Descripción corta:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" onkeypress="Mayusculas(this)" size=1 /></td>
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" onkeypress="Mayusculas(this)" size=1 /></td>
 					</tr>
 					<tr>
 						<td>Campus:</td>
@@ -147,11 +147,11 @@
 					</tr>
 					<tr>
 						<td>Descripción:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarDescripcion" id="txtAgregarDescripcion" onkeypress="Mayusculas(this)" size=1 /></td>
 					</tr>
 					<tr>
 						<td>Dirección:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarNivel" id="txtAgregarNivel" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" name="us_agregarNivel" id="txtAgregarNivel" size=1  onkeypress="Mayusculas(this)" /></td>
 					</tr>
 					<tr>
 						<td>Ciudad:</td>
@@ -219,7 +219,6 @@
 
 
 		<section>
-
 			<form  method="post" id="formularioRegUsuarios">
 				<table class="us_formulario">
 					<tr>
@@ -242,16 +241,16 @@
 							
 					<tr>
 						<td>A. Paterno:</td>
-						<td><input class="dd_con_estilo_largo" type="text" name="apellidosPRegUsuarios" id="apellidosPRegUsuarios" placeholder="A. Paterno" required/></td>
+						<td><input class="dd_con_estilo_largo" type="text" name="apellidosPRegUsuarios" id="apellidosPRegUsuarios" placeholder="A. Paterno" onkeypress="Mayusculas(this)" required/></td>
 						<td></td>
 						<td>A. Materno</td>
-						<td><input class="dd_con_estilo_largo" type="text" name="apellidosMRegUsuarios" id="apellidosMRegUsuarios" placeholder="A. Materno" required/></td>
+						<td><input class="dd_con_estilo_largo" type="text" name="apellidosMRegUsuarios" id="apellidosMRegUsuarios" placeholder="A. Materno" onkeypress="Mayusculas(this)" required/></td>
 						<td></td>
 					</tr>
 
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" placeholder="Nombre" required/></td>
+						<td><input class="dd_con_estilo_largo" type="text" name="nombreRegUsuarios" id="nombreRegUsuarios" placeholder="Nombre" onkeypress="Mayusculas(this)" required/></td>
 						<td></td>
 						<td>Sexo:</td>
 						<td>
@@ -576,6 +575,31 @@
 
 		});
 		</script>
+
+
+		 <!------------------------------------ VALIDACIONES ---------------------------->
+
+		<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
+			  event.returnValue = false;
+			}
+
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
+			}
+		</script>
+
+<!------------------------------------------------------------------------------------------>
+
 
 	</body>
 <!----------------------------------------------------------------->

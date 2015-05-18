@@ -39,7 +39,7 @@
 	</head>
 
 	<body>
-		<div class="md-modal md-effect-10" id="uacademica"> 
+		<div class="md-modal md-effect-11" id="uacademica"> 
 		<form id="formUA" action="<?=URL::to('catalogos/registraruacademica'); ?>" class="md-content" method="post">
 			<h3>Agregar Unidad Académica</h3>
 			<div class="tblCatalogos">
@@ -49,15 +49,15 @@
 						<th></th>
 					</tr>
 					<tr>
-						<td>SIGLAS:</td>
-						<td><input style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="uacademicas_descripshort" size=1 /></td>
+						<td>Siglas:</td>
+						<td><input style="width: 150px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" onkeypress="Mayusculas(this)" name="uacademicas_descripshort" size=1 /></td>
 					</tr>
 					<tr>
-						<td>DESCRIPCION:</td>
-						<td><input style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="uacademicas_descripcion" size=1 /></td>
+						<td>Descripción:</td>
+						<td><input style="width: 150px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" onkeypress="Mayusculas(this)" name="uacademicas_descripcion" size=1 /></td>
 					</tr>
 					<tr>
-						<td>CAMPUS:</td>
+						<td>Campus:</td>
 						<td>
 							<select name="uacademicas_campus" id="uacademicas_campus" style="width: 150px; height: 30px; border-radius: 5px; border-color: #DBDBEA;">
 								@foreach ($campuses as $elcampus)
@@ -76,6 +76,7 @@
 			</div>
 		</form>
 	</div>
+	<div class="md-overlay"></div>
 		
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
@@ -247,8 +248,31 @@
 	<script src="../js/modalEffects.js"></script>
 	<script type="text/javascript">
 
+	<!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
+			  event.returnValue = false;
+			}
+
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
+			}
+</script>
+
+<!------------------------------------------------------------------------------------------>
+
+
 	</body>
 
-<!----------------------------------------------------------->
 
 </html>

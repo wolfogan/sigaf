@@ -68,7 +68,63 @@
 
 		<!---------------------------------------------------------------------------------------->
 
-		
+		<!-------------------------------- MODAL MATERIAS IMPARTIDAS SEMESTRE ANTERIOR -------------------------------->
+
+	<div class="md-modal md-effect-11" id="btnMateriasAnterior"> 
+		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+			<h3>Materias impartidas el semestre anterior</h3>
+			
+			<div class="tblCatalogos">
+
+				<table class="dd_tabla_MatImpartir" style="color: black; width:200px; margin-top:30px;">
+
+					<thead class="dd_encabezado">
+						<tr>
+							<th style="width:50px;">CLAVE</th>
+							<th style="width:150px;">MATERIA</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>	
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>	
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>	
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>	
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>	
+						<tr>
+							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+						</tr>		
+						
+					</tbody>
+				</table>
+
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
+			</div>
+		</form>
+	</div>
+	<div class="md-overlay"></div>
 
 
 		
@@ -83,58 +139,7 @@
 </head>
 <body>
 
-		<!-------------------------------- MODAL CATALOGO CURSOS -------------------------------->
-
-	<div class="md-modal md-effect-11" id="btnCatalogoCursos"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
-			<h3>Agregar curso de actualización</h3>
-			<div class="tblCatalogos">
-				<table class="tblCatPlan">
-					<tr>
-						<td>Periódo:</td>
-						<td><input class="con_estilo_largo" name="periodoAnio" type="text" id="periodoAnio" maxlength="6" placeholder="2014" required/>
-					</tr>
-					<tr>
-						<td>Descripción:</td>
-						<td>
-							<input class="con_estilo_largo" type="text" name="periodoDescripcion" id="periodoDescripcion" placeholder="Descripción del período" required/>
-						</td>
-					</tr>
-					<tr>
-						<td>Fecha:</td>
-						<td><input class="con_estilo_largo" type="date" id="periodoFechaInicio" name='periodoFechaInicio' required/></td>
-					</tr>
-					<tr>
-						<td>Créditos:</td>
-						<td><input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hc" id="hc" min="1" max="20"></td>
-					</tr>
-					<tr>
-						<td>Horas:</td>
-						<td><input class="estilo_numeric" onKeyPress="ValidaSoloNumeros()" type="number" name="hc" id="hc" min="1" max="20"></td>
-					</tr>
-					<tr>
-						<td>Característica:</td>
-						<td>
-							<select style="width:200px;" name="periodoTipo" id="periodoTipo" />
-									<option value="UNO">CURSO</option>
-									<option value="UNO">CONGRESO</option>
-									<option value="UNO">TALLER</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
-			</div>
-		</form>
-	</div>
-	<div class="md-overlay"></div>
-	
-
-	<!---------------------------------------------------------------------------------------->
-
+		
 <header>
 	<figure id="logo">
 	<img src="../imagenes/logo.png" alt="">
@@ -191,7 +196,7 @@
 
 			<div id="dd_consultaNombre">
 					<label>Nombre docente: </label>
-					<input class="dd_con_estilo_largo"type="text" name="dd_nombreConsulta" id="dd_nombreConsulta" list="datalist_nombre_dd" size=1 />
+					<input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text" name="dd_nombreConsulta" id="dd_nombreConsulta" list="datalist_nombre_dd" size=1 />
 					<datalist id="datalist_nombre_dd">
 						<option value="Nora Osuna">
 						<option value="Margarita Ramirez">
@@ -234,12 +239,9 @@
 
 		</fieldset>
 
+		<div class="tabs" style="margin-top:20px;">
 
-
-
-			<div class="tabs" style="margin-top:20px;">
-
-				<!------------------- LABEL PRIMER TAB ---------------------------->
+			<!------------------- LABEL PRIMER TAB ---------------------------->
 	    
 			    <input id="tab-1"  type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
 				<label for="tab-1" class="tab-label-1">Datos personales</label>
@@ -270,12 +272,12 @@
 									<div id="dd_fotoDoc"></div>
 
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
-										<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px;">20829</label></div>
-										<div class="dd_datosPersonales">Período:<input id="dd_periodo" style="margin-left:55px;"  class="dd_con_estilo_largo" type="text" placeholder="2014-2015" /></div>
+										<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px;">XXXXX</label></div>
+										<div class="dd_datosPersonales">Período:<input id="dd_periodo" style="margin-left:55px;"  class="dd_con_estilo_largo" type="text" /></div>
 										<div id="dd_fechaIngreso">Ingreso UABC:<input id="dd_ingresoUabc" type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"/></div>
-										<div class="dd_datosPersonales">A. paterno:<input id="dd_aPaterno" style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="CASTILLEJOS" /></div>
-										<div class="dd_datosPersonales">A. materno:<input id="dd_aMaterno" style="margin-left:27px;" class="dd_con_estilo_largo" type="text" placeholder="CABALLERO"/></div>
-										<div class="dd_datosPersonales">Nombre(s):<input id="dd_nombres" style="margin-left:32px;" class="dd_con_estilo_largo" type="text" placeholder="EMMA SOFIA"/></div>
+										<div class="dd_datosPersonales">A. paterno:<input id="dd_aPaterno" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
+										<div class="dd_datosPersonales">A. materno:<input id="dd_aMaterno" style="margin-left:27px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
+										<div class="dd_datosPersonales">Nombre(s):<input id="dd_nombres" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
 
 										<div class="dd_datosPersonales" >
 											Sexo:
@@ -291,10 +293,10 @@
 								 <h2>Dirección y teléfonos</h2>
 
 									<div class="dd_colonia_calle_int_ext_cp">
-										<div class="dd_datosPersonales">Calle:<input id="dd_calle" class="dd_con_estilo_largo" style="margin-left:35px;"  type="text" placeholder="CICLON, SECCION COSTA HERMOSA"/></div>
-										<div id="dd_ext">No. ext.:<input id="dd_noExterior" class="dd_con_estilo_corto" style="margin-left:10px;"  type="text" onKeyPress="ValidaSoloNumeros()" placeholder="758"/></div>
+										<div class="dd_datosPersonales">Calle:<input id="dd_calle" class="dd_con_estilo_largo" style="margin-left:35px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
+										<div id="dd_ext">No. ext.:<input id="dd_noExterior" class="dd_con_estilo_corto" style="margin-left:10px;"  type="text" onKeyPress="ValidaSoloNumeros()"/></div>
 					                	<div id="dd_int">No. int.:<input id="dd_noInterior" class="dd_con_estilo_corto" style="margin-left:15px;" type="text" onKeyPress="ValidaSoloNumeros()"/></div>
-										<div class="dd_datosPersonales">Colonia:<input id="dd_colonia" class="dd_con_estilo_largo" style="margin-left:15px;" type="text" placeholder="PLAYAS DE TIJUANA"/></div>
+										<div class="dd_datosPersonales">Colonia:<input id="dd_colonia" class="dd_con_estilo_largo" style="margin-left:15px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
 										<div class="dd_datosPersonales">C.P.:<input id="dd_cp" class="dd_con_estilo_corto" style="margin-left:44px;"  type="text" onKeyPress="ValidaSoloNumeros()"/></div>
 
 											
@@ -323,19 +325,19 @@
 												<option value="GUAYMAS">GUAYMAS</option>
 											</select>
 										</div>
-										<div class="dd_datosPersonales">Oficina:<input id="dd_oficina" class="dd_con_estilo_largo" style="margin-left:62px;" type="text" placeholder="(664) 686 5679"/></div>
-										<div class="dd_datosPersonales">Particular:<input id="dd_particular" class="dd_con_estilo_largo" style="margin-left:38px;" type="text" placeholder="(664) 188 9221"/></div>
-										<div class="dd_datosPersonales">Celular:<input id="dd_celular" class="dd_con_estilo_largo" style="margin-left:60px;" type="text" placeholder="(664) 188 9221"/></div>
-										<div class="dd_datosPersonales">Correo UABC:<input id="dd_correoUabc" class="dd_con_estilo_largo" style="margin-left:12px;" type="text" placeholder="EMMACATILLEJOS@UABC.EDU.MX"/></div>
-										<div class="dd_datosPersonales">Correo:<input id="dd_correo" class="dd_con_estilo_largo" style="margin-left:62px;" type="text"/></div>
+										<div class="dd_datosPersonales">Oficina:<input id="dd_oficina" class="dd_con_estilo_largo" style="margin-left:62px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
+										<div class="dd_datosPersonales">Particular:<input id="dd_particular" class="dd_con_estilo_largo" style="margin-left:38px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
+										<div class="dd_datosPersonales">Celular:<input id="dd_celular" class="dd_con_estilo_largo" style="margin-left:60px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
+										<div class="dd_datosPersonales">Correo UABC:<input id="dd_correoUabc" class="dd_con_estilo_largo" style="margin-left:12px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
+										<div class="dd_datosPersonales">Correo:<input id="dd_correo" class="dd_con_estilo_largo" style="margin-left:62px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
 										
 									</div>
 
 								<h2 style="margin-top:400px;">Trabajo fuera de UABC</h2>
 				                   		<div id="dd_trabajoFuera_puesto">
 
-				                   			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" class="dd_label" style="margin-left:50px;">CACE7210142V1</label></div>
-											<div class="dd_datosPersonales">Empresa:<input id="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px;" type="text" placeholder="LABOPAT"/></div>
+				                   			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" class="dd_label" style="margin-left:50px;">XXXXXXXXXXXX</label></div>
+											<div class="dd_datosPersonales">Empresa:<input id="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
 											
 
 											<div class="dd_datosPersonales">Puesto:
@@ -352,7 +354,7 @@
 
 
 											<div class="dd_datosPersonales" style="margin-top:40px;">Fecha de ingreso:<input id="dd_ingresoExterno" class="dd_con_estilo" style="margin-left:10px; width:215px" type="date"/></div>
-											<div class="dd_datosPersonales">Antigüedad:<input id="dd_antiguedadExterno" class="dd_con_estilo" disabled="false" style="margin-left:60px; width:215px;" type="text" placeholder="5 AÑOS"/></div>
+											<div class="dd_datosPersonales">Antigüedad:<input id="dd_antiguedadExterno" class="dd_con_estilo" disabled="false" style="margin-left:60px; width:215px;" type="text"/></div>
 
 										</div>
 
@@ -376,12 +378,12 @@
 								
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" placeholder="LIC. EN INFORMATICA"/></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" placeholder="UABC"/></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" placeholder="8000054"/>  </div>
-									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D" placeholder="cedula.png"></div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" />  </div>
+									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
@@ -393,17 +395,16 @@
 							
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo_largo" onblur="Mayusculas(this)" type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
-									
 
 								</div>
 
@@ -412,11 +413,11 @@
 
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
-									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion"  class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
@@ -429,17 +430,15 @@
 
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
-
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
-									
 
 								</div>
 
@@ -450,11 +449,11 @@
 
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
@@ -468,17 +467,16 @@
 
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
-									
 								</div>
 
 
@@ -487,11 +485,11 @@
 
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
@@ -504,17 +502,16 @@
 								
 								<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-									<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo"  type="text" /></div>
-									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" /></div>
+									<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
+									<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
 									<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
-									<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" type="text" />  </div>
+									<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
 									<div class="dd_fechaTitulacion"><input id="dd_archivoTitulacion" class="dd_estilo_combo" type="text" medida="Y/M/D"></div>
 
 									<div class="dd_btnAdd"><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></div>
 									<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 									<div class="dd_btnAdd"><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></div>
-									
 								</div>
 							</div>
 		                        
@@ -547,7 +544,6 @@
 											         </select>
 											      </td>
 
-												
 											     <td><label>Tipo:</label></td>
 											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
 											          	<option value="CURSO">CURSO</option>
@@ -556,10 +552,10 @@
 											          </select>
 											      </td>
        
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
 
 												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
@@ -575,7 +571,6 @@
 											         </select>
 											      </td>
 
-												
 											     <td><label>Tipo:</label></td>
 											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
 											          	<option value="CURSO">CURSO</option>
@@ -584,10 +579,37 @@
 											          </select>
 											      </td>
        
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
+
+												  <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
+												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
+												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
+											</tr>
+
+											<tr>
+												<td>Elija:</td>
+												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
+											          	<option value="RECIBIDO">RECIBIDO</option>
+											            <option value="IMPARTIDO">IMPARTIDO</option>
+											         </select>
+											      </td>
+
+											     <td><label>Tipo:</label></td>
+											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
+											          	<option value="CURSO">CURSO</option>
+											            <option value="CONGRESO">CONGRESO</option>
+											            <option value="TALLER">TALLER</option>
+											          </select>
+											      </td>
+       
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
+											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
 
 												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
@@ -603,7 +625,6 @@
 											         </select>
 											      </td>
 
-												
 											     <td><label>Tipo:</label></td>
 											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
 											          	<option value="CURSO">CURSO</option>
@@ -612,10 +633,10 @@
 											          </select>
 											      </td>
        
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
 
 												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
@@ -631,7 +652,6 @@
 											         </select>
 											      </td>
 
-												
 											     <td><label>Tipo:</label></td>
 											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
 											          	<option value="CURSO">CURSO</option>
@@ -640,10 +660,10 @@
 											          </select>
 											      </td>
        
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
 
 												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
@@ -651,35 +671,7 @@
 												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
 											</tr>
 
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-												
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-       
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px;" type="text" placeholder="ELABORACION DE MATERIAL DIDACTICO UTILIZANDO LAS HERRAMIENTAS DE POWER POINT Y PREZI"/></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input style="width:50px;" id="dd_valorCurso" class="dd_estilo_cedula" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D" placeholder="curso material didactico.png"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input id="dd_btnDescargar_archivo" class="dd_clsDescargar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-
+											
 										</table>
 									</div>
 						     	</div>
@@ -706,7 +698,7 @@
 
 						     	</div>
 						     	
-						     	<div id="dd_btnCursos_actualizacion"><input type="button" class="md-trigger" value="+" data-modal="btnCatalogoCursos" id="btnCatalogoCursos" /></div>
+						     	
 						     	
 						     </div>
 						</div>
@@ -734,53 +726,57 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
 										</tr>
 										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
 										</tr>
 										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
-											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>		
-										</tr>
-										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
-											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>		
-										</tr>
-										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
-											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>		
-										</tr>
-										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
 											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
 										</tr>
 										<tr>
-											<td><input id="dd_claveMateria" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla" placeholder="11885"/></td>
-											<td><input id="dd_nombreMateria" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla" placeholder="COMERCIO ELECTRONICO"/></td>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
 											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>		
+											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
 										</tr>
-										
-																		
-									
+										<tr>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
+											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										</tr>
+										<tr>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
+											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										</tr>
+										<tr>
+											<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
+											<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
+											<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
+											<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										</tr>
+
 									</tbody>
 								</table>
+
+								
+									<div id="dd_btnVerAnterior"><input style="font-size: 15px; height: 50px; width:170px;" type="button" class="md-trigger" value="Ver semestre anterior" data-modal="btnMateriasAnterior" id="btnMateriasAnterior" /></div>
+								
 							</div>
+
+
 
 							<h2>Disponibilidad</h2>
 
@@ -961,7 +957,7 @@
 							</div>
 							<div id="dd_observaciones_materias">
 								<label>Observaciones:</label>
-								<textarea rows=3 cols="120" style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" placeholder="Observaciones"></textarea>
+								<textarea rows=3 cols="120" style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" onblur="Mayusculas(this)" placeholder="Observaciones"></textarea>
 							</div>
 
 
@@ -974,6 +970,12 @@
 		                			    
 				</div>
 			</div>
+			
+
+
+
+
+			
 		</section>
 
 	<footer>
@@ -1008,18 +1010,28 @@
        });
 	</script>
      
-     <!--SCRIPT PARA QUE SOLO ACEPTE NUMEROS--> 
-	<script language="javascript">
-    	function ValidaSoloNumeros() {
-        if ((event.keyCode < 48) || (event.keyCode > 57)) 
-        	event.returnValue = false;
-            }
-              function Validate(obj){
-              if(true != false){
-              // Así damos de nuevo el foco al INPUT
-                    obj.focus();
-                  }
-                }    
-    
-    </script>
+      <!------------------------------------ VALIDACIONES ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
+			  event.returnValue = false;
+			}
+
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
+			}
+</script>
+
+<!------------------------------------------------------------------------------------------>
+
+
 </html>

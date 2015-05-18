@@ -50,7 +50,7 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input style="width: 200px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" name="ciudades_descripcion" size=1 /></td>
+						<td><input style="width: 200px; text-transform:uppercase; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" id="txtCatDescripcion" onkeypress="Mayusculas(this)" name="ciudades_descripcion" size=1 /></td>
 					</tr>
 					<tr>
 						<td>Estado:</td>
@@ -72,6 +72,7 @@
 			</div>
 		</form>
 	</div>
+	<div class="md-overlay"></div>
 		
 		<header>
 			<figure id="logo"><img src="../imagenes/logo.png" alt=""></figure>
@@ -240,8 +241,32 @@
 	<script src="../js/modalEffects.js"></script>
 	<script type="text/javascript">
 
+	<!------------------------------------ PARA VALIDAR SOLO NUMEROS ---------------------------->
+
+<script language="javascript">
+
+			function ValidaSoloNumeros() {
+			 if ((event.keyCode < 48) || (event.keyCode > 57))
+			  event.returnValue = false;
+			}
+
+			function Validate(obj){
+			  if(true != false){
+				// Así damos de nuevo el foco al INPUT
+				obj.focus();
+			  }
+			
+			}
+			function Mayusculas(input){
+				this.value = this.value.toUpperCase();
+			}
+</script>
+
+<!------------------------------------------------------------------------------------------>
+
+
 	</body>
 
-<!----------------------------------------------------------->
+
 
 </html>
