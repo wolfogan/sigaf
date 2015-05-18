@@ -37,8 +37,11 @@ class UserLoginController extends BaseController
 	public function getUsuariosregistro()
 	{
 		$levels = Level::all();
+		$categorias = Categoria::all();
 		$users = User::all();
-		return View::make('usuarios.usuariosRegistro')->with(compact('levels','users'));
+		$uacademicas = Uacademica::all();
+		$campus = Campus::all();
+		return View::make('usuarios.usuariosRegistro')->with(compact('levels','users','categorias','uacademicas','campus'));
 
 	}
 
@@ -51,6 +54,94 @@ class UserLoginController extends BaseController
 		return Response::json($users);
 	}
 
+	public function postRegistrarusuario()
+	{
+		$username = Input::get('username');
+		$name = Input::get('nombreRegUsuarios');
+		$fec_ing = Input::get('hr_ingresoU');
+		$last_name = Input::get('apellidosPRegUsuarios');
+		$last_materno = Input::get('apellidosMRegUsuarios');
+		$sexo = Input::get('sexo');
+		$email = Input::get('correoE');
+		$password = Hash::make(Input::get('contrasena_us'));
+		$phone = Input::get('telefono');
+		$level = Input::get('puesto');
+		$categoria = Input::get('categoria');
+		$uacademica = Input::get('uacademicaRegUsuarios');
+		$campus = Input::get('campusRegUsuarios');
+		$users_id = Input::get('users_id');
+
+
+		$user = new User;
+		$user -> username = $username;
+		$user -> name = 	 $name;
+		$user -> fec_ing = $fec_ing;
+		$user -> last_name = $last_name;
+		$user -> last_materno = $last_materno;
+		$user -> email = $email;
+		$user -> name = $name;
+		$user -> sexo = $sexo;
+		$user -> password = $password;
+		$user -> phone = $phone;
+		$user -> level = $level;
+		$user -> categoria = $categoria;
+		$user -> uacademica = $uacademica;
+		$user -> campus = $campus;
+		//$user -> users_id = $users_id;
+
+		$user -> save();
+
+		return "Usuario Registrado!!!";
+	}
+
+	public function postModificarusuario()
+	{
+		$id = Input::get('id');
+		$username = Input::get('username');
+		$name = Input::get('nombreRegUsuarios');
+		$fec_ing = Input::get('hr_ingresoU');
+		$last_name = Input::get('apellidosPRegUsuarios');
+		$last_materno = Input::get('apellidosMRegUsuarios');
+		$sexo = Input::get('sexo');
+		$email = Input::get('correoE');
+		$password = Hash::make(Input::get('contrasena_us'));
+		$phone = Input::get('telefono');
+		$level = Input::get('puesto');
+		$categoria = Input::get('categoria');
+		$uacademica = Input::get('uacademicaRegUsuarios');
+		$campus = Input::get('campusRegUsuarios');
+		$users_id = Input::get('users_id');
+
+
+		$user = User::find($id);
+		$user -> username = $username;
+		$user -> name = 	 $name;
+		$user -> fec_ing = $fec_ing;
+		$user -> last_name = $last_name;
+		$user -> last_materno = $last_materno;
+		$user -> email = $email;
+		$user -> name = $name;
+		$user -> sexo = $sexo;
+		$user -> password = $password;
+		$user -> phone = $phone;
+		$user -> level = $level;
+		$user -> categoria = $categoria;
+		$user -> uacademica = $uacademica;
+		$user -> campus = $campus;
+		//$user -> users_id = $users_id;
+
+		$user -> save();
+
+		return "Usuario Actualizado Correctamente!!!";
+	}
+
+	public function postEliminarusuario(){
+		$id = Input::get('id');
+		$user = User::find($id);
+		$user -> delete();
+		return "Usuario Eliminado Correctamente!!!";
+	}
+
 	public function getModificarcontrasena()
 	{
 		return View::make('usuarios.modificarContrasena');
@@ -58,5 +149,14 @@ class UserLoginController extends BaseController
 	public function getOlvidocontrasena()
 	{
 		return View::make('usuarios.olvidoContrasena');
+	}
+
+	public function postObtenerusuario()
+	{
+		$id = Input::get('id');
+
+		$user = User::find($id);
+
+		return Response::json($user);
 	}
 }
