@@ -121,77 +121,77 @@
 						<tr class="gradeX">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 
 						<tr class="gradeX">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeU">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
-							<td>HABILITADO</td>	
+							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 							
