@@ -59,7 +59,9 @@
 		
 <div class="container">
 	<div class="main">
-		<div class="view view-tenth" onclick="location.href='planestudio/registro'">
+	{{-- Si no es docente level = 5 = docente --}}
+		@if (Auth::user()->level!=5)
+		<div class="view view-tenth" onclick="location.href='planestudio/registro'" >
 			<img src="imagenes/plan1.png"/>
 			<a href="planestudio/registro"><div class="mask"></a>
 				<h2>Plan de estudios</h2>
@@ -81,7 +83,8 @@
 				<a href="#"></a>
 			</div>
 		</div>
-		<div class="view view-tenth" onclick="location.href='disponibilidaddocente/registro'">
+		@endif
+		<div class="view view-tenth" onclick="location.href='disponibilidaddocente/registro'" disabled = "disabled">
 			<img src="imagenes/disponibilidad1.png"/>
 			<div class="mask">
 				<h2>Disponibilidad docente</h2>
@@ -91,6 +94,7 @@
 				<a href="#"></a>
 			</div>
 		</div>
+		@if (Auth::user() -> level != 5)
 		<div class="view view-tenth">
 			<img src="imagenes/creacion1.png"/>
 			<div class="mask">
@@ -131,6 +135,7 @@
 				<!--<a href="#" class="info">Read More</a>-->
 			</div>
 		</div>
+		@endif
 		<div class="view view-tenth">
 			<img src="imagenes/manual1.png"/>
 			<div class="mask">

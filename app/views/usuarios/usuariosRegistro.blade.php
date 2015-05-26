@@ -264,16 +264,16 @@
 
 					<tr>
 						<td>Correo:</td>
-						<td><input class="dd_con_estilo_largo" type="email" name="correoE" id="correoE" placeholder="example@mail.com" required/></td>
+						<td><input class="dd_con_estilo_largo" type="email" name="correoE" id="correoE" placeholder="example@uabc.edu.mx" required/></td>
 						<td></td>
-						<td>Repetir correo:</td>
-						<td><input class="dd_con_estilo_largo" type="email" name="correoER" id="correoER" placeholder="example@mail.com" required/></td>
+						<td>RFC:</td>
+						<td><input class="dd_con_estilo_largo" type="text" name="rfc" id="rfc" placeholder="ICU870212HBC" required/></td>
 						<td></td>
 					</tr>
 							
 					<tr>
 						<td>Telefono:</td>
-						<td><input class="dd_con_estilo_largo" type="text" placeholder="Teléfono" name="telefono" id="telefono" required/></td>
+						<td><input class="dd_con_estilo_largo" type="text" placeholder="Teléfono" name="telefono" id="telefono" onkeypress="ValidaSoloNumeros()" required/></td>
 						<td></td>
 						<td>Contraseña:</td>
 						<td><input class="dd_con_estilo_largo" type="password" name="contrasena_us" id="contrasena_us" placeholder="***" required/></td>

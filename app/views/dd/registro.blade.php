@@ -235,18 +235,18 @@
 									<div id="dd_fotoDoc"></div>
 
 									<div id="dd_aPaterno_aMaterno_nombres_sexo">
-										<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px;">XXXXX</label></div>
+										<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px;">{{Auth::user()->id}}</label></div>
 										<div class="dd_datosPersonales">Período:<input id="dd_periodo" style="margin-left:55px;"  class="dd_con_estilo_largo" type="text" /></div>
-										<div id="dd_fechaIngreso">Ingreso UABC:<input id="dd_ingresoUabc" type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005"/></div>
-										<div class="dd_datosPersonales">A. paterno:<input id="dd_aPaterno" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
-										<div class="dd_datosPersonales">A. materno:<input id="dd_aMaterno" style="margin-left:27px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
-										<div class="dd_datosPersonales">Nombre(s):<input id="dd_nombres" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" /></div>
+										<div id="dd_fechaIngreso">Ingreso UABC:<input id="dd_ingresoUabc" type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005" value="{{Auth::user()->fec_ing}}"/></div>
+										<div class="dd_datosPersonales">A. paterno:<input id="dd_aPaterno" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" value="{{Auth::user()->last_name}}"/></div>
+										<div class="dd_datosPersonales">A. materno:<input id="dd_aMaterno" style="margin-left:27px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)"  value="{{Auth::user()->last_materno}}" /></div>
+										<div class="dd_datosPersonales">Nombre(s):<input id="dd_nombres" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)"  value="{{Auth::user()->name}}" /></div>
 
 										<div class="dd_datosPersonales" >
 											Sexo:
 											<select id="dd_sexo" class="dd_estilo_combo" style="margin-left:75px; margin-bottom:0px; width:252px;">
-												 <option value="FEMENINO">FEMENINO</option>
-												 <option value="MASCULINO">MASCULINO</option>
+												 <option value="FEMENINO" @if (Auth::user()->sexo == "F") selected @endif >FEMENINO</option>
+												 <option value="MASCULINO" @if (Auth::user()->sexo == "M") selected @endif >MASCULINO</option>
 											</select>
 										</div>
 
@@ -289,17 +289,17 @@
 											</select>
 										</div>
 										<div class="dd_datosPersonales">Oficina:<input id="dd_oficina" class="dd_con_estilo_largo" style="margin-left:62px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
-										<div class="dd_datosPersonales">Particular:<input id="dd_particular" class="dd_con_estilo_largo" style="margin-left:38px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
+										<div class="dd_datosPersonales">Particular:<input id="dd_particular" class="dd_con_estilo_largo" style="margin-left:38px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" value={{Auth::user()->phone }} /></div>
 										<div class="dd_datosPersonales">Celular:<input id="dd_celular" class="dd_con_estilo_largo" style="margin-left:60px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
-										<div class="dd_datosPersonales">Correo UABC:<input id="dd_correoUabc" class="dd_con_estilo_largo" style="margin-left:12px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
-										<div class="dd_datosPersonales">Correo:<input id="dd_correo" class="dd_con_estilo_largo" style="margin-left:62px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
+										<div class="dd_datosPersonales">Correo UABC:<input id="dd_correoUabc" class="dd_con_estilo_largo" style="margin-left:12px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" value={{Auth::user()->email}} /></div>
+										<div class="dd_datosPersonales">Correo:<input id="dd_correo" class="dd_con_estilo_largo" style="margin-left:62px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" /></div>
 										
 									</div>
 
 								<h2 style="margin-top:400px;">Trabajo fuera de UABC</h2>
 				                   		<div id="dd_trabajoFuera_puesto">
 
-				                   			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" class="dd_label" style="margin-left:50px;">XXXXXXXXXXXX</label></div>
+				                   			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" class="dd_label" style="margin-left:50px;">{{Auth::user()->rfc}}</label></div>
 											<div class="dd_datosPersonales">Empresa:<input id="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
 											
 

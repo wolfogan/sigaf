@@ -33,6 +33,7 @@ Route::controller('ayuda','AyudaController');
 Route::controller('usuarios','UserLoginController');
 Route::controller('horarios','HorariosController');
 Route::get('pruebametodo',"CargaAcademicaController@postCopiarcarga");
+//Route::get('correito',"UserLoginController@vamos");
 Route::get('pruebas',function(){
 
 	/*$uaprendizaje = UnidadAprendizaje::where('uaprendizaje','=','11236')->where('plan','=','20092')->first();

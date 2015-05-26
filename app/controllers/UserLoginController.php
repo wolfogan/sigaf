@@ -54,6 +54,34 @@ class UserLoginController extends BaseController
 		return Response::json($users);
 	}
 
+	public function getCorreo()
+	{
+		$mensaje = null;
+		if(isset($_GET['contacto']))
+		{
+			$data = array(
+				'name' => Input::get('name'),
+				'email' => Input::get('email'),
+				'subject' => Input::get('subject'),
+				'msg' => Input::get('msg')
+				);
+
+				$fromEmail = 'wolfogan@gmail.com';
+				$fromName = "Administrador";
+
+				Mail::send('usuarios.plantilla',$data,function($mensaje) use ($fromName,$fromEmail){
+					$mensaje->to($fromEmail,$fromName);
+					$mensaje->from($fromEmail,$fromName);
+					$mensaje->subject("Nuevo email de contacto");
+				});
+
+				$mensaje = "<div class='text-info'>Mensaje enviado con exito!!!</div>";
+
+		}
+		
+		return View::make('usuarios.correo')->with(array("mensaje" => $mensaje));
+	}
+
 	public function postRegistrarusuario()
 	{
 		$username = Input::get('username');
@@ -63,6 +91,7 @@ class UserLoginController extends BaseController
 		$last_materno = Input::get('apellidosMRegUsuarios');
 		$sexo = Input::get('sexo');
 		$email = Input::get('correoE');
+		$rfc = Input::get('rfc');
 		$password = Hash::make(Input::get('contrasena_us'));
 		$phone = Input::get('telefono');
 		$level = Input::get('puesto');
@@ -79,6 +108,7 @@ class UserLoginController extends BaseController
 		$user -> last_name = $last_name;
 		$user -> last_materno = $last_materno;
 		$user -> email = $email;
+		$user -> rfc = $rfc;
 		$user -> name = $name;
 		$user -> sexo = $sexo;
 		$user -> password = $password;

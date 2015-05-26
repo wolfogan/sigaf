@@ -73,21 +73,6 @@ class CargaAcademicaController extends BaseController
 		return View::make('ca.subsecuente')->with(compact('periodosPrograma','programas','codigosPeriodo','tiposCaracter','turnos','unidades','ultimoPeriodoCarga'));
 	}
 
-	public function postUltimoperiodo()
-	{
-		$programaedu = Input::get('programaedu');
-		$ultimoPeriodoCarga = DB::table('carga')
-			->select('periodo')
-			->where('programaedu',$programaedu)
-			->orderBy('periodo','desc')
-			->first();
-
-		if(empty($ultimoPeriodoCarga))
-			return 0;
-		else
-			return $ultimoPeriodoCarga->periodo;
-	}
-
 	public function getConsulta()
 	{
 
@@ -108,7 +93,20 @@ class CargaAcademicaController extends BaseController
 		return View::make("ca.consulta")->with(compact('codigosPeriodo','programas','turnos'));
 	}
 
+	public function postUltimoperiodo()
+	{
+		$programaedu = Input::get('programaedu');
+		$ultimoPeriodoCarga = DB::table('carga')
+			->select('periodo')
+			->where('programaedu',$programaedu)
+			->orderBy('periodo','desc')
+			->first();
 
+		if(empty($ultimoPeriodoCarga))
+			return 0;
+		else
+			return $ultimoPeriodoCarga->periodo;
+	}
 
 	// Altas a tablas principales
 	public function postRegistrarperiodo()
