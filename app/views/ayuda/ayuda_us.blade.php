@@ -10,9 +10,9 @@
 <body>
 	<div id="modal">
 		<div class="modal-content">
-        	<div id="salir"><a href="<?=URL::to('cargaacademica/registro')?>"><img src="../imagenes/salir.png"></a></div>
+        	<div id="salir"><a href="<?=URL::to('usuarios/usuariosregistro')?>"><img src="../imagenes/salir.png"></a></div>
            	  <h1><span>Manual de usuario</span> <br>
-       	      CARGA ACADÉMICA</h1>
+       	      LOGIN Y USUARIOS</h1>
    		  		<div id="back"><a href="javascript:window.history.go(-1);"><img src="../imagenes/back.png"></a></div>   
              	 <div class="container">
 				 

@@ -13,7 +13,7 @@ por el simbolo "#" y las clases por el simbolo "." */
 	}
 /*Este div contiene las opciones del menu principal correspondientes a cada módulo*/
 #contenedor{
-	width:660px;
+	width:450px;
 	height:auto;
 	margin:auto;
 	margin-top:60px;
@@ -25,14 +25,11 @@ por el simbolo "#" y las clases por el simbolo "." */
 	background-image:url(../imagenes/principal/dd.png);
 	background-repeat:no-repeat;
 	}
-#horarios{
-	background-image:url(../imagenes/principal/ch.png);
-	background-repeat:no-repeat;
-	}
-#inasistencias{
-	background-image:url(../imagenes/principal/ci.png);
-	background-repeat:no-repeat;
-	}
+#usuarios
+{
+	background-image:url(../imagenes/principal/us.png);
+	background-repeat:no-repeat;	
+}
 /*Div que dibuja la linea color naranja*/
 #linea1{
 	width:500px;

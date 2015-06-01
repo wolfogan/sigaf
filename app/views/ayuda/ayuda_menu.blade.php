@@ -22,16 +22,9 @@
       <div class="opcion" onclick="location.href='ayudadd'" style="cursor:pointer;" id="disponibilidad">
           <h2>Disponibilidad docente</h2>
       </div>
-      <div class="opcion" id="horarios">
-          <h2>Creación de horarios</h2>
-      </div>
-      <div class="opcion" id="calendarizacion">
-        <h2>Calend. de exams.</h2>
-      </div>
-      <div class="opcion" id="inasistencias">
-          <h2>Control de inasist.</h2>
-      </div>
-        
+      <div class="opcion" onclick="location.href='ayudaus'" style="cursor:pointer;" id="usuarios">
+          <h2>Login y usuarios</h2>
+      </div>        
     </div>
   <div id="pie">Facultad de Contaduría y Administración<br>
 <span>Universidad Autónoma de Baja California</span></div>    
