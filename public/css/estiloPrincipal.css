@@ -1962,6 +1962,36 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.foto_botones
+{
+	float: left;
+	margin-left: 20px;
+	height: 400px;
+	width: 300px;
+}
+.dd_botonesFoto
+{
+	
+	width: 230px;
+	margin-top: 20px;
+	margin-left: 73px;
+
+}
+.dd_botonesFoto input
+{
+	width: 100px;
+	height: 30px;
+}
+#dd_fotoDoc
+{
+	
+	background-image: url(../imagenes/docente.png);
+	margin: 20px 0px 0px 80px;
+	border: 3px solid green;
+	height: 250px;
+	width: 217px;
+}
+
 .div_periodo_dd
 {
 	margin-left: 50px;
@@ -2071,24 +2101,12 @@ input[readonly],input[readonly="readonly"]
 	margin-top: 50px;
 	width: 390px;
 }
-#dd_fotoDoc
-{
-	background: green;
-	background-image: url(../imagenes/docente.png);
-	float: left;
-
-	margin: 30px 0px 0px 80px;
-	border: 3px solid green;
-	height: 250px;
-	width: 217px;
-}
-
 
 #dd_aPaterno_aMaterno_nombres_sexo
 {
-
+	
 	float: left;
-	margin-left: 90px;
+	margin-left: 80px;
 	padding: 20px;
 	width: 380px;
 }
@@ -2626,7 +2644,7 @@ height: 35px;
 
 .dd_divDecoracion
 {
-
+	
 	font-size: 18px;
 	border-top: 4px dashed #BEF781;
 	border-bottom: 4px dashed #BEF781;
@@ -2733,10 +2751,11 @@ height: 35px;
 /*------------------------------------PRUEBA IVAN-----------------------------------------------*/
 
 /*************************** MODAL SERIACION *******************************/
-.fila-base-seriacion
+.fila-base-seriacion, .fila-base-cursos
 {
 	display: none;
 }
+
 
 
 

@@ -231,7 +231,13 @@
                       
 						<div class="dd_divDecoracion">	
 							
-							<div id="dd_fotoDoc"></div>
+							<div class="foto_botones">
+								<div id="dd_fotoDoc"></div>
+								<div class="dd_botonesFoto">
+									<input type="button" class="estilo_button2" style="font-size:.8em;" name="foto_seleccion" value="Adjuntar">
+									<input type="button" class="estilo_button2" style="font-size:.8em;" name="foto_agregar" value="Agregar">
+								</div>
+							</div>
 
 							<div id="dd_aPaterno_aMaterno_nombres_sexo">
 								<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px; font-size:1.2em;">{{Auth::user()->id}}</label></div>
@@ -353,7 +359,8 @@
 							
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" class="dd_con_estilo_largo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></div>
+								<div class="dd_licenciatura">
+									<input id="dd_licenciatura" class="dd_con_estilo_largo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></div>
 								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" /></div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
@@ -772,155 +779,152 @@
 									<tr>
 										<td>7:00 - 8:00</td>
 										<!--<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>-->
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>8:00 - 9:00</td>
 										
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>		
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>9:00 - 10:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>		
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>10:00 - 11:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>		
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>11:00 - 12:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>12:00 - 13:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>		
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>13:00 - 14:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 									</tr>
 									<tr>
 										<td>14:00 - 15:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>		
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 					
 									</tr>
 									<tr>
 										<td>15:00 - 16:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>16:00 - 17:00</td>
-										<td><label></label></td>	
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>17:00 - 18:00</td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>18:00 - 19:00</td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>19:00 - 20:00</td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>20:00 - 21:00</td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
 										
 					
 									</tr>
 									<tr>
 										<td>21:00 - 22:00</td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>	
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
-										<td><img alt="Imagen" src="../imagenes/good.png" /></td>
-										<td><label></label></td>
-										
-					
+										<td onclick="color_disp(this)"></td>		
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>
+										<td onclick="color_disp(this)"></td>			
 									</tr>
 																	
 								
@@ -1087,7 +1091,24 @@
 			}
 </script>
 
-<!------------------------------------------------------------------------------------------>
+<!------------------FUNCION PARA CAMBIAR COLOR EN LA TABLA DISPONIBILIDAD-------------------->
 
+
+<script>
+
+	function color_disp(x) {
+
+	if(x.style.backgroundColor == "rgb(236, 162, 46)")
+	{
+		x.style.backgroundColor = "";
+	}
+	else
+	{
+		x.style.backgroundColor = "rgb(236, 162, 46)";
+	}
+}
+</script>
+
+<!------------------------------------------------------------------------------------------>
 
 </html>
