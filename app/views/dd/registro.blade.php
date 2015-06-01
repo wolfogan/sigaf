@@ -234,8 +234,8 @@
 							<div id="dd_fotoDoc"></div>
 
 							<div id="dd_aPaterno_aMaterno_nombres_sexo">
-								<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px;">{{Auth::user()->id}}</label></div>
-								<div class="dd_datosPersonales">Período:<input id="dd_periodo" style="margin-left:55px;"  class="dd_con_estilo_largo" type="text" /></div>
+								<div id="dd_noEmpleado">No. empleado:<label id="dd_lbl_noEmpleado" class="dd_label"  style="margin-left:15px; font-size:1.2em;">{{Auth::user()->id}}</label></div>
+								
 								<div id="dd_fechaIngreso">Ingreso UABC:<input id="dd_ingresoUabc" name="dd_ingreso" type="date" class="dd_estilo_combo" style="margin-left:10px; width:248px;" medida="Y/M/D" placeholder="23/09/2005" value="{{Auth::user()->fec_ing}}"/></div>
 								<div class="dd_datosPersonales">A. paterno:<input id="dd_aPaterno" name="dd_aPaterno" style="margin-left:32px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)" value="{{Auth::user()->last_name}}"/></div>
 								<div class="dd_datosPersonales">A. materno:<input id="dd_aMaterno" name="dd_aMaterno" style="margin-left:27px; text-transform:uppercase" class="dd_con_estilo_largo" type="text" onkeypress="Mayusculas(this)"  value="{{Auth::user()->last_materno}}" /></div>
@@ -679,6 +679,16 @@
 					<h2>Materias a impartir</h2>
 
 					<form action="javascript:RegistrarDisponibilidad();" method="post" id="dd_datosDisponibilidad">
+
+	                    <div class="div_periodo_dd">Período:
+	                    	<select id="dd_periodo" style="margin-left:5px;" name="periodo_dd" class="dd_estilo_combo" type="text" />
+	                    		<option value="2014-1">2014-1</option>
+	                    		<option value="2014-2">2014-2</option>
+	                    		<option value="2015-1">2015-1</option>
+	                    	</select>
+	                    		
+	                    </div>
+
 	                    <div id="dd_impartirMaterias">
 		                    <table class="dd_tabla_MatImpartir">
 								
@@ -921,12 +931,12 @@
 
 						<div id="dd_observaciones_materias">
 							<label>Observaciones:</label>
-							<textarea rows=3 cols="120" style="margin-left:145px; margin-top:-20px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" onblur="Mayusculas(this)" placeholder="Observaciones"></textarea>
+							<textarea rows=0 cols="5" style="margin-left:145px; margin-top:-30px; width:500px; border-radius:5px; border-color:green; text-transform:uppercase; resize:none" id="dd_observaciones_materias" name="dd_observaciones_materias" onblur="Mayusculas(this)" placeholder="Observaciones"></textarea>
 						</div>
 
 
 						<div id="dd_btnGuardarDisp">
-							<input type="submit" class="estilo_button2" style="width:170px"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" />
+							<input type="submit" class="estilo_button2" style="width:170px; margin-top:15px;"  type="button" value="Guardar" name="dd_guardar" id="dd_guardar" />
 						</div>	
 					</form>
 				
