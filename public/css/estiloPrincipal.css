@@ -1962,6 +1962,12 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.div_periodo_dd
+{
+	margin-left: 50px;
+	font-size: 1.5em;
+	width: 350px;
+}
 #dd_btnVerAnterior
 {
 	margin-left: 850px;
@@ -2054,13 +2060,15 @@ input[readonly],input[readonly="readonly"]
 
 	padding-bottom: 20px;
 	padding-right: 10px;
-	width: 200px;
+	font-size: 1.3em;
+	width: 300px;
 
 }
 #dd_fechaIngreso
 {
 	padding-bottom: 20px;
 	padding-right: 10px;
+	margin-top: 50px;
 	width: 390px;
 }
 #dd_fotoDoc
