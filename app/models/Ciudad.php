@@ -6,9 +6,9 @@ class Ciudad extends Eloquent
 	protected $primaryKey = "ciudad";
 	public $timestamps = false;
 
-	public function estado(){
+	public function estados(){
 
-		return $this->belongsTo('Estado');
+		return $this->belongsTo('Estado','estado','estado');
 	}
 
 	public function campus()

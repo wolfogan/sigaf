@@ -232,15 +232,19 @@ Route::get('pruebas',function(){
 						->where("carga.grupo","LIKE","'%".$grupo."%'")
 						->groupBy("carga.semestre","carga.periodo")
 						->get();*/
-	$users = User::all();
+	// $users = User::all();
 
-	foreach ($users as $user) {
-		$user->levels;
-	}
+	// foreach ($users as $user) {
+	// 	$user->levels;
+	// }
 	
+	$pais = 144;
 	
+	$estados = Estado::where('pais','=',$pais)->get();
+
+
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return Response::json($users);
+	return Response::json($estados);
 
 });

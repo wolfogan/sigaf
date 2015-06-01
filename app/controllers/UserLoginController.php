@@ -41,6 +41,7 @@ class UserLoginController extends BaseController
 		$users = User::all();
 		$uacademicas = Uacademica::all();
 		$campus = Campus::all();
+		
 		return View::make('usuarios.usuariosRegistro')->with(compact('levels','users','categorias','uacademicas','campus'));
 
 	}
