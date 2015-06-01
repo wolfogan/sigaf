@@ -117,6 +117,8 @@ class DisponibilidadDocenteController extends BaseController
 		$user -> save();
 
 		return "Cambios realizados al usuario correctamente.";
+
+		
 	}
 
 }

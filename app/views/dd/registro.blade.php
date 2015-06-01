@@ -255,7 +255,7 @@
 
 						<div class="dd_colonia_calle_int_ext_cp">
 							
-							<div class="dd_datosPersonales">Calle:<input id="dd_calle" name="dd_calle" class="dd_con_estilo_largo" style="margin-left:35px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" value="{{ Auth::user()->address }}"/></div>
+							<div class="dd_datosPersonales">Calle:<input id="dd_calle" name="dd_calle" class="dd_con_estilo_largo" style="margin-left:35px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" value="{{ Auth::user()->calle }}"/></div>
 							<div id="dd_ext">No. ext.:<input id="dd_noExterior" name="dd_noExterior" class="dd_con_estilo_corto" style="margin-left:10px;"  type="text" onKeyPress="ValidaSoloNumeros()" value="{{ Auth::user()->no_ext }}" /></div>
 		                	<div id="dd_int">No. int.:<input id="dd_noInterior" name="dd_noInterior" class="dd_con_estilo_corto" style="margin-left:15px;" type="text" onKeyPress="ValidaSoloNumeros()" value="{{ Auth::user()->no_int }} "/></div>
 							<div class="dd_datosPersonales">Colonia:<input id="dd_colonia" name="dd_colonia" class="dd_con_estilo_largo" style="margin-left:15px; text-transform:uppercase" onblur="Mayusculas(this)" type="text" value="{{ Auth::user()->colonia }}" /></div>
@@ -293,9 +293,9 @@
 								<select id="dd_ciudad" name="dd_ciudad" class="dd_con_estilo_largo" style="margin-left:60px;">
 									@foreach($ciudades as $ciudad)
 										@if($ciudad->ciudad == Auth::user()->ciudad)
-											<option value="{{$ciudad -> $ciudad}}" selected='selected'>{{$ciudad -> descripcion}}</option>
+											<option value="{{$ciudad -> ciudad}}" selected="selected">{{$ciudad -> descripcion}}</option>
 										@else
-											<option value="{{$ciudad -> $ciudad}}">{{$ciudad -> descripcion}}</option>
+											<option value="{{$ciudad -> ciudad}}">{{$ciudad -> descripcion}}</option>
 										@endif
 									@endforeach
 								</select>
@@ -979,15 +979,15 @@
 	{
 
 		var id = $("#dd_lbl_noEmpleado").html().trim();
-		var data = "dd_id = " + id + "&" + $("#dd_datosPersonales").serialize();
-		console.log(data);
+		var datos = "dd_id=" + id + "&" + $("#dd_datosPersonales").serialize();
+		console.log(datos);
 		$.ajax({
 			url: "<?php echo URL::to('disponibilidaddocente/registrardatospersonales')?>",
 			method: "POST",
-			data: data,
+			data: datos,
 		})
-		.done(function(){
-
+		.done(function(data){
+			alert(data);
 		})
 		.fail(function(error,textError,errorTrow){
 			alert("Error: " + error.responseText);
