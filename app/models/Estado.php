@@ -6,8 +6,8 @@ class Estado extends Eloquent
 	protected $primaryKey = "estado";
 	public $timestamps = false;
 
-	public function pais(){
-		return $this->belongsTo('Pais');
+	public function paisId(){
+		return $this->belongsTo('Pais','pais','pais');
 	}
 
 	public function ciudad()

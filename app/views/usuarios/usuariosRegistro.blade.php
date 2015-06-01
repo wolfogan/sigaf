@@ -263,7 +263,7 @@
 					</tr>
 
 					<tr>
-						<td>Correo:</td>
+						<td>Correo UABC:</td>
 						<td><input class="dd_con_estilo_largo" type="email" name="correoE" id="correoE" placeholder="example@uabc.edu.mx" required/></td>
 						<td></td>
 						<td>RFC:</td>
