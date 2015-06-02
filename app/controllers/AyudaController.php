@@ -23,5 +23,9 @@ class AyudaController extends BaseController
 	{
 		return View::make("ayuda.ayuda_dd");
 	}
+	public function getAyudaus()
+	{
+		return View::make("ayuda.ayuda_us");
+	}
 
 }
