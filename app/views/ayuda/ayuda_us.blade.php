@@ -272,7 +272,19 @@
                     
                     <div class="content-6">
 						<h2>Preguntas frecuentes</h2>
-                        <p></p>
+                        <p>
+                        	<ul class="lista-vineta">
+								<li><strong>¿Cómo doy de alta un nuevo usuario?</strong></li><br>
+								<li>R.Después de haber ubicado la sección de Login y usuarios, en la sección de registrar usuario se presentan una serie de campos los cuales debe llenar, hay 3 campos que tienen asociados un botón con el símbolo “+” estos representan catálogos, si la información que usted requiere no está registrada abra el catálogo y regístrela para que pueda concluir su alta de usuario exitosamente, por ultimo presione el botón de crear usuario.</li><br>
+								<li><strong>¿Cómo modifico la información de un usuario?</strong></li><br>
+								<li>R. Dentro de la ventana de registrar usuario, en la parte inferior se muestra una tabla con todos los usuarios registrados, seleccione con un click el registro que desea modificar, si no lo encuentra puede filtrarlo con la opción de search, después de seleccionarlo, en los controles de la parte superior se cargará la información del registro, modifíquela y presione el botón de modificar usuario.</li><br>
+								<li><strong>¿Cómo puedo cambiar la contraseña de mi inicio de sesión?</strong></li><br>
+								<li>R. Después de ubicar la sección de cambiar contraseña es necesario introducir los datos que se muestran en la pantalla para validar que es el usuario propietario de la sesión quien quiere realizar la modificación, presione el botón de cambiar contraseña.
+								<li><strong>Si olvide mi contraseña ¿cómo la puedo recuperar?</strong></li><br>
+								<li>R. Después de ubicar la pantalla de olvidó contraseña introduzca los datos requeridos y presione el botón de guardar, en el inicio de sesión también hay un link que lo manda a esta sección.</li><br>
+
+                        	</ul>
+                        </p>
 				    </div>
 
 
@@ -280,7 +292,19 @@
                     
                     <div class="content-7">
 						<h2>Glosario</h2>
-                        <p></p>
+                        <p>
+                        	<ul class="lista-vineta">
+                        		<li><strong>Captcha. </strong>Imagen que sirve para validar la inserción de la información, consiste en teclear en el recuadro una serie de caracteres que se muestran distorsionados.</li><br>
+								<li><strong>Contraseña. </strong> Es una cadena de caracteres que se usa para iniciar sesión en el sistema y por tanto tener acceso a los recursos contenidos en este.</li><br>
+								<li><strong>Correo.</strong> Es la cuenta correo electrónico que tiene el usuario ya sea de UABC o con otro servidor, es necesario repetir el correo para validar su inserción.</li><br>
+								<li><strong>Login.</strong> Hace referencia al inicio de sesión del usuario, de acuerdo al tipo de usuario será el acceso que este tenga al sistema.</li><br>
+								<li><strong>Nick.</strong> Hace referencia a un apodo con el cual el usuario iniciará sesión.</li><br>
+								<li><strong>Puesto.</strong> Es el cargo que tiene asignado el usuario actualmente se encuentran registrados seis niveles, administrador master, administrador, administrador auxiliar, coordinador de carrera, coordinador de área y docente.</li><br>
+								<li><strong>User name. </strong>Nombre del usuario que se registrará en el sistema.
+
+                        	</ul>
+
+                        </p>
                              
 
             					 <a  href="#arribaglosario"><img src="../imagenes/arriba.png">Ir arriba</a>
