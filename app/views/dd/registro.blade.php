@@ -264,8 +264,10 @@
 							<div class="foto_botones">
 								<div id="dd_fotoDoc"></div>
 								<div class="dd_botonesFoto">
-									<input type="button" class="estilo_button2" style="font-size:.8em;" name="foto_seleccion" value="Adjuntar">
-									<input type="button" class="estilo_button2" style="font-size:.8em;" name="foto_agregar" value="Agregar">
+									<div class="custom-input-file" style="float:left;"><input id="file-upload" type="file" accept="image/*" class="input-file" style="font-size:.8em;" name="foto_seleccion"></div>
+									<input type="button" class="estilo_button2" style="font-size:.8em; margin-top:-1px; width:29px; height:29px; float:left;" name="foto_agregar" value="+"> 
+									
+									
 								</div>
 							</div>
 
@@ -348,7 +350,11 @@
                    		<div id="dd_trabajoFuera_puesto">
 
                    			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" name="dd_rfc" class="dd_label" style="margin-left:50px;">{{Auth::user()->rfc}}</label></div>
-							<div class="dd_datosPersonales">Empresa:<input id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
+							<div class="dd_datosPersonales">Empresa:
+								<select id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/>
+									<option value="1"></option>
+								</select>
+							</div>
 							
 							<div class="dd_datosPersonales">Puesto:
 								<select id="dd_puestoExterno" name="dd_puestoExterno" style="margin-left:20px; width:252px;" class="dd_con_estilo_largo">
@@ -625,21 +631,21 @@
 											         </select>
 											      </td>
 
-											     <td><label>Tipo:</label></td>
+											    <!--  <td><label>Tipo:</label></td>
 											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
 											          	@foreach($caracteristicaCursos as $caracteristica)
 											            	<option value="{{$caracteristica->caracteristica_cur}}">{{$caracteristica->descripcion}}</option>
 											            @endforeach
 											          </select>
-											     </td>
+											     </td> -->
 
 											     <td><label>Nombre:</label></td><td>
-											     	<select id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
+											     	<select id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:300px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
 											     		<option value="1"></option>
 											     </td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
+											     <!-- <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td> -->
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px; width:200px;" type="text" medida="Y/M/D"></td>
 
 												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
 												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
@@ -1179,6 +1185,36 @@
 }
 </script>
 
+<!--------------------------------FUNCION PARA AGREGAR FOTOGRAFIA-------------------------------------------------------------------->
+<script>
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+ 
+            reader.onload = function (e) {
+                var filePreview = document.createElement('img');
+                filePreview.id = 'file-preview';
+                //e.target.result contents the base64 data from the image uploaded
+                filePreview.src = e.target.result;
+                filePreview.style.width = "100%";
+                filePreview.style.height = "100%";
+                console.log(e.target.result);
+ 
+                var previewZone = document.getElementById('dd_fotoDoc');
+                previewZone.innerHTML = "";
+                previewZone.appendChild(filePreview);
+            }
+ 
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    // file-preview-zone
+ 
+    var fileUpload = document.getElementById('file-upload');
+    fileUpload.onchange = function (e) {
+        readFile(e.srcElement);
+    }
+</script>
 <!---------------------------------------------------------------------------------------------------->
 
 
