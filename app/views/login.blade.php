@@ -17,8 +17,6 @@
         <script src="js/tiempoactual.js"></script>
         <script>$(function(){startWatch(); return false;});</script>
         <!-- Script tiempo -->
-
-
 	</head>    
          
     <body>
@@ -36,13 +34,8 @@
                 <div id="fecha" class="texto_body">
                     Fecha Actualizada
                 </div>
-            </div>
-            
-            <div id="loginmanual">
-                <div id="manual" class="texto_body">
-                    <img src="imagenes/manual.png" alt="">&nbsp;Manual
-                </div>
-            </div>
+            </div> 
+           
         </div>
 
         <div id="container">

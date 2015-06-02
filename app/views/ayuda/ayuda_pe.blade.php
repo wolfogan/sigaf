@@ -8,8 +8,10 @@
     <script type="application/javascript" src="../js/jquery.min.js"></script>
 </head>
 <body>
+
 	<div id="modal">
     <div class="modal-content">
+    
           <div id="salir"><a href="<?=URL::to('main')?>"><img src="../imagenes/salir.png"></a></div>
               <h1><span>Manual de usuario</span> <br>
               PLAN DE ESTUDIOS</h1>
@@ -384,100 +386,80 @@ Si no tiene la clave, active la casilla de verificación Generar clave la cual l
             <td><strong>Materia: </strong><br>
           Insertar el nombre de la unidad de aprendizaje. Nota: es posible insertar materias en un plan de estudio con el mismo nombre siempre y cuando tengan diferente clave.
             </td>
-          </tr>
-          <!--<tr>
+          </tr>   
+          <tr>
             <td>4</td>
-            <td><img src="../imagenes/registro/p7.png"></td>
-            <td><strong>Etapa:</strong><br>
-        Seleccionar la etapa a la cual pertenece la Unidad de Aprendizaje.</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><img src="../imagenes/registro/p8.png"></td>
-            <td><strong>Tipo:</strong><br>
-        Seleccionar el tipo de Unidad de Aprendizaje (se clasifican como Obligatorias u Optativas).</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td><img src="../imagenes/registro/p9.png"></td>
-            <td><strong>*Sem:</strong><br>
-        Insertar el semestre al cual pertenecerá la Unidad de Aprendizaje, este control puede quedar vacío. Solo se aceptan números.</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td><img src="../imagenes/registro/p10.png"></td>
-            <td><strong>Seriación:</strong><br>
-        El control de Seriación tiene el valor de SIN SERIACION por default y por consecuencia los siguientes 2 controles inactivos:<br>
-      <img src="../imagenes/registro/serdeshab.png"> <br>
-        Si desea establecer una seriación cambie este valor seleccionando la opción deseada.</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td><img src="../imagenes/registro/p11.png"></td>
-            <td><strong>Clave:</strong><br>
-        Insertar la Clave de la Unidad de Aprendizaje con la que se desea establecer una seriación, las claves que se emplean para establecer una serie deben estar registradas, una vez que haya introducido la clave correspondiente se le mostrará el nombre de la Unidad de Aprendizaje asociado a dicha clave. Solo se pueden introducir números.</td>
-          </tr>-->
-         
-          <tr>
-            <td>10</td>
             <td><img src="../imagenes/registro/p13.png"></td>
             <td><strong>HC:</strong> <br>
         Insertar las Horas Clase (HC) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>11</td>
+            <td>5</td>
             <td><img src="../imagenes/registro/p14.png"></td>
             <td><strong>*HL:</strong><br>
         Insertar las Horas Laboratorio (HL) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>12</td>
+            <td>6</td>
             <td><img src="../imagenes/registro/p15.png"></td>
             <td><strong>*HT:</strong><br>
         Insertar las Horas Taller (HT) que tendrá la Unidad de Aprendizaje, solo se aceptan números.</td>
           </tr>
           <tr>
-            <td>13</td>
+            <td>7</td>
             <td><img src="../imagenes/registro/p16.png"></td>
             <td><strong>*HE:</strong> <br>
         Insertar las Horas Extra Clase (HE) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>14</td>
+            <td>8</td>
             <td><img src="../imagenes/registro/p17.png"></td>
             <td><strong>*HPC:</strong><br>
         Insertar las Horas Prácticas de Campo (HPC) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>15</td>
+            <td>9</td>
             <td><img src="../imagenes/registro/p18.png"></td>
             <td><strong>*HCL: </strong><br>
         Insertar las Horas Clínicas (HCL) que tendrá la Unidad de Aprendizaje, solo se aceptan números, si no tiene asignadas estas horas, el control puede quedar vacío.</td>
           </tr>
           <tr>
-            <td>16</td>
+            <td>10</td>
             <td><img src="../imagenes/registro/p19.png"></td>
             <td><strong>Créditos:</strong> <br>
         El valor de los créditos se calculará automáticamente a partir de las horas asignadas.</td>
           </tr>
           <tr>
-            <td>9</td>
+            <td>11</td>
             <td><img src="../imagenes/registro/p12.png"></td>
             <td><strong>Coordinación:</strong> <br> Seleccionar la coordinación a la que pertenece la unidad de aprendizaje.</td>
           </tr>
           <tr>
-            <td>17</td>
+            <td>12</td>
             <td><img src="../imagenes/registro/p20.png"></td>
             <td><strong>*Observaciones:</strong> <br>
         Insertar en este control alguna situación o dato importante asociado a la Unidad de Aprendizaje, si no existe ninguna observación puede quedar vacío.</td>
           </tr>
-          <td></td>
+          <td>13</td>
             <td><img src="../imagenes/registro/btn1.png"></td>
-            <td>Después de que haya llenado los controles necesarios para registrar la Unidad de Aprendizaje, haga click en el botón de guardar.                   </td>
+            <td>Después de que haya llenado los campos necesarios para registrar la Unidad de Aprendizaje, haga click en el botón de guardar, automáticamente se abre la siguiente ventana:<br>
+        <br><img src="../imagenes/registro/modUA.png">
+         <ul>
+            <li>Seleccionar la carrera (s) a la cual estará asociada la unidad de aprendizaje.</li>
+            <li>Seleccionar la etapa a la que pertenece la unidad de aprendizaje.</li>
+            <li>Selecciona el tipo en el que se clasifica la unidad de aprendizaje, puede ser obligatoria u optativa.</li>
+            <li>Introducir el semestre para el que se sugiere la unidad de aprendizaje, este dato puede quedar vacío. </li>
+            <li>Si no hay materias para seriar con la unidad de aprendizaje que se está registrando se procede a dar click en el botón de agregar el cual registra la unidad de aprendizaje en la base de datos con todos los datos asociados. En la tabla inferior de la ventana se muestra el registro capturado.</li>
+            <li>En caso de que exista una seriación de click en el texto “SIN SERIACION” como se muestra en la siguiente figura.<br>
+             <br><img src="../imagenes/registro/seriacion.png"></li>
+             La opción mencionada anteriormente permite al usuario la inserción de la seriación correspondiente, para completar este proceso deberá seleccionar el tipo de seriación e insertar la clave de la materia que desea seriar (el nombre de la materia se genera automáticamente a partir de la clave); hay 2 botones asociados al registro, el botón con el símbolo “-” elimina la seriación y el botón con el símbolo”+” permite insertar al usuario las seriaciones necesarias, en la siguiente figura puede ver la funcionalidad.<br>
+             <br><img src="../imagenes/registro/uaAsoc.png"></li>
+          </ul>
+            </td>
           </tr>
           <td></td>
             <td><img src="../imagenes/registro/btn2.png"></td>
-            <td>Si desea limpiar los controles para realizar otra inserción, haga click en el botón de limpiar. Cada vez que guarde un registro los controles se limpian automáticamente.</td>
+            <td>En la pantalla principal de plan de estudios aparece el botón de limpiar, presione este botón si desea borrar los datos de los controles que ha capturado (esta opción es recomendable usarla antes de presionar el botón de guardar, después de guardado el registro, en caso de haberlo capturado con datos incorrectos podrá modificarlo por medio de una actualización o de ser necesario eliminarlo y volver a capturarlo). Cada vez que guarde un registro los campos se limpian automáticamente.</td>
           </tr>
           <td></td>
             <td><img src="../imagenes/registro/btn4.png"></td>
@@ -492,6 +474,7 @@ Si no tiene la clave, active la casilla de verificación Generar clave la cual l
             <td>Al finalizar la inserción de las Unidades de Aprendizaje pertenecientes a un Plan de Estudios, active la casilla de verificación de plan de estudios terminado, esta enviará un correo electrónico al subdirector notificándole que el proceso ha finalizado.</td>
           </tr>
         </table>
+        <br><p>Si cerró sesión en el sistema y desea ingresar más unidades de aprendizaje para el mismo plan, inicie sesión, seleccione el no. del plan y siga los pasos que se le presentaron anteriormente.  </p>
              
   <a  href="#arribaReg"><img src="../imagenes/arriba.png">Ir arriba</a>
   </div>
@@ -528,7 +511,7 @@ En la parte inferior de la figura se muestran los creditos totales de las unidad
         <li>3. Al arrastrar las UA para cambiarlas de etapa en la ventana de consulta.</li>
       </ul>
     
-      <p>Cualquiera de los controles pueden ser modificados.<br><br>
+      <p>Cualquiera de los controles puede ser modificados.<br><br>
     <strong>Desde la pantalla de registro.</strong><br>
 <p><strong>Opción 1:</strong>
     Seleccione en la tabla inferior la unidad de aprendizaje que se desea actualizar, de click sobre el registro deseado y se cargaran los datos correspondientes en los campos mostrados en la parte superior de la pantalla como se muestra en la siguiente figura.</p>
