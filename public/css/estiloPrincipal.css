@@ -1969,17 +1969,18 @@ input[readonly],input[readonly="readonly"]
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
 .foto_botones
 {
+	
 	float: left;
 	margin-left: 20px;
-	height: 400px;
+	height: 350px;
 	width: 300px;
 }
 .dd_botonesFoto
 {
-	
-	width: 230px;
+	background: yellow;
+	width: 80px;
 	margin-top: 20px;
-	margin-left: 73px;
+	margin-left: 150px;
 
 }
 .dd_botonesFoto input
@@ -1989,8 +1990,6 @@ input[readonly],input[readonly="readonly"]
 }
 #dd_fotoDoc
 {
-	
-	background-image: url(../imagenes/docente.png);
 	margin: 20px 0px 0px 80px;
 	border: 3px solid green;
 	height: 250px;
@@ -2553,6 +2552,8 @@ height: 35px;
 }
 
 .custom-input-file {
+
+
     width: 26px;
     height: 26px;
     overflow: hidden;

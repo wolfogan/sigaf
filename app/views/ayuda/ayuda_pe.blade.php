@@ -353,25 +353,6 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
             <td><strong>No. Plan:</strong><br>
             Seleccione el plan, previo a este paso debió haber registrado el plan en el catálogo correspondiente.</td>
           </tr>
-         <!-- <tr>
-            <td>2</td>
-            <td><img src="../imagenes/registro/p2.png"></td>
-            <td><strong>Unidad:</strong><br>
-            El control de Unidad obtiene un valor por default de la unidad en la que se registró el usuario que se encuentra en sesión.
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><img src="../imagenes/registro/p3.png"></td>
-            <td><strong>U. Académica:</strong><br>
-        El control de Unidad Académica obtiene el valor por default de la unidad académica (facultad) a la que pertenece el usuario que se encuentra en sesión. </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><img src="../imagenes/registro/p4.png"></td>
-            <td><strong>Carrera:</strong> <br>
-        Seleccionar una o más carreras en las que se impartirá la Unidad de Aprendizaje que se está registrando (una Unidad de Aprendizaje puede ser impartida en más de una carrera).</td>
-          </tr>-->
           <tr>
             <td>2</td>
             <td><img src="../imagenes/registro/p5.png"></td>

@@ -153,7 +153,29 @@
                     
                     <div class="content-6">
 						<h2>Preguntas frecuentes de CA</h2>
-                        <p></p>
+                        <p>
+                        <ul class="lista-vineta">
+							<li><strong>¿Qué es una carga académica?</strong></li><br>
+							<li>R. Conjunto de unidades de aprendizaje dentro del plan(es) de estudio que se le ofrecen al alumno para cursar en un periodo escolar (semestral).</li><br>
+							<li><strong>¿Qué es una carga académica inicial? </strong></li><br>
+							<li>R. Así se le llama al registro de la carga académica por primera vez.</li><br>
+							<li><strong>¿Qué es una carga académica subsecuente? </strong></li><br>
+							<li>R. Es el registro de la carga académica a partir de una carga ya existente solo se guarda con otro periodo.</li><br>
+							<li><strong>¿Cómo doy de alta el semestre?</strong></li><br>
+							<li>R. Los semestres están definidos de acuerdo a los lineamientos de la FCA, actualmente se manejan un tope de 9 semestres. </li><br>
+							<li><strong>¿Cómo doy de alta un grupo?</strong></li><br>
+							<li>R. Puede realizarlo desde la carga inicial si así lo requiere o desde la carga subsecuente, es necesario introducir la carrera, el periodo, seleccionar el semestre y abrir el catálogo de grupos el cual toma como nomenclatura para definir el grupo la carrera como primer digito, el semestre como segundo digito y un identificador del grupo como tercer digito.</li><br>
+							<li><strong>¿Cómo doy de alta un turno?</strong></li><br>
+							<li>R. Actualmente dentro de la FCA están definidos los turnos matutino, vespertino e interturno y son los que arroja el sistema como opción a elegir.</li><br>
+							<li><strong>¿Porque la pantalla inicial de carga académica muestra dos veces la misma información?</strong></li><br>
+							<li>R. Porque del lado izquierdo permite desplegar información del plan anterior y del lado derecho información del plan actual.</li><br>
+							<li><strong>¿Qué hace el botón de copiar carga anterior?</strong></li><br>
+							<li>R. Realiza una copia de la carga registrada anteriormente y permite asignarle un periodo para guardarla como la carga actual.</li><br>
+							<li><strong>¿En la consulta de carga académica porque aparece tronco común en una casilla de verificación?</strong></li><br>
+							<li>R. Tronco común es considerado como una carrera más, por default esta seleccionado, si en la consulta desea que aparezcan los grupos con las materias de licenciatura y tronco común, introduzca los otros criterios de búsqueda y presione el botón de buscar de lo contrario deseleccione la casilla de verificación para que solo aparezca la carga de los grupos de licenciatura. </li><br>
+						</ul>
+
+                        </p>
 				    </div>
 
 
