@@ -348,7 +348,11 @@
                    		<div id="dd_trabajoFuera_puesto">
 
                    			<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" name="dd_rfc" class="dd_label" style="margin-left:50px;">{{Auth::user()->rfc}}</label></div>
-							<div class="dd_datosPersonales">Empresa:<input id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></div>
+							<div class="dd_datosPersonales">Empresa:
+								<select id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/>
+									<option value="1"></option>
+								</select>
+							</div>
 							
 							<div class="dd_datosPersonales">Puesto:
 								<select id="dd_puestoExterno" name="dd_puestoExterno" style="margin-left:20px; width:252px;" class="dd_con_estilo_largo">
