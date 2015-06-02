@@ -368,7 +368,7 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo_largo" onblur="Mayusculas(this)" type="text" /></div>
+								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo_largo" onblur="Mayusculas(this)" type="text"/></div>
 								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text" /></div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
@@ -499,148 +499,46 @@
 
 						       	<div id="tbl_dd_cursos">
 						       		<div id="tableContainer" class="tableContainer">
-										<table style="width:1200px; margin-top:-20px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblSeriaciones">
+										<table style="width:1200px; margin-top:-20px;" border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable tblCursos">
 											<thead style="background:green;">
 												<tr>
 													<th colspan="14">Ingresar cursos recibidos o impartidos</th>
 												</tr>
 											</thead>		
-
-											
+	
 											<tbody class="scrollContent" style="height:125px;">
-
-
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
-											<tr>
-												<td>Elija:</td>
-												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="RECIBIDO">RECIBIDO</option>
-											            <option value="IMPARTIDO">IMPARTIDO</option>
-											         </select>
-											      </td>
-
-											     <td><label>Tipo:</label></td>
-											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
-											          	<option value="CURSO">CURSO</option>
-											            <option value="CONGRESO">CONGRESO</option>
-											            <option value="TALLER">TALLER</option>
-											          </select>
-											      </td>
-
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
-											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
-											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
-											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
-
-												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
-												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
-												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
-											</tr>
-
 											
+											<tr class="sin-cursos">
+												<td colspan="14" style="text-align:center; font-size:2em;">SIN CURSOS</td>
+											</tr>
+											
+											<tr class="fila-base-cursos">
+												<td>Elija:</td>
+												 <td><select id="dd_elija" class="dd_estilo_combo" style="width:100px;">
+											          	@foreach($tipoCursos as $tipoCurso)
+											            	<option value="{{$tipoCurso->tipo_curso_emp}}">{{$tipoCurso->descripcion}}</option>
+											            @endforeach
+											         </select>
+											      </td>
+
+											     <td><label>Tipo:</label></td>
+											     <td><select id="dd_elijaTipo" class="dd_estilo_combo" style="width:100px;">
+											          	@foreach($caracteristicaCursos as $caracteristica)
+											            	<option value="{{$caracteristica->caracteristica_cur}}">{{$caracteristica->descripcion}}</option>
+											            @endforeach
+											          </select>
+											     </td>
+
+											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
+											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
+											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
+											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
+
+												 <td><div class="custom-input-file"><input type="file" class="input-file" name="fileToUpload" id="fileToUpload"/></div></td>
+												 <td><input id="dd_btnCancelar_archivo_curso" class="dd_clsCancelar" value="" type="button"></td>
+												 <td><input class="dd_clsAgregarFila" value="" type="button"></td>
+											</tr>
+	
 										</table>
 									</div>
 						     	</div>
@@ -1010,7 +908,9 @@
     // });
 
     $(function(){
-    	
+ 		 	
+    	$(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").not(":first").find("input").attr("disabled", true);
+
     	$("#dd_pais").on("change",function(){
     		var pais = $(this).val();
     		//alert(pais);
@@ -1059,8 +959,85 @@
     		});
     	});
 
+    	$(".dd_clsAgregarFila").on("click",function(){
+    		var divPapa = $(this).parents(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
+    		var divNext = $(divPapa).next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
+    		$(divNext).find("input").attr("disabled",false);
+    	});
+
+    	$(".dd_estilo_check").on("change",function(){
+    		var $input = $(this);
+    		var divNext = $input.parent().next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
+    		var divNextNext = $input.parent().next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
+    		if($input.is(":checked"))
+    		{
+    			$(divNext).find("input").attr("disabled", false);
+    		}
+    		else
+    		{
+    			$(divNext).find("input").attr("disabled", true);
+    			$(divNextNext).find("input").attr("disabled",true);
+    		}
+    	});
+
+    	// Boton fila en cursos
+		$(".sin-cursos").on("click",function(event){
+
+			// Crear fila y agregar atributos para pasar por el formulario
+			var filaBaseCurso = $(this).next();
+			var cursoNuevo = $(filaBaseCurso).clone().removeClass("fila-base-cursos").appendTo($(this).parent());
+			//$(cursoNuevo).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			//$(cursoNuevo).find(".clave-seriacion").attr("name","seriacion_clave[]");
+
+			$(this).hide();
 
 
+		});
+
+		$(".scrollTable").on("click",".dd_clsAgregarFila",function(){
+
+			var filaCurso = $(this).parents().get(1);
+			// Validar clave de seriación
+			// if($(filaCurso).find(".clave-seriacion-descripcion").val()=="" || $(filaCurso).find(".clave-seriacion-descripcion").val()=="NO EXISTE")
+			// {
+			// 	alert("Por favor, agregue una seriación válida");
+			// 	return;
+			// }
+			// Duplicar fila base y añadir a tabla
+			var tbodySeriacion = $(this).parents().get(2);
+			var filaBaseCurso = $(tbodySeriacion).find("tr:eq(1)");
+			var cursoNuevo = $(filaBaseCurso).clone().removeClass("fila-base-cursos").appendTo(tbodySeriacion);
+			$(".sin-cursos").hide();
+			//console.log(filaCurso);
+
+			$(cursoNuevo).find(".tipo-seriacion").attr("name","seriacion_tipo[]");
+			$(cursoNuevo).find(".clave-seriacion").attr("name","seriacion_clave[]");
+
+			// Deshabilitar fila anterior
+			if($("#guardar").val()!="Actualizar")
+			{
+				$(filaCurso).find("select,input").attr("disabled",true);
+			}
+
+		});
+
+		// Eliminar fila de las materias seriadas sin afectar comportamiento en BD.
+		$(".scrollTable").on("click",".dd_clsCancelar",function(){
+			var filaCurso = $(this).parents().get(1);
+			var table = $(filaCurso).parents().get(1);
+			// Remover fila
+			$(filaCurso).remove();
+
+			// Si se elimina la última fila, mostrar mensaje sin seriación
+			var rowCount = $(table).find("tbody > tr").length;
+			if(rowCount == 2)
+				$(".sin-cursos").show();
+			else
+			{
+				// Habilitar fila anterior
+				$(table).find("tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
+			}
+		});
     });
 </script>
      

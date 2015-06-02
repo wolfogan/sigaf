@@ -35,9 +35,10 @@ class DisponibilidadDocenteController extends BaseController
 
 		// Obtener los puestos
 		$puestos = Puesto::all();
-
+		$tipoCursos = TipoCurso::all();
+		$carateristicaCursos = CaracteristicaCurso::all();
 		//$estados = Estado::where('estado','=',$ciudad-> estado);
-		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos));
+		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos,"tipoCursos" => $tipoCursos,"caracteristicaCursos" => $carateristicaCursos));
 		
 	}
 	public function getEstudios()

@@ -627,6 +627,11 @@ html>body thead.fixedHeader th + th + th + th + th + th {
 	cursor: pointer;
 }
 
+.sin-cursos td{
+	width: 1200px !important;
+	cursor: pointer;
+}
+
 html>body tbody.scrollContent td {
 	width: 196px
 }
@@ -2733,7 +2738,7 @@ height: 35px;
 /*------------------------------------PRUEBA IVAN-----------------------------------------------*/
 
 /*************************** MODAL SERIACION *******************************/
-.fila-base-seriacion
+.fila-base-seriacion,.fila-base-cursos
 {
 	display: none;
 }
