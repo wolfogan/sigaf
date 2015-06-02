@@ -43,7 +43,16 @@
 		     	  <a name="arriba"></a>   
                 	<div class="content-1">
 						<h2>Catálogos</h2>        
-                        
+                        <h3>Categorías:</h3>
+                        <p>Las categorías hacen referencia a la clasificación de los docentes pueden ser de nivel A, B o C.</p>
+                        <center><img src="../imagenes/registro/us/catalCatego.png"></center>
+                        <ul class="lista-vineta">
+                        	<p>Para ingresar categorías realice los siguientes pasos:</p>
+							<li>• Descripción. Ingrese una breve descripción de la categoría.</li>
+							<li>• Nivel. Introduzca el nivel de la categoría.</li>
+							<li>• No. Empleado. Introduzca su número de empleado.</li>
+							<li>• Presione el botón de guardar.</li>
+                        </ul>
 						<a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
      				</div>
 
@@ -52,6 +61,177 @@
 			        <div class="content-2">
                    	<a name="arribaReg"></a>
 						<h2>Registro</h2>       
+						<p>El acceso al registro de usuarios se ubica sobre el menú que se muestra al inicio de sesión del sistema, pulse la opción Login y usuarios</p>
+ 						<center><img src="../imagenes/registro/us/accesous.png"></center>
+ 						<p>Otra forma de acceder es pulsando la opción de Login y usuarios desde la barra de menú principal la cual está compuesta por 3 opciones principales;
+						<ul class="lista-vineta">
+							<li>• Registro, consulta y modificación de usuarios.</li>
+							<li>• Cambiar contraseña.</li>
+							<li>Olvidó contraseña.</li>
+						</ul>
+						</p>
+						<center><img src="../imagenes/registro/us/menulogin.png"></center>
+						<p>El registro de usuarios requiere de la inserción de los datos como se muestra en la siguiente figura, es importante que antes de iniciar con dicho registro introduzca los datos de los catálogos correspondientes (campus, unidad académica y categoría) los cuales pueden ubicarse con el símbolo de “+” o desde la sección de catálogos.</p><br>
+						<center><img src="../imagenes/registro/us/regus.png"></center>
+						<p>Pasos para introducir los datos:</p>
+						<ul class="lista-num">
+							<li><strong>1. User Name.</strong> Introduzca un Nick (apodo) con el cual quiere ser identificado (este será el usuario con el que iniciara sesión).</li>
+							<li><strong>2. Ingreso a UABC. </strong>Seleccione la fecha en la que ingreso a UABC o introdúzcala directamente respetando la nomenclatura mostrada día, mes y año.</li>
+							<li><strong>3. A. Paterno.</strong> Introduzca el apellido paterno.</li>
+							<li><strong>4. A. Materno. </strong>Introduzca el apellido materno.</li>
+							<li><strong>5. Nombre.</strong> Introduzca su nombre.</li>
+							<li><strong>6. Sexo.</strong> Seleccione su sexo.</li>
+							<li><strong>7. Correo.</strong> Introduzca su correo electrónico, el sistema valida la inserción es importante respetar la nomenclatura mostrada, debe contener un @ y un punto.</li>
+							<li><strong>8. Repetir correo.</strong> Introduzca nuevamente su correo, el sistema valida la inserción.</li>
+							<li><strong>9. Teléfono.</strong> Introduzca su número telefónico (solo números).</li>
+							<li><strong>10. Contraseña.</strong> Introduzca la contraseña con la cual iniciará sesión al sistema.</li>
+							<li><strong>11.	Puesto.</strong> Seleccione el puesto que desempeña el usuario en cuestión, recuerde que de acuerdo al puesto será el nivel de acceso al sistema, a continuación se muestra la relación de niveles:</li>
+						</ul>
+						<p>A. Altas 	B. Bajas	C. consultas	         M. Modificaciones</p>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 1.</strong> Administrador master</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 2.</strong> Administrador</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 3.</strong> Auxiliar administrador</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 4.</strong> Coordinador de carrera</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>M (contraseña)</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 5.</strong> Coordinador de área</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>M (contraseña)</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>A-B-C-M</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<center><h4 style="font-size:23px;"><strong>- Nivel 6.</strong> Docente</h4></center>
+						<center><table style="font-size:20px;">
+							<tr>
+								<td><strong>Módulo</strong></td>
+								<td><strong>Acciones</strong></td>
+							</tr>
+							<tr>
+								<td>Login y usuarios</td>
+								<td>M(contraseña)</td>
+							</tr>
+							<tr>
+								<td>Plan de estudios</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Carga académica</td>
+								<td>C</td>
+							</tr>
+							<tr>
+								<td>Disponibilidad docente</td>
+								<td>A-B-C-M</td>
+							</tr>
+						</table></center>
+						<ul class="lista-num">
+							<li><strong>12.	Categoría.</strong> Seleccione la categoría del empleado (si no está dada de alta pulse en el botón “+” y regístrela).</li>
+							<li><strong>13.	Unidad académica.</strong> Seleccione la unidad académica, si no está dada de alta pulse el botón “+” y regístrela.</li>
+							<li><strong>14.	Campus.</strong> Seleccione el campus al que pertenece el empleado si no está dado de alta pulse el botón “+” y regístrelo.</li>
+							<li>15.	Pulse el botón de crear usuario, el sistema muestra el mensaje “usuario registrado”.</li>
+						</ul>
  						<a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
 				    </div>
 
@@ -60,23 +240,31 @@
 
 			        <div class="content-3">
 						<h2>Consulta</h2>
-
+						<p>Para consultar los usuarios registrados, entre al menú de Login y usuarios haga click en la primera opción del submenú.</p>
+						<center><img src="../imagenes/registro/us/tablaregus.png"></center>
+						<p>Se mostrará la tabla de la figura anterior la cual contiene la relación de registros de usuarios, dicha tabla tiene opción para filtrar la información por cualquiera de los campos, solo presione el encabezado por el cual desea filtrar la información o puede realizar la búsqueda del registro desde el cuadro de texto search.</p>
+						<a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
 				    </div>
 
 
 
 				    <div class="content-4">
 						<h2>Modificación</h2>
-                		
+                		<p>En la opción de registro, consulta y modificación de usuarios del menú de Login y usuarios se realiza la actualización de los usuarios.</p>
+ 						<center><img src="../imagenes/registro/us/modus.png"></center>
+ 						<p>La figura anterior muestra la ventana de actualización de usuarios, realice el siguiente proceso:</p>
+ 						<p>Cada vez que entre al módulo de Login y usuarios se le mostrará la tabla con todos los usuarios registrados, seleccione con un click el usuario que desea modificar y los datos automáticamente se cargarán en los controles de la parte superior, modifique los campos necesarios y presione el botón de modificar usuario, el sistema le enviará un mensaje indicándole que la actualización se ha realizado correctamente.</p>
  						<a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
                     </div>
-
 
 
                  
                     <div class="content-5">
 						<h2>Eliminación</h2>
-
+						<center><img src="../imagenes/registro/us/elimus.png"></center><br>
+						<p>La eliminación de usuarios se hace directamente desde la tabla de registros, presione el botón de eliminar ubicada con un signo de “-” el sistema le enviará el siguiente mensaje para validar la acción realizada: </p>
+						<center><img src="../imagenes/registro/us/msgelim.png"></center>
+						<p>Si está seguro de la eliminación pulse el botón de aceptar de lo contrario pulse el botón cancelar.</p>
 				    </div>
 
 
