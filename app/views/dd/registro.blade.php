@@ -87,9 +87,39 @@
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 					<tr>
-						<td>Nombre:</td>
-						<td><input class="con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="catalogo_curso" type="text" id="catalogo_curso" required/>
+						<td>Periodo:</td>
+						<td>
+							<select class="dd_con_estilo" name="dd_cat_periodo" type="text" required/>
+								<option value="1"></option>
+							</select>
+						</td>
 					</tr>
+					<tr>
+						<td>Nombre:</td>
+						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombre" type="text" required/></td>
+					</tr>
+					<tr>
+						<td>Fecha:</td>
+						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_fecha" type="date" required/></td>
+					</tr>
+					<tr>
+						<td>Créditos:</td>
+						<td><input class="dd_con_estilo" name="dd_cat_creditos" type="text" onkeypress="ValidaSoloNumeros()" required/></td>
+					</tr>
+					<tr>
+						<td>Horas:</td>
+						<td><input class="dd_con_estilo" name="dd_cat_horas" type="text" onkeypress="ValidaSoloNumeros()"  required/></td>
+					</tr>
+					<tr>
+						<td>Características curso:</td>
+						<td>
+							<select class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_curso" type="text" required/>
+								<option value="1"></option>
+							</select>
+						</td>
+					</tr>
+
+
 			
 				</table>
 			</div>
@@ -360,8 +390,16 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<input id="dd_licenciatura" class="dd_con_estilo_largo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" class="dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" /></div>
+									<select id="dd_licenciatura" class="dd_con_estilo_largo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" class="dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" />
+										<option value="1"></option>
+									</select>
+
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" class="dd_estilo_cedula" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" />  </div>
@@ -375,8 +413,17 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo_largo" onblur="Mayusculas(this)" type="text"/></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo_largo" onblur="Mayusculas(this)" type="text"/>
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text" />
+										<option value="1"></option>
+									</select>
+
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -394,8 +441,17 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion"  class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -410,8 +466,16 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -425,13 +489,22 @@
 
 							<div class="dd_especialidad">
 								Maestría:
-								<input id="dd_chk_maestria" class="dd_estilo_check" style="margin-left:45px;" type="checkbox"  value="1" onchange="javascript:showContent()" /> Si
+									<input id="dd_chk_maestria" class="dd_estilo_check" style="margin-left:45px;" type="checkbox"  value="1" onchange="javascript:showContent()" /> Si
+
 							</div>
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -447,8 +520,16 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -467,8 +548,16 @@
 
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -483,8 +572,16 @@
 							
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
-								<div class="dd_licenciatura"><input id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" /></div>
-								<div class="dd_uniEgreso">Escuela:<input id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" /></div>
+								<div class="dd_licenciatura">
+									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo"  type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
+								<div class="dd_uniEgreso">Escuela:
+									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+										<option value="1"></option>
+									</select>
+								</div>
 								<div class="dd_fechaTitulacion">Titulación:<input id="dd_fechaTitulacion" class="dd_estilo_combo" type="date" medida="Y/M/D"></div>
 
 								<div class="dd_cedula">Cédula:<input id="dd_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" />  </div>
@@ -536,7 +633,10 @@
 											          </select>
 											     </td>
 
-											     <td><label>Nombre:</label></td><td><input id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" /></td>
+											     <td><label>Nombre:</label></td><td>
+											     	<select id="dd_nombreCurso" class="dd_con_estilo_largo" style="width:200px; text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
+											     		<option value="1"></option>
+											     </td>
 											     <td><label>Término:</label></td><td><input id="dd_terminoCurso" class="dd_estilo_combo" type="date" medida="Y/M/D"/></td>
 											     <td><label>Valor:</label></td><td><input id="dd_valorCurso" class="dd_estilo_cedula" style="text-transform:uppercase" onblur="Mayusculas(this)" type="text"/></td>
 											     <td><input id="dd_archivoCurso" class="dd_estilo_combo" style="margin-left:10px;" type="text" medida="Y/M/D"></td>
@@ -676,7 +776,7 @@
 								<tbody>
 									<tr>
 										<td>7:00 - 8:00</td>
-										<!--<td onmouseover="cambiacolor_over(this)" onmouseout="cambiacolor_out(this)"></td>-->
+										
 										<td onclick="color_disp(this)"></td>		
 										<td onclick="color_disp(this)"></td>
 										<td onclick="color_disp(this)"></td>
@@ -864,18 +964,9 @@
 
 </body>
 
-<!--- CAMBIAR DE COLOR LA LABEL DE LA DISPONIBILIDAD -->
+<!--- ---------------------------------------------------- -->
 
 <script language="javascript">
-
-	function cambiacolor_over(celda){ celda.style.backgroundColor="#ff0000" } 
-	function cambiacolor_out(celda){ celda.style.backgroundColor="#F0FFFF" }
-
-	/*if
-	{
-		onClick==true;
-		celda.style.backgroundColor="#ff0000";
-	}*/
 
 	function GuardarDatosPersonales()
 	{
@@ -913,7 +1004,7 @@
 
     $(function(){
  		 	
-    	$(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").not(":first").find("input").attr("disabled", true);
+    	$(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").not(":first").find("input, select").attr("disabled", true);
 
     	$("#dd_pais").on("change",function(){
     		var pais = $(this).val();
@@ -966,7 +1057,7 @@
     	$(".dd_clsAgregarFila").on("click",function(){
     		var divPapa = $(this).parents(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
     		var divNext = $(divPapa).next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
-    		$(divNext).find("input").attr("disabled",false);
+    		$(divNext).find("input, select").attr("disabled",false);
     	});
 
     	$(".dd_estilo_check").on("change",function(){
@@ -975,12 +1066,12 @@
     		var divNextNext = $input.parent().next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").next(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula");
     		if($input.is(":checked"))
     		{
-    			$(divNext).find("input").attr("disabled", false);
+    			$(divNext).find("input, select").attr("disabled", false);
     		}
     		else
     		{
-    			$(divNext).find("input").attr("disabled", true);
-    			$(divNextNext).find("input").attr("disabled",true);
+    			$(divNext).find("input, select").attr("disabled", true);
+    			$(divNextNext).find("input, select").attr("disabled",true);
     		}
     	});
 
@@ -1042,6 +1133,8 @@
 				$(table).find("tr:last-child").find("input:not('.clave-seriacion-descripcion'),select").removeAttr("disabled");
 			}
 		});
+
+		$(".dd_tabla_MatImpartir td:nth-child(2)").find("input").attr("disabled", true);
     });
 </script>
      
@@ -1086,6 +1179,7 @@
 }
 </script>
 
-<!------------------------------------------------------------------------------------------>
+<!---------------------------------------------------------------------------------------------------->
+
 
 </html>
