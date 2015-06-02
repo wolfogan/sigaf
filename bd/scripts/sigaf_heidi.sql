@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.6.17 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
--- HeidiSQL Version:             9.2.0.4947
+-- HeidiSQL Version:             9.2.0.4957
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=927 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=944 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table sigaf.bitacora: ~910 rows (approximately)
 DELETE FROM `bitacora`;
@@ -1010,7 +1010,24 @@ INSERT INTO `bitacora` (`id`, `tabla`, `usuario`, `operacion`, `fecha`, `registr
 	(923, 'carga', '1', 'D', '2015-03-15 00:00:00', NULL, '112|20145|1|11237|1'),
 	(924, 'carga', '1', 'I', '2015-03-15 00:00:00', '111|20145|1|11237|1', NULL),
 	(925, 'carga', '1', 'I', '2015-03-15 00:00:00', '112|20145|1|11237|1', NULL),
-	(926, 'carga', '1', 'I', '2015-03-15 00:00:00', '113|20145|1|11237|1', NULL);
+	(926, 'carga', '1', 'I', '2015-03-15 00:00:00', '113|20145|1|11237|1', NULL),
+	(927, 'periodos', '1', 'I', '2015-05-24 00:00:00', '20147|1|2014|7|adfasdf|2015-05-07|2015-05-31|1', NULL),
+	(928, 'grupos', '1', 'I', '2015-05-24 00:00:00', '111|20147|20091|1|2', NULL),
+	(929, 'grupos', '1', 'I', '2015-05-24 00:00:00', '115|20147|20091|1|2', NULL),
+	(930, 'grupos', '1', 'I', '2015-05-24 00:00:00', '116|20147|20091|1|2', NULL),
+	(931, 'carga', '1', 'I', '2015-05-24 00:00:00', '111|20147|1|11236|1', NULL),
+	(932, 'carga', '1', 'I', '2015-05-24 00:00:00', '111|20147|1|11237|1', NULL),
+	(933, 'carga', '1', 'I', '2015-05-24 00:00:00', '111|20147|1|11241|1', NULL),
+	(934, 'carga', '1', 'I', '2015-05-24 00:00:00', '111|20147|1|11242|1', NULL),
+	(935, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11236|1', NULL),
+	(936, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11237|1', NULL),
+	(937, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11241|1', NULL),
+	(938, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11242|1', NULL),
+	(939, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11236|1', NULL),
+	(940, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11237|1', NULL),
+	(941, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11241|1', NULL),
+	(942, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11242|1', NULL),
+	(943, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11240|1', NULL);
 /*!40000 ALTER TABLE `bitacora` ENABLE KEYS */;
 
 
@@ -1049,8 +1066,7 @@ CREATE TABLE IF NOT EXISTS `caracter` (
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`caracter`),
   UNIQUE KEY `CAR_codigo_UNIQUE` (`caracter`),
-  KEY `fk_caracter_users1_idx` (`users_id`),
-  CONSTRAINT `fk_caracter_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+  KEY `fk_caracter_users1_idx` (`users_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
 -- Dumping data for table sigaf.caracter: ~2 rows (approximately)
@@ -1102,9 +1118,23 @@ CREATE TABLE IF NOT EXISTS `carga` (
   CONSTRAINT `fk_carga_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.carga: ~0 rows (approximately)
+-- Dumping data for table sigaf.carga: ~12 rows (approximately)
 DELETE FROM `carga`;
 /*!40000 ALTER TABLE `carga` DISABLE KEYS */;
+INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestre`, `users_id`) VALUES
+	(111, 20147, 1, 11236, 1, 1),
+	(111, 20147, 1, 11237, 1, 1),
+	(111, 20147, 1, 11241, 1, 1),
+	(111, 20147, 1, 11242, 1, 1),
+	(115, 20147, 1, 11236, 1, 1),
+	(115, 20147, 1, 11237, 1, 1),
+	(115, 20147, 1, 11240, 1, 1),
+	(115, 20147, 1, 11241, 1, 1),
+	(115, 20147, 1, 11242, 1, 1),
+	(116, 20147, 1, 11236, 1, 1),
+	(116, 20147, 1, 11237, 1, 1),
+	(116, 20147, 1, 11241, 1, 1),
+	(116, 20147, 1, 11242, 1, 1);
 /*!40000 ALTER TABLE `carga` ENABLE KEYS */;
 
 
@@ -2163,12 +2193,15 @@ INSERT INTO `grupos` (`grupo`, `periodo`, `plan`, `programaedu`, `turno`, `users
 	(111, 20143, 20091, 1, 1, 1),
 	(111, 20144, 20091, 1, 1, 1),
 	(111, 20145, 20091, 1, 1, 1),
+	(111, 20147, 20091, 1, 2, 1),
 	(112, 20141, 20091, 1, 2, 1),
 	(112, 20142, 20091, 1, 2, 1),
 	(112, 20143, 20091, 1, 2, 1),
 	(112, 20144, 20091, 1, 2, 1),
 	(112, 20145, 20091, 1, 2, 1),
 	(113, 20145, 20091, 1, 2, 1),
+	(115, 20147, 20091, 1, 2, 1),
+	(116, 20147, 20091, 1, 2, 1),
 	(121, 20141, 20091, 1, 3, 1),
 	(121, 20142, 20091, 1, 3, 1),
 	(121, 20143, 20091, 1, 3, 1),
@@ -2596,7 +2629,8 @@ INSERT INTO `periodos` (`periodo`, `periodo_pedu`, `year`, `mes`, `descripcion`,
 	(20142, 1, 2014, 2, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
 	(20143, 1, 2014, 3, 'Vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
 	(20144, 1, 2014, 4, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
-	(20145, 1, 2014, 5, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1);
+	(20145, 1, 2014, 5, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
+	(20147, 1, 2014, 7, 'adfasdf', '2015-05-07', '2015-05-31', 1, 1);
 /*!40000 ALTER TABLE `periodos` ENABLE KEYS */;
 
 
@@ -3125,14 +3159,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   CONSTRAINT `fk_users_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
   CONSTRAINT `fk_users_levels1` FOREIGN KEY (`level`) REFERENCES `levels` (`level`),
   CONSTRAINT `fk_users_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.users: ~2 rows (approximately)
+-- Dumping data for table sigaf.users: ~4 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `last_name`, `last_materno`, `email`, `address`, `phone`, `campus`, `uacademica`, `username`, `password`, `level`, `created_at`, `updated_at`, `remember_token`, `sexo`, `rfc`, `fec_nac`, `fec_ing`, `email_alternat`, `ciudad`, `calle`, `no_ext`, `no_int`, `colonia`, `cp`, `telofna`, `telcel`, `categoria`, `unidad`, `ua`, `programaedu`) VALUES
-	(1, 'Cynthia', 'Duarte', '', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', 6450706, 1, 1, 'Tikita', '$2y$10$9qAw9XKA/BtqYRg5WS087.3WjqG.eH0P8.JiLsY7BF4nBAZAPJ752', 1, '2014-04-19 19:30:58', '2015-02-12 14:59:29', 'nxkvv1PYyCCifUeCemRUttv0pPqAj6wLDQBPfZfiT44aE4Njqc4bP5HSgy4Q', 'F', NULL, '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', 16, 'CALLE SERRADILLA', 500, 'A', 'MONTGOMERY', 22310, '664-9740000', '664-9740000', 101, 'ENSENADA', 'FCA', 0),
-	(2, 'Ivan', 'Duarte', '', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', 6233987, 1, 1, 'LoganX', '$2y$10$k8fT0GW/Obx8KgZU4hVufOt/stcuq3Y9Z8/9StZEMuLWOCmjfK1hO', 2, '2014-04-19 19:30:58', '2015-04-14 03:33:38', 'xGAgUGRHblArNWPYaDoRy4VPZsaX7BPQudwiwCMHC8EHeYfPjR5kmC8DrSuz', 'M', NULL, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', 16, 'DE LOS LAURELES', 600, '1', 'EL CIRCULO', 22450, '664-1236789', '664\'1236789', 101, 'VALLE DE LA TRINIDAD', 'FD', 1);
+	(1, 'Cynthia', 'Duarte', 'Frausto', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', 6450706, 1, 1, 'Tikita', '$2y$10$xnsOE1TJVotNVKW9vSqTme76Dk0OO0GAe9zrl2rvFZFwI2T0iF3GG', 1, '2014-04-19 19:30:58', '2015-05-30 23:13:50', 'DsfE5j25yXeQMozdIUzY1dTpDHZhIDQM7VUudkVyDAK9CEoCdzDgUYSIgoTl', 'F', 'ICU870212HBC', '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', 16, 'CALLE SERRADILLA', 500, 'A', 'MONTGOMERY', 22310, '664-9740000', '664-9740000', 101, 'ENSENADA', 'FCA', 0),
+	(2, 'Ivan', 'Duarte', 'Jeyson', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', 6233987, 1, 1, 'LoganX', '$2y$10$Di0Yl1lU/GdnLfdaOAnVNOCf.DTDASCERnguBuaanFU796CqnQP5O', 2, '2014-04-19 19:30:58', '2015-05-26 02:12:30', 'tFVqHQD0rt2yIGlR7GeIM0D0HmwgMdGDMNbyq0xtfXG2jOoobEqkw45H5ARM', 'M', NULL, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', 16, 'DE LOS LAURELES', 600, '0', 'EL CIRCULO', 22450, '664-1236789', '664\'1236789', 101, 'VALLE DE LA TRINIDAD', 'FD', 1),
+	(3, 'Maestro', 'Perez', 'Morales', 'maestro@maestro.com', '', 6450706, 1, 1, 'Maestro', '$2y$10$qWeWE7XG6ZkDEeu5t93/g.ym0fGHxazv9fyXfIEQhNiZ9E4LWYHQG', 5, '2015-05-26 02:11:59', '2015-06-01 19:36:52', 'i5B09e2jLlSV2zjERxJx3YImUZwxcJVk95NIydlQrv7arWM4JpO48dMnZNMp', 'F', 'ICU870212HBC', NULL, '2015-05-25', 'maestro@alternativo.mx', 16, 'LIMON', 10, ' 5 ', 'REAL DE SAN FRANCISCO', 3345, '2654786', '6642650628', 104, '', '', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
