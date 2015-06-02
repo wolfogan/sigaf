@@ -2381,6 +2381,7 @@ height: 35px;
 	margin:auto;
 	width: 900px;
 }
+
 .dd_tabla_MatImpartir td
 {
 	text-align: center;
@@ -2390,8 +2391,8 @@ height: 35px;
   	font-size: 16px;
   	height: 15px;
 
-
 }
+
 .dd_encabezado
 {
 	background: green;
