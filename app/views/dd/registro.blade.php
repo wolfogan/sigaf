@@ -256,7 +256,7 @@
                 <div class="content-1">
 					
 					<h2>Datos personales</h2>
-
+						<!-- <form id="dd_datosPersonales" method="post" action="javascript:GuardarDatosPersonales();" enctype="multipart/form-data"> -->
 					<form id="dd_datosPersonales" method="post" action="javascript:GuardarDatosPersonales();">
                       
 						<div class="dd_divDecoracion">	
@@ -264,7 +264,7 @@
 							<div class="foto_botones">
 								<div id="dd_fotoDoc"></div>
 								<div class="dd_botonesFoto">
-									<div class="custom-input-file" style="float:left;"><input id="file-upload" type="file" accept="image/*" class="input-file" style="font-size:.8em;" name="foto_seleccion"></div>
+									<div class="custom-input-file" style="float:left;"><input id="file-upload" type="file" accept="image/*" style="font-size:.8em;" name="foto_seleccion"></div>
 									<input type="button" class="estilo_button2" style="font-size:.8em; margin-top:-1px; width:29px; height:29px; float:left;" name="foto_agregar" value="+"> 
 									
 									
@@ -978,12 +978,16 @@
 	{
 
 		var id = $("#dd_lbl_noEmpleado").html().trim();
-		var datos = "dd_id=" + id + "&" + $("#dd_datosPersonales").serialize();
+		//var datos = "dd_id=" + id + "&" + $("#dd_datosPersonales").serialize() + "&r=" + encodeURIComponent(img);
+		var datos = new FormData($("form")[2]);
+		datos.append("dd_id",id);
 		console.log(datos);
 		$.ajax({
 			url: "<?php echo URL::to('disponibilidaddocente/registrardatospersonales')?>",
 			method: "POST",
 			data: datos,
+			processData: false,
+    		contentType: false
 		})
 		.done(function(data){
 			alert(data);
@@ -1007,9 +1011,8 @@
    	// 	$(".telefonos").mask('(999) 999-9999');
    		
     // });
-
     $(function(){
- 		 	
+
     	$(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").not(":first").find("input, select").attr("disabled", true);
 
     	$("#dd_pais").on("change",function(){

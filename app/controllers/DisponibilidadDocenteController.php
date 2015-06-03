@@ -77,6 +77,7 @@ class DisponibilidadDocenteController extends BaseController
 
 	public function postRegistrardatospersonales()
 	{
+
 		$id = Input::get('dd_id');
 		$ingreso = Input::get('dd_ingreso');
 		$apePaterno = Input::get('dd_aPaterno');
@@ -96,6 +97,21 @@ class DisponibilidadDocenteController extends BaseController
 		$telCel = Input::get('dd_celular');
 		$correoUABC = Input::get('dd_correoUabc');
 		$correo = Input::get('dd_correo');
+		$imagen = "";
+
+		
+		if(Input::hasFile("foto_seleccion"))
+		{
+			$ext = Input::file("foto_seleccion") -> getClientOriginalExtension();
+			$nombreFoto = "foto_" . $id .".". $ext;
+			Input::file("foto_seleccion") -> move ("documentos/fotos",$nombreFoto);
+			$imagen = "documentos/foto/".$nombreFoto; 
+		}
+		else
+		{
+			$imagen = "Empty";
+		}
+
 
 		$user = User::find($id);
 		$user -> fec_ing = $ingreso;
@@ -114,7 +130,7 @@ class DisponibilidadDocenteController extends BaseController
 		$user -> telofna = $telOficina;
 		$user -> ciudad = $ciudad;
 		$user -> sexo = $sexo;
-
+		$user -> ruta_archivo = $imagen;
 		$user -> save();
 
 		return "Cambios realizados al usuario correctamente.";
