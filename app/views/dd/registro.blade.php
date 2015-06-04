@@ -264,7 +264,7 @@
 							<div class="foto_botones">
 								<div id="dd_fotoDoc"></div>
 								<div class="dd_botonesFoto">
-									<div class="custom-input-file" style="float:left;"><input id="file-upload" type="file" accept="image/*" style="font-size:.8em;" name="foto_seleccion"></div>
+									<div class="custom-input-file" style="float:left;"><input id="file-upload" type="file" accept="image/*" style="font-size:.8em;" name="foto_seleccion" class="input-file"></div>
 									<input type="button" class="estilo_button2" style="font-size:.8em; margin-top:-1px; width:29px; height:29px; float:left;" name="foto_agregar" value="+"> 
 									
 									
