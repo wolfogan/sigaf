@@ -1967,6 +1967,20 @@ input[readonly],input[readonly="readonly"]
 }
 
 /*----------------------------------DISPONIBILIDAD DOCENTE----------------------------------------*/
+.dd_chk_grado
+{
+	height:15px; 
+	width:150px; 
+	float:left; 
+	margin-top:-2px;
+}
+.dd_chk_grado input
+{
+	/*margin-left:-3px; 
+	margin-top:3px;*/
+	height: 20px;
+	width: 20px;
+}
 .foto_botones
 {
 	
@@ -1977,16 +1991,24 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_botonesFoto
 {
-	background: yellow;
-	width: 80px;
+	
+	width: 800px;
 	margin-top: 20px;
-	margin-left: 150px;
+	margin-left: 80px;
 
 }
 .dd_botonesFoto input
 {
 	width: 100px;
 	height: 30px;
+}
+.dd_foto_descripcion
+{
+	
+	width:190px;
+	float: left;
+	font-size: .8em;
+	margin-top: 5px;
 }
 #dd_fotoDoc
 {
@@ -2012,7 +2034,7 @@ input[readonly],input[readonly="readonly"]
 
 	width: 50px;
 	margin-left: 610px;
-	margin-top: -120px;
+	margin-top: -65px;
 }
 #dd_observaciones_materias
 {
@@ -2253,7 +2275,6 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_licenciatura_uniEgreso_fechaTitulacion_cedula
 {
-
 	padding-bottom: 40px;
 	width: 1230px;
 }
@@ -2300,9 +2321,9 @@ input[readonly],input[readonly="readonly"]
 }
 .dd_estilo_check
 {
-	background: blue;
+	/*background: blue;*/
 	height: 20px;
- 	margin-left:15px;"
+ 	margin-left:15px;
 	width: 20px;
 
 }
@@ -2589,9 +2610,6 @@ height: 35px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: #fff;
-
-
-
 
 	height:30px;
 	width:30px;
