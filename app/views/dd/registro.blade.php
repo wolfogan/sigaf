@@ -78,6 +78,52 @@
 <title>Disponibilidad docente</title>
 </head>
 <body>
+<!-------------------------------- MODAL CATALOGO EMPRESAS -------------------------------->
+
+	<div class="md-modal md-effect-11" id="btnCat_empresas_dd"> 
+		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+			<h3>Agregar Empresa</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+				
+					<tr>
+						<td>Nombre:</td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreEmpresa" type="text" required/></td>
+					</tr>
+			
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
+			</div>
+		</form>
+	</div>
+	<!---------------------------------------------------------------------------------------->
+
+	<!-------------------------------- MODAL CATALOGO PUESTOS -------------------------------->
+
+	<div class="md-modal md-effect-11" id="btnCat_puestos_dd"> 
+		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+			<h3>Agregar Puesto</h3>
+			<div class="tblCatalogos">
+				<table class="tblCatPlan">
+				
+					<tr>
+						<td>Nombre:</td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombrePuesto" type="text" required/></td>
+					</tr>
+			
+				</table>
+			</div>
+			<div class="CatBotones">
+				<input type="submit" class="estilo_button2" value="Guardar"/>
+				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
+			</div>
+		</form>
+	</div>
+	
+	<!---------------------------------------------------------------------------------------->
 <!-------------------------------- MODAL CATALOGO CARRERAS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCat_carreras_dd"> 
@@ -192,70 +238,12 @@
 			</div>
 		</form>
 	</div>
+	<div class="md-overlay"></div>
 	
 
 	<!---------------------------------------------------------------------------------------->
 
 
-	<!-------------------------------- MODAL MATERIAS IMPARTIDAS SEMESTRE ANTERIOR -------------------------------->
-
-	<div class="md-modal md-effect-11" id="btnMateriasAnterior"> 
-		<form id="formMaterias" action="javascript:registrarPeriodo();" class="md-content" method="post">
-			<h3>Materias impartidas el semestre anterior</h3>
-			
-			<div class="tblCatalogos">
-
-				<table class="dd_tabla_MatImpartir" style="color: black; width:200px; margin-top:30px;">
-
-					<thead class="dd_encabezado">
-						<tr>
-							<th style="width:50px;">CLAVE</th>
-							<th style="width:150px;">MATERIA</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>	
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>	
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>	
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>	
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>	
-						<tr>
-							<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
-							<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-						</tr>		
-						
-					</tbody>
-				</table>
-
-			</div>
-			<div class="CatBotones">
-				<input type="submit" class="estilo_button2" value="Guardar"/>
-				<input type="button" value="Salir" class="md-close" id="salirPeriodo"/>
-			</div>
-		</form>
-	</div>
-	<div class="md-overlay"></div>
-
-	<!---------------------------------------------------------------------------------------->
 	<header>
 		<figure id="logo">
 		<img src="../imagenes/logo.png" alt="">
@@ -412,14 +400,16 @@
 								<select id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/>
 									<option value="1"></option>
 								</select>
+								<input type="button" class="md-trigger" data-modal="btnCat_empresas_dd" value="+">
 							</div>
 							
 							<div class="dd_datosPersonales">Puesto:
-								<select id="dd_puestoExterno" name="dd_puestoExterno" style="margin-left:20px; width:252px;" class="dd_con_estilo_largo">
+								<select id="dd_puestoExterno" name="dd_puestoExterno" style="margin-left:23px; width:252px;" class="dd_con_estilo_largo">
 									@foreach($puestos as $puesto)
 										<option value="{{$puesto->puesto}}">{{$puesto->descripcion}}</option>
 									@endforeach
 								</select>
+								<input type="button" class="md-trigger" data-modal="btnCat_puestos_dd" value="+">
 							</div>
 						</div>
 
@@ -818,59 +808,47 @@
 									<tr>
 										<th style="width:50px;">CLAVE</th>
 										<th style="width:350px;">MATERIA</th>
-										<th style="width:50px;">MODIFICAR</th>
-										<th style="width:50px;">ELIMINAR</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+									
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 									<tr>
 										<td><input id="dd_claveMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" onkeypress="ValidaSoloNumeros()" class="dd_con_estilo_corto" type="text" name="dd_input_Tabla"/></td>
 										<td><input id="dd_nombreMateria" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo_largo_tabla" type="text" name="dd_input_Tabla"/></td>
-										<td><input type="button" value="-" title='Modificar' class="clsModificarFila" id="dd_modificarFila"/></td>	
-										<td><input type="button" value="-" title='Seleccionar' class="clsEliminarFila" id="dd_eliminarFila"/></td>	
+										
 									</tr>
 
 								</tbody>
 							</table>
-
-							
-								<div id="dd_btnVerAnterior"><input style="font-size: 15px; height: 50px; width:170px;" type="button" class="md-trigger" value="Ver semestre anterior" data-modal="btnMateriasAnterior" id="btnMateriasAnterior" /></div>		
 						</div>
 
 						<h2>Disponibilidad</h2>
@@ -886,8 +864,7 @@
 										<th style="width:100px;">MIERCOLES</th>
 										<th style="width:100px;">JUEVES</th>
 										<th style="width:100px;">VIERNES</th>
-										<th style="width:100px;">SÁBADO</th>
-										
+										<th style="width:100px;">SÁBADO</th>	
 									</tr>
 								</thead>
 								<tbody>
