@@ -325,8 +325,14 @@
 						<div class="dd_divDecoracion">
 		
 							<div class="foto_botones">
-								<div id="dd_fotoDoc"></div>
-								<input id="file-upload" type="file" accept="image/*" class="input-file" style="font-size:.7em; width:250px; margin-left:65px; margin-top:10px;" name="foto_seleccion">
+								<div id="dd_fotoDoc">
+								@if (empty($rutaFoto))
+									<img id="file-preview" src="" width="100%" height="100%" />
+								@else
+									<img id="file-preview" src="{{'../'.$rutaFoto->ruta}}" width="100%" height="100%" />
+								@endif
+								</div>
+								<input id="file-upload" type="file" accept="image/*" class="input-file" style="font-size:.7em; width:250px; margin-left:65px; margin-top:10px;" name="foto_seleccion" />
 							</div>
 
 							<div id="dd_aPaterno_aMaterno_nombres_sexo">
@@ -449,7 +455,8 @@
 					<form action="javascript:RegistrarEstudios();" method="post" id="dd_datosEstudios">
 						<div class="dd_divDecoracionEstudios">
 
-							<div class="dd_especialidad" style="width:550px">Licenciatura:
+							<div class="dd_especialidad" style="width:550px">
+								Licenciatura:
 								<input type="button" class="md-trigger" data-modal="btnCat_carreras_dd" value="+ Carrera" style="width:100px; margin-left:85px; font-size:16px;">
 								<input type="button" class="md-trigger" data-modal="btnCat_escuelas_dd" value="+ Escuela" style="width:100px; font-size:16px;">
 							</div>
@@ -457,13 +464,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" class="dd_con_estilo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
-										<option value="1"></option>
+									<select id="" class="dd_carrerasEmp dd_con_estilo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" />
+
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" class="dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" />
-										<option value="1"></option>
+									<select id="" class="dd_escuela dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" />
 									</select>
 								</div>
 
@@ -486,12 +492,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text"/>
+									<select id="" style="text-transform:uppercase" class="dd_carrerasEmp dd_con_estilo" onblur="Mayusculas(this)" type="text"/>
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" class="dd_con_estilo" onblur="Mayusculas(this)" type="text" />
+									<select id="" style="text-transform:uppercase" class="dd_escuela dd_con_estilo" onblur="Mayusculas(this)" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -521,13 +527,13 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
-										<option value="1"></option>
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
+										
 									</select>
 
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -552,12 +558,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -587,12 +593,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -618,12 +624,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -652,12 +658,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -682,12 +688,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="dd_licenciatura" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo"  type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="dd_escuela" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_con_estilo" type="text" />
+									<select id="" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" />
 										<option value="1"></option>
 									</select>
 								</div>
@@ -1090,7 +1096,7 @@
 
 		var id = $("#dd_lbl_noEmpleado").html().trim();
 		//var datos = "dd_id=" + id + "&" + $("#dd_datosPersonales").serialize() + "&r=" + encodeURIComponent(img);
-		var datos = new FormData($("form")[2]);
+		var datos = new FormData($("form")[4]);
 		datos.append("dd_id",id);
 		console.log(datos);
 		$.ajax({
@@ -1123,6 +1129,43 @@
    		
     // });
     $(function(){
+
+    	// Carga de catalogos de LICENCIATURAS
+    	$.ajax({
+    		url:"<?php echo URL::to('disponibilidaddocente/carrerasemp'); ?>",
+    		method: "POST",
+    		dataType:"json",
+    	})
+    	.done(function(carrerasemp){
+    		var options = "";
+    		for(var i in carrerasemp)
+    		{
+    			options +="<option value='" + carrerasemp[i].carrera + "'>"+carrerasemp[i].descripcion+"</ option>"; 
+    		}
+    		$(".dd_carrerasEmp").html(options);
+    	})
+    	.fail(function(error,texterror,errorthrow){
+    		alert("Error: " + error.responseText);
+    	});
+
+    	// Carga de catalogos de ESCUELAS
+    	$.ajax({
+    		url:"<?php echo URL::to('disponibilidaddocente/universidadesemp'); ?>",
+    		method: "POST",
+    		dataType:"json",
+    	})
+    	.done(function(carrerasemp){
+    		var options = "";
+    		for(var i in carrerasemp)
+    		{
+    			options +="<option value='" + carrerasemp[i].universidad + "'>"+carrerasemp[i].descripshort+"</ option>"; 
+    		}
+    		$(".dd_escuela").html(options);
+    	})
+    	.fail(function(error,texterror,errorthrow){
+    		alert("Error: " + error.responseText);
+    	});
+
 
     	$(".dd_licenciatura_uniEgreso_fechaTitulacion_cedula").not(":first").find("input, select").attr("disabled", true);
 
@@ -1255,6 +1298,9 @@
 		});
 
 		$(".dd_tabla_MatImpartir td:nth-child(2)").find("input").attr("disabled", true);
+
+		
+
     });
 </script>
      
@@ -1306,17 +1352,20 @@
             var reader = new FileReader();
  
             reader.onload = function (e) {
-                var filePreview = document.createElement('img');
-                filePreview.id = 'file-preview';
+            	
+                // var filePreview = document.createElement('img');
+                // filePreview.id = 'file-preview';
+                var filePreview = $("#file-preview");
                 //e.target.result contents the base64 data from the image uploaded
-                filePreview.src = e.target.result;
-                filePreview.style.width = "100%";
-                filePreview.style.height = "100%";
+                //filePreview.src = e.target.result;
+                filePreview.attr("src",e.target.result);
+                //filePreview.style.width = "100%";
+                //filePreview.style.height = "100%";
                 console.log(e.target.result);
  
-                var previewZone = document.getElementById('dd_fotoDoc');
-                previewZone.innerHTML = "";
-                previewZone.appendChild(filePreview);
+                // var previewZone = document.getElementById('dd_fotoDoc');
+                // previewZone.innerHTML = "";
+                // previewZone.appendChild(filePreview);
             }
  
             reader.readAsDataURL(input.files[0]);

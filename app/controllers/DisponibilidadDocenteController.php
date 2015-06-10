@@ -10,7 +10,9 @@ class DisponibilidadDocenteController extends BaseController
 	public function getRegistro()
 	{
 		$ciudadId = Auth::user()->ciudad; // Obtiene la ciudad del usuario actual
-		
+		$rutaFoto = DB::table('documentos_emp')->where('docto',1)->where('id',Auth::user()->id)->first(); 
+		// 1 = Foto
+
 		$estadoId = "";
 		$paisId = "";
 
@@ -38,7 +40,7 @@ class DisponibilidadDocenteController extends BaseController
 		$tipoCursos = TipoCurso::all();
 		$carateristicaCursos = CaracteristicaCurso::all();
 		//$estados = Estado::where('estado','=',$ciudad-> estado);
-		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos,"tipoCursos" => $tipoCursos,"caracteristicaCursos" => $carateristicaCursos));
+		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos,"tipoCursos" => $tipoCursos,"caracteristicaCursos" => $carateristicaCursos,"rutaFoto" =>$rutaFoto));
 		
 	}
 	public function getEstudios()
@@ -75,8 +77,32 @@ class DisponibilidadDocenteController extends BaseController
 		return Response::json($ciudades);
 	}
 
+	public function postCarrerasemp()
+	{
+		$carrerasEmp = CarrerasEmp::all();
+		return Response::json($carrerasEmp);
+	}
+
+	public function postUniversidadesemp()
+	{
+		$universidadesEmp = UniversidadesEmp::all();
+		return Response::json($universidadesEmp);
+	}
+
 	public function postRegistrardatospersonales()
 	{
+
+		/* ID TIPO DOCUMENTO
+		*	1 - FOTO
+		*	2 - LICENCIATURA1
+		*	3 - LICENCIATURA2
+		*	4 - MAESTRIA1
+		*	5 - MAESTRIA2
+		*	6 - DOCTORADO1
+		*	7 - DOCTORADO2
+		*	8 - ESPECIALIDAD1
+		*	9 - ESPECIALIDAD2
+		**/
 
 		$id = Input::get('dd_id');
 		$ingreso = Input::get('dd_ingreso');
@@ -97,44 +123,73 @@ class DisponibilidadDocenteController extends BaseController
 		$telCel = Input::get('dd_celular');
 		$correoUABC = Input::get('dd_correoUabc');
 		$correo = Input::get('dd_correo');
-		$imagen = "";
+		$ruta = "";
 
 		
 		if(Input::hasFile("foto_seleccion"))
 		{
 			$ext = Input::file("foto_seleccion") -> getClientOriginalExtension();
 			$nombreFoto = "foto_" . $id .".". $ext;
-			Input::file("foto_seleccion") -> move ("documentos/fotos",$nombreFoto);
-			$imagen = "documentos/foto/".$nombreFoto; 
+			$ruta = "documentos/fotos/".$nombreFoto; 
 		}
 		else
 		{
-			$imagen = "Empty";
+			$ruta = "Empty";
+			return "Es necesario que elija una foto para su expediente.";
 		}
 
 
-		$user = User::find($id);
-		$user -> fec_ing = $ingreso;
-		$user -> last_name = $apePaterno;
-		$user -> last_materno = $apeMaterno;
-		$user -> name = $nombres;
-		$user -> email = $correoUABC;
-		$user -> email_alternat = $correo;
-		$user -> calle = $calle;
-		$user -> no_ext = $noExterior;
-		$user -> no_int = $noInterior;
-		$user -> colonia = $colonia;
-		$user -> cp = $cp;
-		$user -> telcel = $telCel;
-		$user -> phone = $telParticular;
-		$user -> telofna = $telOficina;
-		$user -> ciudad = $ciudad;
-		$user -> sexo = $sexo;
-		$user -> ruta_archivo = $imagen;
-		$user -> save();
+		$saveRuta = DB::transaction(function() use($id,$ingreso,$apePaterno,$apeMaterno,$nombres,$correoUABC,$correo,$calle,$noExterior,$noInterior,$colonia,$cp,$telCel,$telParticular,$telOficina,$ciudad,$sexo,$ruta){
+			$user = User::find($id);
+			$user -> fec_ing = $ingreso;
+			$user -> last_name = $apePaterno;
+			$user -> last_materno = $apeMaterno;
+			$user -> name = $nombres;
+			$user -> email = $correoUABC;
+			$user -> email_alternat = $correo;
+			$user -> calle = $calle;
+			$user -> no_ext = $noExterior;
+			$user -> no_int = $noInterior;
+			$user -> colonia = $colonia;
+			$user -> cp = $cp;
+			$user -> telcel = $telCel;
+			$user -> phone = $telParticular;
+			$user -> telofna = $telOficina;
+			$user -> ciudad = $ciudad;
+			$user -> sexo = $sexo;
+			$user -> save();
 
-		return "Cambios realizados al usuario correctamente.";
+			$foto = DB::table("documentos_emp")->where('docto',1)->where('id',$id)->get();
+			
+			if(empty($foto))
+			{
+				DB::table('documentos_emp')
+					->insert(
+							array(
+								'docto' => 1,
+								'id' 	=> $id,
+								'ruta'	=> $ruta,
+								'observaciones' => "",
+								'users_id' => $id
+								)
+							);
+			}
+			else
+			{
+				DB::table('documentos_emp')
+						->where('id', $id)
+						->where('docto',1)
+						->update(array('ruta' => $ruta));
+			}
 
+			return true;
+		});
+		
+		if ($saveRuta) {
+			Input::file("foto_seleccion")->move("documentos/fotos",$nombreFoto);
+		}
+
+		return "Cambios realizados al usuario correctamente.!!";
 		
 	}
 

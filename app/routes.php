@@ -238,13 +238,14 @@ Route::get('pruebas',function(){
 	// 	$user->levels;
 	// }
 	
-	$pais = 144;
+	// $pais = 144;
 	
-	$estados = Estado::where('pais','=',$pais)->get();
+	// $estados = Estado::where('pais','=',$pais)->get();
 
+	$foto = DB::table("documentos_emp")->where('docto',1)->where('id',3)->get();
 
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return Response::json($estados);
+	return Response::json(empty($foto));
 
 });
