@@ -213,6 +213,27 @@ class DisponibilidadDocenteController extends BaseController
 		
 	}
 
+	public function postRegistrarestudioscursos()
+	{
+
+		$todo = Input::get('dd_carreraLic2');
+
+		
+
+		/* ID TIPO DOCUMENTO
+		*	1 - FOTO
+		*	2 - LICENCIATURA1
+		*	3 - LICENCIATURA2
+		*	4 - MAESTRIA1
+		*	5 - MAESTRIA2
+		*	6 - DOCTORADO1
+		*	7 - DOCTORADO2
+		*	8 - ESPECIALIDAD1
+		*	9 - ESPECIALIDAD2
+		**/
+
+		
+	}
 	// CATALOGOS DISPONIBILIDAD DOCENTE
 
 	public function postRegistrarempresas()

@@ -255,7 +255,7 @@
 							<td>
 								<select style="width: 100px; height: 30px; border-radius: 5px; border-color: #DBDBEA;" type="text" class="tipo-seriacion" />
 								@foreach($seriaciones as $seriacion)
-								<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
+									<option value="{{$seriacion->reqseriacion}}">{{$seriacion->descripcion}}</option>
 								@endforeach
 								</select>
 							</td>
