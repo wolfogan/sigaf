@@ -84,6 +84,13 @@
 		<fieldset id="dd_consulta">
 			<legend>Consultar por:</legend>
 
+				<div id="dd_consultaPeriodo">
+					<label>Periódo: </label>
+					<select class="dd_con_estilo" style="margin-left:43px;"type="text" name="dd_periodoConsulta" id="dd_periodoConsulta" list="datalist_periodo_ca" size=1/>
+						<option value="2013-2">2013-2</option>
+					</select>
+				</div>
+
 			
 				<div id="dd_consultaEmpleado">
 					<label>No. Empleado: </label>
@@ -95,11 +102,11 @@
 					</datalist>
 				</div>
 
-				<div id="dd_consultaNombre">
+				<!-- <div id="dd_consultaNombre">
 					<label>Nombre: </label>
 					<input type="text" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_con_estilo_largo" name="dd_consultarPor" size=1/>
 						
-				</div>
+				</div> -->
 
 					<div id="dd_btnBuscar"><input class="estilo_button2" style="width:145px" type="button" value="Buscar">
 	
@@ -111,16 +118,16 @@
 						<tr>
 							<th>NO. EMPLEADO</th>
 							<th>NOMBRE</th>
-							<th>HABILITAR/ DESHABILITAR</th>
+							<th>PERIODO</th>
+							<th>HABILITADO/ DESHABILITADO</th>
 							<!-- <th>MODIFICAR</th> -->
-													
-
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="gradeX">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 
@@ -128,6 +135,7 @@
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
@@ -135,6 +143,7 @@
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 							
@@ -142,30 +151,35 @@
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeA">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
@@ -173,24 +187,28 @@
 						<tr class="gradeX">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeC">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
 						<tr class="gradeU">
 							<td>000453</td>
 							<td>UNICE ESPINOZA</td>
+							<td>2015-1</td>
 							<td><input type="checkbox" style="width:20px; height:20px;"></td>	
 							<!-- <td><input type="button" value="" class="clsModificarFila"></td> -->
 						</tr>
