@@ -75,6 +75,9 @@ class DisponibilidadDocenteController extends BaseController
 		return Response::json($ciudades);
 	}
 
+
+	
+
 	public function postRegistrardatospersonales()
 	{
 
@@ -137,5 +140,69 @@ class DisponibilidadDocenteController extends BaseController
 
 		
 	}
+
+	// CATALOGOS DISPONIBILIDAD DOCENTE
+
+	public function postRegistrarempresas()
+	{
+		$empresas = new Empresas;
+		$empresas -> empresa = 1;
+		$empresas -> descripcion = Input::get('dd_cat_nombreEmpresa');
+		$empresas -> users_id = Input::get('users_id');
+	
+		$empresas -> save();
+
+		// return Redirect::back();
+		return "Registro insertado correctamente! :D";
+
+	}
+
+	public function postRegistrarpuesto()
+	{
+		$puesto = new Puesto;
+		$puesto -> puesto = 1;
+		$puesto -> descripcion = Input::get('dd_cat_nombrePuesto');
+		$puesto -> users_id = Input::get('users_id');
+
+		$puesto -> save();	
+	}
+
+	public function postRegistrarcarreras()
+	{
+		$carrera = new Carrera;
+		$carrera -> carrera = 1;
+		$carrera -> descripcion = Input::get('dd_cat_nombreCarrera');
+		$carrera -> users_id = Input::get('users_id');
+
+		$carrera -> save();	
+	}
+
+	public function postRegistraruniversidad()
+	{
+		$universidad = new Universidad;
+		$universidad -> universidad = 1;
+		$universidad -> descripcion = Input::get('dd_cat_nombreEscuela');
+		$universidad -> descripshort = Input::get('dd_cat_siglas');
+		$universidad -> ciudad = Input::get('dd_cat_ciudad');
+		$universidad -> users_id = Input::get('users_id');
+
+		$universidad -> save();	
+	}
+
+	public function postRegistrarcursos()
+	{
+		$cursos = new Cursos;
+		$cursos -> curso = 1;
+		$cursos -> periodo = Input::get('dd_cat_periodo');
+		$cursos -> descripcion = Input::get('dd_cat_nombre');
+		$cursos -> fecha = Input::get('dd_cat_fecha');
+		$cursos -> creditos = Input::get('dd_cat_creditos');
+		$cursos -> horas = Input::get('dd_cat_horas');
+		$cursos -> caracteristica_cur = Input::get('dd_cat_curso');
+		$cursos -> users_id = Input::get('users_id');
+
+		$cursos -> save();	
+	}
+
 
 }

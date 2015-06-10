@@ -81,7 +81,8 @@
 <!-------------------------------- MODAL CATALOGO EMPRESAS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCat_empresas_dd"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:registrarempresas();" class="md-content" method="post">
+
 			<h3>Agregar Empresa</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -104,7 +105,7 @@
 	<!-------------------------------- MODAL CATALOGO PUESTOS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCat_puestos_dd"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:registrarpuestos();" class="md-content" method="post">
 			<h3>Agregar Puesto</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -127,14 +128,14 @@
 <!-------------------------------- MODAL CATALOGO CARRERAS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCat_carreras_dd"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:Registrarcarreras();" class="md-content" method="post">
 			<h3>Agregar Carrera</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
 				
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreCarrera" type="text" required/></td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreCarrera" type="text" required/></td>
 					</tr>
 
 				</table>
@@ -152,7 +153,7 @@
 <!-------------------------------- MODAL CATALOGO UNIVERSIDADES -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCat_escuelas_dd"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:registraruniversidad();" class="md-content" method="post">
 			<h3>Agregar Escuela</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
@@ -191,7 +192,7 @@
 <!-------------------------------- MODAL CATALOGO CURSOS -------------------------------->
 
 	<div class="md-modal md-effect-11" id="btnCatalogoCursos"> 
-		<form id="formPeriodo" action="javascript:registrarPeriodo();" class="md-content" method="post">
+		<form id="formPeriodo" action="javascript:registrarcursos();" class="md-content" method="post">
 			<h3>Agregar curso de actualización</h3>
 			<div class="tblCatalogos">
 				<table class="tblCatPlan">
