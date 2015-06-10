@@ -315,9 +315,9 @@
 							<div class="foto_botones">
 								<div id="dd_fotoDoc">
 								@if (empty($rutaFoto))
-									<img id="file-preview" src="" width="100%" height="100%" />
+									<img id="file-preview" width="100%" height="100%" />
 								@else
-									<img id="file-preview" src="{{'../'.$rutaFoto->ruta}}" width="100%" height="100%" />
+									<img id="file-preview" src="{{'../'.$rutaFoto}}" width="100%" height="100%" />
 								@endif
 								</div>
 								<input id="file-upload" type="file" accept="image/*" class="input-file" style="font-size:.7em; width:250px; margin-left:65px; margin-top:10px;" name="foto_seleccion" />
@@ -442,7 +442,7 @@
 	                    
 					<h2>Grado de estudios</h2>
 
-					<form action="javascript:RegistrarEstudios();" method="post" id="dd_datosEstudios">
+					<form action="javascript:GuardarEstudiosCursos();" method="post" id="dd_datosEstudios">
 						<div class="dd_divDecoracionEstudios">
 
 							<div class="dd_especialidad" style="width:550px">
@@ -1073,9 +1073,16 @@
 
 		var id = $("#dd_lbl_noEmpleado").html().trim();
 		//var datos = "dd_id=" + id + "&" + $("#dd_datosPersonales").serialize() + "&r=" + encodeURIComponent(img);
-		var datos = new FormData($("form")[4]);
+		var datos = new FormData(document.forms.namedItem("dd_datosPersonales"));
 		datos.append("dd_id",id);
 		console.log(datos);
+		//alert(document.images.namedItem("file-preview").src);
+		if(document.images.namedItem("file-preview").src == "")
+		{
+			alert("Debes introducir una imagen para continuar...");
+			return;
+		}
+
 		$.ajax({
 			url: "<?php echo URL::to('disponibilidaddocente/registrardatospersonales')?>",
 			method: "POST",
@@ -1089,6 +1096,12 @@
 		.fail(function(error,textError,errorTrow){
 			alert("Error: " + error.responseText);
 		});
+	}
+
+	function GuardarEstudiosCursos()
+	{
+		var id = $("#dd_lbl_noEmpleado").text().trim();
+		var datos = new FormData();
 	}
 
 </script>

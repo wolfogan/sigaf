@@ -10,7 +10,18 @@ class DisponibilidadDocenteController extends BaseController
 	public function getRegistro()
 	{
 		$ciudadId = Auth::user()->ciudad; // Obtiene la ciudad del usuario actual
-		$rutaFoto = DB::table('documentos_emp')->where('docto',1)->where('id',Auth::user()->id)->first(); 
+		$documento = DB::table('documentos_emp')->where('docto',1)->where('id',Auth::user()->id)->first(); 
+		
+		if(empty($documento))
+			$rutaFoto = "";
+		else
+		{
+			if(file_exists($documento -> ruta))
+				$rutaFoto = $documento -> ruta;
+			else
+				$rutaFoto = "";
+		}
+		
 		// 1 = Foto
 
 		$estadoId = "";
@@ -103,8 +114,30 @@ class DisponibilidadDocenteController extends BaseController
 		*	8 - ESPECIALIDAD1
 		*	9 - ESPECIALIDAD2
 		**/
-
 		$id = Input::get('dd_id');
+		$savePhoto = true;
+		$ruta = "Empty";
+
+		
+
+		if(Input::hasFile("foto_seleccion"))
+		{
+			$ext = Input::file("foto_seleccion") -> getClientOriginalExtension();
+			$nombreFoto = "foto_" . $id .".". $ext;
+			$ruta = "documentos/fotos/".$nombreFoto; 
+		}
+		else
+		{
+			$documento = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',$id)->first();
+			if(!empty($documento->ruta))
+				$ruta = $documento->ruta;
+			else
+				$ruta = "";
+
+			$savePhoto = false;
+
+		}
+		
 		$ingreso = Input::get('dd_ingreso');
 		$apePaterno = Input::get('dd_aPaterno');
 		$apeMaterno = Input::get('dd_aMaterno');
@@ -123,23 +156,8 @@ class DisponibilidadDocenteController extends BaseController
 		$telCel = Input::get('dd_celular');
 		$correoUABC = Input::get('dd_correoUabc');
 		$correo = Input::get('dd_correo');
-		$ruta = "";
 
-		
-		if(Input::hasFile("foto_seleccion"))
-		{
-			$ext = Input::file("foto_seleccion") -> getClientOriginalExtension();
-			$nombreFoto = "foto_" . $id .".". $ext;
-			$ruta = "documentos/fotos/".$nombreFoto; 
-		}
-		else
-		{
-			$ruta = "Empty";
-			return "Es necesario que elija una foto para su expediente.";
-		}
-
-
-		$saveRuta = DB::transaction(function() use($id,$ingreso,$apePaterno,$apeMaterno,$nombres,$correoUABC,$correo,$calle,$noExterior,$noInterior,$colonia,$cp,$telCel,$telParticular,$telOficina,$ciudad,$sexo,$ruta){
+		DB::transaction(function() use($id,$ingreso,$apePaterno,$apeMaterno,$nombres,$correoUABC,$correo,$calle,$noExterior,$noInterior,$colonia,$cp,$telCel,$telParticular,$telOficina,$ciudad,$sexo,$ruta){
 			$user = User::find($id);
 			$user -> fec_ing = $ingreso;
 			$user -> last_name = $apePaterno;
@@ -182,12 +200,13 @@ class DisponibilidadDocenteController extends BaseController
 						->update(array('ruta' => $ruta));
 			}
 
-			return true;
+			
 		});
 		
-		if ($saveRuta) {
-			Input::file("foto_seleccion")->move("documentos/fotos",$nombreFoto);
-		}
+		if($savePhoto)
+			Input::file("foto_seleccion")->move("documentos/fotos/",$nombreFoto);
+
+		
 
 		return "Cambios realizados al usuario correctamente.!!";
 		

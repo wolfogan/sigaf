@@ -242,10 +242,17 @@ Route::get('pruebas',function(){
 	
 	// $estados = Estado::where('pais','=',$pais)->get();
 
-	$foto = DB::table("documentos_emp")->where('docto',1)->where('id',3)->get();
+	//$foto = DB::table("documentos_emp")->where('docto',1)->where('id',3)->get();
+
+	//$ruta = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',1)->first();
+	
+	$ruta = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',3)->first();
+
+		// if(!empty($ruta))
+		// 	$ruta = $ruta -> ruta;
 
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return Response::json(empty($foto));
+	return Response::json(empty($ruta->ruta));
 
 });
