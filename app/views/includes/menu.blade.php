@@ -30,7 +30,7 @@
 			<ul>
 				<li><a href="<?=URL::to('disponibilidaddocente/registro');?>" title="Registrar DD">Registrar Disp. Doc.</a></li>
 				<li><a href="<?=URL::to('disponibilidaddocente/consulta');?>" title="Consultar y modificar DD">Consultar Disp. Doc.</a></li>
-				<li><a href="<?=URL::to('disponibilidaddocente/eliminar');?>" title="Eliminar DD">Eliminar Disp. Doc.</a></li>
+				<!-- <li><a href="<?=URL::to('disponibilidaddocente/eliminar');?>" title="Eliminar DD">Eliminar Disp. Doc.</a></li> -->
 				<li class="ultimo"><a href="<?=URL::to('main');?>" title="Menú principal">Menú principal</a></li>
 			
 			</ul>

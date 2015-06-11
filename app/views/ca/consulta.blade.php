@@ -152,11 +152,12 @@
 	<br>
 
 	<div id="semestres" style="margin-top:40px;">
-	</div>
+	
+	
 <!-------------------------------------------TABLA DE RESUMEN PARA CADA CONSULTA -------------------------------------------->
 
 
-					<table class="ca_tblResumenConsulta" style="margin-top:50px;">
+					<table class="ca_tblResumenConsulta" style="order:10; margin-left:40px;">
 
 						<thead class="ca_tblResumenEncabezado">
 
@@ -211,6 +212,9 @@
 							</tr>
 
 					</table>
+
+	</div>
+
 
 <!---------------------------------------------------------------------------------------------------------------->
 
