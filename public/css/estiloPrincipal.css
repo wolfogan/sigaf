@@ -1648,7 +1648,7 @@ html>body div.pe_tableContainer table {
  	float: left;
  	height: 600px;
  	width: 500px;
- 	margin-top: 12px;
+ 	margin-top: 27px;
 
  }
 .periodoCa
@@ -1815,8 +1815,11 @@ html>body div.pe_tableContainer table {
 
 }
 /*---------------------------CONSULTA CARGA ACADEMICA ------------------------*/
-
-
+#semestres
+{
+	display: flex;
+	flex-wrap: wrap;
+}
 .consul_carrera_ca
 {
 	float: left;
@@ -1856,8 +1859,6 @@ html>body div.pe_tableContainer table {
 
 .tabla_ca
 {
-
-
 	float: left;
 	margin-bottom: 30px;
 	margin-left: 20px;

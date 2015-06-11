@@ -89,7 +89,7 @@
 				
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreEmpresa" type="text" required/></td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onkeypress="Mayusculas(this" name="dd_cat_nombreEmpresa" type="text" required/></td>
 					</tr>
 			
 				</table>
@@ -112,7 +112,7 @@
 				
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombrePuesto" type="text" required/></td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_nombrePuesto" type="text" required/></td>
 					</tr>
 			
 				</table>
@@ -135,7 +135,7 @@
 				
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreCarrera" type="text" required/></td>
+						<td><input class="dd_con_estilo_largo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_nombreCarrera" type="text" required/></td>
 					</tr>
 
 				</table>
@@ -160,16 +160,16 @@
 				
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombreEscuela" type="text" required/></td>
+						<td><input class="dd_con_estilo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_nombreEscuela" type="text" required/></td>
 					</tr>
 					<tr>
 						<td>Siglas:</td>
-						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_siglas" type="text" required/></td>
+						<td><input class="dd_con_estilo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_siglas" type="text" required/></td>
 					</tr>
 					<tr>
 						<td>Ciudad:</td>
 						<td>
-							<select class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_ciudad" type="text" required/>
+							<select class="dd_con_estilo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_ciudad" type="text" required/>
 								<option value="1"></option>
 							</select>
 						</td>
@@ -206,11 +206,11 @@
 					</tr>
 					<tr>
 						<td>Nombre:</td>
-						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_nombre" type="text" required/></td>
+						<td><input class="dd_con_estilo" style="text-transform:uppercase" onkeypress="Mayusculas(this)" name="dd_cat_nombre" type="text" required/></td>
 					</tr>
 					<tr>
 						<td>Fecha:</td>
-						<td><input class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_fecha" type="date" required/></td>
+						<td><input class="dd_con_estilo" name="dd_cat_fecha" type="date" required/></td>
 					</tr>
 					<tr>
 						<td>Créditos:</td>
@@ -223,7 +223,7 @@
 					<tr>
 						<td>Características curso:</td>
 						<td>
-							<select class="dd_con_estilo" style="text-transform:uppercase" onblur="Mayusculas(this)" name="dd_cat_curso" type="text" required/>
+							<select class="dd_con_estilo" name="dd_cat_curso" type="text" required/>
 								<option value="1"></option>
 							</select>
 						</td>
@@ -404,7 +404,7 @@
 
 							<div class="dd_datosPersonales">RFC:<label id="dd_lbl_rfc" name="dd_rfc" class="dd_label" style="margin-left:50px;">{{Auth::user()->rfc}}</label></div>
 							<div class="dd_datosPersonales">Empresa:
-								<select id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px; text-transform:uppercase" onblur="Mayusculas(this)" type="text"/>
+								<select id="dd_empresa" name="dd_empresa" class="dd_con_estilo_largo" style="margin-left:10px;" type="text"/>
 									<option value="1"></option>
 								</select>
 								<input type="button" class="md-trigger" data-modal="btnCat_empresas_dd" value="+">
@@ -455,12 +455,12 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraLic1" class="dd_carrerasEmp dd_con_estilo" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" required/>
+									<select id="" name="dd_carreraLic1" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaLic1" class="dd_escuela dd_con_estilo" type="text" style="text-transform:uppercase" onblur="Mayusculas(this)" required/>
+									<select id="" name="dd_escuelaLic1" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
@@ -476,7 +476,7 @@
 
 								<div class="dd_cedula">
 									Cédula:
-									<input id="dd_cedula" name="dd_cedulaLic1" class="dd_estilo_cedula" style="text-transform:uppercase" type="text" onblur="Mayusculas(this)" required/>
+									<input id="dd_cedula" name="dd_cedulaLic1" class="dd_estilo_cedula" style="text-transform: uppercase" type="text" onkeypress="Mayusculas()" required/>
 								</div>
 								
 								<div class="dd_fechaTitulacion">
@@ -498,11 +498,11 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraLic2" style="text-transform:uppercase" class="dd_carrerasEmp dd_con_estilo" onblur="Mayusculas(this)" type="text" required/>
+									<select id="" name="dd_carreraLic2" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="" name="dd_escuelaLic2" style="text-transform:uppercase" class="dd_escuela dd_con_estilo" onblur="Mayusculas(this)" type="text" required/>
+									<select id="" name="dd_escuelaLic2" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
@@ -519,7 +519,7 @@
 
 								<div class="dd_cedula">
 									Cédula:
-									<input id="dd_cedula" name="dd_cedulaLic2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_estilo_cedula" type="text" required/>
+									<input id="dd_cedula" name="dd_cedulaLic2" style="text-transform: uppercase" onkeypress="Mayusculas()" class="dd_estilo_cedula" type="text" required/>
 								</div>
 								
 								<div class="dd_fechaTitulacion">
@@ -531,7 +531,7 @@
 										<input type="file" name="dd_fileLic2" class="input-file" id="file" required/>
 									</div>
 								</div>
-								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
+								<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 							</div>
 
 							<div class="dd_especialidad">
@@ -542,13 +542,13 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraEsp1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select id="" name="dd_carreraEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaEsp1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select id="" name="dd_escuelaEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
@@ -619,7 +619,7 @@
 										<input type="file" name="dd_fileEsp2" class="input-file" id="file" required/>
 									</div>
 								</div>
-								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
+								<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>
 							</div>
 
 
@@ -710,7 +710,7 @@
 										<input name="dd_fileMas2" type="file" class="input-file" id="file"/>
 									</div>
 								</div>
-								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>							 -->
+								<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>							
 							</div>
 
 
@@ -798,7 +798,7 @@
 										<input name="dd_fileDoc2" type="file" class="input-file" id="file" required/>
 									</div>
 								</div>
-								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>			 -->
+								<div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>			
 							</div>
 						</div>
 								
@@ -1463,9 +1463,12 @@
 			
 			}
 
-			function Mayusculas(input){
-				this.value = this.value.toUpperCase();
-			}
+</script>
+
+<script language="javascript">
+		function Mayusculas(input){
+			this.value = this.value.toUpperCase();
+		}
 </script>
 
 <!------------------FUNCION PARA CAMBIAR COLOR EN LA TABLA DISPONIBILIDAD-------------------->
