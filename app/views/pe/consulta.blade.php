@@ -896,7 +896,7 @@
 			}
 
 			dataUA = $("#formUpdate").serialize(); //+ & + $("#tblUpdateSeriaciones").serialize();
-			alert(dataUA);
+			//alert(dataUA);
 			//var etapaOld = $("#etapa_update").val(); //Almacenar la etapa inicial
 			$.post("<?php echo URL::to('planestudio/actualizarua'); ?>",dataUA,function(ua){
 				$(divUA).find("span").eq(1).text($("#descripcion_update").val());
@@ -919,7 +919,7 @@
 				$(divUA).attr("etapa",  $("#etapa_update").val());
 				// Actualizar creditos;
 				actualizarCreditos();
-				alert("Actualizacion Completada");
+				alert("Actualizacion Completada!!!!");
 				$(".md-close").click();
 
 				// Colocar en la nueva etapa si se modifico la etapa, evaluar la etapaOld

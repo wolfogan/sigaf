@@ -302,7 +302,7 @@
 			// Filtro de grupo
 			var grupo =$("#grupo_ca").val();
 
-			alert(programaedu + "\n" + periodo + "\n" + turno+ "\n" + semestre + "\n" + grupo);
+			//alert(programaedu + "\n" + periodo + "\n" + turno+ "\n" + semestre + "\n" + grupo);
 
 			if($("#troncoComun").is(":checked"))
 			{
