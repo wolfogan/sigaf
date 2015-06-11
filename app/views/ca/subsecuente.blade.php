@@ -1322,7 +1322,7 @@
 			// PARA ELIIMINAR UA DE LA CARGA FALTA EL FILTRO DE CARRRRRRRRERASSASAAAASDASDASDFASDFASDF
 			$("table").on("click",".clsEliminarFila",function(event){
 				event.stopPropagation();
-				alert(PROGRAMAEDU);
+				//alert(PROGRAMAEDU);
 				if(confirm("Se dara de baja la unidad de aprendizaje de la carga actual. Deseas continuar?"))
 				{
 					// Obtener UA,periodo

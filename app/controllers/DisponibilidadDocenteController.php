@@ -236,12 +236,21 @@ class DisponibilidadDocenteController extends BaseController
 		$cedulaLic1 = Input::get('dd_cedulaLic1');
 		$nomFileLic1 = Input::get('dd_nomFileLic1');
 		$rutaLic1 = "Empty";
+
+		if($obtuvoLic1 == true)
+			$obtuvoLic1 = 1;
+		else
+			$obtuvoLic1 = 0;
+		
+
 		if(Input::hasFile("dd_fileLic1"))
 		{
 			$ext = Input::file("dd_fileLic1") -> getClientOriginalExtension();
 			$nombreFoto = "licenciatura1_" . $id .".". $ext;
 			$rutaLic1 = "documentos/estudios/".$nombreFoto; 
 		}
+
+		
 
 		$arrayLic1 = array('carrera' => $carreraLic1,'id' => $id,'universidad' => $escuelaLic1,'nivel' => 1,'cedula' => $cedulaLic1,'fec_tit' => $fechaLic1,'obtuvo_grado' => $obtuvoLic1,'users_id'=> $id );
 		$docLic1 = array('docto' => 2,'id' => $id,'ruta' => $rutaLic1,'observaciones' => "",'users_id' =>$id);
@@ -262,6 +271,12 @@ class DisponibilidadDocenteController extends BaseController
 			$cedulaLic2 = Input::get('dd_cedulaLic2');
 			$nomFileLic2 = Input::get('dd_nomFileLic2');
 			$rutaLic2 = "Empty";
+
+			if($obtuvoLic2 == true)
+				$obtuvoLic2 = 1;
+			else
+				$obtuvoLic2 = 0;
+		
 
 			if(Input::hasFile("dd_fileLic2"))
 			{
@@ -291,6 +306,11 @@ class DisponibilidadDocenteController extends BaseController
 			$nomFileEsp1 = Input::get('dd_nomFileEsp1');
 			$rutaEsp1 = "Empty";
 
+			if($obtuvoEsp1 == true)
+				$obtuvoEsp1 = 1;
+			else
+				$obtuvoEsp1 = 0;
+
 			if(Input::hasFile("dd_fileEsp1"))
 			{
 				$ext = Input::file("dd_fileEsp1") -> getClientOriginalExtension();
@@ -318,6 +338,11 @@ class DisponibilidadDocenteController extends BaseController
 			$nomFileEsp2 = Input::get('dd_nomFileEsp2');
 			$rutaEsp2 = "Empty";
 
+			if($obtuvoEsp2 == true)
+				$obtuvoEsp2 = 1;
+			else
+				$obtuvoEsp2 = 0;
+
 			if(Input::hasFile("dd_fileEsp2"))
 			{
 				$ext = Input::file("dd_fileEsp2") -> getClientOriginalExtension();
@@ -344,6 +369,11 @@ class DisponibilidadDocenteController extends BaseController
 			$cedulaMas1 = Input::get('dd_cedulaMas1');
 			$nomFileMas1 = Input::get('dd_nomFileMas1');
 			$rutaMas1 = "Empty";
+
+			if($obtuvoMas1 == true)
+				$obtuvoMas1 = 1;
+			else
+				$obtuvoMas1 = 0;
 
 			if(Input::hasFile("dd_fileMas1"))
 			{
@@ -373,6 +403,11 @@ class DisponibilidadDocenteController extends BaseController
 			$nomFileMas2 = Input::get('dd_nomFileMas2');
 			$fileMas2 = "Empty";
 
+			if($obtuvoMas2 == true)
+				$obtuvoMas2 = 1;
+			else
+				$obtuvoMas2 = 0;
+
 			if(Input::hasFile("dd_fileMas2"))
 			{
 				$ext = Input::file("dd_fileMas2") -> getClientOriginalExtension();
@@ -399,6 +434,11 @@ class DisponibilidadDocenteController extends BaseController
 			$cedulaDoc1 = Input::get('dd_cedulaDoc1');
 			$nomFileDoc1 = Input::get('dd_nomFileDoc1');
 			$rutaDoc1 = "Empty";
+
+			if($obtuvoDoc1 == true)
+				$obtuvoDoc1 = 1;
+			else
+				$obtuvoDoc1 = 0;
 
 			if(Input::hasFile("dd_fileDoc1"))
 			{
@@ -427,6 +467,11 @@ class DisponibilidadDocenteController extends BaseController
 			$nomFileDoc2 = Input::get('dd_nomFileDoc2');
 			$rutaDoc2 = "Emtpy";
 
+			if($obtuvoDoc2 == true)
+				$obtuvoDoc2 = 1;
+			else
+				$obtuvoDoc2 = 0;
+
 			if(Input::hasFile("dd_fileDoc2"))
 			{
 				$ext = Input::file("dd_fileDoc2") -> getClientOriginalExtension();
@@ -436,7 +481,6 @@ class DisponibilidadDocenteController extends BaseController
 
 			$arrayDoc2 = array('carrera' => $carreraDoc2,'id' => $id,'universidad' => $escuelaDoc2,'nivel' => 3,'cedula' => $cedulaDoc2,'fec_tit' => $fechaDoc2,'obtuvo_grado' => $obtuvoDoc2,'users_id'=> $id );
 			$docDoc2 = array('docto' => 7,'id' => $id,'ruta' => $rutaDoc2,'observaciones' => "",'users_id' =>$id);
-
 
 			DB::transaction(function() use($arrayDoc2,$docDoc2){
 				DB::table('act_profesional_emp')->insert($arrayDoc2);

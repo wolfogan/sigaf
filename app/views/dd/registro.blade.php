@@ -466,7 +466,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoLic1" type="checkbox" />
+									<input id="" name="dd_obtuvoLic1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -509,7 +509,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoLic2" type="checkbox" />
+									<input id="" name="dd_obtuvoLic2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -554,7 +554,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoEsp1" type="checkbox"  />
+									<input id="" name="dd_obtuvoEsp1" type="checkbox"  />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -597,7 +597,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoEsp2" type="checkbox" />
+									<input id="" name="dd_obtuvoEsp2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -643,7 +643,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoMas1" type="checkbox" />
+									<input id="" name="dd_obtuvoMas1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -688,7 +688,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoMas2" type="checkbox"  />
+									<input id="" name="dd_obtuvoMas2" type="checkbox"  />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -733,7 +733,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoDoc1" type="checkbox" />
+									<input id="" name="dd_obtuvoDoc1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -776,7 +776,7 @@
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="dd_chk_grado" name="dd_obtuvoDoc2" type="checkbox" />
+									<input id="" name="dd_obtuvoDoc2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -1240,7 +1240,7 @@
 		})
 		.done(function(data){
 			//debugger;
-			alert(data);
+			console.log(data);
 		})
 		.fail(function(error,textError,errorTrow){
 			alert("Error: " + error.responseText);
