@@ -2003,6 +2003,8 @@
 		}
 	
 		_fnDraw( settings );
+
+
 	}
 	
 	
@@ -2657,6 +2659,8 @@
 				settings._iDisplayStart = 0;
 				_fnDraw( settings );
 			}
+			/******************************************** ACTIVAR MODALLLLLLLLLLLLLLLLL POR FILTRO *************************************************/
+			activarModal();
 		};
 		var jqFilter = $('input', filter)
 			.val( previousSearch.sSearch.replace('"','&quot;') )
@@ -3171,6 +3175,8 @@
 	
 		// Fire length change event
 		_fnCallbackFire( settings, null, 'length', [settings, len] );
+
+
 	}
 	
 	

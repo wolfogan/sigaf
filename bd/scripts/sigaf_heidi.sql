@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `act_profesional_emp` (
   `nivel` int(11) NOT NULL COMMENT 'grado (Lic, post, tecn)',
   `cedula` int(11) DEFAULT NULL COMMENT 'No cedula',
   `fec_tit` date DEFAULT NULL COMMENT 'Fecha Tit',
-  `obtuvo_grado` int(11) NOT NULL COMMENT '1=SI, 2=NO',
+  `obtuvo_grado` bit(1) NOT NULL COMMENT '1=SI, 0=NO',
   `users_id` int(11) NOT NULL COMMENT 'Usr inserta/modif/borra',
   PRIMARY KEY (`carrera`,`id`),
   KEY `fk_act_profesional_emp_nvprograma1_idx` (`nivel`),
@@ -95,9 +95,9 @@ CREATE TABLE IF NOT EXISTS `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=944 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1145 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.bitacora: ~910 rows (approximately)
+-- Dumping data for table sigaf.bitacora: ~993 rows (approximately)
 DELETE FROM `bitacora`;
 /*!40000 ALTER TABLE `bitacora` DISABLE KEYS */;
 INSERT INTO `bitacora` (`id`, `tabla`, `usuario`, `operacion`, `fecha`, `registro`, `registro_old`) VALUES
@@ -1027,7 +1027,202 @@ INSERT INTO `bitacora` (`id`, `tabla`, `usuario`, `operacion`, `fecha`, `registr
 	(940, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11237|1', NULL),
 	(941, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11241|1', NULL),
 	(942, 'carga', '1', 'I', '2015-05-24 00:00:00', '116|20147|1|11242|1', NULL),
-	(943, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11240|1', NULL);
+	(943, 'carga', '1', 'I', '2015-05-24 00:00:00', '115|20147|1|11240|1', NULL),
+	(944, 'uaprendizaje', '1', 'U', '2015-06-02 00:00:00', '11236|MATEMÁTICAS I|5|5|5|0|0|0|15|2015-01-29|1|20091', '11236|MATEMÁTICAS I|5|5|0|0|0|0|15|2015-01-29|vamos a ver|1|20091'),
+	(945, 'p_ua', '1', 'U', '2015-06-02 00:00:00', '1|11236|1|1|1', '1|11236|1|1|1'),
+	(946, 'uaprendizaje', '1', 'I', '2015-06-02 00:00:00', '11270|MATERIA NUEVA|5|5|0|0|0|5|20|2015-06-03|unas observaciones|1|20091', NULL),
+	(947, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '2|11270|1|1|1', NULL),
+	(948, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '3|11270|1|1|1', NULL),
+	(949, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '4|11270|1|1|1', NULL),
+	(950, 'p_ua', '1', 'D', '2015-06-02 00:00:00', NULL, '4|11270|1|1|1'),
+	(951, 'p_ua', '1', 'D', '2015-06-02 00:00:00', NULL, '2|11270|1|1|1'),
+	(952, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '2|11270|2|1|1', NULL),
+	(953, 'p_ua', '1', 'D', '2015-06-02 00:00:00', NULL, '3|11270|1|1|1'),
+	(954, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '3|11270|2|1|1', NULL),
+	(955, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '4|11270|2|1|1', NULL),
+	(956, 'p_ua', '1', 'D', '2015-06-02 00:00:00', NULL, '4|11270|2|1|1'),
+	(957, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '4|11270|3|1|1', NULL),
+	(958, 'p_ua', '1', 'D', '2015-06-02 00:00:00', NULL, '4|11270|3|1|1'),
+	(959, 'p_ua', '1', 'I', '2015-06-02 00:00:00', '4|11270|3|1|1', NULL),
+	(960, 'detalleseriacion', '1', 'I', '2015-06-02 00:00:00', '11270|4|11236|1', NULL),
+	(961, 'uaprendizaje', '1', 'U', '2015-06-02 00:00:00', '11270|MATERIA NUEVA|5|5|0|0|0|5|20|2015-06-03|1|20091', '11270|MATERIA NUEVA|5|5|0|0|0|5|20|2015-06-03|unas observaciones|1|20091'),
+	(962, 'p_ua', '1', 'U', '2015-06-02 00:00:00', '4|11270|3|1|1', '4|11270|3|1|1'),
+	(963, 'detalleseriacion', '1', 'D', '2015-06-02 00:00:00', NULL, '11270|4|11236|1'),
+	(964, 'detalleseriacion', '1', 'I', '2015-06-02 00:00:00', '11270|4|11236|1', NULL),
+	(965, 'detalleseriacion', '1', 'I', '2015-06-02 00:00:00', '11270|4|11237|1', NULL),
+	(966, 'uaprendizaje', '1', 'U', '2015-06-02 00:00:00', '11246|MATERIA 6|3|2|5|0|0|0|13|2015-03-15|1|20091', '11246|MATERIA 6|3|2|0|0|0|0|8|2015-03-15|vamos a ver|1|20091'),
+	(967, 'p_ua', '1', 'U', '2015-06-02 00:00:00', '1|11246|3|1|1', '1|11246|3|1|1'),
+	(968, 'p_ua', '1', 'U', '2015-06-02 00:00:00', '1|11248|1|1|1', '1|11248|1|1|1'),
+	(969, 'p_ua', '1', 'U', '2015-06-02 00:00:00', '1|11247|2|1|1', '1|11247|1|1|1'),
+	(970, 'periodos', '1', 'I', '2015-06-02 00:00:00', '20151|1|2015|1|bla bla|2015-06-02|2015-06-30|1', NULL),
+	(971, 'grupos', '1', 'I', '2015-06-02 00:00:00', '111|20151|20091|1|1', NULL),
+	(972, 'grupos', '1', 'I', '2015-06-02 00:00:00', '112|20151|20091|1|2', NULL),
+	(973, 'grupos', '1', 'I', '2015-06-02 00:00:00', '113|20151|20091|1|3', NULL),
+	(974, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20151|1|11236|1', NULL),
+	(975, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20151|1|11237|1', NULL),
+	(976, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20151|1|11236|1', NULL),
+	(977, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20151|1|11237|1', NULL),
+	(978, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20151|1|11236|1', NULL),
+	(979, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20151|1|11237|1', NULL),
+	(980, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20151|1|11240|1', NULL),
+	(981, 'carga', '1', 'D', '2015-06-02 00:00:00', NULL, '112|20151|1|11240|1'),
+	(982, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20151|1|11240|1', NULL),
+	(983, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20151|1|11240|1', NULL),
+	(984, 'grupos', '1', 'I', '2015-06-02 00:00:00', '121|20151|20091|1|2', NULL),
+	(985, 'grupos', '1', 'I', '2015-06-02 00:00:00', '122|20151|20091|1|2', NULL),
+	(986, 'carga', '1', 'I', '2015-06-02 00:00:00', '121|20151|1|11243|2', NULL),
+	(987, 'carga', '1', 'D', '2015-06-02 00:00:00', NULL, '121|20151|1|11243|2'),
+	(988, 'carga', '1', 'I', '2015-06-02 00:00:00', '121|20151|1|11243|2', NULL),
+	(989, 'carga', '1', 'I', '2015-06-02 00:00:00', '122|20151|1|11243|2', NULL),
+	(990, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20151|1|11246|1', NULL),
+	(991, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20151|1|11246|1', NULL),
+	(992, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20151|1|11246|1', NULL),
+	(993, 'grupos', '1', 'I', '2015-06-02 00:00:00', '131|20151|20091|1|1', NULL),
+	(994, 'carga', '1', 'I', '2015-06-02 00:00:00', '131|20151|1|11248|3', NULL),
+	(995, 'grupos', '1', 'I', '2015-06-02 00:00:00', '132|20151|20091|1|1', NULL),
+	(996, 'carga', '1', 'I', '2015-06-02 00:00:00', '132|20151|1|11248|3', NULL),
+	(997, 'periodos', '1', 'I', '2015-06-02 00:00:00', '20152|1|2015|2|vamos|2015-06-02|2015-06-30|1', NULL),
+	(998, 'grupos', '1', 'I', '2015-06-02 00:00:00', '111|20152|20091|1|1', NULL),
+	(999, 'grupos', '1', 'I', '2015-06-02 00:00:00', '112|20152|20091|1|2', NULL),
+	(1000, 'grupos', '1', 'I', '2015-06-02 00:00:00', '113|20152|20091|1|3', NULL),
+	(1001, 'grupos', '1', 'I', '2015-06-02 00:00:00', '121|20152|20091|1|2', NULL),
+	(1002, 'grupos', '1', 'I', '2015-06-02 00:00:00', '122|20152|20091|1|2', NULL),
+	(1003, 'grupos', '1', 'I', '2015-06-02 00:00:00', '131|20152|20091|1|1', NULL),
+	(1004, 'grupos', '1', 'I', '2015-06-02 00:00:00', '132|20152|20091|1|1', NULL),
+	(1005, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20152|1|11236|1', NULL),
+	(1006, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20152|1|11237|1', NULL),
+	(1007, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20152|1|11240|1', NULL),
+	(1008, 'carga', '1', 'I', '2015-06-02 00:00:00', '111|20152|1|11246|1', NULL),
+	(1009, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20152|1|11246|1', NULL),
+	(1010, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20152|1|11240|1', NULL),
+	(1011, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20152|1|11237|1', NULL),
+	(1012, 'carga', '1', 'I', '2015-06-02 00:00:00', '112|20152|1|11236|1', NULL),
+	(1013, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20152|1|11236|1', NULL),
+	(1014, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20152|1|11237|1', NULL),
+	(1015, 'carga', '1', 'I', '2015-06-02 00:00:00', '113|20152|1|11246|1', NULL),
+	(1016, 'carga', '1', 'I', '2015-06-02 00:00:00', '121|20152|1|11243|2', NULL),
+	(1017, 'carga', '1', 'I', '2015-06-02 00:00:00', '122|20152|1|11243|2', NULL),
+	(1018, 'carga', '1', 'I', '2015-06-02 00:00:00', '131|20152|1|11248|3', NULL),
+	(1019, 'carga', '1', 'I', '2015-06-02 00:00:00', '132|20152|1|11248|3', NULL),
+	(1020, 'grupos', '1', 'I', '2015-06-02 00:00:00', '126|20152|20091|1|1', NULL),
+	(1021, 'carga', '1', 'I', '2015-06-02 00:00:00', '126|20152|1|11240|2', NULL),
+	(1022, 'doctos', '1', 'I', '2015-06-03 00:00:00', '1|foto', NULL),
+	(1023, 'doctos', '1', 'I', '2015-06-03 00:00:00', '2|cedula_lic', NULL),
+	(1024, 'doctos', '1', 'I', '2015-06-03 00:00:00', '4|cedula_maestria', NULL),
+	(1025, 'doctos', '1', 'U', '2015-06-03 00:00:00', '2|ced_licenciatura', '2|cedula_lic'),
+	(1026, 'doctos', '1', 'U', '2015-06-03 00:00:00', '4|', '4|cedula_maestria'),
+	(1027, 'doctos', '1', 'U', '2015-06-03 00:00:00', '2|cedula_lic', '2|ced_licenciatura'),
+	(1028, 'doctos', '1', 'U', '2015-06-03 00:00:00', '4|cedula_mae', '4|'),
+	(1029, 'doctos', '1', 'D', '2015-06-03 00:00:00', NULL, '4|cedula_mae'),
+	(1030, 'doctos', '1', 'U', '2015-06-03 00:00:00', '2|licenciatura1', '2|cedula_lic'),
+	(1031, 'doctos', '1', 'I', '2015-06-03 00:00:00', '6|licenciatura2', NULL),
+	(1032, 'doctos', '1', 'I', '2015-06-03 00:00:00', '7|maestria1', NULL),
+	(1033, 'doctos', '1', 'I', '2015-06-03 00:00:00', '8|maestria2', NULL),
+	(1034, 'doctos', '1', 'I', '2015-06-03 00:00:00', '10|doctorado1', NULL),
+	(1035, 'doctos', '1', 'I', '2015-06-03 00:00:00', '14|doctorado2', NULL),
+	(1036, 'doctos', '1', 'U', '2015-06-03 00:00:00', '3|licenciatura2', '6|licenciatura2'),
+	(1037, 'doctos', '1', 'U', '2015-06-03 00:00:00', '4|maestria1', '7|maestria1'),
+	(1038, 'doctos', '1', 'U', '2015-06-03 00:00:00', '5|maestria2', '8|maestria2'),
+	(1039, 'doctos', '1', 'U', '2015-06-03 00:00:00', '6|doctorado1', '10|doctorado1'),
+	(1040, 'doctos', '1', 'U', '2015-06-03 00:00:00', '7|doctorado2', '14|doctorado2'),
+	(1041, 'doctos', '1', 'I', '2015-06-03 00:00:00', '16|especialidad1', NULL),
+	(1042, 'doctos', '1', 'U', '2015-06-03 00:00:00', '8|especialidad1', '16|especialidad1'),
+	(1043, 'doctos', '1', 'I', '2015-06-03 00:00:00', '10|especialidad2', NULL),
+	(1044, 'doctos', '1', 'U', '2015-06-03 00:00:00', '9|especialidad2', '10|especialidad2'),
+	(1045, 'documentos_emp', '3', 'I', '2015-06-03 00:00:00', '1|3|documentos/foto/foto_3.PNG|', NULL),
+	(1046, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/foto/foto_3.PNG', '1|3|documentos/foto/foto_3.PNG|'),
+	(1047, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/foto/foto_3.png', '1|3|documentos/foto/foto_3.PNG|'),
+	(1050, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/foto/foto_3.png|'),
+	(1051, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1052, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.png|'),
+	(1053, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1054, 'documentos_emp', '3', 'U', '2015-06-03 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.png|'),
+	(1055, 'documentos_emp', '1', 'I', '2015-06-08 00:00:00', '1|1|documentos/fotos/foto_1.jpg|', NULL),
+	(1056, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1057, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1058, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1059, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1060, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1061, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1062, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1066, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1067, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1068, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1069, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1070, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.png|'),
+	(1071, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1072, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1073, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1074, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1075, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1076, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1077, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1078, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1079, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1080, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1081, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||', '1|3|documentos/fotos/foto_3.png|'),
+	(1082, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||', '1|3||'),
+	(1083, 'documentos_emp', '3', 'D', '2015-06-09 00:00:00', NULL, '1|3||'),
+	(1084, 'documentos_emp', '3', 'I', '2015-06-09 00:00:00', '1|3|Empty|', NULL),
+	(1085, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||Empty', '1|3|Empty|'),
+	(1086, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||Empty', '1|3|Empty|'),
+	(1087, 'documentos_emp', '3', 'D', '2015-06-09 00:00:00', NULL, '1|3|Empty|'),
+	(1088, 'documentos_emp', '3', 'I', '2015-06-09 00:00:00', '1|3|Empty|', NULL),
+	(1089, 'documentos_emp', '3', 'D', '2015-06-09 00:00:00', NULL, '1|3|Empty|'),
+	(1090, 'documentos_emp', '3', 'I', '2015-06-09 00:00:00', '1|3|documentos/fotos/foto_3.PNG|', NULL),
+	(1091, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1092, 'documentos_emp', '3', 'D', '2015-06-09 00:00:00', NULL, '1|3||'),
+	(1093, 'documentos_emp', '1', 'I', '2015-06-09 00:00:00', '1|3|', NULL),
+	(1094, 'documentos_emp', '1', 'D', '2015-06-09 00:00:00', NULL, '1|3|'),
+	(1095, 'documentos_emp', '3', 'I', '2015-06-09 00:00:00', '1|3|documentos/fotos/foto_3.PNG|', NULL),
+	(1097, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1098, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1099, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1100, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1101, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1102, 'documentos_emp', '3', 'U', '2015-06-09 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1103, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1104, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.png|'),
+	(1105, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1106, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1107, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1108, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1109, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||', '1|3|documentos/fotos/foto_3.png|'),
+	(1110, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||', '1|3||'),
+	(1111, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3||'),
+	(1112, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1113, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.PNG|'),
+	(1114, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.jpg', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1115, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||', '1|3|documentos/fotos/foto_3.jpg|'),
+	(1116, 'documentos_emp', '3', 'D', '2015-06-10 00:00:00', NULL, '1|3||'),
+	(1117, 'documentos_emp', '3', 'I', '2015-06-10 00:00:00', '1|3|documentos/fotos/foto_3.png|', NULL),
+	(1118, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1119, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.png', '1|3|documentos/fotos/foto_3.png|'),
+	(1120, 'documentos_emp', '3', 'U', '2015-06-10 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.png|'),
+	(1121, 'nvprograma', '1', 'I', '2015-06-10 00:00:00', '4|DOCTORADO', NULL),
+	(1122, 'nvprograma', '1', 'I', '2015-06-10 00:00:00', '5|ESPECIALIDAD', NULL),
+	(1123, 'nvprograma', '1', 'U', '2015-06-10 00:00:00', '3|DOCTORADO', '3|TECNICO'),
+	(1124, 'nvprograma', '1', 'U', '2015-06-10 00:00:00', '4|ESPECIALIDAD', '4|DOCTORADO'),
+	(1125, 'nvprograma', '1', 'U', '2015-06-10 00:00:00', '5|TECNICO', '5|ESPECIALIDAD'),
+	(1126, 'uaprendizaje', '1', 'I', '2015-06-10 00:00:00', '11271|OTRA M|5|5|5|5|5|5|35|2015-06-10|vamos a ver|2|20091', NULL),
+	(1127, 'p_ua', '1', 'I', '2015-06-10 00:00:00', '1|11271|1|1|1', NULL),
+	(1128, 'p_ua', '1', 'I', '2015-06-10 00:00:00', '3|11271|1|1|1', NULL),
+	(1129, 'uaprendizaje', '1', 'I', '2015-06-10 00:00:00', '11272|HASTA EL DIA|2|2|2|0|0|0|8|2015-06-10|vamos|2|20091', NULL),
+	(1130, 'p_ua', '1', 'I', '2015-06-10 00:00:00', '1|11272|1|1|1', NULL),
+	(1131, 'carga', '3', 'I', '2015-06-10 00:00:00', '2|3|2|1|0|2015-06-09|0', NULL),
+	(1132, 'documentos_emp', '3', 'I', '2015-06-10 00:00:00', '2|3|documentos/estudios/licenciatura1_3.css|', NULL),
+	(1133, 'carga', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|2|1|0|2015-06-09|0'),
+	(1134, 'documentos_emp', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.css|'),
+	(1135, 'carga', '3', 'I', '2015-06-10 00:00:00', '2|3|2|1|0|2015-06-09|0', NULL),
+	(1136, 'documentos_emp', '3', 'I', '2015-06-10 00:00:00', '2|3|documentos/estudios/licenciatura1_3.css|', NULL),
+	(1137, 'carga', '3', 'U', '2015-06-10 00:00:00', '2|3|2|1|2134123|2015-06-09|0', '2|3|2|1|0|2015-06-09|0'),
+	(1138, 'carga', '3', 'U', '2015-06-10 00:00:00', '2|3|2|1|12343|2015-06-09|0', '2|3|2|1|2134123|2015-06-09|0'),
+	(1139, 'carga', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|2|1|12343|2015-06-09|\0'),
+	(1140, 'documentos_emp', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.css|'),
+	(1141, 'carga', '3', 'I', '2015-06-10 00:00:00', '1|3|2|1|12345|2015-06-10|', NULL),
+	(1142, 'documentos_emp', '3', 'I', '2015-06-10 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+	(1143, 'documentos_emp', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+	(1144, 'carga', '3', 'D', '2015-06-10 00:00:00', NULL, '1|3|2|1|12345|2015-06-10|');
 /*!40000 ALTER TABLE `bitacora` ENABLE KEYS */;
 
 
@@ -1118,7 +1313,7 @@ CREATE TABLE IF NOT EXISTS `carga` (
   CONSTRAINT `fk_carga_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.carga: ~12 rows (approximately)
+-- Dumping data for table sigaf.carga: ~43 rows (approximately)
 DELETE FROM `carga`;
 /*!40000 ALTER TABLE `carga` DISABLE KEYS */;
 INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestre`, `users_id`) VALUES
@@ -1126,6 +1321,28 @@ INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestr
 	(111, 20147, 1, 11237, 1, 1),
 	(111, 20147, 1, 11241, 1, 1),
 	(111, 20147, 1, 11242, 1, 1),
+	(111, 20151, 1, 11236, 1, 1),
+	(111, 20151, 1, 11237, 1, 1),
+	(111, 20151, 1, 11240, 1, 1),
+	(111, 20151, 1, 11246, 1, 1),
+	(111, 20152, 1, 11236, 1, 1),
+	(111, 20152, 1, 11237, 1, 1),
+	(111, 20152, 1, 11240, 1, 1),
+	(111, 20152, 1, 11246, 1, 1),
+	(112, 20151, 1, 11236, 1, 1),
+	(112, 20151, 1, 11237, 1, 1),
+	(112, 20151, 1, 11240, 1, 1),
+	(112, 20151, 1, 11246, 1, 1),
+	(112, 20152, 1, 11236, 1, 1),
+	(112, 20152, 1, 11237, 1, 1),
+	(112, 20152, 1, 11240, 1, 1),
+	(112, 20152, 1, 11246, 1, 1),
+	(113, 20151, 1, 11236, 1, 1),
+	(113, 20151, 1, 11237, 1, 1),
+	(113, 20151, 1, 11246, 1, 1),
+	(113, 20152, 1, 11236, 1, 1),
+	(113, 20152, 1, 11237, 1, 1),
+	(113, 20152, 1, 11246, 1, 1),
 	(115, 20147, 1, 11236, 1, 1),
 	(115, 20147, 1, 11237, 1, 1),
 	(115, 20147, 1, 11240, 1, 1),
@@ -1134,7 +1351,16 @@ INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestr
 	(116, 20147, 1, 11236, 1, 1),
 	(116, 20147, 1, 11237, 1, 1),
 	(116, 20147, 1, 11241, 1, 1),
-	(116, 20147, 1, 11242, 1, 1);
+	(116, 20147, 1, 11242, 1, 1),
+	(121, 20151, 1, 11243, 2, 1),
+	(121, 20152, 1, 11243, 2, 1),
+	(122, 20151, 1, 11243, 2, 1),
+	(122, 20152, 1, 11243, 2, 1),
+	(126, 20152, 1, 11240, 2, 1),
+	(131, 20151, 1, 11248, 3, 1),
+	(131, 20152, 1, 11248, 3, 1),
+	(132, 20151, 1, 11248, 3, 1),
+	(132, 20152, 1, 11248, 3, 1);
 /*!40000 ALTER TABLE `carga` ENABLE KEYS */;
 
 
@@ -1931,6 +2157,8 @@ INSERT INTO `detalleseriacion` (`programaedu`, `uaprendizaje`, `reqseriacion`, `
 	(3, 11237, 1, 11236, 1),
 	(3, 11241, 1, 11237, 1),
 	(4, 11241, 1, 11237, 1),
+	(4, 11270, 1, 11236, 1),
+	(4, 11270, 1, 11237, 1),
 	(5, 11241, 1, 11237, 1),
 	(7, 11241, 1, 11237, 1);
 /*!40000 ALTER TABLE `detalleseriacion` ENABLE KEYS */;
@@ -2018,11 +2246,21 @@ CREATE TABLE IF NOT EXISTS `doctos` (
   PRIMARY KEY (`docto`),
   KEY `fk_doctos_users1_idx` (`users_id`),
   CONSTRAINT `fk_doctos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.doctos: ~0 rows (approximately)
+-- Dumping data for table sigaf.doctos: ~9 rows (approximately)
 DELETE FROM `doctos`;
 /*!40000 ALTER TABLE `doctos` DISABLE KEYS */;
+INSERT INTO `doctos` (`docto`, `descripcion`, `users_id`) VALUES
+	(1, 'foto', 1),
+	(2, 'licenciatura1', 1),
+	(3, 'licenciatura2', 1),
+	(4, 'maestria1', 1),
+	(5, 'maestria2', 1),
+	(6, 'doctorado1', 1),
+	(7, 'doctorado2', 1),
+	(8, 'especialidad1', 1),
+	(9, 'especialidad2', 1);
 /*!40000 ALTER TABLE `doctos` ENABLE KEYS */;
 
 
@@ -2043,9 +2281,12 @@ CREATE TABLE IF NOT EXISTS `documentos_emp` (
   CONSTRAINT `fk_documentos_emp_users2` FOREIGN KEY (`id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.documentos_emp: ~0 rows (approximately)
+-- Dumping data for table sigaf.documentos_emp: ~3 rows (approximately)
 DELETE FROM `documentos_emp`;
 /*!40000 ALTER TABLE `documentos_emp` DISABLE KEYS */;
+INSERT INTO `documentos_emp` (`docto`, `id`, `ruta`, `observaciones`, `users_id`) VALUES
+	(1, 1, 'documentos/fotos/foto_1.jpg', '', 1),
+	(1, 3, 'documentos/fotos/foto_3.PNG', '', 3);
 /*!40000 ALTER TABLE `documentos_emp` ENABLE KEYS */;
 
 
@@ -2184,7 +2425,7 @@ CREATE TABLE IF NOT EXISTS `grupos` (
   CONSTRAINT `fk_grupos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.grupos: ~66 rows (approximately)
+-- Dumping data for table sigaf.grupos: ~79 rows (approximately)
 DELETE FROM `grupos`;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
 INSERT INTO `grupos` (`grupo`, `periodo`, `plan`, `programaedu`, `turno`, `users_id`) VALUES
@@ -2194,12 +2435,18 @@ INSERT INTO `grupos` (`grupo`, `periodo`, `plan`, `programaedu`, `turno`, `users
 	(111, 20144, 20091, 1, 1, 1),
 	(111, 20145, 20091, 1, 1, 1),
 	(111, 20147, 20091, 1, 2, 1),
+	(111, 20151, 20091, 1, 1, 1),
+	(111, 20152, 20091, 1, 1, 1),
 	(112, 20141, 20091, 1, 2, 1),
 	(112, 20142, 20091, 1, 2, 1),
 	(112, 20143, 20091, 1, 2, 1),
 	(112, 20144, 20091, 1, 2, 1),
 	(112, 20145, 20091, 1, 2, 1),
+	(112, 20151, 20091, 1, 2, 1),
+	(112, 20152, 20091, 1, 2, 1),
 	(113, 20145, 20091, 1, 2, 1),
+	(113, 20151, 20091, 1, 3, 1),
+	(113, 20152, 20091, 1, 3, 1),
 	(115, 20147, 20091, 1, 2, 1),
 	(116, 20147, 20091, 1, 2, 1),
 	(121, 20141, 20091, 1, 3, 1),
@@ -2207,11 +2454,20 @@ INSERT INTO `grupos` (`grupo`, `periodo`, `plan`, `programaedu`, `turno`, `users
 	(121, 20143, 20091, 1, 3, 1),
 	(121, 20144, 20091, 1, 3, 1),
 	(121, 20145, 20091, 1, 3, 1),
+	(121, 20151, 20091, 1, 2, 1),
+	(121, 20152, 20091, 1, 2, 1),
+	(122, 20151, 20091, 1, 2, 1),
+	(122, 20152, 20091, 1, 2, 1),
+	(126, 20152, 20091, 1, 1, 1),
 	(131, 20141, 20091, 1, 2, 1),
 	(131, 20142, 20091, 1, 2, 1),
 	(131, 20143, 20091, 1, 2, 1),
 	(131, 20144, 20091, 1, 2, 1),
 	(131, 20145, 20091, 1, 2, 1),
+	(131, 20151, 20091, 1, 1, 1),
+	(131, 20152, 20091, 1, 1, 1),
+	(132, 20151, 20091, 1, 1, 1),
+	(132, 20152, 20091, 1, 1, 1),
 	(141, 20141, 20091, 1, 2, 1),
 	(141, 20142, 20091, 1, 2, 1),
 	(141, 20143, 20091, 1, 2, 1),
@@ -2342,15 +2598,17 @@ CREATE TABLE IF NOT EXISTS `nvprograma` (
   UNIQUE KEY `NV_codigo_UNIQUE` (`nivel`),
   KEY `fk_nvprograma_users1_idx` (`users_id`),
   CONSTRAINT `fk_nvprograma_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
--- Dumping data for table sigaf.nvprograma: ~3 rows (approximately)
+-- Dumping data for table sigaf.nvprograma: ~5 rows (approximately)
 DELETE FROM `nvprograma`;
 /*!40000 ALTER TABLE `nvprograma` DISABLE KEYS */;
 INSERT INTO `nvprograma` (`nivel`, `descripcion`, `users_id`) VALUES
 	(1, 'LICENCIATURA', 1),
 	(2, 'POSTGRADO', 1),
-	(3, 'TECNICO', 1);
+	(3, 'DOCTORADO', 1),
+	(4, 'ESPECIALIDAD', 1),
+	(5, 'TECNICO', 1);
 /*!40000 ALTER TABLE `nvprograma` ENABLE KEYS */;
 
 
@@ -2621,7 +2879,7 @@ CREATE TABLE IF NOT EXISTS `periodos` (
   CONSTRAINT `fk_periodos_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sigaf.periodos: ~5 rows (approximately)
+-- Dumping data for table sigaf.periodos: ~8 rows (approximately)
 DELETE FROM `periodos`;
 /*!40000 ALTER TABLE `periodos` DISABLE KEYS */;
 INSERT INTO `periodos` (`periodo`, `periodo_pedu`, `year`, `mes`, `descripcion`, `inicio`, `fin`, `status_periodo`, `users_id`) VALUES
@@ -2630,7 +2888,9 @@ INSERT INTO `periodos` (`periodo`, `periodo_pedu`, `year`, `mes`, `descripcion`,
 	(20143, 1, 2014, 3, 'Vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
 	(20144, 1, 2014, 4, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
 	(20145, 1, 2014, 5, 'vamos a ver', '2015-03-01', '2015-03-31', 1, 1),
-	(20147, 1, 2014, 7, 'adfasdf', '2015-05-07', '2015-05-31', 1, 1);
+	(20147, 1, 2014, 7, 'adfasdf', '2015-05-07', '2015-05-31', 1, 1),
+	(20151, 1, 2015, 1, 'bla bla', '2015-06-02', '2015-06-30', 1, 1),
+	(20152, 1, 2015, 2, 'vamos', '2015-06-02', '2015-06-30', 1, 1);
 /*!40000 ALTER TABLE `periodos` ENABLE KEYS */;
 
 
@@ -2820,7 +3080,7 @@ CREATE TABLE IF NOT EXISTS `p_ua` (
   CONSTRAINT `fk_p_ua_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
--- Dumping data for table sigaf.p_ua: ~20 rows (approximately)
+-- Dumping data for table sigaf.p_ua: ~26 rows (approximately)
 DELETE FROM `p_ua`;
 /*!40000 ALTER TABLE `p_ua` DISABLE KEYS */;
 INSERT INTO `p_ua` (`programaedu`, `uaprendizaje`, `etapa`, `caracter`, `semestre_sug`, `users_id`) VALUES
@@ -2833,13 +3093,19 @@ INSERT INTO `p_ua` (`programaedu`, `uaprendizaje`, `etapa`, `caracter`, `semestr
 	(1, 11244, 2, 1, 1, 1),
 	(1, 11245, 1, 1, 1, 1),
 	(1, 11246, 3, 1, 1, 1),
-	(1, 11247, 1, 1, 1, 1),
+	(1, 11247, 2, 1, 1, 1),
 	(1, 11248, 1, 1, 1, 1),
+	(1, 11271, 1, 1, 1, 1),
+	(1, 11272, 1, 1, 1, 1),
 	(2, 11241, 1, 1, 4, 1),
+	(2, 11270, 2, 1, 1, 1),
 	(3, 11236, 1, 1, 1, 1),
 	(3, 11237, 1, 1, 1, 1),
 	(3, 11241, 1, 1, 4, 1),
+	(3, 11270, 2, 1, 1, 1),
+	(3, 11271, 1, 1, 1, 1),
 	(4, 11241, 1, 1, 4, 1),
+	(4, 11270, 3, 1, 1, 1),
 	(5, 11241, 1, 1, 4, 1),
 	(6, 11238, 1, 1, 1, 1),
 	(6, 11239, 1, 1, 1, 1),
@@ -3067,11 +3333,11 @@ CREATE TABLE IF NOT EXISTS `uaprendizaje` (
   CONSTRAINT `fk_uaprendizaje_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='<double-click to overwrite multiple objects>';
 
--- Dumping data for table sigaf.uaprendizaje: ~13 rows (approximately)
+-- Dumping data for table sigaf.uaprendizaje: ~15 rows (approximately)
 DELETE FROM `uaprendizaje`;
 /*!40000 ALTER TABLE `uaprendizaje` DISABLE KEYS */;
 INSERT INTO `uaprendizaje` (`uaprendizaje`, `descripcionmat`, `HC`, `HL`, `HT`, `HPC`, `HCL`, `HE`, `creditos`, `fec_aut`, `observa`, `coordinaciona`, `plan`, `users_id`) VALUES
-	(11236, 'MATEMÁTICAS I', 5, 5, 0, 0, 0, 0, 15, '2015-01-29', 'vamos a ver', 1, 20091, 1),
+	(11236, 'MATEMÁTICAS I', 5, 5, 5, 0, 0, 0, 15, '2015-01-29', NULL, 1, 20091, 1),
 	(11237, 'MATEMÁTICAS II', 15, 2, 0, 0, 0, 0, 32, '2015-01-29', 'vamos a ver', 1, 20091, 1),
 	(11238, 'MATEMÁTICAS BASICAS', 3, 0, 0, 0, 0, 0, 6, '2015-01-29', 'vamos a ver', 1, 20091, 1),
 	(11239, 'ESPAÑOL', 3, 0, 0, 0, 0, 0, 6, '2015-01-29', 'vamos a ver', 2, 20091, 1),
@@ -3081,9 +3347,12 @@ INSERT INTO `uaprendizaje` (`uaprendizaje`, `descripcionmat`, `HC`, `HL`, `HT`, 
 	(11243, 'CIVISMO 3', 5, 2, 2, 0, 0, 0, 14, '2015-03-15', NULL, 1, 20091, 1),
 	(11244, 'MATERIA 4', 5, 6, 0, 0, 0, 0, 16, '2015-03-15', 'vamos a ver', 2, 20091, 1),
 	(11245, 'MATERIA 5', 6, 2, 0, 0, 0, 1, 15, '2015-03-15', 'esto que es', 1, 20091, 1),
-	(11246, 'MATERIA 6', 3, 2, 0, 0, 0, 0, 8, '2015-03-15', 'vamos a ver', 1, 20091, 1),
+	(11246, 'MATERIA 6', 3, 2, 5, 0, 0, 0, 13, '2015-03-15', NULL, 1, 20091, 1),
 	(11247, 'MATERIA 7', 4, 2, 0, 0, 0, 0, 10, '2015-03-15', 'vamos a ver', 1, 20091, 1),
-	(11248, 'MATERIA 8', 3, 0, 0, 0, 0, 0, 6, '2015-03-15', 'que es esto', 2, 20091, 1);
+	(11248, 'MATERIA 8', 3, 0, 0, 0, 0, 0, 6, '2015-03-15', 'que es esto', 2, 20091, 1),
+	(11270, 'MATERIA NUEVA', 5, 5, 0, 0, 0, 5, 20, '2015-06-03', NULL, 1, 20091, 1),
+	(11271, 'OTRA M', 5, 5, 5, 5, 5, 5, 35, '2015-06-10', 'vamos a ver', 2, 20091, 1),
+	(11272, 'HASTA EL DIA', 2, 2, 2, 0, 0, 0, 8, '2015-06-10', 'vamos', 2, 20091, 1);
 /*!40000 ALTER TABLE `uaprendizaje` ENABLE KEYS */;
 
 
@@ -3159,15 +3428,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   CONSTRAINT `fk_users_ciudad1` FOREIGN KEY (`ciudad`) REFERENCES `ciudad` (`ciudad`),
   CONSTRAINT `fk_users_levels1` FOREIGN KEY (`level`) REFERENCES `levels` (`level`),
   CONSTRAINT `fk_users_uacademica1` FOREIGN KEY (`uacademica`) REFERENCES `uacademica` (`uacademica`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table sigaf.users: ~4 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `last_name`, `last_materno`, `email`, `address`, `phone`, `campus`, `uacademica`, `username`, `password`, `level`, `created_at`, `updated_at`, `remember_token`, `sexo`, `rfc`, `fec_nac`, `fec_ing`, `email_alternat`, `ciudad`, `calle`, `no_ext`, `no_int`, `colonia`, `cp`, `telofna`, `telcel`, `categoria`, `unidad`, `ua`, `programaedu`) VALUES
-	(1, 'Cynthia', 'Duarte', 'Frausto', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', 6450706, 1, 1, 'Tikita', '$2y$10$xnsOE1TJVotNVKW9vSqTme76Dk0OO0GAe9zrl2rvFZFwI2T0iF3GG', 1, '2014-04-19 19:30:58', '2015-05-30 23:13:50', 'DsfE5j25yXeQMozdIUzY1dTpDHZhIDQM7VUudkVyDAK9CEoCdzDgUYSIgoTl', 'F', 'ICU870212HBC', '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', 16, 'CALLE SERRADILLA', 500, 'A', 'MONTGOMERY', 22310, '664-9740000', '664-9740000', 101, 'ENSENADA', 'FCA', 0),
+	(1, 'Cynthia', 'Duarte', 'Frausto', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', 6450706, 1, 1, 'Tikita', '$2y$10$xnsOE1TJVotNVKW9vSqTme76Dk0OO0GAe9zrl2rvFZFwI2T0iF3GG', 1, '2014-04-19 19:30:58', '2015-06-10 23:41:44', 'pHL7iUBzx9WniN8Z5G43meT4PBfXjn2Nzm1FCjZtKK4QIw8DXNVDvpMXL2CR', 'F', 'ICU870212HBC', '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', 16, 'CALLE SERRADILLA', 500, 'A  ', 'MONTGOMERY', 22310, '664-9740000', '664-9740000', 101, 'ENSENADA', 'FCA', 0),
 	(2, 'Ivan', 'Duarte', 'Jeyson', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', 6233987, 1, 1, 'LoganX', '$2y$10$Di0Yl1lU/GdnLfdaOAnVNOCf.DTDASCERnguBuaanFU796CqnQP5O', 2, '2014-04-19 19:30:58', '2015-05-26 02:12:30', 'tFVqHQD0rt2yIGlR7GeIM0D0HmwgMdGDMNbyq0xtfXG2jOoobEqkw45H5ARM', 'M', NULL, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', 16, 'DE LOS LAURELES', 600, '0', 'EL CIRCULO', 22450, '664-1236789', '664\'1236789', 101, 'VALLE DE LA TRINIDAD', 'FD', 1),
-	(3, 'Maestro', 'Perez', 'Morales', 'maestro@maestro.com', '', 6450706, 1, 1, 'Maestro', '$2y$10$qWeWE7XG6ZkDEeu5t93/g.ym0fGHxazv9fyXfIEQhNiZ9E4LWYHQG', 5, '2015-05-26 02:11:59', '2015-06-01 19:36:52', 'i5B09e2jLlSV2zjERxJx3YImUZwxcJVk95NIydlQrv7arWM4JpO48dMnZNMp', 'F', 'ICU870212HBC', NULL, '2015-05-25', 'maestro@alternativo.mx', 16, 'LIMON', 10, ' 5 ', 'REAL DE SAN FRANCISCO', 3345, '2654786', '6642650628', 104, '', '', 0);
+	(3, 'Maestro', 'Perez', 'Morales', 'maestro@maestro.com', '', 6450706, 1, 1, 'Maestro', '$2y$10$qWeWE7XG6ZkDEeu5t93/g.ym0fGHxazv9fyXfIEQhNiZ9E4LWYHQG', 5, '2015-05-26 02:11:59', '2015-06-10 22:47:57', '7S7mvSgInjmJ5Tiq8Ltb1NdxTkjJ9JuFdT3k5roDjqRHjWExjGw9FNmM1Zql', 'F', 'ICU870212HBC', NULL, '2015-05-25', 'maestro@alternativo.mx', 16, 'LIMON', 10, ' 5 ', 'REAL DE SAN FRANCISCO', 3345, '2654786', '6642650628', 104, '', '', 0),
+	(4, 'Nora', 'Osuna', 'Millan', 'nora.osuna@aubc.edu.mx', '', 9797500, 1, 1, 'non', '$2y$10$lG5cPdvAGWKZLm2Nw2znmudyH.osd833ESSceJ4JU.TKbKXFFGu/.', 5, '2015-06-03 03:06:11', '2015-06-03 03:08:28', 'k2tHimIOgwIbJranzotfuc2eTfoe9iXhXSRRz9petAinpwwnSNK12iaSdbpe', 'F', 'OUMN720826', NULL, '2015-06-02', 'nora@otro.com.mx', 16, 'Alfonso vidal y planas', 123, ' 12', 'miel', 22236, '6459798', '24234232', 103, '', '', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

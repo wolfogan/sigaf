@@ -485,7 +485,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input type="file" name="dd_fileLic1" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input type="file" name="dd_fileLic1" class="input-file" id="dd_fileLic1" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
@@ -528,7 +528,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input type="file" name="dd_fileLic2" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input type="file" name="dd_fileLic2" class="input-file" id="file" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
@@ -572,7 +572,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input type="file" name="dd_fileEsp1" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input type="file" name="dd_fileEsp1" class="input-file" id="file" required/>
 									</div>
 								</div>
 								
@@ -616,7 +616,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input type="file" name="dd_fileEsp2" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input type="file" name="dd_fileEsp2" class="input-file" id="file" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
@@ -662,7 +662,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input name="dd_fileMas1" type="file" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input name="dd_fileMas1" type="file" class="input-file" id="file" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
@@ -707,7 +707,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input name="dd_fileMas2" type="file" class="input-file" name="fileToUpload" id="fileToUpload"/>
+										<input name="dd_fileMas2" type="file" class="input-file" id="file"/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>							 -->
@@ -752,7 +752,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input name="dd_fileDoc1" type="file" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input name="dd_fileDoc1" type="file" class="input-file" id="file" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div> -->
@@ -795,7 +795,7 @@
 
 								<div class="dd_btnAdd">
 									<div class="custom-input-file">
-										<input name="dd_fileDoc2" type="file" class="input-file" name="fileToUpload" id="fileToUpload" required/>
+										<input name="dd_fileDoc2" type="file" class="input-file" id="file" required/>
 									</div>
 								</div>
 								<!-- <div class="dd_btnAdd"><input id="dd_btnCancelar_archivo" class="dd_clsCancelar" value="" type="button"></div>			 -->
@@ -1239,8 +1239,8 @@
 			contentType: false
 		})
 		.done(function(data){
-			debugger;
-			console.log(data);
+			//debugger;
+			alert(data);
 		})
 		.fail(function(error,textError,errorTrow){
 			alert("Error: " + error.responseText);

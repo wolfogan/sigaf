@@ -844,7 +844,8 @@
 				.always(function(){
 					// OCULTAR AJAXLOADER
 					$("#ajaxLoad").css("display","none");
-
+					//activarModal();
+						
 				});
 			}
 			else// ACTUALIZACIÓN DE LA UNIDAD DE APRENDIZAJE
