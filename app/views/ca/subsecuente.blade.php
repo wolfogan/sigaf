@@ -308,7 +308,7 @@
 
 			<!-------------------------------- REGISTROS SEMESTRE 1 -------------------------------->
 
-			<table class="dd_tabla" id="semestre1" style="width:700px; margin-top:150px;">
+			<table class="dd_tabla" id="semestre1" style="width:700px; margin-top:65px;">
 				<thead class="dd_encabezado_tablaConsulta">
 					<tr>
 						<th>SEMESTRE: 1</th>
