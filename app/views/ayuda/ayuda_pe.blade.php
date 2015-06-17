@@ -357,7 +357,7 @@ Otra opción para ubicar los catálogos es por medio de los botones <img src="..
             <td>2</td>
             <td><img src="../imagenes/registro/p5.png"></td>
             <td><strong>Clave:</strong><br>
-        Insertar la Clave de la Unidad de Aprendizaje, al pasar el cursor al siguiente control se validarán los datos introducidos,  en caso de que la clave ya exista se mostrará el siguiente mensaje:<img src="../imagenes/registro/msgClave.png"><br>Presione el botón ok e inserte una clave valida.
+        Insertar la Clave de la Unidad de Aprendizaje, al pasar el cursor al siguiente control se validarán los datos introducidos,  en caso de que la clave ya exista se mostrará el siguiente mensaje:<br><center><img src="../imagenes/registro/msgClave.png"></center><br>Presione el botón ok e inserte una clave valida.
 Si no tiene la clave, active la casilla de verificación Generar clave la cual le generará una clave provisional que después podrá ser actualizada por la real. Solo se pueden introducir números.
             </td>
           </tr>
@@ -469,14 +469,14 @@ Si no tiene la clave, active la casilla de verificación Generar clave la cual l
             <center><img  src="../imagenes/consulta/criteriosbusqueda.png"></center>
               <ul class="lista-num">
                   <li>1. Para realizar una consulta, introduzca los datos en los controles por los cuales requiere extraer información, los controles de No. Plan y carrera es obligatorio introducirlos.</li>
-                  <li>2. Haga click en el botón de buscar.</li>
+                  <li>2. Haga click en el botón de buscar, en la siguiente tabla se muestra la codificación de colores del mapa curricular.</li><br>
+                  <center><img src="../imagenes/consulta/codigoColores.png"></center>
                   <ul class="lista-vineta">
-                    <li>• Si desea consultar el mapa curricular completo, la casilla de verificación tronco común tiene la funcionalidad de agregar al plan de estudios consultado las materias pertenecientes a tronco común, solo active esta opción y presione el botón de buscar.                                                                 </li>
+                    <li>• Si desea consultar el mapa curricular completo, la casilla de verificación tronco común tiene la funcionalidad de agregar al plan de estudios consultado las materias pertenecientes a tronco común,  aparecerá la casilla de verificación activa por default, presione el botón de buscar.                                                                 </li>
                     <li>• Para limpiar los controles presione el botón de limpiar.</li></ul></ul><br><br>
-      <p>La siguiente figura representa los resultados de la búsqueda la cual se muestra clasificada de acuerdo a las etapas a la que pertenecen las unidades de aprendizaje, en cada etapa dichas UA se ordenan por clave en forma ascendente de izquierda a derecha.<br>
-En la parte inferior de la figura se muestran los creditos totales de las unidades de aprendizaje obligatorias, optativas y el total de ambas.</p>
-            <center><img  src="../imagenes/consulta/resultadobusq.png"></center> 
-            <p>El borde punteado y de color que se presenta en los cuadros hace referencia a la seriación de las UA, las UA que estan seriadas tienen bordes del mismo color esto hace que puedan identificarse con mayor facilidad.</p>
+                    <p>La siguiente figura representa los resultados de la búsqueda la cual se muestra clasificada de acuerdo a las etapas a la que pertenecen las unidades de aprendizaje, en cada etapa dichas UA se ordenan por clave en forma ascendente de izquierda a derecha.<br>
+                    En la parte inferior de la pantalla se muestran los créditos totales de las unidades de aprendizaje obligatorias, optativas y el total de ambas.</p>
+                    <center><img  src="../imagenes/consulta/resultadobusq.png"></center> 
             <a  href="#arribaconsulta"><img src="../imagenes/arriba.png">Ir arriba</a>
     </div>
         
@@ -492,36 +492,41 @@ En la parte inferior de la figura se muestran los creditos totales de las unidad
         <li>3. Al arrastrar las UA para cambiarlas de etapa en la ventana de consulta.</li>
       </ul>
     
-      <p>Cualquiera de los controles puede ser modificados.<br><br>
-    <strong>Desde la pantalla de registro.</strong><br>
-<p><strong>Opción 1:</strong>
+    <p>Cualquiera de los controles puede ser modificados.<br><br>
+    <strong>1. Desde la pantalla de registro.</strong><br>
+    <p><strong>Opción 1:</strong>
     Seleccione en la tabla inferior la unidad de aprendizaje que se desea actualizar, de click sobre el registro deseado y se cargaran los datos correspondientes en los campos mostrados en la parte superior de la pantalla como se muestra en la siguiente figura.</p>
   <center><img src="../imagenes/actualizar/actualizarPE.png"></center><br><br>
 
-<p> Después de actualizar el registro deseado pulse en el botón de actualizar o en su defecto si desea abandonar la operación pulse el botón de cancelar.</p>
- <p> <strong>Opción 2:</strong> En la tabla inferior de la ventana identifique el registro que desea actualizar y pulse el botón de modificar asociado al registro seleccionado (dicho botón se identifica por un lapicito), se abrirá la siguiente ventana.</p>
-<center><img src="../imagenes/actualizar/modUA.png"></center>
-     
-     <p>• Modifique la información correspondiente y pulse el botón de actualizar.</p>
+  <p> Después de actualizar el registro deseado pulse en el botón de actualizar o en su defecto si desea abandonar la operación pulse el botón de cancelar.</p><br>
+  <p> <strong>Opción 2:</strong> En la tabla inferior de la ventana identifique el registro que desea actualizar y pulse el botón de modificar asociado al registro seleccionado (dicho botón se identifica por un lapicito), se abrirá la siguiente ventana.</p>
+  <br><center><img src="../imagenes/actualizar/modUA.png"></center>
+  <p>• Modifique la información correspondiente y pulse el botón de actualizar.</p><br>
 
       <p><strong>Opción 3:</strong> <br>
- 
-     Cuando se registra una unidad de aprendizaje se introducen los datos generales de la materia, se pueden dar situaciones en las que se guarde el registro pero la materia no se asocie a una carrera, etapa, tipo y semestre o en caso de tener seriaciones, en tal situación siga los siguientes pasos:</p>
+ Cuando se registra una unidad de aprendizaje se introducen los datos generales de la materia, se pueden dar situaciones en las que se guarde el registro pero la materia no se asocie a una carrera, etapa o tipo, este registro  se identifica rápidamente porque se resalta con un color rojo como se muestra en la siguiente figura:
+      </p>
       <ul class="lista-num">
-        <li>• En la tabla inferior de la ventana seleccione el registro que desea modificar, presione el botón actualizar seriación el cual lo enviará a la siguiente ventana:
-        <center><img src="../imagenes/actualizar/actUA.png"></center></li>
+        <br><center><img src="../imagenes/actualizar/actUA.png"></center></li>
+        <p>En tal situación realice la siguiente instrucción:</p>
+        <li>• En la tabla inferior de la ventana seleccione el registro que desea modificar, se mostrará un mensaje de texto, presione el botón aceptar el cual lo enviará a la siguiente ventana:
+          <center><img src="../imagenes/actualizar/moduas.png"></center>
+          <li>Realice los cambios correspondientes y presione el botón agregar.</li><br>
+        </li>
         <li><strong>Opción 4:</strong>
-        Si hay una unidad de aprendizaje registrada y desea añadirle una seriación o a un programa educativo, cambiarla de etapa, cambiar el tipo o semestre, selecciónela con un click y pulse el botón de actualizar seriación que se encuentre en la parte superior de la ventana, se abrirá la ventana mostrada en la figura N.
+        Si hay una unidad de aprendizaje registrada y desea añadirle una seriación o a un programa educativo, cambiarla de etapa, cambiar el tipo o semestre, selecciónela con un click y pulse el botón de actualizar seriación que se encuentra en la parte superior de la ventana, realice los cambios correspondientes.
         </li>
 
       </ul>
-      
-
-      <p>2.  Desde la pantalla de consulta y modificación. </p>
-      <p>Después de actualizar pulse el botón de guardar.<br><br>
-    <strong>Al arrastrar las UA para cambiarlas de etapa</strong>. Esta es otra opción para realizar una modificación sobre las UA sin embargo esta solo es aplicable para el cambio de etapa, para realizar el procedimiento solo arrastre y suelte el cuadro en la etapa deseada automáticamente se realiza el cambio.</p><br><br>
+      <p><strong>2.  Desde la pantalla de consulta y modificación. </strong></p>
+      <p>Es necesario hacer click sobre el cuadro que desea actualizar, se abrirá una ventana con los datos cargados de la Unidad de Aprendizaje que usted haya seleccionado.</p>
+      <center><img src="../imagenes/consulta/modifUA.png"></center>
+      <p>Se abrirá la siguiente ventana donde podra actualizar los datos:</p>
+      <br><center><img src="../imagenes/actualizar/actualizarua.png"></center><br>
+      <p>Después de actualizar pulse el botón de guardar.</p><br><br>
+      <p><strong>3. Al arrastrar las UA para cambiarlas de etapa</strong>. Esta es otra opción para realizar una modificación sobre las UA sin embargo esta solo es aplicable para el cambio de etapa, para realizar el procedimiento solo arrastre y suelte el cuadro en la etapa deseada automáticamente se realiza el cambio.</p><br><br>
       <center><img src="../imagenes/consulta/consultaMat.png"></center>
-    <a  href="#arribamodificacion"><img src="../imagenes/arriba.png">Ir arriba</a>
+      <a  href="#arribamodificacion"><img src="../imagenes/arriba.png">Ir arriba</a>
       </div>
         
         
