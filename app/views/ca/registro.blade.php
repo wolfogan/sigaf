@@ -1418,6 +1418,10 @@
 					{
 						obtenerCarga(periodo,NUM_PROGRAMA);
 					}
+					else
+					{
+						obtenerCarga(periodo,$("#carreraAdmin").val())
+					}
 			});
 
 			// CUANDO CAMBIEN LA CARRERA EL ADMINISTRADOR
