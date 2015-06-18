@@ -47,24 +47,25 @@
           				<h2>Catálogo de Periodo</h2>
           				 <center><img src="../imagenes/catalogos/agregarPeriodo.png"></center>
           				 <ul class="lista-num">
-          					<li> 1.	Nombre. Ingrese el nombre del periodo en curso, el primer recuadro hace alusión al año correspondiente y el segundo a un identificador del periodo.</li>
-							<li>2.	Tipo programa. Seleccione el tipo de programa.</li>
-							<li>3.	Fecha inicio. Fecha en la que da inicio el periodo.</li>
-							<li>4.	Fecha fin. Fecha en la que finaliza el periodo.</li>
-							<li>5.	Descripción. Ingrese una breve descripción del periodo.</li>
+          					<li><strong>1.	Nombre. </strong>Ingrese el nombre del periodo en curso, el primer recuadro hace alusión al año correspondiente y el segundo a un identificador del periodo.</li>
+							<li><strong>2.	Tipo programa.</strong> Seleccione el tipo de programa.</li>
+							<li><strong>3.	Fecha inicio.</strong> Fecha en la que da inicio el periodo.</li>
+							<li><strong>4.	Fecha fin. </strong>Fecha en la que finaliza el periodo.</li>
+							<li><strong>5.	Descripción.</strong> Ingrese una breve descripción del periodo.</li>
 							<li>6.	Pulse el botón de guardar.</li>
 							<li>7.	Para salir de la ventana, pulse el botón de salir.</li>
 						</ul>
  						<h2>Catálogo de grupos</h2> 
 						<center><img src="../imagenes/catalogos/agregarGrupos.png"></center>
 						<ul class="lista-num">
-							<li>1.	Nombre. El primer digito representa la carrera, el segundo digito el semestre y el último un identificador del grupo, este último digito es necesario que el usuario lo ingrese, los anteriores el sistema se los muestra.</li>
-							<li>2.	Turno. Selección el turno en el cual se dará de alta el grupo.</li>
-							<li>3.	Plan. Muestra el plan sobre el cual se está dando de alta el grupo.</li>
-							<li>4.	Periodo. Muestra el periodo en cual se están dando de alta el grupo.</li>
-							<li>5.	Programa educativo. Muestra la carrera a la cual se registra el grupo.</li>
-							<li>6.	Pulse el botón de guardar.</li>
-							<li>7.	Pulse el botón salir.</li>
+						<p>NOTA:  Para registrar un grupo es necesario que seleccione previamente la carrera, periodo y semestre.</p>
+							<li><strong>1.	Nombre.</strong> El primer digito representa la carrera, el segundo digito el semestre y el último un identificador del grupo, este último digito es necesario que el usuario lo ingrese, los anteriores el sistema se los muestra.</li>
+							<li><strong>2.	Turno.</strong> Selección el turno en el cual se dará de alta el grupo.</li>
+							<li><strong>3.	Plan.</strong> Muestra el plan sobre el cual se está dando de alta el grupo.</li>
+							<li><strong>4.	Periodo. </strong>Muestra el periodo en cual se están dando de alta el grupo.</li>
+							<li><strong>5.	Programa educativo.</strong> Muestra la carrera a la cual se registra el grupo.</li>
+							<li><strong>6.	Pulse el botón de guardar.</li>
+							<li><strong>7.	Pulse el botón salir.</li>
 						</ul>	  
 						<a href="#arriba"><img src="../imagenes/arriba.png">Ir arriba</a>
      				</div>
@@ -80,8 +81,8 @@
                         <center><img src="../imagenes/registro/CA/regIniCA.png"></center>
                         <ul class="lista-num">
 							<li>1. Seleccionar la carrera.</li>
-							<li>2. Seleccionar el periodo actual para la carga académica (en caso de que no esté dado de alta deberá abrir el catalogo y llenar los datos correspondientes).
-							En la pantalla se le presentaran dos planes, el anterior y el actual.
+							<li>2. Seleccionar el periodo actual para la carga académica (en caso de que no esté dado de alta deberá abrir el catálogo y llenar los datos correspondientes).
+							<br>En la pantalla se le presentaran dos planes, el anterior y el actual, trabaje sobre el plan necesario.
 							<li>3. Filtrar las materias, ya sea por obligatoria y optativa.</li>
 							<li>4. Seleccione las materias que desea dar de alta en la carga activando la casilla de verificación que está al lado izquierdo del nombre de la materia.</li>
 							<li>5. Seleccionar el semestre.</li>
