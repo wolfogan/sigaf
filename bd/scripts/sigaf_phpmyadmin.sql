@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2015 a las 04:16:47
+-- Tiempo de generación: 18-06-2015 a las 03:36:40
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -275,6 +275,17 @@ CREATE TABLE IF NOT EXISTS `act_profesional_emp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Volcado de datos para la tabla `act_profesional_emp`
+--
+
+INSERT INTO `act_profesional_emp` (`carrera`, `id`, `universidad`, `nivel`, `cedula`, `fec_tit`, `obtuvo_grado`, `users_id`) VALUES
+(1, 3, 2, 3, 'rtwert', '2015-06-03', '1', 3),
+(2, 3, 2, 3, 'wetwert', '2015-06-16', '1', 3),
+(4, 3, 1, 4, 'wetw', '2015-06-11', '1', 3),
+(5, 3, 2, 1, 'wtwert', '2015-06-16', '1', 3),
+(6, 3, 2, 4, 'wertw', '2015-06-09', '1', 3);
+
+--
 -- Disparadores `act_profesional_emp`
 --
 DROP TRIGGER IF EXISTS `bit_D_act_profesional_emp`;
@@ -390,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `bitacora` (
   `registro_old` varchar(200) DEFAULT NULL COMMENT 'Registro Modificado/Borrado',
   PRIMARY KEY (`id`),
   UNIQUE KEY `BI_id_UNIQUE` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1223 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1397 ;
 
 --
 -- Volcado de datos para la tabla `bitacora`
@@ -1597,7 +1608,181 @@ INSERT INTO `bitacora` (`id`, `tabla`, `usuario`, `operacion`, `fecha`, `registr
 (1219, 'carga', '3', 'I', '2015-06-10 00:00:00', '1|3|1|1|sdfgd345|2015-06-10|1', NULL),
 (1220, 'documentos_emp', '3', 'I', '2015-06-10 00:00:00', '2|3|documentos/estudios/licenciatura1_3.css|', NULL),
 (1221, 'documentos_emp', '3', 'D', '2015-06-10 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.css|'),
-(1222, 'carga', '3', 'D', '2015-06-10 00:00:00', NULL, '1|3|1|1|sdfgd345|2015-06-10|1');
+(1222, 'carga', '3', 'D', '2015-06-10 00:00:00', NULL, '1|3|1|1|sdfgd345|2015-06-10|1'),
+(1223, 'documentos_emp', '3', 'U', '2015-06-15 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+(1224, 'documentos_emp', '3', 'U', '2015-06-15 00:00:00', '1|3||documentos/fotos/foto_3.PNG', '1|3|documentos/fotos/foto_3.PNG|'),
+(1225, 'carga', '3', 'I', '2015-06-15 00:00:00', '1|3|1|1|234341|2015-06-16|1', NULL);
+INSERT INTO `bitacora` (`id`, `tabla`, `usuario`, `operacion`, `fecha`, `registro`, `registro_old`) VALUES
+(1226, 'documentos_emp', '3', 'I', '2015-06-15 00:00:00', '2|3|documentos/estudios/licenciatura1_3.pdf|', NULL),
+(1227, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|234341|2015-06-16|1'),
+(1228, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|documentos/fotos/foto_3.PNG|'),
+(1229, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.pdf|'),
+(1230, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '1|3|documentos/fotos/foto_3.PNG|', NULL),
+(1231, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|0', NULL),
+(1232, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1233, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|0'),
+(1234, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1235, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1236, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1237, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1238, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1239, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1240, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1241, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|4|56346|2015-06-17|1', NULL),
+(1242, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1243, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1244, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|4|56346|2015-06-17|1'),
+(1245, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1246, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1247, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1248, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1249, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|4|56346|2015-06-17|0', NULL),
+(1250, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1251, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1252, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|4|56346|2015-06-17|0'),
+(1253, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1254, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1255, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1256, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1257, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1258, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1259, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1260, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1261, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1262, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1263, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1264, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1266, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1267, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1268, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1269, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1270, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|1|452435|2015-06-09|1', NULL),
+(1271, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1272, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|56346|2015-06-17|0', NULL),
+(1273, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1274, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1275, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|1|452435|2015-06-09|1'),
+(1276, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|56346|2015-06-17|0'),
+(1277, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1278, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1279, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1280, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|23454|2015-06-17|1', NULL),
+(1281, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1282, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|1|452435|2015-06-09|1', NULL),
+(1283, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1284, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|23454|2015-06-17|1'),
+(1285, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|1|452435|2015-06-09|1'),
+(1286, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1287, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1288, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|1|746|2015-06-09|1', NULL),
+(1289, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1290, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|1|746|2015-06-09|1'),
+(1291, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.png|'),
+(1292, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|1|746|2015-06-09|1', NULL),
+(1293, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1294, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|1|746|2015-06-09|1'),
+(1295, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.png|'),
+(1296, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|34234|2015-06-17|1', NULL),
+(1297, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1298, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|34234|2015-06-17|1'),
+(1299, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.png|'),
+(1300, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|34234|2015-06-17|1', NULL),
+(1301, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1302, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|4|2341234|2015-06-18|1', NULL),
+(1303, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.PNG|', NULL),
+(1304, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|34234|2015-06-17|1'),
+(1305, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|4|2341234|2015-06-18|1'),
+(1306, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.png|'),
+(1307, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.PNG|'),
+(1308, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|34234|2015-06-17|1', NULL),
+(1309, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1310, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|1|3452345|2015-06-08|1', NULL),
+(1311, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.PNG|', NULL),
+(1312, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|2341234|2015-06-18|1', NULL),
+(1313, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.PNG|', NULL),
+(1314, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|34234|2015-06-17|1'),
+(1315, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|2|1|3452345|2015-06-08|1'),
+(1316, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|2341234|2015-06-18|1'),
+(1317, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.png|'),
+(1318, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.PNG|'),
+(1319, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.PNG|'),
+(1320, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|3452345|2015-06-09|1', NULL),
+(1321, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1322, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|1|1|45345|2015-06-17|1', NULL),
+(1323, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1324, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|2342345|2015-06-09|1', NULL),
+(1325, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1326, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|3452345|2015-06-09|1'),
+(1327, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|1|1|45345|2015-06-17|1'),
+(1328, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|2342345|2015-06-09|1'),
+(1329, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1330, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1331, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1332, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|3452345|2015-06-09|1', NULL),
+(1333, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1334, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|1|1|45345|2015-06-17|1', NULL),
+(1335, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1336, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|2342345|2015-06-09|1', NULL),
+(1337, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1338, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|3452345|2015-06-09|1'),
+(1339, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|1|1|45345|2015-06-17|1'),
+(1340, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|2342345|2015-06-09|1'),
+(1341, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1342, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1343, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1344, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|3452345|2015-06-09|1', NULL),
+(1345, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1346, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|1|1|45345|2015-06-17|1', NULL),
+(1347, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1348, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|2342345|2015-06-09|1', NULL),
+(1349, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1350, 'carga', '3', 'I', '2015-06-16 00:00:00', '4|3|1|4|3452345|2015-06-17|1', NULL),
+(1351, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '9|3|documentos/estudios/especialidad2_3.png|', NULL),
+(1352, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|3452345|2015-06-09|1'),
+(1353, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|1|1|45345|2015-06-17|1'),
+(1354, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|2342345|2015-06-09|1'),
+(1355, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '4|3|1|4|3452345|2015-06-17|1'),
+(1356, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1357, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1358, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1359, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '9|3|documentos/estudios/especialidad2_3.png|'),
+(1360, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|1|1|3452345|2015-06-09|1', NULL),
+(1361, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.PNG|', NULL),
+(1362, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|1|1|45345|2015-06-17|1', NULL),
+(1363, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '3|3|documentos/estudios/licenciatura2_3.png|', NULL),
+(1364, 'carga', '3', 'I', '2015-06-16 00:00:00', '3|3|2|4|2342345|2015-06-09|1', NULL),
+(1365, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1366, 'carga', '3', 'I', '2015-06-16 00:00:00', '4|3|1|4|3452345|2015-06-17|1', NULL),
+(1367, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '9|3|documentos/estudios/especialidad2_3.png|', NULL),
+(1368, 'carga', '3', 'I', '2015-06-16 00:00:00', '5|3|2|2|6356|2015-06-09|1', NULL),
+(1369, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '4|3|documentos/estudios/maestria1_3.png|', NULL),
+(1370, 'carga', '3', 'I', '2015-06-16 00:00:00', '6|3|1|2|32453452|2015-06-26|1', NULL),
+(1371, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '5|3|documentos/estudios/maestria2_3.png|', NULL),
+(1372, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '1|3|1|1|3452345|2015-06-09|1'),
+(1373, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|1|1|45345|2015-06-17|1'),
+(1374, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|2|4|2342345|2015-06-09|1'),
+(1375, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '4|3|1|4|3452345|2015-06-17|1'),
+(1376, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '5|3|2|2|6356|2015-06-09|1'),
+(1377, 'carga', '3', 'D', '2015-06-16 00:00:00', NULL, '6|3|1|2|32453452|2015-06-26|1'),
+(1378, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '2|3|documentos/estudios/licenciatura1_3.PNG|'),
+(1379, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '3|3|documentos/estudios/licenciatura2_3.png|'),
+(1380, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '4|3|documentos/estudios/maestria1_3.png|'),
+(1381, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '5|3|documentos/estudios/maestria2_3.png|'),
+(1382, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '8|3|documentos/estudios/especialidad1_3.png|'),
+(1383, 'documentos_emp', '3', 'D', '2015-06-16 00:00:00', NULL, '9|3|documentos/estudios/especialidad2_3.png|'),
+(1384, 'carga', '3', 'I', '2015-06-16 00:00:00', '5|3|2|1|wtwert|2015-06-16|1', NULL),
+(1385, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '2|3|documentos/estudios/licenciatura1_3.png|', NULL),
+(1386, 'carga', '3', 'I', '2015-06-16 00:00:00', '6|3|2|4|wertw|2015-06-09|1', NULL),
+(1387, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '8|3|documentos/estudios/especialidad1_3.png|', NULL),
+(1388, 'carga', '3', 'I', '2015-06-16 00:00:00', '4|3|1|4|wetw|2015-06-11|1', NULL),
+(1389, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '9|3|documentos/estudios/especialidad2_3.png|', NULL),
+(1390, 'carga', '3', 'I', '2015-06-16 00:00:00', '1|3|2|3|rtwert|2015-06-03|1', NULL),
+(1391, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '6|3|documentos/estudios/doctorado1_3.png|', NULL),
+(1392, 'carga', '3', 'I', '2015-06-16 00:00:00', '2|3|2|3|wetwert|2015-06-16|1', NULL),
+(1393, 'documentos_emp', '3', 'I', '2015-06-16 00:00:00', '7|3|documentos/estudios/doctorado2_3.png|', NULL),
+(1394, 'carga', '1', 'D', '2015-06-17 00:00:00', NULL, '111|20151|1|11246|1'),
+(1395, 'carga', '1', 'D', '2015-06-17 00:00:00', NULL, '112|20151|1|11246|1'),
+(1396, 'carga', '1', 'D', '2015-06-17 00:00:00', NULL, '113|20151|1|11246|1');
 
 -- --------------------------------------------------------
 
@@ -1959,7 +2144,6 @@ INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestr
 (111, 20151, 1, 11236, 1, 1),
 (111, 20151, 1, 11237, 1, 1),
 (111, 20151, 1, 11240, 1, 1),
-(111, 20151, 1, 11246, 1, 1),
 (111, 20152, 1, 11236, 1, 1),
 (111, 20152, 1, 11237, 1, 1),
 (111, 20152, 1, 11240, 1, 1),
@@ -1967,11 +2151,9 @@ INSERT INTO `carga` (`grupo`, `periodo`, `programaedu`, `uaprendizaje`, `semestr
 (112, 20151, 1, 11236, 1, 1),
 (112, 20151, 1, 11237, 1, 1),
 (112, 20151, 1, 11240, 1, 1),
-(112, 20151, 1, 11246, 1, 1),
 (112, 20152, 1, 11236, 1, 1),
 (113, 20151, 1, 11236, 1, 1),
 (113, 20151, 1, 11237, 1, 1),
-(113, 20151, 1, 11246, 1, 1),
 (115, 20147, 1, 11236, 1, 1),
 (115, 20147, 1, 11237, 1, 1),
 (115, 20147, 1, 11240, 1, 1),
@@ -3742,7 +3924,12 @@ CREATE TABLE IF NOT EXISTS `documentos_emp` (
 
 INSERT INTO `documentos_emp` (`docto`, `id`, `ruta`, `observaciones`, `users_id`) VALUES
 (1, 1, 'documentos/fotos/foto_1.jpg', '', 1),
-(1, 3, 'documentos/fotos/foto_3.PNG', '', 3);
+(1, 3, 'documentos/fotos/foto_3.PNG', '', 3),
+(2, 3, 'documentos/estudios/licenciatura1_3.png', '', 3),
+(6, 3, 'documentos/estudios/doctorado1_3.png', '', 3),
+(7, 3, 'documentos/estudios/doctorado2_3.png', '', 3),
+(8, 3, 'documentos/estudios/especialidad1_3.png', '', 3),
+(9, 3, 'documentos/estudios/especialidad2_3.png', '', 3);
 
 --
 -- Disparadores `documentos_emp`
@@ -7234,7 +7421,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `last_name`, `last_materno`, `email`, `address`, `phone`, `campus`, `uacademica`, `username`, `password`, `level`, `created_at`, `updated_at`, `remember_token`, `sexo`, `rfc`, `fec_nac`, `fec_ing`, `email_alternat`, `ciudad`, `calle`, `no_ext`, `no_int`, `colonia`, `cp`, `telofna`, `telcel`, `categoria`, `unidad`, `ua`, `programaedu`) VALUES
 (1, 'Cynthia', 'Duarte', 'Frausto', 'zyntya@hotmail.com', 'Real de Calacoaya 7810-3B', 6450706, 1, 1, 'Tikita', '$2y$10$xnsOE1TJVotNVKW9vSqTme76Dk0OO0GAe9zrl2rvFZFwI2T0iF3GG', 1, '2014-04-19 19:30:58', '2015-06-11 01:40:42', 'yfAQDXhF4rTuVgDa2cM7cbr45wrypkarKYmfMNjhitqecKoqlutaCwjd7r3h', 'F', 'ICU870212HBC', '1985-12-01', '2014-12-02', 'zyntya@uabc.edu.mx', 16, 'CALLE SERRADILLA', 500, 'A  ', 'MONTGOMERY', 22310, '664-9740000', '664-9740000', 101, 'ENSENADA', 'FCA', 0),
 (2, 'Ivan', 'Duarte', 'Jeyson', 'wolfogan@gmail.com', 'Col. Nueva Tijuana', 6233987, 1, 1, 'LoganX', '$2y$10$Di0Yl1lU/GdnLfdaOAnVNOCf.DTDASCERnguBuaanFU796CqnQP5O', 2, '2014-04-19 19:30:58', '2015-05-26 02:12:30', 'tFVqHQD0rt2yIGlR7GeIM0D0HmwgMdGDMNbyq0xtfXG2jOoobEqkw45H5ARM', 'M', NULL, '1990-12-02', '2014-12-31', 'luz.lugo@uabc.edu.mx', 16, 'DE LOS LAURELES', 600, '0', 'EL CIRCULO', 22450, '664-1236789', '664''1236789', 101, 'VALLE DE LA TRINIDAD', 'FD', 1),
-(3, 'Maestro', 'Perez', 'Morales', 'maestro@maestro.com', '', 6450706, 1, 1, 'Maestro', '$2y$10$qWeWE7XG6ZkDEeu5t93/g.ym0fGHxazv9fyXfIEQhNiZ9E4LWYHQG', 5, '2015-05-26 02:11:59', '2015-06-11 01:37:52', 'OsmcljToPAZAVgALJ0S0RfeSbnavljv59yXl5gIqyxTeYTqQtHG5CS5G33xY', 'F', 'ICU870212HBC', NULL, '2015-05-25', 'maestro@alternativo.mx', 16, 'LIMON', 10, ' 5 ', 'REAL DE SAN FRANCISCO', 3345, '2654786', '6642650628', 104, '', '', 0),
+(3, 'Maestro', 'Perez', 'Morales', 'maestro@maestro.com', '', 6450706, 1, 1, 'Maestro', '$2y$10$qWeWE7XG6ZkDEeu5t93/g.ym0fGHxazv9fyXfIEQhNiZ9E4LWYHQG', 5, '2015-05-26 02:11:59', '2015-06-16 15:27:27', 'OsmcljToPAZAVgALJ0S0RfeSbnavljv59yXl5gIqyxTeYTqQtHG5CS5G33xY', 'F', 'ICU870212HBC', NULL, '2015-05-25', 'maestro@alternativo.mx', 16, 'LIMON', 10, ' 5 ', 'REAL DE SAN FRANCISCO', 3345, '2654786', '6642650628', 104, '', '', 0),
 (4, 'Nora', 'Osuna', 'Millan', 'nora.osuna@aubc.edu.mx', '', 9797500, 1, 1, 'non', '$2y$10$lG5cPdvAGWKZLm2Nw2znmudyH.osd833ESSceJ4JU.TKbKXFFGu/.', 5, '2015-06-03 03:06:11', '2015-06-03 03:08:28', 'k2tHimIOgwIbJranzotfuc2eTfoe9iXhXSRRz9petAinpwwnSNK12iaSdbpe', 'F', 'OUMN720826', NULL, '2015-06-02', 'nora@otro.com.mx', 16, 'Alfonso vidal y planas', 123, ' 12', 'miel', 22236, '6459798', '24234232', 103, '', '', 0);
 
 -- --------------------------------------------------------
