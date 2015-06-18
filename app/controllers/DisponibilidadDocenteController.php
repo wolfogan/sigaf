@@ -51,7 +51,11 @@ class DisponibilidadDocenteController extends BaseController
 		$tipoCursos = TipoCurso::all();
 		$carateristicaCursos = CaracteristicaCurso::all();
 		//$estados = Estado::where('estado','=',$ciudad-> estado);
-		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos,"tipoCursos" => $tipoCursos,"caracteristicaCursos" => $carateristicaCursos,"rutaFoto" =>$rutaFoto));
+
+		$estudios = DB::table("act_profesional_emp")
+						->where('id','=',Auth::user()->id)->get();
+
+		return View::make("dd.registro")->with(array("paises" => $paises,"estados" => $estados,"ciudades" => $ciudades,"paisId" => $paisId,"estadoId"=> $estadoId, "puestos" => $puestos,"tipoCursos" => $tipoCursos,"caracteristicaCursos" => $carateristicaCursos,"rutaFoto" =>$rutaFoto,"estudios" => $estudios));
 		
 	}
 	public function getEstudios()
@@ -226,10 +230,20 @@ class DisponibilidadDocenteController extends BaseController
 		*	8 - ESPECIALIDAD1
 		*	9 - ESPECIALIDAD2
 		**/
-
+		// Borrar para proceder con la actualizacion
 		$id = Input::get('dd_id');
 
+		DB::transaction(function()use ($id){
+		DB::table('act_profesional_emp') -> where('id','=',$id)-> delete();
+		DB::table('documentos_emp') -> where('id','=',$id) -> where('docto','<>',1)-> delete();
+		});
+
+		
+
+		
 		$carreraLic1 = Input::get('dd_carreraLic1');
+		if(!empty($carreraLic1))
+		{
 		$escuelaLic1 = Input::get('dd_escuelaLic1');
 		$obtuvoLic1 = Input::get('dd_obtuvoLic1');
 		$fechaLic1 = Input::get('dd_fechaLic1');
@@ -243,6 +257,7 @@ class DisponibilidadDocenteController extends BaseController
 			$obtuvoLic1 = 0;
 		
 
+
 		if(Input::hasFile("dd_fileLic1"))
 		{
 			$ext = Input::file("dd_fileLic1") -> getClientOriginalExtension();
@@ -254,13 +269,13 @@ class DisponibilidadDocenteController extends BaseController
 
 		$arrayLic1 = array('carrera' => $carreraLic1,'id' => $id,'universidad' => $escuelaLic1,'nivel' => 1,'cedula' => $cedulaLic1,'fec_tit' => $fechaLic1,'obtuvo_grado' => $obtuvoLic1,'users_id'=> $id );
 		$docLic1 = array('docto' => 2,'id' => $id,'ruta' => $rutaLic1,'observaciones' => "",'users_id' =>$id);
-
-
+		
+		//return Response::json($arrayLic1);
 		DB::transaction(function() use($arrayLic1,$docLic1){
 			DB::table('act_profesional_emp')->insert($arrayLic1);
 			DB::table('documentos_emp') -> insert($docLic1);
 		});
-		
+		}
 
 		$carreraLic2 = Input::get('dd_carreraLic2');
 		if(!empty($carreraLic2))
@@ -286,10 +301,10 @@ class DisponibilidadDocenteController extends BaseController
 			}
 
 			$arrayLic2 = array('carrera' => $carreraLic2,'id' => $id,'universidad' => $escuelaLic2,'nivel' => 1,'cedula' => $cedulaLic2,'fec_tit' => $fechaLic2,'obtuvo_grado' => $obtuvoLic2,'users_id'=> $id );
-			$docLic2 = array('docto' => 2,'id' => $id,'ruta' => $rutaLic2,'observaciones' => "",'users_id' =>$id);
+			$docLic2 = array('docto' => 3,'id' => $id,'ruta' => $rutaLic2,'observaciones' => "",'users_id' =>$id);
 
 
-			DB::transaction(function() use($arrayLic1,$docLic2){
+			DB::transaction(function() use($arrayLic2,$docLic2){
 				DB::table('act_profesional_emp')->insert($arrayLic2);
 				DB::table('documentos_emp') -> insert($docLic2);
 			});
@@ -331,8 +346,8 @@ class DisponibilidadDocenteController extends BaseController
 		$carreraEsp2 = Input::get('dd_carreraEsp2');
 		if(!empty($carreraEsp2))
 		{
-			$escuelaEsp2 = Input::get('dd_escuelaEsp2');
 			$obtuvoEsp2 = Input::get('dd_obtuvoEsp2');
+			$escuelaEsp2 = Input::get('dd_escuelaEsp2');
 			$fechaEsp2 = Input::get('dd_fechaEsp2');
 			$cedulaEsp2 = Input::get('dd_cedulaEsp2');
 			$nomFileEsp2 = Input::get('dd_nomFileEsp2');

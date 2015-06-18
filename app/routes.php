@@ -246,13 +246,16 @@ Route::get('pruebas',function(){
 
 	//$ruta = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',1)->first();
 	
-	$ruta = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',3)->first();
+	//$ruta = DB::table("documentos_emp")->select('ruta')->where('docto',1)->where('id',3)->first();
 
 		// if(!empty($ruta))
 		// 	$ruta = $ruta -> ruta;
 
+	$estudios = DB::table("act_profesional_emp")
+						->where('id','=',3)->get();
+	
 	$queries = DB::getQueryLog();
 	$last_query = end($queries);
-	return Response::json(empty($ruta->ruta));
+	return Response::json($estudios);
 
 });

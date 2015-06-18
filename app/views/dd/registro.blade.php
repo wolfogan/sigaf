@@ -443,7 +443,7 @@
 						
 					<h2>Grado de estudios</h2>
 
-					<form action="javascript:GuardarEstudiosCursos();" method="post" id="dd_datosEstudios">
+					<form id="dd_datosEstudios" method="post" action="javascript:GuardarEstudiosCursos();">
 						<div class="dd_divDecoracionEstudios">
 
 							<div class="dd_especialidad" style="width:550px">
@@ -455,18 +455,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraLic1" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
+									<select  name="dd_carreraLic1" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaLic1" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaLic1" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoLic1" type="checkbox" />
+									<input  name="dd_obtuvoLic1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -498,18 +498,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraLic2" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
+									<select  name="dd_carreraLic2" class="dd_carrerasEmp dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="" name="dd_escuelaLic2" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaLic2" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoLic2" type="checkbox" />
+									<input  name="dd_obtuvoLic2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -542,19 +542,19 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select  name="dd_carreraEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaEsp1" style="text-transform:uppercase" onkeypress="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoEsp1" type="checkbox"  />
+									<input  name="dd_obtuvoEsp1" type="checkbox"  />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -586,18 +586,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraEsp2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select  name="dd_carreraEsp2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="" name="dd_escuelaEsp2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaEsp2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 										<option value="1"></option>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoEsp2" type="checkbox" />
+									<input  name="dd_obtuvoEsp2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -632,18 +632,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraMas1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text"  required/>
+									<select  name="dd_carreraMas1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text"  required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">Escuela:
-									<select id="" name="dd_escuelaMas1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaMas1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 										<option value="1"></option>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoMas1" type="checkbox" />
+									<input  name="dd_obtuvoMas1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -677,18 +677,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraMas2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select  name="dd_carreraMas2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaMas2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaMas2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoMas2" type="checkbox"  />
+									<input  name="dd_obtuvoMas2" type="checkbox"  />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -722,18 +722,18 @@
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraDoc1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select  name="dd_carreraDoc1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaDoc1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaDoc1" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoDoc1" type="checkbox" />
+									<input  name="dd_obtuvoDoc1" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -765,18 +765,18 @@
 							
 							<div class="dd_licenciatura_uniEgreso_fechaTitulacion_cedula">
 								<div class="dd_licenciatura">
-									<select id="" name="dd_carreraDoc2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
+									<select  name="dd_carreraDoc2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_carrerasEmp dd_con_estilo"  type="text" required/>
 									</select>
 								</div>
 								<div class="dd_uniEgreso">
 									Escuela:
-									<select id="" name="dd_escuelaDoc2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
+									<select  name="dd_escuelaDoc2" style="text-transform:uppercase" onblur="Mayusculas(this)" class="dd_escuela dd_con_estilo" type="text" required/>
 									</select>
 								</div>
 
 								<div class="dd_chk_grado">
 									Obtuvo grado:
-									<input id="" name="dd_obtuvoDoc2" type="checkbox" />
+									<input  name="dd_obtuvoDoc2" type="checkbox" />
 								</div>
 
 								<div class="dd_fechaTitulacion">
@@ -827,7 +827,7 @@
 											
 											<tr class="fila-base-cursos">
 												<td>Elija:</td>
-												 <td><select id="" class="dd_elijaTipo dd_estilo_combo" style="width:100px;">
+												 <td><select  class="dd_elijaTipo dd_estilo_combo" style="width:100px;">
 														@foreach($tipoCursos as $tipoCurso)
 															<option value="{{$tipoCurso->tipo_curso_emp}}">{{$tipoCurso->descripcion}}</option>
 														@endforeach
@@ -1228,22 +1228,24 @@
 		}
 
 		var id = $("#dd_lbl_noEmpleado").text().trim();
-		var datos = new FormData(document.forms.namedItem("dd_datosEstudios"));
-		datos.append("dd_id",id);
+		var estudios = new FormData(document.forms.namedItem("dd_datosEstudios"));
+		estudios.append("dd_id",id);
 
 		$.ajax({
 			url: "<?php echo URL::to('disponibilidaddocente/registrarestudioscursos')?>",
 			method: "POST",
-			data: datos,
+			data: estudios,
 			processData: false,
 			contentType: false
 		})
 		.done(function(data){
 			//debugger;
+			alert(data);
 			console.log(data);
 		})
 		.fail(function(error,textError,errorTrow){
-			alert("Error: " + error.responseText);
+			alert("Error en la inserción de los documentos (verificar mas de 2 carreras): " + error.responseText);
+
 		});
 
 	}
@@ -1368,8 +1370,8 @@
 			}
 			else
 			{
-				$(divNext).find("input, select").attr("disabled", true);
-				$(divNextNext).find("input, select").attr("disabled",true);
+				$(divNext).find("input, select").removeAttr("disabled");
+				$(divNextNext).find("input, select").removeAttr("disabled");
 			}
 		});
 
